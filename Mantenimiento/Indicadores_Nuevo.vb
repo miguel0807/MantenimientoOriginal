@@ -51,4 +51,16 @@ Public Class Indicadores_Nuevo
         fecha_final.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
 #End Region
     End Sub
+
+    Private Sub Indicadores_Nuevo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conectar()
+        Dim count As Integer
+        Dim Query As String
+        Query = ("select COUNT (Estado) from Indicadores")
+        Dim cmd As New SqlCommand(Query, cn)
+        count = cmd.ExecuteScalar
+        Label3.Text = count
+        'Coloca la cantidad de filas que hay en la tabla temporal
+        desconectar()
+    End Sub
 End Class

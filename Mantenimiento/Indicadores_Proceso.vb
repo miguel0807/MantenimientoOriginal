@@ -39,5 +39,24 @@ Public Class Indicadores_Proceso
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Indicadores_Editable.Show()
 
+
+        Me.DataGridView1.Select() 'Seleccionar primera fila del datagridview
+
+
+
+        'Almacena informacion para ser impresa
+        Indicadores_Editable.Nombre.Text = Me.DataGridView1.CurrentRow.Cells.Item(0).Value.ToString
+        Indicadores_Editable.Ubicacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
+        Indicadores_Editable.Clasificacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(2).Value.ToString
+        Indicadores_Editable.Descripcion.Text = Me.DataGridView1.CurrentRow.Cells.Item(3).Value.ToString
+        Indicadores_Editable.Fecha.Text = Me.DataGridView1.CurrentRow.Cells.Item(4).Value.ToString
+        ' Indicadores_Editable.fecha_final.Text = Me.DataGridView1.CurrentRow.Cells.Item(5).Value.ToString
+        'Almacena informacion para ser impresa
+
+
+
+
+
+
     End Sub
 End Class

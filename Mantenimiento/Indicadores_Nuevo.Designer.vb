@@ -33,19 +33,20 @@ Partial Class Indicadores_Nuevo
         Me.Borrar = New System.Windows.Forms.Button()
         Me.Ingresar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.fecha_final = New System.Windows.Forms.TextBox()
         Me.Ubicacion = New System.Windows.Forms.ComboBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Clasificacion = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.fecha_final = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label9
@@ -162,6 +163,37 @@ Partial Class Indicadores_Nuevo
         Me.Panel1.Size = New System.Drawing.Size(1001, 262)
         Me.Panel1.TabIndex = 0
         '
+        'Panel3
+        '
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.fecha_final)
+        Me.Panel3.Location = New System.Drawing.Point(578, 152)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(416, 79)
+        Me.Panel3.TabIndex = 101
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label2.Location = New System.Drawing.Point(3, 10)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(99, 61)
+        Me.Label2.TabIndex = 70
+        Me.Label2.Text = "Fecha Final"
+        '
+        'fecha_final
+        '
+        Me.fecha_final.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fecha_final.Location = New System.Drawing.Point(162, 18)
+        Me.fecha_final.Name = "fecha_final"
+        Me.fecha_final.Size = New System.Drawing.Size(230, 34)
+        Me.fecha_final.TabIndex = 99
+        '
         'Ubicacion
         '
         Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -171,6 +203,15 @@ Partial Class Indicadores_Nuevo
         Me.Ubicacion.Name = "Ubicacion"
         Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
         Me.Ubicacion.TabIndex = 2
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(460, 152)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(91, 64)
+        Me.Button4.TabIndex = 100
+        Me.Button4.Text = "Automatico"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Clasificacion
         '
@@ -223,51 +264,22 @@ Partial Class Indicadores_Nuevo
         Me.Button3.Text = "Finalizado"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Panel3
+        'Label3
         '
-        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.fecha_final)
-        Me.Panel3.Location = New System.Drawing.Point(578, 152)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(416, 79)
-        Me.Panel3.TabIndex = 101
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label2.Location = New System.Drawing.Point(3, 10)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(99, 61)
-        Me.Label2.TabIndex = 70
-        Me.Label2.Text = "Fecha Final"
-        '
-        'fecha_final
-        '
-        Me.fecha_final.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fecha_final.Location = New System.Drawing.Point(162, 18)
-        Me.fecha_final.Name = "fecha_final"
-        Me.fecha_final.Size = New System.Drawing.Size(230, 34)
-        Me.fecha_final.TabIndex = 99
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(460, 152)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(91, 64)
-        Me.Button4.TabIndex = 100
-        Me.Button4.Text = "Automatico"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label3.Location = New System.Drawing.Point(863, 13)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(86, 29)
+        Me.Label3.TabIndex = 79
+        Me.Label3.Text = "Label3"
         '
         'Indicadores_Nuevo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1019, 648)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel1)
@@ -279,10 +291,10 @@ Partial Class Indicadores_Nuevo
         Me.Name = "Indicadores_Nuevo"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -309,4 +321,5 @@ Partial Class Indicadores_Nuevo
     Friend WithEvents Label2 As Label
     Friend WithEvents fecha_final As TextBox
     Friend WithEvents Button4 As Button
+    Friend WithEvents Label3 As Label
 End Class
