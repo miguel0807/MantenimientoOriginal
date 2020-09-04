@@ -118,10 +118,10 @@ Partial Class Indicadores_Nuevo
         '
         'Nombre
         '
-        Me.Nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Nombre.Location = New System.Drawing.Point(198, 27)
         Me.Nombre.Name = "Nombre"
-        Me.Nombre.Size = New System.Drawing.Size(192, 34)
+        Me.Nombre.Size = New System.Drawing.Size(229, 30)
         Me.Nombre.TabIndex = 1
         '
         'Borrar
@@ -164,22 +164,22 @@ Partial Class Indicadores_Nuevo
         '
         'Ubicacion
         '
-        Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ubicacion.FormattingEnabled = True
         Me.Ubicacion.Items.AddRange(New Object() {"Cartuchos Wilsonville", "Cartuchos DD", "Produccion Master batch", "Produccion Empaque", "Contacto", "Oficinas", "CR7"})
         Me.Ubicacion.Location = New System.Drawing.Point(198, 97)
         Me.Ubicacion.Name = "Ubicacion"
-        Me.Ubicacion.Size = New System.Drawing.Size(191, 37)
+        Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
         Me.Ubicacion.TabIndex = 2
         '
         'Clasificacion
         '
-        Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clasificacion.FormattingEnabled = True
         Me.Clasificacion.Items.AddRange(New Object() {"Electrico", "Mecanico", "Neumatico", "Servicio", ""})
         Me.Clasificacion.Location = New System.Drawing.Point(197, 163)
         Me.Clasificacion.Name = "Clasificacion"
-        Me.Clasificacion.Size = New System.Drawing.Size(191, 37)
+        Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
         Me.Clasificacion.TabIndex = 3
         '
         'Panel2
