@@ -160,7 +160,6 @@ Partial Class Indicadores_Editable
         '
         'Fecha
         '
-        Me.Fecha.Enabled = False
         Me.Fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Fecha.Location = New System.Drawing.Point(162, 28)
         Me.Fecha.Name = "Fecha"

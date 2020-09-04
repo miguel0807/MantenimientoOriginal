@@ -45,11 +45,12 @@ Public Class Indicadores_Proceso
 
 
         'Almacena informacion para ser impresa
-        Indicadores_Editable.Nombre.Text = Me.DataGridView1.CurrentRow.Cells.Item(0).Value.ToString
-        Indicadores_Editable.Ubicacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
-        Indicadores_Editable.Clasificacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(2).Value.ToString
-        Indicadores_Editable.Descripcion.Text = Me.DataGridView1.CurrentRow.Cells.Item(3).Value.ToString
-        Indicadores_Editable.Fecha.Text = Me.DataGridView1.CurrentRow.Cells.Item(4).Value.ToString
+        Indicadores_Editable.Caso = Me.DataGridView1.CurrentRow.Cells.Item(0).Value.ToString
+        Indicadores_Editable.Nombre.Text = Me.DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
+        Indicadores_Editable.Ubicacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(2).Value.ToString
+        Indicadores_Editable.Clasificacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(3).Value.ToString
+        Indicadores_Editable.Descripcion.Text = Me.DataGridView1.CurrentRow.Cells.Item(4).Value.ToString
+        Indicadores_Editable.Fecha.Text = Me.DataGridView1.CurrentRow.Cells.Item(5).Value.ToString
         ' Indicadores_Editable.fecha_final.Text = Me.DataGridView1.CurrentRow.Cells.Item(5).Value.ToString
         'Almacena informacion para ser impresa
 
