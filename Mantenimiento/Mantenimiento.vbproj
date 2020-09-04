@@ -86,6 +86,12 @@
     <Compile Include="Ejemplo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Indicadores_Editable.Designer.vb">
+      <DependentUpon>Indicadores_Editable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Indicadores_Editable.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Indicadores_Nuevo.Designer.vb">
       <DependentUpon>Indicadores_Nuevo.vb</DependentUpon>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ejemplo.resx">
       <DependentUpon>Ejemplo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indicadores_Editable.resx">
+      <DependentUpon>Indicadores_Editable.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Indicadores_Nuevo.resx">
       <DependentUpon>Indicadores_Nuevo.vb</DependentUpon>
