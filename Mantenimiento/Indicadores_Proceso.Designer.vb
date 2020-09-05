@@ -22,6 +22,7 @@ Partial Class Indicadores_Proceso
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Indicadores_Proceso))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -34,6 +35,7 @@ Partial Class Indicadores_Proceso
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonShadow
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(36, 49)
         Me.DataGridView1.Name = "DataGridView1"
@@ -46,21 +48,27 @@ Partial Class Indicadores_Proceso
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(158, 496)
+        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.Button1.FlatAppearance.BorderSize = 3
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Button1.Location = New System.Drawing.Point(576, 496)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(101, 57)
+        Me.Button1.Size = New System.Drawing.Size(186, 84)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Editar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label1
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Location = New System.Drawing.Point(957, 27)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label1.Location = New System.Drawing.Point(36, 493)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 19)
+        Me.Label1.Size = New System.Drawing.Size(85, 33)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -68,22 +76,29 @@ Partial Class Indicadores_Proceso
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(36, 496)
+        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.Button2.FlatAppearance.BorderSize = 3
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Button2.Location = New System.Drawing.Point(375, 496)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(101, 57)
+        Me.Button2.Size = New System.Drawing.Size(186, 84)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "Actualizar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Indicadores_Proceso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1233, 648)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Indicadores_Proceso"
         Me.Text = "Indicadores_Proceso"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
