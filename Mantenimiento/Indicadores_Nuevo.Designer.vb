@@ -289,6 +289,7 @@ Partial Class Indicadores_Nuevo
         Me.Controls.Add(Me.Ingresar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Indicadores_Nuevo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)

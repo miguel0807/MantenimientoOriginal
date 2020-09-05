@@ -25,6 +25,7 @@ Partial Class Indicadores_Proceso
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -45,7 +46,7 @@ Partial Class Indicadores_Proceso
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(36, 496)
+        Me.Button1.Location = New System.Drawing.Point(158, 496)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(101, 57)
         Me.Button1.TabIndex = 1
@@ -65,11 +66,21 @@ Partial Class Indicadores_Proceso
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Label1.Visible = False
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(36, 496)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(101, 57)
+        Me.Button2.TabIndex = 3
+        Me.Button2.Text = "Actualizar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Indicadores_Proceso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1233, 648)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
@@ -84,4 +95,5 @@ Partial Class Indicadores_Proceso
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button2 As Button
 End Class

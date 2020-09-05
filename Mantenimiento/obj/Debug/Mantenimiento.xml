@@ -22,5 +22,10 @@ Mantenimiento
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Mantenimiento.My.Resources.Resources._109634705_blue_dark_blue_black_abstract_background_blur_gradient">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

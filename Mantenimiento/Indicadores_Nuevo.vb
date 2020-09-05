@@ -7,53 +7,77 @@ Public Class Indicadores_Nuevo
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
 
+        Try
 
-
-        Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 1 & ")", cn)
+            Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 1 & ")", cn)
         conectar()
         adaptador.ExecuteNonQuery()
         MsgBox("Se registro correctamente")
         desconectar()
         Me.Close()
 
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
 #Region "Colocacion de fecha cuando se genera la licencia"
 
 
-        Fecha.Text = DateTime.Now
+            Fecha.Text = DateTime.Now
         Dim fechacreacion As Date
         fechacreacion = Fecha.Text
         Fecha.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
 #End Region
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Try
+            If Nombre.Text = "" Or Fecha.Text = "" Or fecha_final.Text = "" Or Descripcion.Text = "" Then
+            MsgBox("Complete todos los campos para poder Finalizar")
+        Else
 
 
-        Dim adaptador As New SqlCommand("insert into Indicadores values ('" & count & "','" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 0 & ")", cn)
-        conectar()
-        adaptador.ExecuteNonQuery()
-        MsgBox("Se registro correctamente")
-        desconectar()
-        Me.Close()
+            Dim adaptador As New SqlCommand("insert into Indicadores values ('" & count & "','" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 0 & ")", cn)
+            conectar()
+            adaptador.ExecuteNonQuery()
+            MsgBox("Se registro correctamente")
+            desconectar()
+            Me.Close()
+        End If
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Try
 #Region "Colocacion de fecha cuando se genera la licencia"
 
 
-        fecha_final.Text = DateTime.Now
+            fecha_final.Text = DateTime.Now
         Dim fechacreacion As Date
         fechacreacion = fecha_final.Text
         fecha_final.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
 #End Region
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub Indicadores_Nuevo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conectar()
+        Try
+            conectar()
 
         Dim Query As String
         Query = ("select COUNT (Estado) from Indicadores")
@@ -61,7 +85,11 @@ Public Class Indicadores_Nuevo
         count = cmd.ExecuteScalar
         Label3.Text = count
         Label3.Text = "Caso #" + Label3.Text
-        'Coloca la cantidad de filas que hay en la tabla temporal
-        desconectar()
+            'Coloca la cantidad de filas que hay en la tabla temporal
+            desconectar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class
