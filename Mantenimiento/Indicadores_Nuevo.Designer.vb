@@ -59,6 +59,7 @@ Partial Class Indicadores_Nuevo
         Me.Label9.Size = New System.Drawing.Size(145, 31)
         Me.Label9.TabIndex = 74
         Me.Label9.Text = "Clasificacion"
+        Me.Label9.UseWaitCursor = True
         '
         'Descripcion
         '
@@ -81,6 +82,7 @@ Partial Class Indicadores_Nuevo
         Me.Label6.Size = New System.Drawing.Size(138, 31)
         Me.Label6.TabIndex = 73
         Me.Label6.Text = "Descripcion"
+        Me.Label6.UseWaitCursor = True
         '
         'Label5
         '
@@ -91,6 +93,7 @@ Partial Class Indicadores_Nuevo
         Me.Label5.Size = New System.Drawing.Size(118, 31)
         Me.Label5.TabIndex = 72
         Me.Label5.Text = "Ubicacion"
+        Me.Label5.UseWaitCursor = True
         '
         'Fecha
         '
@@ -111,6 +114,7 @@ Partial Class Indicadores_Nuevo
         Me.Label1.Size = New System.Drawing.Size(115, 31)
         Me.Label1.TabIndex = 66
         Me.Label1.Text = "Problema"
+        Me.Label1.UseWaitCursor = True
         '
         'Nombre
         '
@@ -120,6 +124,7 @@ Partial Class Indicadores_Nuevo
         Me.Nombre.Name = "Nombre"
         Me.Nombre.Size = New System.Drawing.Size(229, 30)
         Me.Nombre.TabIndex = 1
+        Me.Nombre.UseWaitCursor = True
         '
         'Borrar
         '
@@ -129,6 +134,7 @@ Partial Class Indicadores_Nuevo
         Me.Borrar.TabIndex = 65
         Me.Borrar.Text = "Borrar"
         Me.Borrar.UseVisualStyleBackColor = True
+        Me.Borrar.UseWaitCursor = True
         '
         'Ingresar
         '
@@ -138,6 +144,7 @@ Partial Class Indicadores_Nuevo
         Me.Ingresar.TabIndex = 64
         Me.Ingresar.Text = "Ingresar"
         Me.Ingresar.UseVisualStyleBackColor = True
+        Me.Ingresar.UseWaitCursor = True
         '
         'Panel1
         '
@@ -150,7 +157,7 @@ Partial Class Indicadores_Nuevo
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Location = New System.Drawing.Point(12, 45)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1001, 262)
+        Me.Panel1.Size = New System.Drawing.Size(1001, 258)
         Me.Panel1.TabIndex = 0
         Me.Panel1.UseWaitCursor = True
         '
@@ -163,7 +170,7 @@ Partial Class Indicadores_Nuevo
         Me.Panel3.Controls.Add(Me.Button4)
         Me.Panel3.Location = New System.Drawing.Point(566, 137)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(416, 79)
+        Me.Panel3.Size = New System.Drawing.Size(416, 75)
         Me.Panel3.TabIndex = 3
         Me.Panel3.UseWaitCursor = True
         '
@@ -187,6 +194,7 @@ Partial Class Indicadores_Nuevo
         Me.Ubicacion.Name = "Ubicacion"
         Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
         Me.Ubicacion.TabIndex = 2
+        Me.Ubicacion.UseWaitCursor = True
         '
         'Button4
         '
@@ -209,6 +217,7 @@ Partial Class Indicadores_Nuevo
         Me.Clasificacion.Name = "Clasificacion"
         Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
         Me.Clasificacion.TabIndex = 3
+        Me.Clasificacion.UseWaitCursor = True
         '
         'Panel2
         '
@@ -219,14 +228,14 @@ Partial Class Indicadores_Nuevo
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Location = New System.Drawing.Point(566, 35)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(416, 79)
+        Me.Panel2.Size = New System.Drawing.Size(416, 75)
         Me.Panel2.TabIndex = 2
         Me.Panel2.UseWaitCursor = True
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(11, 3)
+        Me.Button1.Location = New System.Drawing.Point(11, 9)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(91, 64)
         Me.Button1.TabIndex = 1
@@ -266,6 +275,7 @@ Partial Class Indicadores_Nuevo
         Me.Label3.Size = New System.Drawing.Size(86, 29)
         Me.Label3.TabIndex = 79
         Me.Label3.Text = "Label3"
+        Me.Label3.UseWaitCursor = True
         '
         'Panel4
         '
@@ -297,7 +307,7 @@ Partial Class Indicadores_Nuevo
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Borrar)
         Me.Controls.Add(Me.Ingresar)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximumSize = New System.Drawing.Size(1044, 695)
         Me.Name = "Indicadores_Nuevo"

@@ -117,7 +117,6 @@ Partial Class Presentacion
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximumSize = New System.Drawing.Size(818, 497)
         Me.Name = "Presentacion"
-        Me.Opacity = 0.98R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)
         Me.PerformLayout()
