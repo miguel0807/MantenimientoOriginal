@@ -17,3 +17,7 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimie
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Indicadores_Nuevo.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Indicadores_Proceso.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Indicadores_Editable.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Mantenimiento.exe.manifest
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Mantenimiento.application
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.exe.manifest
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.application

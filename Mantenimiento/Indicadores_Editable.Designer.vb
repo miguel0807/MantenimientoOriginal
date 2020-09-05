@@ -222,15 +222,16 @@ Partial Class Indicadores_Editable
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.BackgroundImage = Global.Mantenimiento.My.Resources.Resources.gris
         Me.ClientSize = New System.Drawing.Size(1051, 646)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Descripcion)
         Me.Controls.Add(Me.Label6)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.MaximumSize = New System.Drawing.Size(1069, 693)
         Me.Name = "Indicadores_Editable"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Indicadores_Editable"
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()

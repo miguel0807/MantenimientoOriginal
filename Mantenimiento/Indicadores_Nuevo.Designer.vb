@@ -59,7 +59,6 @@ Partial Class Indicadores_Nuevo
         Me.Label9.Size = New System.Drawing.Size(145, 31)
         Me.Label9.TabIndex = 74
         Me.Label9.Text = "Clasificacion"
-        Me.Label9.UseWaitCursor = True
         '
         'Descripcion
         '
@@ -70,7 +69,6 @@ Partial Class Indicadores_Nuevo
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.Size = New System.Drawing.Size(564, 156)
         Me.Descripcion.TabIndex = 4
-        Me.Descripcion.UseWaitCursor = True
         '
         'Label6
         '
@@ -82,7 +80,6 @@ Partial Class Indicadores_Nuevo
         Me.Label6.Size = New System.Drawing.Size(138, 31)
         Me.Label6.TabIndex = 73
         Me.Label6.Text = "Descripcion"
-        Me.Label6.UseWaitCursor = True
         '
         'Label5
         '
@@ -93,7 +90,6 @@ Partial Class Indicadores_Nuevo
         Me.Label5.Size = New System.Drawing.Size(118, 31)
         Me.Label5.TabIndex = 72
         Me.Label5.Text = "Ubicacion"
-        Me.Label5.UseWaitCursor = True
         '
         'Fecha
         '
@@ -103,7 +99,6 @@ Partial Class Indicadores_Nuevo
         Me.Fecha.Name = "Fecha"
         Me.Fecha.Size = New System.Drawing.Size(230, 34)
         Me.Fecha.TabIndex = 2
-        Me.Fecha.UseWaitCursor = True
         '
         'Label1
         '
@@ -114,7 +109,6 @@ Partial Class Indicadores_Nuevo
         Me.Label1.Size = New System.Drawing.Size(115, 31)
         Me.Label1.TabIndex = 66
         Me.Label1.Text = "Problema"
-        Me.Label1.UseWaitCursor = True
         '
         'Nombre
         '
@@ -124,7 +118,6 @@ Partial Class Indicadores_Nuevo
         Me.Nombre.Name = "Nombre"
         Me.Nombre.Size = New System.Drawing.Size(229, 30)
         Me.Nombre.TabIndex = 1
-        Me.Nombre.UseWaitCursor = True
         '
         'Borrar
         '
@@ -134,7 +127,6 @@ Partial Class Indicadores_Nuevo
         Me.Borrar.TabIndex = 65
         Me.Borrar.Text = "Borrar"
         Me.Borrar.UseVisualStyleBackColor = True
-        Me.Borrar.UseWaitCursor = True
         '
         'Ingresar
         '
@@ -144,7 +136,6 @@ Partial Class Indicadores_Nuevo
         Me.Ingresar.TabIndex = 64
         Me.Ingresar.Text = "Ingresar"
         Me.Ingresar.UseVisualStyleBackColor = True
-        Me.Ingresar.UseWaitCursor = True
         '
         'Panel1
         '
@@ -159,7 +150,6 @@ Partial Class Indicadores_Nuevo
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1001, 258)
         Me.Panel1.TabIndex = 0
-        Me.Panel1.UseWaitCursor = True
         '
         'Panel3
         '
@@ -172,7 +162,6 @@ Partial Class Indicadores_Nuevo
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(416, 75)
         Me.Panel3.TabIndex = 3
-        Me.Panel3.UseWaitCursor = True
         '
         'fecha_final
         '
@@ -182,7 +171,6 @@ Partial Class Indicadores_Nuevo
         Me.fecha_final.Name = "fecha_final"
         Me.fecha_final.Size = New System.Drawing.Size(230, 34)
         Me.fecha_final.TabIndex = 2
-        Me.fecha_final.UseWaitCursor = True
         '
         'Ubicacion
         '
@@ -194,7 +182,6 @@ Partial Class Indicadores_Nuevo
         Me.Ubicacion.Name = "Ubicacion"
         Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
         Me.Ubicacion.TabIndex = 2
-        Me.Ubicacion.UseWaitCursor = True
         '
         'Button4
         '
@@ -205,7 +192,6 @@ Partial Class Indicadores_Nuevo
         Me.Button4.TabIndex = 1
         Me.Button4.Text = "Fecha Final"
         Me.Button4.UseVisualStyleBackColor = True
-        Me.Button4.UseWaitCursor = True
         '
         'Clasificacion
         '
@@ -217,7 +203,6 @@ Partial Class Indicadores_Nuevo
         Me.Clasificacion.Name = "Clasificacion"
         Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
         Me.Clasificacion.TabIndex = 3
-        Me.Clasificacion.UseWaitCursor = True
         '
         'Panel2
         '
@@ -230,7 +215,6 @@ Partial Class Indicadores_Nuevo
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(416, 75)
         Me.Panel2.TabIndex = 2
-        Me.Panel2.UseWaitCursor = True
         '
         'Button1
         '
@@ -241,7 +225,6 @@ Partial Class Indicadores_Nuevo
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Fecha Inicio"
         Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.UseWaitCursor = True
         '
         'Button2
         '
@@ -252,7 +235,6 @@ Partial Class Indicadores_Nuevo
         Me.Button2.TabIndex = 5
         Me.Button2.Text = "Pendiente"
         Me.Button2.UseVisualStyleBackColor = True
-        Me.Button2.UseWaitCursor = True
         '
         'Button3
         '
@@ -263,7 +245,6 @@ Partial Class Indicadores_Nuevo
         Me.Button3.TabIndex = 6
         Me.Button3.Text = "Finalizado"
         Me.Button3.UseVisualStyleBackColor = True
-        Me.Button3.UseWaitCursor = True
         '
         'Label3
         '
@@ -275,7 +256,6 @@ Partial Class Indicadores_Nuevo
         Me.Label3.Size = New System.Drawing.Size(86, 29)
         Me.Label3.TabIndex = 79
         Me.Label3.Text = "Label3"
-        Me.Label3.UseWaitCursor = True
         '
         'Panel4
         '
@@ -290,7 +270,6 @@ Partial Class Indicadores_Nuevo
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(432, 196)
         Me.Panel4.TabIndex = 1
-        Me.Panel4.UseWaitCursor = True
         '
         'Indicadores_Nuevo
         '
@@ -307,12 +286,12 @@ Partial Class Indicadores_Nuevo
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Borrar)
         Me.Controls.Add(Me.Ingresar)
+        Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximumSize = New System.Drawing.Size(1044, 695)
         Me.Name = "Indicadores_Nuevo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.UseWaitCursor = True
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()

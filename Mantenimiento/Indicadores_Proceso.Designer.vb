@@ -100,7 +100,7 @@ Partial Class Indicadores_Proceso
         Me.Controls.Add(Me.DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.MaximumSize = New System.Drawing.Size(1251, 695)
         Me.Name = "Indicadores_Proceso"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Indicadores_Proceso"
