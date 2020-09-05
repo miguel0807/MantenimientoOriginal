@@ -9,8 +9,8 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Mantenimiento")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyDescription("Control de actividades para mantenimiento")>
+<Assembly: AssemblyCompany("Matthews International")>
 <Assembly: AssemblyProduct("Mantenimiento")>
 <Assembly: AssemblyCopyright("Copyright ©  2020")>
 <Assembly: AssemblyTrademark("")>
