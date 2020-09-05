@@ -23,6 +23,45 @@ Public Class Indicadores_Editable
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+
+
+
+        Try
+            conectar()
+
+            Dim etiqueta As String
+            etiqueta = 1
+
+
+
+            Dim tabla As DataGridView = Indicadores_Proceso.DataGridView1
+            Dim adaptador As New SqlDataAdapter("select*from Indicadores where Estado=" & etiqueta & "", cn)
+            Dim dataS As New DataSet
+            adaptador.Fill(dataS, "Indicadores")
+
+            tabla.DataSource = dataS.Tables("Indicadores")
+            tabla.RowHeadersVisible = False
+            tabla.Columns.Item(6).Visible = False
+            tabla.Columns.Item(7).Visible = False
+            tabla.Columns.Item(0).Visible = False
+
+
+
+            tabla.Columns(1).Width = 200
+            tabla.Columns(2).Width = 130
+            tabla.Columns(3).Width = 170
+            tabla.Columns(4).Width = 267
+            tabla.Columns(5).Width = 100
+
+            'Habilita conteo de filas en datagridview
+            Indicadores_Proceso.Label1.Visible = True
+            ' Label8.Text = tabla.DisplayedRowCount(0) - 1
+            Indicadores_Proceso.Label1.Text = "Casos pendientes: " & tabla.RowCount
+            Indicadores_Proceso.conteo_total = tabla.RowCount
+            desconectar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 

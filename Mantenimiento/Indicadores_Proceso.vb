@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class Indicadores_Proceso
-    Dim conteo_total As Integer
+    Public conteo_total As Integer
     Private Sub Indicadores_Proceso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             conectar()
