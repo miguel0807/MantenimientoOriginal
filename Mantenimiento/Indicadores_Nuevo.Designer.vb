@@ -26,7 +26,6 @@ Partial Class Indicadores_Nuevo
         Me.Descripcion = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Fecha = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Nombre = New System.Windows.Forms.TextBox()
@@ -34,7 +33,6 @@ Partial Class Indicadores_Nuevo
         Me.Ingresar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.fecha_final = New System.Windows.Forms.TextBox()
         Me.Ubicacion = New System.Windows.Forms.ComboBox()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -52,17 +50,17 @@ Partial Class Indicadores_Nuevo
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
         Me.Label9.Location = New System.Drawing.Point(21, 171)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(149, 29)
+        Me.Label9.Size = New System.Drawing.Size(145, 31)
         Me.Label9.TabIndex = 74
         Me.Label9.Text = "Clasificacion"
         '
         'Descripcion
         '
         Me.Descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Descripcion.Location = New System.Drawing.Point(180, 339)
+        Me.Descripcion.Location = New System.Drawing.Point(256, 340)
         Me.Descripcion.Multiline = True
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.Size = New System.Drawing.Size(564, 156)
@@ -71,33 +69,22 @@ Partial Class Indicadores_Nuevo
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label6.Location = New System.Drawing.Point(33, 342)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label6.Location = New System.Drawing.Point(109, 343)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(141, 29)
+        Me.Label6.Size = New System.Drawing.Size(138, 31)
         Me.Label6.TabIndex = 73
         Me.Label6.Text = "Descripcion"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
         Me.Label5.Location = New System.Drawing.Point(21, 97)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(120, 29)
+        Me.Label5.Size = New System.Drawing.Size(118, 31)
         Me.Label5.TabIndex = 72
         Me.Label5.Text = "Ubicacion"
-        '
-        'Label8
-        '
-        Me.Label8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label8.Location = New System.Drawing.Point(3, 3)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(123, 59)
-        Me.Label8.TabIndex = 70
-        Me.Label8.Text = "Fecha Inicio"
         '
         'Fecha
         '
@@ -110,10 +97,10 @@ Partial Class Indicadores_Nuevo
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(21, 27)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(118, 29)
+        Me.Label1.Size = New System.Drawing.Size(115, 31)
         Me.Label1.TabIndex = 66
         Me.Label1.Text = "Problema"
         '
@@ -150,10 +137,8 @@ Partial Class Indicadores_Nuevo
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Ubicacion)
-        Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Clasificacion)
         Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -168,23 +153,12 @@ Partial Class Indicadores_Nuevo
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.fecha_final)
-        Me.Panel3.Location = New System.Drawing.Point(578, 152)
+        Me.Panel3.Controls.Add(Me.Button4)
+        Me.Panel3.Location = New System.Drawing.Point(566, 137)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(416, 79)
         Me.Panel3.TabIndex = 101
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label2.Location = New System.Drawing.Point(3, 10)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(99, 61)
-        Me.Label2.TabIndex = 70
-        Me.Label2.Text = "Fecha Final"
         '
         'fecha_final
         '
@@ -206,11 +180,12 @@ Partial Class Indicadores_Nuevo
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(460, 152)
+        Me.Button4.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(11, 7)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(91, 64)
         Me.Button4.TabIndex = 100
-        Me.Button4.Text = "Automatico"
+        Me.Button4.Text = "Fecha Final"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Clasificacion
@@ -228,26 +203,27 @@ Partial Class Indicadores_Nuevo
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.Label8)
         Me.Panel2.Controls.Add(Me.Fecha)
-        Me.Panel2.Location = New System.Drawing.Point(578, 50)
+        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Location = New System.Drawing.Point(566, 35)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(416, 79)
         Me.Panel2.TabIndex = 76
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(460, 49)
+        Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(11, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(91, 64)
         Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Automatico"
+        Me.Button1.Text = "Fecha Inicio"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(29, 534)
+        Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
+        Me.Button2.Location = New System.Drawing.Point(210, 546)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(223, 78)
         Me.Button2.TabIndex = 77
@@ -256,8 +232,8 @@ Partial Class Indicadores_Nuevo
         '
         'Button3
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(330, 534)
+        Me.Button3.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
+        Me.Button3.Location = New System.Drawing.Point(511, 546)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(223, 78)
         Me.Button3.TabIndex = 78
@@ -305,7 +281,6 @@ Partial Class Indicadores_Nuevo
     Friend WithEvents Descripcion As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents Fecha As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Nombre As TextBox
@@ -319,7 +294,6 @@ Partial Class Indicadores_Nuevo
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label2 As Label
     Friend WithEvents fecha_final As TextBox
     Friend WithEvents Button4 As Button
     Friend WithEvents Label3 As Label

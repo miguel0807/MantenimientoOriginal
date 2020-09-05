@@ -31,6 +31,7 @@ Partial Class Presentacion
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button1.Location = New System.Drawing.Point(70, 140)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(178, 118)
@@ -41,6 +42,7 @@ Partial Class Presentacion
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button2.Location = New System.Drawing.Point(514, 140)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(178, 118)
@@ -73,12 +75,13 @@ Partial Class Presentacion
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.BackgroundImage = Global.Mantenimiento.My.Resources.Resources._109634705_blue_dark_blue_black_abstract_background_blur_gradient
+        Me.BackgroundImage = Global.Mantenimiento.My.Resources.Resources.gris
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.MaximumSize = New System.Drawing.Size(818, 497)
         Me.Name = "Presentacion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
