@@ -44,7 +44,7 @@ Partial Class Indicadores_Proceso
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(1160, 441)
-        Me.DataGridView1.TabIndex = 0
+        Me.DataGridView1.TabIndex = 3
         '
         'Button1
         '
@@ -56,7 +56,7 @@ Partial Class Indicadores_Proceso
         Me.Button1.Location = New System.Drawing.Point(576, 496)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(186, 84)
-        Me.Button1.TabIndex = 1
+        Me.Button1.TabIndex = 2
         Me.Button1.Text = "Editar"
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -84,7 +84,7 @@ Partial Class Indicadores_Proceso
         Me.Button2.Location = New System.Drawing.Point(375, 496)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(186, 84)
-        Me.Button2.TabIndex = 3
+        Me.Button2.TabIndex = 1
         Me.Button2.Text = "Actualizar"
         Me.Button2.UseVisualStyleBackColor = False
         '

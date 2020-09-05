@@ -51,7 +51,7 @@ Partial Class Indicadores_Editable
         Me.Button3.Location = New System.Drawing.Point(367, 525)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(223, 78)
-        Me.Button3.TabIndex = 88
+        Me.Button3.TabIndex = 5
         Me.Button3.Text = "Finalizado"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -78,7 +78,7 @@ Partial Class Indicadores_Editable
         Me.Panel3.Location = New System.Drawing.Point(578, 150)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(416, 79)
-        Me.Panel3.TabIndex = 101
+        Me.Panel3.TabIndex = 3
         '
         'fecha_final
         '
@@ -86,7 +86,7 @@ Partial Class Indicadores_Editable
         Me.fecha_final.Location = New System.Drawing.Point(162, 18)
         Me.fecha_final.Name = "fecha_final"
         Me.fecha_final.Size = New System.Drawing.Size(230, 34)
-        Me.fecha_final.TabIndex = 99
+        Me.fecha_final.TabIndex = 2
         '
         'Ubicacion
         '
@@ -104,7 +104,7 @@ Partial Class Indicadores_Editable
         Me.Button4.Location = New System.Drawing.Point(12, 3)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(91, 64)
-        Me.Button4.TabIndex = 100
+        Me.Button4.TabIndex = 1
         Me.Button4.Text = "Fecha Final"
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -127,7 +127,7 @@ Partial Class Indicadores_Editable
         Me.Panel2.Location = New System.Drawing.Point(578, 50)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(416, 79)
-        Me.Panel2.TabIndex = 76
+        Me.Panel2.TabIndex = 2
         '
         'Fecha
         '
@@ -135,7 +135,7 @@ Partial Class Indicadores_Editable
         Me.Fecha.Location = New System.Drawing.Point(162, 28)
         Me.Fecha.Name = "Fecha"
         Me.Fecha.Size = New System.Drawing.Size(230, 34)
-        Me.Fecha.TabIndex = 99
+        Me.Fecha.TabIndex = 1
         '
         'Button1
         '
@@ -143,7 +143,7 @@ Partial Class Indicadores_Editable
         Me.Button1.Location = New System.Drawing.Point(12, 8)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(91, 64)
-        Me.Button1.TabIndex = 4
+        Me.Button1.TabIndex = 1
         Me.Button1.Text = "Fecha Inicio"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -192,11 +192,12 @@ Partial Class Indicadores_Editable
         Me.Descripcion.Multiline = True
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.Size = New System.Drawing.Size(564, 156)
-        Me.Descripcion.TabIndex = 85
+        Me.Descripcion.TabIndex = 4
         '
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
         Me.Label6.Location = New System.Drawing.Point(33, 324)
         Me.Label6.Name = "Label6"
@@ -215,7 +216,7 @@ Partial Class Indicadores_Editable
         Me.Panel4.Location = New System.Drawing.Point(10, 15)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(441, 213)
-        Me.Panel4.TabIndex = 102
+        Me.Panel4.TabIndex = 1
         '
         'Indicadores_Editable
         '
