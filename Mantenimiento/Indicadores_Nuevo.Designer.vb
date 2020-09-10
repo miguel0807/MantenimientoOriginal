@@ -33,21 +33,30 @@ Partial Class Indicadores_Nuevo
         Me.Borrar = New System.Windows.Forms.Button()
         Me.Ingresar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Ubicacion = New System.Windows.Forms.ComboBox()
+        Me.Clasificacion = New System.Windows.Forms.ComboBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.fecha_final = New System.Windows.Forms.TextBox()
-        Me.Ubicacion = New System.Windows.Forms.ComboBox()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Clasificacion = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.panel_boton = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel4.SuspendLayout()
+        Me.panel_boton.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label9
@@ -151,6 +160,42 @@ Partial Class Indicadores_Nuevo
         Me.Panel1.Size = New System.Drawing.Size(1001, 258)
         Me.Panel1.TabIndex = 0
         '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel4.Controls.Add(Me.Ubicacion)
+        Me.Panel4.Controls.Add(Me.Clasificacion)
+        Me.Panel4.Controls.Add(Me.Label9)
+        Me.Panel4.Controls.Add(Me.Label5)
+        Me.Panel4.Controls.Add(Me.Label1)
+        Me.Panel4.Controls.Add(Me.Nombre)
+        Me.Panel4.Location = New System.Drawing.Point(16, 19)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(432, 196)
+        Me.Panel4.TabIndex = 1
+        '
+        'Ubicacion
+        '
+        Me.Ubicacion.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ubicacion.FormattingEnabled = True
+        Me.Ubicacion.Items.AddRange(New Object() {"Cartuchos Wilsonville", "Cartuchos DD", "Produccion Master batch", "Produccion Empaque", "Contacto", "Oficinas", "CR7"})
+        Me.Ubicacion.Location = New System.Drawing.Point(182, 78)
+        Me.Ubicacion.Name = "Ubicacion"
+        Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
+        Me.Ubicacion.TabIndex = 2
+        '
+        'Clasificacion
+        '
+        Me.Clasificacion.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Clasificacion.FormattingEnabled = True
+        Me.Clasificacion.Items.AddRange(New Object() {"Electrico", "Mecanico", "Neumatico", "Servicio", "IT"})
+        Me.Clasificacion.Location = New System.Drawing.Point(181, 144)
+        Me.Clasificacion.Name = "Clasificacion"
+        Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
+        Me.Clasificacion.TabIndex = 3
+        '
         'Panel3
         '
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -172,17 +217,6 @@ Partial Class Indicadores_Nuevo
         Me.fecha_final.Size = New System.Drawing.Size(230, 34)
         Me.fecha_final.TabIndex = 2
         '
-        'Ubicacion
-        '
-        Me.Ubicacion.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Ubicacion.FormattingEnabled = True
-        Me.Ubicacion.Items.AddRange(New Object() {"Cartuchos Wilsonville", "Cartuchos DD", "Produccion Master batch", "Produccion Empaque", "Contacto", "Oficinas", "CR7"})
-        Me.Ubicacion.Location = New System.Drawing.Point(182, 78)
-        Me.Ubicacion.Name = "Ubicacion"
-        Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
-        Me.Ubicacion.TabIndex = 2
-        '
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -192,17 +226,6 @@ Partial Class Indicadores_Nuevo
         Me.Button4.TabIndex = 1
         Me.Button4.Text = "Fecha Final"
         Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Clasificacion
-        '
-        Me.Clasificacion.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Clasificacion.FormattingEnabled = True
-        Me.Clasificacion.Items.AddRange(New Object() {"Electrico", "Mecanico", "Neumatico", "Servicio", "IT"})
-        Me.Clasificacion.Location = New System.Drawing.Point(181, 144)
-        Me.Clasificacion.Name = "Clasificacion"
-        Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
-        Me.Clasificacion.TabIndex = 3
         '
         'Panel2
         '
@@ -257,19 +280,88 @@ Partial Class Indicadores_Nuevo
         Me.Label3.TabIndex = 79
         Me.Label3.Text = "Label3"
         '
-        'Panel4
+        'Button5
         '
-        Me.Panel4.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Panel4.Controls.Add(Me.Ubicacion)
-        Me.Panel4.Controls.Add(Me.Clasificacion)
-        Me.Panel4.Controls.Add(Me.Label9)
-        Me.Panel4.Controls.Add(Me.Label5)
-        Me.Panel4.Controls.Add(Me.Label1)
-        Me.Panel4.Controls.Add(Me.Nombre)
-        Me.Panel4.Location = New System.Drawing.Point(16, 19)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(432, 196)
-        Me.Panel4.TabIndex = 1
+        Me.Button5.Location = New System.Drawing.Point(12, 13)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(167, 29)
+        Me.Button5.TabIndex = 80
+        Me.Button5.Text = "Control de tiempo"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'panel_boton
+        '
+        Me.panel_boton.Controls.Add(Me.Label4)
+        Me.panel_boton.Controls.Add(Me.Label2)
+        Me.panel_boton.Controls.Add(Me.TextBox2)
+        Me.panel_boton.Controls.Add(Me.Button7)
+        Me.panel_boton.Controls.Add(Me.TextBox1)
+        Me.panel_boton.Controls.Add(Me.Button6)
+        Me.panel_boton.Location = New System.Drawing.Point(3, 45)
+        Me.panel_boton.Name = "panel_boton"
+        Me.panel_boton.Size = New System.Drawing.Size(1010, 495)
+        Me.panel_boton.TabIndex = 4
+        Me.panel_boton.Visible = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(208, 45)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(230, 34)
+        Me.TextBox1.TabIndex = 4
+        '
+        'Button6
+        '
+        Me.Button6.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(13, 28)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(145, 67)
+        Me.Button6.TabIndex = 3
+        Me.Button6.Text = "Tiempo Inicio"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(208, 208)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(230, 34)
+        Me.TextBox2.TabIndex = 6
+        '
+        'Button7
+        '
+        Me.Button7.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.Location = New System.Drawing.Point(13, 191)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(145, 67)
+        Me.Button7.TabIndex = 5
+        Me.Button7.Text = "Tiempo Final"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.LightGray
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label2.Location = New System.Drawing.Point(674, 432)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(223, 29)
+        Me.Label2.TabIndex = 81
+        Me.Label2.Text = "Cantidad de tiempo"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.LightGray
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label4.Location = New System.Drawing.Point(917, 432)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(64, 29)
+        Me.Label4.TabIndex = 82
+        Me.Label4.Text = "XXX"
         '
         'Indicadores_Nuevo
         '
@@ -278,10 +370,12 @@ Partial Class Indicadores_Nuevo
         Me.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.BackgroundImage = Global.Mantenimiento.My.Resources.Resources.gris
         Me.ClientSize = New System.Drawing.Size(1026, 648)
+        Me.Controls.Add(Me.panel_boton)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Descripcion)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Borrar)
@@ -293,12 +387,14 @@ Partial Class Indicadores_Nuevo
         Me.Name = "Indicadores_Nuevo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
+        Me.panel_boton.ResumeLayout(False)
+        Me.panel_boton.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -325,4 +421,12 @@ Partial Class Indicadores_Nuevo
     Friend WithEvents Button4 As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel4 As Panel
+    Friend WithEvents Button5 As Button
+    Friend WithEvents panel_boton As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Button7 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button6 As Button
 End Class
