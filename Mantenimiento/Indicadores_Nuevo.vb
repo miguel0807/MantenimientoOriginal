@@ -3,6 +3,12 @@
 Public Class Indicadores_Nuevo
 
     Dim count As Integer
+    Dim hora As Integer
+    Dim minuto As Integer
+    Dim acumhora As Integer
+    Dim acumminuto As Integer
+    Dim almacenar As Boolean = False
+
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
@@ -142,39 +148,76 @@ Public Class Indicadores_Nuevo
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        If Tiempo_Inicio.Text = "" Or Tiempo_Final.Text = "" Then
+            MsgBox("Favor complete los tiempos")
+        Else
+            Dim minutos As String
 
 
-        Dim minutos As String
+            Dim FechaEntrada As String = Tiempo_Inicio.Text
+            Dim FechaSalida As String = Tiempo_Final.Text
+            Dim IntMinutos As Double
 
 
-        Dim FechaEntrada As String = Tiempo_Inicio.Text
-        Dim FechaSalida As String = Tiempo_Final.Text
-        Dim IntMinutos As Double
-        Dim hora As Integer
-        Dim minuto As Integer
-        Dim resul As String
 
-        minutos = DateDiff(DateInterval.Minute, CDate(FechaEntrada), CDate(FechaSalida))
+            minutos = DateDiff(DateInterval.Minute, CDate(FechaEntrada), CDate(FechaSalida))
 
-        IntMinutos = minutos
+            IntMinutos = minutos
 
-        hora = Math.Truncate(IntMinutos / 60)
+            hora = Math.Truncate(IntMinutos / 60)
 
-        minuto = Math.Truncate(IntMinutos - (hora * 60))
+            minuto = Math.Truncate(IntMinutos - (hora * 60))
 
-        If hora = 0 Then
-            Resultado.Text = minuto & " minutos"
-        ElseIf hora = 1 And minuto = 0 Then
-            Resultado.Text = hora & " hora " & "con " & minuto & " minuto"
+            If hora = 1 Then
+                calhoras.Text = hora & " hora"
+            Else
+                calhoras.Text = hora & " horas"
+            End If
 
-        ElseIf hora = 1 And minuto > 0 Then
-            Resultado.Text = hora & " hora " & "con " & minuto & " minutos"
-        ElseIf hora = 1 Then
-            Resultado.Text = hora & " hora "
-        ElseIf hora >= 2 Then
-            Resultado.Text = hora & " horas " & "con " & minuto & " minutos"
+            If minuto = 1 Then
+                calminutos.Text = minuto & " minuto"
+            Else
+                calminutos.Text = minuto & " minutos"
+            End If
 
+            almacenar = True
         End If
+
+
+
+
+
+
+    End Sub
+
+    Private Sub panel_boton_Paint(sender As Object, e As PaintEventArgs) Handles panel_boton.Paint
+
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+
+        If almacenar = True Then
+
+            acumhora = acumhora + hora
+            acumminuto = acumminuto + minuto
+
+            Tiempo_Inicio.Text = ""
+            Tiempo_Final.Text = ""
+            calhoras.Text = 0
+            calminutos.Text = 0
+
+
+
+            acuhora.Text = acumhora
+            acuminutos.Text = acumminuto
+        End If
+        almacenar = False
+
+
+
+
+
+
 
 
 

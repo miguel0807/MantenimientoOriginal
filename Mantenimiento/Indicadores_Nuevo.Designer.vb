@@ -46,18 +46,28 @@ Partial Class Indicadores_Nuevo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.panel_boton = New System.Windows.Forms.Panel()
-        Me.Tiempo_Inicio = New System.Windows.Forms.TextBox()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.Tiempo_Final = New System.Windows.Forms.TextBox()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Resultado = New System.Windows.Forms.Label()
-        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Tiempo_Inicio = New System.Windows.Forms.TextBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.acuhora = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.acuminutos = New System.Windows.Forms.Label()
+        Me.calminutos = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.calhoras = New System.Windows.Forms.Label()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.panel_boton.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label9
@@ -292,38 +302,31 @@ Partial Class Indicadores_Nuevo
         '
         'panel_boton
         '
+        Me.panel_boton.Controls.Add(Me.Panel5)
+        Me.panel_boton.Controls.Add(Me.calminutos)
+        Me.panel_boton.Controls.Add(Me.Label13)
+        Me.panel_boton.Controls.Add(Me.Label14)
+        Me.panel_boton.Controls.Add(Me.calhoras)
         Me.panel_boton.Controls.Add(Me.Button8)
-        Me.panel_boton.Controls.Add(Me.Resultado)
-        Me.panel_boton.Controls.Add(Me.Label2)
         Me.panel_boton.Controls.Add(Me.Tiempo_Final)
         Me.panel_boton.Controls.Add(Me.Button7)
         Me.panel_boton.Controls.Add(Me.Tiempo_Inicio)
         Me.panel_boton.Controls.Add(Me.Button6)
         Me.panel_boton.Location = New System.Drawing.Point(3, 45)
         Me.panel_boton.Name = "panel_boton"
-        Me.panel_boton.Size = New System.Drawing.Size(1010, 495)
+        Me.panel_boton.Size = New System.Drawing.Size(1010, 579)
         Me.panel_boton.TabIndex = 4
         Me.panel_boton.Visible = False
         '
-        'Tiempo_Inicio
+        'Button8
         '
-        Me.Tiempo_Inicio.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Tiempo_Inicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tiempo_Inicio.Location = New System.Drawing.Point(208, 45)
-        Me.Tiempo_Inicio.Name = "Tiempo_Inicio"
-        Me.Tiempo_Inicio.Size = New System.Drawing.Size(230, 34)
-        Me.Tiempo_Inicio.TabIndex = 4
-        Me.Tiempo_Inicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Button6
-        '
-        Me.Button6.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(13, 28)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(145, 67)
-        Me.Button6.TabIndex = 3
-        Me.Button6.Text = "Tiempo Inicio"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.Button8.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.Location = New System.Drawing.Point(26, 384)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(145, 67)
+        Me.Button8.TabIndex = 83
+        Me.Button8.Text = "Calcular"
+        Me.Button8.UseVisualStyleBackColor = True
         '
         'Tiempo_Final
         '
@@ -345,37 +348,148 @@ Partial Class Indicadores_Nuevo
         Me.Button7.Text = "Tiempo Final"
         Me.Button7.UseVisualStyleBackColor = True
         '
-        'Label2
+        'Tiempo_Inicio
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.LightGray
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label2.Location = New System.Drawing.Point(290, 373)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(229, 29)
-        Me.Label2.TabIndex = 81
-        Me.Label2.Text = "Cantidad de tiempo:"
+        Me.Tiempo_Inicio.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Tiempo_Inicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tiempo_Inicio.Location = New System.Drawing.Point(208, 45)
+        Me.Tiempo_Inicio.Name = "Tiempo_Inicio"
+        Me.Tiempo_Inicio.Size = New System.Drawing.Size(230, 34)
+        Me.Tiempo_Inicio.TabIndex = 4
+        Me.Tiempo_Inicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Resultado
+        'Button6
         '
-        Me.Resultado.AutoSize = True
-        Me.Resultado.BackColor = System.Drawing.Color.LightGray
-        Me.Resultado.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Resultado.Location = New System.Drawing.Point(533, 373)
-        Me.Resultado.Name = "Resultado"
-        Me.Resultado.Size = New System.Drawing.Size(64, 29)
-        Me.Resultado.TabIndex = 82
-        Me.Resultado.Text = "XXX"
+        Me.Button6.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(13, 28)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(145, 67)
+        Me.Button6.TabIndex = 3
+        Me.Button6.Text = "Tiempo Inicio"
+        Me.Button6.UseVisualStyleBackColor = True
         '
-        'Button8
+        'acuhora
         '
-        Me.Button8.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.Location = New System.Drawing.Point(374, 298)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(145, 67)
-        Me.Button8.TabIndex = 83
-        Me.Button8.Text = "Resultado"
-        Me.Button8.UseVisualStyleBackColor = True
+        Me.acuhora.AutoSize = True
+        Me.acuhora.BackColor = System.Drawing.Color.LightGray
+        Me.acuhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.acuhora.Location = New System.Drawing.Point(346, 139)
+        Me.acuhora.Name = "acuhora"
+        Me.acuhora.Size = New System.Drawing.Size(26, 29)
+        Me.acuhora.TabIndex = 85
+        Me.acuhora.Text = "0"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.LightGray
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label7.Location = New System.Drawing.Point(211, 69)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(229, 29)
+        Me.Label7.TabIndex = 84
+        Me.Label7.Text = "Tiempo Acumulado:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.LightGray
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label8.Location = New System.Drawing.Point(226, 139)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(83, 29)
+        Me.Label8.TabIndex = 86
+        Me.Label8.Text = "Horas:"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.LightGray
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label10.Location = New System.Drawing.Point(226, 197)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(103, 29)
+        Me.Label10.TabIndex = 87
+        Me.Label10.Text = "Minutos:"
+        '
+        'acuminutos
+        '
+        Me.acuminutos.AutoSize = True
+        Me.acuminutos.BackColor = System.Drawing.Color.LightGray
+        Me.acuminutos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.acuminutos.Location = New System.Drawing.Point(346, 197)
+        Me.acuminutos.Name = "acuminutos"
+        Me.acuminutos.Size = New System.Drawing.Size(26, 29)
+        Me.acuminutos.TabIndex = 88
+        Me.acuminutos.Text = "0"
+        '
+        'calminutos
+        '
+        Me.calminutos.AutoSize = True
+        Me.calminutos.BackColor = System.Drawing.Color.LightGray
+        Me.calminutos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.calminutos.Location = New System.Drawing.Point(339, 433)
+        Me.calminutos.Name = "calminutos"
+        Me.calminutos.Size = New System.Drawing.Size(26, 29)
+        Me.calminutos.TabIndex = 92
+        Me.calminutos.Text = "0"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.LightGray
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label13.Location = New System.Drawing.Point(219, 433)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(103, 29)
+        Me.Label13.TabIndex = 91
+        Me.Label13.Text = "Minutos:"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.LightGray
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label14.Location = New System.Drawing.Point(219, 367)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(83, 29)
+        Me.Label14.TabIndex = 90
+        Me.Label14.Text = "Horas:"
+        '
+        'calhoras
+        '
+        Me.calhoras.AutoSize = True
+        Me.calhoras.BackColor = System.Drawing.Color.LightGray
+        Me.calhoras.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.calhoras.Location = New System.Drawing.Point(339, 367)
+        Me.calhoras.Name = "calhoras"
+        Me.calhoras.Size = New System.Drawing.Size(26, 29)
+        Me.calhoras.TabIndex = 89
+        Me.calhoras.Text = "0"
+        '
+        'Button9
+        '
+        Me.Button9.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.Location = New System.Drawing.Point(29, 104)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(145, 67)
+        Me.Button9.TabIndex = 93
+        Me.Button9.Text = "Agregar tiempo"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Panel5
+        '
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.Button9)
+        Me.Panel5.Controls.Add(Me.acuminutos)
+        Me.Panel5.Controls.Add(Me.Label10)
+        Me.Panel5.Controls.Add(Me.Label8)
+        Me.Panel5.Controls.Add(Me.acuhora)
+        Me.Panel5.Controls.Add(Me.Label7)
+        Me.Panel5.Location = New System.Drawing.Point(522, 37)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(469, 280)
+        Me.Panel5.TabIndex = 94
         '
         'Indicadores_Nuevo
         '
@@ -409,6 +523,8 @@ Partial Class Indicadores_Nuevo
         Me.Panel2.PerformLayout()
         Me.panel_boton.ResumeLayout(False)
         Me.panel_boton.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -437,11 +553,20 @@ Partial Class Indicadores_Nuevo
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Button5 As Button
     Friend WithEvents panel_boton As Panel
-    Friend WithEvents Resultado As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Tiempo_Final As TextBox
     Friend WithEvents Button7 As Button
     Friend WithEvents Tiempo_Inicio As TextBox
     Friend WithEvents Button6 As Button
     Friend WithEvents Button8 As Button
+    Friend WithEvents calminutos As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents calhoras As Label
+    Friend WithEvents acuminutos As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents acuhora As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Button9 As Button
 End Class
