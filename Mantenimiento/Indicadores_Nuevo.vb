@@ -53,7 +53,7 @@ Public Class Indicadores_Nuevo
             Else
 
 
-                Dim adaptador As New SqlCommand("insert into Indicadores values ('" & count & "','" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 0 & ")", cn)
+                Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 0 & ",'" & Tiempo_Inicio.Text & "'," & acuhora.Text & "," & acuminutos.Text & ")", cn)
                 conectar()
                 adaptador.ExecuteNonQuery()
                 MsgBox("Se registro correctamente")
