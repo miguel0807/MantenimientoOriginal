@@ -97,4 +97,19 @@ Public Class Indicadores_Editable
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub Indicadores_Editable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        If panel_boton.Visible = True Then
+            panel_boton.Visible = False
+            Button5.Text = "Control de tiempo"
+        Else
+            panel_boton.Visible = True
+            Button5.Text = "Inicio"
+
+        End If
+    End Sub
 End Class
