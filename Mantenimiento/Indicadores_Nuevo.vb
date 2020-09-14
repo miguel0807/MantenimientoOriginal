@@ -150,16 +150,31 @@ Public Class Indicadores_Nuevo
         Dim FechaEntrada As String = Tiempo_Inicio.Text
         Dim FechaSalida As String = Tiempo_Final.Text
         Dim IntMinutos As Double
-
-        Dim hora As String
-        Dim minuto As String
+        Dim hora As Integer
+        Dim minuto As Integer
         Dim resul As String
 
         minutos = DateDiff(DateInterval.Minute, CDate(FechaEntrada), CDate(FechaSalida))
 
         IntMinutos = minutos
 
-        Resultado.Text = IntMinutos
+        hora = Math.Truncate(IntMinutos / 60)
+
+        minuto = Math.Truncate(IntMinutos - (hora * 60))
+
+        If hora = 0 Then
+            Resultado.Text = minuto & " minutos"
+        ElseIf hora = 1 And minuto = 0 Then
+            Resultado.Text = hora & " hora " & "con " & minuto & " minuto"
+
+        ElseIf hora = 1 And minuto > 0 Then
+            Resultado.Text = hora & " hora " & "con " & minuto & " minutos"
+        ElseIf hora = 1 Then
+            Resultado.Text = hora & " hora "
+        ElseIf hora >= 2 Then
+            Resultado.Text = hora & " horas " & "con " & minuto & " minutos"
+
+        End If
 
 
 
