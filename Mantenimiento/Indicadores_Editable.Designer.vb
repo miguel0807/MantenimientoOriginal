@@ -40,6 +40,8 @@ Partial Class Indicadores_Editable
         Me.Descripcion = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.panel_boton = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.acuminutos = New System.Windows.Forms.TextBox()
         Me.Button9 = New System.Windows.Forms.Button()
@@ -68,7 +70,7 @@ Partial Class Indicadores_Editable
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
-        Me.Button3.Location = New System.Drawing.Point(367, 525)
+        Me.Button3.Location = New System.Drawing.Point(414, 498)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(223, 78)
         Me.Button3.TabIndex = 5
@@ -240,6 +242,9 @@ Partial Class Indicadores_Editable
         '
         'panel_boton
         '
+        Me.panel_boton.Controls.Add(Me.TextBox1)
+        Me.panel_boton.Controls.Add(Me.Button2)
+        Me.panel_boton.Controls.Add(Me.Button3)
         Me.panel_boton.Controls.Add(Me.Panel5)
         Me.panel_boton.Controls.Add(Me.calminutos)
         Me.panel_boton.Controls.Add(Me.Label13)
@@ -255,6 +260,26 @@ Partial Class Indicadores_Editable
         Me.panel_boton.Size = New System.Drawing.Size(1010, 579)
         Me.panel_boton.TabIndex = 87
         Me.panel_boton.Visible = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(665, 399)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(230, 34)
+        Me.TextBox1.TabIndex = 96
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
+        Me.Button2.Location = New System.Drawing.Point(185, 498)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(223, 78)
+        Me.Button2.TabIndex = 95
+        Me.Button2.Text = "Pendiente"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Panel5
         '
@@ -448,7 +473,6 @@ Partial Class Indicadores_Editable
         Me.ClientSize = New System.Drawing.Size(1051, 646)
         Me.Controls.Add(Me.panel_boton)
         Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Descripcion)
         Me.Controls.Add(Me.Label6)
@@ -507,4 +531,6 @@ Partial Class Indicadores_Editable
     Friend WithEvents Tiempo_Inicio As TextBox
     Friend WithEvents Button6 As Button
     Friend WithEvents Button5 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents TextBox1 As TextBox
 End Class

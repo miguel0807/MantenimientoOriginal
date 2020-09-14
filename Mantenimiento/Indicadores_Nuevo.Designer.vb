@@ -47,7 +47,9 @@ Partial Class Indicadores_Nuevo
         Me.Button5 = New System.Windows.Forms.Button()
         Me.panel_boton = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.acuminutos = New System.Windows.Forms.TextBox()
         Me.Button9 = New System.Windows.Forms.Button()
+        Me.acuhora = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -60,8 +62,6 @@ Partial Class Indicadores_Nuevo
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Tiempo_Inicio = New System.Windows.Forms.TextBox()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.acuminutos = New System.Windows.Forms.TextBox()
-        Me.acuhora = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -332,6 +332,17 @@ Partial Class Indicadores_Nuevo
         Me.Panel5.Size = New System.Drawing.Size(469, 280)
         Me.Panel5.TabIndex = 94
         '
+        'acuminutos
+        '
+        Me.acuminutos.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.acuminutos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.acuminutos.Location = New System.Drawing.Point(342, 197)
+        Me.acuminutos.Name = "acuminutos"
+        Me.acuminutos.Size = New System.Drawing.Size(45, 34)
+        Me.acuminutos.TabIndex = 96
+        Me.acuminutos.Text = "0"
+        Me.acuminutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Button9
         '
         Me.Button9.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -341,6 +352,17 @@ Partial Class Indicadores_Nuevo
         Me.Button9.TabIndex = 93
         Me.Button9.Text = "Agregar tiempo"
         Me.Button9.UseVisualStyleBackColor = True
+        '
+        'acuhora
+        '
+        Me.acuhora.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.acuhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.acuhora.Location = New System.Drawing.Point(342, 136)
+        Me.acuhora.Name = "acuhora"
+        Me.acuhora.Size = New System.Drawing.Size(45, 34)
+        Me.acuhora.TabIndex = 95
+        Me.acuhora.Text = "0"
+        Me.acuhora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label10
         '
@@ -469,28 +491,6 @@ Partial Class Indicadores_Nuevo
         Me.Button6.TabIndex = 3
         Me.Button6.Text = "Tiempo Inicio"
         Me.Button6.UseVisualStyleBackColor = True
-        '
-        'acuminutos
-        '
-        Me.acuminutos.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.acuminutos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.acuminutos.Location = New System.Drawing.Point(342, 197)
-        Me.acuminutos.Name = "acuminutos"
-        Me.acuminutos.Size = New System.Drawing.Size(45, 34)
-        Me.acuminutos.TabIndex = 96
-        Me.acuminutos.Text = "0"
-        Me.acuminutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'acuhora
-        '
-        Me.acuhora.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.acuhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.acuhora.Location = New System.Drawing.Point(342, 136)
-        Me.acuhora.Name = "acuhora"
-        Me.acuhora.Size = New System.Drawing.Size(45, 34)
-        Me.acuhora.TabIndex = 95
-        Me.acuhora.Text = "0"
-        Me.acuhora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Indicadores_Nuevo
         '
