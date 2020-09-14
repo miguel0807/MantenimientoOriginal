@@ -62,8 +62,8 @@ Public Class Indicadores_Proceso
                 Indicadores_Editable.Fecha.Text = Me.DataGridView1.CurrentRow.Cells.Item(5).Value.ToString
 
                 Indicadores_Editable.Tiempo_Inicio.Text = Me.DataGridView1.CurrentRow.Cells.Item(8).Value.ToString
-                Indicadores_Editable.acuhora.Text = Me.DataGridView1.CurrentRow.Cells.Item(9).Value.ToString
-                Indicadores_Editable.acuminutos.Text = Me.DataGridView1.CurrentRow.Cells.Item(10).Value.ToString
+                Indicadores_Editable.txtacuhora.Text = Me.DataGridView1.CurrentRow.Cells.Item(9).Value.ToString
+                Indicadores_Editable.txtacuminutos.Text = Me.DataGridView1.CurrentRow.Cells.Item(10).Value.ToString
                 ' Indicadores_Editable.fecha_final.Text = Me.DataGridView1.CurrentRow.Cells.Item(5).Value.ToString
                 'Almacena informacion para ser impresa
 
