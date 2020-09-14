@@ -17,7 +17,7 @@ Public Class Indicadores_Nuevo
             If Nombre.Text = "" Or Fecha.Text = "" Then
                 MsgBox("Necesita completar problema y fecha de inicio")
             Else
-                Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 1 & ")", cn)
+                Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 1 & ",'" & Tiempo_Inicio.Text & "'," & acuhora.Text & "," & acuminutos.Text & ")", cn)
                 conectar()
                 adaptador.ExecuteNonQuery()
                 MsgBox("Se registro correctamente")
