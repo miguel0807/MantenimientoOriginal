@@ -157,9 +157,9 @@ Partial Class Indicadores_Editable
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel3.Controls.Add(Me.fecha_final)
         Me.Panel3.Controls.Add(Me.Button4)
-        Me.Panel3.Location = New System.Drawing.Point(578, 150)
+        Me.Panel3.Location = New System.Drawing.Point(525, 150)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(416, 79)
+        Me.Panel3.Size = New System.Drawing.Size(469, 79)
         Me.Panel3.TabIndex = 3
         '
         'fecha_final
@@ -167,7 +167,7 @@ Partial Class Indicadores_Editable
         Me.fecha_final.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.fecha_final.Location = New System.Drawing.Point(162, 18)
         Me.fecha_final.Name = "fecha_final"
-        Me.fecha_final.Size = New System.Drawing.Size(230, 34)
+        Me.fecha_final.Size = New System.Drawing.Size(283, 34)
         Me.fecha_final.TabIndex = 2
         '
         'Button4
@@ -186,17 +186,17 @@ Partial Class Indicadores_Editable
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.Fecha)
         Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Location = New System.Drawing.Point(578, 50)
+        Me.Panel2.Location = New System.Drawing.Point(525, 50)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(416, 79)
+        Me.Panel2.Size = New System.Drawing.Size(469, 79)
         Me.Panel2.TabIndex = 2
         '
         'Fecha
         '
         Me.Fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Fecha.Location = New System.Drawing.Point(162, 28)
+        Me.Fecha.Location = New System.Drawing.Point(162, 22)
         Me.Fecha.Name = "Fecha"
-        Me.Fecha.Size = New System.Drawing.Size(230, 34)
+        Me.Fecha.Size = New System.Drawing.Size(283, 34)
         Me.Fecha.TabIndex = 1
         '
         'Button1

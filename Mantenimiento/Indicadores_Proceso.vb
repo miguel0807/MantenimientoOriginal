@@ -27,7 +27,7 @@ Public Class Indicadores_Proceso
             tabla.Columns(2).Width = 130
             tabla.Columns(3).Width = 170
             tabla.Columns(4).Width = 267
-            tabla.Columns(5).DefaultCellStyle.Format = "yyyy/MM/dd"
+            tabla.Columns(5).DefaultCellStyle.Format = "MM/dd/yyyy"
             tabla.Columns(5).Width = 100
 
             'Habilita conteo de filas en datagridview
@@ -104,6 +104,7 @@ Public Class Indicadores_Proceso
             tabla.Columns(3).Width = 170
             tabla.Columns(4).Width = 267
             tabla.Columns(5).Width = 100
+            tabla.Columns(5).DefaultCellStyle.Format = "MM/dd/yyyy"
 
             'Habilita conteo de filas en datagridview
             Label1.Visible = True
