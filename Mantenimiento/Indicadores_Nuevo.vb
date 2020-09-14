@@ -108,4 +108,60 @@ Public Class Indicadores_Nuevo
 
 
     End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Try
+#Region "Colocacion de fecha cuando se genera la licencia"
+
+
+            Tiempo_Inicio.Text = DateTime.Now
+            Dim fechacreacion As Date
+            fechacreacion = Tiempo_Inicio.Text
+            Tiempo_Inicio.Text = Format(fechacreacion, "HH:mm")
+#End Region
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Try
+#Region "Colocacion de fecha cuando se genera la licencia"
+
+
+            Tiempo_Final.Text = DateTime.Now
+            Dim fechacreacion As Date
+            fechacreacion = Tiempo_Final.Text
+            Tiempo_Final.Text = Format(fechacreacion, "HH:mm")
+#End Region
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+
+
+        Dim minutos As String
+
+
+        Dim FechaEntrada As String = Tiempo_Inicio.Text
+        Dim FechaSalida As String = Tiempo_Final.Text
+        Dim IntMinutos As Double
+
+        Dim hora As String
+        Dim minuto As String
+        Dim resul As String
+
+        minutos = DateDiff(DateInterval.Minute, CDate(FechaEntrada), CDate(FechaSalida))
+
+        IntMinutos = minutos
+
+        Resultado.Text = IntMinutos
+
+
+
+    End Sub
 End Class

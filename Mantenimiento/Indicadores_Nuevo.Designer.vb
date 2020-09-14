@@ -46,12 +46,13 @@ Partial Class Indicadores_Nuevo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.panel_boton = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Tiempo_Inicio = New System.Windows.Forms.TextBox()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Tiempo_Final = New System.Windows.Forms.TextBox()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Resultado = New System.Windows.Forms.Label()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -291,11 +292,12 @@ Partial Class Indicadores_Nuevo
         '
         'panel_boton
         '
-        Me.panel_boton.Controls.Add(Me.Label4)
+        Me.panel_boton.Controls.Add(Me.Button8)
+        Me.panel_boton.Controls.Add(Me.Resultado)
         Me.panel_boton.Controls.Add(Me.Label2)
-        Me.panel_boton.Controls.Add(Me.TextBox2)
+        Me.panel_boton.Controls.Add(Me.Tiempo_Final)
         Me.panel_boton.Controls.Add(Me.Button7)
-        Me.panel_boton.Controls.Add(Me.TextBox1)
+        Me.panel_boton.Controls.Add(Me.Tiempo_Inicio)
         Me.panel_boton.Controls.Add(Me.Button6)
         Me.panel_boton.Location = New System.Drawing.Point(3, 45)
         Me.panel_boton.Name = "panel_boton"
@@ -303,14 +305,15 @@ Partial Class Indicadores_Nuevo
         Me.panel_boton.TabIndex = 4
         Me.panel_boton.Visible = False
         '
-        'TextBox1
+        'Tiempo_Inicio
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(208, 45)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(230, 34)
-        Me.TextBox1.TabIndex = 4
+        Me.Tiempo_Inicio.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Tiempo_Inicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tiempo_Inicio.Location = New System.Drawing.Point(208, 45)
+        Me.Tiempo_Inicio.Name = "Tiempo_Inicio"
+        Me.Tiempo_Inicio.Size = New System.Drawing.Size(230, 34)
+        Me.Tiempo_Inicio.TabIndex = 4
+        Me.Tiempo_Inicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Button6
         '
@@ -322,14 +325,15 @@ Partial Class Indicadores_Nuevo
         Me.Button6.Text = "Tiempo Inicio"
         Me.Button6.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'Tiempo_Final
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(208, 208)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(230, 34)
-        Me.TextBox2.TabIndex = 6
+        Me.Tiempo_Final.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Tiempo_Final.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tiempo_Final.Location = New System.Drawing.Point(208, 208)
+        Me.Tiempo_Final.Name = "Tiempo_Final"
+        Me.Tiempo_Final.Size = New System.Drawing.Size(230, 34)
+        Me.Tiempo_Final.TabIndex = 6
+        Me.Tiempo_Final.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Button7
         '
@@ -346,22 +350,32 @@ Partial Class Indicadores_Nuevo
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.LightGray
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label2.Location = New System.Drawing.Point(674, 432)
+        Me.Label2.Location = New System.Drawing.Point(290, 373)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(223, 29)
+        Me.Label2.Size = New System.Drawing.Size(229, 29)
         Me.Label2.TabIndex = 81
-        Me.Label2.Text = "Cantidad de tiempo"
+        Me.Label2.Text = "Cantidad de tiempo:"
         '
-        'Label4
+        'Resultado
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.LightGray
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label4.Location = New System.Drawing.Point(917, 432)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(64, 29)
-        Me.Label4.TabIndex = 82
-        Me.Label4.Text = "XXX"
+        Me.Resultado.AutoSize = True
+        Me.Resultado.BackColor = System.Drawing.Color.LightGray
+        Me.Resultado.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Resultado.Location = New System.Drawing.Point(533, 373)
+        Me.Resultado.Name = "Resultado"
+        Me.Resultado.Size = New System.Drawing.Size(64, 29)
+        Me.Resultado.TabIndex = 82
+        Me.Resultado.Text = "XXX"
+        '
+        'Button8
+        '
+        Me.Button8.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.Location = New System.Drawing.Point(374, 298)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(145, 67)
+        Me.Button8.TabIndex = 83
+        Me.Button8.Text = "Resultado"
+        Me.Button8.UseVisualStyleBackColor = True
         '
         'Indicadores_Nuevo
         '
@@ -423,10 +437,11 @@ Partial Class Indicadores_Nuevo
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Button5 As Button
     Friend WithEvents panel_boton As Panel
-    Friend WithEvents Label4 As Label
+    Friend WithEvents Resultado As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Tiempo_Final As TextBox
     Friend WithEvents Button7 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Tiempo_Inicio As TextBox
     Friend WithEvents Button6 As Button
+    Friend WithEvents Button8 As Button
 End Class
