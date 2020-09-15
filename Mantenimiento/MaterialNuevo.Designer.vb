@@ -229,6 +229,7 @@ Partial Class MaterialNuevo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(878, 648)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Clasificacion)
