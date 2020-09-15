@@ -27,6 +27,7 @@ Public Class Indicadores_Proceso
             tabla.Columns(2).Width = 130
             tabla.Columns(3).Width = 170
             tabla.Columns(4).Width = 267
+            tabla.Columns(5).DefaultCellStyle.Format = "MM/dd/yyyy"
             tabla.Columns(5).Width = 100
 
             'Habilita conteo de filas en datagridview
@@ -59,6 +60,10 @@ Public Class Indicadores_Proceso
                 Indicadores_Editable.Clasificacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(3).Value.ToString
                 Indicadores_Editable.Descripcion.Text = Me.DataGridView1.CurrentRow.Cells.Item(4).Value.ToString
                 Indicadores_Editable.Fecha.Text = Me.DataGridView1.CurrentRow.Cells.Item(5).Value.ToString
+
+                Indicadores_Editable.Tiempo_Inicio.Text = Me.DataGridView1.CurrentRow.Cells.Item(8).Value.ToString
+                Indicadores_Editable.txtacuhora.Text = Me.DataGridView1.CurrentRow.Cells.Item(9).Value.ToString
+                Indicadores_Editable.txtacuminutos.Text = Me.DataGridView1.CurrentRow.Cells.Item(10).Value.ToString
                 ' Indicadores_Editable.fecha_final.Text = Me.DataGridView1.CurrentRow.Cells.Item(5).Value.ToString
                 'Almacena informacion para ser impresa
 
@@ -99,6 +104,7 @@ Public Class Indicadores_Proceso
             tabla.Columns(3).Width = 170
             tabla.Columns(4).Width = 267
             tabla.Columns(5).Width = 100
+            tabla.Columns(5).DefaultCellStyle.Format = "MM/dd/yyyy"
 
             'Habilita conteo de filas en datagridview
             Label1.Visible = True
@@ -111,5 +117,7 @@ Public Class Indicadores_Proceso
         End Try
     End Sub
 
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
+    End Sub
 End Class
