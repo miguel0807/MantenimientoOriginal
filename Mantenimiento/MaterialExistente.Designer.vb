@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MaterialExistente
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class MaterialExistente
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -44,6 +44,8 @@ Partial Class MaterialExistente
         Me.Material = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -59,7 +61,7 @@ Partial Class MaterialExistente
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(315, 32)
+        Me.Button1.Location = New System.Drawing.Point(511, 32)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(190, 58)
         Me.Button1.TabIndex = 19
@@ -259,16 +261,37 @@ Partial Class MaterialExistente
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label10.Location = New System.Drawing.Point(13, 43)
+        Me.Label10.Location = New System.Drawing.Point(12, 9)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(99, 29)
+        Me.Label10.Size = New System.Drawing.Size(210, 29)
         Me.Label10.TabIndex = 74
-        Me.Label10.Text = "Material"
+        Me.Label10.Text = "Tipo de busqueda"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Material", "Codigo"})
+        Me.ComboBox1.Location = New System.Drawing.Point(9, 50)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(229, 37)
+        Me.ComboBox1.TabIndex = 75
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label11.Location = New System.Drawing.Point(288, 9)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(122, 29)
+        Me.Label11.TabIndex = 77
+        Me.Label11.Text = "Busqueda"
         '
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(130, 40)
+        Me.TextBox1.Location = New System.Drawing.Point(281, 50)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(145, 34)
         Me.TextBox1.TabIndex = 73
@@ -277,9 +300,11 @@ Partial Class MaterialExistente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(961, 634)
-        Me.Controls.Add(Me.Label10)
+        Me.ClientSize = New System.Drawing.Size(924, 664)
         Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -313,5 +338,7 @@ Partial Class MaterialExistente
     Friend WithEvents Material As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label10 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label11 As Label
     Friend WithEvents TextBox1 As TextBox
 End Class

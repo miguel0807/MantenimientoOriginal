@@ -6,4 +6,8 @@
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+
+    Private Sub MaterialExistente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CenterToScreen()
+    End Sub
 End Class
