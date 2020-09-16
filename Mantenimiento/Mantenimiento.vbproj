@@ -117,6 +117,12 @@
     <Compile Include="Busqueda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Busqueda_Material.Designer.vb">
+      <DependentUpon>Busqueda_Material.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda_Material.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Conexion.vb" />
     <Compile Include="Ejemplo.Designer.vb">
       <DependentUpon>Ejemplo.vb</DependentUpon>
@@ -181,6 +187,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Busqueda.resx">
       <DependentUpon>Busqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda_Material.resx">
+      <DependentUpon>Busqueda_Material.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ejemplo.resx">
       <DependentUpon>Ejemplo.vb</DependentUpon>

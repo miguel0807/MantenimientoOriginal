@@ -21,3 +21,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Mantenimie
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Mantenimiento.application
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.exe.manifest
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.application
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Busqueda_Material.resources
