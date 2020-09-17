@@ -50,4 +50,38 @@ Public Class Busqueda_Material
         desconectar()
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Modificar_Material.Show()
+
+
+        Me.DataGridView1.Select() 'Seleccionar primera fila del datagridview
+
+
+
+        'Almacena informacion para ser impresa
+
+        Modificar_Material.Material.Text = Me.DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
+        Modificar_Material.Cantidad.Text = Me.DataGridView1.CurrentRow.Cells.Item(2).Value.ToString
+        Modificar_Material.Unidad.Text = Me.DataGridView1.CurrentRow.Cells.Item(3).Value.ToString
+
+
+
+
+        Modificar_Material.Marca.Text = Me.DataGridView1.CurrentRow.Cells.Item(4).Value.ToString
+        Modificar_Material.Modelo.Text = Me.DataGridView1.CurrentRow.Cells.Item(5).Value.ToString
+        Modificar_Material.Serie.Text = Me.DataGridView1.CurrentRow.Cells.Item(6).Value.ToString
+        Modificar_Material.Ubicacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(7).Value.ToString
+        Modificar_Material.Descripcion.Text = Me.DataGridView1.CurrentRow.Cells.Item(8).Value.ToString
+        Modificar_Material.Clasificacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(9).Value.ToString
+
+        Modificar_Material.Codigo.Text = Me.DataGridView1.CurrentRow.Cells.Item(10).Value.ToString
+
+        Modificar_Material.Empresa.Text = Me.DataGridView1.CurrentRow.Cells.Item(11).Value.ToString
+        Modificar_Material.Parte.Text = Me.DataGridView1.CurrentRow.Cells.Item(12).Value.ToString
+        Modificar_Material.Equipo.Text = Me.DataGridView1.CurrentRow.Cells.Item(13).Value.ToString
+
+
+    End Sub
 End Class
