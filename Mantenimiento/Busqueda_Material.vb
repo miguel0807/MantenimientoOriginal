@@ -41,19 +41,19 @@ Public Class Busqueda_Material
         tabla.Columns(5).Width = 100
         tabla.Columns(6).Width = 100
         tabla.Columns(7).Width = 120
-        tabla.Columns(8).Width = 250
+            tabla.Columns(8).Width = 360
 
-        tabla.Columns(9).Width = 100
+            tabla.Columns(9).Width = 100
         tabla.Columns(10).Width = 100
 
         tabla.Columns(11).Width = 80
         tabla.Columns(12).Width = 80
-        tabla.Columns(13).Width = 150
+            tabla.Columns(13).Width = 200
 
 
 
 
-        Label1.Visible = True
+            Label1.Visible = True
 
         Label1.Text = "Cantidad: " & tabla.RowCount
         desconectar()

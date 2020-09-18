@@ -97,25 +97,29 @@ Public Class Modificar_Material
         End If
     End Sub
 
-    Private Sub Ingresar_Click(sender As Object, e As EventArgs) Handles Ingresar.Click
+    Private Sub Ingresar_Click(sender As Object, e As EventArgs)
 
-        Try
-
-            conectar()
-        Dim actualizarnombre As New SqlCommand("Update Bodega SET Material =('" & Material.Text & "'), Cantidad =(" & Cantidad.Text & "), Unidad =('" & Unidad.Text & "') , Empresa =('" & Empresa.Text & "'), [#Parte] =('" & Parte.Text & "'), [Equipo] =('" & Equipo.Text & "'), [Marca] =('" & Marca.Text & "'), [Modelo]= ('" & Modelo.Text & "'), [Serie]= ('" & Serie.Text & "'), [Ubicacion]= ('" & Ubicacion.Text & "'),[Clasificacion]= ('" & Clasificacion.Text & "'),[Descripcion]= ('" & Descripcion.Text & "')  where [Conteo] = (" & conteo & ")", cn)
-        'TextBox1.Text = actualizarnombre.CommandText
-        actualizarnombre.ExecuteNonQuery()
-        cn.Close()
-        MsgBox("Se registro correctamente")
-
-        Me.Close()
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
     End Sub
 
     Private Sub Modificar_Material_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Try
+
+            conectar()
+            Dim actualizarnombre As New SqlCommand("Update Bodega SET Material =('" & Material.Text & "'), Cantidad =(" & Cantidad.Text & "), Unidad =('" & Unidad.Text & "') , Empresa =('" & Empresa.Text & "'), [#Parte] =('" & Parte.Text & "'), [Equipo] =('" & Equipo.Text & "'), [Marca] =('" & Marca.Text & "'), [Modelo]= ('" & Modelo.Text & "'), [Serie]= ('" & Serie.Text & "'), [Ubicacion]= ('" & Ubicacion.Text & "'),[Clasificacion]= ('" & Clasificacion.Text & "'),[Descripcion]= ('" & Descripcion.Text & "')  where [Conteo] = (" & conteo & ")", cn)
+            'TextBox1.Text = actualizarnombre.CommandText
+            actualizarnombre.ExecuteNonQuery()
+            cn.Close()
+            MsgBox("Se registro correctamente")
+
+            Me.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

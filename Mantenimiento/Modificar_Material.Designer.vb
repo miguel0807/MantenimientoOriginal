@@ -47,7 +47,6 @@ Partial Class Modificar_Material
         Me.Cantidad = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Material = New System.Windows.Forms.TextBox()
-        Me.Ingresar = New System.Windows.Forms.Button()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
@@ -60,6 +59,7 @@ Partial Class Modificar_Material
         Me.RadioButton11 = New System.Windows.Forms.RadioButton()
         Me.RadioButton12 = New System.Windows.Forms.RadioButton()
         Me.RadioButton10 = New System.Windows.Forms.RadioButton()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Equipo
@@ -328,15 +328,6 @@ Partial Class Modificar_Material
         Me.Material.Size = New System.Drawing.Size(331, 34)
         Me.Material.TabIndex = 62
         '
-        'Ingresar
-        '
-        Me.Ingresar.Location = New System.Drawing.Point(495, 51)
-        Me.Ingresar.Name = "Ingresar"
-        Me.Ingresar.Size = New System.Drawing.Size(190, 58)
-        Me.Ingresar.TabIndex = 74
-        Me.Ingresar.Text = "Ajustar"
-        Me.Ingresar.UseVisualStyleBackColor = True
-        '
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
@@ -457,12 +448,28 @@ Partial Class Modificar_Material
         Me.RadioButton10.TabStop = True
         Me.RadioButton10.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.Button1.FlatAppearance.BorderSize = 3
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Button1.Location = New System.Drawing.Point(468, 37)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(186, 84)
+        Me.Button1.TabIndex = 102
+        Me.Button1.Text = "Ajustar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Modificar_Material
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1136, 736)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.RadioButton10)
         Me.Controls.Add(Me.RadioButton7)
         Me.Controls.Add(Me.RadioButton8)
@@ -500,10 +507,8 @@ Partial Class Modificar_Material
         Me.Controls.Add(Me.Cantidad)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Material)
-        Me.Controls.Add(Me.Ingresar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Modificar_Material"
-        Me.Text = "Modificar_Material"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -534,7 +539,6 @@ Partial Class Modificar_Material
     Friend WithEvents Cantidad As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Material As TextBox
-    Friend WithEvents Ingresar As Button
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton3 As RadioButton
@@ -547,4 +551,5 @@ Partial Class Modificar_Material
     Friend WithEvents RadioButton11 As RadioButton
     Friend WithEvents RadioButton12 As RadioButton
     Friend WithEvents RadioButton10 As RadioButton
+    Friend WithEvents Button1 As Button
 End Class
