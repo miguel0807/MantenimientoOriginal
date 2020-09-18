@@ -111,12 +111,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Busqueda.Designer.vb">
-      <DependentUpon>Busqueda.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Busqueda.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Busqueda_Material.Designer.vb">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
     </Compile>
@@ -191,9 +185,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Busqueda.resx">
-      <DependentUpon>Busqueda.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Busqueda_Material.resx">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
     </EmbeddedResource>

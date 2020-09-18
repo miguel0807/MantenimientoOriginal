@@ -25,10 +25,10 @@ Partial Class Presentacion
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Presentacion))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -40,7 +40,7 @@ Partial Class Presentacion
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(70, 153)
+        Me.Button1.Location = New System.Drawing.Point(2, 66)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(200, 135)
         Me.Button1.TabIndex = 0
@@ -55,32 +55,12 @@ Partial Class Presentacion
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
         Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Location = New System.Drawing.Point(514, 153)
+        Me.Button2.Location = New System.Drawing.Point(218, 66)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(200, 135)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Casos en proceso"
         Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(116, 358)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(132, 72)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Nuevo Material"
-        Me.Button3.UseVisualStyleBackColor = True
-        Me.Button3.Visible = False
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(264, 358)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(132, 72)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Ejemplo"
-        Me.Button4.UseVisualStyleBackColor = True
-        Me.Button4.Visible = False
         '
         'Panel1
         '
@@ -100,16 +80,47 @@ Partial Class Presentacion
         Me.Panel2.Size = New System.Drawing.Size(810, 60)
         Me.Panel2.TabIndex = 5
         '
+        'Button5
+        '
+        Me.Button5.FlatAppearance.BorderSize = 3
+        Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
+        Me.Button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button5.Location = New System.Drawing.Point(588, 250)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(200, 135)
+        Me.Button5.TabIndex = 7
+        Me.Button5.Text = "Busqueda Material"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button6.FlatAppearance.BorderSize = 3
+        Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button6.Location = New System.Drawing.Point(364, 250)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(200, 135)
+        Me.Button6.TabIndex = 6
+        Me.Button6.Text = "Material Nuevo"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Presentacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.ForeColor = System.Drawing.SystemColors.ControlDarkDark
@@ -125,8 +136,8 @@ Partial Class Presentacion
 
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
 End Class

@@ -26,22 +26,26 @@ Public Class Busqueda_Material
 
         tabla.RowHeadersVisible = False
 
-        tabla.Columns(1).Width = 150
+        tabla.Columns(1).Width = 200
         tabla.Columns(2).Width = 80
         tabla.Columns(3).Width = 80
-        tabla.Columns(4).Width = 80
+        tabla.Columns(4).Width = 100
 
-        tabla.Columns(5).Width = 80
-        tabla.Columns(6).Width = 80
-        tabla.Columns(7).Width = 80
-        tabla.Columns(8).Width = 200
 
-        tabla.Columns(9).Width = 80
-        tabla.Columns(10).Width = 80
+
+        tabla.Columns(5).Width = 100
+        tabla.Columns(6).Width = 100
+        tabla.Columns(7).Width = 120
+        tabla.Columns(8).Width = 250
+
+        tabla.Columns(9).Width = 100
+        tabla.Columns(10).Width = 100
+
         tabla.Columns(11).Width = 80
         tabla.Columns(12).Width = 80
+        tabla.Columns(13).Width = 150
 
-        tabla.Columns(13).Width = 80
+
 
 
         Label1.Visible = True
@@ -61,6 +65,8 @@ Public Class Busqueda_Material
 
 
         'Almacena informacion para ser impresa
+
+        Modificar_Material.conteo = Me.DataGridView1.CurrentRow.Cells.Item(0).Value.ToString
 
         Modificar_Material.Material.Text = Me.DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
         Modificar_Material.Cantidad.Text = Me.DataGridView1.CurrentRow.Cells.Item(2).Value.ToString
@@ -82,6 +88,10 @@ Public Class Busqueda_Material
         Modificar_Material.Parte.Text = Me.DataGridView1.CurrentRow.Cells.Item(12).Value.ToString
         Modificar_Material.Equipo.Text = Me.DataGridView1.CurrentRow.Cells.Item(13).Value.ToString
 
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
     End Sub
 End Class

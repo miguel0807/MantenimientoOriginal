@@ -9,16 +9,11 @@
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         MaterialNuevo.Show()
-
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Ejemplo.Show()
-    End Sub
-
-    Private Sub Presentacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Busqueda_Material.Show()
     End Sub
 End Class

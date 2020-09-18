@@ -331,7 +331,7 @@ Partial Class Modificar_Material
         Me.Ingresar.Name = "Ingresar"
         Me.Ingresar.Size = New System.Drawing.Size(190, 58)
         Me.Ingresar.TabIndex = 74
-        Me.Ingresar.Text = "Ingresar"
+        Me.Ingresar.Text = "Ajustar"
         Me.Ingresar.UseVisualStyleBackColor = True
         '
         'RadioButton1
