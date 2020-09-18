@@ -47,7 +47,6 @@ Partial Class Modificar_Material
         Me.Cantidad = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Material = New System.Windows.Forms.TextBox()
-        Me.Borrar = New System.Windows.Forms.Button()
         Me.Ingresar = New System.Windows.Forms.Button()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -65,6 +64,7 @@ Partial Class Modificar_Material
         '
         'Equipo
         '
+        Me.Equipo.BackColor = System.Drawing.SystemColors.Control
         Me.Equipo.Enabled = False
         Me.Equipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Equipo.FormattingEnabled = True
@@ -86,6 +86,7 @@ Partial Class Modificar_Material
         '
         'Empresa
         '
+        Me.Empresa.BackColor = System.Drawing.SystemColors.Control
         Me.Empresa.Enabled = False
         Me.Empresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Empresa.FormattingEnabled = True
@@ -117,6 +118,7 @@ Partial Class Modificar_Material
         '
         'Parte
         '
+        Me.Parte.BackColor = System.Drawing.SystemColors.Control
         Me.Parte.Enabled = False
         Me.Parte.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Parte.Location = New System.Drawing.Point(148, 398)
@@ -126,6 +128,7 @@ Partial Class Modificar_Material
         '
         'Serie
         '
+        Me.Serie.BackColor = System.Drawing.SystemColors.Control
         Me.Serie.Enabled = False
         Me.Serie.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Serie.FormattingEnabled = True
@@ -137,6 +140,7 @@ Partial Class Modificar_Material
         '
         'Modelo
         '
+        Me.Modelo.BackColor = System.Drawing.SystemColors.Control
         Me.Modelo.Enabled = False
         Me.Modelo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Modelo.FormattingEnabled = True
@@ -148,6 +152,7 @@ Partial Class Modificar_Material
         '
         'Marca
         '
+        Me.Marca.BackColor = System.Drawing.SystemColors.Control
         Me.Marca.Enabled = False
         Me.Marca.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Marca.FormattingEnabled = True
@@ -159,6 +164,7 @@ Partial Class Modificar_Material
         '
         'Clasificacion
         '
+        Me.Clasificacion.BackColor = System.Drawing.SystemColors.Control
         Me.Clasificacion.Enabled = False
         Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Clasificacion.FormattingEnabled = True
@@ -170,6 +176,7 @@ Partial Class Modificar_Material
         '
         'Ubicacion
         '
+        Me.Ubicacion.BackColor = System.Drawing.SystemColors.Control
         Me.Ubicacion.Enabled = False
         Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Ubicacion.FormattingEnabled = True
@@ -180,6 +187,7 @@ Partial Class Modificar_Material
         '
         'Unidad
         '
+        Me.Unidad.BackColor = System.Drawing.SystemColors.Control
         Me.Unidad.Enabled = False
         Me.Unidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Unidad.FormattingEnabled = True
@@ -191,6 +199,7 @@ Partial Class Modificar_Material
         '
         'Codigo
         '
+        Me.Codigo.BackColor = System.Drawing.SystemColors.Control
         Me.Codigo.Enabled = False
         Me.Codigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Codigo.Location = New System.Drawing.Point(12, 700)
@@ -210,6 +219,7 @@ Partial Class Modificar_Material
         '
         'Descripcion
         '
+        Me.Descripcion.BackColor = System.Drawing.SystemColors.Control
         Me.Descripcion.Enabled = False
         Me.Descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Descripcion.Location = New System.Drawing.Point(291, 521)
@@ -290,6 +300,7 @@ Partial Class Modificar_Material
         '
         'Cantidad
         '
+        Me.Cantidad.BackColor = System.Drawing.SystemColors.Control
         Me.Cantidad.Enabled = False
         Me.Cantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cantidad.Location = New System.Drawing.Point(149, 243)
@@ -309,6 +320,7 @@ Partial Class Modificar_Material
         '
         'Material
         '
+        Me.Material.BackColor = System.Drawing.SystemColors.Control
         Me.Material.Enabled = False
         Me.Material.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Material.Location = New System.Drawing.Point(149, 193)
@@ -316,18 +328,9 @@ Partial Class Modificar_Material
         Me.Material.Size = New System.Drawing.Size(331, 34)
         Me.Material.TabIndex = 62
         '
-        'Borrar
-        '
-        Me.Borrar.Location = New System.Drawing.Point(567, 52)
-        Me.Borrar.Name = "Borrar"
-        Me.Borrar.Size = New System.Drawing.Size(190, 58)
-        Me.Borrar.TabIndex = 75
-        Me.Borrar.Text = "Borrar"
-        Me.Borrar.UseVisualStyleBackColor = True
-        '
         'Ingresar
         '
-        Me.Ingresar.Location = New System.Drawing.Point(259, 52)
+        Me.Ingresar.Location = New System.Drawing.Point(495, 51)
         Me.Ingresar.Name = "Ingresar"
         Me.Ingresar.Size = New System.Drawing.Size(190, 58)
         Me.Ingresar.TabIndex = 74
@@ -458,6 +461,7 @@ Partial Class Modificar_Material
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1136, 736)
         Me.Controls.Add(Me.RadioButton10)
         Me.Controls.Add(Me.RadioButton7)
@@ -496,8 +500,8 @@ Partial Class Modificar_Material
         Me.Controls.Add(Me.Cantidad)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Material)
-        Me.Controls.Add(Me.Borrar)
         Me.Controls.Add(Me.Ingresar)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Modificar_Material"
         Me.Text = "Modificar_Material"
         Me.ResumeLayout(False)
@@ -530,7 +534,6 @@ Partial Class Modificar_Material
     Friend WithEvents Cantidad As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Material As TextBox
-    Friend WithEvents Borrar As Button
     Friend WithEvents Ingresar As Button
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton

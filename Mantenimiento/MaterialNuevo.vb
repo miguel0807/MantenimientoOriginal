@@ -4,22 +4,26 @@ Public Class MaterialNuevo
     Dim codigo1 As String
     Private Sub Ingresar_Click(sender As Object, e As EventArgs) Handles Ingresar.Click
 
-
-        Dim adaptador As New SqlCommand("insert into Bodega values (" & count & ",'" & Material.Text & "'," & Cantidad.Text & ",'" & Unidad.Text & "','" & Marca.Text & "','" & Modelo.Text & "','" & Serie.Text & "','" & Ubicacion.Text & "','" & Descripcion.Text & "','" & Clasificacion.Text & "','" & Codigo.Text & "','" & Empresa.Text & "','" & Parte.Text & "','" & Equipo.Text & "')", cn)
+        Try
+            Dim adaptador As New SqlCommand("insert into Bodega values (" & count & ",'" & Material.Text & "'," & Cantidad.Text & ",'" & Unidad.Text & "','" & Marca.Text & "','" & Modelo.Text & "','" & Serie.Text & "','" & Ubicacion.Text & "','" & Descripcion.Text & "','" & Clasificacion.Text & "','" & Codigo.Text & "','" & Empresa.Text & "','" & Parte.Text & "','" & Equipo.Text & "')", cn)
         conectar()
         adaptador.ExecuteNonQuery()
         MsgBox("Se registro correctamente")
 
-        'Material.Text = ""
-        'Cantidad.Text = ""
-        'Unidad.Text = ""
-        'Marca.Text = ""
-        'Modelo.Text = ""
-        'Serie.Text = ""
-        'Ubicacion.Text = ""
-        'Descripcion.Text = ""
-        'Clasificacion.Text = ""
-        desconectar()
+            'Material.Text = ""
+            'Cantidad.Text = ""
+            'Unidad.Text = ""
+            'Marca.Text = ""
+            'Modelo.Text = ""
+            'Serie.Text = ""
+            'Ubicacion.Text = ""
+            'Descripcion.Text = ""
+            'Clasificacion.Text = ""
+            desconectar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub Borrar_Click(sender As Object, e As EventArgs) Handles Borrar.Click
@@ -35,7 +39,8 @@ Public Class MaterialNuevo
     End Sub
 
     Private Sub MaterialNuevo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CenterToScreen()
+        Try
+            CenterToScreen()
 
         conectar()
 
@@ -46,7 +51,11 @@ Public Class MaterialNuevo
         Codigo.Text = "MATCR-" & count
         'Coloca la cantidad de filas que hay en la tabla temporal
         desconectar()
-        Codigo.Enabled = False
+            Codigo.Enabled = False
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub Serie_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Serie.SelectedIndexChanged

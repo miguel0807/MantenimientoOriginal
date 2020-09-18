@@ -113,6 +113,7 @@ Partial Class MaterialNuevo
         '
         'Cantidad
         '
+        Me.Cantidad.BackColor = System.Drawing.SystemColors.Control
         Me.Cantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cantidad.Location = New System.Drawing.Point(152, 218)
         Me.Cantidad.Name = "Cantidad"
@@ -149,6 +150,7 @@ Partial Class MaterialNuevo
         '
         'Material
         '
+        Me.Material.BackColor = System.Drawing.SystemColors.Control
         Me.Material.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Material.Location = New System.Drawing.Point(152, 168)
         Me.Material.Name = "Material"
@@ -167,6 +169,7 @@ Partial Class MaterialNuevo
         '
         'Descripcion
         '
+        Me.Descripcion.BackColor = System.Drawing.SystemColors.Control
         Me.Descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Descripcion.Location = New System.Drawing.Point(294, 496)
         Me.Descripcion.Multiline = True
@@ -186,6 +189,7 @@ Partial Class MaterialNuevo
         '
         'Codigo
         '
+        Me.Codigo.BackColor = System.Drawing.SystemColors.Control
         Me.Codigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Codigo.Location = New System.Drawing.Point(0, 659)
         Me.Codigo.Name = "Codigo"
@@ -194,6 +198,7 @@ Partial Class MaterialNuevo
         '
         'Unidad
         '
+        Me.Unidad.BackColor = System.Drawing.SystemColors.Control
         Me.Unidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Unidad.FormattingEnabled = True
         Me.Unidad.Items.AddRange(New Object() {"Metros", "Unidad", "Bolsas()", "N/A"})
@@ -204,6 +209,7 @@ Partial Class MaterialNuevo
         '
         'Ubicacion
         '
+        Me.Ubicacion.BackColor = System.Drawing.SystemColors.Control
         Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Ubicacion.FormattingEnabled = True
         Me.Ubicacion.Location = New System.Drawing.Point(744, 340)
@@ -213,6 +219,7 @@ Partial Class MaterialNuevo
         '
         'Clasificacion
         '
+        Me.Clasificacion.BackColor = System.Drawing.SystemColors.Control
         Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Clasificacion.FormattingEnabled = True
         Me.Clasificacion.Items.AddRange(New Object() {"Electrico", "Mecanico", "Neumatico", "Hidraulico", "Electronico", "Otros"})
@@ -223,6 +230,7 @@ Partial Class MaterialNuevo
         '
         'Marca
         '
+        Me.Marca.BackColor = System.Drawing.SystemColors.Control
         Me.Marca.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Marca.FormattingEnabled = True
         Me.Marca.Items.AddRange(New Object() {"FORCE", "N/A"})
@@ -233,6 +241,7 @@ Partial Class MaterialNuevo
         '
         'Modelo
         '
+        Me.Modelo.BackColor = System.Drawing.SystemColors.Control
         Me.Modelo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Modelo.FormattingEnabled = True
         Me.Modelo.Items.AddRange(New Object() {"N/A"})
@@ -243,6 +252,7 @@ Partial Class MaterialNuevo
         '
         'Serie
         '
+        Me.Serie.BackColor = System.Drawing.SystemColors.Control
         Me.Serie.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Serie.FormattingEnabled = True
         Me.Serie.Items.AddRange(New Object() {"N/A"})
@@ -253,6 +263,7 @@ Partial Class MaterialNuevo
         '
         'Empresa
         '
+        Me.Empresa.BackColor = System.Drawing.SystemColors.Control
         Me.Empresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Empresa.FormattingEnabled = True
         Me.Empresa.Items.AddRange(New Object() {"McMaster", "Amazon", "Industrial Solution", "Ebay", "N/A"})
@@ -283,6 +294,7 @@ Partial Class MaterialNuevo
         '
         'Parte
         '
+        Me.Parte.BackColor = System.Drawing.SystemColors.Control
         Me.Parte.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Parte.Location = New System.Drawing.Point(151, 373)
         Me.Parte.Name = "Parte"
@@ -301,6 +313,7 @@ Partial Class MaterialNuevo
         '
         'Equipo
         '
+        Me.Equipo.BackColor = System.Drawing.SystemColors.Control
         Me.Equipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Equipo.FormattingEnabled = True
         Me.Equipo.Items.AddRange(New Object() {"Llenadora Cartuchos Wilsonville", "Llenadora Cartuchos DD", "Llenadora litros", "LLenadora Pails", "LLenadora limpiadores", "Agitadores pequeños", "Agitadores medianos", "Agitadores grandes", "Bomba de diafragma 1/2", "Bomba de diafragma 3/4", "Bomba de diafragma 1""", "Tank Farm"})
@@ -313,7 +326,7 @@ Partial Class MaterialNuevo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1052, 698)
         Me.Controls.Add(Me.Equipo)
         Me.Controls.Add(Me.Label12)
@@ -342,6 +355,7 @@ Partial Class MaterialNuevo
         Me.Controls.Add(Me.Material)
         Me.Controls.Add(Me.Borrar)
         Me.Controls.Add(Me.Ingresar)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "MaterialNuevo"
         Me.ResumeLayout(False)
         Me.PerformLayout()

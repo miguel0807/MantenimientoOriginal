@@ -22,7 +22,6 @@ Partial Class Busqueda_Material
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -33,21 +32,6 @@ Partial Class Busqueda_Material
         Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.Button2.FlatAppearance.BorderSize = 3
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button2.Location = New System.Drawing.Point(350, 670)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(186, 84)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Actualizar"
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -71,7 +55,7 @@ Partial Class Busqueda_Material
         Me.Button1.FlatAppearance.BorderSize = 3
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button1.Location = New System.Drawing.Point(551, 670)
+        Me.Button1.Location = New System.Drawing.Point(528, 670)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(186, 84)
         Me.Button1.TabIndex = 6
@@ -157,11 +141,11 @@ Partial Class Busqueda_Material
         Me.Controls.Add(Me.Tipo)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Cursor = System.Windows.Forms.Cursors.Default
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Busqueda_Material"
         Me.Text = "Busqueda_Material"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -169,8 +153,6 @@ Partial Class Busqueda_Material
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Button2 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents DataGridView1 As DataGridView

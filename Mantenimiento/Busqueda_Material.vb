@@ -3,11 +3,16 @@
 Public Class Busqueda_Material
     Private Sub Busqueda_Material_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CenterToScreen()
+        Tipo.SelectedIndex = 0
+
+
+
+
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
-        conectar()
+        Try
+            conectar()
 
         Dim conteo As String
         conteo = 1
@@ -53,11 +58,14 @@ Public Class Busqueda_Material
         Label1.Text = "Cantidad: " & tabla.RowCount
         desconectar()
 
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-        Modificar_Material.Show()
+        Try
+            Modificar_Material.Show()
 
 
         Me.DataGridView1.Select() 'Seleccionar primera fila del datagridview
@@ -89,9 +97,10 @@ Public Class Busqueda_Material
         Modificar_Material.Equipo.Text = Me.DataGridView1.CurrentRow.Cells.Item(13).Value.ToString
 
 
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
-    End Sub
 End Class
