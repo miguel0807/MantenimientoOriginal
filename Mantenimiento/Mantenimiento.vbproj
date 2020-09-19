@@ -118,6 +118,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conexion.vb" />
+    <Compile Include="ConfigDatagridview.vb" />
     <Compile Include="Ejemplo.Designer.vb">
       <DependentUpon>Ejemplo.vb</DependentUpon>
     </Compile>
