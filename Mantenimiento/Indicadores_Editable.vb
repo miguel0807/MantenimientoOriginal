@@ -16,6 +16,9 @@ Public Class Indicadores_Editable
     Dim minutototal As Integer
 
 
+    Dim seleccion As Integer = 0
+
+
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -193,16 +196,25 @@ Public Class Indicadores_Editable
                 MsgBox("Necesita completar problema y fecha de inicio")
             Else
 
+
+                If Tiempo_Inicio.Text = "00:00:00" Then
+                    seleccion = 0
+                Else
+
+
+                    seleccion = 1
+                End If
+
                 conectar()
-                Dim actualizarnombre As New SqlCommand("Update Indicadores SET Nombre =('" & Nombre.Text & "'), Ubicacion =('" & Ubicacion.Text & "'), Clasificacion =('" & Clasificacion.Text & "') , Descripcion =('" & Descripcion.Text & "'), [Fecha Inicial] =('" & Fecha.Text & "'), [Fecha Final] =('" & fecha_final.Text & "'), [Estado] =(" & 1 & "), [Tiempo Inicial]= ('" & Tiempo_Inicio.Text & "'), [Horas]= ('" & txtacuhora.Text & "'), [Minutos]= ('" & txtacuminutos.Text & "')  where [Caso] = ('" & Caso & "')", cn)
+                Dim actualizarnombre As New SqlCommand("Update Indicadores SET Nombre =('" & Nombre.Text & "'), Ubicacion =('" & Ubicacion.Text & "'), Clasificacion =('" & Clasificacion.Text & "') , Descripcion =('" & Descripcion.Text & "'), [Fecha Inicial] =('" & Fecha.Text & "'), [Fecha Final] =('" & fecha_final.Text & "'), [Estado] =(" & 1 & "), [Tiempo Inicial]= ('" & Tiempo_Inicio.Text & "'), [Horas]= ('" & txtacuhora.Text & "'), [Minutos]= ('" & txtacuminutos.Text & "'),[Seleccion]=( " & seleccion & ")  where [Caso] = ('" & Caso & "')", cn)
                 'TextBox1.Text = actualizarnombre.CommandText
                 actualizarnombre.ExecuteNonQuery()
-                cn.Close()
-                MsgBox("Se registro correctamente")
+                    cn.Close()
+                    MsgBox("Se registro correctamente")
 
 
-                Me.Close()
-            End If
+                    Me.Close()
+                End If
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -308,5 +320,9 @@ Public Class Indicadores_Editable
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class
