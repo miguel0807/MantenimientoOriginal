@@ -10,57 +10,8 @@ Public Class Busqueda_Material
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Try
-            conectar()
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
 
-        Dim conteo As String
-        conteo = 1
-
-
-
-        Dim tabla As DataGridView = DataGridView1
-        Dim adaptador As New SqlDataAdapter("select*from Bodega where convert(char,[" & Tipo.Text & "]) like '%" & busqueda.Text & "%'", cn)
-        Dim dataS As New DataSet
-        'busqueda.Text = adaptador.SelectCommand.CommandText
-        adaptador.Fill(dataS, "Indicadores")
-
-        tabla.DataSource = dataS.Tables("Indicadores")
-
-        tabla.Columns.Item(0).Visible = False
-
-        tabla.RowHeadersVisible = False
-
-        tabla.Columns(1).Width = 200
-        tabla.Columns(2).Width = 80
-        tabla.Columns(3).Width = 80
-        tabla.Columns(4).Width = 100
-
-
-
-        tabla.Columns(5).Width = 100
-        tabla.Columns(6).Width = 100
-        tabla.Columns(7).Width = 120
-            tabla.Columns(8).Width = 360
-
-            tabla.Columns(9).Width = 100
-        tabla.Columns(10).Width = 100
-
-        tabla.Columns(11).Width = 80
-        tabla.Columns(12).Width = 80
-            tabla.Columns(13).Width = 200
-
-
-
-
-            Label1.Visible = True
-
-        Label1.Text = "Cantidad: " & tabla.RowCount
-        desconectar()
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -102,5 +53,7 @@ Public Class Busqueda_Material
         End Try
     End Sub
 
-
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        materiales_busqueda()
+    End Sub
 End Class

@@ -167,9 +167,9 @@ Public Class Indicadores_Editable
             End If
 
 
-            Tiempo_Inicio.Text = "00:00"
-            Tiempo_Final.Text = "00:00"
-            calhoras.Text = 0
+                Tiempo_Inicio.Text = "00:00:00"
+                Tiempo_Final.Text = "00:00:00"
+                calhoras.Text = 0
             calminutos.Text = 0
 
 
@@ -199,11 +199,15 @@ Public Class Indicadores_Editable
 
                 If Tiempo_Inicio.Text = "00:00:00" Then
                     seleccion = 0
+                ElseIf Tiempo_Inicio.Text = "" Then
+                    seleccion = 0
                 Else
-
 
                     seleccion = 1
                 End If
+
+
+
 
                 conectar()
                 Dim actualizarnombre As New SqlCommand("Update Indicadores SET Nombre =('" & Nombre.Text & "'), Ubicacion =('" & Ubicacion.Text & "'), Clasificacion =('" & Clasificacion.Text & "') , Descripcion =('" & Descripcion.Text & "'), [Fecha Inicial] =('" & Fecha.Text & "'), [Fecha Final] =('" & fecha_final.Text & "'), [Estado] =(" & 1 & "), [Tiempo Inicial]= ('" & Tiempo_Inicio.Text & "'), [Horas]= ('" & txtacuhora.Text & "'), [Minutos]= ('" & txtacuminutos.Text & "'),[Seleccion]=( " & seleccion & ")  where [Caso] = ('" & Caso & "')", cn)
@@ -252,6 +256,10 @@ Public Class Indicadores_Editable
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub panel_boton_Paint(sender As Object, e As PaintEventArgs) Handles panel_boton.Paint
 
     End Sub
 End Class

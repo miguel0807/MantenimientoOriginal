@@ -408,7 +408,7 @@ Partial Class Indicadores_Editable
         Me.Tiempo_Inicio.Name = "Tiempo_Inicio"
         Me.Tiempo_Inicio.Size = New System.Drawing.Size(230, 34)
         Me.Tiempo_Inicio.TabIndex = 4
-        Me.Tiempo_Inicio.Text = "00:00"
+        Me.Tiempo_Inicio.Text = "00:00:00"
         Me.Tiempo_Inicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Button6

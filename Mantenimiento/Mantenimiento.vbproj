@@ -143,12 +143,6 @@
     <Compile Include="Indicadores_Proceso.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaterialExistente.Designer.vb">
-      <DependentUpon>MaterialExistente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MaterialExistente.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="MaterialNuevo.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -200,9 +194,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Indicadores_Proceso.resx">
       <DependentUpon>Indicadores_Proceso.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MaterialExistente.resx">
-      <DependentUpon>MaterialExistente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialNuevo.resx">
       <DependentUpon>MaterialNuevo.vb</DependentUpon>

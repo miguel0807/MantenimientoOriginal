@@ -9,7 +9,6 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimie
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.exe
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.xml
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.pdb
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.MaterialExistente.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.MaterialNuevo.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Presentacion.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Ejemplo.resources

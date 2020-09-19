@@ -22,6 +22,8 @@ Partial Class Busqueda_Material
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Busqueda_Material))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -29,7 +31,7 @@ Partial Class Busqueda_Material
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Tipo = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -55,7 +57,7 @@ Partial Class Busqueda_Material
         Me.Button1.FlatAppearance.BorderSize = 3
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button1.Location = New System.Drawing.Point(528, 670)
+        Me.Button1.Location = New System.Drawing.Point(635, 670)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(186, 84)
         Me.Button1.TabIndex = 6
@@ -70,9 +72,21 @@ Partial Class Busqueda_Material
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonShadow
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SlateGray
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.ColumnHeadersHeight = 29
+        Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.Location = New System.Drawing.Point(32, 174)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
@@ -121,14 +135,20 @@ Partial Class Busqueda_Material
         Me.Label10.TabIndex = 81
         Me.Label10.Text = "Tipo de busqueda"
         '
-        'Button4
+        'Button2
         '
-        Me.Button4.Location = New System.Drawing.Point(783, 58)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(190, 58)
-        Me.Button4.TabIndex = 78
-        Me.Button4.Text = "Buscar"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.Button2.FlatAppearance.BorderSize = 3
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Button2.Location = New System.Drawing.Point(433, 670)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(186, 84)
+        Me.Button2.TabIndex = 84
+        Me.Button2.Text = "Buscar"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Busqueda_Material
         '
@@ -136,17 +156,19 @@ Partial Class Busqueda_Material
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1437, 793)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.busqueda)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Tipo)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Busqueda_Material"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -159,5 +181,5 @@ Partial Class Busqueda_Material
     Friend WithEvents Label11 As Label
     Friend WithEvents Tipo As ComboBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents Button4 As Button
+    Friend WithEvents Button2 As Button
 End Class
