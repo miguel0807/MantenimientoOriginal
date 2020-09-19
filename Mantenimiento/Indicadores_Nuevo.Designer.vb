@@ -168,7 +168,7 @@ Partial Class Indicadores_Nuevo
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Location = New System.Drawing.Point(12, 45)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1001, 258)
+        Me.Panel1.Size = New System.Drawing.Size(1001, 256)
         Me.Panel1.TabIndex = 0
         '
         'Panel4
@@ -190,7 +190,7 @@ Partial Class Indicadores_Nuevo
         Me.Ubicacion.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ubicacion.FormattingEnabled = True
-        Me.Ubicacion.Items.AddRange(New Object() {"Cartuchos Wilsonville", "Cartuchos DD", "Produccion Master batch", "Produccion Empaque", "Contacto", "Oficinas", "CR7"})
+        Me.Ubicacion.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Contacto", "Oficinas", "Escritorio", "CR7", "CR8"})
         Me.Ubicacion.Location = New System.Drawing.Point(182, 78)
         Me.Ubicacion.Name = "Ubicacion"
         Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
@@ -201,7 +201,7 @@ Partial Class Indicadores_Nuevo
         Me.Clasificacion.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clasificacion.FormattingEnabled = True
-        Me.Clasificacion.Items.AddRange(New Object() {"Electrico", "Mecanico", "Neumatico", "Servicio", "IT"})
+        Me.Clasificacion.Items.AddRange(New Object() {"N/A", "Electrico", "Mecanico", "Neumatico", "Electrico/Mecanico", "Servicio", "IT"})
         Me.Clasificacion.Location = New System.Drawing.Point(181, 144)
         Me.Clasificacion.Name = "Clasificacion"
         Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
@@ -216,7 +216,7 @@ Partial Class Indicadores_Nuevo
         Me.Panel3.Controls.Add(Me.Button4)
         Me.Panel3.Location = New System.Drawing.Point(566, 137)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(416, 75)
+        Me.Panel3.Size = New System.Drawing.Size(416, 73)
         Me.Panel3.TabIndex = 3
         '
         'fecha_final
@@ -247,7 +247,7 @@ Partial Class Indicadores_Nuevo
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Location = New System.Drawing.Point(566, 35)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(416, 75)
+        Me.Panel2.Size = New System.Drawing.Size(416, 73)
         Me.Panel2.TabIndex = 2
         '
         'Button1
@@ -293,9 +293,10 @@ Partial Class Indicadores_Nuevo
         '
         'Button5
         '
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.Location = New System.Drawing.Point(12, 13)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(167, 29)
+        Me.Button5.Size = New System.Drawing.Size(184, 29)
         Me.Button5.TabIndex = 80
         Me.Button5.Text = "Control de tiempo"
         Me.Button5.UseVisualStyleBackColor = True
@@ -312,7 +313,7 @@ Partial Class Indicadores_Nuevo
         Me.panel_boton.Controls.Add(Me.Button7)
         Me.panel_boton.Controls.Add(Me.Tiempo_Inicio)
         Me.panel_boton.Controls.Add(Me.Button6)
-        Me.panel_boton.Location = New System.Drawing.Point(3, 45)
+        Me.panel_boton.Location = New System.Drawing.Point(12, 45)
         Me.panel_boton.Name = "panel_boton"
         Me.panel_boton.Size = New System.Drawing.Size(1010, 579)
         Me.panel_boton.TabIndex = 4
@@ -498,7 +499,7 @@ Partial Class Indicadores_Nuevo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.BackgroundImage = Global.Mantenimiento.My.Resources.Resources.gris
-        Me.ClientSize = New System.Drawing.Size(1026, 648)
+        Me.ClientSize = New System.Drawing.Size(1051, 646)
         Me.Controls.Add(Me.panel_boton)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button5)
@@ -512,7 +513,6 @@ Partial Class Indicadores_Nuevo
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximumSize = New System.Drawing.Size(1044, 695)
         Me.Name = "Indicadores_Nuevo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

@@ -75,7 +75,7 @@ Partial Class Indicadores_Editable
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Location = New System.Drawing.Point(12, 27)
+        Me.Panel1.Location = New System.Drawing.Point(12, 45)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1001, 262)
         Me.Panel1.TabIndex = 84
@@ -97,7 +97,7 @@ Partial Class Indicadores_Editable
         '
         Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ubicacion.FormattingEnabled = True
-        Me.Ubicacion.Items.AddRange(New Object() {"Cartuchos Wilsonville", "Cartuchos DD", "Produccion Master batch", "Produccion Empaque", "Contacto", "Oficinas", "CR7"})
+        Me.Ubicacion.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Contacto", "Oficinas", "Escritorio", "CR7", "CR8"})
         Me.Ubicacion.Location = New System.Drawing.Point(188, 82)
         Me.Ubicacion.Name = "Ubicacion"
         Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
@@ -107,7 +107,7 @@ Partial Class Indicadores_Editable
         '
         Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clasificacion.FormattingEnabled = True
-        Me.Clasificacion.Items.AddRange(New Object() {"Electrico", "Mecanico", "Neumatico", "Servicio", ""})
+        Me.Clasificacion.Items.AddRange(New Object() {"N/A", "Electrico", "Mecanico", "Neumatico", "Electrico/Mecanico", "Servicio", "IT"})
         Me.Clasificacion.Location = New System.Drawing.Point(187, 148)
         Me.Clasificacion.Name = "Clasificacion"
         Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
@@ -241,7 +241,7 @@ Partial Class Indicadores_Editable
         Me.panel_boton.Controls.Add(Me.Button7)
         Me.panel_boton.Controls.Add(Me.Tiempo_Inicio)
         Me.panel_boton.Controls.Add(Me.Button6)
-        Me.panel_boton.Location = New System.Drawing.Point(12, 27)
+        Me.panel_boton.Location = New System.Drawing.Point(12, 45)
         Me.panel_boton.Name = "panel_boton"
         Me.panel_boton.Size = New System.Drawing.Size(1010, 581)
         Me.panel_boton.TabIndex = 87
@@ -423,9 +423,10 @@ Partial Class Indicadores_Editable
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(11, -1)
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!)
+        Me.Button5.Location = New System.Drawing.Point(12, 13)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(167, 29)
+        Me.Button5.Size = New System.Drawing.Size(184, 33)
         Me.Button5.TabIndex = 88
         Me.Button5.Text = "Control de tiempo"
         Me.Button5.UseVisualStyleBackColor = True

@@ -8,6 +8,7 @@ Public Class Indicadores_Nuevo
     Dim acumhora As Integer
     Dim acumminuto As Integer
     Dim almacenar As Boolean = False
+    Dim seleccion As Integer = 0
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -17,7 +18,16 @@ Public Class Indicadores_Nuevo
             If Nombre.Text = "" Or Fecha.Text = "" Then
                 MsgBox("Necesita completar problema y fecha de inicio")
             Else
-                Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 1 & ",'" & Tiempo_Inicio.Text & "'," & acuhora.Text & "," & acuminutos.Text & ")", cn)
+
+
+                If Tiempo_Inicio.Text = "00:00:00" Then
+                    seleccion = 0
+                Else
+
+
+                    seleccion = 1
+                End If
+                Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 1 & ",'" & Tiempo_Inicio.Text & "'," & acuhora.Text & "," & acuminutos.Text & "," & seleccion & ")", cn)
                 conectar()
                 adaptador.ExecuteNonQuery()
                 MsgBox("Se registro correctamente")
