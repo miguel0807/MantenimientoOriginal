@@ -74,14 +74,20 @@ Public Class Indicadores_Nuevo
                 MsgBox("Complete todos los campos para poder Finalizar")
             Else
 
+                If Tiempo_Inicio.Text = "00:00:00" Then
+                    seleccion = 0
+                Else
 
-                Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 0 & ",'" & Tiempo_Inicio.Text & "'," & txtacuhora.Text & "," & txtacuminutos.Text & ")", cn)
+
+                    seleccion = 1
+                End If
+                Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 0 & ",'" & Tiempo_Inicio.Text & "'," & txtacuhora.Text & "," & txtacuminutos.Text & "," & seleccion & ")", cn)
                 conectar()
 
                 adaptador.ExecuteNonQuery()
                 MsgBox("Se registro correctamente")
                 desconectar()
-                ' Me.Close()
+                Me.Close()
             End If
 
 
