@@ -47,9 +47,9 @@ Partial Class Indicadores_Nuevo
         Me.Button5 = New System.Windows.Forms.Button()
         Me.panel_boton = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.acuminutos = New System.Windows.Forms.TextBox()
+        Me.txtacuminutos = New System.Windows.Forms.TextBox()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.acuhora = New System.Windows.Forms.TextBox()
+        Me.txtacuhora = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -190,7 +190,7 @@ Partial Class Indicadores_Nuevo
         Me.Ubicacion.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ubicacion.FormattingEnabled = True
-        Me.Ubicacion.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Contacto", "Oficinas", "Escritorio", "CR7", "CR8"})
+        Me.Ubicacion.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Contacto", "Oficinas", "Escritorio", "CR7", "CR8", "Tank Farm"})
         Me.Ubicacion.Location = New System.Drawing.Point(182, 78)
         Me.Ubicacion.Name = "Ubicacion"
         Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
@@ -201,7 +201,7 @@ Partial Class Indicadores_Nuevo
         Me.Clasificacion.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clasificacion.FormattingEnabled = True
-        Me.Clasificacion.Items.AddRange(New Object() {"N/A", "Electrico", "Mecanico", "Neumatico", "Electrico/Mecanico", "Servicio", "IT"})
+        Me.Clasificacion.Items.AddRange(New Object() {"N/A", "Electrico", "Mecanico", "Neumatico", "Electrico/Mecanico", "Servicio", "IT", "Servicio Miguel"})
         Me.Clasificacion.Location = New System.Drawing.Point(181, 144)
         Me.Clasificacion.Name = "Clasificacion"
         Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
@@ -322,9 +322,9 @@ Partial Class Indicadores_Nuevo
         'Panel5
         '
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Controls.Add(Me.acuminutos)
+        Me.Panel5.Controls.Add(Me.txtacuminutos)
         Me.Panel5.Controls.Add(Me.Button9)
-        Me.Panel5.Controls.Add(Me.acuhora)
+        Me.Panel5.Controls.Add(Me.txtacuhora)
         Me.Panel5.Controls.Add(Me.Label10)
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.Label7)
@@ -333,16 +333,16 @@ Partial Class Indicadores_Nuevo
         Me.Panel5.Size = New System.Drawing.Size(469, 280)
         Me.Panel5.TabIndex = 94
         '
-        'acuminutos
+        'txtacuminutos
         '
-        Me.acuminutos.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.acuminutos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.acuminutos.Location = New System.Drawing.Point(342, 197)
-        Me.acuminutos.Name = "acuminutos"
-        Me.acuminutos.Size = New System.Drawing.Size(45, 34)
-        Me.acuminutos.TabIndex = 96
-        Me.acuminutos.Text = "0"
-        Me.acuminutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtacuminutos.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtacuminutos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtacuminutos.Location = New System.Drawing.Point(342, 197)
+        Me.txtacuminutos.Name = "txtacuminutos"
+        Me.txtacuminutos.Size = New System.Drawing.Size(45, 34)
+        Me.txtacuminutos.TabIndex = 96
+        Me.txtacuminutos.Text = "0"
+        Me.txtacuminutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Button9
         '
@@ -354,16 +354,16 @@ Partial Class Indicadores_Nuevo
         Me.Button9.Text = "Agregar tiempo"
         Me.Button9.UseVisualStyleBackColor = True
         '
-        'acuhora
+        'txtacuhora
         '
-        Me.acuhora.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.acuhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.acuhora.Location = New System.Drawing.Point(342, 136)
-        Me.acuhora.Name = "acuhora"
-        Me.acuhora.Size = New System.Drawing.Size(45, 34)
-        Me.acuhora.TabIndex = 95
-        Me.acuhora.Text = "0"
-        Me.acuhora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtacuhora.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtacuhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtacuhora.Location = New System.Drawing.Point(342, 136)
+        Me.txtacuhora.Name = "txtacuhora"
+        Me.txtacuhora.Size = New System.Drawing.Size(45, 34)
+        Me.txtacuhora.TabIndex = 95
+        Me.txtacuhora.Text = "0"
+        Me.txtacuhora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label10
         '
@@ -568,6 +568,6 @@ Partial Class Indicadores_Nuevo
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Button9 As Button
-    Friend WithEvents acuminutos As TextBox
-    Friend WithEvents acuhora As TextBox
+    Friend WithEvents txtacuminutos As TextBox
+    Friend WithEvents txtacuhora As TextBox
 End Class

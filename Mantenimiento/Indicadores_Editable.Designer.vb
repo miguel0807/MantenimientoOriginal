@@ -97,7 +97,7 @@ Partial Class Indicadores_Editable
         '
         Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ubicacion.FormattingEnabled = True
-        Me.Ubicacion.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Contacto", "Oficinas", "Escritorio", "CR7", "CR8"})
+        Me.Ubicacion.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Contacto", "Oficinas", "Escritorio", "CR7", "CR8", "Tank Farm"})
         Me.Ubicacion.Location = New System.Drawing.Point(188, 82)
         Me.Ubicacion.Name = "Ubicacion"
         Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
@@ -107,7 +107,7 @@ Partial Class Indicadores_Editable
         '
         Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clasificacion.FormattingEnabled = True
-        Me.Clasificacion.Items.AddRange(New Object() {"N/A", "Electrico", "Mecanico", "Neumatico", "Electrico/Mecanico", "Servicio", "IT"})
+        Me.Clasificacion.Items.AddRange(New Object() {"N/A", "Electrico", "Mecanico", "Neumatico", "Electrico/Mecanico", "Servicio", "IT", "Servicio Miguel"})
         Me.Clasificacion.Location = New System.Drawing.Point(187, 148)
         Me.Clasificacion.Name = "Clasificacion"
         Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
