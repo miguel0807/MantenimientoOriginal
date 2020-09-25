@@ -178,6 +178,12 @@
     <Compile Include="Presentacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Preventivo.Designer.vb">
+      <DependentUpon>Preventivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Busqueda_Material.resx">
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion.resx">
       <DependentUpon>Presentacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo.resx">
+      <DependentUpon>Preventivo.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -38,6 +38,7 @@ Partial Class Presentacion
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusquedaDeMaterialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -173,6 +174,21 @@ Partial Class Presentacion
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(220, 24)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
+        'Button5
+        '
+        Me.Button5.FlatAppearance.BorderSize = 3
+        Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button5.Location = New System.Drawing.Point(576, 66)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(200, 135)
+        Me.Button5.TabIndex = 12
+        Me.Button5.Text = "Preventivo"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'Presentacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -180,6 +196,7 @@ Partial Class Presentacion
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -212,4 +229,5 @@ Partial Class Presentacion
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents BusquedaDeMaterialToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button5 As Button
 End Class
