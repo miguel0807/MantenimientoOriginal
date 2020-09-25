@@ -8,6 +8,19 @@ Public Class Indicadores_Nuevo
     Dim acumhora As Integer
     Dim acumminuto As Integer
     Dim almacenar As Boolean = False
+    Dim seleccion As Integer = 0
+
+    Public Caso As Integer
+
+
+
+
+    Dim minutodivision As Integer
+    Dim minutoresta As Integer
+    Dim minutototal As Integer
+
+
+
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -17,7 +30,16 @@ Public Class Indicadores_Nuevo
             If Nombre.Text = "" Or Fecha.Text = "" Then
                 MsgBox("Necesita completar problema y fecha de inicio")
             Else
-                Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 1 & ",'" & Tiempo_Inicio.Text & "'," & acuhora.Text & "," & acuminutos.Text & ")", cn)
+
+
+                If Tiempo_Inicio.Text = "00:00:00" Then
+                    seleccion = 0
+                Else
+
+
+                    seleccion = 1
+                End If
+                Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 1 & ",'" & Tiempo_Inicio.Text & "'," & txtacuhora.Text & "," & txtacuminutos.Text & "," & seleccion & ")", cn)
                 conectar()
                 adaptador.ExecuteNonQuery()
                 MsgBox("Se registro correctamente")
@@ -52,9 +74,16 @@ Public Class Indicadores_Nuevo
                 MsgBox("Complete todos los campos para poder Finalizar")
             Else
 
+                If Tiempo_Inicio.Text = "00:00:00" Then
+                    seleccion = 0
+                Else
 
-                Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 0 & ",'" & Tiempo_Inicio.Text & "'," & acuhora.Text & "," & acuminutos.Text & ")", cn)
+
+                    seleccion = 1
+                End If
+                Dim adaptador As New SqlCommand("insert into Indicadores values (" & count & ",'" & Nombre.Text & "','" & Ubicacion.Text & "','" & Clasificacion.Text & "','" & Descripcion.Text & "','" & Fecha.Text & "','" & fecha_final.Text & "'," & 0 & ",'" & Tiempo_Inicio.Text & "'," & txtacuhora.Text & "," & txtacuminutos.Text & "," & seleccion & ")", cn)
                 conectar()
+
                 adaptador.ExecuteNonQuery()
                 MsgBox("Se registro correctamente")
                 desconectar()
@@ -195,28 +224,39 @@ Public Class Indicadores_Nuevo
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Try
+            If almacenar = True Then
+                acumhora = txtacuhora.Text
+                acumhora = acumhora + hora
 
-        If almacenar = True Then
+                acumminuto = txtacuminutos.Text
+                If minuto + acumminuto >= 60 Then
+                    minutodivision = Math.Truncate((minuto + acumminuto) / 60)
+                    minutoresta = (minuto + acumminuto) - (minutodivision * 60)
+                    acumminuto = minutoresta
 
-            acumhora = acumhora + hora
-            acumminuto = acumminuto + minuto
-
-            Tiempo_Inicio.Text = ""
-            Tiempo_Final.Text = ""
-            calhoras.Text = 0
-            calminutos.Text = 0
-
-
-
-            acuhora.Text = acumhora
-            acuminutos.Text = acumminuto
-        End If
-        almacenar = False
+                    acumhora = acumhora + minutodivision
+                Else
+                    acumminuto = acumminuto + minuto
+                End If
 
 
+                Tiempo_Inicio.Text = "00:00:00"
+                Tiempo_Final.Text = "00:00:00"
+                calhoras.Text = 0
+                calminutos.Text = 0
 
 
 
+                txtacuhora.Text = acumhora
+                txtacuminutos.Text = acumminuto
+            End If
+            almacenar = False
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
 
 

@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Controlador de casos</ProductName>
     <PublisherName>Miguel Alvarado</PublisherName>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>21</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -111,13 +111,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Busqueda.Designer.vb">
-      <DependentUpon>Busqueda.vb</DependentUpon>
+    <Compile Include="Busqueda_Material.Designer.vb">
+      <DependentUpon>Busqueda_Material.vb</DependentUpon>
     </Compile>
-    <Compile Include="Busqueda.vb">
+    <Compile Include="Busqueda_Material.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conexion.vb" />
+    <Compile Include="ConfigDatagridview.vb" />
     <Compile Include="Ejemplo.Designer.vb">
       <DependentUpon>Ejemplo.vb</DependentUpon>
     </Compile>
@@ -142,17 +143,17 @@
     <Compile Include="Indicadores_Proceso.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaterialExistente.Designer.vb">
-      <DependentUpon>MaterialExistente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MaterialExistente.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="MaterialNuevo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MaterialNuevo.Designer.vb">
       <DependentUpon>MaterialNuevo.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar_Material.Designer.vb">
+      <DependentUpon>Modificar_Material.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_Material.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -179,8 +180,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Busqueda.resx">
-      <DependentUpon>Busqueda.vb</DependentUpon>
+    <EmbeddedResource Include="Busqueda_Material.resx">
+      <DependentUpon>Busqueda_Material.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ejemplo.resx">
       <DependentUpon>Ejemplo.vb</DependentUpon>
@@ -194,11 +195,11 @@
     <EmbeddedResource Include="Indicadores_Proceso.resx">
       <DependentUpon>Indicadores_Proceso.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaterialExistente.resx">
-      <DependentUpon>MaterialExistente.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MaterialNuevo.resx">
       <DependentUpon>MaterialNuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Material.resx">
+      <DependentUpon>Modificar_Material.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

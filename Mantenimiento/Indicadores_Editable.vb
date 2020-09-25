@@ -16,6 +16,9 @@ Public Class Indicadores_Editable
     Dim minutototal As Integer
 
 
+    Dim seleccion As Integer = 0
+
+
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -164,9 +167,9 @@ Public Class Indicadores_Editable
             End If
 
 
-            Tiempo_Inicio.Text = "00:00"
-            Tiempo_Final.Text = "00:00"
-            calhoras.Text = 0
+                Tiempo_Inicio.Text = "00:00:00"
+                Tiempo_Final.Text = "00:00:00"
+                calhoras.Text = 0
             calminutos.Text = 0
 
 
@@ -193,59 +196,37 @@ Public Class Indicadores_Editable
                 MsgBox("Necesita completar problema y fecha de inicio")
             Else
 
+
+                If Tiempo_Inicio.Text = "00:00:00" Then
+                    seleccion = 0
+                ElseIf Tiempo_Inicio.Text = "" Then
+                    seleccion = 0
+                Else
+
+                    seleccion = 1
+                End If
+
+
+
+
                 conectar()
-                Dim actualizarnombre As New SqlCommand("Update Indicadores SET Nombre =('" & Nombre.Text & "'), Ubicacion =('" & Ubicacion.Text & "'), Clasificacion =('" & Clasificacion.Text & "') , Descripcion =('" & Descripcion.Text & "'), [Fecha Inicial] =('" & Fecha.Text & "'), [Fecha Final] =('" & fecha_final.Text & "'), [Estado] =(" & 1 & "), [Tiempo Inicial]= ('" & Tiempo_Inicio.Text & "'), [Horas]= ('" & txtacuhora.Text & "'), [Minutos]= ('" & txtacuminutos.Text & "')  where [Caso] = ('" & Caso & "')", cn)
+                Dim actualizarnombre As New SqlCommand("Update Indicadores SET Nombre =('" & Nombre.Text & "'), Ubicacion =('" & Ubicacion.Text & "'), Clasificacion =('" & Clasificacion.Text & "') , Descripcion =('" & Descripcion.Text & "'), [Fecha Inicial] =('" & Fecha.Text & "'), [Fecha Final] =('" & fecha_final.Text & "'), [Estado] =(" & 1 & "), [Tiempo Inicial]= ('" & Tiempo_Inicio.Text & "'), [Horas]= ('" & txtacuhora.Text & "'), [Minutos]= ('" & txtacuminutos.Text & "'),[Seleccion]=( " & seleccion & ")  where [Caso] = ('" & Caso & "')", cn)
                 'TextBox1.Text = actualizarnombre.CommandText
                 actualizarnombre.ExecuteNonQuery()
-                cn.Close()
-                MsgBox("Se registro correctamente")
+                    cn.Close()
+                    MsgBox("Se registro correctamente")
 
 
-                Me.Close()
-            End If
+                    Me.Close()
+                End If
 
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
 
 
+        datag()
 
-        Try
-            conectar()
-
-            Dim etiqueta As String
-            etiqueta = 1
-
-
-
-            Dim tabla As DataGridView = Indicadores_Proceso.DataGridView1
-            Dim adaptador As New SqlDataAdapter("select*from Indicadores where Estado=" & etiqueta & "", cn)
-            Dim dataS As New DataSet
-            adaptador.Fill(dataS, "Indicadores")
-
-            tabla.DataSource = dataS.Tables("Indicadores")
-            tabla.RowHeadersVisible = False
-            tabla.Columns.Item(6).Visible = False
-            tabla.Columns.Item(7).Visible = False
-            tabla.Columns.Item(0).Visible = False
-
-
-
-            tabla.Columns(1).Width = 200
-            tabla.Columns(2).Width = 130
-            tabla.Columns(3).Width = 170
-            tabla.Columns(4).Width = 267
-            tabla.Columns(5).Width = 100
-
-            'Habilita conteo de filas en datagridview
-            Indicadores_Proceso.Label1.Visible = True
-            ' Label8.Text = tabla.DisplayedRowCount(0) - 1
-            Indicadores_Proceso.Label1.Text = "Casos pendientes: " & tabla.RowCount
-            Indicadores_Proceso.conteo_total = tabla.RowCount
-            desconectar()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
     End Sub
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
@@ -271,42 +252,14 @@ Public Class Indicadores_Editable
         End Try
 
 
+        datag()
+    End Sub
 
-        Try
-            conectar()
+    Private Sub Button10_Click(sender As Object, e As EventArgs)
 
-            Dim etiqueta As String
-            etiqueta = 1
+    End Sub
 
+    Private Sub panel_boton_Paint(sender As Object, e As PaintEventArgs) Handles panel_boton.Paint
 
-
-            Dim tabla As DataGridView = Indicadores_Proceso.DataGridView1
-            Dim adaptador As New SqlDataAdapter("select*from Indicadores where Estado=" & etiqueta & "", cn)
-            Dim dataS As New DataSet
-            adaptador.Fill(dataS, "Indicadores")
-
-            tabla.DataSource = dataS.Tables("Indicadores")
-            tabla.RowHeadersVisible = False
-            tabla.Columns.Item(6).Visible = False
-            tabla.Columns.Item(7).Visible = False
-            tabla.Columns.Item(0).Visible = False
-
-
-
-            tabla.Columns(1).Width = 200
-            tabla.Columns(2).Width = 130
-            tabla.Columns(3).Width = 170
-            tabla.Columns(4).Width = 267
-            tabla.Columns(5).Width = 100
-
-            'Habilita conteo de filas en datagridview
-            Indicadores_Proceso.Label1.Visible = True
-            ' Label8.Text = tabla.DisplayedRowCount(0) - 1
-            Indicadores_Proceso.Label1.Text = "Casos pendientes: " & tabla.RowCount
-            Indicadores_Proceso.conteo_total = tabla.RowCount
-            desconectar()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
     End Sub
 End Class
