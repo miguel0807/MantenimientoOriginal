@@ -22,6 +22,7 @@ Partial Class Presentacion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Presentacion))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -30,6 +31,14 @@ Partial Class Presentacion
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistrarNuevoCasoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BusquedaDeMaterialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -120,6 +129,50 @@ Partial Class Presentacion
         Me.Button4.Text = "Busqueda Material"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Text = "Controlador de casos"
+        Me.NotifyIcon1.Visible = True
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.RegistrarNuevoCasoToolStripMenuItem, Me.ToolStripMenuItem2, Me.BusquedaDeMaterialToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(221, 124)
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(220, 24)
+        Me.ToolStripMenuItem1.Text = "Casos en proceso"
+        '
+        'RegistrarNuevoCasoToolStripMenuItem
+        '
+        Me.RegistrarNuevoCasoToolStripMenuItem.Name = "RegistrarNuevoCasoToolStripMenuItem"
+        Me.RegistrarNuevoCasoToolStripMenuItem.Size = New System.Drawing.Size(220, 24)
+        Me.RegistrarNuevoCasoToolStripMenuItem.Text = "Registrar Nuevo Caso"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(220, 24)
+        Me.ToolStripMenuItem2.Text = "Material Nuevo"
+        '
+        'BusquedaDeMaterialToolStripMenuItem
+        '
+        Me.BusquedaDeMaterialToolStripMenuItem.Name = "BusquedaDeMaterialToolStripMenuItem"
+        Me.BusquedaDeMaterialToolStripMenuItem.Size = New System.Drawing.Size(220, 24)
+        Me.BusquedaDeMaterialToolStripMenuItem.Text = "Busqueda Material"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(220, 24)
+        Me.SalirToolStripMenuItem.Text = "Salir"
+        '
         'Presentacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -140,6 +193,7 @@ Partial Class Presentacion
         Me.MaximumSize = New System.Drawing.Size(818, 497)
         Me.Name = "Presentacion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -151,4 +205,11 @@ Partial Class Presentacion
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents NotifyIcon1 As NotifyIcon
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents RegistrarNuevoCasoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents BusquedaDeMaterialToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
 End Class
