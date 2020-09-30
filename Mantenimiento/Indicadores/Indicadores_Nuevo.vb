@@ -34,8 +34,9 @@ Public Class Indicadores_Nuevo
 
                 If Tiempo_Inicio.Text = "00:00:00" Then
                     seleccion = 0
+                ElseIf Tiempo_Inicio.Text = "" Then
+                    seleccion = 0
                 Else
-
 
                     seleccion = 1
                 End If

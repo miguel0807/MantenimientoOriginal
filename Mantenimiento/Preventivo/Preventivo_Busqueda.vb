@@ -1,4 +1,4 @@
-﻿Public Class Preventivo
+﻿Public Class Preventivo_Busqueda
     Private Sub Tipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Tipo.SelectedIndexChanged
         Select Case Tipo.Text
             Case "Mensual"
@@ -20,10 +20,14 @@
 
                 detalle.Items.Clear()
                 detalle.Items.Add("N/A")
-            Case "Calsificacion"
+
+            Case "Clasificacion"
                 detalle.Items.Clear()
-                detalle.Items.Add("Preventivo")
-                detalle.Items.Add("Correctivo")
+                detalle.Items.Add("Electrico")
+                detalle.Items.Add("Mecanico")
+                detalle.Items.Add("Neumatico")
+                detalle.Items.Add("Electro-Mecanico")
+                detalle.Items.Add("Mecanico-Neumatico")
 
             Case "Frecuencia"
                 detalle.Items.Clear()
@@ -41,5 +45,9 @@
 
 
         End Select
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
     End Sub
 End Class

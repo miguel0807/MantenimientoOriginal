@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Controlador de casos</ProductName>
     <PublisherName>Miguel Alvarado</PublisherName>
-    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationRevision>23</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -67,7 +67,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>tools_22686.ico</ApplicationIcon>
+    <ApplicationIcon>Otros\tools_22686.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>FE85F22A9A8F16C9D60C1539CDE9401B9C853026</ManifestCertificateThumbprint>
@@ -110,50 +110,50 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Busqueda_Material.Designer.vb">
+    <Compile Include="Otros\ApplicationEvents.vb" />
+    <Compile Include="Bodega\Busqueda_Material.Designer.vb">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
     </Compile>
-    <Compile Include="Busqueda_Material.vb">
+    <Compile Include="Bodega\Busqueda_Material.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conexion.vb" />
-    <Compile Include="ConfigDatagridview.vb" />
-    <Compile Include="Ejemplo.Designer.vb">
+    <Compile Include="Bodega\ConfigDatagridview.vb" />
+    <Compile Include="Otros\Ejemplo.Designer.vb">
       <DependentUpon>Ejemplo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ejemplo.vb">
+    <Compile Include="Otros\Ejemplo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Indicadores_Editable.Designer.vb">
+    <Compile Include="Indicadores\Indicadores_Editable.Designer.vb">
       <DependentUpon>Indicadores_Editable.vb</DependentUpon>
     </Compile>
-    <Compile Include="Indicadores_Editable.vb">
+    <Compile Include="Indicadores\Indicadores_Editable.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Indicadores_Nuevo.Designer.vb">
+    <Compile Include="Indicadores\Indicadores_Nuevo.Designer.vb">
       <DependentUpon>Indicadores_Nuevo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Indicadores_Nuevo.vb">
+    <Compile Include="Indicadores\Indicadores_Nuevo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Indicadores_Proceso.Designer.vb">
+    <Compile Include="Indicadores\Indicadores_Proceso.Designer.vb">
       <DependentUpon>Indicadores_Proceso.vb</DependentUpon>
     </Compile>
-    <Compile Include="Indicadores_Proceso.vb">
+    <Compile Include="Indicadores\Indicadores_Proceso.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaterialNuevo.vb">
+    <Compile Include="Bodega\MaterialNuevo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaterialNuevo.Designer.vb">
+    <Compile Include="Bodega\MaterialNuevo.Designer.vb">
       <DependentUpon>MaterialNuevo.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modificar_Material.Designer.vb">
+    <Compile Include="Bodega\Modificar_Material.Designer.vb">
       <DependentUpon>Modificar_Material.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modificar_Material.vb">
+    <Compile Include="Bodega\Modificar_Material.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -178,33 +178,33 @@
     <Compile Include="Presentacion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo.Designer.vb">
-      <DependentUpon>Preventivo.vb</DependentUpon>
+    <Compile Include="Preventivo\Preventivo_Busqueda.Designer.vb">
+      <DependentUpon>Preventivo_Busqueda.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo.vb">
+    <Compile Include="Preventivo\Preventivo_Busqueda.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Busqueda_Material.resx">
+    <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ejemplo.resx">
+    <EmbeddedResource Include="Otros\Ejemplo.resx">
       <DependentUpon>Ejemplo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Indicadores_Editable.resx">
+    <EmbeddedResource Include="Indicadores\Indicadores_Editable.resx">
       <DependentUpon>Indicadores_Editable.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Indicadores_Nuevo.resx">
+    <EmbeddedResource Include="Indicadores\Indicadores_Nuevo.resx">
       <DependentUpon>Indicadores_Nuevo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Indicadores_Proceso.resx">
+    <EmbeddedResource Include="Indicadores\Indicadores_Proceso.resx">
       <DependentUpon>Indicadores_Proceso.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaterialNuevo.resx">
+    <EmbeddedResource Include="Bodega\MaterialNuevo.resx">
       <DependentUpon>MaterialNuevo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modificar_Material.resx">
+    <EmbeddedResource Include="Bodega\Modificar_Material.resx">
       <DependentUpon>Modificar_Material.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -216,12 +216,12 @@
     <EmbeddedResource Include="Presentacion.resx">
       <DependentUpon>Presentacion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo.resx">
-      <DependentUpon>Preventivo.vb</DependentUpon>
+    <EmbeddedResource Include="Preventivo\Preventivo_Busqueda.resx">
+      <DependentUpon>Preventivo_Busqueda.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Mantenimiento_TemporaryKey.pfx" />
+    <None Include="Otros\Mantenimiento_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -232,7 +232,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="Otros\App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\109634705-blue-dark-blue-black-abstract-background-blur-gradient.jpg" />
@@ -241,7 +241,7 @@
     <None Include="Resources\gris.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="tools_22686.ico" />
+    <Content Include="Otros\tools_22686.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -255,5 +255,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿Public Class Presentacion
+﻿Imports Mantenimiento.Preventivo_Busqueda
+Public Class Presentacion
 
 
 
@@ -82,6 +83,9 @@
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Preventivo.Show()
+        Preventivo_Busqueda.Show()
+
+
+
     End Sub
 End Class
