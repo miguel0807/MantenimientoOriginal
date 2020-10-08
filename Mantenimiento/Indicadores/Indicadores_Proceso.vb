@@ -2,16 +2,13 @@
 Public Class Indicadores_Proceso
     Public conteo_total As Integer
     Private Sub Indicadores_Proceso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Try
+
 
         datag()
 
 
 
 
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

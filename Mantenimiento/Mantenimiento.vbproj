@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Controlador de casos</ProductName>
     <PublisherName>Miguel Alvarado</PublisherName>
-    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationRevision>25</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -178,10 +178,22 @@
     <Compile Include="Presentacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Preventivo\Preventivo.Designer.vb">
+      <DependentUpon>Preventivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\Preventivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Preventivo\Preventivo_Busqueda.Designer.vb">
       <DependentUpon>Preventivo_Busqueda.vb</DependentUpon>
     </Compile>
     <Compile Include="Preventivo\Preventivo_Busqueda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preventivo\Preventivo_Nuevo.Designer.vb">
+      <DependentUpon>Preventivo_Nuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\Preventivo_Nuevo.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -215,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion.resx">
       <DependentUpon>Presentacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo\Preventivo.resx">
+      <DependentUpon>Preventivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\Preventivo_Busqueda.resx">
       <DependentUpon>Preventivo_Busqueda.vb</DependentUpon>

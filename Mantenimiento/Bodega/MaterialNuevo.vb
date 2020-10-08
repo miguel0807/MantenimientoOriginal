@@ -9,7 +9,7 @@ Public Class MaterialNuevo
         conectar()
         adaptador.ExecuteNonQuery()
         MsgBox("Se registro correctamente")
-
+            Me.Close()
             'Material.Text = ""
             'Cantidad.Text = ""
             'Unidad.Text = ""
@@ -26,7 +26,7 @@ Public Class MaterialNuevo
         End Try
     End Sub
 
-    Private Sub Borrar_Click(sender As Object, e As EventArgs) Handles Borrar.Click
+    Private Sub Borrar_Click(sender As Object, e As EventArgs)
         Material.Text = ""
         Cantidad.Text = ""
         Unidad.Text = ""
