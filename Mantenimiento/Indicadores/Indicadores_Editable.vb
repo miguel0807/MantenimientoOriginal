@@ -211,14 +211,14 @@ Public Class Indicadores_Editable
 
                 conectar()
                 Dim actualizarnombre As New SqlCommand("Update Indicadores SET Nombre =('" & Nombre.Text & "'), Ubicacion =('" & Ubicacion.Text & "'), Clasificacion =('" & Clasificacion.Text & "') , Descripcion =('" & Descripcion.Text & "'), [Fecha Inicial] =('" & Fecha.Text & "'), [Fecha Final] =('" & fecha_final.Text & "'), [Estado] =(" & 1 & "), [Tiempo Inicial]= ('" & Tiempo_Inicio.Text & "'), [Horas]= ('" & txtacuhora.Text & "'), [Minutos]= ('" & txtacuminutos.Text & "'),[Seleccion]=( " & seleccion & ")  where [Caso] = ('" & Caso & "')", cn)
-                'TextBox1.Text = actualizarnombre.CommandText
+                ' TextBox1.Text = actualizarnombre.CommandText
                 actualizarnombre.ExecuteNonQuery()
-                    cn.Close()
-                    MsgBox("Se registro correctamente")
+                cn.Close()
+                MsgBox("Se registro correctamente")
 
 
-                    Me.Close()
-                End If
+                Me.Close()
+            End If
 
         Catch ex As Exception
             MsgBox(ex.Message)
