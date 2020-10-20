@@ -48,13 +48,17 @@ Partial Class MaterialNuevo
         Me.Parte = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Equipo = New System.Windows.Forms.ComboBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Gainsboro
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label5.Location = New System.Drawing.Point(589, 181)
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(578, 170)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(120, 29)
         Me.Label5.TabIndex = 50
@@ -63,8 +67,10 @@ Partial Class MaterialNuevo
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Gainsboro
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label7.Location = New System.Drawing.Point(589, 125)
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(578, 114)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(71, 29)
         Me.Label7.TabIndex = 48
@@ -73,8 +79,10 @@ Partial Class MaterialNuevo
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Gainsboro
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label8.Location = New System.Drawing.Point(589, 75)
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(578, 64)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(95, 29)
         Me.Label8.TabIndex = 46
@@ -83,8 +91,10 @@ Partial Class MaterialNuevo
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Gainsboro
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label3.Location = New System.Drawing.Point(46, 130)
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(35, 119)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(90, 29)
         Me.Label3.TabIndex = 44
@@ -93,8 +103,10 @@ Partial Class MaterialNuevo
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Gainsboro
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label4.Location = New System.Drawing.Point(589, 25)
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(578, 14)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(79, 29)
         Me.Label4.TabIndex = 42
@@ -103,8 +115,10 @@ Partial Class MaterialNuevo
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Gainsboro
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label2.Location = New System.Drawing.Point(46, 75)
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(35, 64)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(109, 29)
         Me.Label2.TabIndex = 40
@@ -113,8 +127,10 @@ Partial Class MaterialNuevo
         'Cantidad
         '
         Me.Cantidad.BackColor = System.Drawing.SystemColors.Control
+        Me.Cantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Cantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cantidad.Location = New System.Drawing.Point(163, 72)
+        Me.Cantidad.ForeColor = System.Drawing.Color.Black
+        Me.Cantidad.Location = New System.Drawing.Point(152, 61)
         Me.Cantidad.Name = "Cantidad"
         Me.Cantidad.Size = New System.Drawing.Size(370, 34)
         Me.Cantidad.TabIndex = 2
@@ -122,8 +138,10 @@ Partial Class MaterialNuevo
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Gainsboro
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label1.Location = New System.Drawing.Point(46, 25)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(35, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(99, 29)
         Me.Label1.TabIndex = 38
@@ -131,15 +149,17 @@ Partial Class MaterialNuevo
         '
         'Ingresar
         '
-        Me.Ingresar.BackColor = System.Drawing.Color.LightGray
-        Me.Ingresar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Ingresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.Ingresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.Ingresar.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Ingresar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Ingresar.FlatAppearance.BorderSize = 2
+        Me.Ingresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
+        Me.Ingresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Ingresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Ingresar.Location = New System.Drawing.Point(755, 343)
+        Me.Ingresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ingresar.ForeColor = System.Drawing.Color.Black
+        Me.Ingresar.Location = New System.Drawing.Point(424, 525)
         Me.Ingresar.Name = "Ingresar"
-        Me.Ingresar.Size = New System.Drawing.Size(228, 62)
+        Me.Ingresar.Size = New System.Drawing.Size(325, 88)
         Me.Ingresar.TabIndex = 13
         Me.Ingresar.Text = "Agregar"
         Me.Ingresar.UseVisualStyleBackColor = False
@@ -147,8 +167,10 @@ Partial Class MaterialNuevo
         'Material
         '
         Me.Material.BackColor = System.Drawing.SystemColors.Control
+        Me.Material.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Material.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Material.Location = New System.Drawing.Point(163, 22)
+        Me.Material.ForeColor = System.Drawing.Color.Black
+        Me.Material.Location = New System.Drawing.Point(152, 11)
         Me.Material.Name = "Material"
         Me.Material.Size = New System.Drawing.Size(370, 34)
         Me.Material.TabIndex = 1
@@ -156,8 +178,10 @@ Partial Class MaterialNuevo
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Gainsboro
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label6.Location = New System.Drawing.Point(43, 343)
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(4, 372)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(141, 29)
         Me.Label6.TabIndex = 51
@@ -167,17 +191,20 @@ Partial Class MaterialNuevo
         '
         Me.Descripcion.BackColor = System.Drawing.SystemColors.Control
         Me.Descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Descripcion.Location = New System.Drawing.Point(190, 343)
+        Me.Descripcion.ForeColor = System.Drawing.Color.Black
+        Me.Descripcion.Location = New System.Drawing.Point(152, 342)
         Me.Descripcion.Multiline = True
         Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.Size = New System.Drawing.Size(470, 98)
+        Me.Descripcion.Size = New System.Drawing.Size(962, 130)
         Me.Descripcion.TabIndex = 12
         '
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Gainsboro
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label9.Location = New System.Drawing.Point(589, 224)
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(578, 213)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(149, 29)
         Me.Label9.TabIndex = 54
@@ -185,9 +212,9 @@ Partial Class MaterialNuevo
         '
         'Codigo
         '
-        Me.Codigo.BackColor = System.Drawing.SystemColors.Control
+        Me.Codigo.BackColor = System.Drawing.Color.Gainsboro
         Me.Codigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Codigo.Location = New System.Drawing.Point(0, 417)
+        Me.Codigo.Location = New System.Drawing.Point(0, 626)
         Me.Codigo.Name = "Codigo"
         Me.Codigo.Size = New System.Drawing.Size(145, 34)
         Me.Codigo.TabIndex = 55
@@ -196,9 +223,10 @@ Partial Class MaterialNuevo
         '
         Me.Unidad.BackColor = System.Drawing.SystemColors.Control
         Me.Unidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Unidad.ForeColor = System.Drawing.Color.Black
         Me.Unidad.FormattingEnabled = True
-        Me.Unidad.Items.AddRange(New Object() {"Unidad", "Bolsas()", "Metros", "N/A"})
-        Me.Unidad.Location = New System.Drawing.Point(163, 122)
+        Me.Unidad.Items.AddRange(New Object() {"Unidad", "Metros", "N/A"})
+        Me.Unidad.Location = New System.Drawing.Point(152, 111)
         Me.Unidad.Name = "Unidad"
         Me.Unidad.Size = New System.Drawing.Size(370, 37)
         Me.Unidad.TabIndex = 3
@@ -207,9 +235,10 @@ Partial Class MaterialNuevo
         '
         Me.Ubicacion.BackColor = System.Drawing.SystemColors.Control
         Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Ubicacion.ForeColor = System.Drawing.Color.Black
         Me.Ubicacion.FormattingEnabled = True
-        Me.Ubicacion.Items.AddRange(New Object() {"E2.A", "E2.B", "E2.C", "E2.D", "E2.E"})
-        Me.Ubicacion.Location = New System.Drawing.Point(755, 173)
+        Me.Ubicacion.Items.AddRange(New Object() {"E1.", "E2.", "E3."})
+        Me.Ubicacion.Location = New System.Drawing.Point(744, 162)
         Me.Ubicacion.Name = "Ubicacion"
         Me.Ubicacion.Size = New System.Drawing.Size(370, 37)
         Me.Ubicacion.TabIndex = 10
@@ -218,9 +247,10 @@ Partial Class MaterialNuevo
         '
         Me.Clasificacion.BackColor = System.Drawing.SystemColors.Control
         Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Clasificacion.ForeColor = System.Drawing.Color.Black
         Me.Clasificacion.FormattingEnabled = True
         Me.Clasificacion.Items.AddRange(New Object() {"Electrico", "Mecanico", "Neumatico", "Hidraulico", "Electronico", "Otros"})
-        Me.Clasificacion.Location = New System.Drawing.Point(755, 224)
+        Me.Clasificacion.Location = New System.Drawing.Point(744, 213)
         Me.Clasificacion.Name = "Clasificacion"
         Me.Clasificacion.Size = New System.Drawing.Size(370, 37)
         Me.Clasificacion.TabIndex = 11
@@ -229,9 +259,10 @@ Partial Class MaterialNuevo
         '
         Me.Marca.BackColor = System.Drawing.SystemColors.Control
         Me.Marca.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Marca.ForeColor = System.Drawing.Color.Black
         Me.Marca.FormattingEnabled = True
         Me.Marca.Items.AddRange(New Object() {"N/A"})
-        Me.Marca.Location = New System.Drawing.Point(755, 22)
+        Me.Marca.Location = New System.Drawing.Point(744, 11)
         Me.Marca.Name = "Marca"
         Me.Marca.Size = New System.Drawing.Size(370, 37)
         Me.Marca.TabIndex = 7
@@ -240,9 +271,10 @@ Partial Class MaterialNuevo
         '
         Me.Modelo.BackColor = System.Drawing.SystemColors.Control
         Me.Modelo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Modelo.ForeColor = System.Drawing.Color.Black
         Me.Modelo.FormattingEnabled = True
         Me.Modelo.Items.AddRange(New Object() {"N/A"})
-        Me.Modelo.Location = New System.Drawing.Point(755, 72)
+        Me.Modelo.Location = New System.Drawing.Point(744, 61)
         Me.Modelo.Name = "Modelo"
         Me.Modelo.Size = New System.Drawing.Size(370, 37)
         Me.Modelo.TabIndex = 8
@@ -251,9 +283,10 @@ Partial Class MaterialNuevo
         '
         Me.Serie.BackColor = System.Drawing.SystemColors.Control
         Me.Serie.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Serie.ForeColor = System.Drawing.Color.Black
         Me.Serie.FormattingEnabled = True
         Me.Serie.Items.AddRange(New Object() {"N/A"})
-        Me.Serie.Location = New System.Drawing.Point(755, 122)
+        Me.Serie.Location = New System.Drawing.Point(744, 111)
         Me.Serie.Name = "Serie"
         Me.Serie.Size = New System.Drawing.Size(370, 37)
         Me.Serie.TabIndex = 9
@@ -262,9 +295,10 @@ Partial Class MaterialNuevo
         '
         Me.Empresa.BackColor = System.Drawing.SystemColors.Control
         Me.Empresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Empresa.ForeColor = System.Drawing.Color.Black
         Me.Empresa.FormattingEnabled = True
-        Me.Empresa.Items.AddRange(New Object() {"McMaster", "Amazon", "Inline Filling System", "Industrial Solution", "Ebay", "N/A"})
-        Me.Empresa.Location = New System.Drawing.Point(162, 173)
+        Me.Empresa.Items.AddRange(New Object() {"McMaster", "EPA", "Mafisa", "Amazon", "Inline Filling System", "Industrial Solution", "Ebay", "N/A"})
+        Me.Empresa.Location = New System.Drawing.Point(151, 162)
         Me.Empresa.Name = "Empresa"
         Me.Empresa.Size = New System.Drawing.Size(370, 37)
         Me.Empresa.TabIndex = 4
@@ -272,8 +306,10 @@ Partial Class MaterialNuevo
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Gainsboro
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label10.Location = New System.Drawing.Point(46, 224)
+        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label10.Location = New System.Drawing.Point(35, 213)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(83, 29)
         Me.Label10.TabIndex = 59
@@ -282,8 +318,10 @@ Partial Class MaterialNuevo
         'Label11
         '
         Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Gainsboro
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label11.Location = New System.Drawing.Point(46, 173)
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(35, 162)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(110, 29)
         Me.Label11.TabIndex = 58
@@ -292,8 +330,10 @@ Partial Class MaterialNuevo
         'Parte
         '
         Me.Parte.BackColor = System.Drawing.SystemColors.Control
+        Me.Parte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Parte.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Parte.Location = New System.Drawing.Point(162, 224)
+        Me.Parte.ForeColor = System.Drawing.Color.Black
+        Me.Parte.Location = New System.Drawing.Point(151, 213)
         Me.Parte.Name = "Parte"
         Me.Parte.Size = New System.Drawing.Size(370, 34)
         Me.Parte.TabIndex = 5
@@ -301,8 +341,10 @@ Partial Class MaterialNuevo
         'Label12
         '
         Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Gainsboro
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label12.Location = New System.Drawing.Point(46, 277)
+        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Label12.Location = New System.Drawing.Point(35, 266)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(90, 29)
         Me.Label12.TabIndex = 61
@@ -312,47 +354,60 @@ Partial Class MaterialNuevo
         '
         Me.Equipo.BackColor = System.Drawing.SystemColors.Control
         Me.Equipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Equipo.ForeColor = System.Drawing.Color.Black
         Me.Equipo.FormattingEnabled = True
-        Me.Equipo.Items.AddRange(New Object() {"Llenadora Cartuchos Wilsonville", "Llenadora Cartuchos DD", "Llenadora litros", "LLenadora Pails", "LLenadora limpiadores", "Agitadores pequeños", "Agitadores medianos", "Agitadores grandes", "Bomba de diafragma 1/2", "Bomba de diafragma 3/4", "Bomba de diafragma 1""", "Tank Farm"})
-        Me.Equipo.Location = New System.Drawing.Point(162, 277)
+        Me.Equipo.Items.AddRange(New Object() {"Llenadora Cartuchos Wilsonville", "Llenadora Cartuchos DD", "Llenadora litros", "LLenadora Pails", "LLenadora limpiadores", "Agitadores pequeños", "Agitadores medianos", "Agitadores grandes", "Agitadores Ross", "Bomba de diafragma 1/2", "Bomba de diafragma 3/4", "Bomba de diafragma 1""", "Tank Farm", "Soldadora", "Selladora Bolsas"})
+        Me.Equipo.Location = New System.Drawing.Point(151, 266)
         Me.Equipo.Name = "Equipo"
         Me.Equipo.Size = New System.Drawing.Size(370, 37)
         Me.Equipo.TabIndex = 6
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Equipo)
+        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Descripcion)
+        Me.Panel1.Controls.Add(Me.Empresa)
+        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Controls.Add(Me.Label11)
+        Me.Panel1.Controls.Add(Me.Parte)
+        Me.Panel1.Controls.Add(Me.Serie)
+        Me.Panel1.Controls.Add(Me.Modelo)
+        Me.Panel1.Controls.Add(Me.Marca)
+        Me.Panel1.Controls.Add(Me.Clasificacion)
+        Me.Panel1.Controls.Add(Me.Ubicacion)
+        Me.Panel1.Controls.Add(Me.Unidad)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Cantidad)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Material)
+        Me.Panel1.Location = New System.Drawing.Point(11, 11)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1153, 490)
+        Me.Panel1.TabIndex = 62
         '
         'MaterialNuevo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ClientSize = New System.Drawing.Size(1197, 453)
-        Me.Controls.Add(Me.Equipo)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Empresa)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Parte)
-        Me.Controls.Add(Me.Serie)
-        Me.Controls.Add(Me.Modelo)
-        Me.Controls.Add(Me.Marca)
-        Me.Controls.Add(Me.Clasificacion)
-        Me.Controls.Add(Me.Ubicacion)
-        Me.Controls.Add(Me.Unidad)
+        Me.BackColor = System.Drawing.Color.Gainsboro
+        Me.ClientSize = New System.Drawing.Size(1179, 662)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Codigo)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Descripcion)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Cantidad)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Material)
         Me.Controls.Add(Me.Ingresar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "MaterialNuevo"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -384,4 +439,5 @@ Partial Class MaterialNuevo
     Friend WithEvents Parte As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Equipo As ComboBox
+    Friend WithEvents Panel1 As Panel
 End Class

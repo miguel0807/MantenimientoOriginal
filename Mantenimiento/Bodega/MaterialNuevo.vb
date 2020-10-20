@@ -5,10 +5,18 @@ Public Class MaterialNuevo
     Private Sub Ingresar_Click(sender As Object, e As EventArgs) Handles Ingresar.Click
 
         Try
+
+
+            If Material.Text = "" Or Cantidad.Text = "" Or Unidad.Text = "" Or Empresa.Text = "" Or Parte.Text = "" Or Equipo.Text = "" Or Marca.Text = "" Or Modelo.Text = "" Or Serie.Text = "" Or Ubicacion.Text = "" Or Clasificacion.Text = "" Or Descripcion.Text = "" Then
+                MsgBox("Complete todos los campos para agregar material nuevo")
+                Exit Sub
+
+            End If
+
             Dim adaptador As New SqlCommand("insert into Bodega values (" & count & ",'" & Material.Text & "'," & Cantidad.Text & ",'" & Unidad.Text & "','" & Marca.Text & "','" & Modelo.Text & "','" & Serie.Text & "','" & Ubicacion.Text & "','" & Descripcion.Text & "','" & Clasificacion.Text & "','" & Codigo.Text & "','" & Empresa.Text & "','" & Parte.Text & "','" & Equipo.Text & "')", cn)
-        conectar()
-        adaptador.ExecuteNonQuery()
-        MsgBox("Se registro correctamente")
+            conectar()
+            adaptador.ExecuteNonQuery()
+            MsgBox("Se registro correctamente")
             Me.Close()
             'Material.Text = ""
             'Cantidad.Text = ""
