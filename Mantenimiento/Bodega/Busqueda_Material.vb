@@ -56,4 +56,10 @@ Public Class Busqueda_Material
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         materiales_busqueda()
     End Sub
+
+    Private Sub busqueda_KeyDown(sender As Object, e As KeyEventArgs) Handles busqueda.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            materiales_busqueda()
+        End If
+    End Sub
 End Class

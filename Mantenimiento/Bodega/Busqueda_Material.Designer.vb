@@ -118,7 +118,7 @@ Partial Class Busqueda_Material
         Me.Tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Tipo.FormattingEnabled = True
-        Me.Tipo.Items.AddRange(New Object() {"Material", "Codigo", "Equipo"})
+        Me.Tipo.Items.AddRange(New Object() {"Material", "Empresa", "Clasificacion", "Codigo", "Equipo"})
         Me.Tipo.Location = New System.Drawing.Point(24, 79)
         Me.Tipo.Name = "Tipo"
         Me.Tipo.Size = New System.Drawing.Size(229, 37)

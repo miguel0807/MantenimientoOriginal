@@ -174,7 +174,7 @@ Module ConfigDatagridview
 
 
             Dim tabla As DataGridView = Busqueda_Material.DataGridView1
-            Dim adaptador As New SqlDataAdapter("select*from Bodega where convert(char,[" & Busqueda_Material.Tipo.Text & "]) like '%" & Busqueda_Material.busqueda.Text & "%'", cn)
+            Dim adaptador As New SqlDataAdapter("select*from Bodega where convert(char,[" & Busqueda_Material.Tipo.Text & "]) like '%" & Busqueda_Material.busqueda.Text & "%' order by Convert(char,Ubicacion) asc  ", cn)
             Dim dataS As New DataSet
             'busqueda.Text = adaptador.SelectCommand.CommandText
             adaptador.Fill(dataS, "Indicadores")
@@ -229,6 +229,8 @@ Module ConfigDatagridview
 
             Busqueda_Material.Label1.Text = "Cantidad: " & tabla.RowCount
             desconectar()
+
+
 
         Catch ex As Exception
             MsgBox(ex.Message)
