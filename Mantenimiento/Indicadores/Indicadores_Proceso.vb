@@ -1,8 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Public Class Indicadores_Proceso
     Public conteo_total As Integer
-    Private Sub Indicadores_Proceso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private Sub Indicadores_Proceso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Clasificacion.SelectedIndex = 0
 
         datag()
 
@@ -62,6 +63,8 @@ Public Class Indicadores_Proceso
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        datamiguel()
+
+        datacombobox()
+
     End Sub
 End Class

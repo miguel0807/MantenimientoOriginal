@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports Mantenimiento.Indicadores_Proceso
 
 
 Module ConfigDatagridview
@@ -87,7 +88,11 @@ Module ConfigDatagridview
 #End Region
     End Sub
 
-    Sub datamiguel()
+
+
+    Sub datacombobox()
+
+
 
 
 
@@ -117,7 +122,7 @@ Module ConfigDatagridview
 #Region "Buscar casos abiertos"
 
         Dim tabla As DataGridView = Indicadores_Proceso.DataGridView1
-        Dim adaptador As New SqlDataAdapter("select*from Indicadores where Estado=" & conteo & "and convert(char,Clasificacion)='Servicio Miguel'", cn)
+        Dim adaptador As New SqlDataAdapter("select*from Indicadores where Estado=" & conteo & "and convert(char,Clasificacion)=" & "'" & Indicadores_Proceso.Clasificacion.Text & "'" & "", cn)
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "Indicadores")
 
@@ -171,9 +176,9 @@ Module ConfigDatagridview
         Indicadores_Proceso.Label1.Text = "Casos pendientes: " & tabla.RowCount
         Indicadores_Proceso.conteo_total = tabla.RowCount
 #End Region
+
+
     End Sub
-
-
 
     Sub prue()
 #Region "Configuracion datagridview1"
