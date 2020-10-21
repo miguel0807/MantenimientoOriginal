@@ -60,4 +60,8 @@ Public Class Indicadores_Proceso
     Private Sub DataGridView1_Sorted(sender As Object, e As EventArgs) Handles DataGridView1.Sorted
         prue()
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        datamiguel()
+    End Sub
 End Class
