@@ -86,15 +86,12 @@ Public Class Lista_Equipos
             Case "Clase"
                 busqueda_clase()
 
+            Case "Clasificacion"
+                busqueda_clasificacion()
         End Select
 
 
     End Sub
 
-    Private Sub detalle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles detalle.SelectedIndexChanged
 
-
-
-
-    End Sub
 End Class
