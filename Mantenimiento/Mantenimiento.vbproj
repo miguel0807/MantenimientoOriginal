@@ -180,6 +180,13 @@
     <Compile Include="Presentacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Preventivo\ConfigPreventivo.vb" />
+    <Compile Include="Preventivo\Lista_Equipos.Designer.vb">
+      <DependentUpon>Lista_Equipos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\Lista_Equipos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Preventivo\Preventivo.Designer.vb">
       <DependentUpon>Preventivo.vb</DependentUpon>
     </Compile>
@@ -190,12 +197,6 @@
       <DependentUpon>Preventivo_Busqueda.vb</DependentUpon>
     </Compile>
     <Compile Include="Preventivo\Preventivo_Busqueda.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Preventivo\Preventivo_Nuevo.Designer.vb">
-      <DependentUpon>Preventivo_Nuevo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Preventivo\Preventivo_Nuevo.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -229,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion.resx">
       <DependentUpon>Presentacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo\Lista_Equipos.resx">
+      <DependentUpon>Lista_Equipos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\Preventivo.resx">
       <DependentUpon>Preventivo.vb</DependentUpon>
