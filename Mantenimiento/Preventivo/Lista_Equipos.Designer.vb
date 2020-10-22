@@ -31,7 +31,6 @@ Partial Class Lista_Equipos
         Me.Button1 = New System.Windows.Forms.Button()
         Me.detalle = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -149,21 +148,12 @@ Partial Class Lista_Equipos
         Me.DataGridView1.Size = New System.Drawing.Size(1316, 467)
         Me.DataGridView1.TabIndex = 103
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(551, 62)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(275, 24)
-        Me.ComboBox1.TabIndex = 104
-        '
         'Lista_Equipos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1437, 793)
-        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.detalle)
         Me.Controls.Add(Me.Button2)
@@ -185,5 +175,4 @@ Partial Class Lista_Equipos
     Friend WithEvents Button1 As Button
     Friend WithEvents detalle As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents ComboBox1 As ComboBox
 End Class

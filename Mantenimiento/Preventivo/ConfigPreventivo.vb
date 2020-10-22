@@ -1,7 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
-Module ConfigPreventivo
 
+Module ConfigPreventivo
+    Public codigo As String
+    Public columna As String
 
 #Region "Lista Equipos"
 
@@ -311,6 +313,8 @@ Module ConfigPreventivo
 #End Region
 
 #Region "Planificacion_Preventivo"
+
+
     Sub Configuracion_Año()
 
         Try
@@ -318,9 +322,9 @@ Module ConfigPreventivo
             Dim da As New SqlDataAdapter(cmd, cn)
             Dim ds As New DataSet
             da.Fill(ds)
-            With Planificacion_Preventivo.Tipo
-                Planificacion_Preventivo.Tipo.DataSource = ds.Tables(0)
-                Planificacion_Preventivo.Tipo.DisplayMember = "Año"
+            With Planificacion_Preventivo.año
+                Planificacion_Preventivo.año.DataSource = ds.Tables(0)
+                Planificacion_Preventivo.año.DisplayMember = "Año"
             End With
 
             cn.Close()
@@ -335,9 +339,9 @@ Module ConfigPreventivo
             Dim da As New SqlDataAdapter(cmd, cn)
             Dim ds As New DataSet
             da.Fill(ds)
-            With Planificacion_Preventivo.detalle
-                Planificacion_Preventivo.detalle.DataSource = ds.Tables(0)
-                Planificacion_Preventivo.detalle.DisplayMember = "Meses"
+            With Planificacion_Preventivo.mes
+                Planificacion_Preventivo.mes.DataSource = ds.Tables(0)
+                Planificacion_Preventivo.mes.DisplayMember = "Meses"
             End With
 
             cn.Close()
@@ -345,5 +349,187 @@ Module ConfigPreventivo
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+
+    Sub general()
+
+
+
+#Region "Configuracion datagridview1"
+        conectar()
+        Dim formulario As DataGridView = Planificacion_Preventivo.DataGridView1
+        Dim conteo As String
+        conteo = 1
+
+#Region "Formato de letra"
+
+        formulario.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        formulario.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+
+#End Region
+        formulario.RowTemplate.Height = 30
+#Region "Color de los titulos"
+        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
+        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+#End Region
+#Region "Cambios de color celdas y alternadas"
+        formulario.RowsDefaultCellStyle.BackColor = Color.LightGray
+        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+
+#End Region
+#Region "Alineacion de titulos"
+        formulario.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+#Region "Buscar la planificacion"
+
+        Dim tabla As DataGridView = Planificacion_Preventivo.DataGridView1
+        Dim adaptador As New SqlDataAdapter("select carac.codigo, carac.clase as Equipos, plani.Enero,plani.Febrero,plani.Marzo,plani.Abril,plani.Mayo,plani.Junio,plani.Julio,plani.Agosto,plani.Septiembre,plani.Octubre,plani.Noviembre,plani.Diciembre from Caracteristicas_Equipo carac,Planificacion_Equipos plani where Año='2020' and plani.Codigo=carac.Codigo", cn)
+        Dim dataS As New DataSet
+        adaptador.Fill(dataS, "Planificacion_Equipos")
+
+        tabla.DataSource = dataS.Tables("Planificacion_Equipos")
+
+#End Region
+
+
+#Region "Configuracion tabla"
+
+
+
+        '  tabla.RowHeadersVisible = False
+
+
+        tabla.Columns(0).Visible = False
+
+        tabla.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(12).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+
+
+        'tabla.Columns(1).Width = 380
+        'tabla.Columns(2).Width = 240
+        'tabla.Columns(3).Width = 170
+
+
+
+#End Region
+#End Region
+
+#Region "Conteo de cantidad de equipos"
+
+        Planificacion_Preventivo.Label1.Visible = True
+        Planificacion_Preventivo.Label1.Text = "Cantidad: " & tabla.RowCount
+        Planificacion_Preventivo.conteo = tabla.RowCount
+#End Region
+    End Sub
+
+    Sub agregar_Planificacion()
+        'Try
+
+        conectar()
+        Select Case columna
+            Case "2"
+                columna = "Enero"
+            Case "3"
+                columna = "Febrero"
+            Case "4"
+                columna = "Marzo"
+            Case "5"
+                columna = "Abril"
+            Case "6"
+                columna = "Mayo"
+            Case "7"
+                columna = "Junio"
+            Case "8"
+                columna = "Julio"
+            Case "9"
+                columna = "Agosto"
+            Case "10"
+                columna = "Septiembre"
+            Case "11"
+                columna = "Octubre"
+            Case "12"
+                columna = "Noviembre"
+            Case "13"
+                columna = "Diciembre"
+
+        End Select
+        Dim conteo1 As New SqlCommand("UPDATE Planificacion_Equipos SET " & columna & "='X'  WHERE Codigo='" & codigo & "'", cn)
+        conteo1.ExecuteNonQuery()
+        ' MsgBox("Agregado con exito")
+        desconectar()
+
+
+        general()
+
+
+
+
+
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'End Try
+    End Sub
+
+    Sub Eliminar_Planificacion()
+        'Try
+
+        conectar()
+        Select Case columna
+            Case "2"
+                columna = "Enero"
+            Case "3"
+                columna = "Febrero"
+            Case "4"
+                columna = "Marzo"
+            Case "5"
+                columna = "Abril"
+            Case "6"
+                columna = "Mayo"
+            Case "7"
+                columna = "Junio"
+            Case "8"
+                columna = "Julio"
+            Case "9"
+                columna = "Agosto"
+            Case "10"
+                columna = "Septiembre"
+            Case "11"
+                columna = "Octubre"
+            Case "12"
+                columna = "Noviembre"
+            Case "13"
+                columna = "Diciembre"
+
+        End Select
+        Dim conteo1 As New SqlCommand("UPDATE Planificacion_Equipos SET " & columna & "=''  WHERE Codigo='" & codigo & "'", cn)
+        conteo1.ExecuteNonQuery()
+        ' MsgBox("Agregado con exito")
+        desconectar()
+
+
+        general()
+
+
+
+
+
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'End Try
+    End Sub
+
 #End Region
 End Module

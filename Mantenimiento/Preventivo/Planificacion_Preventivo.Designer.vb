@@ -25,15 +25,20 @@ Partial Class Planificacion_Preventivo
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.detalle = New System.Windows.Forms.ComboBox()
+        Me.mes = New System.Windows.Forms.ComboBox()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Tipo = New System.Windows.Forms.ComboBox()
+        Me.año = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.clase = New System.Windows.Forms.ComboBox()
+        Me.detalle_equipo = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.tipobusqueda = New System.Windows.Forms.ComboBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -71,19 +76,19 @@ Partial Class Planificacion_Preventivo
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(1316, 467)
         Me.DataGridView1.TabIndex = 110
         '
-        'detalle
+        'mes
         '
-        Me.detalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.detalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.detalle.FormattingEnabled = True
-        Me.detalle.Location = New System.Drawing.Point(60, 123)
-        Me.detalle.Name = "detalle"
-        Me.detalle.Size = New System.Drawing.Size(229, 37)
-        Me.detalle.TabIndex = 109
+        Me.mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.mes.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.mes.FormattingEnabled = True
+        Me.mes.Location = New System.Drawing.Point(260, 123)
+        Me.mes.Name = "mes"
+        Me.mes.Size = New System.Drawing.Size(229, 37)
+        Me.mes.TabIndex = 109
+        Me.mes.Visible = False
         '
         'Button2
         '
@@ -100,21 +105,22 @@ Partial Class Planificacion_Preventivo
         Me.Button2.Text = "Buscar"
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'Tipo
+        'año
         '
-        Me.Tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Tipo.FormattingEnabled = True
-        Me.Tipo.Location = New System.Drawing.Point(60, 65)
-        Me.Tipo.Name = "Tipo"
-        Me.Tipo.Size = New System.Drawing.Size(229, 37)
-        Me.Tipo.TabIndex = 107
+        Me.año.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.año.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.año.FormattingEnabled = True
+        Me.año.Location = New System.Drawing.Point(12, 134)
+        Me.año.Name = "año"
+        Me.año.Size = New System.Drawing.Size(229, 37)
+        Me.año.TabIndex = 107
+        Me.año.Visible = False
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label10.Location = New System.Drawing.Point(63, 24)
+        Me.Label10.Location = New System.Drawing.Point(31, 24)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(210, 29)
         Me.Label10.TabIndex = 106
@@ -149,25 +155,27 @@ Partial Class Planificacion_Preventivo
         Me.Button1.Text = "Editar"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'ComboBox1
+        'clase
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(676, 123)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(229, 37)
-        Me.ComboBox1.TabIndex = 113
+        Me.clase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.clase.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.clase.FormattingEnabled = True
+        Me.clase.Location = New System.Drawing.Point(671, 65)
+        Me.clase.Name = "clase"
+        Me.clase.Size = New System.Drawing.Size(229, 37)
+        Me.clase.TabIndex = 113
+        Me.clase.Visible = False
         '
-        'ComboBox2
+        'detalle_equipo
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(676, 65)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(229, 37)
-        Me.ComboBox2.TabIndex = 112
+        Me.detalle_equipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.detalle_equipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.detalle_equipo.FormattingEnabled = True
+        Me.detalle_equipo.Location = New System.Drawing.Point(671, 123)
+        Me.detalle_equipo.Name = "detalle_equipo"
+        Me.detalle_equipo.Size = New System.Drawing.Size(229, 37)
+        Me.detalle_equipo.TabIndex = 112
+        Me.detalle_equipo.Visible = False
         '
         'Label2
         '
@@ -178,6 +186,62 @@ Partial Class Planificacion_Preventivo
         Me.Label2.Size = New System.Drawing.Size(180, 29)
         Me.Label2.TabIndex = 111
         Me.Label2.Text = "Agregar equipo"
+        Me.Label2.Visible = False
+        '
+        'tipobusqueda
+        '
+        Me.tipobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.tipobusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.tipobusqueda.FormattingEnabled = True
+        Me.tipobusqueda.Items.AddRange(New Object() {"General", "Especifico"})
+        Me.tipobusqueda.Location = New System.Drawing.Point(12, 91)
+        Me.tipobusqueda.Name = "tipobusqueda"
+        Me.tipobusqueda.Size = New System.Drawing.Size(229, 37)
+        Me.tipobusqueda.TabIndex = 114
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.Button3.FlatAppearance.BorderSize = 3
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Button3.Location = New System.Drawing.Point(936, 65)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(186, 84)
+        Me.Button3.TabIndex = 115
+        Me.Button3.Text = "Agregar"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.Button4.FlatAppearance.BorderSize = 3
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Button4.Location = New System.Drawing.Point(1139, 65)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(186, 84)
+        Me.Button4.TabIndex = 116
+        Me.Button4.Text = "Eliminar"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(349, 21)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox1.TabIndex = 117
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(349, 65)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox2.TabIndex = 118
         '
         'Planificacion_Preventivo
         '
@@ -185,13 +249,18 @@ Partial Class Planificacion_Preventivo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1437, 793)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.ComboBox2)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.tipobusqueda)
+        Me.Controls.Add(Me.clase)
+        Me.Controls.Add(Me.detalle_equipo)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.detalle)
+        Me.Controls.Add(Me.mes)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Tipo)
+        Me.Controls.Add(Me.año)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
@@ -204,13 +273,18 @@ Partial Class Planificacion_Preventivo
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents detalle As ComboBox
+    Friend WithEvents mes As ComboBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents Tipo As ComboBox
+    Friend WithEvents año As ComboBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents clase As ComboBox
+    Friend WithEvents detalle_equipo As ComboBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents tipobusqueda As ComboBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
 End Class
