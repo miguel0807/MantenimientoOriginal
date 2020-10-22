@@ -77,20 +77,23 @@ Public Class Lista_Equipos
                 End Try
 
 
-
-
-
-
         End Select
     End Sub
 
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        busqueda_equipos()
+        Select Case Tipo.Text
+            Case "Equipos"
+                busqueda_equipos()
+
+            Case "Clase"
+
+
+        End Select
+
+
     End Sub
 
-    Private Sub Lista_Equipos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class
