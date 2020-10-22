@@ -96,5 +96,7 @@ Public Class Lista_Equipos
 
     End Sub
 
+    Private Sub Lista_Equipos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

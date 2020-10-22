@@ -309,4 +309,41 @@ Module ConfigPreventivo
 
 
 #End Region
+
+#Region "Planificacion_Preventivo"
+    Sub Configuracion_Año()
+
+        Try
+            Dim cmd As String = "select*from Año_Datos"
+            Dim da As New SqlDataAdapter(cmd, cn)
+            Dim ds As New DataSet
+            da.Fill(ds)
+            With Planificacion_Preventivo.Tipo
+                Planificacion_Preventivo.Tipo.DataSource = ds.Tables(0)
+                Planificacion_Preventivo.Tipo.DisplayMember = "Año"
+            End With
+
+            cn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Sub Configuracion_Mes()
+
+        Try
+            Dim cmd As String = "select*from Meses_Datos"
+            Dim da As New SqlDataAdapter(cmd, cn)
+            Dim ds As New DataSet
+            da.Fill(ds)
+            With Planificacion_Preventivo.detalle
+                Planificacion_Preventivo.detalle.DataSource = ds.Tables(0)
+                Planificacion_Preventivo.detalle.DisplayMember = "Meses"
+            End With
+
+            cn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+#End Region
 End Module
