@@ -88,6 +88,9 @@ Public Class Lista_Equipos
 
             Case "Clasificacion"
                 busqueda_clasificacion()
+
+            Case "Frecuencia"
+                busqueda_frecuencia()
         End Select
 
 
