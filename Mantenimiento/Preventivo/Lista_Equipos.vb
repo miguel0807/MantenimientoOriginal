@@ -3,23 +3,18 @@ Public Class Lista_Equipos
     Public conteo As Integer
 
 
+
     Private Sub Tipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Tipo.SelectedIndexChanged
         Select Case Tipo.Text
 
 
             Case "Equipos"
                 detalle.Visible = False
-
                 detalle.Enabled = False
 
 
             Case "Clase"
                 detalle.Visible = True
-
-
-
-
-
                 detalle.Enabled = True
 
 
@@ -32,6 +27,7 @@ Public Class Lista_Equipos
                         Me.detalle.DataSource = ds.Tables(0)
                         Me.detalle.DisplayMember = "Clase"
                     End With
+
                     cn.Close()
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)
@@ -88,12 +84,17 @@ Public Class Lista_Equipos
                 busqueda_equipos()
 
             Case "Clase"
-
+                busqueda_clase()
 
         End Select
 
 
     End Sub
 
+    Private Sub detalle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles detalle.SelectedIndexChanged
 
+
+
+
+    End Sub
 End Class
