@@ -39,7 +39,9 @@ Partial Class Indicadores_Proceso
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToResizeRows = False
-        Me.DataGridView1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonShadow
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -60,14 +62,14 @@ Partial Class Indicadores_Proceso
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(36, 121)
+        Me.DataGridView1.Location = New System.Drawing.Point(36, 50)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1364, 441)
+        Me.DataGridView1.Size = New System.Drawing.Size(1364, 547)
         Me.DataGridView1.TabIndex = 3
         '
         'Button1
@@ -78,7 +80,7 @@ Partial Class Indicadores_Proceso
         Me.Button1.FlatAppearance.BorderSize = 3
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button1.Location = New System.Drawing.Point(780, 641)
+        Me.Button1.Location = New System.Drawing.Point(1146, 638)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(186, 84)
         Me.Button1.TabIndex = 2
@@ -87,11 +89,10 @@ Partial Class Indicadores_Proceso
         '
         'Label1
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label1.Location = New System.Drawing.Point(36, 638)
+        Me.Label1.Location = New System.Drawing.Point(36, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 33)
         Me.Label1.TabIndex = 2
@@ -107,7 +108,7 @@ Partial Class Indicadores_Proceso
         Me.Button2.FlatAppearance.BorderSize = 3
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button2.Location = New System.Drawing.Point(375, 641)
+        Me.Button2.Location = New System.Drawing.Point(167, 638)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(186, 84)
         Me.Button2.TabIndex = 1
