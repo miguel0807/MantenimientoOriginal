@@ -4,6 +4,8 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         hideSubmenu()
+
+
     End Sub
 
     Private Sub hideSubmenu()
@@ -50,6 +52,8 @@ Public Class Form1
         openChildForm(New Indicadores_Proceso())
 
         hideSubmenu()
+
+
     End Sub
 
 
@@ -100,8 +104,12 @@ Public Class Form1
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Application.Exit()
+        'Application.Exit()
+        Indicadores_Nuevo.Close()
+        Indicadores_Proceso.Close()
     End Sub
+
+
 
 
 End Class

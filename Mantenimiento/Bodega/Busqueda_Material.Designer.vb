@@ -167,7 +167,7 @@ Partial Class Busqueda_Material
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Busqueda_Material"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
