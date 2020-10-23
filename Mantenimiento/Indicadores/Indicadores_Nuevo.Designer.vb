@@ -30,8 +30,6 @@ Partial Class Indicadores_Nuevo
         Me.Fecha = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Nombre = New System.Windows.Forms.TextBox()
-        Me.Borrar = New System.Windows.Forms.Button()
-        Me.Ingresar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Ubicacion = New System.Windows.Forms.ComboBox()
@@ -82,9 +80,10 @@ Partial Class Indicadores_Nuevo
         '
         'Descripcion
         '
+        Me.Descripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Descripcion.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Descripcion.Location = New System.Drawing.Point(256, 340)
+        Me.Descripcion.Location = New System.Drawing.Point(269, 339)
         Me.Descripcion.Multiline = True
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.Size = New System.Drawing.Size(564, 156)
@@ -95,7 +94,7 @@ Partial Class Indicadores_Nuevo
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label6.Location = New System.Drawing.Point(109, 343)
+        Me.Label6.Location = New System.Drawing.Point(122, 342)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(138, 31)
         Me.Label6.TabIndex = 73
@@ -139,34 +138,16 @@ Partial Class Indicadores_Nuevo
         Me.Nombre.Size = New System.Drawing.Size(229, 30)
         Me.Nombre.TabIndex = 1
         '
-        'Borrar
-        '
-        Me.Borrar.Location = New System.Drawing.Point(429, -80)
-        Me.Borrar.Name = "Borrar"
-        Me.Borrar.Size = New System.Drawing.Size(190, 58)
-        Me.Borrar.TabIndex = 65
-        Me.Borrar.Text = "Borrar"
-        Me.Borrar.UseVisualStyleBackColor = True
-        '
-        'Ingresar
-        '
-        Me.Ingresar.Location = New System.Drawing.Point(121, -80)
-        Me.Ingresar.Name = "Ingresar"
-        Me.Ingresar.Size = New System.Drawing.Size(190, 58)
-        Me.Ingresar.TabIndex = 64
-        Me.Ingresar.Text = "Ingresar"
-        Me.Ingresar.UseVisualStyleBackColor = True
-        '
         'Panel1
         '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Location = New System.Drawing.Point(12, 45)
+        Me.Panel1.Location = New System.Drawing.Point(25, 44)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1001, 256)
         Me.Panel1.TabIndex = 0
@@ -264,8 +245,9 @@ Partial Class Indicadores_Nuevo
         '
         'Button2
         '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
-        Me.Button2.Location = New System.Drawing.Point(210, 546)
+        Me.Button2.Location = New System.Drawing.Point(223, 545)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(223, 78)
         Me.Button2.TabIndex = 5
@@ -274,8 +256,9 @@ Partial Class Indicadores_Nuevo
         '
         'Button3
         '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
-        Me.Button3.Location = New System.Drawing.Point(511, 546)
+        Me.Button3.Location = New System.Drawing.Point(524, 545)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(223, 78)
         Me.Button3.TabIndex = 6
@@ -287,7 +270,7 @@ Partial Class Indicadores_Nuevo
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label3.Location = New System.Drawing.Point(863, 13)
+        Me.Label3.Location = New System.Drawing.Point(876, 12)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 29)
         Me.Label3.TabIndex = 79
@@ -296,7 +279,7 @@ Partial Class Indicadores_Nuevo
         'Button5
         '
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(12, 13)
+        Me.Button5.Location = New System.Drawing.Point(25, 12)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(184, 29)
         Me.Button5.TabIndex = 80
@@ -315,7 +298,7 @@ Partial Class Indicadores_Nuevo
         Me.panel_boton.Controls.Add(Me.Button7)
         Me.panel_boton.Controls.Add(Me.Tiempo_Inicio)
         Me.panel_boton.Controls.Add(Me.Button6)
-        Me.panel_boton.Location = New System.Drawing.Point(12, 45)
+        Me.panel_boton.Location = New System.Drawing.Point(25, 44)
         Me.panel_boton.Name = "panel_boton"
         Me.panel_boton.Size = New System.Drawing.Size(1010, 579)
         Me.panel_boton.TabIndex = 4
@@ -502,16 +485,14 @@ Partial Class Indicadores_Nuevo
         Me.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.BackgroundImage = Global.Mantenimiento.My.Resources.Resources.gris
         Me.ClientSize = New System.Drawing.Size(1051, 646)
-        Me.Controls.Add(Me.panel_boton)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Descripcion)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Descripcion)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Borrar)
-        Me.Controls.Add(Me.Ingresar)
+        Me.Controls.Add(Me.panel_boton)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -540,8 +521,6 @@ Partial Class Indicadores_Nuevo
     Friend WithEvents Fecha As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Nombre As TextBox
-    Friend WithEvents Borrar As Button
-    Friend WithEvents Ingresar As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button1 As Button
