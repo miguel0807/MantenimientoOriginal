@@ -113,7 +113,7 @@ Partial Class Indicadores_Proceso
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(186, 84)
         Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Actualizar"
+        Me.Button2.Text = "General"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Button3

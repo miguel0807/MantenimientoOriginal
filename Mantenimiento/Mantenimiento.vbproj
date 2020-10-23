@@ -112,6 +112,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Otros\ApplicationEvents.vb" />
     <Compile Include="Bodega\Busqueda_Material.Designer.vb">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
@@ -209,6 +215,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Otros\Ejemplo.resx">
       <DependentUpon>Ejemplo.vb</DependentUpon>

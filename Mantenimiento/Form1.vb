@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿
+
+Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         hideSubmenu()
@@ -35,103 +37,53 @@
         showSubmenu(PanelToolsSubmenu)
     End Sub
 
-#Region "Buttons Submenu"
+#Region "Botones Indicadores"
     Private Sub button2_Click(sender As Object, e As EventArgs) Handles button2.Click
 
-        openChildForm(New Mantenimiento.Indicadores_Proceso())
-        '...
-        'your codes
-        '...
+        openChildForm(New Indicadores_Nuevo())
+
         hideSubmenu()
 
     End Sub
 
     Private Sub button3_Click(sender As Object, e As EventArgs) Handles button3.Click
-        '...
-        'your codes
-        '...
+        openChildForm(New Indicadores_Proceso())
+
         hideSubmenu()
     End Sub
 
-    Private Sub button4_Click(sender As Object, e As EventArgs) Handles button4.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
 
-    Private Sub button5_Click(sender As Object, e As EventArgs) Handles button5.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
+#End Region
 
+#Region "Botones Control de inventario"
     Private Sub button8_Click(sender As Object, e As EventArgs) Handles button8.Click
-        openChildForm(New Form3())
-        '...
-        'your codes
-        '...
+        openChildForm(New MaterialNuevo())
+
         hideSubmenu()
     End Sub
 
     Private Sub button7_Click(sender As Object, e As EventArgs) Handles button7.Click
-        '...
-        'your codes
-        '...
+        openChildForm(New Busqueda_Material())
+
         hideSubmenu()
     End Sub
 
-    Private Sub button6_Click(sender As Object, e As EventArgs) Handles button6.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
-
-    Private Sub button1_Click(sender As Object, e As EventArgs) Handles button1.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
+#End Region
+#Region "Botones Mantenimiento Preventivo"
 
     Private Sub button13_Click(sender As Object, e As EventArgs) Handles button13.Click
-        '...
-        'your codes
-        '...
+        openChildForm(New Lista_Equipos())
+
         hideSubmenu()
     End Sub
-
     Private Sub button12_Click(sender As Object, e As EventArgs) Handles button12.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
 
-    Private Sub button10_Click(sender As Object, e As EventArgs) Handles button10.Click
-        '...
-        'your codes
-        '...
+        openChildForm(New Planificacion_Preventivo())
+
         hideSubmenu()
+
     End Sub
 #End Region
-
-    Private Sub btnEqualizer_Click(sender As Object, e As EventArgs) Handles btnEqualizer.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
-
-    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-        '...
-        'your codes
-        '...
-        hideSubmenu()
-    End Sub
-
     Private currentForm As Form = Nothing
     Private Sub openChildForm(childForm As Form)
 
@@ -150,4 +102,6 @@
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
     End Sub
+
+
 End Class

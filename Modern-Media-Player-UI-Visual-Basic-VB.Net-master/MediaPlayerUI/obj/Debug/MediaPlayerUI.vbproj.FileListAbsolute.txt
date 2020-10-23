@@ -37,3 +37,13 @@ C:\Users\malvarado\Desktop\Goteras\Modern-Media-Player-UI-Visual-Basic-VB.Net-ma
 C:\Users\malvarado\Desktop\Goteras\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.exe
 C:\Users\malvarado\Desktop\Goteras\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.xml
 C:\Users\malvarado\Desktop\Goteras\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.vbprojAssemblyReference.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.Form1.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.Form2.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.Form3.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.Resources.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.vbproj.GenerateResource.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.vbproj.CoreCompileInputs.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Modern-Media-Player-UI-Visual-Basic-VB.Net-master\MediaPlayerUI\obj\Debug\MediaPlayerUI.pdb
