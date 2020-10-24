@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Planificacion_Preventivo
+Partial Class BusquedaPlanificacion_Preventivo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,8 +22,8 @@ Partial Class Planificacion_Preventivo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.mes = New System.Windows.Forms.ComboBox()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -31,12 +31,12 @@ Partial Class Planificacion_Preventivo
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.clase = New System.Windows.Forms.ComboBox()
-        Me.detalle_equipo = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.tipobusqueda = New System.Windows.Forms.ComboBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.detalle_equipo = New System.Windows.Forms.ComboBox()
+        Me.clase = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -50,23 +50,23 @@ Partial Class Planificacion_Preventivo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonShadow
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SlateGray
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SlateGray
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateGray
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSlateGray
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.Location = New System.Drawing.Point(60, 194)
         Me.DataGridView1.MultiSelect = False
@@ -153,39 +153,6 @@ Partial Class Planificacion_Preventivo
         Me.Button1.Text = "Editar"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'clase
-        '
-        Me.clase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.clase.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.clase.FormattingEnabled = True
-        Me.clase.Location = New System.Drawing.Point(671, 65)
-        Me.clase.Name = "clase"
-        Me.clase.Size = New System.Drawing.Size(229, 37)
-        Me.clase.TabIndex = 113
-        Me.clase.Visible = False
-        '
-        'detalle_equipo
-        '
-        Me.detalle_equipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.detalle_equipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.detalle_equipo.FormattingEnabled = True
-        Me.detalle_equipo.Location = New System.Drawing.Point(671, 123)
-        Me.detalle_equipo.Name = "detalle_equipo"
-        Me.detalle_equipo.Size = New System.Drawing.Size(229, 37)
-        Me.detalle_equipo.TabIndex = 112
-        Me.detalle_equipo.Visible = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label2.Location = New System.Drawing.Point(679, 24)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(180, 29)
-        Me.Label2.TabIndex = 111
-        Me.Label2.Text = "Agregar equipo"
-        Me.Label2.Visible = False
-        '
         'tipobusqueda
         '
         Me.tipobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -227,7 +194,40 @@ Partial Class Planificacion_Preventivo
         Me.Button4.Text = "Eliminar"
         Me.Button4.UseVisualStyleBackColor = False
         '
-        'Planificacion_Preventivo
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label2.Location = New System.Drawing.Point(679, 24)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(180, 29)
+        Me.Label2.TabIndex = 111
+        Me.Label2.Text = "Agregar equipo"
+        Me.Label2.Visible = False
+        '
+        'detalle_equipo
+        '
+        Me.detalle_equipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.detalle_equipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.detalle_equipo.FormattingEnabled = True
+        Me.detalle_equipo.Location = New System.Drawing.Point(671, 123)
+        Me.detalle_equipo.Name = "detalle_equipo"
+        Me.detalle_equipo.Size = New System.Drawing.Size(229, 37)
+        Me.detalle_equipo.TabIndex = 112
+        Me.detalle_equipo.Visible = False
+        '
+        'clase
+        '
+        Me.clase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.clase.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.clase.FormattingEnabled = True
+        Me.clase.Location = New System.Drawing.Point(671, 65)
+        Me.clase.Name = "clase"
+        Me.clase.Size = New System.Drawing.Size(229, 37)
+        Me.clase.TabIndex = 113
+        Me.clase.Visible = False
+        '
+        'BusquedaPlanificacion_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -246,7 +246,7 @@ Partial Class Planificacion_Preventivo
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
-        Me.Name = "Planificacion_Preventivo"
+        Me.Name = "BusquedaPlanificacion_Preventivo"
         Me.Text = "Planificacion_Preventivo"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -261,10 +261,10 @@ Partial Class Planificacion_Preventivo
     Friend WithEvents Label10 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents clase As ComboBox
-    Friend WithEvents detalle_equipo As ComboBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents tipobusqueda As ComboBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents detalle_equipo As ComboBox
+    Friend WithEvents clase As ComboBox
 End Class

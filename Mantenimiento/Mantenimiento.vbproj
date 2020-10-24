@@ -112,16 +112,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Preventivo\Equipo_Preventivo.Designer.vb">
-      <DependentUpon>Equipo_Preventivo.vb</DependentUpon>
+    <Compile Include="Preventivo\NuevoEquipo_Preventivo.Designer.vb">
+      <DependentUpon>NuevoEquipo_Preventivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\Equipo_Preventivo.vb">
+    <Compile Include="Preventivo\NuevoEquipo_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Presentacion.Designer.vb">
+      <DependentUpon>Presentacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="Presentacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Otros\ApplicationEvents.vb" />
@@ -186,47 +186,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Presentacion.Designer.vb">
-      <DependentUpon>Presentacion.vb</DependentUpon>
+    <Compile Include="Preventivo\NuevaClase_Preventivo.Designer.vb">
+      <DependentUpon>NuevaClase_Preventivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion.vb">
+    <Compile Include="Preventivo\NuevaClase_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\Clase_Preventivo.Designer.vb">
-      <DependentUpon>Clase_Preventivo.vb</DependentUpon>
+    <Compile Include="Preventivo\Busqueda_Equipos.Designer.vb">
+      <DependentUpon>Busqueda_Equipos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\Clase_Preventivo.vb">
+    <Compile Include="Preventivo\Busqueda_Equipos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\ConfigPreventivo.vb" />
-    <Compile Include="Preventivo\Lista_Equipos.Designer.vb">
-      <DependentUpon>Lista_Equipos.vb</DependentUpon>
+    <Compile Include="Preventivo\BusquedaPlanificacion_Preventivo.Designer.vb">
+      <DependentUpon>BusquedaPlanificacion_Preventivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\Lista_Equipos.vb">
+    <Compile Include="Preventivo\BusquedaPlanificacion_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\Planificacion_Preventivo.Designer.vb">
-      <DependentUpon>Planificacion_Preventivo.vb</DependentUpon>
+    <Compile Include="Preventivo\NuevoProvedor_Preventivo.Designer.vb">
+      <DependentUpon>NuevoProvedor_Preventivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\Planificacion_Preventivo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Preventivo\Preventivo.Designer.vb">
-      <DependentUpon>Preventivo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Preventivo\Preventivo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Preventivo\Preventivo_Busqueda.Designer.vb">
-      <DependentUpon>Preventivo_Busqueda.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Preventivo\Preventivo_Busqueda.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Preventivo\Provedor_Preventivo.Designer.vb">
-      <DependentUpon>Provedor_Preventivo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Preventivo\Provedor_Preventivo.vb">
+    <Compile Include="Preventivo\NuevoProvedor_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -234,11 +215,11 @@
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Equipo_Preventivo.resx">
-      <DependentUpon>Equipo_Preventivo.vb</DependentUpon>
+    <EmbeddedResource Include="Preventivo\NuevoEquipo_Preventivo.resx">
+      <DependentUpon>NuevoEquipo_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion.resx">
+      <DependentUpon>Presentacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Otros\Ejemplo.resx">
       <DependentUpon>Ejemplo.vb</DependentUpon>
@@ -264,26 +245,17 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion.resx">
-      <DependentUpon>Presentacion.vb</DependentUpon>
+    <EmbeddedResource Include="Preventivo\NuevaClase_Preventivo.resx">
+      <DependentUpon>NuevaClase_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Clase_Preventivo.resx">
-      <DependentUpon>Clase_Preventivo.vb</DependentUpon>
+    <EmbeddedResource Include="Preventivo\Busqueda_Equipos.resx">
+      <DependentUpon>Busqueda_Equipos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Lista_Equipos.resx">
-      <DependentUpon>Lista_Equipos.vb</DependentUpon>
+    <EmbeddedResource Include="Preventivo\BusquedaPlanificacion_Preventivo.resx">
+      <DependentUpon>BusquedaPlanificacion_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Planificacion_Preventivo.resx">
-      <DependentUpon>Planificacion_Preventivo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Preventivo.resx">
-      <DependentUpon>Preventivo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Preventivo_Busqueda.resx">
-      <DependentUpon>Preventivo_Busqueda.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Provedor_Preventivo.resx">
-      <DependentUpon>Provedor_Preventivo.vb</DependentUpon>
+    <EmbeddedResource Include="Preventivo\NuevoProvedor_Preventivo.resx">
+      <DependentUpon>NuevoProvedor_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

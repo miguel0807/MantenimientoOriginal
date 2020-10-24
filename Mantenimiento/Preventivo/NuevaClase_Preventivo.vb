@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class Clase_Preventivo
+Public Class NuevaClase_Preventivo
     Dim count As Integer
     Private Sub Crear_Click(sender As Object, e As EventArgs) Handles Crear.Click
 

@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class Planificacion_Preventivo
+Public Class BusquedaPlanificacion_Preventivo
     Public conteo As Integer
     Public codigo As String
     Public columna As String

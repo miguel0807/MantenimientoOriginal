@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class Provedor_Preventivo
+Public Class NuevoProvedor_Preventivo
 
 
     Private Sub Crear_Click(sender As Object, e As EventArgs) Handles Crear.Click

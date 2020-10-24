@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class Lista_Equipos
+Public Class Busqueda_Equipos
     Public conteo As Integer
 
 

@@ -1,91 +1,152 @@
-﻿Imports Mantenimiento.Preventivo_Busqueda
+﻿
+
 Public Class Presentacion
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        hideSubmenu()
 
 
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Indicadores_Nuevo.BringToFront()
-        Indicadores_Nuevo.WindowState = FormWindowState.Normal
-        Indicadores_Nuevo.Show()
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        Indicadores_Proceso.BringToFront()
-        Indicadores_Proceso.WindowState = FormWindowState.Maximized
+    Private Sub hideSubmenu()
 
-        Indicadores_Proceso.Show()
+        PanelMediaSubmenu.Visible = False
+        PanelPlaylistSubmenu.Visible = False
+        PanelToolsSubmenu.Visible = False
+
     End Sub
 
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-        MaterialNuevo.BringToFront()
-        MaterialNuevo.WindowState = FormWindowState.Normal
-        MaterialNuevo.Show()
+    Private Sub showSubmenu(submenu As Panel)
+
+        If submenu.Visible = False Then
+            hideSubmenu()
+            submenu.Visible = True
+        Else
+            submenu.Visible = False
+        End If
+
     End Sub
+
+    Private Sub btnMedia_Click(sender As Object, e As EventArgs) Handles btnMedia.Click
+        showSubmenu(PanelMediaSubmenu)
+    End Sub
+
+    Private Sub btnPlaylist_Click(sender As Object, e As EventArgs) Handles btnPlaylist.Click
+        showSubmenu(PanelPlaylistSubmenu)
+    End Sub
+
+    Private Sub btnTools_Click(sender As Object, e As EventArgs) Handles btnTools.Click
+        showSubmenu(PanelToolsSubmenu)
+    End Sub
+
+#Region "Botones Indicadores"
+    Private Sub button2_Click(sender As Object, e As EventArgs) Handles button2.Click
+
+        openChildForm(New Indicadores_Nuevo())
+
+        hideSubmenu()
+
+    End Sub
+
+    Private Sub button3_Click(sender As Object, e As EventArgs) Handles button3.Click
+        openChildForm(New Indicadores_Proceso())
+
+        hideSubmenu()
+
+
+    End Sub
+
+
+#End Region
+
+#Region "Botones Control de inventario"
+    Private Sub button8_Click(sender As Object, e As EventArgs) Handles button8.Click
+        openChildForm(New MaterialNuevo())
+
+        hideSubmenu()
+    End Sub
+
+    Private Sub button7_Click(sender As Object, e As EventArgs) Handles button7.Click
+        openChildForm(New Busqueda_Material())
+
+        hideSubmenu()
+    End Sub
+
+#End Region
+#Region "Botones Mantenimiento Preventivo"
+
+    Private Sub button13_Click(sender As Object, e As EventArgs) Handles button13.Click
+        openChildForm(New Busqueda_Equipos())
+
+        hideSubmenu()
+    End Sub
+    Private Sub button12_Click(sender As Object, e As EventArgs) Handles button12.Click
+        openChildForm(New BusquedaPlanificacion_Preventivo())
+
+
+
+
+    End Sub
+
+
+    Private Sub button10_Click(sender As Object, e As EventArgs) Handles button10.Click
+
+
+        openChildForm(New NuevaClase_Preventivo())
+        hideSubmenu()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        openChildForm(New NuevoProvedor_Preventivo())
+        hideSubmenu()
+    End Sub
+
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Busqueda_Material.BringToFront()
-        Busqueda_Material.WindowState = FormWindowState.Maximized
-        Busqueda_Material.Show()
+        openChildForm(New NuevoEquipo_Preventivo())
+        hideSubmenu()
+    End Sub
+#End Region
+
+
+
+    Private currentForm As Form = Nothing
+    Private Sub openChildForm(childForm As Form)
+
+        If currentForm IsNot Nothing Then currentForm.Close()
+        currentForm = childForm
+        childForm.TopLevel = False
+        childForm.FormBorderStyle = FormBorderStyle.None
+        childForm.Dock = DockStyle.Fill
+        PanelChildForm.Controls.Add(childForm)
+        PanelChildForm.Tag = childForm
+        childForm.BringToFront()
+        childForm.Show()
+
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Application.Exit()
+
+    End Sub
+
+    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
+        '#Region "Preguntar si quiere cerrar la lista de formularios"
+        '        For Each frm As Form In formularios
+        '            If MessageBox.Show(String.Format("¿Deseas cerrar el formulario {0}?", frm.Name), "Cerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
+        '                frm.Close()
+        '            Else
+        '                Exit For
+        '            End If
+        '        Next
+        '#End Region
+        For Each frm As Form In formularios
+            frm.Close()
+
+
+
+        Next
     End Sub
 
 
-
-
-
-    Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
-
-
-        Me.Show()
-        Me.WindowState = FormWindowState.Normal
-        Me.BringToFront()
-    End Sub
-
-    Private Sub Presentacion_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-        If (Me.WindowState = FormWindowState.Minimized) Then
-
-            ' Me.Hide()
-
-            ' Me.NotifyIcon1.BalloonTipText = "Controlador de casos en segundo plano"
-            'Me.NotifyIcon1.ShowBalloonTip(2000)
-        End If
-    End Sub
-
-
-
-    Private Sub BusquedaDeMaterialToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BusquedaDeMaterialToolStripMenuItem.Click
-        Busqueda_Material.BringToFront()
-        Busqueda_Material.WindowState = FormWindowState.Maximized
-        Busqueda_Material.Show()
-    End Sub
-
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        Indicadores_Proceso.BringToFront()
-        Indicadores_Proceso.WindowState = FormWindowState.Maximized
-
-        Indicadores_Proceso.Show()
-    End Sub
-
-    Private Sub RegistrarNuevoCasoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrarNuevoCasoToolStripMenuItem.Click
-        Indicadores_Nuevo.BringToFront()
-        Indicadores_Nuevo.WindowState = FormWindowState.Normal
-        Indicadores_Nuevo.Show()
-    End Sub
-
-    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
-        MaterialNuevo.BringToFront()
-        MaterialNuevo.WindowState = FormWindowState.Normal
-        MaterialNuevo.Show()
-    End Sub
-
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
-        Me.Close()
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Preventivo.Show()
-
-
-
-    End Sub
 End Class
