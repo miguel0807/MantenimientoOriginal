@@ -47,18 +47,19 @@ Public Class MaterialNuevo
     End Sub
 
     Private Sub MaterialNuevo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
         Try
             CenterToScreen()
 
-        conectar()
+            conectar()
 
-        Dim Query As String
-        Query = ("select COUNT (Conteo) from Bodega")
-        Dim cmd As New SqlCommand(Query, cn)
-        count = cmd.ExecuteScalar
-        Codigo.Text = "MATCR-" & count
-        'Coloca la cantidad de filas que hay en la tabla temporal
-        desconectar()
+            Dim Query As String
+            Query = ("select COUNT (Conteo) from Bodega")
+            Dim cmd As New SqlCommand(Query, cn)
+            count = cmd.ExecuteScalar
+            Codigo.Text = "MATCR-" & count
+            'Coloca la cantidad de filas que hay en la tabla temporal
+            desconectar()
             Codigo.Enabled = False
 
         Catch ex As Exception
@@ -148,4 +149,7 @@ Public Class MaterialNuevo
         End Try
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 End Class

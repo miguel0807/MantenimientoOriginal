@@ -3,7 +3,7 @@ Public Class Indicadores_Proceso
     Public conteo_total As Integer
 
     Private Sub Indicadores_Proceso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
         Clasificacion.SelectedIndex = 0
 
 

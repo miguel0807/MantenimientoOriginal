@@ -1,6 +1,6 @@
 ﻿Module Conexion
 
-
+    Public formularios As New List(Of Form) 'Crea una lista fe formularios para cerrar
 
 
     'Public conexion As String = "Data Source=MAT-COS-DB-10Z2\SQLEXPRESS;Initial Catalog=Inventario;integrated security=true" 'Miguel

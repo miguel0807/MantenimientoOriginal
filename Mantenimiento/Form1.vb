@@ -104,12 +104,30 @@ Public Class Form1
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        'Application.Exit()
-        Indicadores_Nuevo.Close()
-        Indicadores_Proceso.Close()
+        Application.Exit()
+
     End Sub
 
+    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
+        '#Region "Preguntar si quiere cerrar la lista de formularios"
+        '        For Each frm As Form In formularios
+        '            If MessageBox.Show(String.Format("¿Deseas cerrar el formulario {0}?", frm.Name), "Cerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
+        '                frm.Close()
+        '            Else
+        '                Exit For
+        '            End If
+        '        Next
+        '#End Region
+        For Each frm As Form In formularios
+            frm.Close()
 
 
 
+        Next
+    End Sub
+
+    Private Sub Form1_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
+       
+
+    End Sub
 End Class

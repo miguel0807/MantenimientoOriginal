@@ -102,7 +102,7 @@ Public Class Modificar_Material
     End Sub
 
     Private Sub Modificar_Material_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

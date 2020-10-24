@@ -160,7 +160,7 @@ Partial Class Form1
         Me.btnHelp.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnHelp.Size = New System.Drawing.Size(229, 45)
         Me.btnHelp.TabIndex = 8
-        Me.btnHelp.Text = "Configuracion"
+        Me.btnHelp.Text = "Cerrar Formularios"
         Me.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnHelp.UseVisualStyleBackColor = True
