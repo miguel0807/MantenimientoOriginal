@@ -112,6 +112,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Preventivo\Equipo_Preventivo.Designer.vb">
+      <DependentUpon>Equipo_Preventivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\Equipo_Preventivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
@@ -217,10 +223,19 @@
     <Compile Include="Preventivo\Preventivo_Busqueda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Preventivo\Provedor_Preventivo.Designer.vb">
+      <DependentUpon>Provedor_Preventivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\Provedor_Preventivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo\Equipo_Preventivo.resx">
+      <DependentUpon>Equipo_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -266,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\Preventivo_Busqueda.resx">
       <DependentUpon>Preventivo_Busqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo\Provedor_Preventivo.resx">
+      <DependentUpon>Provedor_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

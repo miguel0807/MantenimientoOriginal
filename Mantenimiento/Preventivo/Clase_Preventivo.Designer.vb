@@ -32,6 +32,8 @@ Partial Class Clase_Preventivo
         Me.Provedor = New System.Windows.Forms.ComboBox()
         Me.Crear = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Clave = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Clase
@@ -122,11 +124,29 @@ Partial Class Clase_Preventivo
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Codigo"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(25, 94)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(43, 17)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "Clave"
+        '
+        'Clave
+        '
+        Me.Clave.Location = New System.Drawing.Point(159, 94)
+        Me.Clave.Name = "Clave"
+        Me.Clave.Size = New System.Drawing.Size(200, 22)
+        Me.Clave.TabIndex = 13
+        '
         'Clase_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Clave)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Crear)
         Me.Controls.Add(Me.Provedor)
@@ -154,4 +174,6 @@ Partial Class Clase_Preventivo
     Friend WithEvents Provedor As ComboBox
     Friend WithEvents Crear As Button
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Clave As TextBox
 End Class

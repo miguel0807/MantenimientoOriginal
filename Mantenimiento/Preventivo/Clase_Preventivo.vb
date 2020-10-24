@@ -5,15 +5,15 @@ Public Class Clase_Preventivo
 
 
 
-        If Clase.Text = "" And Frecuencia.Text = "" And Clasificacion.Text = "" And Provedor.Text = "" Then
-                MsgBox("Complete todos los campos para crear nueva clase")
-                Exit Sub
+        If Clase.Text = "" Or Clave.Text = "" Or Frecuencia.Text = "" Or Clasificacion.Text = "" Or Provedor.Text = "" Then
+            MsgBox("Complete todos los campos para crear una nueva clase")
+            Exit Sub
 
-            End If
+        End If
 
 
 
-        Dim adaptador As New SqlCommand("insert into Caracteristicas_Equipo values (" & count & ",'" & Clase.Text & "','" & Frecuencia.Text & "','" & Clasificacion.Text & "','" & Provedor.Text & "')", cn)
+        Dim adaptador As New SqlCommand("insert into Caracteristicas_Equipo values (" & count & ",'" & Clase.Text & "','" & Clave.Text & "','" & Frecuencia.Text & "','" & Clasificacion.Text & "','" & Provedor.Text & "')", cn)
         conectar()
         'TextBox1.Text = adaptador.CommandText
         adaptador.ExecuteNonQuery()
@@ -26,6 +26,7 @@ Public Class Clase_Preventivo
     End Sub
 
     Private Sub Clase_Preventivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
         Try
 
 

@@ -81,13 +81,35 @@ Public Class Form1
         hideSubmenu()
     End Sub
     Private Sub button12_Click(sender As Object, e As EventArgs) Handles button12.Click
-
         openChildForm(New Planificacion_Preventivo())
 
-        hideSubmenu()
+
+
 
     End Sub
+
+
+    Private Sub button10_Click(sender As Object, e As EventArgs) Handles button10.Click
+
+
+        openChildForm(New Clase_Preventivo())
+        hideSubmenu()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        openChildForm(New Provedor_Preventivo())
+        hideSubmenu()
+    End Sub
+
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        openChildForm(New Equipo_Preventivo())
+        hideSubmenu()
+    End Sub
 #End Region
+
+
+
     Private currentForm As Form = Nothing
     Private Sub openChildForm(childForm As Form)
 
@@ -126,12 +148,5 @@ Public Class Form1
         Next
     End Sub
 
-    Private Sub Form1_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
-       
 
-    End Sub
-
-    Private Sub button10_Click(sender As Object, e As EventArgs) Handles button10.Click
-        Clase_Preventivo.Show()
-    End Sub
 End Class
