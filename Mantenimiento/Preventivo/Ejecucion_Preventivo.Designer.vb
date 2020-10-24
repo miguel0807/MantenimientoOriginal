@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Ejecucion_Preventivo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,19 +20,19 @@ Partial Class Ejecucion_Preventivo
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Crear = New System.Windows.Forms.Button()
-        Me.Frecuencia = New System.Windows.Forms.ComboBox()
+        Me.Finalizado = New System.Windows.Forms.Button()
+        Me.Responsable = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Etiqueta = New System.Windows.Forms.ComboBox()
         Me.Clase = New System.Windows.Forms.ComboBox()
-        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Fecha = New System.Windows.Forms.MonthCalendar()
+        Me.Comentarios = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label6
@@ -44,23 +44,23 @@ Partial Class Ejecucion_Preventivo
         Me.Label6.TabIndex = 25
         Me.Label6.Text = "Etiqueta"
         '
-        'Crear
+        'Finalizado
         '
-        Me.Crear.Location = New System.Drawing.Point(534, 275)
-        Me.Crear.Name = "Crear"
-        Me.Crear.Size = New System.Drawing.Size(173, 88)
-        Me.Crear.TabIndex = 5
-        Me.Crear.Text = "Finalizado"
-        Me.Crear.UseVisualStyleBackColor = True
+        Me.Finalizado.Location = New System.Drawing.Point(534, 275)
+        Me.Finalizado.Name = "Finalizado"
+        Me.Finalizado.Size = New System.Drawing.Size(173, 88)
+        Me.Finalizado.TabIndex = 5
+        Me.Finalizado.Text = "Finalizado"
+        Me.Finalizado.UseVisualStyleBackColor = True
         '
-        'Frecuencia
+        'Responsable
         '
-        Me.Frecuencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Frecuencia.FormattingEnabled = True
-        Me.Frecuencia.Location = New System.Drawing.Point(146, 125)
-        Me.Frecuencia.Name = "Frecuencia"
-        Me.Frecuencia.Size = New System.Drawing.Size(200, 24)
-        Me.Frecuencia.TabIndex = 2
+        Me.Responsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Responsable.FormattingEnabled = True
+        Me.Responsable.Location = New System.Drawing.Point(146, 125)
+        Me.Responsable.Name = "Responsable"
+        Me.Responsable.Size = New System.Drawing.Size(200, 24)
+        Me.Responsable.TabIndex = 2
         '
         'Label4
         '
@@ -116,32 +116,32 @@ Partial Class Ejecucion_Preventivo
         Me.Clase.Size = New System.Drawing.Size(200, 24)
         Me.Clase.TabIndex = 0
         '
-        'MonthCalendar1
+        'Fecha
         '
-        Me.MonthCalendar1.Location = New System.Drawing.Point(146, 193)
-        Me.MonthCalendar1.Name = "MonthCalendar1"
-        Me.MonthCalendar1.TabIndex = 3
+        Me.Fecha.Location = New System.Drawing.Point(146, 193)
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.TabIndex = 3
         '
-        'TextBox1
+        'Comentarios
         '
-        Me.TextBox1.Location = New System.Drawing.Point(486, 42)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(300, 166)
-        Me.TextBox1.TabIndex = 4
+        Me.Comentarios.Location = New System.Drawing.Point(486, 42)
+        Me.Comentarios.Multiline = True
+        Me.Comentarios.Name = "Comentarios"
+        Me.Comentarios.Size = New System.Drawing.Size(300, 166)
+        Me.Comentarios.TabIndex = 4
         '
         'Ejecucion_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.MonthCalendar1)
+        Me.Controls.Add(Me.Comentarios)
+        Me.Controls.Add(Me.Fecha)
         Me.Controls.Add(Me.Clase)
         Me.Controls.Add(Me.Etiqueta)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Crear)
-        Me.Controls.Add(Me.Frecuencia)
+        Me.Controls.Add(Me.Finalizado)
+        Me.Controls.Add(Me.Responsable)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -154,14 +154,14 @@ Partial Class Ejecucion_Preventivo
     End Sub
 
     Friend WithEvents Label6 As Label
-    Friend WithEvents Crear As Button
-    Friend WithEvents Frecuencia As ComboBox
+    Friend WithEvents Finalizado As Button
+    Friend WithEvents Responsable As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Etiqueta As ComboBox
     Friend WithEvents Clase As ComboBox
-    Friend WithEvents MonthCalendar1 As MonthCalendar
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Fecha As MonthCalendar
+    Friend WithEvents Comentarios As TextBox
 End Class
