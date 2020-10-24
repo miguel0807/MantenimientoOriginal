@@ -130,4 +130,8 @@ Public Class Form1
        
 
     End Sub
+
+    Private Sub button10_Click(sender As Object, e As EventArgs) Handles button10.Click
+        Clase_Preventivo.Show()
+    End Sub
 End Class

@@ -190,7 +190,7 @@ Partial Class Form1
         Me.button10.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.button10.Size = New System.Drawing.Size(229, 40)
         Me.button10.TabIndex = 2
-        Me.button10.Text = "Historial Preventivos"
+        Me.button10.Text = "Nueva clase"
         Me.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.button10.UseVisualStyleBackColor = True
         '
@@ -332,7 +332,6 @@ Partial Class Form1
         Me.btnMedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMedia.ForeColor = System.Drawing.Color.Silver
-        Me.btnMedia.Image = CType(resources.GetObject("btnMedia.Image"), System.Drawing.Image)
         Me.btnMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnMedia.Location = New System.Drawing.Point(0, 92)
         Me.btnMedia.Name = "btnMedia"
