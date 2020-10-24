@@ -106,6 +106,11 @@ Public Class Presentacion
         openChildForm(New NuevoEquipo_Preventivo())
         hideSubmenu()
     End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        openChildForm(New Ejecucion_Preventivo())
+        hideSubmenu()
+    End Sub
 #End Region
 
 
@@ -148,5 +153,7 @@ Public Class Presentacion
         Next
     End Sub
 
+    Private Sub Button5_Click(sender As Object, e As EventArgs) 
 
+    End Sub
 End Class
