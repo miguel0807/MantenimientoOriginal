@@ -1,5 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Public Class NuevoEquipo_Preventivo
+    Dim codigo As String = ""
+    Dim conteoequipos As String = ""
+    Dim conteonumero As Integer = 0
     Private Sub Equipo_Preventivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
 
@@ -57,7 +60,7 @@ Public Class NuevoEquipo_Preventivo
                 If ds.Tables("datos").Rows.Count > 0 Then
                     '  MaskedTextBox1.Mask = ""
 
-                    clave.text = ds.Tables("datos").Rows(0).Item(2).ToString
+                    Clave.Text = ds.Tables("datos").Rows(0).Item(3).ToString
 
                 End If
 
@@ -86,7 +89,7 @@ Public Class NuevoEquipo_Preventivo
 
         End If
 
-        Dim codigo As String = ""
+
 
 
         Select Case Clase.Text
@@ -120,8 +123,47 @@ Public Class NuevoEquipo_Preventivo
         Dim adaptador1 As New SqlCommand("insert into Lista_Equipos values (" & codigo & ",'" & Clave.Text + Etiqueta.Text & "','" & Placa.Text & "','" & Ubicacion.Text & "')", cn)
         conectar()
         adaptador1.ExecuteNonQuery()
-        MsgBox("Se registro correctamente")
-        Me.Close()
         desconectar()
+
+
+
+
+        Try
+
+
+
+
+            'En el parentesis entre & & se coloca cual valor se usara para la busqueda
+            Dim adaptador As New SqlDataAdapter("select*from Caracteristicas_Equipo where codigo ='" & codigo & "'", cn)
+            Dim ds As New DataSet
+            adaptador.Fill(ds, "datos")
+
+            'El item selecciona de cual columna de la base de datos se conectara y row es la fila
+            If ds.Tables("datos").Rows.Count > 0 Then
+                '  MaskedTextBox1.Mask = ""
+
+                conteoequipos = ds.Tables("datos").Rows(0).Item(2).ToString
+                conteonumero = conteoequipos
+                conteonumero = conteonumero + 1
+
+            End If
+
+
+            conectar()
+            Dim actualizarcantidad As New SqlCommand("Update Caracteristicas_Equipo SET Cantidad =" & conteonumero & "where [Codigo] = (" & codigo & ")", cn)
+            'TextBox1.Text = actualizarnombre.CommandText
+            actualizarcantidad.ExecuteNonQuery()
+            cn.Close()
+            MsgBox("Se registro correctamente")
+
+            Me.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Clave_Click(sender As Object, e As EventArgs) Handles Clave.Click
+
     End Sub
 End Class

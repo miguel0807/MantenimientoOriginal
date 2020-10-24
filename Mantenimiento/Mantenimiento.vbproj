@@ -216,6 +216,12 @@
     <Compile Include="Preventivo\NuevoProvedor_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Preventivo\Pendiente_Preventivos.Designer.vb">
+      <DependentUpon>Pendiente_Preventivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\Pendiente_Preventivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
@@ -265,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\NuevoProvedor_Preventivo.resx">
       <DependentUpon>NuevoProvedor_Preventivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo\Pendiente_Preventivos.resx">
+      <DependentUpon>Pendiente_Preventivos.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

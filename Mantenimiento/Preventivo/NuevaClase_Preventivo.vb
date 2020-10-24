@@ -13,7 +13,7 @@ Public Class NuevaClase_Preventivo
 
 
 
-        Dim adaptador As New SqlCommand("insert into Caracteristicas_Equipo values (" & count & ",'" & Clase.Text & "','" & Clave.Text & "','" & Frecuencia.Text & "','" & Clasificacion.Text & "','" & Provedor.Text & "')", cn)
+        Dim adaptador As New SqlCommand("insert into Caracteristicas_Equipo values (" & count & ",'" & Clase.Text & "', 0 ,'" & Clave.Text & "','" & Frecuencia.Text & "','" & Clasificacion.Text & "','" & Provedor.Text & "')", cn)
         conectar()
         'TextBox1.Text = adaptador.CommandText
         adaptador.ExecuteNonQuery()
