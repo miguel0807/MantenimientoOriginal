@@ -154,6 +154,28 @@ Public Class NuevoEquipo_Preventivo
             'TextBox1.Text = actualizarnombre.CommandText
             actualizarcantidad.ExecuteNonQuery()
             cn.Close()
+
+
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+
+#Region "Actualizar conteo"
+        Try
+
+
+
+
+
+            conectar()
+            Dim actualizarcantidadconteo As New SqlCommand("update Conteo_Equipos set Enero=Enero+1,Febrero=Febrero+1,Marzo=Marzo+1,Abril=Abril+1,Mayo=Mayo+1,Junio=Junio+1,Julio=Julio+1,Agosto=Agosto+1,Septiembre=Septiembre+1,Octubre=Octubre+1,Noviembre=Noviembre+1,Diciembre=Diciembre+1 where codigo=" & codigo & " and Año=" & Date.Now.Year & "", cn)
+            'TextBox1.Text = actualizarnombre.CommandText
+            actualizarcantidadconteo.ExecuteNonQuery()
+            cn.Close()
             MsgBox("Se registro correctamente")
 
             Me.Close()
@@ -161,6 +183,9 @@ Public Class NuevoEquipo_Preventivo
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+
+#End Region
+
     End Sub
 
     Private Sub Clave_Click(sender As Object, e As EventArgs) Handles Clave.Click
