@@ -110,7 +110,7 @@ Public Class Pendiente_Preventivos
 
 
 
-        '  tabla.RowHeadersVisible = False
+        tabla.RowHeadersVisible = False
 
 
         tabla.Columns(0).Visible = False
@@ -128,15 +128,24 @@ Public Class Pendiente_Preventivos
         tabla.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         tabla.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         tabla.Columns(12).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(13).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
 
 
-        'tabla.Columns(1).Width = 380
-        'tabla.Columns(2).Width = 240
-        'tabla.Columns(3).Width = 170
-
-
+        tabla.Columns(1).Width = 250
+        tabla.Columns(2).Width = 80
+        tabla.Columns(3).Width = 80
+        tabla.Columns(4).Width = 80
+        tabla.Columns(5).Width = 80
+        tabla.Columns(6).Width = 80
+        tabla.Columns(7).Width = 80
+        tabla.Columns(8).Width = 80
+        tabla.Columns(9).Width = 80
+        tabla.Columns(10).Width = 110
+        tabla.Columns(11).Width = 100
+        tabla.Columns(12).Width = 100
+        tabla.Columns(13).Width = 100
 
 #End Region
 #End Region
