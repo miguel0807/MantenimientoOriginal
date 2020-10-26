@@ -140,7 +140,7 @@ Partial Class NuevaClase_Preventivo
         Me.Clave.Size = New System.Drawing.Size(200, 22)
         Me.Clave.TabIndex = 13
         '
-        'Clase_Preventivo
+        'NuevaClase_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -157,7 +157,7 @@ Partial Class NuevaClase_Preventivo
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Clase)
-        Me.Name = "Clase_Preventivo"
+        Me.Name = "NuevaClase_Preventivo"
         Me.Text = "Clase_Preventivo"
         Me.ResumeLayout(False)
         Me.PerformLayout()

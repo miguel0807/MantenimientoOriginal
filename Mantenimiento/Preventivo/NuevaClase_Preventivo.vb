@@ -17,10 +17,23 @@ Public Class NuevaClase_Preventivo
         conectar()
         'TextBox1.Text = adaptador.CommandText
         adaptador.ExecuteNonQuery()
+
+
+
+        desconectar()
+
+
+#Region "Insertar 0 en la tabla conteo"
+
+        Dim adaptador1 As New SqlCommand("insert into Conteo_Equipos(Codigo,Año,Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre) values (" & count & "," & Date.Now.Year & ",0,0,0,0,0,0,0,0,0,0,0,0)", cn)
+        conectar()
+        ' TextBox1.Text = adaptador1.CommandText
+        adaptador1.ExecuteNonQuery()
         MsgBox("Se registro correctamente")
         Me.Close()
 
         desconectar()
+#End Region
 
 
     End Sub
@@ -93,4 +106,5 @@ Public Class NuevaClase_Preventivo
         End Try
 #End Region
     End Sub
+
 End Class
