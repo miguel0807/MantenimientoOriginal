@@ -34,15 +34,16 @@ Partial Class NuevoEquipo_Preventivo
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Clave = New System.Windows.Forms.Label()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Crear
         '
-        Me.Crear.Location = New System.Drawing.Point(576, 253)
+        Me.Crear.Location = New System.Drawing.Point(576, 210)
         Me.Crear.Name = "Crear"
         Me.Crear.Size = New System.Drawing.Size(131, 54)
         Me.Crear.TabIndex = 6
-        Me.Crear.Text = "Crear"
+        Me.Crear.Text = "Crear y Salir"
         Me.Crear.UseVisualStyleBackColor = True
         '
         'Clase
@@ -145,11 +146,21 @@ Partial Class NuevoEquipo_Preventivo
         Me.CheckBox2.TabIndex = 25
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(576, 357)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(131, 54)
+        Me.Button1.TabIndex = 26
+        Me.Button1.Text = "Crear y Continuar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'NuevoEquipo_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.Clave)
         Me.Controls.Add(Me.CheckBox1)
@@ -180,4 +191,5 @@ Partial Class NuevoEquipo_Preventivo
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Clave As Label
     Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents Button1 As Button
 End Class
