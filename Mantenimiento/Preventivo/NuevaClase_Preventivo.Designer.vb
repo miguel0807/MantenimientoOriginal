@@ -86,7 +86,7 @@ Partial Class NuevaClase_Preventivo
         Me.Frecuencia.Location = New System.Drawing.Point(159, 146)
         Me.Frecuencia.Name = "Frecuencia"
         Me.Frecuencia.Size = New System.Drawing.Size(200, 24)
-        Me.Frecuencia.TabIndex = 8
+        Me.Frecuencia.TabIndex = 3
         '
         'Clasificacion
         '
@@ -95,7 +95,7 @@ Partial Class NuevaClase_Preventivo
         Me.Clasificacion.Location = New System.Drawing.Point(159, 251)
         Me.Clasificacion.Name = "Clasificacion"
         Me.Clasificacion.Size = New System.Drawing.Size(200, 24)
-        Me.Clasificacion.TabIndex = 9
+        Me.Clasificacion.TabIndex = 4
         '
         'Provedor
         '
@@ -104,14 +104,14 @@ Partial Class NuevaClase_Preventivo
         Me.Provedor.Location = New System.Drawing.Point(159, 339)
         Me.Provedor.Name = "Provedor"
         Me.Provedor.Size = New System.Drawing.Size(200, 24)
-        Me.Provedor.TabIndex = 10
+        Me.Provedor.TabIndex = 5
         '
         'Crear
         '
         Me.Crear.Location = New System.Drawing.Point(508, 214)
         Me.Crear.Name = "Crear"
         Me.Crear.Size = New System.Drawing.Size(131, 54)
-        Me.Crear.TabIndex = 11
+        Me.Crear.TabIndex = 6
         Me.Crear.Text = "Crear"
         Me.Crear.UseVisualStyleBackColor = True
         '
@@ -138,7 +138,7 @@ Partial Class NuevaClase_Preventivo
         Me.Clave.Location = New System.Drawing.Point(159, 94)
         Me.Clave.Name = "Clave"
         Me.Clave.Size = New System.Drawing.Size(200, 22)
-        Me.Clave.TabIndex = 13
+        Me.Clave.TabIndex = 2
         '
         'NuevaClase_Preventivo
         '

@@ -33,6 +33,7 @@ Partial Class NuevoEquipo_Preventivo
         Me.Placa = New System.Windows.Forms.TextBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Clave = New System.Windows.Forms.Label()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'Crear
@@ -100,6 +101,7 @@ Partial Class NuevoEquipo_Preventivo
         '
         'Etiqueta
         '
+        Me.Etiqueta.Enabled = False
         Me.Etiqueta.Location = New System.Drawing.Point(273, 96)
         Me.Etiqueta.Name = "Etiqueta"
         Me.Etiqueta.Size = New System.Drawing.Size(40, 22)
@@ -134,11 +136,21 @@ Partial Class NuevoEquipo_Preventivo
         Me.Clave.TabIndex = 24
         Me.Clave.Text = "Clave"
         '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(336, 100)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(18, 17)
+        Me.CheckBox2.TabIndex = 25
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
         'NuevoEquipo_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.Clave)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Placa)
@@ -167,4 +179,5 @@ Partial Class NuevoEquipo_Preventivo
     Friend WithEvents Placa As TextBox
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Clave As Label
+    Friend WithEvents CheckBox2 As CheckBox
 End Class
