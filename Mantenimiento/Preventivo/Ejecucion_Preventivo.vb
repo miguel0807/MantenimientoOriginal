@@ -99,6 +99,55 @@ Public Class Ejecucion_Preventivo
         Me.Close()
 
         desconectar()
+
+#Region "Rebajar de conteo_equipos el mantenimiento del equipo"
+        Try
+            conectar()
+            Dim convermes As Integer = 0
+            Dim converletrames As String = ""
+            convermes = Fecha.SelectionStart.Month.ToString
+            Select Case convermes
+                Case 1
+                    converletrames = "Enero"
+                Case 2
+                    converletrames = "Febrero"
+                Case 3
+                    converletrames = "Marzo"
+                Case 4
+                    converletrames = "Abril"
+                Case 5
+                    converletrames = "Mayo"
+                Case 6
+                    converletrames = "Junio"
+                Case 7
+                    converletrames = "Julio"
+                Case 8
+                    converletrames = "Agosto"
+                Case 9
+                    converletrames = "Septiembre"
+                Case 10
+                    converletrames = "Octubre"
+                Case 11
+                    converletrames = "Noviembre"
+                Case 12
+                    converletrames = "Diciembre"
+            End Select
+
+
+            Dim actualizarcantidadconteo As New SqlCommand("update Conteo_Equipos set " & converletrames & "=" & converletrames & " - 1 where codigo=" & codigo & " and Año=" & Date.Now.Year & "", cn)
+            'TextBox1.Text = actualizarnombre.CommandText
+            actualizarcantidadconteo.ExecuteNonQuery()
+            cn.Close()
+            MsgBox("Se registro correctamente")
+
+            Me.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+#End Region
     End Sub
 
 
