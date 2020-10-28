@@ -208,28 +208,30 @@ Public Class NuevoEquipo_Preventivo
 
 
 #End Region
-#Region "Actualizar conteo"
-                Try
+
+                'Por ahora se descarta para tratar de implementarlo diferente
+                '#Region "Actualizar conteo"
+                '                Try
 
 
 
 
 
-                    conectar()
-                    Dim actualizarcantidadconteo As New SqlCommand("update Conteo_Equipos set Enero=Enero+1,Febrero=Febrero+1,Marzo=Marzo+1,Abril=Abril+1,Mayo=Mayo+1,Junio=Junio+1,Julio=Julio+1,Agosto=Agosto+1,Septiembre=Septiembre+1,Octubre=Octubre+1,Noviembre=Noviembre+1,Diciembre=Diciembre+1 where codigo=" & codigo & " and Año=" & Date.Now.Year & "", cn)
-                    'TextBox1.Text = actualizarnombre.CommandText
-                    actualizarcantidadconteo.ExecuteNonQuery()
-                    cn.Close()
-                    MsgBox("Se registro correctamente")
+                '                    conectar()
+                '                    Dim actualizarcantidadconteo As New SqlCommand("update Conteo_Equipos set Enero=Enero+1,Febrero=Febrero+1,Marzo=Marzo+1,Abril=Abril+1,Mayo=Mayo+1,Junio=Junio+1,Julio=Julio+1,Agosto=Agosto+1,Septiembre=Septiembre+1,Octubre=Octubre+1,Noviembre=Noviembre+1,Diciembre=Diciembre+1 where codigo=" & codigo & " and Año=" & Date.Now.Year & "", cn)
+                '                    'TextBox1.Text = actualizarnombre.CommandText
+                '                    actualizarcantidadconteo.ExecuteNonQuery()
+                '                    cn.Close()
+                '                    MsgBox("Se registro correctamente")
 
-                    Me.Close()
+                '                    Me.Close()
 
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
+                '                Catch ex As Exception
+                '                    MsgBox(ex.Message)
+                '                End Try
 
-#End Region
-
+                '#End Region
+                MsgBox("Se registro correctamente")
             Case "Clasificacion"
 
 
@@ -348,27 +350,29 @@ Public Class NuevoEquipo_Preventivo
 
 
 #End Region
-#Region "Actualizar conteo"
-                Try
+
+                'No deberia de actualizar nada porque se hace manualmente
+'#Region "Actualizar conteo"
+'                Try
 
 
 
 
 
-                    conectar()
-                    Dim actualizarcantidadconteo As New SqlCommand("update Conteo_Equipos set Enero=Enero+1,Febrero=Febrero+1,Marzo=Marzo+1,Abril=Abril+1,Mayo=Mayo+1,Junio=Junio+1,Julio=Julio+1,Agosto=Agosto+1,Septiembre=Septiembre+1,Octubre=Octubre+1,Noviembre=Noviembre+1,Diciembre=Diciembre+1 where codigo=" & codigo & " and Año=" & Date.Now.Year & "", cn)
-                    'TextBox1.Text = actualizarnombre.CommandText
-                    actualizarcantidadconteo.ExecuteNonQuery()
-                    cn.Close()
-                    MsgBox("Se registro correctamente")
+'                    conectar()
+'                    Dim actualizarcantidadconteo As New SqlCommand("update ConteoPlanificacion_Equipos set Enero=9999,Febrero=9999,Marzo=9999,Abril=9999,Mayo=9999,Junio=9999,Julio=9999,Agosto=9999,Septiembre=9999,Octubre=9999,Noviembre=9999,Diciembre=9999 where codigo=" & codigo & " and Año=" & Date.Now.Year & "", cn)
+'                    'TextBox1.Text = actualizarnombre.CommandText
+'                    actualizarcantidadconteo.ExecuteNonQuery()
+'                    cn.Close()
+'                    MsgBox("Se registro correctamente")
 
 
 
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
+'                Catch ex As Exception
+'                    MsgBox(ex.Message)
+'                End Try
 
-#End Region
+'#End Region
 
             Case "Clasificacion"
 
@@ -447,7 +451,7 @@ Public Class NuevoEquipo_Preventivo
 
         End Select
 #End Region
-
+        MsgBox("Se registro correctamente")
 
 
     End Sub

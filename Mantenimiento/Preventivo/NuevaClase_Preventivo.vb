@@ -23,9 +23,9 @@ Public Class NuevaClase_Preventivo
         desconectar()
 
 
-#Region "Insertar 0 en la tabla conteo"
+#Region "Insertar 9999 en la tabla conteo"
 
-        Dim adaptador1 As New SqlCommand("insert into ConteoPlanificacion_Equipos(Codigo,Año,Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre) values (" & count & "," & Date.Now.Year & ",0,0,0,0,0,0,0,0,0,0,0,0)", cn)
+        Dim adaptador1 As New SqlCommand("insert into ConteoPlanificacion_Equipos(Codigo,Año,Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre) values (" & count & "," & Date.Now.Year & ",9999,9999,9999,9999,9999,9999,9999,9999,9999,9999,9999,9999)", cn)
         conectar()
         ' TextBox1.Text = adaptador1.CommandText
         adaptador1.ExecuteNonQuery()

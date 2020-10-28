@@ -30,7 +30,6 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.año = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.tipobusqueda = New System.Windows.Forms.ComboBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -138,21 +137,6 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Label1.Visible = False
         '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.Button1.FlatAppearance.BorderSize = 3
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button1.Location = New System.Drawing.Point(671, 685)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(186, 84)
-        Me.Button1.TabIndex = 105
-        Me.Button1.Text = "Editar"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'tipobusqueda
         '
         Me.tipobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -245,7 +229,6 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.Controls.Add(Me.año)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
         Me.Name = "BusquedaPlanificacion_Preventivo"
         Me.Text = "Planificacion_Preventivo"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -260,7 +243,6 @@ Partial Class BusquedaPlanificacion_Preventivo
     Friend WithEvents año As ComboBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents tipobusqueda As ComboBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
