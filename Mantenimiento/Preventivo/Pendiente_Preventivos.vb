@@ -9,13 +9,34 @@ Public Class Pendiente_Preventivos
     Private Sub tipobusqueda_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tipobusqueda.SelectedIndexChanged
         Select Case tipobusqueda.Text
 
-            Case "Pendientes Mensual"
+            Case "Mostrar Año"
                 Clase.Visible = True
+                Clase.DataSource = Nothing
+                Clase.Items.Clear()
+                Clase.Items.Add("General")
+                Clase.Items.Add("Clase")
 
 
-            Case "Pendientes Anual"
 
+            Case "Mostrar Mes"
                 Clase.Visible = True
+                equipos.Visible = False
+
+#Region "Cargar datos en combobox de los Meses"
+                Try
+                    Dim cmd As String = "select*from Meses_Datos"
+                    Dim da As New SqlDataAdapter(cmd, cn)
+                    Dim ds As New DataSet
+                    da.Fill(ds)
+                    With Me.Clase
+                        Me.Clase.DataSource = ds.Tables(0)
+                        Me.Clase.DisplayMember = "Meses"
+                    End With
+                    cn.Close()
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
+#End Region
         End Select
     End Sub
 
@@ -43,7 +64,7 @@ Public Class Pendiente_Preventivos
                 End Try
 #End Region
 
-            Case "Todos"
+            Case "General"
                 equipos.Visible = False
 
         End Select
@@ -58,7 +79,7 @@ Public Class Pendiente_Preventivos
 
 
 
-            Case "Todos"
+            Case "General"
                 general()
 
 

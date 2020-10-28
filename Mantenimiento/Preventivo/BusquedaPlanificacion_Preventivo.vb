@@ -3,6 +3,7 @@ Public Class BusquedaPlanificacion_Preventivo
     Public conteo As Integer
     Public codigo As String
     Public columna As String
+    Public cantidad_equipos As Integer
 
 
     Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tipobusqueda.SelectedIndexChanged
@@ -130,11 +131,11 @@ Public Class BusquedaPlanificacion_Preventivo
 #Region "Buscar la planificacion"
 
         Dim tabla As DataGridView = Me.DataGridView1
-        Dim adaptador As New SqlDataAdapter("select carac.codigo, carac.clase as Equipos, plani.Enero,plani.Febrero,plani.Marzo,plani.Abril,plani.Mayo,plani.Junio,plani.Julio,plani.Agosto,plani.Septiembre,plani.Octubre,plani.Noviembre,plani.Diciembre from Caracteristicas_Equipo carac,Planificacion_Equipos plani where Año='2020' and plani.Codigo=carac.Codigo", cn)
+        Dim adaptador As New SqlDataAdapter("select carac.codigo, carac.clase as Equipos, plani.Enero,plani.Febrero,plani.Marzo,plani.Abril,plani.Mayo,plani.Junio,plani.Julio,plani.Agosto,plani.Septiembre,plani.Octubre,plani.Noviembre,plani.Diciembre from Caracteristicas_Equipo carac,ConteoPlanificacion_Equipos plani where Año='2020' and plani.Codigo=carac.Codigo", cn)
         Dim dataS As New DataSet
-        adaptador.Fill(dataS, "Planificacion_Equipos")
+        adaptador.Fill(dataS, "ConteoPlanificacion_Equipos")
 
-        tabla.DataSource = dataS.Tables("Planificacion_Equipos")
+        tabla.DataSource = dataS.Tables("ConteoPlanificacion_Equipos")
 
 #End Region
 
@@ -185,6 +186,24 @@ Public Class BusquedaPlanificacion_Preventivo
     Sub agregar_Planificacion()
         'Try
 
+
+
+#Region "Conseguir cantidad equipos"
+        'En el parentesis entre & & se coloca cual valor se usara para la busqueda
+        Dim adaptador As New SqlDataAdapter("select*from Caracteristicas_Equipo where Codigo=" & codigo & "", cn)
+        Dim ds As New DataSet
+        adaptador.Fill(ds, "datos")
+
+        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
+        If ds.Tables("datos").Rows.Count > 0 Then
+            cantidad_equipos = ds.Tables("datos").Rows(0).Item(2).ToString
+
+
+        End If
+#End Region
+
+
+
         conectar()
         Select Case columna
             Case "2"
@@ -213,7 +232,7 @@ Public Class BusquedaPlanificacion_Preventivo
                 columna = "Diciembre"
 
         End Select
-        Dim conteo1 As New SqlCommand("UPDATE Planificacion_Equipos SET " & columna & "='X'  WHERE Codigo='" & codigo & "'", cn)
+        Dim conteo1 As New SqlCommand("UPDATE ConteoPlanificacion_Equipos SET " & columna & "=" & cantidad_equipos & "  WHERE Codigo='" & codigo & "'", cn)
         conteo1.ExecuteNonQuery()
         ' MsgBox("Agregado con exito")
         desconectar()
@@ -232,7 +251,19 @@ Public Class BusquedaPlanificacion_Preventivo
 
     Sub Eliminar_Planificacion()
         'Try
+#Region "Conseguir cantidad equipos"
+        'En el parentesis entre & & se coloca cual valor se usara para la busqueda
+        Dim adaptador As New SqlDataAdapter("select*from Caracteristicas_Equipo where Codigo=" & codigo & "", cn)
+        Dim ds As New DataSet
+        adaptador.Fill(ds, "datos")
 
+        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
+        If ds.Tables("datos").Rows.Count > 0 Then
+            cantidad_equipos = ds.Tables("datos").Rows(0).Item(2).ToString
+
+
+        End If
+#End Region
         conectar()
         Select Case columna
             Case "2"
@@ -261,7 +292,7 @@ Public Class BusquedaPlanificacion_Preventivo
                 columna = "Diciembre"
 
         End Select
-        Dim conteo1 As New SqlCommand("UPDATE Planificacion_Equipos SET " & columna & "=''  WHERE Codigo='" & codigo & "'", cn)
+        Dim conteo1 As New SqlCommand("UPDATE ConteoPlanificacion_Equipos SET " & columna & "=9999  WHERE Codigo='" & codigo & "'", cn)
         conteo1.ExecuteNonQuery()
         ' MsgBox("Agregado con exito")
         desconectar()
@@ -280,6 +311,10 @@ Public Class BusquedaPlanificacion_Preventivo
 
     Private Sub Planificacion_Preventivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
     End Sub
 
 #End Region
