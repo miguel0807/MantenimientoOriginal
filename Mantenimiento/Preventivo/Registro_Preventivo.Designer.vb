@@ -42,7 +42,6 @@ Partial Class Registro_Preventivo
         Me.Comentarios.Name = "Comentarios"
         Me.Comentarios.Size = New System.Drawing.Size(300, 166)
         Me.Comentarios.TabIndex = 30
-        Me.Comentarios.Visible = False
         '
         'Fecha
         '
@@ -60,7 +59,6 @@ Partial Class Registro_Preventivo
         Me.Clase.Name = "Clase"
         Me.Clase.Size = New System.Drawing.Size(200, 24)
         Me.Clase.TabIndex = 26
-        Me.Clase.Visible = False
         '
         'Etiqueta
         '
@@ -70,7 +68,6 @@ Partial Class Registro_Preventivo
         Me.Etiqueta.Name = "Etiqueta"
         Me.Etiqueta.Size = New System.Drawing.Size(200, 24)
         Me.Etiqueta.TabIndex = 27
-        Me.Etiqueta.Visible = False
         '
         'Label6
         '
@@ -80,7 +77,6 @@ Partial Class Registro_Preventivo
         Me.Label6.Size = New System.Drawing.Size(60, 17)
         Me.Label6.TabIndex = 36
         Me.Label6.Text = "Etiqueta"
-        Me.Label6.Visible = False
         '
         'Finalizado
         '
@@ -90,7 +86,6 @@ Partial Class Registro_Preventivo
         Me.Finalizado.TabIndex = 31
         Me.Finalizado.Text = "Finalizado"
         Me.Finalizado.UseVisualStyleBackColor = True
-        Me.Finalizado.Visible = False
         '
         'Responsable
         '
@@ -100,7 +95,6 @@ Partial Class Registro_Preventivo
         Me.Responsable.Name = "Responsable"
         Me.Responsable.Size = New System.Drawing.Size(200, 24)
         Me.Responsable.TabIndex = 28
-        Me.Responsable.Visible = False
         '
         'Label4
         '
@@ -110,7 +104,6 @@ Partial Class Registro_Preventivo
         Me.Label4.Size = New System.Drawing.Size(87, 17)
         Me.Label4.TabIndex = 35
         Me.Label4.Text = "Comentarios"
-        Me.Label4.Visible = False
         '
         'Label3
         '
@@ -129,7 +122,6 @@ Partial Class Registro_Preventivo
         Me.Label2.Size = New System.Drawing.Size(91, 17)
         Me.Label2.TabIndex = 33
         Me.Label2.Text = "Responsable"
-        Me.Label2.Visible = False
         '
         'Label1
         '
@@ -139,7 +131,6 @@ Partial Class Registro_Preventivo
         Me.Label1.Size = New System.Drawing.Size(43, 17)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Clase"
-        Me.Label1.Visible = False
         '
         'Registro_Preventivo
         '
