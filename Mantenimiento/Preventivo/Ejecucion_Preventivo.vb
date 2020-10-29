@@ -150,5 +150,7 @@ Public Class Ejecucion_Preventivo
 #End Region
     End Sub
 
+    Private Sub Etiqueta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Etiqueta.SelectedIndexChanged
 
+    End Sub
 End Class
