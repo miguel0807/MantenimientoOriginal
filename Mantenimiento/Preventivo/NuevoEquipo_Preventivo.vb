@@ -224,7 +224,7 @@ Public Class NuevoEquipo_Preventivo
                 '                    cn.Close()
                 '                    MsgBox("Se registro correctamente")
 
-                '                    Me.Close()
+                '                  
 
                 '                Catch ex As Exception
                 '                    MsgBox(ex.Message)
@@ -232,6 +232,7 @@ Public Class NuevoEquipo_Preventivo
 
                 '#End Region
                 MsgBox("Se registro correctamente")
+                Me.Close()
             Case "Clasificacion"
 
 

@@ -83,10 +83,13 @@ Public Class Registro_Preventivo
         If ds.Tables("Codigo").Rows.Count > 0 Then
             Finalizado.Visible = False
 
+            Button1.Visible = False
 
             '    cantidad_equipos = ds.Tables("datos").Rows(0).Item(2).ToString
         Else
             Finalizado.Visible = True
+
+            Button1.Visible = True
 
 #Region "Cargar datos en combobox de Responsable"
             Try
@@ -149,7 +152,143 @@ Public Class Registro_Preventivo
         Finalizado.Visible = True
     End Sub
 
-    Private Sub Fecha_Enter(sender As Object, e As EventArgs) Handles Fecha.Enter
 
+    Private Sub Finalizado_Click(sender As Object, e As EventArgs) Handles Finalizado.Click
+        If Clase.Text = "" Or Etiqueta.Text = "" Or Responsable.Text = "" Or Comentarios.Text = "" Then
+            MsgBox("Complete todos los campos para registrar preventivo")
+            Exit Sub
+
+        End If
+
+
+
+        Dim adaptador As New SqlCommand("insert into Historial_Equipos values (" & clasecodigo & ",'" & Etiqueta.Text & "','" & Comentarios.Text & "','" & Responsable.Text & "', " & Fecha.SelectionStart.Year.ToString & ", '" & mes & "'  ,  '" & Fecha.SelectionStart.ToShortDateString.ToString & "')", cn)
+        conectar()
+        'TextBox1.Text = adaptador.CommandText
+        '  MsgBox(adaptador.CommandText)
+        adaptador.ExecuteNonQuery()
+
+        Me.Close()
+
+        desconectar()
+
+#Region "Rebajar de conteo_equipos el mantenimiento del equipo"
+        Try
+            conectar()
+            Dim convermes As Integer = 0
+            Dim converletrames As String = ""
+            convermes = Fecha.SelectionStart.Month.ToString
+            Select Case convermes
+                Case 1
+                    converletrames = "Enero"
+                Case 2
+                    converletrames = "Febrero"
+                Case 3
+                    converletrames = "Marzo"
+                Case 4
+                    converletrames = "Abril"
+                Case 5
+                    converletrames = "Mayo"
+                Case 6
+                    converletrames = "Junio"
+                Case 7
+                    converletrames = "Julio"
+                Case 8
+                    converletrames = "Agosto"
+                Case 9
+                    converletrames = "Septiembre"
+                Case 10
+                    converletrames = "Octubre"
+                Case 11
+                    converletrames = "Noviembre"
+                Case 12
+                    converletrames = "Diciembre"
+            End Select
+
+
+            Dim actualizarcantidadconteo As New SqlCommand("update ConteoPlanificacion_Equipos set " & converletrames & "=" & converletrames & " - 1 where codigo=" & clasecodigo & " and Año=" & Date.Now.Year & "", cn)
+            'TextBox1.Text = actualizarnombre.CommandText
+            actualizarcantidadconteo.ExecuteNonQuery()
+            cn.Close()
+            MsgBox("Se registro correctamente")
+
+            Me.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+#End Region
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If Clase.Text = "" Or Etiqueta.Text = "" Or Responsable.Text = "" Or Comentarios.Text = "" Then
+            MsgBox("Complete todos los campos para registrar preventivo")
+            Exit Sub
+
+        End If
+
+
+
+        Dim adaptador As New SqlCommand("insert into Historial_Equipos values (" & clasecodigo & ",'" & Etiqueta.Text & "','" & Comentarios.Text & "','" & Responsable.Text & "', " & Fecha.SelectionStart.Year.ToString & ", '" & mes & "'  ,  '" & Fecha.SelectionStart.ToShortDateString.ToString & "')", cn)
+        conectar()
+        'TextBox1.Text = adaptador.CommandText
+        '  MsgBox(adaptador.CommandText)
+        adaptador.ExecuteNonQuery()
+
+
+
+        desconectar()
+
+#Region "Rebajar de conteo_equipos el mantenimiento del equipo"
+        Try
+            conectar()
+            Dim convermes As Integer = 0
+            Dim converletrames As String = ""
+            convermes = Fecha.SelectionStart.Month.ToString
+            Select Case convermes
+                Case 1
+                    converletrames = "Enero"
+                Case 2
+                    converletrames = "Febrero"
+                Case 3
+                    converletrames = "Marzo"
+                Case 4
+                    converletrames = "Abril"
+                Case 5
+                    converletrames = "Mayo"
+                Case 6
+                    converletrames = "Junio"
+                Case 7
+                    converletrames = "Julio"
+                Case 8
+                    converletrames = "Agosto"
+                Case 9
+                    converletrames = "Septiembre"
+                Case 10
+                    converletrames = "Octubre"
+                Case 11
+                    converletrames = "Noviembre"
+                Case 12
+                    converletrames = "Diciembre"
+            End Select
+
+
+            Dim actualizarcantidadconteo As New SqlCommand("update ConteoPlanificacion_Equipos set " & converletrames & "=" & converletrames & " - 1 where codigo=" & clasecodigo & " and Año=" & Date.Now.Year & "", cn)
+            'TextBox1.Text = actualizarnombre.CommandText
+            actualizarcantidadconteo.ExecuteNonQuery()
+            cn.Close()
+            MsgBox("Se registro correctamente")
+
+            Finalizado.Visible = False
+            Button1.Visible = False
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+#End Region
     End Sub
 End Class

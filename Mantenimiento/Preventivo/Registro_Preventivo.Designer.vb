@@ -33,6 +33,7 @@ Partial Class Registro_Preventivo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Comentarios
@@ -42,6 +43,7 @@ Partial Class Registro_Preventivo
         Me.Comentarios.Name = "Comentarios"
         Me.Comentarios.Size = New System.Drawing.Size(300, 166)
         Me.Comentarios.TabIndex = 30
+        Me.Comentarios.Text = "N/A"
         '
         'Fecha
         '
@@ -80,11 +82,11 @@ Partial Class Registro_Preventivo
         '
         'Finalizado
         '
-        Me.Finalizado.Location = New System.Drawing.Point(548, 301)
+        Me.Finalizado.Location = New System.Drawing.Point(550, 242)
         Me.Finalizado.Name = "Finalizado"
         Me.Finalizado.Size = New System.Drawing.Size(173, 88)
         Me.Finalizado.TabIndex = 31
-        Me.Finalizado.Text = "Finalizado"
+        Me.Finalizado.Text = "Finalizado y Salir"
         Me.Finalizado.UseVisualStyleBackColor = True
         '
         'Responsable
@@ -132,11 +134,21 @@ Partial Class Registro_Preventivo
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Clase"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(550, 350)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(173, 88)
+        Me.Button1.TabIndex = 37
+        Me.Button1.Text = "Finalizado y Continuar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Registro_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Comentarios)
         Me.Controls.Add(Me.Fecha)
         Me.Controls.Add(Me.Clase)
@@ -166,4 +178,5 @@ Partial Class Registro_Preventivo
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button1 As Button
 End Class
