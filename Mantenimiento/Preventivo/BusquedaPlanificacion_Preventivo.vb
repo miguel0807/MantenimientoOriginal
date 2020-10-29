@@ -131,7 +131,9 @@ Public Class BusquedaPlanificacion_Preventivo
 #Region "Buscar la planificacion"
 
         Dim tabla As DataGridView = Me.DataGridView1
-        Dim adaptador As New SqlDataAdapter("select carac.codigo, carac.clase as Equipos, plani.Enero,plani.Febrero,plani.Marzo,plani.Abril,plani.Mayo,plani.Junio,plani.Julio,plani.Agosto,plani.Septiembre,plani.Octubre,plani.Noviembre,plani.Diciembre from Caracteristicas_Equipo carac,ConteoPlanificacion_Equipos plani where Año='2020' and plani.Codigo=carac.Codigo", cn)
+
+        Dim adaptador As New SqlDataAdapter("select carac.codigo, carac.clase as Equipos,  case when Enero =9999 then 'N/A' when Enero=Enero then CONVERT(char(3),Enero)end Enero, case when Febrero =9999 then 'N/A' when Febrero=Febrero then CONVERT(char(3),Febrero)end Febrero,case when Marzo =9999 then 'N/A'when Marzo=Marzo then CONVERT(char(3),Marzo)end Marzo,case when Abril =9999 then 'N/A'when Abril=Abril then CONVERT(char(3),Abril)end Abril,case when Mayo =9999 then 'N/A' when Mayo=Mayo then CONVERT(char(3),Mayo)end Mayo,case when Junio =9999 then 'N/A' when Junio=Junio then CONVERT(char(3),Junio)end Junio,case when Julio =9999 then 'N/A' when Julio=Julio then CONVERT(char(3),Julio)end Julio,case when Agosto =9999 then 'N/A' when Agosto=Agosto then CONVERT(char(3),Agosto)end Agosto,case when Septiembre =9999 then 'N/A' when Septiembre=Septiembre then CONVERT(char(3),Septiembre)end Septiembre,case when Octubre =9999 then 'N/A' when Octubre=Octubre then CONVERT(char(3),Octubre)end Octubre,case when Noviembre =9999 then 'N/A' when Noviembre=Noviembre then CONVERT(char(3),Noviembre)end Noviembre,case when Diciembre =9999 then 'N/A' when Diciembre=Diciembre then CONVERT(char(3),Diciembre)end Diciembre from Caracteristicas_Equipo carac,ConteoPlanificacion_Equipos plani where Año='2020' and plani.Codigo=carac.Codigo ", cn)
+        ' Dim adaptador As New SqlDataAdapter("select carac.codigo, carac.clase as Equipos, plani.Enero,plani.Febrero,plani.Marzo,plani.Abril,plani.Mayo,plani.Junio,plani.Julio,plani.Agosto,plani.Septiembre,plani.Octubre,plani.Noviembre,plani.Diciembre from Caracteristicas_Equipo carac,ConteoPlanificacion_Equipos plani where Año='2020' and plani.Codigo=carac.Codigo", cn)
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "ConteoPlanificacion_Equipos")
 
@@ -143,10 +145,9 @@ Public Class BusquedaPlanificacion_Preventivo
 #Region "Configuracion tabla"
 
 
+        tabla.RowHeadersVisible = False
 
-        '  tabla.RowHeadersVisible = False
-
-
+        tabla.Columns(1).Frozen = True
         tabla.Columns(0).Visible = False
 
         tabla.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -162,12 +163,12 @@ Public Class BusquedaPlanificacion_Preventivo
         tabla.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         tabla.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         tabla.Columns(12).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(13).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
 
-
-        'tabla.Columns(1).Width = 380
-        'tabla.Columns(2).Width = 240
+        tabla.Columns(1).Width = 240
+        tabla.Columns(10).Width = 115
         'tabla.Columns(3).Width = 170
 
 

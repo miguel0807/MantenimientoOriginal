@@ -134,7 +134,7 @@ Public Class Ejecucion_Preventivo
             End Select
 
 
-            Dim actualizarcantidadconteo As New SqlCommand("update Conteo_Equipos set " & converletrames & "=" & converletrames & " - 1 where codigo=" & codigo & " and Año=" & Date.Now.Year & "", cn)
+            Dim actualizarcantidadconteo As New SqlCommand("update ConteoPlanificacion_Equipos set " & converletrames & "=" & converletrames & " - 1 where codigo=" & codigo & " and Año=" & Date.Now.Year & "", cn)
             'TextBox1.Text = actualizarnombre.CommandText
             actualizarcantidadconteo.ExecuteNonQuery()
             cn.Close()
