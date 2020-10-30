@@ -4,6 +4,8 @@ Public Class Pendiente_Preventivos
     Dim conteo As Integer
     Private Sub Pendiente_Preventivos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
+        tipobusqueda.SelectedIndex = 0
+        Clase.SelectedIndex = 0
     End Sub
 
     Private Sub tipobusqueda_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tipobusqueda.SelectedIndexChanged
@@ -118,11 +120,11 @@ Public Class Pendiente_Preventivos
 #Region "Buscar la planificacion"
 
         Dim tabla As DataGridView = Me.DataGridView1
-        Dim adaptador As New SqlDataAdapter("select carac.codigo, carac.clase as Equipos, plani.Enero,plani.Febrero,plani.Marzo,plani.Abril,plani.Mayo,plani.Junio,plani.Julio,plani.Agosto,plani.Septiembre,plani.Octubre,plani.Noviembre,plani.Diciembre from Caracteristicas_Equipo carac,Conteo_Equipos plani where Año='2020' and plani.Codigo=carac.Codigo", cn)
+        Dim adaptador As New SqlDataAdapter("select carac.codigo, carac.clase as Equipos, plani.Enero,plani.Febrero,plani.Marzo,plani.Abril,plani.Mayo,plani.Junio,plani.Julio,plani.Agosto,plani.Septiembre,plani.Octubre,plani.Noviembre,plani.Diciembre from Caracteristicas_Equipo carac,ConteoPlanificacion_Equipos plani where Año='2020' and plani.Codigo=carac.Codigo", cn)
         Dim dataS As New DataSet
-        adaptador.Fill(dataS, "Conteo_Equipos")
+        adaptador.Fill(dataS, "ConteoPlanificacion_Equipos")
 
-        tabla.DataSource = dataS.Tables("Conteo_Equipos")
+        tabla.DataSource = dataS.Tables("ConteoPlanificacion_Equipos")
 
 #End Region
 
@@ -177,5 +179,9 @@ Public Class Pendiente_Preventivos
         Me.Label1.Text = "Cantidad: " & tabla.RowCount
         Me.conteo = tabla.RowCount
 #End Region
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

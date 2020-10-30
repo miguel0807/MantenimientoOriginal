@@ -24,8 +24,6 @@ Partial Class Pendiente_Preventivos
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.tipobusqueda = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.equipos = New System.Windows.Forms.ComboBox()
@@ -33,39 +31,8 @@ Partial Class Pendiente_Preventivos
         Me.Clase = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.Button4.FlatAppearance.BorderSize = 3
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button4.Location = New System.Drawing.Point(1130, 12)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(186, 84)
-        Me.Button4.TabIndex = 129
-        Me.Button4.Text = "Eliminar"
-        Me.Button4.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.Button3.FlatAppearance.BorderSize = 3
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button3.Location = New System.Drawing.Point(927, 12)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(186, 84)
-        Me.Button3.TabIndex = 128
-        Me.Button3.Text = "Agregar"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'tipobusqueda
         '
@@ -134,7 +101,7 @@ Partial Class Pendiente_Preventivos
         Me.Button2.FlatAppearance.BorderSize = 3
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button2.Location = New System.Drawing.Point(462, 680)
+        Me.Button2.Location = New System.Drawing.Point(612, 51)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(186, 84)
         Me.Button2.TabIndex = 121
@@ -176,29 +143,12 @@ Partial Class Pendiente_Preventivos
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Label1.Visible = False
         '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.Button1.FlatAppearance.BorderSize = 3
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button1.Location = New System.Drawing.Point(664, 680)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(186, 84)
-        Me.Button1.TabIndex = 118
-        Me.Button1.Text = "Editar"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'Pendiente_Preventivos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1437, 793)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.tipobusqueda)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.equipos)
@@ -206,7 +156,6 @@ Partial Class Pendiente_Preventivos
         Me.Controls.Add(Me.Clase)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
         Me.Name = "Pendiente_Preventivos"
         Me.Text = "Pendiente_Preventivos"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -214,9 +163,6 @@ Partial Class Pendiente_Preventivos
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents tipobusqueda As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents equipos As ComboBox
@@ -224,5 +170,4 @@ Partial Class Pendiente_Preventivos
     Friend WithEvents Clase As ComboBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
 End Class

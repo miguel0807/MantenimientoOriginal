@@ -22,8 +22,8 @@ Partial Class BusquedaPlanificacion_Preventivo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.mes = New System.Windows.Forms.ComboBox()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -31,7 +31,6 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tipobusqueda = New System.Windows.Forms.ComboBox()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.detalle_equipo = New System.Windows.Forms.ComboBox()
@@ -49,23 +48,23 @@ Partial Class BusquedaPlanificacion_Preventivo
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonShadow
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SlateGray
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SlateGray
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateGray
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkSlateGray
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.Location = New System.Drawing.Point(60, 194)
         Me.DataGridView1.MultiSelect = False
@@ -81,7 +80,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.mes.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.mes.FormattingEnabled = True
-        Me.mes.Location = New System.Drawing.Point(260, 123)
+        Me.mes.Location = New System.Drawing.Point(875, 12)
         Me.mes.Name = "mes"
         Me.mes.Size = New System.Drawing.Size(229, 37)
         Me.mes.TabIndex = 109
@@ -89,13 +88,12 @@ Partial Class BusquedaPlanificacion_Preventivo
         '
         'Button2
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button2.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
         Me.Button2.FlatAppearance.BorderSize = 3
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button2.Location = New System.Drawing.Point(469, 685)
+        Me.Button2.Location = New System.Drawing.Point(341, 87)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(186, 84)
         Me.Button2.TabIndex = 108
@@ -142,26 +140,11 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.tipobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.tipobusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.tipobusqueda.FormattingEnabled = True
-        Me.tipobusqueda.Items.AddRange(New Object() {"General", "Especifico"})
+        Me.tipobusqueda.Items.AddRange(New Object() {"General"})
         Me.tipobusqueda.Location = New System.Drawing.Point(12, 91)
         Me.tipobusqueda.Name = "tipobusqueda"
         Me.tipobusqueda.Size = New System.Drawing.Size(229, 37)
         Me.tipobusqueda.TabIndex = 114
-        '
-        'Button3
-        '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.Button3.FlatAppearance.BorderSize = 3
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button3.Location = New System.Drawing.Point(936, 65)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(186, 84)
-        Me.Button3.TabIndex = 115
-        Me.Button3.Text = "Agregar"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'Button4
         '
@@ -171,9 +154,9 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.Button4.FlatAppearance.BorderSize = 3
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button4.Location = New System.Drawing.Point(1139, 65)
+        Me.Button4.Location = New System.Drawing.Point(1245, 125)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(186, 84)
+        Me.Button4.Size = New System.Drawing.Size(131, 63)
         Me.Button4.TabIndex = 116
         Me.Button4.Text = "Eliminar"
         Me.Button4.UseVisualStyleBackColor = False
@@ -218,7 +201,6 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1437, 793)
         Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.tipobusqueda)
         Me.Controls.Add(Me.clase)
         Me.Controls.Add(Me.detalle_equipo)
@@ -244,7 +226,6 @@ Partial Class BusquedaPlanificacion_Preventivo
     Friend WithEvents Label10 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents tipobusqueda As ComboBox
-    Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents detalle_equipo As ComboBox
