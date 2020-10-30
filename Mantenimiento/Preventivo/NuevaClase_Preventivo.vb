@@ -21,21 +21,25 @@ Public Class NuevaClase_Preventivo
 
 
         desconectar()
+        Dim sumaaño As Integer = Date.Now.Year
 
+        For index As Integer = 1 To 10
 
 #Region "Insertar 9999 en la tabla conteo"
 
-        Dim adaptador1 As New SqlCommand("insert into ConteoPlanificacion_Equipos(Codigo,Año,Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre) values (" & count & "," & Date.Now.Year & ",9999,9999,9999,9999,9999,9999,9999,9999,9999,9999,9999,9999)", cn)
-        conectar()
-        ' TextBox1.Text = adaptador1.CommandText
-        adaptador1.ExecuteNonQuery()
-        MsgBox("Se registro correctamente")
-        Me.Close()
+            Dim adaptador1 As New SqlCommand("insert into ConteoPlanificacion_Equipos(Codigo,Año,Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre) values (" & count & "," & sumaaño & ",9999,9999,9999,9999,9999,9999,9999,9999,9999,9999,9999,9999)", cn)
+            conectar()
+            ' TextBox1.Text = adaptador1.CommandText
+            adaptador1.ExecuteNonQuery()
 
-        desconectar()
+            Me.Close()
+
+            desconectar()
 #End Region
+            sumaaño = sumaaño + 1
 
-
+        Next
+        MsgBox("Se registro correctamente")
     End Sub
 
     Private Sub Clase_Preventivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
