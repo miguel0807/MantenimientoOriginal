@@ -29,7 +29,8 @@ Partial Class NuevoProvedor_Preventivo
         '
         'Crear
         '
-        Me.Crear.Location = New System.Drawing.Point(486, 71)
+        Me.Crear.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Crear.Location = New System.Drawing.Point(428, 161)
         Me.Crear.Name = "Crear"
         Me.Crear.Size = New System.Drawing.Size(131, 54)
         Me.Crear.TabIndex = 15
@@ -39,28 +40,31 @@ Partial Class NuevoProvedor_Preventivo
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(27, 71)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(35, 188)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 17)
+        Me.Label1.Size = New System.Drawing.Size(95, 24)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Provedor"
         '
         'Provedor
         '
-        Me.Provedor.Location = New System.Drawing.Point(161, 71)
+        Me.Provedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Provedor.Location = New System.Drawing.Point(169, 188)
         Me.Provedor.Name = "Provedor"
-        Me.Provedor.Size = New System.Drawing.Size(200, 22)
+        Me.Provedor.Size = New System.Drawing.Size(200, 27)
         Me.Provedor.TabIndex = 13
         '
-        'Provedor_Preventivo
+        'NuevoProvedor_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Crear)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Provedor)
-        Me.Name = "Provedor_Preventivo"
+        Me.Name = "NuevoProvedor_Preventivo"
         Me.Text = "Provedor_Preventivo"
         Me.ResumeLayout(False)
         Me.PerformLayout()

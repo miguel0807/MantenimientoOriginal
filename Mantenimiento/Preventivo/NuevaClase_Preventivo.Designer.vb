@@ -38,79 +38,89 @@ Partial Class NuevaClase_Preventivo
         '
         'Clase
         '
-        Me.Clase.Location = New System.Drawing.Point(159, 44)
+        Me.Clase.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Clase.Location = New System.Drawing.Point(182, 81)
         Me.Clase.Name = "Clase"
-        Me.Clase.Size = New System.Drawing.Size(200, 22)
+        Me.Clase.Size = New System.Drawing.Size(200, 27)
         Me.Clase.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 44)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(25, 79)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(43, 17)
+        Me.Label1.Size = New System.Drawing.Size(62, 24)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Clase"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 146)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(25, 217)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(78, 17)
+        Me.Label2.Size = New System.Drawing.Size(116, 24)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Frecuencia"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(25, 251)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(25, 286)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 17)
+        Me.Label3.Size = New System.Drawing.Size(127, 24)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Clasificacion"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(25, 342)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(25, 360)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(66, 17)
+        Me.Label4.Size = New System.Drawing.Size(95, 24)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Provedor"
         '
         'Frecuencia
         '
         Me.Frecuencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Frecuencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Frecuencia.FormattingEnabled = True
-        Me.Frecuencia.Location = New System.Drawing.Point(159, 146)
+        Me.Frecuencia.Location = New System.Drawing.Point(182, 221)
         Me.Frecuencia.Name = "Frecuencia"
-        Me.Frecuencia.Size = New System.Drawing.Size(200, 24)
+        Me.Frecuencia.Size = New System.Drawing.Size(200, 28)
         Me.Frecuencia.TabIndex = 3
         '
         'Clasificacion
         '
         Me.Clasificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clasificacion.FormattingEnabled = True
-        Me.Clasificacion.Location = New System.Drawing.Point(159, 251)
+        Me.Clasificacion.Location = New System.Drawing.Point(182, 286)
         Me.Clasificacion.Name = "Clasificacion"
-        Me.Clasificacion.Size = New System.Drawing.Size(200, 24)
+        Me.Clasificacion.Size = New System.Drawing.Size(200, 28)
         Me.Clasificacion.TabIndex = 4
         '
         'Provedor
         '
         Me.Provedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Provedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Provedor.FormattingEnabled = True
-        Me.Provedor.Location = New System.Drawing.Point(159, 339)
+        Me.Provedor.Location = New System.Drawing.Point(182, 360)
         Me.Provedor.Name = "Provedor"
-        Me.Provedor.Size = New System.Drawing.Size(200, 24)
+        Me.Provedor.Size = New System.Drawing.Size(200, 28)
         Me.Provedor.TabIndex = 5
         '
         'Crear
         '
-        Me.Crear.Location = New System.Drawing.Point(508, 214)
+        Me.Crear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Crear.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Crear.Location = New System.Drawing.Point(508, 199)
         Me.Crear.Name = "Crear"
-        Me.Crear.Size = New System.Drawing.Size(131, 54)
+        Me.Crear.Size = New System.Drawing.Size(190, 111)
         Me.Crear.TabIndex = 6
         Me.Crear.Text = "Crear"
         Me.Crear.UseVisualStyleBackColor = True
@@ -118,32 +128,37 @@ Partial Class NuevaClase_Preventivo
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(25, 9)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label5.Location = New System.Drawing.Point(11, 9)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 17)
+        Me.Label5.Size = New System.Drawing.Size(92, 29)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Codigo"
+        Me.Label5.Visible = False
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(25, 94)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(25, 146)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(43, 17)
+        Me.Label6.Size = New System.Drawing.Size(62, 24)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Clave"
         '
         'Clave
         '
-        Me.Clave.Location = New System.Drawing.Point(159, 94)
+        Me.Clave.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Clave.Location = New System.Drawing.Point(182, 148)
         Me.Clave.Name = "Clave"
-        Me.Clave.Size = New System.Drawing.Size(200, 22)
+        Me.Clave.Size = New System.Drawing.Size(200, 27)
         Me.Clave.TabIndex = 2
         '
         'NuevaClase_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Clave)

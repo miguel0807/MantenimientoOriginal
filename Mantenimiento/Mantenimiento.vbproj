@@ -112,12 +112,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Preventivo\Ejecucion_Preventivo.Designer.vb">
-      <DependentUpon>Ejecucion_Preventivo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Preventivo\Ejecucion_Preventivo.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Preventivo\NuevoEquipo_Preventivo.Designer.vb">
       <DependentUpon>NuevoEquipo_Preventivo.vb</DependentUpon>
     </Compile>
@@ -232,9 +226,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Ejecucion_Preventivo.resx">
-      <DependentUpon>Ejecucion_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\NuevoEquipo_Preventivo.resx">
       <DependentUpon>NuevoEquipo_Preventivo.vb</DependentUpon>

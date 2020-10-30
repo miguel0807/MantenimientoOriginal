@@ -290,5 +290,8 @@ Public Class Registro_Preventivo
 
 
 #End Region
+
+        Etiqueta.Focus()
+
     End Sub
 End Class
