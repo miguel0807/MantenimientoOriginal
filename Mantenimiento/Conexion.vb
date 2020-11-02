@@ -10,18 +10,21 @@
     Public cn As New SqlClient.SqlConnection(conexion)
 
         Sub conectar()
-            If cn.State = ConnectionState.Open Then
+
+
+        If cn.State = ConnectionState.Open Then
             Else
                 cn.Open()
 
             End If
 
-        End Sub
+    End Sub
 
         Sub desconectar()
 
-            cn.Close()
-        End Sub
+        cn.Close()
+
+    End Sub
     End Module
 
 
