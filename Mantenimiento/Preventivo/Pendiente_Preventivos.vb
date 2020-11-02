@@ -270,13 +270,15 @@ Public Class Pendiente_Preventivos
             'Intentar generar el documento.
             Dim doc As New Document(PageSize.A4.Rotate(), 10, 10, 10, 10)
             'Path que guarda el reporte en el escritorio de windows (Desktop).
-            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Lista de ventas.pdf"
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\Registro Anual.pdf"
+
             Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
             PdfWriter.GetInstance(doc, file)
             doc.Open()
             ExportarDatosPDF(doc)
             doc.Close()
             Process.Start(filename)
+
         Catch ex As Exception
             'Si el intento es fallido, mostrar MsgBox.
             MessageBox.Show("No se puede generar el documento PDF.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
