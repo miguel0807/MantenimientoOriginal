@@ -254,7 +254,7 @@ Public Class BusquedaPlanificacion_Preventivo
                 columna = "Diciembre"
 
         End Select
-        Dim conteo1 As New SqlCommand("UPDATE ConteoPlanificacion_Equipos SET " & columna & "=" & cantidad_equipos & "  WHERE Codigo='" & codigo & "'", cn)
+        Dim conteo1 As New SqlCommand("UPDATE ConteoPlanificacion_Equipos SET " & columna & "=" & cantidad_equipos & "  WHERE Codigo='" & codigo & "' and año = " & año.Text & " ", cn)
         conteo1.ExecuteNonQuery()
         ' MsgBox("Agregado con exito")
         desconectar()
@@ -314,7 +314,7 @@ Public Class BusquedaPlanificacion_Preventivo
                 columna = "Diciembre"
 
         End Select
-        Dim conteo1 As New SqlCommand("UPDATE ConteoPlanificacion_Equipos SET " & columna & "=9999  WHERE Codigo='" & codigo & "'", cn)
+        Dim conteo1 As New SqlCommand("UPDATE ConteoPlanificacion_Equipos SET " & columna & "=9999  WHERE Codigo='" & codigo & "' and año = " & año.Text & "", cn)
         conteo1.ExecuteNonQuery()
         ' MsgBox("Agregado con exito")
         desconectar()
