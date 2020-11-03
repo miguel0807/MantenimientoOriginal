@@ -55,8 +55,14 @@ Public Class Registro_Preventivo
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-#End Region
 
+
+#End Region
+        If Clase.Text = "" Then
+            Etiqueta.DataSource = Nothing
+            Responsable.DataSource = Nothing
+
+        End If
 
 
     End Sub
