@@ -207,16 +207,16 @@ Public Class Pendiente_Preventivos
             If i = 0 Then
                 i = 1
             End If
-            If i = 10 Then
-                values(i) = CSng(160)
+            If i = 1 Then
+                values(i) = CSng(200)
             ElseIf i = 12 Then
                 values(i) = CSng(160)
 
             ElseIf i = 13 Then
                 values(i) = CSng(160)
             Else
-
-                values(i) = CSng(dg.Columns(i).Width)
+                values(i) = CSng(160)
+                'values(i) = CSng(dg.Columns(i).Width)
             End If
 
 
@@ -242,7 +242,7 @@ Public Class Pendiente_Preventivos
         Dim encabezado As New Paragraph("Mantenimiento Preventivo 2020", New Font(Font.Name = "Tahoma", 20, Font.Bold))
 
         'Se crea el texto abajo del encabezado.
-        Dim texto As New Phrase("Reporte de mantenimiento generado el :" + Now.Date(), New Font(Font.Name = "Tahoma", 14, Font.Bold))
+        Dim texto As New Phrase("Reporte de mantenimiento generado el: " + Now.Date(), New Font(Font.Name = "Tahoma", 14, Font.Bold))
         'Se capturan los nombres de las columnas del DataGridView.
         For i As Integer = 0 To DataGridView1.ColumnCount - 1
             datatable.AddCell(DataGridView1.Columns(i).HeaderText)

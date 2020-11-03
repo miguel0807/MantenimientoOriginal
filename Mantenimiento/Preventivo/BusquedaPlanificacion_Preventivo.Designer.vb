@@ -72,6 +72,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(1316, 467)
         Me.DataGridView1.TabIndex = 110
         '
