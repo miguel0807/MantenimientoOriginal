@@ -143,8 +143,8 @@ Public Class Registro_Preventivo
         With Me.Responsable
             Me.Etiqueta.DataSource = ds1.Tables(0)
             Me.Etiqueta.DisplayMember = "Etiqueta"
-            End With
-            cn.Close()
+        End With
+        cn.Close()
 
 #End Region
         Etiqueta.Visible = True
@@ -155,7 +155,7 @@ Public Class Registro_Preventivo
     End Sub
 
     Private Sub Comentarios_TextChanged(sender As Object, e As EventArgs) Handles Comentarios.TextChanged
-        Finalizado.Visible = True
+
     End Sub
 
 
@@ -296,7 +296,7 @@ Public Class Registro_Preventivo
 
 
 #End Region
-
+        Comentarios.Text = "N/A"
         Etiqueta.Focus()
 
     End Sub

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>D:\Mantenimiento\|C:\Users\malvarado\Documents\</PublishUrlHistory>
-    <InstallUrlHistory />
+    <PublishUrlHistory>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Actualizacion Controlador Casos\|D:\Mantenimiento\|C:\Users\malvarado\Documents\</PublishUrlHistory>
+    <InstallUrlHistory>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Actualizacion Controlador Casos\</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
