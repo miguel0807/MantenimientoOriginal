@@ -33,7 +33,7 @@ Public Class Pendiente_Preventivos
 
             Case "Mostrar Mes"
                 Clase.Visible = True
-                equipos.Visible = False
+                clases.Visible = False
 
 #Region "Cargar datos en combobox de los Meses"
                 Try
@@ -50,6 +50,26 @@ Public Class Pendiente_Preventivos
                     MessageBox.Show(ex.Message)
                 End Try
 #End Region
+
+            Case "Especifico"
+                Clase.Visible = True
+#Region "Cargar datos en combobox de los Datos"
+                Try
+                    Dim cmd As String = "select*from Historial_Datos"
+                    Dim da As New SqlDataAdapter(cmd, cn)
+                    Dim ds As New DataSet
+                    da.Fill(ds)
+                    With Me.Clase
+                        Me.Clase.DataSource = ds.Tables(0)
+                        Me.Clase.DisplayMember = "Opciones"
+                    End With
+                    cn.Close()
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
+#End Region
+
+
         End Select
     End Sub
 
@@ -59,7 +79,11 @@ Public Class Pendiente_Preventivos
 
             Case "Clase"
                 Clase.Visible = True
-                equipos.Visible = True
+                clases.Visible = True
+
+                Label2.Visible = True
+                clases.SelectedIndex = -1
+
 
 #Region "Cargar datos en combobox de Ubicacion"
                 Try
@@ -67,9 +91,9 @@ Public Class Pendiente_Preventivos
                     Dim da As New SqlDataAdapter(cmd, cn)
                     Dim ds As New DataSet
                     da.Fill(ds)
-                    With Me.equipos
-                        Me.equipos.DataSource = ds.Tables(0)
-                        Me.equipos.DisplayMember = "Clase"
+                    With Me.clases
+                        Me.clases.DataSource = ds.Tables(0)
+                        Me.clases.DisplayMember = "Clase"
                     End With
                     cn.Close()
                 Catch ex As Exception
@@ -77,9 +101,10 @@ Public Class Pendiente_Preventivos
                 End Try
 #End Region
 
-            Case "General"
-                equipos.Visible = False
+            Case "Nombre"
 
+                Etiqueta.Visible = True
+                Label3.Visible = True
         End Select
     End Sub
 
@@ -96,6 +121,8 @@ Public Class Pendiente_Preventivos
 
                 generalmes()
 
+            Case "Especifico"
+                busqueda_clase()
         End Select
     End Sub
 
@@ -375,7 +402,92 @@ Public Class Pendiente_Preventivos
         End Try
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
+
+    Sub busqueda_clase()
+#Region "Configuracion datagridview1"
+        conectar()
+        Dim formulario As DataGridView = Me.DataGridView1
+        Dim conteo As String
+        conteo = 1
+
+        '#Region "Formato de letra"
+
+        '        formulario.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        '        formulario.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+
+        '#End Region
+        formulario.RowTemplate.Height = 25
+#Region "Color de los titulos"
+        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
+        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+#End Region
+#Region "Cambios de color celdas y alternadas"
+        formulario.RowsDefaultCellStyle.BackColor = Color.LightGray
+        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+
+#End Region
+#Region "Alineacion de titulos"
+        formulario.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+
+#Region "Buscar la clase espeficifica"
+
+        Dim numero_clase As Integer
+        Dim adaptador1 As New SqlDataAdapter("select Codigo from Caracteristicas_Equipo where convert(char,clase)='" & Me.clases.Text & "'", cn)
+        Dim dataS1 As New DataSet
+        'busqueda.Text = adaptador.SelectCommand.CommandText
+        adaptador1.Fill(dataS1, "Codigo")
+        numero_clase = dataS1.Tables("Codigo").Rows(0).Item(0).ToString
+
+
+
+#End Region
+#Region "Buscar todos los equipos"
+
+
+        Dim tabla As DataGridView = Me.DataGridView1
+        Dim adaptador As New SqlDataAdapter("select*from Lista_Equipos where codigo='" & numero_clase & "'", cn)
+        Dim dataS As New DataSet
+        adaptador.Fill(dataS, "Lista_Equipos")
+
+        tabla.DataSource = dataS.Tables("Lista_Equipos")
+
+#End Region
+
+
+#Region "Configuracion tabla"
+
+
+
+        tabla.RowHeadersVisible = False
+        tabla.Columns.Item(0).Visible = False
+
+
+
+        tabla.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+        tabla.Columns(1).Width = 380
+        tabla.Columns(2).Width = 240
+        tabla.Columns(3).Width = 170
+
+
+
+#End Region
+#End Region
+
+#Region "Conteo de cantidad de equipos"
+
+        Me.Label1.Visible = True
+        Me.Label1.Text = "Cantidad: " & tabla.RowCount
+        Me.conteo = tabla.RowCount
+#End Region
+    End Sub
+
+    Private Sub clases_SelectedIndexChanged(sender As Object, e As EventArgs) Handles clases.SelectedIndexChanged
 
     End Sub
 End Class
