@@ -115,6 +115,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Preventivo\MOstartup.vb" />
     <Compile Include="Preventivo\NuevoEquipo_Preventivo.Designer.vb">
       <DependentUpon>NuevoEquipo_Preventivo.vb</DependentUpon>
     </Compile>
@@ -225,6 +226,18 @@
     <Compile Include="Preventivo\Registro_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Preventivo\Shutdown.Designer.vb">
+      <DependentUpon>Shutdown.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\Shutdown.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preventivo\Startup.Designer.vb">
+      <DependentUpon>Startup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\Startup.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
@@ -277,6 +290,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\Registro_Preventivo.resx">
       <DependentUpon>Registro_Preventivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo\Shutdown.resx">
+      <DependentUpon>Shutdown.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo\Startup.resx">
+      <DependentUpon>Startup.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -88,6 +88,10 @@ Public Class Presentacion
 
     End Sub
 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        openChildForm(New NuevoProvedor_Preventivo())
+        hideSubmenu()
+    End Sub
 
     Private Sub button10_Click(sender As Object, e As EventArgs) Handles button10.Click
 
@@ -96,10 +100,7 @@ Public Class Presentacion
         hideSubmenu()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        openChildForm(New NuevoProvedor_Preventivo())
-        hideSubmenu()
-    End Sub
+
 
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -158,9 +159,17 @@ Public Class Presentacion
         Next
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs)
 
+
+    Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
+        openChildForm(New Startup())
+
+        hideSubmenu()
     End Sub
 
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        openChildForm(New Shutdown)
+        hideSubmenu()
+    End Sub
 
 End Class

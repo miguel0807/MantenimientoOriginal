@@ -163,7 +163,9 @@ Public Class Pendiente_Preventivos
         Dim tabla As DataGridView = Me.DataGridView1
 
         ' Dim adaptador As New SqlDataAdapter("select carac.codigo, carac.clase as Equipos,  case when Enero =9999 then 'N/A' when Enero=Enero then CONVERT(char(3),Enero)end Enero, case when Febrero =9999 then 'N/A' when Febrero=Febrero then CONVERT(char(3),Febrero)end Febrero,case when Marzo =9999 then 'N/A'when Marzo=Marzo then CONVERT(char(3),Marzo)end Marzo,case when Abril =9999 then 'N/A'when Abril=Abril then CONVERT(char(3),Abril)end Abril,case when Mayo =9999 then 'N/A' when Mayo=Mayo then CONVERT(char(3),Mayo)end Mayo,case when Junio =9999 then 'N/A' when Junio=Junio then CONVERT(char(3),Junio)end Junio,case when Julio =9999 then 'N/A' when Julio=Julio then CONVERT(char(3),Julio)end Julio,case when Agosto =9999 then 'N/A' when Agosto=Agosto then CONVERT(char(3),Agosto)end Agosto,case when Septiembre =9999 then 'N/A' when Septiembre=Septiembre then CONVERT(char(3),Septiembre)end Septiembre,case when Octubre =9999 then 'N/A' when Octubre=Octubre then CONVERT(char(3),Octubre)end Octubre,case when Noviembre =9999 then 'N/A' when Noviembre=Noviembre then CONVERT(char(3),Noviembre)end Noviembre,case when Diciembre =9999 then 'N/A' when Diciembre=Diciembre then CONVERT(char(3),Diciembre)end Diciembre from Caracteristicas_Equipo carac,ConteoPlanificacion_Equipos plani where Año='2020' and plani.Codigo=carac.Codigo ", cn)
-
+        Dim columncheck As New DataGridViewCheckBoxColumn
+        columncheck.HeaderText = "Prueba"
+        columncheck.Name = "cerrar"
 
         Dim adaptador As New SqlDataAdapter("select carac.codigo, carac.clase as Equipos,  case when Enero =9999 then 'N/A' when Enero=0 then 'Finalizado'  when Enero=Enero then CONVERT(char(3),Enero)end Enero, case when Febrero =9999 then 'N/A' when Febrero=0 then 'Finalizado'  when Febrero=Febrero then CONVERT(char(3),Febrero)end Febrero,case when Marzo =9999 then 'N/A' when Marzo=0 then 'Finalizado'   when Marzo=Marzo then CONVERT(char(3),Marzo)end Marzo,case when Abril =9999 then 'N/A' when Abril=0 then 'Finalizado'  when Abril=Abril then CONVERT(char(3),Abril)end Abril,case when Mayo =9999 then 'N/A'  when Mayo=0 then 'Finalizado'  when Mayo=Mayo then CONVERT(char(3),Mayo)end Mayo,case when Junio =9999 then 'N/A'  when Junio=0 then 'Finalizado'  when Junio=Junio then CONVERT(char(3),Junio)end Junio,case when Julio =9999 then 'N/A'  when Julio=0 then 'Finalizado'  when Julio=Julio then CONVERT(char(3),Julio)end Julio,case when Agosto =9999 then 'N/A'  when Agosto=0 then 'Finalizado'  when Agosto=Agosto then CONVERT(char(3),Agosto)end Agosto,case when Septiembre =9999 then 'N/A'  when Septiembre=0 then 'Finalizado'  when Septiembre=Septiembre then CONVERT(char(3),Septiembre)end Septiembre,case when Octubre =9999 then 'N/A'  when Octubre=0 then 'Finalizado'  when Octubre=0 then 'Finalizado' when Octubre=Octubre then CONVERT(char(3),Octubre)end Octubre,case when Noviembre =9999 then 'N/A'  when Noviembre=0 then 'Finalizado'  when Noviembre=Noviembre then CONVERT(char(3),Noviembre)end Noviembre,case when Diciembre =9999 then 'N/A'  when Diciembre=0 then 'Finalizado'  when Diciembre=Diciembre then CONVERT(char(3),Diciembre)end Diciembre from Caracteristicas_Equipo carac,ConteoPlanificacion_Equipos plani where Año='" & Now.Date.Year & "' and plani.Codigo=carac.Codigo", cn)
         Dim dataS As New DataSet
@@ -176,7 +178,7 @@ Public Class Pendiente_Preventivos
 
 #Region "Configuracion tabla"
 
-
+        tabla.Columns.Add(columncheck)
         tabla.RowHeadersVisible = False
 
         tabla.Columns(1).Frozen = True
