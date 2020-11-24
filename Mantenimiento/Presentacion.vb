@@ -13,6 +13,7 @@ Public Class Presentacion
         PanelMediaSubmenu.Visible = False
         PanelPlaylistSubmenu.Visible = False
         PanelToolsSubmenu.Visible = False
+        PanelToolsSubConfiguration.Visible = False
 
     End Sub
 
@@ -37,6 +38,9 @@ Public Class Presentacion
 
     Private Sub btnTools_Click(sender As Object, e As EventArgs) Handles btnTools.Click
         showSubmenu(PanelToolsSubmenu)
+        PanelToolsSubmenu.Size = New Size(229, 350)
+
+
     End Sub
 
 #Region "Botones Indicadores"
@@ -88,7 +92,7 @@ Public Class Presentacion
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         openChildForm(New NuevoProvedor_Preventivo())
         hideSubmenu()
     End Sub
@@ -113,7 +117,7 @@ Public Class Presentacion
         hideSubmenu()
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub Button9_Click(sender As Object, e As EventArgs)
         openChildForm(New Pendiente_Preventivos())
         hideSubmenu()
     End Sub
@@ -157,6 +161,7 @@ Public Class Presentacion
 
 
         Next
+        hideSubmenu()
     End Sub
 
 
@@ -164,12 +169,31 @@ Public Class Presentacion
     Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
         openChildForm(New Startup())
 
-        hideSubmenu()
+
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        openChildForm(New Shutdown)
+        If PanelToolsSubConfiguration.Visible = True Then
+            PanelToolsSubConfiguration.Visible = False
+        Else
+            PanelToolsSubConfiguration.Visible = True
+        End If
+
+        PanelToolsSubmenu.Size = New Size(229, 510)
+
+    End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        openChildForm(New Shutdown())
+    End Sub
+
+    Private Sub Button9_Click_1(sender As Object, e As EventArgs) Handles Button9.Click
+        openChildForm(New Registro_Preventivo())
         hideSubmenu()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        openChildForm(New NuevoProvedor_Preventivo())
+        hideSubmenu()
+    End Sub
 End Class
