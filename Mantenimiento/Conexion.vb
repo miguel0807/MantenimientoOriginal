@@ -3,8 +3,8 @@
     Public formularios As New List(Of Form) 'Crea una lista fe formularios para cerrar
 
 
-    'Public conexion As String = "Data Source=MAT-COS-DB-10Z2\SQLEXPRESS;Initial Catalog=Inventario;integrated security=true" 'Miguel
-    Public conexion As String = "Data Source=tcp:COS-F4Z1XQ2\SQLEXPRESS,49500;Initial Catalog=Inventario; User Id=malvarado; Password=1234Admin" 'Choi
+    Public conexion As String = "Data Source=MAT-COS-DB-10Z2\SQLEXPRESS;Initial Catalog=Inventario;integrated security=true" 'Miguel
+    'Public conexion As String = "Data Source=tcp:COS-F4Z1XQ2\SQLEXPRESS,49500;Initial Catalog=Inventario; User Id=malvarado; Password=1234Admin" 'Choi
 
 
     Public cn As New SqlClient.SqlConnection(conexion)
