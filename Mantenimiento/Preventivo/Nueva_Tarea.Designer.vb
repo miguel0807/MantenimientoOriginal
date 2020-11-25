@@ -35,6 +35,7 @@ Partial Class Nueva_Tarea
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -98,7 +99,7 @@ Partial Class Nueva_Tarea
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(31, 636)
+        Me.Label1.Location = New System.Drawing.Point(31, 642)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(106, 25)
         Me.Label1.TabIndex = 41
@@ -108,6 +109,7 @@ Partial Class Nueva_Tarea
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeRows = False
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -115,10 +117,11 @@ Partial Class Nueva_Tarea
         Me.DataGridView1.Location = New System.Drawing.Point(27, 377)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(906, 256)
+        Me.DataGridView1.Size = New System.Drawing.Size(906, 247)
         Me.DataGridView1.TabIndex = 42
         '
         'Button3
@@ -149,6 +152,7 @@ Partial Class Nueva_Tarea
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(91, 24)
         Me.RadioButton1.TabIndex = 2
+        Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "Startup"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
@@ -187,12 +191,25 @@ Partial Class Nueva_Tarea
         Me.Label3.TabIndex = 44
         Me.Label3.Text = "Equipo"
         '
+        'Button5
+        '
+        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button5.BackColor = System.Drawing.Color.DarkRed
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(827, 630)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(106, 37)
+        Me.Button5.TabIndex = 45
+        Me.Button5.Text = "Eliminar"
+        Me.Button5.UseVisualStyleBackColor = False
+        '
         'Nueva_Tarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ClientSize = New System.Drawing.Size(976, 665)
+        Me.ClientSize = New System.Drawing.Size(976, 671)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button4)
@@ -227,4 +244,5 @@ Partial Class Nueva_Tarea
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents Button5 As Button
 End Class

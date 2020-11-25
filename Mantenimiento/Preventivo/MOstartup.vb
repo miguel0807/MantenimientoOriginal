@@ -413,4 +413,39 @@ Public Module MOstartup
         'Desactiva el autofiltro
 
     End Sub
+
+    Sub tareaElimar()
+
+
+
+
+        Dim msgvalue As Integer
+
+        msgvalue = MsgBox("Está seguro de eliminar la tarea?", vbInformation + vbYesNo, "Mensaje de Alerta")
+
+        Select Case msgvalue
+
+            Case 6 'Yes
+
+
+                conectar()
+
+                Dim comando As New SqlCommand("delete from List_Startup_Shutdown where Codigo =" & datagr.CurrentRow.Cells.Item(0).Value.ToString() & " ", cn)
+                comando.ExecuteNonQuery()
+                desconectar()
+                MsgBox("Se elimino correctamente")
+
+
+
+
+            Case 7 'No
+
+
+
+        End Select
+
+
+
+
+    End Sub
 End Module

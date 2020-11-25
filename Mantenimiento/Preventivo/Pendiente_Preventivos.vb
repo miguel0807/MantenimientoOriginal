@@ -489,7 +489,4 @@ Public Class Pendiente_Preventivos
 #End Region
     End Sub
 
-    Private Sub clases_SelectedIndexChanged(sender As Object, e As EventArgs) Handles clases.SelectedIndexChanged
-
-    End Sub
 End Class

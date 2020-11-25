@@ -1,4 +1,7 @@
-﻿Public Class Nueva_Tarea
+﻿
+Imports System.Data.SqlClient
+Public Class Nueva_Tarea
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If TextBox1.Text = "" Or TextBox2.Text = "" Then
             MsgBox("Complete todos los campos para continuar")
@@ -47,5 +50,16 @@
     Private Sub Nueva_Tarea_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
 
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Me.DataGridView1.Select()
+
+        tareaElimar()
+
+        datagr = DataGridView1
+        labe1 = Label1
+
+        nuevaTareaDatagridview()
     End Sub
 End Class
