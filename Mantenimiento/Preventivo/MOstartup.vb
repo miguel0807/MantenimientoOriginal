@@ -11,6 +11,15 @@ Public Module MOstartup
     Public st_sh As Integer
     Public startupCheck As Integer
 
+    Dim hoy As Date
+    Dim day1 As String
+
+    Dim mes1 As Date
+    Dim mont1 As Date
+
+    Public labelFecha As Label
+
+
 
 
     Sub CheckColumna()
@@ -454,5 +463,120 @@ Public Module MOstartup
 
 
 
+    End Sub
+
+
+    Sub LoadFechaEscrita()
+        hoy = Date.Today
+        labelFecha.Text = hoy
+
+
+        day1 = hoy.DayOfWeek.ToString
+        Select Case day1
+            Case "Sunday"
+                day1 = "Domingo"
+            Case "Monday"
+                day1 = "Lunes"
+            Case "Tuesday"
+                day1 = "Martes"
+            Case "Wednesday"
+                day1 = "Miercoles"
+            Case "Thursday"
+                day1 = "Jueves"
+            Case "Friday"
+                day1 = "Viernes"
+            Case "Saturday"
+                day1 = "Sabado"
+
+        End Select
+
+
+
+
+        labelFecha.Text = day1 & " " & hoy.Day.ToString
+    End Sub
+
+    Sub DerechaFecha()
+        hoy = hoy.AddDays(1)
+        labelFecha.Text = hoy
+
+
+        day1 = hoy.DayOfWeek.ToString
+        Select Case day1
+            Case "Sunday"
+                day1 = "Domingo"
+            Case "Monday"
+                day1 = "Lunes"
+            Case "Tuesday"
+                day1 = "Martes"
+            Case "Wednesday"
+                day1 = "Miercoles"
+            Case "Thursday"
+                day1 = "Jueves"
+            Case "Friday"
+                day1 = "Viernes"
+            Case "Saturday"
+                day1 = "Sabado"
+
+        End Select
+
+
+        labelFecha.Text = day1 & " " & hoy.Day.ToString
+
+    End Sub
+    Sub IzquierdaFecha()
+        hoy = hoy.AddDays(-1)
+        labelFecha.Text = hoy
+
+
+        day1 = hoy.DayOfWeek.ToString
+        Select Case day1
+            Case "Sunday"
+                day1 = "Domingo"
+            Case "Monday"
+                day1 = "Lunes"
+            Case "Tuesday"
+                day1 = "Martes"
+            Case "Wednesday"
+                day1 = "Miercoles"
+            Case "Thursday"
+                day1 = "Jueves"
+            Case "Friday"
+                day1 = "Viernes"
+            Case "Saturday"
+                day1 = "Sabado"
+
+        End Select
+
+
+        labelFecha.Text = day1 & " " & hoy.Day.ToString
+    End Sub
+
+    Sub hoyFecha()
+        hoy = Date.Today
+        labelFecha.Text = hoy
+
+
+        day1 = hoy.DayOfWeek.ToString
+        Select Case day1
+            Case "Sunday"
+                day1 = "Domingo"
+            Case "Monday"
+                day1 = "Lunes"
+            Case "Tuesday"
+                day1 = "Martes"
+            Case "Wednesday"
+                day1 = "Miercoles"
+            Case "Thursday"
+                day1 = "Jueves"
+            Case "Friday"
+                day1 = "Viernes"
+            Case "Saturday"
+                day1 = "Sabado"
+
+        End Select
+
+
+        labelFecha.Text = day1 & " " & hoy.Day.ToString
     End Sub
 End Module

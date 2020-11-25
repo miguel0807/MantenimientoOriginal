@@ -329,6 +329,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Otros\tools_22686.ico" />
+    <None Include="Resources\hoy.png" />
+    <None Include="Resources\FlechaIzquierda.png" />
+    <None Include="Resources\Flecha_Derecha.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -21,6 +21,8 @@ Public Class Startup
         usuarios()
 
 
+        labelFecha = Label2
+        LoadFechaEscrita()
 
 
     End Sub
@@ -88,5 +90,19 @@ Public Class Startup
         cheackActualizarSql()
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        DerechaFecha()
+    End Sub
 
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        IzquierdaFecha()
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        LoadFechaEscrita()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Label3.Text = Date.Today.Month.ToString
+    End Sub
 End Class

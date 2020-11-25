@@ -73,9 +73,39 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Flecha_Derecha() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Flecha_Derecha", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property FlechaIzquierda() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("FlechaIzquierda", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property gris() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("gris", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property hoy() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("hoy", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
