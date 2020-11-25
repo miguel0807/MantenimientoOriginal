@@ -302,13 +302,20 @@ Public Module MOstartup
         Dim count As Integer
 
         Dim Query As String
-        Query = ("select COUNT (Codigo) from List_Startup_Shutdown ")
+        Query = ("select*from NuevaTareaConteo ")
         Dim cmd As New SqlCommand(Query, cn)
         count = cmd.ExecuteScalar
         codig = count + 1
         desconectar()
 
 #End Region
+
+        conectar()
+        Dim actualizarnombre As New SqlCommand("Update NuevaTareaConteo SET ConteoCodigo =(" & codig & ")", cn)
+        'TextBox1.Text = actualizarnombre.CommandText
+        actualizarnombre.ExecuteNonQuery()
+        cn.Close()
+
 
 
 
