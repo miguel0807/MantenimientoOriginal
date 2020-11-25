@@ -6,6 +6,10 @@ Public Module MOstartup
     Public labe1 As Label
     Public columncheck As New DataGridViewColumn
     Public usuario As ComboBox
+    Public ntarea As String
+    Public nequipo As String
+    Public st_sh As Integer
+    Public startupCheck As Integer
 
 
 
@@ -283,6 +287,130 @@ Public Module MOstartup
             MessageBox.Show(ex.Message)
         End Try
 #End Region
+
+    End Sub
+
+    Sub nuevaTarea()
+        Dim codig As Integer = 0
+
+
+
+
+#Region "Calcular numero de registros en list_Startup"
+
+        conectar()
+        Dim count As Integer
+
+        Dim Query As String
+        Query = ("select COUNT (Codigo) from List_Startup_Shutdown ")
+        Dim cmd As New SqlCommand(Query, cn)
+        count = cmd.ExecuteScalar
+        codig = count + 1
+        desconectar()
+
+#End Region
+
+
+
+
+
+
+#Region "Insertar en la lista de equipos la informacion del nuevo equipo"
+        Dim adaptador1 As New SqlCommand("insert into List_Startup_Shutdown values (" & codig & " , '" & ntarea & "','" & nequipo & "' , " & st_sh & ")", cn)
+        conectar()
+        adaptador1.ExecuteNonQuery()
+        desconectar()
+        MsgBox("Tarea agregada correctamente")
+
+
+#End Region
+
+
+
+    End Sub
+
+    Sub nuevaTareaDatagridview()
+
+
+
+#Region "Configuracion datagridview1"
+        conectar()
+
+        Dim conteo As String
+        conteo = 1
+
+#Region "Formato de letra"
+
+        datagr.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        datagr.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+
+#End Region
+        datagr.RowTemplate.Height = 30
+#Region "Color de los titulos"
+        datagr.ColumnHeadersDefaultCellStyle.BackColor = Color.Green
+        datagr.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+#End Region
+#Region "Cambios de color celdas y alternadas"
+        datagr.RowsDefaultCellStyle.BackColor = Color.White
+        datagr.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Alineacion de titulos"
+        datagr.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+#End Region
+
+#Region "Buscar la planificacion"
+
+
+
+
+        Dim adaptador As New SqlDataAdapter("select*from List_Startup_Shutdown where [St-SH] = " & startupCheck & " ", cn)
+        Dim dataS As New DataSet
+        adaptador.Fill(dataS, "Shutdowns")
+
+        datagr.DataSource = dataS.Tables("Shutdowns")
+
+
+
+#Region "prueba check"
+#End Region
+
+#End Region
+
+
+        datagr.RowHeadersVisible = False
+        datagr.Columns(0).Visible = False
+        datagr.Columns(3).Visible = False
+
+
+
+
+        datagr.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        datagr.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+
+
+        datagr.Columns(1).Width = 500
+
+        datagr.Columns(2).Width = 500
+
+#Region "Conteo de cantidad de equipos"
+
+        labe1.Visible = True
+        labe1.Text = "Cantidad: " & datagr.RowCount
+        conteo = datagr.RowCount
+#End Region
+        'Desactiva el autofiltro
+        Dim col As Integer
+
+        For col = 0 To datagr.Columns.Count - 1
+
+            datagr.Columns(col).SortMode = DataGridViewColumnSortMode.NotSortable
+
+        Next
+        'Desactiva el autofiltro
 
     End Sub
 End Module

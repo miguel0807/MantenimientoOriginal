@@ -116,6 +116,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Preventivo\MOstartup.vb" />
+    <Compile Include="Preventivo\Nueva_Tarea.Designer.vb">
+      <DependentUpon>Nueva_Tarea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\Nueva_Tarea.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Preventivo\NuevoEquipo_Preventivo.Designer.vb">
       <DependentUpon>NuevoEquipo_Preventivo.vb</DependentUpon>
     </Compile>
@@ -242,6 +248,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo\Nueva_Tarea.resx">
+      <DependentUpon>Nueva_Tarea.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\NuevoEquipo_Preventivo.resx">
       <DependentUpon>NuevoEquipo_Preventivo.vb</DependentUpon>

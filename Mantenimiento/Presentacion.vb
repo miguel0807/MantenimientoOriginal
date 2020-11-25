@@ -196,4 +196,9 @@ Public Class Presentacion
         openChildForm(New NuevoProvedor_Preventivo())
         hideSubmenu()
     End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        openChildForm(New Nueva_Tarea())
+
+    End Sub
 End Class
