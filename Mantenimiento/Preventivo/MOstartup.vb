@@ -14,8 +14,8 @@ Public Module MOstartup
     Dim hoy As Date
     Dim day1 As String
 
-    Dim mes1 As Date
-    Dim mont1 As Date
+
+    Dim mont1 As String
 
     Public labelFecha As Label
 
@@ -490,10 +490,49 @@ Public Module MOstartup
 
         End Select
 
+        mont1 = hoy.Month.ToString
+
+        Select Case mont1
+            Case 1
+                mont1 = "Enero"
+            Case 2
+                mont1 = "Febrero"
+
+            Case 3
+                mont1 = "Marzo"
+
+            Case 4
+                mont1 = "Abril"
+
+            Case 5
+                mont1 = "Mayo"
+
+            Case 6
+                mont1 = "Junio"
+
+            Case 7
+                mont1 = "Julio"
+
+            Case 8
+                mont1 = "Agosto"
+
+            Case 9
+                mont1 = "Septiembre"
+
+            Case 10
+                mont1 = "Octubre"
+
+            Case 11
+                mont1 = "Noviembre"
+
+            Case 12
+                mont1 = "Diciembre"
 
 
+        End Select
 
-        labelFecha.Text = day1 & " " & hoy.Day.ToString
+
+        labelFecha.Text = day1 & " " & hoy.Day.ToString & " de " & mont1
     End Sub
 
     Sub DerechaFecha()
@@ -519,9 +558,49 @@ Public Module MOstartup
                 day1 = "Sabado"
 
         End Select
+        mont1 = hoy.Month.ToString
+
+        Select Case mont1
+            Case 1
+                mont1 = "Enero"
+            Case 2
+                mont1 = "Febrero"
+
+            Case 3
+                mont1 = "Marzo"
+
+            Case 4
+                mont1 = "Abril"
+
+            Case 5
+                mont1 = "Mayo"
+
+            Case 6
+                mont1 = "Junio"
+
+            Case 7
+                mont1 = "Julio"
+
+            Case 8
+                mont1 = "Agosto"
+
+            Case 9
+                mont1 = "Septiembre"
+
+            Case 10
+                mont1 = "Octubre"
+
+            Case 11
+                mont1 = "Noviembre"
+
+            Case 12
+                mont1 = "Diciembre"
 
 
-        labelFecha.Text = day1 & " " & hoy.Day.ToString
+        End Select
+
+
+        labelFecha.Text = day1 & " " & hoy.Day.ToString & " de " & mont1
 
     End Sub
     Sub IzquierdaFecha()
@@ -548,8 +627,49 @@ Public Module MOstartup
 
         End Select
 
+        mont1 = hoy.Month.ToString
 
-        labelFecha.Text = day1 & " " & hoy.Day.ToString
+        Select Case mont1
+            Case 1
+                mont1 = "Enero"
+            Case 2
+                mont1 = "Febrero"
+
+            Case 3
+                mont1 = "Marzo"
+
+            Case 4
+                mont1 = "Abril"
+
+            Case 5
+                mont1 = "Mayo"
+
+            Case 6
+                mont1 = "Junio"
+
+            Case 7
+                mont1 = "Julio"
+
+            Case 8
+                mont1 = "Agosto"
+
+            Case 9
+                mont1 = "Septiembre"
+
+            Case 10
+                mont1 = "Octubre"
+
+            Case 11
+                mont1 = "Noviembre"
+
+            Case 12
+                mont1 = "Diciembre"
+
+
+        End Select
+
+
+        labelFecha.Text = day1 & " " & hoy.Day.ToString & " de " & mont1
     End Sub
 
     Sub hoyFecha()
@@ -575,8 +695,48 @@ Public Module MOstartup
                 day1 = "Sabado"
 
         End Select
+        mont1 = hoy.Month.ToString
+
+        Select Case mont1
+            Case 1
+                mont1 = "Enero"
+            Case 2
+                mont1 = "Febrero"
+
+            Case 3
+                mont1 = "Marzo"
+
+            Case 4
+                mont1 = "Abril"
+
+            Case 5
+                mont1 = "Mayo"
+
+            Case 6
+                mont1 = "Junio"
+
+            Case 7
+                mont1 = "Julio"
+
+            Case 8
+                mont1 = "Agosto"
+
+            Case 9
+                mont1 = "Septiembre"
+
+            Case 10
+                mont1 = "Octubre"
+
+            Case 11
+                mont1 = "Noviembre"
+
+            Case 12
+                mont1 = "Diciembre"
 
 
-        labelFecha.Text = day1 & " " & hoy.Day.ToString
+        End Select
+
+
+        labelFecha.Text = day1 & " " & hoy.Day.ToString & " de " & mont1
     End Sub
 End Module

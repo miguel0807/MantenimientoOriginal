@@ -102,7 +102,7 @@ Public Class Startup
         LoadFechaEscrita()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Label3.Text = Date.Today.Month.ToString
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

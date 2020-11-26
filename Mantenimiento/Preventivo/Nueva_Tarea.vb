@@ -19,8 +19,7 @@ Public Class Nueva_Tarea
         End If
         nuevaTarea()
 
-        TextBox1.Text = ""
-        TextBox2.Text = ""
+        TextBox1.Focus()
 
     End Sub
 
