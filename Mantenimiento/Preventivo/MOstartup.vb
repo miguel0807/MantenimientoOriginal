@@ -739,4 +739,147 @@ Public Module MOstartup
 
         labelFecha.Text = day1 & " " & hoy.Day.ToString & " de " & mont1
     End Sub
+
+
+    Sub crearHistorial()
+#Region "Contar tareas de startup"
+        'Almacena en variable count la cantidad de tareas que hay vigentes
+        conectar()
+        Dim count As Integer
+
+        Dim Query As String
+        Query = ("select count (List_Startup_Shutdown.Codigo)  from List_Startup_Shutdown where List_Startup_Shutdown.[St-SH]=1  ")
+        Dim cmd As New SqlCommand(Query, cn)
+        count = cmd.ExecuteScalar
+
+        desconectar()
+
+#End Region
+
+#Region "Contar registros de hist_startup"
+        'Almacena en variable contar la cantidad de registros en el historial
+        conectar()
+        Dim contar As Integer
+
+        Dim consulta As String
+        consulta = ("select count (Hist_Startup.Conteo)  from Hist_Startup ")
+        Dim cmd1 As New SqlCommand(consulta, cn)
+        contar = cmd1.ExecuteScalar
+
+        desconectar()
+
+#End Region
+#Region "Insertar en historial cantidad de registro de tareas"
+        'Inserta en historial el conteo con respecto a la cantidad de tareas disponibles en ese momento
+        Dim registros As Integer
+        Dim dsConteo As New DataSet
+        Dim dtconteo As New DataTable
+
+        dsConteo.Tables.Add(dtconteo)
+        dtconteo.Columns.Add("Columna1")
+
+        For registros = 1 To count
+
+            conectar()
+            Dim adaptador1 As New SqlCommand("insert into Hist_Startup(Conteo) values(" & contar & ")", cn)
+            adaptador1.ExecuteNonQuery()
+            desconectar()
+            contar = contar + 1
+            dtconteo.Rows.Add(contar)
+
+        Next
+
+
+#End Region
+
+#Region "Crea tabla para almacenar tareas"
+        Try
+
+            Dim cmd3 As String = "select codigo from List_Startup_Shutdown where [St-SH]=1 order by Codigo asc"
+            Dim da3 As New SqlDataAdapter(cmd3, cn)
+            Dim ds3 As New DataSet
+
+            da3.Fill(ds3)
+
+
+            cn.Close()
+
+            MsgBox("contar " & count)
+            For Each row As DataRow In ds3.Tables(0).Rows
+
+
+                Dim values() As Object = row.ItemArray
+
+                Dim temp As String = String.Empty
+
+                For Each value As Object In values 'Selecciona cada tarea individualmente
+
+                    If Not value Is DBNull.Value Then
+                        temp &= CStr(value) & Environment.NewLine
+                    End If
+
+                Next
+
+
+
+
+
+                '  MsgBox("Conteo " & temp1)
+                MsgBox("Codigo " & temp)
+
+
+
+#Region "Actualizar el historial con la tarea"
+
+                Dim actualizarRealizado As New SqlCommand("update Hist_Startup set Codigo=" & temp & " where Conteo=", cn)
+                'TextBox1.Text = actualizarnombre.CommandText
+                conectar()
+                actualizarRealizado.ExecuteNonQuery()
+                desconectar()
+
+
+
+#End Region
+
+            Next
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+#End Region
+
+    End Sub
+    Sub puebaTabla()
+        Dim dsConteo As New DataSet
+        Dim dtconteo As New DataTable
+        Dim con As Integer
+
+
+        For con = 1 To 5
+            dtconteo.Rows.Add(con)
+
+        Next
+
+
+
+
+
+        For Each rows1 As DataRow In dsConteo.Tables(0, 1).Rows
+
+            Dim values1() As Object = rows1.ItemArray
+
+            Dim temp1 As String = String.Empty
+
+            For Each value As Object In values1 'Selecciona cada tarea individualmente
+
+                If Not value Is DBNull.Value Then
+                    temp1 &= CStr(value) & Environment.NewLine
+                End If
+
+            Next
+            MsgBox(temp1)
+        Next
+    End Sub
+
 End Module
