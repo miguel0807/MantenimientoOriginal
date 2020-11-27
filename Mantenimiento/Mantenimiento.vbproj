@@ -115,6 +115,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Preventivo\HistShutdownStartup.Designer.vb">
+      <DependentUpon>HistShutdownStartup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\HistShutdownStartup.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Preventivo\MOstartup.vb" />
     <Compile Include="Preventivo\Nueva_Tarea.Designer.vb">
       <DependentUpon>Nueva_Tarea.vb</DependentUpon>
@@ -248,6 +254,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo\HistShutdownStartup.resx">
+      <DependentUpon>HistShutdownStartup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\Nueva_Tarea.resx">
       <DependentUpon>Nueva_Tarea.vb</DependentUpon>

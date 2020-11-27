@@ -96,9 +96,9 @@ Public Module MOstartup
 
 
         datagr.RowHeadersVisible = False
-        '  datagr.Columns(1).Visible = False
-        ' datagr.Columns(4).Visible = False
-
+        datagr.Columns(1).Visible = False
+        datagr.Columns(4).Visible = False
+        datagr.Columns(5).Visible = False
 
         datagr.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         datagr.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -782,61 +782,8 @@ Public Module MOstartup
         End If
 #End Region
     End Sub
-    Sub puebaTabla()
-        Dim dsConteo As New DataSet
-        Dim dtconteo As New DataTable
-
-        Dim dtconteo2 As New DataTable
-
-        Dim con As Integer
-        Dim con1 As Integer
-
-        dsConteo.Tables.Add(0)
-        dsConteo.Tables.Add(1)
 
 
-        dsConteo.Tables(0).Columns.Add("Primera")
-        dsConteo.Tables(0).Columns.Add("Segunda")
-        For con = 1 To 5
-            dsConteo.Tables(0).Rows.Add(con)
-        Next
 
-        For con1 = 6 To 11
-            dsConteo.Tables(0).Rows.Add(con1)
-
-        Next
-
-        For con2 = 6 To 11
-            dsConteo.Tables(0).Rows.Add(con1)
-
-        Next
-        For Each rows1 As DataRow In dsConteo.Tables(0, 1).Rows
-
-            Dim values1() As Object = rows1.ItemArray(0)
-            Dim temp1 As String = String.Empty
-
-            Dim values2() As Object = rows1.ItemArray(1)
-            Dim temp2 As String = String.Empty
-
-            For Each value As Object In values1 'Selecciona cada tarea individualmente
-
-                If Not value Is DBNull.Value Then
-                    temp1 &= CStr(value) & Environment.NewLine
-                End If
-
-            Next
-
-
-            For Each value2 As Object In values2 'Selecciona cada tarea individualmente
-
-                If Not value2 Is DBNull.Value Then
-                    temp2 &= CStr(value2) & Environment.NewLine
-                End If
-
-            Next
-            MsgBox(temp1)
-            MsgBox(temp2)
-        Next
-    End Sub
 
 End Module

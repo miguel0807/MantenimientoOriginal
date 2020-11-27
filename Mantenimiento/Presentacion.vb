@@ -201,4 +201,8 @@ Public Class Presentacion
         openChildForm(New Nueva_Tarea())
 
     End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        openChildForm(New HistShutdownStartup())
+    End Sub
 End Class
