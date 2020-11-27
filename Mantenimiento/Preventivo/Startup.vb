@@ -25,6 +25,7 @@ Public Class Startup
         LoadFechaEscrita()
 
 
+        nombre = ComboBox1
     End Sub
 
 
@@ -58,14 +59,14 @@ Public Class Startup
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
-        CheckColumna()
-        startupDatagridview()
-        CheckSoloEditable()
-        marcarCheck()
+        'CheckColumna()
+        'startupDatagridview()
+        'CheckSoloEditable()
+        'marcarCheck()
 
 
-        ' crearHistorial()
-        'puebaTabla()
+        crearHistorial()
+        ' puebaTabla()
 
     End Sub
 

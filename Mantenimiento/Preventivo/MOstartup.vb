@@ -10,6 +10,7 @@ Public Module MOstartup
     Public nequipo As String
     Public st_sh As Integer
     Public startupCheck As Integer
+    Public nombre As ComboBox
 
     Dim hoy As Date
     Dim day1 As String
@@ -769,28 +770,7 @@ Public Module MOstartup
         desconectar()
 
 #End Region
-#Region "Insertar en historial cantidad de registro de tareas"
-        'Inserta en historial el conteo con respecto a la cantidad de tareas disponibles en ese momento
-        Dim registros As Integer
-        Dim dsConteo As New DataSet
-        Dim dtconteo As New DataTable
 
-        dsConteo.Tables.Add(dtconteo)
-        dtconteo.Columns.Add("Columna1")
-
-        For registros = 1 To count
-
-            conectar()
-            Dim adaptador1 As New SqlCommand("insert into Hist_Startup(Conteo) values(" & contar & ")", cn)
-            adaptador1.ExecuteNonQuery()
-            desconectar()
-            contar = contar + 1
-            dtconteo.Rows.Add(contar)
-
-        Next
-
-
-#End Region
 
 #Region "Crea tabla para almacenar tareas"
         Try
@@ -804,7 +784,7 @@ Public Module MOstartup
 
             cn.Close()
 
-            MsgBox("contar " & count)
+            '  MsgBox("contar " & count)
             For Each row As DataRow In ds3.Tables(0).Rows
 
 
@@ -825,22 +805,33 @@ Public Module MOstartup
 
 
                 '  MsgBox("Conteo " & temp1)
-                MsgBox("Codigo " & temp)
+                ' MsgBox("Codigo " & temp)
+
+
+#Region "Insertar en historial cantidad de registro de tareas"
+                'Inserta en historial el conteo con respecto a la cantidad de tareas disponibles en ese momento
+
+                Dim dsConteo As New DataSet
+                Dim dtconteo As New DataTable
+
+                dsConteo.Tables.Add(dtconteo)
+                dtconteo.Columns.Add("Columna1")
 
 
 
-#Region "Actualizar el historial con la tarea"
-
-                Dim actualizarRealizado As New SqlCommand("update Hist_Startup set Codigo=" & temp & " where Conteo=", cn)
-                'TextBox1.Text = actualizarnombre.CommandText
                 conectar()
-                actualizarRealizado.ExecuteNonQuery()
-                desconectar()
+                Dim adaptador1 As New SqlCommand("insert into Hist_Startup(Conteo,Codigo,Estado,Responsable,Fecha) values(" & contar & "," & temp & ",0,'" & nombre.Text & "','" & hoy & "')", cn)
+                adaptador1.ExecuteNonQuery()
+                    desconectar()
+
+                dtconteo.Rows.Add(contar)
+
 
 
 
 #End Region
 
+                contar = contar + 1
             Next
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -853,23 +844,38 @@ Public Module MOstartup
     Sub puebaTabla()
         Dim dsConteo As New DataSet
         Dim dtconteo As New DataTable
+
+        Dim dtconteo2 As New DataTable
+
         Dim con As Integer
+        Dim con1 As Integer
+
+        dsConteo.Tables.Add(0)
+        dsConteo.Tables.Add(1)
 
 
+        dsConteo.Tables(0).Columns.Add("Primera")
+        dsConteo.Tables(0).Columns.Add("Segunda")
         For con = 1 To 5
-            dtconteo.Rows.Add(con)
+            dsConteo.Tables(0).Rows.Add(con)
+        Next
+
+        For con1 = 6 To 11
+            dsConteo.Tables(0).Rows.Add(con1)
 
         Next
 
+        For con2 = 6 To 11
+            dsConteo.Tables(0).Rows.Add(con1)
 
-
-
-
+        Next
         For Each rows1 As DataRow In dsConteo.Tables(0, 1).Rows
 
-            Dim values1() As Object = rows1.ItemArray
-
+            Dim values1() As Object = rows1.ItemArray(0)
             Dim temp1 As String = String.Empty
+
+            Dim values2() As Object = rows1.ItemArray(1)
+            Dim temp2 As String = String.Empty
 
             For Each value As Object In values1 'Selecciona cada tarea individualmente
 
@@ -878,7 +884,17 @@ Public Module MOstartup
                 End If
 
             Next
+
+
+            For Each value2 As Object In values2 'Selecciona cada tarea individualmente
+
+                If Not value2 Is DBNull.Value Then
+                    temp2 &= CStr(value2) & Environment.NewLine
+                End If
+
+            Next
             MsgBox(temp1)
+            MsgBox(temp2)
         Next
     End Sub
 
