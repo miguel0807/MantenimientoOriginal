@@ -26,7 +26,7 @@ Partial Class Startup
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Cargar = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -87,16 +87,18 @@ Partial Class Startup
         Me.Button1.TabIndex = 144
         Me.Button1.Text = "Conteo"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
-        'Button3
+        'Cargar
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.Location = New System.Drawing.Point(722, 29)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(154, 38)
-        Me.Button3.TabIndex = 146
-        Me.Button3.Text = "Cargar"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Cargar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Cargar.Location = New System.Drawing.Point(722, 29)
+        Me.Cargar.Name = "Cargar"
+        Me.Cargar.Size = New System.Drawing.Size(154, 38)
+        Me.Cargar.TabIndex = 146
+        Me.Cargar.Text = "Cargar"
+        Me.Cargar.UseVisualStyleBackColor = True
+        Me.Cargar.Visible = False
         '
         'ComboBox1
         '
@@ -166,7 +168,7 @@ Partial Class Startup
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Cargar)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
@@ -183,7 +185,7 @@ Partial Class Startup
     Friend WithEvents Label1 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents Cargar As Button
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Label2 As Label

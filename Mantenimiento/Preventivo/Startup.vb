@@ -26,6 +26,9 @@ Public Class Startup
 
 
         nombre = ComboBox1
+
+
+        bCargar = Cargar
     End Sub
 
 
@@ -57,7 +60,8 @@ Public Class Startup
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Cargar.Click
+
         crearHistorial()
         CheckColumna()
         startupDatagridview()
@@ -90,14 +94,38 @@ Public Class Startup
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         DerechaFecha()
+        '  crearHistorial()
+        CheckColumna()
+        startupDatagridview()
+        CheckSoloEditable()
+        marcarCheck()
+
+        VisibleBotonCargar()
+
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         IzquierdaFecha()
+
+        '  crearHistorial()
+        CheckColumna()
+        startupDatagridview()
+        CheckSoloEditable()
+        marcarCheck()
+        VisibleBotonCargar()
     End Sub
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         LoadFechaEscrita()
+
+        'crearHistorial()
+        CheckColumna()
+        startupDatagridview()
+        CheckSoloEditable()
+        marcarCheck()
+
+        VisibleBotonCargar()
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)
