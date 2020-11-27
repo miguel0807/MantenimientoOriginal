@@ -29,6 +29,9 @@ Public Class Startup
 
 
         bCargar = Cargar
+
+        historial = "Hist_Startup"
+        hisInteger = 1
     End Sub
 
 

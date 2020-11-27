@@ -12,6 +12,9 @@ Public Module MOstartup
     Public startupCheck As Integer
     Public nombre As ComboBox
     Public bCargar As Button
+    Public historial As String ' Selecciona el historial donde guardar la informacion
+    Public hisInteger As Integer ' Habilita la creacion de tarean en shutdown o startup
+
     Dim hoy As Date
     Dim day1 As String
 
@@ -79,11 +82,11 @@ Public Module MOstartup
 
 
 
-        Dim adaptador As New SqlDataAdapter("select hist.Conteo,list.Tarea,list.Equipo,hist.Estado,hist.Fecha,hist.Responsable  from Hist_Startup hist,List_Startup_Shutdown list where hist.Codigo=list.Codigo and fecha='" & hoy & "' ", cn)
+        Dim adaptador As New SqlDataAdapter("select hist.Conteo,list.Tarea,list.Equipo,hist.Estado,hist.Fecha,hist.Responsable  from " & historial & " hist,List_Startup_Shutdown list where hist.Codigo=list.Codigo and fecha='" & hoy & "' ", cn)
         Dim dataS As New DataSet
-        adaptador.Fill(dataS, "Hist_Startup")
+        adaptador.Fill(dataS, "" & historial & "")
 
-        datagr.DataSource = dataS.Tables("Hist_Startup")
+        datagr.DataSource = dataS.Tables("" & historial & "")
 
 
 
@@ -166,7 +169,7 @@ Public Module MOstartup
 
         Dim celda As String = datagr.CurrentRow.Cells.Item(1).Value
         Dim estado As String = datagr.CurrentRow.Cells.Item(4).Value
-        Dim actualizarRealizado As New SqlCommand("update Hist_Startup set Estado=" & estado & " where Conteo=" & celda & " ", cn)
+        Dim actualizarRealizado As New SqlCommand("update " & historial & " set Estado=" & estado & " where Conteo=" & celda & " ", cn)
         'TextBox1.Text = actualizarnombre.CommandText
         conectar()
         actualizarRealizado.ExecuteNonQuery()
@@ -648,7 +651,7 @@ Public Module MOstartup
         Dim contar7 As Integer
 
         Dim consulta7 As String
-        consulta7 = ("select count (Hist_Startup.Fecha)from Hist_Startup where Fecha='" & hoy & "'  ")
+        consulta7 = ("select count (" & historial & ".Fecha)from " & historial & " where Fecha='" & hoy & "'  ")
         Dim cmd7 As New SqlCommand(consulta7, cn)
         contar7 = cmd7.ExecuteScalar
 
@@ -672,13 +675,13 @@ Public Module MOstartup
 
 #End Region
 
-#Region "Contar registros de hist_startup"
+#Region "Contar registros de historial"
         'Almacena en variable contar la cantidad de registros en el historial
         conectar()
         Dim contar As Integer
 
         Dim consulta As String
-        consulta = ("select count (Hist_Startup.Conteo)  from Hist_Startup ")
+        consulta = ("select count (" & historial & ".Conteo)  from " & historial & " ")
         Dim cmd1 As New SqlCommand(consulta, cn)
         contar = cmd1.ExecuteScalar
 
@@ -690,7 +693,7 @@ Public Module MOstartup
 #Region "Crea tabla para almacenar tareas"
         Try
 
-            Dim cmd3 As String = "select codigo from List_Startup_Shutdown where [St-SH]=1 order by Codigo asc"
+            Dim cmd3 As String = "select codigo from List_Startup_Shutdown where [St-SH]=" & hisInteger & " order by Codigo asc"
             Dim da3 As New SqlDataAdapter(cmd3, cn)
             Dim ds3 As New DataSet
 
@@ -735,7 +738,7 @@ Public Module MOstartup
 
 
                 conectar()
-                Dim adaptador1 As New SqlCommand("insert into Hist_Startup(Conteo,Codigo,Estado,Responsable,Fecha) values(" & contar & "," & temp & ",0,'" & nombre.Text & "','" & hoy & "')", cn)
+                Dim adaptador1 As New SqlCommand("insert into " & historial & "(Conteo,Codigo,Estado,Responsable,Fecha) values(" & contar & "," & temp & ",0,'" & nombre.Text & "','" & hoy & "')", cn)
                 adaptador1.ExecuteNonQuery()
                 desconectar()
 
@@ -765,7 +768,7 @@ Public Module MOstartup
         Dim contar7 As Integer
 
         Dim consulta7 As String
-        consulta7 = ("select count (Hist_Startup.Fecha)from Hist_Startup where Fecha='" & hoy & "'  ")
+        consulta7 = ("select count (" & historial & ".Fecha)from " & historial & " where Fecha='" & hoy & "'  ")
         Dim cmd7 As New SqlCommand(consulta7, cn)
         contar7 = cmd7.ExecuteScalar
 
