@@ -3,6 +3,7 @@
 
 Public Module MOstartup
     Public datagr As DataGridView
+    Public datagr2 As DataGridView
     Public labe1 As Label
     Public columncheck As New DataGridViewColumn
     Public usuario As ComboBox
@@ -14,7 +15,7 @@ Public Module MOstartup
     Public bCargar As Button
     Public historial As String ' Selecciona el historial donde guardar la informacion
     Public hisInteger As Integer ' Habilita la creacion de tarean en shutdown o startup
-
+    Public presionar As String
     Dim hoy As Date
     Dim day1 As String
 
@@ -783,7 +784,134 @@ Public Module MOstartup
 #End Region
     End Sub
 
+#Region "Historial"
+    Sub CargarFecha()
+#Region "Configuracion datagridview1"
+        conectar()
+        Dim formulario As DataGridView = datagr
+        Dim conteo As String
+        conteo = 1
 
+        '#Region "Formato de letra"
+
+        '        formulario.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        '        formulario.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+
+        '#End Region
+        formulario.RowTemplate.Height = 25
+#Region "Color de los titulos"
+        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
+        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+#End Region
+        '#Region "Cambios de color celdas y alternadas"
+        '        formulario.RowsDefaultCellStyle.BackColor = Color.LightGray
+        '        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+
+        '#End Region
+#Region "Alineacion de titulos"
+        formulario.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+#Region "Buscar todos los equipos"
+
+        Dim tabla As DataGridView = datagr
+        Dim adaptador As New SqlDataAdapter("select distinct (Fecha)from Hist_Startup;", cn)
+        Dim dataS As New DataSet
+        adaptador.Fill(dataS, "Hist_Startup")
+
+        tabla.DataSource = dataS.Tables("Hist_Startup")
+
+#End Region
+
+
+#Region "Configuracion tabla"
+
+
+
+        tabla.RowHeadersVisible = False
+        'tabla.AutoResizeColumn(DataGridViewAutoSizeColumnMode.Fill)
+
+
+
+        'tabla.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        'tabla.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        'tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+        ' tabla.Columns(0).Width = 200%
+        'tabla.Columns(2).Width = 240
+        'tabla.Columns(3).Width = 170
+
+
+
+#End Region
+#End Region
+    End Sub
+
+    Sub CargarDatosFecha()
+#Region "Configuracion datagridview1"
+        conectar()
+        Dim formulario As DataGridView = datagr2
+        Dim conteo As String
+        conteo = 1
+
+        '#Region "Formato de letra"
+
+        '        formulario.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        '        formulario.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+
+        '#End Region
+        formulario.RowTemplate.Height = 25
+#Region "Color de los titulos"
+        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
+        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+#End Region
+        '#Region "Cambios de color celdas y alternadas"
+        '        formulario.RowsDefaultCellStyle.BackColor = Color.LightGray
+        '        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+
+        '#End Region
+#Region "Alineacion de titulos"
+        formulario.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+#Region "Buscar todos los equipos"
+
+        Dim tabla As DataGridView = datagr2
+        Dim adaptador As New SqlDataAdapter("select hist.Conteo,list.Tarea,list.Equipo,hist.Estado,hist.Fecha,hist.Responsable  from " & historial & " hist,List_Startup_Shutdown list where hist.Codigo=list.Codigo and fecha='" & presionar & "' ", cn)
+        Dim dataS As New DataSet
+        adaptador.Fill(dataS, "Hist_Startup")
+
+        tabla.DataSource = dataS.Tables("Hist_Startup")
+
+#End Region
+
+
+#Region "Configuracion tabla"
+
+
+
+        tabla.RowHeadersVisible = False
+
+        tabla.Columns(0).Visible = False
+        'tabla.Columns(3).Visible = False
+
+
+        tabla.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+        tabla.Columns(1).Width = 380
+        tabla.Columns(2).Width = 240
+        tabla.Columns(3).Width = 170
+
+
+
+#End Region
+#End Region
+    End Sub
+#End Region
 
 
 End Module
