@@ -78,11 +78,11 @@ Public Module MOstartup
 
 
 
-        Dim adaptador As New SqlDataAdapter("select Conteo as #, Tarea,Equipo,Estado from Shutdowns ", cn)
+        Dim adaptador As New SqlDataAdapter("select hist.Conteo,list.Tarea,list.Equipo,hist.Estado,hist.Fecha  from Hist_Startup hist,List_Startup_Shutdown list where hist.Codigo=list.Codigo and fecha='" & hoy & "' ", cn)
         Dim dataS As New DataSet
-        adaptador.Fill(dataS, "Shutdowns")
+        adaptador.Fill(dataS, "Hist_Startup")
 
-        datagr.DataSource = dataS.Tables("Shutdowns")
+        datagr.DataSource = dataS.Tables("Hist_Startup")
 
 
 
@@ -93,8 +93,8 @@ Public Module MOstartup
 
 
         datagr.RowHeadersVisible = False
-        datagr.Columns(1).Visible = False
-        datagr.Columns(4).Visible = False
+        '  datagr.Columns(1).Visible = False
+        ' datagr.Columns(4).Visible = False
 
 
         datagr.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -165,7 +165,7 @@ Public Module MOstartup
 
         Dim celda As String = datagr.CurrentRow.Cells.Item(1).Value
         Dim estado As String = datagr.CurrentRow.Cells.Item(4).Value
-        Dim actualizarRealizado As New SqlCommand("update Shutdowns set Estado=" & estado & " where Conteo=" & celda & " ", cn)
+        Dim actualizarRealizado As New SqlCommand("update Hist_Startup set Estado=" & estado & " where Conteo=" & celda & " ", cn)
         'TextBox1.Text = actualizarnombre.CommandText
         conectar()
         actualizarRealizado.ExecuteNonQuery()

@@ -58,14 +58,14 @@ Public Class Startup
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-
-        'CheckColumna()
-        'startupDatagridview()
-        'CheckSoloEditable()
-        'marcarCheck()
-
-
         crearHistorial()
+        CheckColumna()
+        startupDatagridview()
+        CheckSoloEditable()
+        marcarCheck()
+
+
+
         ' puebaTabla()
 
     End Sub
