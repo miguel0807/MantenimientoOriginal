@@ -877,7 +877,7 @@ Public Module MOstartup
 #Region "Buscar todos los equipos"
 
         Dim tabla As DataGridView = datagr2
-        Dim adaptador As New SqlDataAdapter("select hist.Conteo,list.Tarea,list.Equipo,hist.Estado,hist.Fecha,hist.Responsable  from " & historial & " hist,List_Startup_Shutdown list where hist.Codigo=list.Codigo and fecha='" & presionar & "' ", cn)
+        Dim adaptador As New SqlDataAdapter("select hist.Conteo,list.Tarea,list.Equipo,case when Estado=0 then 'Pendiente' when Estado=1 then 'Finalizado' end '  Estado',hist.Fecha,hist.Responsable  from " & historial & " hist,List_Startup_Shutdown list where hist.Codigo=list.Codigo and fecha='" & presionar & "' ", cn)
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "Hist_Startup")
 
