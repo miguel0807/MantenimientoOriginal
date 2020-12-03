@@ -65,8 +65,8 @@ Public Module MOstartup
 #End Region
         datagr.RowTemplate.Height = 30
 #Region "Color de los titulos"
-        datagr.ColumnHeadersDefaultCellStyle.BackColor = Color.Green
-        datagr.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+        ' datagr.ColumnHeadersDefaultCellStyle.BackColor = Color.Green
+        '   datagr.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
 #End Region
 #Region "Cambios de color celdas y alternadas"
         datagr.RowsDefaultCellStyle.BackColor = Color.White
@@ -94,7 +94,11 @@ Public Module MOstartup
 
 
 #End Region
-
+        datagr.EnableHeadersVisualStyles = False
+        datagr.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        datagr.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        datagr.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        datagr.RowsDefaultCellStyle.SelectionForeColor = Color.Black
 
         datagr.RowHeadersVisible = False
         datagr.Columns(1).Visible = False
@@ -296,6 +300,18 @@ Public Module MOstartup
 #End Region
 
 #End Region
+
+
+        datagr.RowHeadersVisible = False
+
+
+        datagr.EnableHeadersVisualStyles = False
+        datagr.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        datagr.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        datagr.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        datagr.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+
 
 
         datagr.RowHeadersVisible = False
@@ -799,9 +815,10 @@ Public Module MOstartup
 
         '#End Region
         formulario.RowTemplate.Height = 25
-#Region "Color de los titulos"
-        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
-        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+#Region "Cambios de color celdas y alternadas"
+        datagr.RowsDefaultCellStyle.BackColor = Color.White
+        datagr.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
 #End Region
         '#Region "Cambios de color celdas y alternadas"
         '        formulario.RowsDefaultCellStyle.BackColor = Color.LightGray
@@ -828,6 +845,14 @@ Public Module MOstartup
 
 
         tabla.RowHeadersVisible = False
+
+        tabla.EnableHeadersVisualStyles = False
+
+        '   tabla.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        tabla.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+
+        tabla.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        tabla.RowsDefaultCellStyle.SelectionForeColor = Color.Black
         'tabla.AutoResizeColumn(DataGridViewAutoSizeColumnMode.Fill)
 
 
@@ -862,9 +887,10 @@ Public Module MOstartup
 
         '#End Region
         formulario.RowTemplate.Height = 25
-#Region "Color de los titulos"
-        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
-        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+#Region "Cambios de color celdas y alternadas"
+        datagr2.RowsDefaultCellStyle.BackColor = Color.White
+        datagr2.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
 #End Region
         '#Region "Cambios de color celdas y alternadas"
         '        formulario.RowsDefaultCellStyle.BackColor = Color.LightGray
@@ -891,6 +917,15 @@ Public Module MOstartup
 
 
         tabla.RowHeadersVisible = False
+
+
+        tabla.EnableHeadersVisualStyles = False
+        tabla.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        tabla.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        tabla.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        tabla.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+
 
         tabla.Columns(0).Visible = False
         'tabla.Columns(3).Visible = False
