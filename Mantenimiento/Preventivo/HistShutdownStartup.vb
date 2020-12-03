@@ -17,7 +17,7 @@ Public Class HistShutdownStartup
             Case "Hist_Shutdown"
                 CargarDatosFecha()
             Case Else
-                MsgBox(historial)
+
                 MsgBox("Seleccione primero una fecha")
 
 
