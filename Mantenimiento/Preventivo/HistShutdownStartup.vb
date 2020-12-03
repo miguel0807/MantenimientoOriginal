@@ -10,7 +10,19 @@ Public Class HistShutdownStartup
 
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        CargarDatosFecha()
+
+        Select Case historial
+            Case "Hist_Startup"
+                CargarDatosFecha()
+            Case "Hist_Shutdown"
+                CargarDatosFecha()
+            Case Else
+                MsgBox(historial)
+                MsgBox("Seleccione primero una fecha")
+
+
+        End Select
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -18,7 +30,8 @@ Public Class HistShutdownStartup
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        MsgBox(DataGridView1.CurrentCell.Value)
+        historial = "Hist_Shutdown"
+        CargarFecha()
     End Sub
 
 
@@ -28,6 +41,9 @@ Public Class HistShutdownStartup
     End Sub
 
     Private Sub HistShutdownStartup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
+
         datagr = DataGridView1
         datagr2 = DataGridView2
     End Sub

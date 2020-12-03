@@ -27,6 +27,16 @@ Mantenimiento
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Mantenimiento.My.Resources.Resources.crecimiento">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.crecimiento__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Mantenimiento.My.Resources.Resources.Flecha_Derecha">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -43,6 +53,21 @@ Mantenimiento
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.hoy">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.infografia">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.infografia__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.matriz_de_ciclo">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

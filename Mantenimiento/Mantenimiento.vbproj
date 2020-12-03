@@ -338,6 +338,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Otros\tools_22686.ico" />
+    <None Include="Resources\matriz-de-ciclo.png" />
+    <None Include="Resources\infografia %281%29.png" />
+    <None Include="Resources\infografia.png" />
+    <None Include="Resources\crecimiento %281%29.png" />
+    <None Include="Resources\crecimiento.png" />
     <None Include="Resources\hoy.png" />
     <None Include="Resources\FlechaIzquierda.png" />
     <None Include="Resources\Flecha_Derecha.png" />

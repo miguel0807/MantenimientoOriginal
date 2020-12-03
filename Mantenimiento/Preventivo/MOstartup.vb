@@ -814,11 +814,11 @@ Public Module MOstartup
 #Region "Buscar todos los equipos"
 
         Dim tabla As DataGridView = datagr
-        Dim adaptador As New SqlDataAdapter("select distinct (Fecha)from Hist_Startup;", cn)
+        Dim adaptador As New SqlDataAdapter("select distinct (Fecha)from " & historial & ";", cn)
         Dim dataS As New DataSet
-        adaptador.Fill(dataS, "Hist_Startup")
+        adaptador.Fill(dataS, "" & historial & "")
 
-        tabla.DataSource = dataS.Tables("Hist_Startup")
+        tabla.DataSource = dataS.Tables("" & historial & "")
 
 #End Region
 
@@ -835,7 +835,7 @@ Public Module MOstartup
         'tabla.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         'tabla.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-        'tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ' tabla.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
         ' tabla.Columns(0).Width = 200%
@@ -879,9 +879,9 @@ Public Module MOstartup
         Dim tabla As DataGridView = datagr2
         Dim adaptador As New SqlDataAdapter("select hist.Conteo,list.Tarea,list.Equipo,case when Estado=0 then 'Pendiente' when Estado=1 then 'Finalizado' end '  Estado',hist.Fecha,hist.Responsable  from " & historial & " hist,List_Startup_Shutdown list where hist.Codigo=list.Codigo and fecha='" & presionar & "' ", cn)
         Dim dataS As New DataSet
-        adaptador.Fill(dataS, "Hist_Startup")
+        adaptador.Fill(dataS, "" & historial & "")
 
-        tabla.DataSource = dataS.Tables("Hist_Startup")
+        tabla.DataSource = dataS.Tables("" & historial & "")
 
 #End Region
 
@@ -896,16 +896,17 @@ Public Module MOstartup
         'tabla.Columns(3).Visible = False
 
 
-        tabla.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        tabla.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ' tabla.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        'tabla.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
         tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
-
-        tabla.Columns(1).Width = 380
+        tabla.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(1).Width = 300
         tabla.Columns(2).Width = 240
         tabla.Columns(3).Width = 170
-
+        tabla.Columns(3).Width = 100
+        tabla.Columns(5).Width = 150
 
 
 #End Region
