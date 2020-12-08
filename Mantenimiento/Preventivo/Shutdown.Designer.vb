@@ -29,9 +29,10 @@ Partial Class Shutdown
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Cargar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,36 +88,23 @@ Partial Class Shutdown
         '
         'ComboBox1
         '
-        Me.ComboBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(418, 46)
+        Me.ComboBox1.Location = New System.Drawing.Point(393, 51)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(244, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(235, 24)
         Me.ComboBox1.TabIndex = 168
+        Me.ComboBox1.Visible = False
         '
         'Cargar
         '
-        Me.Cargar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Cargar.Location = New System.Drawing.Point(726, 32)
+        Me.Cargar.Location = New System.Drawing.Point(765, 43)
         Me.Cargar.Name = "Cargar"
         Me.Cargar.Size = New System.Drawing.Size(154, 38)
         Me.Cargar.TabIndex = 167
         Me.Cargar.Text = "Cargar"
         Me.Cargar.UseVisualStyleBackColor = True
         Me.Cargar.Visible = False
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(886, 32)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(154, 38)
-        Me.Button1.TabIndex = 166
-        Me.Button1.Text = "Conteo"
-        Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
         '
         'DataGridView1
         '
@@ -159,18 +147,45 @@ Partial Class Shutdown
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Label1.Visible = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label3.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label3.Location = New System.Drawing.Point(393, 7)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(296, 33)
+        Me.Label3.TabIndex = 173
+        Me.Label3.Text = "Paso 1: Seleccione usuario"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label3.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label4.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label4.Location = New System.Drawing.Point(714, 7)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(257, 33)
+        Me.Label4.TabIndex = 174
+        Me.Label4.Text = "Paso 2: Cargar historial"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label4.Visible = False
+        '
         'Shutdown
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1066, 690)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Cargar)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Shutdown"
@@ -190,7 +205,8 @@ Partial Class Shutdown
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Cargar As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

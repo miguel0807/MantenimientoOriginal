@@ -26,12 +26,14 @@ Partial Class Startup
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Cargar = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Cargar = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,35 +84,13 @@ Partial Class Startup
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(882, 29)
+        Me.Button1.Location = New System.Drawing.Point(377, 651)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(154, 38)
         Me.Button1.TabIndex = 144
         Me.Button1.Text = "Conteo"
         Me.Button1.UseVisualStyleBackColor = True
         Me.Button1.Visible = False
-        '
-        'Cargar
-        '
-        Me.Cargar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Cargar.Location = New System.Drawing.Point(722, 29)
-        Me.Cargar.Name = "Cargar"
-        Me.Cargar.Size = New System.Drawing.Size(154, 38)
-        Me.Cargar.TabIndex = 146
-        Me.Cargar.Text = "Cargar"
-        Me.Cargar.UseVisualStyleBackColor = True
-        Me.Cargar.Visible = False
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(414, 43)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(244, 24)
-        Me.ComboBox1.TabIndex = 148
         '
         'PictureBox3
         '
@@ -159,17 +139,65 @@ Partial Class Startup
         Me.PictureBox1.TabIndex = 161
         Me.PictureBox1.TabStop = False
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(377, 50)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(235, 24)
+        Me.ComboBox1.TabIndex = 178
+        Me.ComboBox1.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label4.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label4.Location = New System.Drawing.Point(698, 8)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(257, 33)
+        Me.Label4.TabIndex = 180
+        Me.Label4.Text = "Paso 2: Cargar historial"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label4.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label3.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label3.Location = New System.Drawing.Point(377, 8)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(296, 33)
+        Me.Label3.TabIndex = 179
+        Me.Label3.Text = "Paso 1: Seleccione usuario"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label3.Visible = False
+        '
+        'Cargar
+        '
+        Me.Cargar.Location = New System.Drawing.Point(698, 44)
+        Me.Cargar.Name = "Cargar"
+        Me.Cargar.Size = New System.Drawing.Size(176, 35)
+        Me.Cargar.TabIndex = 177
+        Me.Cargar.Text = "Cargar"
+        Me.Cargar.UseVisualStyleBackColor = True
+        Me.Cargar.Visible = False
+        '
         'Startup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1066, 690)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Cargar)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Cargar)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
@@ -186,10 +214,12 @@ Partial Class Startup
     Friend WithEvents Label1 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button1 As Button
-    Friend WithEvents Cargar As Button
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Cargar As Button
 End Class

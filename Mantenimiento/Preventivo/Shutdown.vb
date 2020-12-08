@@ -23,6 +23,10 @@
 
         bCargar = Cargar
 
+        label5 = Label3
+        label6 = Label4
+        combo1 = ComboBox1
+
         historial = "Hist_Shutdown"
 
         hisInteger = 0
@@ -69,37 +73,57 @@
         startupDatagridview()
         CheckSoloEditable()
         marcarCheck()
-
+        VisibleBotonCargar()
 
 
         ' puebaTabla()
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        If e.RowIndex < 0 Or Not e.ColumnIndex = 0 Then Exit Sub
-        If Convert.ToBoolean(datagr.Rows(e.RowIndex).Cells(0).Value) Then
-            datagr.Rows(e.RowIndex).Cells(0).Value = False
-        Else
-            datagr.Rows(e.RowIndex).Cells(0).Value = True
-        End If
 
-        marcarEstado()
+
+
+
+        If e.RowIndex < 0 Or Not e.ColumnIndex = 0 Then Exit Sub
+            If Convert.ToBoolean(datagr.Rows(e.RowIndex).Cells(0).Value) Then
+                datagr.Rows(e.RowIndex).Cells(0).Value = False
+            Else
+                datagr.Rows(e.RowIndex).Cells(0).Value = True
+            End If
+
+            marcarEstado()
         cheackActualizarSql()
+        cheackActualizarSQLComentarios()
+        cheackActualizarSQLusuario()
+
+
     End Sub
 
     Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
+
         'Convierte el check en formato boolean sea false o true
         If e.RowIndex < 0 Or Not e.ColumnIndex = 0 Then Exit Sub
-        If Convert.ToBoolean(datagr.Rows(e.RowIndex).Cells(0).Value) Then
-            datagr.Rows(e.RowIndex).Cells(0).Value = False
-        Else
-            datagr.Rows(e.RowIndex).Cells(0).Value = True
-        End If
-        'Convierte el check en formato boolean sea false o true
+            If Convert.ToBoolean(datagr.Rows(e.RowIndex).Cells(0).Value) Then
+                datagr.Rows(e.RowIndex).Cells(0).Value = False
+            Else
+                datagr.Rows(e.RowIndex).Cells(0).Value = True
+            End If
+            'Convierte el check en formato boolean sea false o true
 
 
-        marcarEstado()
+            marcarEstado()
 
         cheackActualizarSql()
+        cheackActualizarSQLComentarios()
+        cheackActualizarSQLusuario()
+
+
+
+    End Sub
+
+    Private Sub DataGridView1_MouseClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseClick
+
+
+
     End Sub
 End Class

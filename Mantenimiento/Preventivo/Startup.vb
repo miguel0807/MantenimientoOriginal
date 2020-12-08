@@ -30,6 +30,10 @@ Public Class Startup
 
         bCargar = Cargar
 
+        label5 = Label3
+        label6 = Label4
+        combo1 = ComboBox1
+
         historial = "Hist_Startup"
         hisInteger = 1
     End Sub
@@ -47,6 +51,13 @@ Public Class Startup
 
         marcarEstado()
         cheackActualizarSql()
+        cheackActualizarSQLComentarios()
+        cheackActualizarSQLusuario()
+
+
+
+
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -63,7 +74,7 @@ Public Class Startup
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Cargar.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
 
         crearHistorial()
         CheckColumna()
@@ -93,6 +104,8 @@ Public Class Startup
         marcarEstado()
 
         cheackActualizarSql()
+        cheackActualizarSQLComentarios()
+        cheackActualizarSQLusuario()
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -131,7 +144,17 @@ Public Class Startup
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
+
+
+    Private Sub Cargar_Click(sender As Object, e As EventArgs) Handles Cargar.Click
+        crearHistorial()
+        CheckColumna()
+        startupDatagridview()
+        CheckSoloEditable()
+        marcarCheck()
+        VisibleBotonCargar()
 
     End Sub
+
+
 End Class

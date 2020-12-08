@@ -13,6 +13,9 @@ Public Module MOstartup
     Public startupCheck As Integer
     Public nombre As ComboBox
     Public bCargar As Button
+    Public label5 As Label
+    Public label6 As Label
+    Public combo1 As ComboBox
     Public historial As String ' Selecciona el historial donde guardar la informacion
     Public hisInteger As Integer ' Habilita la creacion de tarean en shutdown o startup
     Public presionar As String
@@ -83,7 +86,7 @@ Public Module MOstartup
 
 
 
-        Dim adaptador As New SqlDataAdapter("select hist.Conteo,list.Tarea,list.Equipo,hist.Estado,hist.Fecha,hist.Responsable  from " & historial & " hist,List_Startup_Shutdown list where hist.Codigo=list.Codigo and fecha='" & hoy & "' ", cn)
+        Dim adaptador As New SqlDataAdapter("select hist.Conteo,list.Tarea,list.Equipo,hist.Estado,hist.Fecha,hist.Responsable,hist.Comentarios  from " & historial & " hist,List_Startup_Shutdown list where hist.Codigo=list.Codigo and fecha='" & hoy & "' ", cn)
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "" & historial & "")
 
@@ -109,7 +112,7 @@ Public Module MOstartup
         'datagr.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter 'Tarea
         datagr.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         datagr.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter 'Responsable
-
+        datagr.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter 'Comentarios
 
 
 
@@ -135,8 +138,8 @@ Public Module MOstartup
     Sub CheckSoloEditable()
         'Desabilita todo el datagridview contra escritura excepto con el checkbox
         For cole As Integer = 0 To datagr.Columns.Count - 1
-            If Not cole = 0 Then
-                datagr.Columns(cole).ReadOnly = True
+            If Not cole = 7 Then
+                'datagr.Columns(cole).ReadOnly = True 'Desactivado temporalmente para pruebas
             End If
         Next
         'Desabilita todo el datagridview contra escritura excepto con el checkbox
@@ -181,8 +184,36 @@ Public Module MOstartup
         desconectar()
 
     End Sub
+    Sub cheackActualizarSQLComentarios()
+
+        If datagr.CurrentCell.Selected Then
+            Dim celda As String = datagr.CurrentRow.Cells.Item(1).Value
+
+            Dim comen As String = datagr.CurrentRow.Cells.Item(7).Value.ToString
+            Dim actualizarRealizado As New SqlCommand("update " & historial & " set Comentarios='" & comen & "' where Conteo=" & celda & " ", cn)
+                'TextBox1.Text = actualizarnombre.CommandText
+                conectar()
+                actualizarRealizado.ExecuteNonQuery()
+                desconectar()
+            End If
 
 
+    End Sub
+    Sub cheackActualizarSQLusuario()
+
+        If datagr.CurrentCell.Selected Then
+            Dim celda As String = datagr.CurrentRow.Cells.Item(1).Value
+
+            Dim usua As String = datagr.CurrentRow.Cells.Item(6).Value.ToString
+            Dim actualizarRealizado As New SqlCommand("update " & historial & " set Responsable='" & usua & "' where Conteo=" & celda & " ", cn)
+            'TextBox1.Text = actualizarnombre.CommandText
+            conectar()
+            actualizarRealizado.ExecuteNonQuery()
+            desconectar()
+        End If
+
+
+    End Sub
 
     Sub usuarios()
 
@@ -199,6 +230,8 @@ Public Module MOstartup
                 usuario.DisplayMember = "Nombre"
             End With
             cn.Close()
+            usuario.SelectedIndex = -1
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -793,9 +826,15 @@ Public Module MOstartup
 
         If contar7 > 0 Then
             bCargar.Visible = False
+            label5.Visible = False
+            label6.Visible = False
+            combo1.Visible = False
             Exit Sub
         Else
             bCargar.Visible = True
+            label5.Visible = True
+            label6.Visible = True
+            combo1.Visible = True
         End If
 #End Region
     End Sub
