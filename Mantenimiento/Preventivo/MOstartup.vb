@@ -133,6 +133,9 @@ Public Module MOstartup
 
         Next
         'Desactiva el autofiltro
+
+
+
     End Sub
 
     Sub CheckSoloEditable()
@@ -829,12 +832,14 @@ Public Module MOstartup
             label5.Visible = False
             label6.Visible = False
             combo1.Visible = False
+            datagr.CurrentCell = datagr.Item(0, 1) 'Selecciona el celda 0,1 para evitar bug de invisibilidad
             Exit Sub
         Else
             bCargar.Visible = True
             label5.Visible = True
             label6.Visible = True
             combo1.Visible = True
+
         End If
 #End Region
     End Sub
@@ -942,7 +947,7 @@ Public Module MOstartup
 #Region "Buscar todos los equipos"
 
         Dim tabla As DataGridView = datagr2
-        Dim adaptador As New SqlDataAdapter("select hist.Conteo,list.Tarea,list.Equipo,case when Estado=0 then 'Pendiente' when Estado=1 then 'Finalizado' end '  Estado',hist.Fecha,hist.Responsable  from " & historial & " hist,List_Startup_Shutdown list where hist.Codigo=list.Codigo and fecha='" & presionar & "' ", cn)
+        Dim adaptador As New SqlDataAdapter("select hist.Conteo,list.Tarea,list.Equipo,case when Estado=0 then 'Pendiente' when Estado=1 then 'Finalizado' end '  Estado',hist.Fecha,hist.Responsable,hist.Comentarios  from " & historial & " hist,List_Startup_Shutdown list where hist.Codigo=list.Codigo and fecha='" & presionar & "' ", cn)
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "" & historial & "")
 
