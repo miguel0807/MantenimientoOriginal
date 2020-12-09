@@ -538,14 +538,14 @@ Partial Class Presentacion
         Me.PanelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelChildForm.Location = New System.Drawing.Point(250, 0)
         Me.PanelChildForm.Name = "PanelChildForm"
-        Me.PanelChildForm.Size = New System.Drawing.Size(932, 768)
+        Me.PanelChildForm.Size = New System.Drawing.Size(1036, 768)
         Me.PanelChildForm.TabIndex = 2
         '
         'PictureBox9
         '
         Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
-        Me.PictureBox9.Location = New System.Drawing.Point(223, 255)
+        Me.PictureBox9.Location = New System.Drawing.Point(275, 255)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(512, 310)
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -556,7 +556,7 @@ Partial Class Presentacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1182, 768)
+        Me.ClientSize = New System.Drawing.Size(1286, 768)
         Me.Controls.Add(Me.PanelChildForm)
         Me.Controls.Add(Me.PanelSideMenu)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

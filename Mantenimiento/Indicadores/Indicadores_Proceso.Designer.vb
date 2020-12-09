@@ -42,6 +42,7 @@ Partial Class Indicadores_Proceso
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonShadow
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -69,7 +70,7 @@ Partial Class Indicadores_Proceso
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1364, 547)
+        Me.DataGridView1.Size = New System.Drawing.Size(1364, 641)
         Me.DataGridView1.TabIndex = 3
         '
         'Button1
@@ -80,7 +81,7 @@ Partial Class Indicadores_Proceso
         Me.Button1.FlatAppearance.BorderSize = 3
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button1.Location = New System.Drawing.Point(1146, 638)
+        Me.Button1.Location = New System.Drawing.Point(1140, 697)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(186, 84)
         Me.Button1.TabIndex = 2
@@ -108,7 +109,7 @@ Partial Class Indicadores_Proceso
         Me.Button2.FlatAppearance.BorderSize = 3
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button2.Location = New System.Drawing.Point(167, 638)
+        Me.Button2.Location = New System.Drawing.Point(166, 697)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(186, 84)
         Me.Button2.TabIndex = 1

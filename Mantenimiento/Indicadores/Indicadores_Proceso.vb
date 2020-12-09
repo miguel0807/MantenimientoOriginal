@@ -85,13 +85,21 @@ Public Class Indicadores_Proceso
 
 #End Region
         ' Indicadores_Proceso.DataGridView1.RowTemplate.Height = 25
-#Region "Color de los titulos"
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
-#End Region
 #Region "Cambios de color celdas y alternadas"
-        Me.DataGridView1.RowsDefaultCellStyle.BackColor = Color.LightGray
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+        Me.DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Personalizacion header"
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        Me.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        Me.DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
 #End Region
 #Region "Alineacion de titulos"
@@ -167,13 +175,21 @@ Public Class Indicadores_Proceso
 
 #End Region
         '  DataGridView1.RowTemplate.Height = 50
-#Region "Color de los titulos"
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
-#End Region
 #Region "Cambios de color celdas y alternadas"
-        Me.DataGridView1.RowsDefaultCellStyle.BackColor = Color.LightGray
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+        Me.DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Personalizacion header"
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        Me.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        Me.DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
 #End Region
 #Region "Alineacion de titulos"
@@ -251,13 +267,21 @@ Public Class Indicadores_Proceso
 
 #End Region
         ' Indicadores_Proceso.DataGridView1.RowTemplate.Height = 25
-#Region "Color de los titulos"
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
-#End Region
 #Region "Cambios de color celdas y alternadas"
-        Me.DataGridView1.RowsDefaultCellStyle.BackColor = Color.LightGray
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+        Me.DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Personalizacion header"
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        Me.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        Me.DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
 #End Region
 #Region "Alineacion de titulos"
