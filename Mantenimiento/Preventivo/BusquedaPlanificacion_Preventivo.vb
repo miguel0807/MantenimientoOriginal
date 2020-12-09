@@ -124,15 +124,27 @@ Public Class BusquedaPlanificacion_Preventivo
 
 #End Region
         formulario.RowTemplate.Height = 30
-#Region "Color de los titulos"
-        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
-        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
-#End Region
+
 #Region "Cambios de color celdas y alternadas"
-        formulario.RowsDefaultCellStyle.BackColor = Color.LightGray
-        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+        formulario.RowsDefaultCellStyle.BackColor = Color.White
+        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
 
 #End Region
+#Region "Personalizacion header"
+        formulario.EnableHeadersVisualStyles = False
+        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        formulario.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        formulario.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        formulario.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
+#End Region
+
+
+
 #Region "Alineacion de titulos"
         formulario.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 #End Region

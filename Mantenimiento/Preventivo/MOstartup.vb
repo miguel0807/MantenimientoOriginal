@@ -97,12 +97,14 @@ Public Module MOstartup
 
 
 #End Region
+
+#Region "Personalizacion header"
         datagr.EnableHeadersVisualStyles = False
         datagr.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
         datagr.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
         datagr.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
         datagr.RowsDefaultCellStyle.SelectionForeColor = Color.Black
-
+#End Region
         datagr.RowHeadersVisible = False
         datagr.Columns(1).Visible = False
         datagr.Columns(4).Visible = False

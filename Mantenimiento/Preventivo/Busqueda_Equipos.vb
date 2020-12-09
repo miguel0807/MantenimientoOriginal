@@ -125,13 +125,22 @@ Public Class Busqueda_Equipos
 
         '#End Region
         formulario.RowTemplate.Height = 25
-#Region "Color de los titulos"
-        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
-        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
-#End Region
+
 #Region "Cambios de color celdas y alternadas"
-        formulario.RowsDefaultCellStyle.BackColor = Color.LightGray
-        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+        formulario.RowsDefaultCellStyle.BackColor = Color.White
+        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Personalizacion header"
+        formulario.EnableHeadersVisualStyles = False
+        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        formulario.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        formulario.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        formulario.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
 #End Region
 #Region "Alineacion de titulos"
@@ -164,9 +173,9 @@ Public Class Busqueda_Equipos
         tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
-        tabla.Columns(1).Width = 380
-        tabla.Columns(2).Width = 240
-        tabla.Columns(3).Width = 170
+        'tabla.Columns(1).Width = 380
+        'tabla.Columns(2).Width = 240
+        'tabla.Columns(3).Width = 170
 
 
 
@@ -195,13 +204,22 @@ Public Class Busqueda_Equipos
 
         '#End Region
         formulario.RowTemplate.Height = 25
-#Region "Color de los titulos"
-        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
-        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
-#End Region
+
 #Region "Cambios de color celdas y alternadas"
-        formulario.RowsDefaultCellStyle.BackColor = Color.LightGray
-        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+        formulario.RowsDefaultCellStyle.BackColor = Color.White
+        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Personalizacion header"
+        formulario.EnableHeadersVisualStyles = False
+        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        formulario.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        formulario.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        formulario.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
 #End Region
 #Region "Alineacion de titulos"
@@ -248,9 +266,9 @@ Public Class Busqueda_Equipos
         tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
-        tabla.Columns(1).Width = 380
-        tabla.Columns(2).Width = 240
-        tabla.Columns(3).Width = 170
+        'tabla.Columns(1).Width = 380
+        'tabla.Columns(2).Width = 240
+        'tabla.Columns(3).Width = 170
 
 
 
@@ -279,13 +297,22 @@ Public Class Busqueda_Equipos
 
         '#End Region
         formulario.RowTemplate.Height = 25
-#Region "Color de los titulos"
-        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
-        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
-#End Region
+
 #Region "Cambios de color celdas y alternadas"
-        formulario.RowsDefaultCellStyle.BackColor = Color.LightGray
-        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+        formulario.RowsDefaultCellStyle.BackColor = Color.White
+        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Personalizacion header"
+        formulario.EnableHeadersVisualStyles = False
+        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        formulario.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        formulario.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        formulario.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
 #End Region
 #Region "Alineacion de titulos"
@@ -321,9 +348,9 @@ Public Class Busqueda_Equipos
         'tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
-        tabla.Columns(1).Width = 380
-        tabla.Columns(2).Width = 240
-        'tabla.Columns(3).Width = 170
+        'tabla.Columns(1).Width = 380
+        'tabla.Columns(2).Width = 240
+        ''tabla.Columns(3).Width = 170
 
 
 
@@ -352,13 +379,22 @@ Public Class Busqueda_Equipos
 
         '#End Region
         formulario.RowTemplate.Height = 25
-#Region "Color de los titulos"
-        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray
-        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
-#End Region
+
 #Region "Cambios de color celdas y alternadas"
-        formulario.RowsDefaultCellStyle.BackColor = Color.LightGray
-        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.Gray
+        formulario.RowsDefaultCellStyle.BackColor = Color.White
+        formulario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Personalizacion header"
+        formulario.EnableHeadersVisualStyles = False
+        formulario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        formulario.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        formulario.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        formulario.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        formulario.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
 #End Region
 #Region "Alineacion de titulos"
@@ -393,9 +429,9 @@ Public Class Busqueda_Equipos
 
         'tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-        tabla.Columns(0).Width = 380
-        tabla.Columns(1).Width = 300
-        tabla.Columns(2).Width = 380
+        'tabla.Columns(0).Width = 380
+        'tabla.Columns(1).Width = 300
+        'tabla.Columns(2).Width = 380
 
 
 
@@ -500,5 +536,9 @@ Public Class Busqueda_Equipos
             'Si el intento es fallido, mostrar MsgBox.
             MessageBox.Show("No se puede generar el documento PDF.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub detalle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles detalle.SelectedIndexChanged
+
     End Sub
 End Class
