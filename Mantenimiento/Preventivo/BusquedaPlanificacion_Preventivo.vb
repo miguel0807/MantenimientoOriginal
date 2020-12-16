@@ -119,8 +119,8 @@ Public Class BusquedaPlanificacion_Preventivo
 
 #Region "Formato de letra"
 
-        formulario.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
-        formulario.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        formulario.DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 15)
+        formulario.ColumnHeadersDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 15)
 
 #End Region
         formulario.RowTemplate.Height = 30

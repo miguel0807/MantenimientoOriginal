@@ -46,6 +46,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonShadow
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -66,14 +67,14 @@ Partial Class BusquedaPlanificacion_Preventivo
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(60, 194)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 158)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1316, 467)
+        Me.DataGridView1.Size = New System.Drawing.Size(1413, 590)
         Me.DataGridView1.TabIndex = 110
         '
         'mes
@@ -81,7 +82,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.mes.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.mes.FormattingEnabled = True
-        Me.mes.Location = New System.Drawing.Point(875, 12)
+        Me.mes.Location = New System.Drawing.Point(929, 16)
         Me.mes.Name = "mes"
         Me.mes.Size = New System.Drawing.Size(229, 37)
         Me.mes.TabIndex = 109
@@ -94,7 +95,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.Button2.FlatAppearance.BorderSize = 3
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button2.Location = New System.Drawing.Point(341, 87)
+        Me.Button2.Location = New System.Drawing.Point(336, 52)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(186, 84)
         Me.Button2.TabIndex = 108
@@ -106,7 +107,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.año.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.año.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.año.FormattingEnabled = True
-        Me.año.Location = New System.Drawing.Point(12, 134)
+        Me.año.Location = New System.Drawing.Point(12, 99)
         Me.año.Name = "año"
         Me.año.Size = New System.Drawing.Size(229, 37)
         Me.año.TabIndex = 107
@@ -128,7 +129,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.Label1.AutoSize = True
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label1.Location = New System.Drawing.Point(94, 685)
+        Me.Label1.Location = New System.Drawing.Point(12, 751)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 33)
         Me.Label1.TabIndex = 104
@@ -142,7 +143,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.tipobusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.tipobusqueda.FormattingEnabled = True
         Me.tipobusqueda.Items.AddRange(New Object() {"General"})
-        Me.tipobusqueda.Location = New System.Drawing.Point(12, 91)
+        Me.tipobusqueda.Location = New System.Drawing.Point(12, 56)
         Me.tipobusqueda.Name = "tipobusqueda"
         Me.tipobusqueda.Size = New System.Drawing.Size(229, 37)
         Me.tipobusqueda.TabIndex = 114
@@ -155,7 +156,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.Button4.FlatAppearance.BorderSize = 3
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button4.Location = New System.Drawing.Point(1245, 125)
+        Me.Button4.Location = New System.Drawing.Point(1294, 89)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(131, 63)
         Me.Button4.TabIndex = 116
@@ -167,7 +168,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label2.Location = New System.Drawing.Point(679, 24)
+        Me.Label2.Location = New System.Drawing.Point(676, 16)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(180, 29)
         Me.Label2.TabIndex = 111
@@ -179,7 +180,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.detalle_equipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.detalle_equipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.detalle_equipo.FormattingEnabled = True
-        Me.detalle_equipo.Location = New System.Drawing.Point(671, 123)
+        Me.detalle_equipo.Location = New System.Drawing.Point(668, 115)
         Me.detalle_equipo.Name = "detalle_equipo"
         Me.detalle_equipo.Size = New System.Drawing.Size(229, 37)
         Me.detalle_equipo.TabIndex = 112
@@ -190,7 +191,7 @@ Partial Class BusquedaPlanificacion_Preventivo
         Me.clase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.clase.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.clase.FormattingEnabled = True
-        Me.clase.Location = New System.Drawing.Point(671, 65)
+        Me.clase.Location = New System.Drawing.Point(668, 57)
         Me.clase.Name = "clase"
         Me.clase.Size = New System.Drawing.Size(229, 37)
         Me.clase.TabIndex = 113

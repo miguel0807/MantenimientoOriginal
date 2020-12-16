@@ -94,7 +94,7 @@ Public Class Indicadores_Proceso
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
         Me.DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
-        Me.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        'Me.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
         Me.DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black
 
         Me.DataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
