@@ -38,7 +38,7 @@ Public Class Presentacion
 
     Private Sub btnTools_Click(sender As Object, e As EventArgs) Handles btnTools.Click
         showSubmenu(PanelToolsSubmenu)
-        PanelToolsSubmenu.Size = New Size(229, 350)
+        PanelToolsSubmenu.Size = New Size(229, 400)
 
 
     End Sub
@@ -176,7 +176,7 @@ Public Class Presentacion
             PanelToolsSubConfiguration.Visible = True
         End If
 
-        PanelToolsSubmenu.Size = New Size(229, 510)
+        PanelToolsSubmenu.Size = New Size(229, 550)
 
     End Sub
 
