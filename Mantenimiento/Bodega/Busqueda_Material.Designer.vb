@@ -84,21 +84,21 @@ Partial Class Busqueda_Material
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 29
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(32, 174)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 90)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1370, 490)
+        Me.DataGridView1.Size = New System.Drawing.Size(1413, 574)
         Me.DataGridView1.TabIndex = 7
         '
         'busqueda
         '
         Me.busqueda.BackColor = System.Drawing.SystemColors.Control
         Me.busqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.busqueda.Location = New System.Drawing.Point(296, 79)
+        Me.busqueda.Location = New System.Drawing.Point(296, 50)
         Me.busqueda.Name = "busqueda"
         Me.busqueda.Size = New System.Drawing.Size(323, 34)
         Me.busqueda.TabIndex = 80
@@ -107,7 +107,7 @@ Partial Class Busqueda_Material
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label11.Location = New System.Drawing.Point(389, 38)
+        Me.Label11.Location = New System.Drawing.Point(389, 9)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(122, 29)
         Me.Label11.TabIndex = 83
@@ -118,17 +118,17 @@ Partial Class Busqueda_Material
         Me.Tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Tipo.FormattingEnabled = True
-        Me.Tipo.Items.AddRange(New Object() {"Ubicacion", "Material", "Empresa", "Clasificacion", "Codigo", "Equipo"})
-        Me.Tipo.Location = New System.Drawing.Point(24, 79)
+        Me.Tipo.Items.AddRange(New Object() {"Material", "Ubicacion", "Equipo", "Clasificacion", "Codigo", "Empresa"})
+        Me.Tipo.Location = New System.Drawing.Point(12, 50)
         Me.Tipo.Name = "Tipo"
-        Me.Tipo.Size = New System.Drawing.Size(229, 37)
+        Me.Tipo.Size = New System.Drawing.Size(241, 37)
         Me.Tipo.TabIndex = 82
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label10.Location = New System.Drawing.Point(27, 38)
+        Me.Label10.Location = New System.Drawing.Point(27, 9)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(210, 29)
         Me.Label10.TabIndex = 81
@@ -168,6 +168,7 @@ Partial Class Busqueda_Material
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Busqueda_Material"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
+        Me.Text = "ew"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -22,9 +22,8 @@ Partial Class Pendiente_Preventivos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.tipobusqueda = New System.Windows.Forms.ComboBox()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -34,20 +33,9 @@ Partial Class Pendiente_Preventivos
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Etiqueta = New System.Windows.Forms.ComboBox()
+        Me.tipobusqueda = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'tipobusqueda
-        '
-        Me.tipobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.tipobusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.tipobusqueda.FormattingEnabled = True
-        Me.tipobusqueda.Items.AddRange(New Object() {"Mostrar Año", "Mostrar Mes", "Especifico"})
-        Me.tipobusqueda.Location = New System.Drawing.Point(53, 87)
-        Me.tipobusqueda.Name = "tipobusqueda"
-        Me.tipobusqueda.Size = New System.Drawing.Size(229, 37)
-        Me.tipobusqueda.TabIndex = 127
         '
         'DataGridView1
         '
@@ -57,33 +45,35 @@ Partial Class Pendiente_Preventivos
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonShadow
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SlateGray
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.SlateGray
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateGray
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.DarkSlateGray
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle20
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(53, 189)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 102)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1316, 467)
+        Me.DataGridView1.Size = New System.Drawing.Size(1413, 646)
         Me.DataGridView1.TabIndex = 123
         '
         'Button2
@@ -94,9 +84,9 @@ Partial Class Pendiente_Preventivos
         Me.Button2.FlatAppearance.BorderSize = 3
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Button2.Location = New System.Drawing.Point(1026, 103)
+        Me.Button2.Location = New System.Drawing.Point(1152, 37)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(186, 84)
+        Me.Button2.Size = New System.Drawing.Size(136, 59)
         Me.Button2.TabIndex = 121
         Me.Button2.Text = "Buscar"
         Me.Button2.UseVisualStyleBackColor = False
@@ -105,7 +95,7 @@ Partial Class Pendiente_Preventivos
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label10.Location = New System.Drawing.Point(62, 9)
+        Me.Label10.Location = New System.Drawing.Point(31, 9)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(210, 29)
         Me.Label10.TabIndex = 119
@@ -117,7 +107,7 @@ Partial Class Pendiente_Preventivos
         Me.Label1.AutoSize = True
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label1.Location = New System.Drawing.Point(87, 680)
+        Me.Label1.Location = New System.Drawing.Point(12, 751)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 33)
         Me.Label1.TabIndex = 117
@@ -130,7 +120,7 @@ Partial Class Pendiente_Preventivos
         Me.clases.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.clases.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.clases.FormattingEnabled = True
-        Me.clases.Location = New System.Drawing.Point(443, 54)
+        Me.clases.Location = New System.Drawing.Point(271, 54)
         Me.clases.Name = "clases"
         Me.clases.Size = New System.Drawing.Size(229, 37)
         Me.clases.TabIndex = 122
@@ -141,7 +131,7 @@ Partial Class Pendiente_Preventivos
         Me.Clase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Clase.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Clase.FormattingEnabled = True
-        Me.Clase.Location = New System.Drawing.Point(53, 130)
+        Me.Clase.Location = New System.Drawing.Point(259, 54)
         Me.Clase.Name = "Clase"
         Me.Clase.Size = New System.Drawing.Size(229, 37)
         Me.Clase.TabIndex = 120
@@ -150,7 +140,7 @@ Partial Class Pendiente_Preventivos
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(1262, 130)
+        Me.Button1.Location = New System.Drawing.Point(1318, 39)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(107, 57)
         Me.Button1.TabIndex = 128
@@ -161,7 +151,7 @@ Partial Class Pendiente_Preventivos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label2.Location = New System.Drawing.Point(438, 9)
+        Me.Label2.Location = New System.Drawing.Point(266, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(222, 29)
         Me.Label2.TabIndex = 129
@@ -172,23 +162,23 @@ Partial Class Pendiente_Preventivos
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label3.Location = New System.Drawing.Point(737, 9)
+        Me.Label3.Location = New System.Drawing.Point(265, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(240, 29)
-        Me.Label3.TabIndex = 131
-        Me.Label3.Text = "Selecciones Etiqueta"
+        Me.Label3.Size = New System.Drawing.Size(212, 29)
+        Me.Label3.TabIndex = 130
+        Me.Label3.Text = "Seleccione el mes"
         Me.Label3.Visible = False
         '
-        'Etiqueta
+        'tipobusqueda
         '
-        Me.Etiqueta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Etiqueta.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Etiqueta.FormattingEnabled = True
-        Me.Etiqueta.Location = New System.Drawing.Point(742, 54)
-        Me.Etiqueta.Name = "Etiqueta"
-        Me.Etiqueta.Size = New System.Drawing.Size(229, 37)
-        Me.Etiqueta.TabIndex = 130
-        Me.Etiqueta.Visible = False
+        Me.tipobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.tipobusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.tipobusqueda.FormattingEnabled = True
+        Me.tipobusqueda.Items.AddRange(New Object() {"Mostrar Año", "Mostrar Mes", "Clase"})
+        Me.tipobusqueda.Location = New System.Drawing.Point(24, 54)
+        Me.tipobusqueda.Name = "tipobusqueda"
+        Me.tipobusqueda.Size = New System.Drawing.Size(229, 37)
+        Me.tipobusqueda.TabIndex = 127
         '
         'Pendiente_Preventivos
         '
@@ -197,7 +187,6 @@ Partial Class Pendiente_Preventivos
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1437, 793)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Etiqueta)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.tipobusqueda)
@@ -214,7 +203,6 @@ Partial Class Pendiente_Preventivos
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents tipobusqueda As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button2 As Button
     Friend WithEvents Label10 As Label
@@ -224,5 +212,5 @@ Partial Class Pendiente_Preventivos
     Friend WithEvents Button1 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Etiqueta As ComboBox
+    Friend WithEvents tipobusqueda As ComboBox
 End Class

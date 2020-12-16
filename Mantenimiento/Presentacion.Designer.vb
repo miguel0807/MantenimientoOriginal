@@ -53,6 +53,7 @@ Partial Class Presentacion
         Me.btnMedia = New System.Windows.Forms.Button()
         Me.PanelChildForm = New System.Windows.Forms.Panel()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.Button17 = New System.Windows.Forms.Button()
         Me.panelLogo.SuspendLayout()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSideMenu.SuspendLayout()
@@ -146,7 +147,7 @@ Partial Class Presentacion
         Me.btnExit.ForeColor = System.Drawing.Color.Silver
         Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 1102)
+        Me.btnExit.Location = New System.Drawing.Point(0, 1152)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnExit.Size = New System.Drawing.Size(229, 39)
@@ -166,7 +167,7 @@ Partial Class Presentacion
         Me.btnHelp.ForeColor = System.Drawing.Color.Silver
         Me.btnHelp.Image = CType(resources.GetObject("btnHelp.Image"), System.Drawing.Image)
         Me.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHelp.Location = New System.Drawing.Point(0, 1057)
+        Me.btnHelp.Location = New System.Drawing.Point(0, 1107)
         Me.btnHelp.Name = "btnHelp"
         Me.btnHelp.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnHelp.Size = New System.Drawing.Size(229, 45)
@@ -179,6 +180,7 @@ Partial Class Presentacion
         'PanelToolsSubmenu
         '
         Me.PanelToolsSubmenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.PanelToolsSubmenu.Controls.Add(Me.Button17)
         Me.PanelToolsSubmenu.Controls.Add(Me.Button1)
         Me.PanelToolsSubmenu.Controls.Add(Me.Button9)
         Me.PanelToolsSubmenu.Controls.Add(Me.PanelToolsSubConfiguration)
@@ -191,7 +193,7 @@ Partial Class Presentacion
         Me.PanelToolsSubmenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelToolsSubmenu.Location = New System.Drawing.Point(0, 503)
         Me.PanelToolsSubmenu.Name = "PanelToolsSubmenu"
-        Me.PanelToolsSubmenu.Size = New System.Drawing.Size(229, 554)
+        Me.PanelToolsSubmenu.Size = New System.Drawing.Size(229, 604)
         Me.PanelToolsSubmenu.TabIndex = 7
         '
         'Button1
@@ -552,6 +554,23 @@ Partial Class Presentacion
         Me.PictureBox9.TabIndex = 0
         Me.PictureBox9.TabStop = False
         '
+        'Button17
+        '
+        Me.Button17.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button17.FlatAppearance.BorderSize = 0
+        Me.Button17.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.Button17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button17.ForeColor = System.Drawing.Color.Silver
+        Me.Button17.Location = New System.Drawing.Point(0, 512)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.Button17.Size = New System.Drawing.Size(229, 40)
+        Me.Button17.TabIndex = 224
+        Me.Button17.Text = "Pendiente Preventivo"
+        Me.Button17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button17.UseVisualStyleBackColor = True
+        '
         'Presentacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
@@ -608,4 +627,5 @@ Partial Class Presentacion
     Private WithEvents Button14 As Button
     Private WithEvents btnExit As Button
     Private WithEvents btnHelp As Button
+    Private WithEvents Button17 As Button
 End Class
