@@ -39,6 +39,7 @@ Public Class Pendiente_Preventivos
                 Label3.Visible = True
                 Clase.Visible = True
                 clases.Visible = False
+                Label3.Text = "Seleccione el mes"
 
 #Region "Cargar datos en combobox de los Meses"
                 Try
@@ -57,10 +58,9 @@ Public Class Pendiente_Preventivos
 #End Region
 
             Case "Clase"
-                Clase.Visible = False
-                Label3.Visible = False
-                clases.Visible = True
-                Label2.Visible = True
+                Clase.Visible = True
+                Label3.Visible = True
+                Label3.Text = "Seleccione el equipo"
                 clases.SelectedIndex = -1
 
 
@@ -70,9 +70,9 @@ Public Class Pendiente_Preventivos
                     Dim da As New SqlDataAdapter(cmd, cn)
                     Dim ds As New DataSet
                     da.Fill(ds)
-                    With Me.clases
-                        Me.clases.DataSource = ds.Tables(0)
-                        Me.clases.DisplayMember = "Clase"
+                    With Me.Clase
+                        Me.Clase.DataSource = ds.Tables(0)
+                        Me.Clase.DisplayMember = "Clase"
                     End With
                     cn.Close()
                 Catch ex As Exception
@@ -200,18 +200,18 @@ Public Class Pendiente_Preventivos
         tabla.Columns(1).Width = 225
 
 
-        tabla.Columns(2).Width = 110
-        tabla.Columns(3).Width = 110
-        tabla.Columns(4).Width = 110
-        tabla.Columns(5).Width = 110
-        tabla.Columns(6).Width = 110
-        tabla.Columns(7).Width = 110
-        tabla.Columns(8).Width = 110
-        tabla.Columns(9).Width = 110
-        tabla.Columns(10).Width = 110
-        tabla.Columns(11).Width = 110
-        tabla.Columns(12).Width = 110
-        tabla.Columns(13).Width = 110
+        'tabla.Columns(2).Width = 110
+        'tabla.Columns(3).Width = 110
+        'tabla.Columns(4).Width = 110
+        'tabla.Columns(5).Width = 110
+        'tabla.Columns(6).Width = 110
+        'tabla.Columns(7).Width = 110
+        'tabla.Columns(8).Width = 110
+        'tabla.Columns(9).Width = 110
+        'tabla.Columns(10).Width = 110
+        'tabla.Columns(11).Width = 110
+        'tabla.Columns(12).Width = 110
+        'tabla.Columns(13).Width = 110
 
 
 
@@ -447,7 +447,7 @@ Public Class Pendiente_Preventivos
 #Region "Buscar la clase espeficifica"
 
         Dim numero_clase As Integer
-        Dim adaptador1 As New SqlDataAdapter("select Codigo from Caracteristicas_Equipo where convert(char,clase)='" & Me.clases.Text & "'", cn)
+        Dim adaptador1 As New SqlDataAdapter("select Codigo from Caracteristicas_Equipo where convert(char,clase)='" & Me.Clase.Text & "'", cn)
         Dim dataS1 As New DataSet
         'busqueda.Text = adaptador.SelectCommand.CommandText
         adaptador1.Fill(dataS1, "Codigo")
