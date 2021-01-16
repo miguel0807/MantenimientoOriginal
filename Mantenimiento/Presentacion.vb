@@ -185,7 +185,7 @@ Public Class Presentacion
     End Sub
 
     Private Sub Button9_Click_1(sender As Object, e As EventArgs) Handles Button9.Click
-        openChildForm(New Registro_Preventivo())
+        openChildForm(New Pendiente_Preventivos())
         hideSubmenu()
     End Sub
 
@@ -203,8 +203,5 @@ Public Class Presentacion
         openChildForm(New HistShutdownStartup())
     End Sub
 
-    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
-        openChildForm(New Pendiente_Preventivos())
-        hideSubmenu()
-    End Sub
+
 End Class
