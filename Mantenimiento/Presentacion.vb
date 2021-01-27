@@ -239,4 +239,10 @@ Public Class Presentacion
 
         hideSubmenu()
     End Sub
+
+    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+        openChildForm(New Planificacion_Tareas())
+
+        hideSubmenu()
+    End Sub
 End Class
