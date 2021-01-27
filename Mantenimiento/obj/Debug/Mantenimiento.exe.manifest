@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mantenimiento.exe" size="552376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mantenimiento.exe" size="552888">
       <assemblyIdentity name="Mantenimiento" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oxkVd6TaaO8c/lMGSmt8Hsa1ElIWmB4B4JnafX5SCwc=</dsig:DigestValue>
+        <dsig:DigestValue>7OrqozmIz7lv3CWwXKPlN5GRWfWIjakIaz/4TIv0n+8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
