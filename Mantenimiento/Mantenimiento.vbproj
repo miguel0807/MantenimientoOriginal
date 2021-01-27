@@ -116,23 +116,29 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Preventivo\HistShutdownStartup.Designer.vb">
+    <Compile Include="Preventivo\Tareas\Nueva_Tarea.Designer.vb">
+      <DependentUpon>Nueva_Tarea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\Tareas\Nueva_Tarea.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preventivo\ShutdownStartup\HistShutdownStartup.Designer.vb">
       <DependentUpon>HistShutdownStartup.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\HistShutdownStartup.vb">
+    <Compile Include="Preventivo\ShutdownStartup\HistShutdownStartup.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\MOstartup.vb" />
-    <Compile Include="Preventivo\ConfiguShSt.Designer.vb">
+    <Compile Include="Preventivo\General\MOstartup.vb" />
+    <Compile Include="Preventivo\ShutdownStartup\ConfiguShSt.Designer.vb">
       <DependentUpon>ConfiguShSt.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\ConfiguShSt.vb">
+    <Compile Include="Preventivo\ShutdownStartup\ConfiguShSt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\NuevoEquipo_Preventivo.Designer.vb">
+    <Compile Include="Preventivo\Crear Nuevo\NuevoEquipo_Preventivo.Designer.vb">
       <DependentUpon>NuevoEquipo_Preventivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\NuevoEquipo_Preventivo.vb">
+    <Compile Include="Preventivo\Crear Nuevo\NuevoEquipo_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion.Designer.vb">
@@ -203,52 +209,52 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Preventivo\NuevaClase_Preventivo.Designer.vb">
+    <Compile Include="Preventivo\Crear Nuevo\NuevaClase_Preventivo.Designer.vb">
       <DependentUpon>NuevaClase_Preventivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\NuevaClase_Preventivo.vb">
+    <Compile Include="Preventivo\Crear Nuevo\NuevaClase_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\Busqueda_Equipos.Designer.vb">
+    <Compile Include="Preventivo\General\Busqueda_Equipos.Designer.vb">
       <DependentUpon>Busqueda_Equipos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\Busqueda_Equipos.vb">
+    <Compile Include="Preventivo\General\Busqueda_Equipos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\BusquedaPlanificacion_Preventivo.Designer.vb">
+    <Compile Include="Preventivo\General\BusquedaPlanificacion_Preventivo.Designer.vb">
       <DependentUpon>BusquedaPlanificacion_Preventivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\BusquedaPlanificacion_Preventivo.vb">
+    <Compile Include="Preventivo\General\BusquedaPlanificacion_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\NuevoProvedor_Preventivo.Designer.vb">
+    <Compile Include="Preventivo\Crear Nuevo\NuevoProvedor_Preventivo.Designer.vb">
       <DependentUpon>NuevoProvedor_Preventivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\NuevoProvedor_Preventivo.vb">
+    <Compile Include="Preventivo\Crear Nuevo\NuevoProvedor_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\Pendiente_Preventivos.Designer.vb">
+    <Compile Include="Preventivo\General\Pendiente_Preventivos.Designer.vb">
       <DependentUpon>Pendiente_Preventivos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\Pendiente_Preventivos.vb">
+    <Compile Include="Preventivo\General\Pendiente_Preventivos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\Registro_Preventivo.Designer.vb">
+    <Compile Include="Preventivo\General\Registro_Preventivo.Designer.vb">
       <DependentUpon>Registro_Preventivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\Registro_Preventivo.vb">
+    <Compile Include="Preventivo\General\Registro_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\Shutdown.Designer.vb">
+    <Compile Include="Preventivo\ShutdownStartup\Shutdown.Designer.vb">
       <DependentUpon>Shutdown.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\Shutdown.vb">
+    <Compile Include="Preventivo\ShutdownStartup\Shutdown.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\Startup.Designer.vb">
+    <Compile Include="Preventivo\ShutdownStartup\Startup.Designer.vb">
       <DependentUpon>Startup.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\Startup.vb">
+    <Compile Include="Preventivo\ShutdownStartup\Startup.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -256,13 +262,13 @@
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\HistShutdownStartup.resx">
+    <EmbeddedResource Include="Preventivo\ShutdownStartup\HistShutdownStartup.resx">
       <DependentUpon>HistShutdownStartup.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\ConfiguShSt.resx">
+    <EmbeddedResource Include="Preventivo\ShutdownStartup\ConfiguShSt.resx">
       <DependentUpon>ConfiguShSt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\NuevoEquipo_Preventivo.resx">
+    <EmbeddedResource Include="Preventivo\Crear Nuevo\NuevoEquipo_Preventivo.resx">
       <DependentUpon>NuevoEquipo_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion.resx">
@@ -292,28 +298,28 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\NuevaClase_Preventivo.resx">
+    <EmbeddedResource Include="Preventivo\Crear Nuevo\NuevaClase_Preventivo.resx">
       <DependentUpon>NuevaClase_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Busqueda_Equipos.resx">
+    <EmbeddedResource Include="Preventivo\General\Busqueda_Equipos.resx">
       <DependentUpon>Busqueda_Equipos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\BusquedaPlanificacion_Preventivo.resx">
+    <EmbeddedResource Include="Preventivo\General\BusquedaPlanificacion_Preventivo.resx">
       <DependentUpon>BusquedaPlanificacion_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\NuevoProvedor_Preventivo.resx">
+    <EmbeddedResource Include="Preventivo\Crear Nuevo\NuevoProvedor_Preventivo.resx">
       <DependentUpon>NuevoProvedor_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Pendiente_Preventivos.resx">
+    <EmbeddedResource Include="Preventivo\General\Pendiente_Preventivos.resx">
       <DependentUpon>Pendiente_Preventivos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Registro_Preventivo.resx">
+    <EmbeddedResource Include="Preventivo\General\Registro_Preventivo.resx">
       <DependentUpon>Registro_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Shutdown.resx">
+    <EmbeddedResource Include="Preventivo\ShutdownStartup\Shutdown.resx">
       <DependentUpon>Shutdown.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Startup.resx">
+    <EmbeddedResource Include="Preventivo\ShutdownStartup\Startup.resx">
       <DependentUpon>Startup.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
