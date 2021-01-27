@@ -29,8 +29,8 @@ Partial Class Planificacion_Tareas
         Me.Etiqueta = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Año = New System.Windows.Forms.ComboBox()
+        Me.Meses = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
@@ -39,6 +39,7 @@ Partial Class Planificacion_Tareas
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Crear = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -121,25 +122,25 @@ Partial Class Planificacion_Tareas
         Me.Label1.TabIndex = 53
         Me.Label1.Text = "Clase"
         '
-        'ComboBox1
+        'Año
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(588, 15)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(200, 30)
-        Me.ComboBox1.TabIndex = 55
+        Me.Año.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Año.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Año.FormattingEnabled = True
+        Me.Año.Location = New System.Drawing.Point(588, 15)
+        Me.Año.Name = "Año"
+        Me.Año.Size = New System.Drawing.Size(200, 30)
+        Me.Año.TabIndex = 55
         '
-        'ComboBox2
+        'Meses
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(588, 60)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(200, 30)
-        Me.ComboBox2.TabIndex = 56
+        Me.Meses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Meses.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Meses.FormattingEnabled = True
+        Me.Meses.Location = New System.Drawing.Point(588, 60)
+        Me.Meses.Name = "Meses"
+        Me.Meses.Size = New System.Drawing.Size(200, 30)
+        Me.Meses.TabIndex = 56
         '
         'Label2
         '
@@ -232,19 +233,30 @@ Partial Class Planificacion_Tareas
         Me.CheckBox1.TabIndex = 63
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(862, 19)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(151, 65)
+        Me.Button2.TabIndex = 64
+        Me.Button2.Text = "Buscar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Planificacion_Tareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1082, 671)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.DataGridView2)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.ComboBox2)
+        Me.Controls.Add(Me.Año)
+        Me.Controls.Add(Me.Meses)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Clase)
@@ -271,8 +283,8 @@ Partial Class Planificacion_Tareas
     Friend WithEvents Etiqueta As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Año As ComboBox
+    Friend WithEvents Meses As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents DataGridView2 As DataGridView
@@ -281,4 +293,5 @@ Partial Class Planificacion_Tareas
     Friend WithEvents Label8 As Label
     Friend WithEvents Crear As Button
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Button2 As Button
 End Class
