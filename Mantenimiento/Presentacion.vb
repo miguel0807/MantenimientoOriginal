@@ -233,4 +233,10 @@ Public Class Presentacion
             PanelToolsSubmenu.Size = New Size(229, 550)
         End If
     End Sub
+
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+        openChildForm(New Configuracion_Tarea())
+
+        hideSubmenu()
+    End Sub
 End Class

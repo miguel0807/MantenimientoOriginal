@@ -116,10 +116,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Preventivo\Tareas\Nueva_Tarea.Designer.vb">
-      <DependentUpon>Nueva_Tarea.vb</DependentUpon>
+    <Compile Include="Preventivo\Tareas\Configuracion_Tarea.Designer.vb">
+      <DependentUpon>Configuracion_Tarea.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\Tareas\Nueva_Tarea.vb">
+    <Compile Include="Preventivo\Tareas\Configuracion_Tarea.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Preventivo\ShutdownStartup\HistShutdownStartup.Designer.vb">
@@ -321,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\ShutdownStartup\Startup.resx">
       <DependentUpon>Startup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo\Tareas\Configuracion_Tarea.resx">
+      <DependentUpon>Configuracion_Tarea.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
