@@ -200,7 +200,7 @@ Public Class Presentacion
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
-        openChildForm(New ConfiguracionShutStart())
+        openChildForm(New ConfiguShSt())
 
     End Sub
 

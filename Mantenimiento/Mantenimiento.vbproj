@@ -123,10 +123,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Preventivo\MOstartup.vb" />
-    <Compile Include="Preventivo\Nueva_Tarea.Designer.vb">
-      <DependentUpon>Nueva_Tarea.vb</DependentUpon>
+    <Compile Include="Preventivo\ConfiguShSt.Designer.vb">
+      <DependentUpon>ConfiguShSt.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\Nueva_Tarea.vb">
+    <Compile Include="Preventivo\ConfiguShSt.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Preventivo\NuevoEquipo_Preventivo.Designer.vb">
@@ -259,8 +259,8 @@
     <EmbeddedResource Include="Preventivo\HistShutdownStartup.resx">
       <DependentUpon>HistShutdownStartup.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\Nueva_Tarea.resx">
-      <DependentUpon>Nueva_Tarea.vb</DependentUpon>
+    <EmbeddedResource Include="Preventivo\ConfiguShSt.resx">
+      <DependentUpon>ConfiguShSt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\NuevoEquipo_Preventivo.resx">
       <DependentUpon>NuevoEquipo_Preventivo.vb</DependentUpon>
