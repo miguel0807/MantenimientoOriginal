@@ -2,14 +2,15 @@
     Private Sub Nueva_Tarea_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
 
-        Dim CodTarea As Integer = 0
-        Dim TiempoTarea As Integer = 0
 
 
-        codigoTarea = CodTarea
-        txtTarea = Tarea.Text
-        txtMateriales = Materiales.Text
-        intTiempo = Tiempo.Text
+
+
+        txtTarea = Tarea
+        txtMateriales = Materiales
+
+        intTiempo = Tiempo
+
 
 
 
@@ -17,7 +18,38 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         CrearTarea()
 
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Tarea.Text = ""
+        Materiales.Text = ""
+        Tiempo.Text = 0
+
+
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.DataGridView1.Select()
+
+
+
+        datagr = DataGridView1
+        labe1 = Label1
+        RevisarTareas()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Me.DataGridView1.Select()
+
+        eliminacionTarea()
+
+        datagr = DataGridView1
+        labe1 = Label1
+
+        RevisarTareas()
     End Sub
 End Class

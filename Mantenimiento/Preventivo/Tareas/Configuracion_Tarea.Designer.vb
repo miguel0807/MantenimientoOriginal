@@ -34,6 +34,7 @@ Partial Class Configuracion_Tarea
         Me.Materiales = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Tiempo = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -76,7 +77,7 @@ Partial Class Configuracion_Tarea
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(906, 247)
         Me.DataGridView1.TabIndex = 54
         '
@@ -180,6 +181,18 @@ Partial Class Configuracion_Tarea
         Me.Tiempo.Name = "Tiempo"
         Me.Tiempo.Size = New System.Drawing.Size(52, 30)
         Me.Tiempo.TabIndex = 60
+        Me.Tiempo.Text = "0"
+        Me.Tiempo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(364, 329)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(389, 30)
+        Me.TextBox1.TabIndex = 63
         '
         'Configuracion_Tarea
         '
@@ -187,6 +200,7 @@ Partial Class Configuracion_Tarea
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(993, 663)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Tiempo)
         Me.Controls.Add(Me.Label3)
@@ -218,4 +232,5 @@ Partial Class Configuracion_Tarea
     Friend WithEvents Materiales As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Tiempo As TextBox
+    Friend WithEvents TextBox1 As TextBox
 End Class
