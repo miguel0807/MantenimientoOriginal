@@ -53,6 +53,8 @@ Partial Class Presentacion
         Me.btnMedia = New System.Windows.Forms.Button()
         Me.PanelChildForm = New System.Windows.Forms.Panel()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.PanelCreacion = New System.Windows.Forms.Panel()
         Me.panelLogo.SuspendLayout()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSideMenu.SuspendLayout()
@@ -62,6 +64,7 @@ Partial Class Presentacion
         Me.PanelMediaSubmenu.SuspendLayout()
         Me.PanelChildForm.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelCreacion.SuspendLayout()
         Me.SuspendLayout()
         '
         'panelLogo
@@ -146,7 +149,7 @@ Partial Class Presentacion
         Me.btnExit.ForeColor = System.Drawing.Color.Silver
         Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 1152)
+        Me.btnExit.Location = New System.Drawing.Point(0, 1178)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnExit.Size = New System.Drawing.Size(229, 39)
@@ -166,7 +169,7 @@ Partial Class Presentacion
         Me.btnHelp.ForeColor = System.Drawing.Color.Silver
         Me.btnHelp.Image = CType(resources.GetObject("btnHelp.Image"), System.Drawing.Image)
         Me.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHelp.Location = New System.Drawing.Point(0, 1107)
+        Me.btnHelp.Location = New System.Drawing.Point(0, 1133)
         Me.btnHelp.Name = "btnHelp"
         Me.btnHelp.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnHelp.Size = New System.Drawing.Size(229, 45)
@@ -179,19 +182,18 @@ Partial Class Presentacion
         'PanelToolsSubmenu
         '
         Me.PanelToolsSubmenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.PanelToolsSubmenu.Controls.Add(Me.Button1)
+        Me.PanelToolsSubmenu.Controls.Add(Me.PanelCreacion)
+        Me.PanelToolsSubmenu.Controls.Add(Me.Button17)
         Me.PanelToolsSubmenu.Controls.Add(Me.Button9)
         Me.PanelToolsSubmenu.Controls.Add(Me.PanelToolsSubConfiguration)
         Me.PanelToolsSubmenu.Controls.Add(Me.Button11)
         Me.PanelToolsSubmenu.Controls.Add(Me.Button6)
-        Me.PanelToolsSubmenu.Controls.Add(Me.Button4)
-        Me.PanelToolsSubmenu.Controls.Add(Me.button10)
         Me.PanelToolsSubmenu.Controls.Add(Me.button12)
         Me.PanelToolsSubmenu.Controls.Add(Me.button13)
         Me.PanelToolsSubmenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelToolsSubmenu.Location = New System.Drawing.Point(0, 503)
         Me.PanelToolsSubmenu.Name = "PanelToolsSubmenu"
-        Me.PanelToolsSubmenu.Size = New System.Drawing.Size(229, 604)
+        Me.PanelToolsSubmenu.Size = New System.Drawing.Size(229, 630)
         Me.PanelToolsSubmenu.TabIndex = 7
         '
         'Button1
@@ -202,7 +204,7 @@ Partial Class Presentacion
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.Color.Silver
-        Me.Button1.Location = New System.Drawing.Point(0, 472)
+        Me.Button1.Location = New System.Drawing.Point(0, 80)
         Me.Button1.Name = "Button1"
         Me.Button1.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.Button1.Size = New System.Drawing.Size(229, 40)
@@ -219,7 +221,7 @@ Partial Class Presentacion
         Me.Button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button9.ForeColor = System.Drawing.Color.Silver
-        Me.Button9.Location = New System.Drawing.Point(0, 432)
+        Me.Button9.Location = New System.Drawing.Point(0, 352)
         Me.Button9.Name = "Button9"
         Me.Button9.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.Button9.Size = New System.Drawing.Size(229, 40)
@@ -236,7 +238,7 @@ Partial Class Presentacion
         Me.PanelToolsSubConfiguration.Controls.Add(Me.Button14)
         Me.PanelToolsSubConfiguration.Controls.Add(Me.Button5)
         Me.PanelToolsSubConfiguration.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelToolsSubConfiguration.Location = New System.Drawing.Point(0, 259)
+        Me.PanelToolsSubConfiguration.Location = New System.Drawing.Point(0, 179)
         Me.PanelToolsSubConfiguration.Name = "PanelToolsSubConfiguration"
         Me.PanelToolsSubConfiguration.Size = New System.Drawing.Size(229, 173)
         Me.PanelToolsSubConfiguration.TabIndex = 1
@@ -321,7 +323,7 @@ Partial Class Presentacion
         Me.Button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button11.ForeColor = System.Drawing.Color.Silver
-        Me.Button11.Location = New System.Drawing.Point(0, 200)
+        Me.Button11.Location = New System.Drawing.Point(0, 120)
         Me.Button11.Name = "Button11"
         Me.Button11.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.Button11.Size = New System.Drawing.Size(229, 59)
@@ -338,7 +340,7 @@ Partial Class Presentacion
         Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.ForeColor = System.Drawing.Color.Silver
-        Me.Button6.Location = New System.Drawing.Point(0, 160)
+        Me.Button6.Location = New System.Drawing.Point(0, 80)
         Me.Button6.Name = "Button6"
         Me.Button6.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.Button6.Size = New System.Drawing.Size(229, 40)
@@ -355,7 +357,7 @@ Partial Class Presentacion
         Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.ForeColor = System.Drawing.Color.Silver
-        Me.Button4.Location = New System.Drawing.Point(0, 120)
+        Me.Button4.Location = New System.Drawing.Point(0, 0)
         Me.Button4.Name = "Button4"
         Me.Button4.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.Button4.Size = New System.Drawing.Size(229, 40)
@@ -372,7 +374,7 @@ Partial Class Presentacion
         Me.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.button10.ForeColor = System.Drawing.Color.Silver
-        Me.button10.Location = New System.Drawing.Point(0, 80)
+        Me.button10.Location = New System.Drawing.Point(0, 40)
         Me.button10.Name = "button10"
         Me.button10.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.button10.Size = New System.Drawing.Size(229, 40)
@@ -552,6 +554,35 @@ Partial Class Presentacion
         Me.PictureBox9.TabIndex = 0
         Me.PictureBox9.TabStop = False
         '
+        'Button17
+        '
+        Me.Button17.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button17.FlatAppearance.BorderSize = 0
+        Me.Button17.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.Button17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button17.ForeColor = System.Drawing.Color.Silver
+        Me.Button17.Location = New System.Drawing.Point(0, 392)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.Button17.Size = New System.Drawing.Size(229, 40)
+        Me.Button17.TabIndex = 224
+        Me.Button17.Text = "Configuracion General"
+        Me.Button17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button17.UseVisualStyleBackColor = True
+        '
+        'PanelCreacion
+        '
+        Me.PanelCreacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelCreacion.Controls.Add(Me.Button1)
+        Me.PanelCreacion.Controls.Add(Me.button10)
+        Me.PanelCreacion.Controls.Add(Me.Button4)
+        Me.PanelCreacion.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelCreacion.Location = New System.Drawing.Point(0, 432)
+        Me.PanelCreacion.Name = "PanelCreacion"
+        Me.PanelCreacion.Size = New System.Drawing.Size(229, 139)
+        Me.PanelCreacion.TabIndex = 225
+        '
         'Presentacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
@@ -574,6 +605,7 @@ Partial Class Presentacion
         Me.PanelMediaSubmenu.ResumeLayout(False)
         Me.PanelChildForm.ResumeLayout(False)
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelCreacion.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -608,4 +640,6 @@ Partial Class Presentacion
     Private WithEvents Button14 As Button
     Private WithEvents btnExit As Button
     Private WithEvents btnHelp As Button
+    Private WithEvents Button17 As Button
+    Friend WithEvents PanelCreacion As Panel
 End Class

@@ -14,6 +14,8 @@ Public Class Presentacion
         PanelPlaylistSubmenu.Visible = False
         PanelToolsSubmenu.Visible = False
         PanelToolsSubConfiguration.Visible = False
+        PanelCreacion.Visible = False
+        PanelToolsSubmenu.Size = New Size(229, 550)
 
     End Sub
 
@@ -38,7 +40,7 @@ Public Class Presentacion
 
     Private Sub btnTools_Click(sender As Object, e As EventArgs) Handles btnTools.Click
         showSubmenu(PanelToolsSubmenu)
-        PanelToolsSubmenu.Size = New Size(229, 400)
+        PanelToolsSubmenu.Size = New Size(229, 300)
 
 
     End Sub
@@ -172,11 +174,13 @@ Public Class Presentacion
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         If PanelToolsSubConfiguration.Visible = True Then
             PanelToolsSubConfiguration.Visible = False
+
         Else
             PanelToolsSubConfiguration.Visible = True
+            PanelToolsSubmenu.Size = New Size(229, 550)
         End If
 
-        PanelToolsSubmenu.Size = New Size(229, 550)
+
 
     End Sub
 
@@ -203,5 +207,19 @@ Public Class Presentacion
         openChildForm(New HistShutdownStartup())
     End Sub
 
+    Private Sub PanelChildForm_Paint(sender As Object, e As PaintEventArgs) Handles PanelChildForm.Paint
 
+    End Sub
+
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+        If PanelCreacion.Visible = True Then
+            PanelCreacion.Visible = False
+
+        Else
+            PanelCreacion.Visible = True
+            PanelToolsSubmenu.Size = New Size(229, 550)
+        End If
+
+
+    End Sub
 End Class
