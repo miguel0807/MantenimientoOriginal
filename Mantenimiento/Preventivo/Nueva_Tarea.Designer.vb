@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Nueva_Tarea
+Partial Class ConfiguracionShutStart
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -205,7 +205,7 @@ Partial Class Nueva_Tarea
         Me.Button5.Text = "Eliminar"
         Me.Button5.UseVisualStyleBackColor = False
         '
-        'Nueva_Tarea
+        'ConfiguracionShutStart
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -223,8 +223,7 @@ Partial Class Nueva_Tarea
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
-        Me.Name = "Nueva_Tarea"
-        Me.Text = "Nueva_Tarea"
+        Me.Name = "ConfiguracionShutStart"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

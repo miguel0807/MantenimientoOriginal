@@ -15,6 +15,7 @@ Public Class Presentacion
         PanelToolsSubmenu.Visible = False
         PanelToolsSubConfiguration.Visible = False
         PanelCreacion.Visible = False
+        PanelTareas.Visible = False
         PanelToolsSubmenu.Size = New Size(229, 550)
 
     End Sub
@@ -199,7 +200,7 @@ Public Class Presentacion
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
-        openChildForm(New Nueva_Tarea())
+        openChildForm(New ConfiguracionShutStart())
 
     End Sub
 
@@ -221,5 +222,15 @@ Public Class Presentacion
         End If
 
 
+    End Sub
+
+    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+        If PanelTareas.Visible = True Then
+            PanelTareas.Visible = False
+
+        Else
+            PanelTareas.Visible = True
+            PanelToolsSubmenu.Size = New Size(229, 550)
+        End If
     End Sub
 End Class

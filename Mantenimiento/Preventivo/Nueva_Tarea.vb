@@ -1,6 +1,6 @@
 ﻿
 Imports System.Data.SqlClient
-Public Class Nueva_Tarea
+Public Class ConfiguracionShutStart
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If TextBox1.Text = "" Or TextBox2.Text = "" Then
