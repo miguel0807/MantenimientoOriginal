@@ -12,6 +12,7 @@ Module MO_Tareas
     Public SQLEtiqueta As String
     Public SQLAño As Integer
     Public SQLMes As String
+    Public SQLSumar As Integer
 
 
 
@@ -189,7 +190,7 @@ Module MO_Tareas
 
 
 
-        Dim adaptador As New SqlDataAdapter("Select carac.Tarea from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & SQLCodigo & " and CONVERT(CHAR,hist.Etiqueta)='" & SQLEtiqueta & "' and hist.Año=" & SQLAño & " and convert(CHAR,hist.MES)='" & SQLMes & "' ", cn)
+        Dim adaptador As New SqlDataAdapter("Select carac.Tarea , hist.ConteoSuma from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & SQLCodigo & " and CONVERT(CHAR,hist.Etiqueta)='" & SQLEtiqueta & "' and hist.Año=" & SQLAño & " and convert(CHAR,hist.MES)='" & SQLMes & "' ", cn)
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "Shutdowns")
 
@@ -216,7 +217,7 @@ Module MO_Tareas
 
 
         datagr.RowHeadersVisible = False
-        'datagr.Columns(0).Visible = False
+        datagr.Columns(1).Visible = False
         'datagr.Columns(3).Visible = False
 
 
@@ -278,4 +279,35 @@ Module MO_Tareas
 
 
     End Sub
+
+    Sub BorrarTarea()
+
+        Dim msgvalue As Integer
+
+        msgvalue = MsgBox("Está seguro de eliminar la tarea?", vbInformation + vbYesNo, "Mensaje de Alerta")
+
+        Select Case msgvalue
+
+            Case 6 'Yes
+
+
+                conectar()
+
+                Dim comando As New SqlCommand("delete from Historial_Tareas where ConteoSuma =" & SQLSumar & " ", cn)
+                comando.ExecuteNonQuery()
+                desconectar()
+                MsgBox("Se elimino correctamente")
+
+
+
+
+            Case 7 'No
+
+
+
+        End Select
+
+
+    End Sub
+
 End Module

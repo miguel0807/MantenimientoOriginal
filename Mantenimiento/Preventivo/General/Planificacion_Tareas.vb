@@ -118,9 +118,7 @@ Public Class Planificacion_Tareas
 
     End Sub
 
-    Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
 
-    End Sub
 
     Private Sub Crear_Click(sender As Object, e As EventArgs) Handles Crear.Click
         Me.DataGridView2.Select()
@@ -140,6 +138,21 @@ Public Class Planificacion_Tareas
 
 #End Region
 
+        Me.DataGridView1.Select()
+        datagr = DataGridView1
+        labe1 = Label5
+        CargarPendientesTareas()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.DataGridView1.Select()
+        SQLSumar = DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
+        BorrarTarea()
+
+        Me.DataGridView1.Select()
+        datagr = DataGridView1
+        labe1 = Label5
+        CargarPendientesTareas()
 
     End Sub
 End Class
