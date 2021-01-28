@@ -24,12 +24,12 @@ Partial Class Planificacion_Tareas
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Clase = New System.Windows.Forms.ComboBox()
-        Me.Etiqueta = New System.Windows.Forms.ComboBox()
+        Me.txtClase = New System.Windows.Forms.ComboBox()
+        Me.txtEtiqueta = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Año = New System.Windows.Forms.ComboBox()
-        Me.Meses = New System.Windows.Forms.ComboBox()
+        Me.txtAño = New System.Windows.Forms.ComboBox()
+        Me.txtMeses = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
@@ -76,25 +76,25 @@ Partial Class Planificacion_Tareas
         Me.Label5.TabIndex = 48
         Me.Label5.Text = "Cantidad:"
         '
-        'Clase
+        'txtClase
         '
-        Me.Clase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Clase.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Clase.FormattingEnabled = True
-        Me.Clase.Location = New System.Drawing.Point(199, 29)
-        Me.Clase.Name = "Clase"
-        Me.Clase.Size = New System.Drawing.Size(200, 30)
-        Me.Clase.TabIndex = 51
+        Me.txtClase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtClase.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtClase.FormattingEnabled = True
+        Me.txtClase.Location = New System.Drawing.Point(199, 29)
+        Me.txtClase.Name = "txtClase"
+        Me.txtClase.Size = New System.Drawing.Size(200, 30)
+        Me.txtClase.TabIndex = 51
         '
-        'Etiqueta
+        'txtEtiqueta
         '
-        Me.Etiqueta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Etiqueta.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta.FormattingEnabled = True
-        Me.Etiqueta.Location = New System.Drawing.Point(199, 80)
-        Me.Etiqueta.Name = "Etiqueta"
-        Me.Etiqueta.Size = New System.Drawing.Size(200, 30)
-        Me.Etiqueta.TabIndex = 52
+        Me.txtEtiqueta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtEtiqueta.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEtiqueta.FormattingEnabled = True
+        Me.txtEtiqueta.Location = New System.Drawing.Point(199, 80)
+        Me.txtEtiqueta.Name = "txtEtiqueta"
+        Me.txtEtiqueta.Size = New System.Drawing.Size(200, 30)
+        Me.txtEtiqueta.TabIndex = 52
         '
         'Label6
         '
@@ -116,25 +116,25 @@ Partial Class Planificacion_Tareas
         Me.Label1.TabIndex = 53
         Me.Label1.Text = "Clase"
         '
-        'Año
+        'txtAño
         '
-        Me.Año.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Año.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Año.FormattingEnabled = True
-        Me.Año.Location = New System.Drawing.Point(586, 33)
-        Me.Año.Name = "Año"
-        Me.Año.Size = New System.Drawing.Size(200, 30)
-        Me.Año.TabIndex = 55
+        Me.txtAño.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtAño.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAño.FormattingEnabled = True
+        Me.txtAño.Location = New System.Drawing.Point(586, 33)
+        Me.txtAño.Name = "txtAño"
+        Me.txtAño.Size = New System.Drawing.Size(200, 30)
+        Me.txtAño.TabIndex = 55
         '
-        'Meses
+        'txtMeses
         '
-        Me.Meses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Meses.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Meses.FormattingEnabled = True
-        Me.Meses.Location = New System.Drawing.Point(586, 78)
-        Me.Meses.Name = "Meses"
-        Me.Meses.Size = New System.Drawing.Size(200, 30)
-        Me.Meses.TabIndex = 56
+        Me.txtMeses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtMeses.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMeses.FormattingEnabled = True
+        Me.txtMeses.Location = New System.Drawing.Point(586, 78)
+        Me.txtMeses.Name = "txtMeses"
+        Me.txtMeses.Size = New System.Drawing.Size(200, 30)
+        Me.txtMeses.TabIndex = 56
         '
         'Label2
         '
@@ -270,12 +270,12 @@ Partial Class Planificacion_Tareas
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.Año)
-        Me.Controls.Add(Me.Meses)
+        Me.Controls.Add(Me.txtAño)
+        Me.Controls.Add(Me.txtMeses)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Clase)
-        Me.Controls.Add(Me.Etiqueta)
+        Me.Controls.Add(Me.txtClase)
+        Me.Controls.Add(Me.txtEtiqueta)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Planificacion_Tareas"
@@ -293,12 +293,12 @@ Partial Class Planificacion_Tareas
     End Sub
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label5 As Label
-    Friend WithEvents Clase As ComboBox
-    Friend WithEvents Etiqueta As ComboBox
+    Friend WithEvents txtClase As ComboBox
+    Friend WithEvents txtEtiqueta As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Año As ComboBox
-    Friend WithEvents Meses As ComboBox
+    Friend WithEvents txtAño As ComboBox
+    Friend WithEvents txtMeses As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents DataGridView2 As DataGridView
