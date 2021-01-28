@@ -3,6 +3,11 @@ Public Class Planificacion_Tareas
 
     Dim clasecodigo As Integer
     Dim mes As String
+
+
+    ' Dim Año As Integer
+
+
     Private Sub Planificacion_Tareas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
 
@@ -68,7 +73,7 @@ Public Class Planificacion_Tareas
         If ds.Tables("Codigo").Rows.Count > 0 Then
 
             clasecodigo = ds.Tables("Codigo").Rows(0).Item(0).ToString
-
+            SQLCodigo = clasecodigo
 
         End If
 #End Region
@@ -90,16 +95,51 @@ Public Class Planificacion_Tareas
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.DataGridView1.Select()
+        SQLEtiqueta = Etiqueta.Text
+        SQLAño = Año.Text
+        SQLMes = Meses.Text
+
+        Me.DataGridView2.Select()
 
 
 
         datagr = DataGridView2
         labe1 = Label4
         RevisarTareas()
+
+        Me.DataGridView1.Select()
+        datagr = DataGridView1
+        labe1 = Label5
+        CargarPendientesTareas()
+
+
+
+
+
     End Sub
 
     Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
+
+    End Sub
+
+    Private Sub Crear_Click(sender As Object, e As EventArgs) Handles Crear.Click
+        Me.DataGridView2.Select()
+        SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
+
+
+
+#Region "Insertar en la lista de equipos la informacion del nuevo equipo"
+        Dim adaptador1 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
+        conectar()
+        'MsgBox(adaptador1.CommandText)
+
+        adaptador1.ExecuteNonQuery()
+        desconectar()
+        MsgBox("Tarea agregada correctamente")
+
+
+#End Region
+
 
     End Sub
 End Class
