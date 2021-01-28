@@ -310,4 +310,9 @@ Module MO_Tareas
 
     End Sub
 
+    Sub TareaClase()
+
+
+    End Sub
+
 End Module

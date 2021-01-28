@@ -46,6 +46,7 @@ Public Class Planificacion_Tareas
         End Try
 #End Region
 
+#Region "Cargar MES"
         Try
             Dim cmd As String = "select*from Meses_Datos"
             Dim da As New SqlDataAdapter(cmd, cn)
@@ -60,6 +61,7 @@ Public Class Planificacion_Tareas
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+#End Region
     End Sub
 
     Private Sub Clase_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Clase.SelectedIndexChanged
@@ -153,6 +155,10 @@ Public Class Planificacion_Tareas
         datagr = DataGridView1
         labe1 = Label5
         CargarPendientesTareas()
+
+    End Sub
+
+    Private Sub Meses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Meses.SelectedIndexChanged
 
     End Sub
 End Class

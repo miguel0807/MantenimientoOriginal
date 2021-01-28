@@ -39,8 +39,8 @@ Partial Class Planificacion_Tareas
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -238,6 +238,16 @@ Partial Class Planificacion_Tareas
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Tareas activas"
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(856, 357)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(151, 65)
+        Me.Button1.TabIndex = 62
+        Me.Button1.Text = "Eliminar Tarea"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark
@@ -250,16 +260,6 @@ Partial Class Planificacion_Tareas
         Me.TabPage2.Size = New System.Drawing.Size(1074, 460)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Lista de tareas"
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(856, 357)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(151, 65)
-        Me.Button1.TabIndex = 62
-        Me.Button1.Text = "Eliminar Tarea"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Planificacion_Tareas
         '
