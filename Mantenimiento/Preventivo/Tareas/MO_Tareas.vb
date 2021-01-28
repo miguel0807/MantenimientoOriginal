@@ -189,7 +189,7 @@ Module MO_Tareas
 
 
 
-        Dim adaptador As New SqlDataAdapter("select*from Historial_Tareas where Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "' and Estado=0 ", cn)
+        Dim adaptador As New SqlDataAdapter("Select carac.Tarea from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & SQLCodigo & " and CONVERT(CHAR,hist.Etiqueta)='" & SQLEtiqueta & "' and hist.Año=" & SQLAño & " and convert(CHAR,hist.MES)='" & SQLMes & "' ", cn)
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "Shutdowns")
 
