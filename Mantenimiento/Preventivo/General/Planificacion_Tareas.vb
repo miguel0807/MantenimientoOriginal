@@ -88,4 +88,18 @@ Public Class Planificacion_Tareas
 #End Region
         Etiqueta.Visible = True
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.DataGridView1.Select()
+
+
+
+        datagr = DataGridView2
+        labe1 = Label4
+        RevisarTareas()
+    End Sub
+
+    Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
+
+    End Sub
 End Class
