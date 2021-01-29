@@ -196,7 +196,7 @@ Module MO_Tareas
 
 
 
-        Dim adaptador As New SqlDataAdapter("Select carac.Tarea , hist.ConteoSuma from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & SQLCodigo & " and CONVERT(CHAR,hist.Etiqueta)='" & SQLEtiqueta & "' and hist.Año=" & SQLAño & " and convert(CHAR,hist.MES)='" & SQLMes & "' ", cn)
+        Dim adaptador As New SqlDataAdapter("Select carac.Tarea , hist.ConteoSuma, hist.Estado from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & SQLCodigo & " and CONVERT(CHAR,hist.Etiqueta)='" & SQLEtiqueta & "' and hist.Año=" & SQLAño & " and convert(CHAR,hist.MES)='" & SQLMes & "' ", cn)
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "Shutdowns")
 
@@ -229,7 +229,7 @@ Module MO_Tareas
 
 
 
-        ' datagr.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        datagr.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         'datagr.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
@@ -237,7 +237,7 @@ Module MO_Tareas
 
         '  datagr.Columns(1).Width = 500
 
-        '  datagr.Columns(2).Width = 500
+        datagr.Columns(2).Width = 100
 
 #Region "Conteo de cantidad de equipos"
 
