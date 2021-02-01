@@ -35,7 +35,6 @@ Partial Class Planificacion_Tareas
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Crear = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -199,16 +198,6 @@ Partial Class Planificacion_Tareas
         Me.Crear.Text = "Agregar Tarea"
         Me.Crear.UseVisualStyleBackColor = True
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(414, 87)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(18, 17)
-        Me.CheckBox1.TabIndex = 63
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -283,7 +272,7 @@ Partial Class Planificacion_Tareas
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(19, 357)
+        Me.Label7.Location = New System.Drawing.Point(19, 358)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(106, 25)
         Me.Label7.TabIndex = 63
@@ -315,7 +304,6 @@ Partial Class Planificacion_Tareas
         Me.ClientSize = New System.Drawing.Size(1082, 671)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.txtAño)
         Me.Controls.Add(Me.txtMeses)
         Me.Controls.Add(Me.Label2)
@@ -353,7 +341,6 @@ Partial Class Planificacion_Tareas
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Label4 As Label
     Friend WithEvents Crear As Button
-    Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Button2 As Button
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage

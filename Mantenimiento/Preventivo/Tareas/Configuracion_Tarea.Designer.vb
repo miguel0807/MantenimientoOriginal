@@ -145,9 +145,9 @@ Partial Class Configuracion_Tarea
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(22, 184)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(112, 25)
+        Me.Label3.Size = New System.Drawing.Size(79, 25)
         Me.Label3.TabIndex = 59
-        Me.Label3.Text = "Materiales"
+        Me.Label3.Text = "Equipo"
         '
         'Materiales
         '
@@ -193,6 +193,7 @@ Partial Class Configuracion_Tarea
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(389, 30)
         Me.TextBox1.TabIndex = 63
+        Me.TextBox1.Visible = False
         '
         'Configuracion_Tarea
         '
