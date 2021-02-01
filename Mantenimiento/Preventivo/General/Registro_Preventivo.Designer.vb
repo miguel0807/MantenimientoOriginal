@@ -37,7 +37,6 @@ Partial Class Registro_Preventivo
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.RegistrarTarea = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -199,24 +198,12 @@ Partial Class Registro_Preventivo
         Me.DataGridView1.Size = New System.Drawing.Size(528, 196)
         Me.DataGridView1.TabIndex = 51
         '
-        'RegistrarTarea
-        '
-        Me.RegistrarTarea.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RegistrarTarea.Location = New System.Drawing.Point(297, 646)
-        Me.RegistrarTarea.Name = "RegistrarTarea"
-        Me.RegistrarTarea.Size = New System.Drawing.Size(173, 88)
-        Me.RegistrarTarea.TabIndex = 52
-        Me.RegistrarTarea.Text = "Registrar Tarea"
-        Me.RegistrarTarea.UseVisualStyleBackColor = True
-        Me.RegistrarTarea.Visible = False
-        '
         'Registro_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(922, 764)
-        Me.Controls.Add(Me.RegistrarTarea)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label5)
@@ -255,5 +242,4 @@ Partial Class Registro_Preventivo
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents RegistrarTarea As Button
 End Class

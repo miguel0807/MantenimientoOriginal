@@ -352,7 +352,7 @@ Public Class Registro_Preventivo
 
     End Sub
 
-    Private Sub RegistrarTarea_Click(sender As Object, e As EventArgs) Handles RegistrarTarea.Click
+    Private Sub RegistrarTarea_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class
