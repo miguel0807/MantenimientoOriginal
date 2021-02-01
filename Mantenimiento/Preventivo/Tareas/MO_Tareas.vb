@@ -18,6 +18,13 @@ Module MO_Tareas
     Public CboAño As ComboBox
     Public CboEtiqueta As ComboBox
     Public CboMes As ComboBox
+    Public SQLComentario As TextBox
+    Public SQLResponsable As ComboBox
+    Public prueba0 As TextBox
+
+    Public btnFinalizado As Button
+    Public btnContinuar As Button
+
 
 
 
@@ -198,16 +205,21 @@ Module MO_Tareas
 
         Dim adaptador As New SqlDataAdapter("Select carac.Tarea , hist.ConteoSuma, hist.Estado from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & SQLCodigo & " and CONVERT(CHAR,hist.Etiqueta)='" & SQLEtiqueta & "' and hist.Año=" & SQLAño & " and convert(CHAR,hist.MES)='" & SQLMes & "' ", cn)
         Dim dataS As New DataSet
+        ' MsgBox(adaptador.SelectCommand.CommandText)
         adaptador.Fill(dataS, "Shutdowns")
 
         datagr.DataSource = dataS.Tables("Shutdowns")
 
 #End Region
+        If dataS.Tables("Shutdowns").Rows.Count > 0 Then
+            btnFinalizado.Visible = False
 
-#Region "prueba check"
+            btnContinuar.Visible = False
 
+        Else
 
-#End Region
+        End If
+
 
 
         datagr.RowHeadersVisible = False
@@ -411,10 +423,65 @@ Module MO_Tareas
 
     End Sub
 
-    Sub TareaComboBusqueda()
-        TareaClase()
-        TareaEtiqueta()
-        TareaAño()
-        TareaMes()
+    Sub TareaRegistrada()
+
+        Dim msgvalue As Integer
+
+
+
+        msgvalue = MsgBox("Está seguro de confirmar la tarea?", vbInformation + vbYesNo, "Mensaje de Alerta")
+
+        Select Case msgvalue
+
+            Case 6 'Yes
+                conectar()
+                Dim actualizarcantidadconteo As New SqlCommand("update Historial_Tareas set Estado=1 , Comentario='" & SQLComentario.Text & "' , Responsable='" & SQLResponsable.Text & "' where ConteoSuma=" & SQLSumar & "  ", cn)
+                ' prueba0.Text = actualizarcantidadconteo.CommandText
+                actualizarcantidadconteo.ExecuteNonQuery()
+                cn.Close()
+                desconectar()
+                MsgBox("Se registro correctamente")
+
+                CargarPendientesTareas()
+
+
+
+
+            Case 7 'No
+
+
+
+        End Select
+
+    End Sub
+
+    Sub verficarEstado()
+
+#Region "Buscar la planificacion"
+
+
+
+
+        Dim adaptador As New SqlDataAdapter("Select carac.Tarea , hist.ConteoSuma, hist.Estado from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & SQLCodigo & " and CONVERT(CHAR,hist.Etiqueta)='" & SQLEtiqueta & "' and hist.Año=" & SQLAño & " and convert(CHAR,hist.MES)='" & SQLMes & "' and Estado=0 ", cn)
+        Dim dataS As New DataSet
+        ' MsgBox(adaptador.SelectCommand.CommandText)
+        adaptador.Fill(dataS, "Shutdowns")
+
+        datagr.DataSource = dataS.Tables("Shutdowns")
+
+#End Region
+
+#Region "prueba check"
+
+        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
+        If dataS.Tables("Shutdowns").Rows.Count > 0 Then
+
+
+        Else
+            btnFinalizado.Visible = True
+
+            btnContinuar.Visible = True
+        End If
+#End Region
     End Sub
 End Module

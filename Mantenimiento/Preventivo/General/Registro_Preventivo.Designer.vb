@@ -35,8 +35,11 @@ Partial Class Registro_Preventivo
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Tarea = New System.Windows.Forms.DataGridView()
-        CType(Me.Tarea, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.RegistrarTarea = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Comentarios
@@ -96,6 +99,7 @@ Partial Class Registro_Preventivo
         Me.Finalizado.TabIndex = 31
         Me.Finalizado.Text = "Finalizado y Salir"
         Me.Finalizado.UseVisualStyleBackColor = True
+        Me.Finalizado.Visible = False
         '
         'Responsable
         '
@@ -150,40 +154,80 @@ Partial Class Registro_Preventivo
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(685, 580)
+        Me.Button1.Location = New System.Drawing.Point(685, 552)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(173, 88)
         Me.Button1.TabIndex = 37
         Me.Button1.Text = "Finalizado y Continuar"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(33, 431)
+        Me.Label5.Location = New System.Drawing.Point(33, 444)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(84, 26)
         Me.Label5.TabIndex = 39
         Me.Label5.Text = "Tareas"
         '
-        'Tarea
+        'Label7
         '
-        Me.Tarea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Tarea.Location = New System.Drawing.Point(216, 431)
-        Me.Tarea.Name = "Tarea"
-        Me.Tarea.RowHeadersWidth = 51
-        Me.Tarea.RowTemplate.Height = 24
-        Me.Tarea.Size = New System.Drawing.Size(405, 237)
-        Me.Tarea.TabIndex = 40
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(118, 646)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(106, 25)
+        Me.Label7.TabIndex = 50
+        Me.Label7.Text = "Cantidad:"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(123, 444)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(528, 196)
+        Me.DataGridView1.TabIndex = 51
+        '
+        'RegistrarTarea
+        '
+        Me.RegistrarTarea.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RegistrarTarea.Location = New System.Drawing.Point(297, 646)
+        Me.RegistrarTarea.Name = "RegistrarTarea"
+        Me.RegistrarTarea.Size = New System.Drawing.Size(173, 88)
+        Me.RegistrarTarea.TabIndex = 52
+        Me.RegistrarTarea.Text = "Registrar Tarea"
+        Me.RegistrarTarea.UseVisualStyleBackColor = True
+        Me.RegistrarTarea.Visible = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(476, 396)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(186, 22)
+        Me.TextBox1.TabIndex = 53
         '
         'Registro_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ClientSize = New System.Drawing.Size(922, 680)
-        Me.Controls.Add(Me.Tarea)
+        Me.ClientSize = New System.Drawing.Size(922, 764)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.RegistrarTarea)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Comentarios)
@@ -199,7 +243,7 @@ Partial Class Registro_Preventivo
         Me.Controls.Add(Me.Label1)
         Me.Name = "Registro_Preventivo"
         Me.Text = "Registro_Preventivo"
-        CType(Me.Tarea, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -218,5 +262,8 @@ Partial Class Registro_Preventivo
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Label5 As Label
-    Friend WithEvents Tarea As DataGridView
+    Friend WithEvents Label7 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents RegistrarTarea As Button
+    Friend WithEvents TextBox1 As TextBox
 End Class

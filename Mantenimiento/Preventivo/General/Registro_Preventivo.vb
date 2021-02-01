@@ -73,49 +73,85 @@ Public Class Registro_Preventivo
         Clase.SelectedIndex = -1
         Etiqueta.SelectedIndex = -1
         Responsable.SelectedIndex = -1
+
+        SQLComentario = Comentarios
+        SQLResponsable = Responsable
+
+        prueba0 = TextBox1
+        btnContinuar = Button1
+        btnFinalizado = Finalizado
     End Sub
 
 
 
 
     Private Sub Etiqueta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Etiqueta.SelectedIndexChanged
-#Region "Verificar etiquetas"
-        'En el parentesis entre & & se coloca cual valor se usara para la busqueda
-        Dim adaptador As New SqlDataAdapter("select*from Historial_Equipos where convert(char,etiqueta)='" & Etiqueta.Text & "' and Año=" & Fecha.SelectionStart.Year.ToString & " and convert(char,Mes)='" & mes & "'", cn)
-        Dim ds As New DataSet
-        adaptador.Fill(ds, "Codigo")
+        '#Region "Verificar etiquetas"
+        '        'En el parentesis entre & & se coloca cual valor se usara para la busqueda
+        '        Dim adaptador As New SqlDataAdapter("select*from Historial_Equipos where convert(char,etiqueta)='" & Etiqueta.Text & "' and Año=" & Fecha.SelectionStart.Year.ToString & " and convert(char,Mes)='" & mes & "'", cn)
+        '        Dim ds As New DataSet
+        '        adaptador.Fill(ds, "Codigo")
 
-        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
-        If ds.Tables("Codigo").Rows.Count > 0 Then
-            Finalizado.Visible = False
+        '        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
+        '        If ds.Tables("Codigo").Rows.Count > 0 Then
+        '            Finalizado.Visible = False
 
-            Button1.Visible = False
+        '            Button1.Visible = False
 
-            '    cantidad_equipos = ds.Tables("datos").Rows(0).Item(2).ToString
-        Else
-            Finalizado.Visible = True
+        '            '    cantidad_equipos = ds.Tables("datos").Rows(0).Item(2).ToString
+        '        Else
+        '            Finalizado.Visible = True
 
-            Button1.Visible = True
+        '            Button1.Visible = True
+
+        '#Region "Cargar datos en combobox de Responsable"
+        '            Try
+        '                Dim cmd3 As String = "select*from Usuarios"
+        '                Dim da3 As New SqlDataAdapter(cmd3, cn)
+        '                Dim ds3 As New DataSet
+        '                da3.Fill(ds3)
+        '                With Me.Responsable
+        '                    Me.Responsable.DataSource = ds3.Tables(0)
+        '                    Me.Responsable.DisplayMember = "Nombre"
+        '                End With
+        '                cn.Close()
+        '            Catch ex As Exception
+        '                MessageBox.Show(ex.Message)
+        '            End Try
+        '#End Region
+
+
+        '        End If
+        '#End Region
 
 #Region "Cargar datos en combobox de Responsable"
-            Try
-                Dim cmd3 As String = "select*from Usuarios"
-                Dim da3 As New SqlDataAdapter(cmd3, cn)
-                Dim ds3 As New DataSet
-                da3.Fill(ds3)
-                With Me.Responsable
-                    Me.Responsable.DataSource = ds3.Tables(0)
-                    Me.Responsable.DisplayMember = "Nombre"
-                End With
-                cn.Close()
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            End Try
+        Try
+            Dim cmd3 As String = "select*from Usuarios"
+            Dim da3 As New SqlDataAdapter(cmd3, cn)
+            Dim ds3 As New DataSet
+            da3.Fill(ds3)
+            With Me.Responsable
+                Me.Responsable.DataSource = ds3.Tables(0)
+                Me.Responsable.DisplayMember = "Nombre"
+            End With
+            cn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
 #End Region
 
 
-        End If
-#End Region
+        SQLCodigo = clasecodigo
+        SQLEtiqueta = Etiqueta.Text
+        SQLAño = Fecha.SelectionStart.Year.ToString
+        SQLMes = mes
+
+
+        Me.DataGridView1.Select()
+        datagr = DataGridView1
+        labe1 = Label7
+        CargarPendientesTareas()
+        verficarEstado()
     End Sub
 
     Private Sub Clase_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Clase.SelectedIndexChanged
@@ -298,6 +334,24 @@ Public Class Registro_Preventivo
 #End Region
         Comentarios.Text = "N/A"
         Etiqueta.Focus()
+
+    End Sub
+
+
+
+
+    Private Sub DataGridView1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseDoubleClick
+        SQLSumar = DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
+        TareaRegistrada()
+        verficarEstado()
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub RegistrarTarea_Click(sender As Object, e As EventArgs) Handles RegistrarTarea.Click
 
     End Sub
 End Class
