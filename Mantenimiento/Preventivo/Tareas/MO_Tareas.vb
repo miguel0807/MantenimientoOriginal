@@ -110,7 +110,7 @@ Module MO_Tareas
 
 
 
-        Dim adaptador As New SqlDataAdapter("select*from Caracteristicas_Tareas ", cn)
+        Dim adaptador As New SqlDataAdapter("select*from Caracteristicas_Tareas where convert(char,Equipo)='" & CboClase.Text & "' ", cn)
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "Shutdowns")
 
@@ -118,10 +118,7 @@ Module MO_Tareas
 
 #End Region
 
-#Region "prueba check"
 
-
-#End Region
 
 
         datagr.RowHeadersVisible = False

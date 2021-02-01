@@ -39,17 +39,18 @@ Partial Class Planificacion_Tareas
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.EquipoActivo = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -243,19 +244,6 @@ Partial Class Planificacion_Tareas
         Me.Button1.Text = "Eliminar Tarea"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TabPage2
-        '
-        Me.TabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TabPage2.Controls.Add(Me.Crear)
-        Me.TabPage2.Controls.Add(Me.DataGridView2)
-        Me.TabPage2.Controls.Add(Me.Label4)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1074, 460)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Lista de tareas"
-        '
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.SystemColors.ControlDarkDark
@@ -296,12 +284,36 @@ Partial Class Planificacion_Tareas
         Me.DataGridView3.Size = New System.Drawing.Size(983, 295)
         Me.DataGridView3.TabIndex = 64
         '
+        'TabPage2
+        '
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage2.Controls.Add(Me.Crear)
+        Me.TabPage2.Controls.Add(Me.DataGridView2)
+        Me.TabPage2.Controls.Add(Me.Label4)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1074, 460)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Lista de tareas"
+        '
+        'EquipoActivo
+        '
+        Me.EquipoActivo.AutoSize = True
+        Me.EquipoActivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EquipoActivo.Location = New System.Drawing.Point(378, 141)
+        Me.EquipoActivo.Name = "EquipoActivo"
+        Me.EquipoActivo.Size = New System.Drawing.Size(159, 26)
+        Me.EquipoActivo.TabIndex = 66
+        Me.EquipoActivo.Text = "Equipo Activo"
+        '
         'Planificacion_Tareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1082, 671)
+        Me.Controls.Add(Me.EquipoActivo)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.txtAño)
@@ -319,11 +331,11 @@ Partial Class Planificacion_Tareas
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -349,4 +361,5 @@ Partial Class Planificacion_Tareas
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents Label7 As Label
     Friend WithEvents DataGridView3 As DataGridView
+    Friend WithEvents EquipoActivo As Label
 End Class
