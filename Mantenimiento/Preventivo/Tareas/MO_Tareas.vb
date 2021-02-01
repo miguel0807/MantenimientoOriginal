@@ -270,6 +270,204 @@ Module MO_Tareas
         'Desactiva el autofiltro
 
     End Sub
+    Sub CargarPendientesTareasPlanificacion()
+
+
+
+#Region "Configuracion datagridview1"
+        conectar()
+
+        Dim conteo As String
+        conteo = 1
+
+#Region "Formato de letra"
+
+        datagr.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        datagr.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+
+#End Region
+        datagr.RowTemplate.Height = 30
+#Region "Color de los titulos"
+        datagr.ColumnHeadersDefaultCellStyle.BackColor = Color.Green
+        datagr.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+#End Region
+#Region "Cambios de color celdas y alternadas"
+        datagr.RowsDefaultCellStyle.BackColor = Color.White
+        datagr.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Alineacion de titulos"
+        datagr.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+#End Region
+
+#Region "Buscar la planificacion"
+
+
+
+
+        Dim adaptador As New SqlDataAdapter("Select carac.Tarea , hist.ConteoSuma, hist.Estado from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & SQLCodigo & " and CONVERT(CHAR,hist.Etiqueta)='" & SQLEtiqueta & "' and hist.Año=" & SQLAño & " and convert(CHAR,hist.MES)='" & SQLMes & "'and Estado=0 ", cn)
+        Dim dataS As New DataSet
+        ' MsgBox(adaptador.SelectCommand.CommandText)
+        adaptador.Fill(dataS, "Shutdowns")
+
+        datagr.DataSource = dataS.Tables("Shutdowns")
+
+#End Region
+        If dataS.Tables("Shutdowns").Rows.Count > 0 Then
+
+
+        Else
+
+        End If
+
+
+
+        datagr.RowHeadersVisible = False
+
+
+        datagr.EnableHeadersVisualStyles = False
+        datagr.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        datagr.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        datagr.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        datagr.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+
+
+
+        datagr.RowHeadersVisible = False
+        datagr.Columns(1).Visible = False
+        'datagr.Columns(3).Visible = False
+
+
+
+
+        datagr.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        'datagr.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+
+
+        '  datagr.Columns(1).Width = 500
+
+        datagr.Columns(2).Width = 100
+
+#Region "Conteo de cantidad de equipos"
+
+        labe1.Visible = True
+        labe1.Text = "Cantidad: " & datagr.RowCount
+        conteo = datagr.RowCount
+#End Region
+        'Desactiva el autofiltro
+        Dim col As Integer
+
+        For col = 0 To datagr.Columns.Count - 1
+
+            datagr.Columns(col).SortMode = DataGridViewColumnSortMode.NotSortable
+
+        Next
+        'Desactiva el autofiltro
+
+    End Sub
+    Sub CargarPendientesTareasPlanificacionRealizadas()
+
+
+
+#Region "Configuracion datagridview3"
+        conectar()
+
+        Dim conteo As String
+        conteo = 1
+
+#Region "Formato de letra"
+
+        datagr.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        datagr.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+
+#End Region
+        datagr.RowTemplate.Height = 30
+#Region "Color de los titulos"
+        datagr.ColumnHeadersDefaultCellStyle.BackColor = Color.Green
+        datagr.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+#End Region
+#Region "Cambios de color celdas y alternadas"
+        datagr.RowsDefaultCellStyle.BackColor = Color.White
+        datagr.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Alineacion de titulos"
+        datagr.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+#End Region
+
+#Region "Buscar la planificacion"
+
+
+
+
+        Dim adaptador As New SqlDataAdapter("Select carac.Tarea , hist.ConteoSuma, hist.Estado from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & SQLCodigo & " and CONVERT(CHAR,hist.Etiqueta)='" & SQLEtiqueta & "' and hist.Año=" & SQLAño & " and convert(CHAR,hist.MES)='" & SQLMes & "'and Estado=1 ", cn)
+        Dim dataS As New DataSet
+        ' MsgBox(adaptador.SelectCommand.CommandText)
+        adaptador.Fill(dataS, "Shutdowns")
+
+        datagr.DataSource = dataS.Tables("Shutdowns")
+
+#End Region
+        If dataS.Tables("Shutdowns").Rows.Count > 0 Then
+
+
+        Else
+
+        End If
+
+
+
+        datagr.RowHeadersVisible = False
+
+
+        datagr.EnableHeadersVisualStyles = False
+        datagr.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        datagr.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        datagr.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        datagr.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+
+
+
+        datagr.RowHeadersVisible = False
+        datagr.Columns(1).Visible = False
+        'datagr.Columns(3).Visible = False
+
+
+
+
+        datagr.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        'datagr.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+
+
+        '  datagr.Columns(1).Width = 500
+
+        ' datagr.Columns(2).Width = 100
+
+#Region "Conteo de cantidad de equipos"
+
+        labe1.Visible = True
+        labe1.Text = "Cantidad: " & datagr.RowCount
+        conteo = datagr.RowCount
+#End Region
+        'Desactiva el autofiltro
+        Dim col As Integer
+
+        For col = 0 To datagr.Columns.Count - 1
+
+            datagr.Columns(col).SortMode = DataGridViewColumnSortMode.NotSortable
+
+        Next
+        'Desactiva el autofiltro
+
+    End Sub
     Sub eliminacionTarea()
 
         Dim msgvalue As Integer

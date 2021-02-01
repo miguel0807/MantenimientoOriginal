@@ -46,9 +46,12 @@ Public Class Planificacion_Tareas
         Me.DataGridView1.Select()
         datagr = DataGridView1
         labe1 = Label5
-        CargarPendientesTareas()
+        CargarPendientesTareasPlanificacion()
 
-
+        Me.DataGridView3.Select()
+        datagr = DataGridView3
+        labe1 = Label7
+        CargarPendientesTareasPlanificacionRealizadas()
 
 
 
@@ -74,10 +77,20 @@ Public Class Planificacion_Tareas
 
 #End Region
 
+        'Me.DataGridView1.Select()
+        'datagr = DataGridView1
+        'labe1 = Label5
+        'CargarPendientesTareas()
+
         Me.DataGridView1.Select()
         datagr = DataGridView1
         labe1 = Label5
-        CargarPendientesTareas()
+        CargarPendientesTareasPlanificacion()
+
+        Me.DataGridView3.Select()
+        datagr = DataGridView3
+        labe1 = Label7
+        CargarPendientesTareasPlanificacionRealizadas()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -88,7 +101,12 @@ Public Class Planificacion_Tareas
         Me.DataGridView1.Select()
         datagr = DataGridView1
         labe1 = Label5
-        CargarPendientesTareas()
+        CargarPendientesTareasPlanificacion()
+
+        Me.DataGridView3.Select()
+        datagr = DataGridView3
+        labe1 = Label7
+        CargarPendientesTareasPlanificacionRealizadas()
 
     End Sub
 
