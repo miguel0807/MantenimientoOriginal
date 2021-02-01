@@ -16,6 +16,8 @@ Public Class Planificacion_Tareas
         CboMes = txtMeses
         CboAño = txtAño
 
+
+
         TareaClase()
 
         TareaAño()
@@ -113,6 +115,8 @@ Public Class Planificacion_Tareas
 
 
     Private Sub txtEtiqueta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtEtiqueta.SelectedIndexChanged
+
+
 
 
 

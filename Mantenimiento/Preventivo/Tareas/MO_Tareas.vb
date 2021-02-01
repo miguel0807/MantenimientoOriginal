@@ -2,8 +2,9 @@
 Module MO_Tareas
 
     Public txtTarea As TextBox
-    Public txtMateriales As TextBox
+    Public txtMateriales As ComboBox
     Public intTiempo As TextBox
+    Public cbo1Clase As ComboBox
 
     Public clasecodigo As Integer
 
@@ -682,6 +683,25 @@ Module MO_Tareas
 
             btnContinuar.Visible = True
         End If
+#End Region
+    End Sub
+    Sub CargaClase()
+
+
+#Region "Cargar datos en combobox de Clase"
+        Try
+            Dim cmd As String = "select*from Caracteristicas_Equipo"
+            Dim da As New SqlDataAdapter(cmd, cn)
+            Dim ds As New DataSet
+            da.Fill(ds)
+            With cbo1Clase
+                cbo1Clase.DataSource = ds.Tables(0)
+                cbo1Clase.DisplayMember = "Clase"
+            End With
+            cn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
 #End Region
     End Sub
 End Module

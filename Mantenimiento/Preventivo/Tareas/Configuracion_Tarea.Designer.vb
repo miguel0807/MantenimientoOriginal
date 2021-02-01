@@ -31,10 +31,10 @@ Partial Class Configuracion_Tarea
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Materiales = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Tiempo = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Equipo = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -149,16 +149,6 @@ Partial Class Configuracion_Tarea
         Me.Label3.TabIndex = 59
         Me.Label3.Text = "Equipo"
         '
-        'Materiales
-        '
-        Me.Materiales.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Materiales.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Materiales.Location = New System.Drawing.Point(226, 184)
-        Me.Materiales.Name = "Materiales"
-        Me.Materiales.Size = New System.Drawing.Size(389, 30)
-        Me.Materiales.TabIndex = 58
-        '
         'Label4
         '
         Me.Label4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -195,17 +185,26 @@ Partial Class Configuracion_Tarea
         Me.TextBox1.TabIndex = 63
         Me.TextBox1.Visible = False
         '
+        'Equipo
+        '
+        Me.Equipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Equipo.FormattingEnabled = True
+        Me.Equipo.Location = New System.Drawing.Point(226, 179)
+        Me.Equipo.Name = "Equipo"
+        Me.Equipo.Size = New System.Drawing.Size(299, 30)
+        Me.Equipo.TabIndex = 64
+        '
         'Configuracion_Tarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(993, 663)
+        Me.Controls.Add(Me.Equipo)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Tiempo)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Materiales)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.DataGridView1)
@@ -230,8 +229,8 @@ Partial Class Configuracion_Tarea
     Friend WithEvents Button2 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Materiales As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Tiempo As TextBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Equipo As ComboBox
 End Class
