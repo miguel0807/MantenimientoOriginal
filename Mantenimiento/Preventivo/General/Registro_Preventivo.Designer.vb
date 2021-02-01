@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Registro_Preventivo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Registro_Preventivo
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Comentarios = New System.Windows.Forms.TextBox()
         Me.Fecha = New System.Windows.Forms.MonthCalendar()
@@ -38,7 +38,6 @@ Partial Class Registro_Preventivo
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.RegistrarTarea = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -211,20 +210,12 @@ Partial Class Registro_Preventivo
         Me.RegistrarTarea.UseVisualStyleBackColor = True
         Me.RegistrarTarea.Visible = False
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(476, 396)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(186, 22)
-        Me.TextBox1.TabIndex = 53
-        '
         'Registro_Preventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(922, 764)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.RegistrarTarea)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.DataGridView1)
@@ -265,5 +256,4 @@ Partial Class Registro_Preventivo
     Friend WithEvents Label7 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents RegistrarTarea As Button
-    Friend WithEvents TextBox1 As TextBox
 End Class

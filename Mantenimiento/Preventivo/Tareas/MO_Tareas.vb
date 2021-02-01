@@ -25,6 +25,8 @@ Module MO_Tareas
     Public btnFinalizado As Button
     Public btnContinuar As Button
 
+    Public calendario As MonthCalendar
+
 
 
 
@@ -203,7 +205,7 @@ Module MO_Tareas
 
 
 
-        Dim adaptador As New SqlDataAdapter("Select carac.Tarea , hist.ConteoSuma, hist.Estado from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & SQLCodigo & " and CONVERT(CHAR,hist.Etiqueta)='" & SQLEtiqueta & "' and hist.Año=" & SQLAño & " and convert(CHAR,hist.MES)='" & SQLMes & "' ", cn)
+        Dim adaptador As New SqlDataAdapter("Select carac.Tarea , hist.ConteoSuma, hist.Estado from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & SQLCodigo & " and CONVERT(CHAR,hist.Etiqueta)='" & SQLEtiqueta & "' and hist.Año=" & SQLAño & " and convert(CHAR,hist.MES)='" & SQLMes & "'and Estado=0 ", cn)
         Dim dataS As New DataSet
         ' MsgBox(adaptador.SelectCommand.CommandText)
         adaptador.Fill(dataS, "Shutdowns")
@@ -435,7 +437,7 @@ Module MO_Tareas
 
             Case 6 'Yes
                 conectar()
-                Dim actualizarcantidadconteo As New SqlCommand("update Historial_Tareas set Estado=1 , Comentario='" & SQLComentario.Text & "' , Responsable='" & SQLResponsable.Text & "' where ConteoSuma=" & SQLSumar & "  ", cn)
+                Dim actualizarcantidadconteo As New SqlCommand("update Historial_Tareas set Estado=1 , Comentario='" & SQLComentario.Text & "' , Responsable='" & SQLResponsable.Text & "' , Fecha='" & calendario.SelectionStart.ToShortDateString.ToString & "' where ConteoSuma=" & SQLSumar & "  ", cn)
                 ' prueba0.Text = actualizarcantidadconteo.CommandText
                 actualizarcantidadconteo.ExecuteNonQuery()
                 cn.Close()
@@ -467,7 +469,7 @@ Module MO_Tareas
         ' MsgBox(adaptador.SelectCommand.CommandText)
         adaptador.Fill(dataS, "Shutdowns")
 
-        datagr.DataSource = dataS.Tables("Shutdowns")
+        ' datagr.DataSource = dataS.Tables("Shutdowns")
 
 #End Region
 

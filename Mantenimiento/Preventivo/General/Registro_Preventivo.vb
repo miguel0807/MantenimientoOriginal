@@ -77,9 +77,10 @@ Public Class Registro_Preventivo
         SQLComentario = Comentarios
         SQLResponsable = Responsable
 
-        prueba0 = TextBox1
+
         btnContinuar = Button1
         btnFinalizado = Finalizado
+        calendario = Fecha
     End Sub
 
 
