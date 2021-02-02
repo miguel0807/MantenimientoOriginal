@@ -44,6 +44,8 @@ Partial Class Planificacion_Tareas
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.EquipoActivo = New System.Windows.Forms.Label()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -287,6 +289,7 @@ Partial Class Planificacion_Tareas
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage2.Controls.Add(Me.Button3)
         Me.TabPage2.Controls.Add(Me.Crear)
         Me.TabPage2.Controls.Add(Me.DataGridView2)
         Me.TabPage2.Controls.Add(Me.Label4)
@@ -307,12 +310,32 @@ Partial Class Planificacion_Tareas
         Me.EquipoActivo.TabIndex = 66
         Me.EquipoActivo.Text = "Equipo Activo"
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(405, 87)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(18, 17)
+        Me.CheckBox1.TabIndex = 67
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(341, 387)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(151, 65)
+        Me.Button3.TabIndex = 61
+        Me.Button3.Text = "Tareas"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Planificacion_Tareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1082, 671)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.EquipoActivo)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button2)
@@ -362,4 +385,6 @@ Partial Class Planificacion_Tareas
     Friend WithEvents Label7 As Label
     Friend WithEvents DataGridView3 As DataGridView
     Friend WithEvents EquipoActivo As Label
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Button3 As Button
 End Class

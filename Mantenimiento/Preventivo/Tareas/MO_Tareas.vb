@@ -464,7 +464,7 @@ Module MO_Tareas
 
         Next
         'Desactiva el autofiltro
-
+        desconectar()
     End Sub
     Sub eliminacionTarea()
 
