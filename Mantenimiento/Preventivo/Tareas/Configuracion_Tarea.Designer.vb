@@ -23,7 +23,6 @@ Partial Class Configuracion_Tarea
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -33,7 +32,6 @@ Partial Class Configuracion_Tarea
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Tiempo = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Equipo = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -46,19 +44,9 @@ Partial Class Configuracion_Tarea
         Me.Button5.Location = New System.Drawing.Point(830, 618)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(106, 37)
-        Me.Button5.TabIndex = 57
+        Me.Button5.TabIndex = 6
         Me.Button5.Text = "Eliminar"
         Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(30, 294)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(151, 65)
-        Me.Button3.TabIndex = 50
-        Me.Button3.Text = "Lista Tareas"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -79,7 +67,7 @@ Partial Class Configuracion_Tarea
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(906, 247)
-        Me.DataGridView1.TabIndex = 54
+        Me.DataGridView1.TabIndex = 5
         '
         'Label1
         '
@@ -99,7 +87,7 @@ Partial Class Configuracion_Tarea
         Me.Button1.Location = New System.Drawing.Point(816, 63)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(151, 65)
-        Me.Button1.TabIndex = 48
+        Me.Button1.TabIndex = 3
         Me.Button1.Text = "Aceptar"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -110,7 +98,7 @@ Partial Class Configuracion_Tarea
         Me.Tarea.Multiline = True
         Me.Tarea.Name = "Tarea"
         Me.Tarea.Size = New System.Drawing.Size(389, 125)
-        Me.Tarea.TabIndex = 47
+        Me.Tarea.TabIndex = 0
         '
         'Button2
         '
@@ -119,7 +107,7 @@ Partial Class Configuracion_Tarea
         Me.Button2.Location = New System.Drawing.Point(816, 167)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(151, 65)
-        Me.Button2.TabIndex = 49
+        Me.Button2.TabIndex = 4
         Me.Button2.Text = "Borrar"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -170,29 +158,19 @@ Partial Class Configuracion_Tarea
         Me.Tiempo.Location = New System.Drawing.Point(226, 232)
         Me.Tiempo.Name = "Tiempo"
         Me.Tiempo.Size = New System.Drawing.Size(52, 30)
-        Me.Tiempo.TabIndex = 60
+        Me.Tiempo.TabIndex = 2
         Me.Tiempo.Text = "0"
         Me.Tiempo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox1
-        '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(364, 329)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(389, 30)
-        Me.TextBox1.TabIndex = 63
-        Me.TextBox1.Visible = False
-        '
         'Equipo
         '
+        Me.Equipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Equipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Equipo.FormattingEnabled = True
         Me.Equipo.Location = New System.Drawing.Point(226, 179)
         Me.Equipo.Name = "Equipo"
         Me.Equipo.Size = New System.Drawing.Size(299, 30)
-        Me.Equipo.TabIndex = 64
+        Me.Equipo.TabIndex = 1
         '
         'Configuracion_Tarea
         '
@@ -201,12 +179,10 @@ Partial Class Configuracion_Tarea
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(993, 663)
         Me.Controls.Add(Me.Equipo)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Tiempo)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
@@ -221,7 +197,6 @@ Partial Class Configuracion_Tarea
     End Sub
 
     Friend WithEvents Button5 As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
@@ -231,6 +206,5 @@ Partial Class Configuracion_Tarea
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Tiempo As TextBox
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Equipo As ComboBox
 End Class

@@ -12,6 +12,7 @@ Public Class Configuracion_Tarea
 
         intTiempo = Tiempo
         cbo1Clase = Equipo
+        CboClase = Equipo
 
         CargaClase()
 
@@ -44,24 +45,36 @@ Public Class Configuracion_Tarea
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.DataGridView1.Select()
 
-
-
-        datagr = DataGridView1
-        labe1 = Label1
-        RevisarTareas()
-    End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+        If datagr.Rows.Count = 0 Then
+            MessageBox.Show("No hay datos para eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Else
+            Me.DataGridView1.Select()
+
+            eliminacionTarea()
+
+            datagr = DataGridView1
+            labe1 = Label1
+
+            RevisarTareas()
+        End If
+
+    End Sub
+
+    Private Sub Equipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Equipo.SelectedIndexChanged
         Me.DataGridView1.Select()
 
-        eliminacionTarea()
+
 
         datagr = DataGridView1
         labe1 = Label1
-
         RevisarTareas()
+        Equipo.Select()
     End Sub
+
+
 End Class

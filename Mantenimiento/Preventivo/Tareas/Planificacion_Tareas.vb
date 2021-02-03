@@ -26,9 +26,6 @@ Public Class Planificacion_Tareas
 
         TareaMes()
 
-        SQLEtiqueta = txtEtiqueta.Text
-        SQLAño = txtAño.Text
-        SQLMes = txtMeses.Text
     End Sub
 
     Private Sub Clase_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtClase.SelectedIndexChanged
@@ -39,19 +36,27 @@ Public Class Planificacion_Tareas
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If CheckBox1.Checked = True Then
-            txtEtiqueta.Enabled = False
+
 #Region "Cargar lista de tareas"
 
             Me.DataGridView2.Select()
             datagr = DataGridView2
             labe1 = Label4
+
+
+            SQLEtiqueta = txtEtiqueta.Text
+            SQLAño = txtAño.Text
+            SQLMes = txtMeses.Text
+
             RevisarTareas()
 
 #End Region
 
         Else
-            txtEtiqueta.Enabled = True
 
+            SQLEtiqueta = txtEtiqueta.Text
+            SQLAño = txtAño.Text
+            SQLMes = txtMeses.Text
 
 
 #Region "Cargar lista de tareas"
@@ -75,10 +80,17 @@ Public Class Planificacion_Tareas
             datagr = DataGridView3
             labe1 = Label7
             CargarPendientesTareasPlanificacionRealizadas()
-            EquipoActivo.Text = "Equipo Activo: " & txtEtiqueta.Text
+            EquipoActivo.Text = "Etiqueta: " & txtEtiqueta.Text
+            ClaseActivo.Text = "Clase: " & txtClase.Text
+            AñoActivo.Text = "Año: " & txtAño.Text
+            MesActivo.Text = "Mes: " & txtMeses.Text
 
 #End Region
+
+
         End If
+
+
 
 
 
@@ -88,54 +100,65 @@ Public Class Planificacion_Tareas
 
 
     Private Sub Crear_Click(sender As Object, e As EventArgs) Handles Crear.Click
-        Me.DataGridView2.Select()
-        SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
+        If DataGridView2.Rows.Count = 0 Then
+            MessageBox.Show("No hay datos para agregar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Else
+
+            Me.DataGridView2.Select()
+            SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
 
 
 
 #Region "Insertar en la lista de equipos la informacion del nuevo equipo"
-        Dim adaptador1 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
-        conectar()
-        'MsgBox(adaptador1.CommandText)
+            Dim adaptador1 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
+            conectar()
+            'MsgBox(adaptador1.CommandText)
 
-        adaptador1.ExecuteNonQuery()
-        desconectar()
-        MsgBox("Tarea agregada correctamente")
+            adaptador1.ExecuteNonQuery()
+            desconectar()
+            MsgBox("Tarea agregada correctamente")
 
 
 #End Region
 
-        'Me.DataGridView1.Select()
-        'datagr = DataGridView1
-        'labe1 = Label5
-        'CargarPendientesTareas()
+            'Me.DataGridView1.Select()
+            'datagr = DataGridView1
+            'labe1 = Label5
+            'CargarPendientesTareas()
 
-        Me.DataGridView1.Select()
-        datagr = DataGridView1
-        labe1 = Label5
-        CargarPendientesTareasPlanificacion()
+            Me.DataGridView1.Select()
+            datagr = DataGridView1
+            labe1 = Label5
+            CargarPendientesTareasPlanificacion()
 
-        Me.DataGridView3.Select()
-        datagr = DataGridView3
-        labe1 = Label7
-        CargarPendientesTareasPlanificacionRealizadas()
+            Me.DataGridView3.Select()
+            datagr = DataGridView3
+            labe1 = Label7
+            CargarPendientesTareasPlanificacionRealizadas()
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.DataGridView1.Select()
-        SQLSumar = DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
-        BorrarTarea()
+        If DataGridView1.Rows.Count = 0 Then
+            MessageBox.Show("No hay datos para eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-        Me.DataGridView1.Select()
-        datagr = DataGridView1
-        labe1 = Label5
-        CargarPendientesTareasPlanificacion()
+        Else
 
-        Me.DataGridView3.Select()
-        datagr = DataGridView3
-        labe1 = Label7
-        CargarPendientesTareasPlanificacionRealizadas()
+            Me.DataGridView1.Select()
+            SQLSumar = DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
+            BorrarTarea()
 
+            Me.DataGridView1.Select()
+            datagr = DataGridView1
+            labe1 = Label5
+            CargarPendientesTareasPlanificacion()
+
+            Me.DataGridView3.Select()
+            datagr = DataGridView3
+            labe1 = Label7
+            CargarPendientesTareasPlanificacionRealizadas()
+        End If
     End Sub
 
 
@@ -200,63 +223,105 @@ Public Class Planificacion_Tareas
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked = True Then
             txtEtiqueta.Enabled = False
+            Tareas.Visible = True
+            Crear.Visible = False
+            TabPage1.Parent = Nothing
+            TabPage2.Parent = TabControl1
+            TabPage3.Parent = Nothing
+
+            ModoClase.Visible = True
+            DataGridView1.DataSource = Nothing
+            DataGridView2.DataSource = Nothing
+            DataGridView3.DataSource = Nothing
+            Label4.Text = "Cantidad:0"
         Else
             txtEtiqueta.Enabled = True
+            Tareas.Visible = False
+            Crear.Visible = True
+
+            TabPage1.Parent = TabControl1
+            TabPage2.Parent = TabControl1
+            TabPage3.Parent = TabControl1
+            ModoClase.Visible = False
+            DataGridView1.DataSource = Nothing
+            DataGridView2.DataSource = Nothing
+            DataGridView3.DataSource = Nothing
+
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Tareas.Click
+        If DataGridView2.Rows.Count = 0 Then
+            MessageBox.Show("No hay datos para agregar ", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-        Me.DataGridView2.Select()
-        SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
+        Else
+            Dim msgvalue As Integer
 
+            msgvalue = MsgBox("Está seguro de agregar en el mes de " & SQLMes & ", el año " & SQLAño & " y la clase " & txtClase.Text & " la lista de tareas?", vbInformation + vbYesNo, "Mensaje de Alerta")
 
+            Select Case msgvalue
 
+                Case 6 'Yes
 
-
-
-        'Using cn
-        '    Dim command As SqlCommand = New SqlCommand(
-        '      "select*from Lista_Equipos where Codigo=" & clasecodigo & "" &
-        '      "select*from Caracteristicas_Tareas where convert(char,Equipo)='" & CboClase.Text & "' ", cn)
-        '    cn.Open()
-
-        '    Dim reader As SqlDataReader = command.ExecuteReader()
-
-        '    Do While reader.Read
-        '        MsgBox(reader.GetString(1))
-
-        '        Do While reader.Read()
-        '            MsgBox(reader.GetString(1))
-        '        Loop
-
-        '        ' reader.NextResult()
-        '    Loop
+                    Me.DataGridView2.Select()
+                    SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
 
 
-
-        'End Using
-
-
-        Dim adaptador As New SqlDataAdapter("select*from Lista_Equipos where Codigo=" & clasecodigo & " ", cn)
-        Dim dtDatos As DataTable = New DataTable
-        adaptador.Fill(dtDatos)
-        For i As Integer = 0 To dtDatos.Rows.Count - 1
-            MsgBox(dtDatos.Rows(i)("Etiqueta"))
+                    Dim adaptador As New SqlDataAdapter("select*from Lista_Equipos where Codigo=" & clasecodigo & " ", cn)
+                    Dim dtDatos As DataTable = New DataTable
+                    adaptador.Fill(dtDatos)
+                    For i As Integer = 0 To dtDatos.Rows.Count - 1
+                        SQLEtiqueta = (dtDatos.Rows(i)("Etiqueta"))
+                        ' MsgBox(dtDatos.Rows(i)("Etiqueta"))
 
 
-            Dim adaptador1 As New SqlDataAdapter("select*from Caracteristicas_Tareas where convert(char,Equipo)='" & CboClase.Text & "'  ", cn)
-            Dim dtDatos1 As DataTable = New DataTable
-            adaptador1.Fill(dtDatos1)
-            For w As Integer = 0 To dtDatos1.Rows.Count - 1
-                MsgBox(dtDatos1.Rows(w)("Tarea"))
+                        Dim adaptador1 As New SqlDataAdapter("select*from Caracteristicas_Tareas where convert(char,Equipo)='" & CboClase.Text & "'  ", cn)
+                        Dim dtDatos1 As DataTable = New DataTable
+                        adaptador1.Fill(dtDatos1)
+                        For w As Integer = 0 To dtDatos1.Rows.Count - 1
+                            SQLCodTarea = (dtDatos1.Rows(w)("CodTarea"))
+                            'MsgBox(dtDatos1.Rows(w)("CodTarea"))
 
-            Next
 
-        Next
-        ' SQLCodTarea
 
-        '  SQLCodigo
-        desconectar()
+#Region "Insertar en la lista de equipos la informacion del nuevo equipo"
+                            Dim adaptador3 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
+                            conectar()
+                            'MsgBox(adaptador1.CommandText)
+
+                            adaptador3.ExecuteNonQuery()
+                            desconectar()
+
+
+
+#End Region
+                        Next
+
+                    Next
+                    MsgBox("Tareas cargadas con exito")
+                    ' SQLCodTarea
+
+                    '  SQLCodigo
+                    desconectar()
+
+
+
+                Case 7 'No
+
+
+
+            End Select
+
+
+
+        End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If PanelActivo.Visible = True Then
+            PanelActivo.Visible = False
+        Else
+            PanelActivo.Visible = True
+        End If
     End Sub
 End Class

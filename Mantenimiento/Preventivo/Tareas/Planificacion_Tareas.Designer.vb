@@ -43,9 +43,15 @@ Partial Class Planificacion_Tareas
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Tareas = New System.Windows.Forms.Button()
         Me.EquipoActivo = New System.Windows.Forms.Label()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.ClaseActivo = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.PanelActivo = New System.Windows.Forms.Panel()
+        Me.MesActivo = New System.Windows.Forms.Label()
+        Me.AñoActivo = New System.Windows.Forms.Label()
+        Me.ModoClase = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -53,6 +59,7 @@ Partial Class Planificacion_Tareas
         Me.TabPage3.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        Me.PanelActivo.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -217,10 +224,10 @@ Partial Class Planificacion_Tareas
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TabControl1.Location = New System.Drawing.Point(0, 182)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 259)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1082, 489)
+        Me.TabControl1.Size = New System.Drawing.Size(1136, 489)
         Me.TabControl1.TabIndex = 65
         '
         'TabPage1
@@ -232,7 +239,7 @@ Partial Class Planificacion_Tareas
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1074, 460)
+        Me.TabPage1.Size = New System.Drawing.Size(1128, 460)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Tareas activas"
         '
@@ -254,7 +261,7 @@ Partial Class Planificacion_Tareas
         Me.TabPage3.Location = New System.Drawing.Point(4, 25)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1074, 460)
+        Me.TabPage3.Size = New System.Drawing.Size(1128, 460)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Tareas Realizadas"
         '
@@ -289,26 +296,37 @@ Partial Class Planificacion_Tareas
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TabPage2.Controls.Add(Me.Button3)
+        Me.TabPage2.Controls.Add(Me.Tareas)
         Me.TabPage2.Controls.Add(Me.Crear)
         Me.TabPage2.Controls.Add(Me.DataGridView2)
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1074, 460)
+        Me.TabPage2.Size = New System.Drawing.Size(1128, 460)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Lista de tareas"
+        '
+        'Tareas
+        '
+        Me.Tareas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tareas.Location = New System.Drawing.Point(331, 369)
+        Me.Tareas.Name = "Tareas"
+        Me.Tareas.Size = New System.Drawing.Size(211, 72)
+        Me.Tareas.TabIndex = 61
+        Me.Tareas.Text = "Agregar todas las tareas"
+        Me.Tareas.UseVisualStyleBackColor = True
+        Me.Tareas.Visible = False
         '
         'EquipoActivo
         '
         Me.EquipoActivo.AutoSize = True
         Me.EquipoActivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EquipoActivo.Location = New System.Drawing.Point(378, 141)
+        Me.EquipoActivo.Location = New System.Drawing.Point(3, 39)
         Me.EquipoActivo.Name = "EquipoActivo"
-        Me.EquipoActivo.Size = New System.Drawing.Size(159, 26)
+        Me.EquipoActivo.Size = New System.Drawing.Size(100, 26)
         Me.EquipoActivo.TabIndex = 66
-        Me.EquipoActivo.Text = "Equipo Activo"
+        Me.EquipoActivo.Text = "Etiqueta"
         '
         'CheckBox1
         '
@@ -319,24 +337,82 @@ Partial Class Planificacion_Tareas
         Me.CheckBox1.TabIndex = 67
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'Button3
+        'ClaseActivo
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(341, 387)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(151, 65)
-        Me.Button3.TabIndex = 61
-        Me.Button3.Text = "Tareas"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.ClaseActivo.AutoSize = True
+        Me.ClaseActivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ClaseActivo.Location = New System.Drawing.Point(3, 13)
+        Me.ClaseActivo.Name = "ClaseActivo"
+        Me.ClaseActivo.Size = New System.Drawing.Size(73, 26)
+        Me.ClaseActivo.TabIndex = 68
+        Me.ClaseActivo.Text = "Clase"
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(405, 162)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(131, 36)
+        Me.Button4.TabIndex = 62
+        Me.Button4.Text = "Activo"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'PanelActivo
+        '
+        Me.PanelActivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelActivo.Controls.Add(Me.MesActivo)
+        Me.PanelActivo.Controls.Add(Me.AñoActivo)
+        Me.PanelActivo.Controls.Add(Me.EquipoActivo)
+        Me.PanelActivo.Controls.Add(Me.ClaseActivo)
+        Me.PanelActivo.Location = New System.Drawing.Point(552, 149)
+        Me.PanelActivo.Name = "PanelActivo"
+        Me.PanelActivo.Size = New System.Drawing.Size(490, 104)
+        Me.PanelActivo.TabIndex = 69
+        Me.PanelActivo.Visible = False
+        '
+        'MesActivo
+        '
+        Me.MesActivo.AutoSize = True
+        Me.MesActivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MesActivo.Location = New System.Drawing.Point(302, 45)
+        Me.MesActivo.Name = "MesActivo"
+        Me.MesActivo.Size = New System.Drawing.Size(56, 26)
+        Me.MesActivo.TabIndex = 69
+        Me.MesActivo.Text = "Mes"
+        '
+        'AñoActivo
+        '
+        Me.AñoActivo.AutoSize = True
+        Me.AñoActivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AñoActivo.Location = New System.Drawing.Point(302, 13)
+        Me.AñoActivo.Name = "AñoActivo"
+        Me.AñoActivo.Size = New System.Drawing.Size(54, 26)
+        Me.AñoActivo.TabIndex = 70
+        Me.AñoActivo.Text = "Año"
+        '
+        'ModoClase
+        '
+        Me.ModoClase.AutoSize = True
+        Me.ModoClase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ModoClase.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ModoClase.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ModoClase.Location = New System.Drawing.Point(4, 222)
+        Me.ModoClase.Name = "ModoClase"
+        Me.ModoClase.Size = New System.Drawing.Size(341, 41)
+        Me.ModoClase.TabIndex = 71
+        Me.ModoClase.Text = "Modo Clase Activado"
+        Me.ModoClase.Visible = False
         '
         'Planificacion_Tareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ClientSize = New System.Drawing.Size(1082, 671)
+        Me.ClientSize = New System.Drawing.Size(1136, 748)
+        Me.Controls.Add(Me.ModoClase)
+        Me.Controls.Add(Me.PanelActivo)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.EquipoActivo)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.txtAño)
@@ -359,6 +435,8 @@ Partial Class Planificacion_Tareas
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.PanelActivo.ResumeLayout(False)
+        Me.PanelActivo.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -386,5 +464,11 @@ Partial Class Planificacion_Tareas
     Friend WithEvents DataGridView3 As DataGridView
     Friend WithEvents EquipoActivo As Label
     Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents Button3 As Button
+    Friend WithEvents Tareas As Button
+    Friend WithEvents ClaseActivo As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents PanelActivo As Panel
+    Friend WithEvents MesActivo As Label
+    Friend WithEvents AñoActivo As Label
+    Friend WithEvents ModoClase As Label
 End Class
