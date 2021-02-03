@@ -52,6 +52,7 @@ Partial Class Planificacion_Tareas
         Me.MesActivo = New System.Windows.Forms.Label()
         Me.AñoActivo = New System.Windows.Forms.Label()
         Me.ModoClase = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -403,12 +404,22 @@ Partial Class Planificacion_Tareas
         Me.ModoClase.Text = "Modo Clase Activado"
         Me.ModoClase.Visible = False
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(160, 154)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(96, 35)
+        Me.Button3.TabIndex = 72
+        Me.Button3.Text = "Button3"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Planificacion_Tareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1136, 748)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.ModoClase)
         Me.Controls.Add(Me.PanelActivo)
         Me.Controls.Add(Me.Button4)
@@ -471,4 +482,5 @@ Partial Class Planificacion_Tareas
     Friend WithEvents MesActivo As Label
     Friend WithEvents AñoActivo As Label
     Friend WithEvents ModoClase As Label
+    Friend WithEvents Button3 As Button
 End Class

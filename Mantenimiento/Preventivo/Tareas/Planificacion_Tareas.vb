@@ -109,33 +109,58 @@ Public Class Planificacion_Tareas
             SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
 
 
+#Region "Verificar si la tarea esta agregada"
+
+
+
+
+            Dim adaptador As New SqlDataAdapter("select*from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
+            Dim dataS As New DataSet
+            'MsgBox(adaptador.SelectCommand.CommandText)
+            adaptador.Fill(dataS, "Shutdowns")
+
+            ' datagr.DataSource = dataS.Tables("Shutdowns")
+
+#End Region
+
+
+            If dataS.Tables("Shutdowns").Rows.Count > 0 Then
+
+
+                MsgBox("No se puede agregar la tarea, ya se encuentra registrada")
+            Else
+
 
 #Region "Insertar en la lista de equipos la informacion del nuevo equipo"
-            Dim adaptador1 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
-            conectar()
-            'MsgBox(adaptador1.CommandText)
+                Dim adaptador1 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
+                conectar()
+                'MsgBox(adaptador1.CommandText)
 
-            adaptador1.ExecuteNonQuery()
-            desconectar()
-            MsgBox("Tarea agregada correctamente")
+                adaptador1.ExecuteNonQuery()
+                desconectar()
+                MsgBox("Tarea agregada correctamente")
 
 
 #End Region
 
-            'Me.DataGridView1.Select()
-            'datagr = DataGridView1
-            'labe1 = Label5
-            'CargarPendientesTareas()
+                'Me.DataGridView1.Select()
+                'datagr = DataGridView1
+                'labe1 = Label5
+                'CargarPendientesTareas()
 
-            Me.DataGridView1.Select()
-            datagr = DataGridView1
-            labe1 = Label5
-            CargarPendientesTareasPlanificacion()
+                Me.DataGridView1.Select()
+                datagr = DataGridView1
+                labe1 = Label5
+                CargarPendientesTareasPlanificacion()
 
-            Me.DataGridView3.Select()
-            datagr = DataGridView3
-            labe1 = Label7
-            CargarPendientesTareasPlanificacionRealizadas()
+                Me.DataGridView3.Select()
+                datagr = DataGridView3
+                labe1 = Label7
+                CargarPendientesTareasPlanificacionRealizadas()
+            End If
+
+
+
         End If
     End Sub
 
@@ -185,39 +210,68 @@ Public Class Planificacion_Tareas
     End Sub
 
     Private Sub DataGridView2_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles DataGridView2.MouseDoubleClick
-        Me.DataGridView2.Select()
-        SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
+        If DataGridView2.Rows.Count = 0 Then
+            MessageBox.Show("No hay datos para agregar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+        Else
+
+            Me.DataGridView2.Select()
+            SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
+
+
+#Region "Verificar si la tarea esta agregada"
+
+
+
+
+            Dim adaptador As New SqlDataAdapter("select*from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
+            Dim dataS As New DataSet
+            'MsgBox(adaptador.SelectCommand.CommandText)
+            adaptador.Fill(dataS, "Shutdowns")
+
+            ' datagr.DataSource = dataS.Tables("Shutdowns")
+
+#End Region
+
+
+            If dataS.Tables("Shutdowns").Rows.Count > 0 Then
+
+
+                MsgBox("No se puede agregar la tarea, ya se encuentra registrada")
+            Else
 
 
 #Region "Insertar en la lista de equipos la informacion del nuevo equipo"
-        Dim adaptador1 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
-        conectar()
-        'MsgBox(adaptador1.CommandText)
+                Dim adaptador1 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
+                conectar()
+                'MsgBox(adaptador1.CommandText)
 
-        adaptador1.ExecuteNonQuery()
-        desconectar()
-        MsgBox("Tarea agregada correctamente")
+                adaptador1.ExecuteNonQuery()
+                desconectar()
+                MsgBox("Tarea agregada correctamente")
 
-
-#End Region
-
-        'Me.DataGridView1.Select()
-        'datagr = DataGridView1
-        'labe1 = Label5
-        'CargarPendientesTareas()
-#Region "Refrescar pestañas"
-        Me.DataGridView1.Select()
-        datagr = DataGridView1
-        labe1 = Label5
-        CargarPendientesTareasPlanificacion()
-
-        Me.DataGridView3.Select()
-        datagr = DataGridView3
-        labe1 = Label7
-        CargarPendientesTareasPlanificacionRealizadas()
 
 #End Region
+
+                'Me.DataGridView1.Select()
+                'datagr = DataGridView1
+                'labe1 = Label5
+                'CargarPendientesTareas()
+
+                Me.DataGridView1.Select()
+                datagr = DataGridView1
+                labe1 = Label5
+                CargarPendientesTareasPlanificacion()
+
+                Me.DataGridView3.Select()
+                datagr = DataGridView3
+                labe1 = Label7
+                CargarPendientesTareasPlanificacionRealizadas()
+            End If
+
+
+
+        End If
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -323,5 +377,30 @@ Public Class Planificacion_Tareas
         Else
             PanelActivo.Visible = True
         End If
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.DataGridView2.Select()
+        SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
+#Region "Buscar la planificacion"
+
+
+
+
+        Dim adaptador As New SqlDataAdapter("select*from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
+        Dim dataS As New DataSet
+        'MsgBox(adaptador.SelectCommand.CommandText)
+        adaptador.Fill(dataS, "Shutdowns")
+
+        ' datagr.DataSource = dataS.Tables("Shutdowns")
+        If dataS.Tables("Shutdowns").Rows.Count > 0 Then
+
+
+            MsgBox("Mayor a 0 hay datos ")
+        Else
+
+            MsgBox("Es menor a 0 no hay datos")
+        End If
+#End Region
     End Sub
 End Class
