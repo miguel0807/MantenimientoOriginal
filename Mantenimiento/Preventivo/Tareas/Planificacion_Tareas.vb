@@ -338,17 +338,37 @@ Public Class Planificacion_Tareas
 
 
 
-#Region "Insertar en la lista de equipos la informacion del nuevo equipo"
-                            Dim adaptador3 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
-                            conectar()
-                            'MsgBox(adaptador1.CommandText)
 
-                            adaptador3.ExecuteNonQuery()
-                            desconectar()
+
+                            Dim adaptador5 As New SqlDataAdapter("select*from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
+                            Dim dataS5 As New DataSet
+                            'MsgBox(adaptador.SelectCommand.CommandText)
+                            adaptador5.Fill(dataS5, "Shutdowns")
+
+                            ' datagr.DataSource = dataS.Tables("Shutdowns")
+                            If dataS5.Tables("Shutdowns").Rows.Count > 0 Then
+
+
+                                MsgBox("Habian datos cargados en el equipo " & SQLEtiqueta & "")
+
+
+                            Else
+
+
+#Region "Insertar en la lista de equipos la informacion del nuevo equipo"
+                                Dim adaptador3 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
+                                conectar()
+                                'MsgBox(adaptador1.CommandText)
+
+                                adaptador3.ExecuteNonQuery()
+                                desconectar()
 
 
 
 #End Region
+                            End If
+
+
                         Next
 
                     Next
