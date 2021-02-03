@@ -278,10 +278,11 @@ Public Class Planificacion_Tareas
         If CheckBox1.Checked = True Then
             txtEtiqueta.Enabled = False
             Tareas.Visible = True
+            EliminarTareasbtn.Visible = True
             Crear.Visible = False
             TabPage1.Parent = Nothing
-            TabPage2.Parent = TabControl1
             TabPage3.Parent = Nothing
+            TabPage2.Parent = TabControl1
 
             ModoClase.Visible = True
             DataGridView1.DataSource = Nothing
@@ -291,11 +292,12 @@ Public Class Planificacion_Tareas
         Else
             txtEtiqueta.Enabled = True
             Tareas.Visible = False
+            EliminarTareasbtn.Visible = False
             Crear.Visible = True
 
             TabPage1.Parent = TabControl1
-            TabPage2.Parent = TabControl1
             TabPage3.Parent = TabControl1
+            TabPage2.Parent = TabControl1
             ModoClase.Visible = False
             DataGridView1.DataSource = Nothing
             DataGridView2.DataSource = Nothing
@@ -399,28 +401,101 @@ Public Class Planificacion_Tareas
         End If
     End Sub
 
-    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.DataGridView2.Select()
-        SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
-#Region "Buscar la planificacion"
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles EliminarTareasbtn.Click
+        If DataGridView2.Rows.Count = 0 Then
+            MessageBox.Show("No hay datos para agregar ", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-
-
-
-        Dim adaptador As New SqlDataAdapter("select*from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
-        Dim dataS As New DataSet
-        'MsgBox(adaptador.SelectCommand.CommandText)
-        adaptador.Fill(dataS, "Shutdowns")
-
-        ' datagr.DataSource = dataS.Tables("Shutdowns")
-        If dataS.Tables("Shutdowns").Rows.Count > 0 Then
-
-
-            MsgBox("Mayor a 0 hay datos ")
         Else
+            Dim msgvalue As Integer
 
-            MsgBox("Es menor a 0 no hay datos")
-        End If
+            msgvalue = MsgBox("Está seguro de Eliminar en el mes de " & SQLMes & ", el año " & SQLAño & " y la clase " & txtClase.Text & " la lista de tareas?", vbInformation + vbYesNo, "Mensaje de Alerta")
+
+            Select Case msgvalue
+
+                Case 6 'Yes
+
+                    Me.DataGridView2.Select()
+                    SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
+
+
+                    Dim adaptador As New SqlDataAdapter("select*from Lista_Equipos where Codigo=" & clasecodigo & " ", cn)
+                    Dim dtDatos As DataTable = New DataTable
+                    adaptador.Fill(dtDatos)
+                    For i As Integer = 0 To dtDatos.Rows.Count - 1
+                        SQLEtiqueta = (dtDatos.Rows(i)("Etiqueta"))
+                        ' MsgBox(dtDatos.Rows(i)("Etiqueta"))
+
+
+                        Dim adaptador1 As New SqlDataAdapter("select*from Caracteristicas_Tareas where convert(char,Equipo)='" & CboClase.Text & "'  ", cn)
+                        Dim dtDatos1 As DataTable = New DataTable
+                        adaptador1.Fill(dtDatos1)
+                        For w As Integer = 0 To dtDatos1.Rows.Count - 1
+                            SQLCodTarea = (dtDatos1.Rows(w)("CodTarea"))
+                            'MsgBox(dtDatos1.Rows(w)("CodTarea"))
+
+
+
+
+
+                            Dim adaptador5 As New SqlDataAdapter("select*from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
+                            Dim dataS5 As New DataSet
+                            'MsgBox(adaptador.SelectCommand.CommandText)
+                            adaptador5.Fill(dataS5, "Shutdowns")
+
+                            ' datagr.DataSource = dataS.Tables("Shutdowns")
+                            If dataS5.Tables("Shutdowns").Rows.Count > 0 Then
+
+
+                                MsgBox("Habian datos cargados en el equipo " & SQLEtiqueta & " y se procedió a eliminarlo ")
+#Region "Eliminar en la lista de equipos la informacion del nuevo equipo"
+                                Dim adaptador3 As New SqlCommand("delete from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
+                                conectar()
+                                'TextBox1.Text = (adaptador3.CommandText)
+
+                                adaptador3.ExecuteNonQuery()
+                                desconectar()
+
+
+
 #End Region
+
+                            Else
+
+
+#Region "Eliminar en la lista de equipos la informacion del nuevo equipo"
+                                Dim adaptador3 As New SqlCommand("delete from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
+                                conectar()
+                                'MsgBox(adaptador3.CommandText)
+                                'TextBox1.Text = (adaptador3.CommandText)
+                                adaptador3.ExecuteNonQuery()
+                                desconectar()
+
+
+
+#End Region
+                            End If
+
+
+                        Next
+
+                    Next
+                    MsgBox("Tareas eliminadas con exito")
+                    ' SQLCodTarea
+
+                    '  SQLCodigo
+                    desconectar()
+
+
+
+                Case 7 'No
+
+
+
+            End Select
+
+
+
+        End If
     End Sub
+
 End Class

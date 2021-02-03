@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Planificacion_Tareas
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Planificacion_Tareas
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -37,13 +37,14 @@ Partial Class Planificacion_Tareas
         Me.Crear = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.EliminarTareasbtn = New System.Windows.Forms.Button()
+        Me.Tareas = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Tareas = New System.Windows.Forms.Button()
         Me.EquipoActivo = New System.Windows.Forms.Label()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.ClaseActivo = New System.Windows.Forms.Label()
@@ -52,14 +53,13 @@ Partial Class Planificacion_Tareas
         Me.MesActivo = New System.Windows.Forms.Label()
         Me.AñoActivo = New System.Windows.Forms.Label()
         Me.ModoClase = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage2.SuspendLayout()
         Me.PanelActivo.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -221,15 +221,52 @@ Partial Class Planificacion_Tareas
         '
         'TabControl1
         '
+        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.TabControl1.Location = New System.Drawing.Point(0, 259)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1136, 489)
         Me.TabControl1.TabIndex = 65
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage2.Controls.Add(Me.EliminarTareasbtn)
+        Me.TabPage2.Controls.Add(Me.Tareas)
+        Me.TabPage2.Controls.Add(Me.Crear)
+        Me.TabPage2.Controls.Add(Me.DataGridView2)
+        Me.TabPage2.Controls.Add(Me.Label4)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1128, 460)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Lista de tareas"
+        '
+        'EliminarTareasbtn
+        '
+        Me.EliminarTareasbtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EliminarTareasbtn.Location = New System.Drawing.Point(548, 369)
+        Me.EliminarTareasbtn.Name = "EliminarTareasbtn"
+        Me.EliminarTareasbtn.Size = New System.Drawing.Size(211, 72)
+        Me.EliminarTareasbtn.TabIndex = 62
+        Me.EliminarTareasbtn.Text = "Eliminar todas las tareas"
+        Me.EliminarTareasbtn.UseVisualStyleBackColor = True
+        Me.EliminarTareasbtn.Visible = False
+        '
+        'Tareas
+        '
+        Me.Tareas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tareas.Location = New System.Drawing.Point(331, 369)
+        Me.Tareas.Name = "Tareas"
+        Me.Tareas.Size = New System.Drawing.Size(211, 72)
+        Me.Tareas.TabIndex = 61
+        Me.Tareas.Text = "Agregar todas las tareas"
+        Me.Tareas.UseVisualStyleBackColor = True
+        Me.Tareas.Visible = False
         '
         'TabPage1
         '
@@ -293,31 +330,6 @@ Partial Class Planificacion_Tareas
         Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DataGridView3.Size = New System.Drawing.Size(983, 295)
         Me.DataGridView3.TabIndex = 64
-        '
-        'TabPage2
-        '
-        Me.TabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TabPage2.Controls.Add(Me.Tareas)
-        Me.TabPage2.Controls.Add(Me.Crear)
-        Me.TabPage2.Controls.Add(Me.DataGridView2)
-        Me.TabPage2.Controls.Add(Me.Label4)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1128, 460)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Lista de tareas"
-        '
-        'Tareas
-        '
-        Me.Tareas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tareas.Location = New System.Drawing.Point(331, 369)
-        Me.Tareas.Name = "Tareas"
-        Me.Tareas.Size = New System.Drawing.Size(211, 72)
-        Me.Tareas.TabIndex = 61
-        Me.Tareas.Text = "Agregar todas las tareas"
-        Me.Tareas.UseVisualStyleBackColor = True
-        Me.Tareas.Visible = False
         '
         'EquipoActivo
         '
@@ -399,19 +411,10 @@ Partial Class Planificacion_Tareas
         Me.ModoClase.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.ModoClase.Location = New System.Drawing.Point(4, 222)
         Me.ModoClase.Name = "ModoClase"
-        Me.ModoClase.Size = New System.Drawing.Size(341, 41)
+        Me.ModoClase.Size = New System.Drawing.Size(328, 40)
         Me.ModoClase.TabIndex = 71
         Me.ModoClase.Text = "Modo Clase Activado"
         Me.ModoClase.Visible = False
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(160, 154)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(96, 35)
-        Me.Button3.TabIndex = 72
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'Planificacion_Tareas
         '
@@ -419,7 +422,6 @@ Partial Class Planificacion_Tareas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1136, 748)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.ModoClase)
         Me.Controls.Add(Me.PanelActivo)
         Me.Controls.Add(Me.Button4)
@@ -439,13 +441,13 @@ Partial Class Planificacion_Tareas
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.PanelActivo.ResumeLayout(False)
         Me.PanelActivo.PerformLayout()
         Me.ResumeLayout(False)
@@ -482,5 +484,5 @@ Partial Class Planificacion_Tareas
     Friend WithEvents MesActivo As Label
     Friend WithEvents AñoActivo As Label
     Friend WithEvents ModoClase As Label
-    Friend WithEvents Button3 As Button
+    Friend WithEvents EliminarTareasbtn As Button
 End Class
