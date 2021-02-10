@@ -87,23 +87,9 @@ Public Class Registro_Preventivo
 
 
     Private Sub Etiqueta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Etiqueta.SelectedIndexChanged
-        '#Region "Verificar etiquetas"
-        '        'En el parentesis entre & & se coloca cual valor se usara para la busqueda
-        '        Dim adaptador As New SqlDataAdapter("select*from Historial_Equipos where convert(char,etiqueta)='" & Etiqueta.Text & "' and Año=" & Fecha.SelectionStart.Year.ToString & " and convert(char,Mes)='" & mes & "'", cn)
-        '        Dim ds As New DataSet
-        '        adaptador.Fill(ds, "Codigo")
 
-        '        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
-        '        If ds.Tables("Codigo").Rows.Count > 0 Then
-        '            Finalizado.Visible = False
 
-        '            Button1.Visible = False
 
-        '            '    cantidad_equipos = ds.Tables("datos").Rows(0).Item(2).ToString
-        '        Else
-        '            Finalizado.Visible = True
-
-        '            Button1.Visible = True
 
         '#Region "Cargar datos en combobox de Responsable"
         '            Try
@@ -127,17 +113,17 @@ Public Class Registro_Preventivo
 
 #Region "Cargar datos en combobox de Responsable"
         Try
-            Dim cmd3 As String = "select*from Usuarios"
-            Dim da3 As New SqlDataAdapter(cmd3, cn)
-            Dim ds3 As New DataSet
-            da3.Fill(ds3)
-            With Me.Responsable
-                Me.Responsable.DataSource = ds3.Tables(0)
-                Me.Responsable.DisplayMember = "Nombre"
-            End With
-            cn.Close()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+                Dim cmd3 As String = "select*from Usuarios"
+                Dim da3 As New SqlDataAdapter(cmd3, cn)
+                Dim ds3 As New DataSet
+                da3.Fill(ds3)
+                With Me.Responsable
+                    Me.Responsable.DataSource = ds3.Tables(0)
+                    Me.Responsable.DisplayMember = "Nombre"
+                End With
+                cn.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
         End Try
 #End Region
 
@@ -153,6 +139,24 @@ Public Class Registro_Preventivo
         labe1 = Label7
         CargarPendientesTareas()
         verficarEstado()
+
+        'En el parentesis entre & & se coloca cual valor se usara para la busqueda
+        Dim adaptador As New SqlDataAdapter("select*from Historial_Equipos where convert(char,etiqueta)='" & Etiqueta.Text & "' and Año=" & Fecha.SelectionStart.Year.ToString & " and convert(char,Mes)='" & mes & "'", cn)
+        Dim ds As New DataSet
+        adaptador.Fill(ds, "Codigo")
+
+        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
+        If ds.Tables("Codigo").Rows.Count > 0 Then
+            Finalizado.Visible = False
+
+            Button1.Visible = False
+
+            '    cantidad_equipos = ds.Tables("datos").Rows(0).Item(2).ToString
+        Else
+            Finalizado.Visible = True
+
+            Button1.Visible = True
+        End If
     End Sub
 
     Private Sub Clase_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Clase.SelectedIndexChanged

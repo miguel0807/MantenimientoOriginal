@@ -38,7 +38,7 @@ Public Class Planificacion_Tareas
         If CheckBox1.Checked = True Then
 
 #Region "Cargar lista de tareas"
-
+            TabControl1.SelectedTab = TabPage1
             Me.DataGridView2.Select()
             datagr = DataGridView2
             labe1 = Label4
@@ -60,7 +60,7 @@ Public Class Planificacion_Tareas
 
 
 #Region "Cargar lista de tareas"
-
+            TabControl1.SelectedTab = TabPage1
             Me.DataGridView2.Select()
             datagr = DataGridView2
             labe1 = Label4
@@ -69,6 +69,7 @@ Public Class Planificacion_Tareas
 #End Region
 
 #Region "Cargar tareas activas"
+            TabControl1.SelectedTab = TabPage2
             Me.DataGridView1.Select()
             datagr = DataGridView1
             labe1 = Label5
@@ -76,9 +77,11 @@ Public Class Planificacion_Tareas
 #End Region
 
 #Region "Cargar tareas realizadas"
+            TabControl1.SelectedTab = TabPage3
             Me.DataGridView3.Select()
             datagr = DataGridView3
             labe1 = Label7
+
             CargarPendientesTareasPlanificacionRealizadas()
             EquipoActivo.Text = "Etiqueta: " & txtEtiqueta.Text
             ClaseActivo.Text = "Clase: " & txtClase.Text
@@ -90,9 +93,12 @@ Public Class Planificacion_Tareas
 
         End If
 
+        If CheckBox1.Checked = True Then
 
-
-
+            TabControl1.SelectedTab = TabPage1
+        Else
+            TabControl1.SelectedTab = TabPage2
+        End If
 
 
     End Sub
@@ -100,6 +106,7 @@ Public Class Planificacion_Tareas
 
 
     Private Sub Crear_Click(sender As Object, e As EventArgs) Handles Crear.Click
+        TabControl1.SelectedTab = TabPage1
         If DataGridView2.Rows.Count = 0 Then
             MessageBox.Show("No hay datos para agregar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -147,12 +154,13 @@ Public Class Planificacion_Tareas
                 'datagr = DataGridView1
                 'labe1 = Label5
                 'CargarPendientesTareas()
-
+                TabControl1.SelectedTab = TabPage2
                 Me.DataGridView1.Select()
                 datagr = DataGridView1
                 labe1 = Label5
                 CargarPendientesTareasPlanificacion()
 
+                TabControl1.SelectedTab = TabPage3
                 Me.DataGridView3.Select()
                 datagr = DataGridView3
                 labe1 = Label7
@@ -215,8 +223,11 @@ Public Class Planificacion_Tareas
 
         Else
 
-            Me.DataGridView2.Select()
-            SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
+            If CheckBox1.Checked = True Then
+            Else
+
+                Me.DataGridView2.Select()
+                SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
 
 
 #Region "Verificar si la tarea esta agregada"
@@ -224,53 +235,53 @@ Public Class Planificacion_Tareas
 
 
 
-            Dim adaptador As New SqlDataAdapter("select*from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
-            Dim dataS As New DataSet
-            'MsgBox(adaptador.SelectCommand.CommandText)
-            adaptador.Fill(dataS, "Shutdowns")
+                Dim adaptador As New SqlDataAdapter("select*from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
+                Dim dataS As New DataSet
+                'MsgBox(adaptador.SelectCommand.CommandText)
+                adaptador.Fill(dataS, "Shutdowns")
 
-            ' datagr.DataSource = dataS.Tables("Shutdowns")
+                ' datagr.DataSource = dataS.Tables("Shutdowns")
 
 #End Region
 
 
-            If dataS.Tables("Shutdowns").Rows.Count > 0 Then
+                If dataS.Tables("Shutdowns").Rows.Count > 0 Then
 
 
-                MsgBox("No se puede agregar la tarea, ya se encuentra registrada")
-            Else
+                    MsgBox("No se puede agregar la tarea, ya se encuentra registrada")
+                Else
 
 
 #Region "Insertar en la lista de equipos la informacion del nuevo equipo"
-                Dim adaptador1 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
-                conectar()
-                'MsgBox(adaptador1.CommandText)
+                    Dim adaptador1 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
+                    conectar()
+                    'MsgBox(adaptador1.CommandText)
 
-                adaptador1.ExecuteNonQuery()
-                desconectar()
-                MsgBox("Tarea agregada correctamente")
+                    adaptador1.ExecuteNonQuery()
+                    desconectar()
+                    MsgBox("Tarea agregada correctamente")
 
 
 #End Region
 
-                'Me.DataGridView1.Select()
-                'datagr = DataGridView1
-                'labe1 = Label5
-                'CargarPendientesTareas()
+                    'Me.DataGridView1.Select()
+                    'datagr = DataGridView1
+                    'labe1 = Label5
+                    'CargarPendientesTareas()
 
-                Me.DataGridView1.Select()
-                datagr = DataGridView1
-                labe1 = Label5
-                CargarPendientesTareasPlanificacion()
+                    Me.DataGridView1.Select()
+                    datagr = DataGridView1
+                    labe1 = Label5
+                    CargarPendientesTareasPlanificacion()
 
-                Me.DataGridView3.Select()
-                datagr = DataGridView3
-                labe1 = Label7
-                CargarPendientesTareasPlanificacionRealizadas()
+                    Me.DataGridView3.Select()
+                    datagr = DataGridView3
+                    labe1 = Label7
+                    CargarPendientesTareasPlanificacionRealizadas()
+                End If
+
+
             End If
-
-
-
         End If
     End Sub
 
@@ -280,9 +291,9 @@ Public Class Planificacion_Tareas
             Tareas.Visible = True
             EliminarTareasbtn.Visible = True
             Crear.Visible = False
-            TabPage1.Parent = Nothing
+            TabPage2.Parent = Nothing
             TabPage3.Parent = Nothing
-            TabPage2.Parent = TabControl1
+            TabPage1.Parent = TabControl1
 
             ModoClase.Visible = True
             DataGridView1.DataSource = Nothing
@@ -295,9 +306,9 @@ Public Class Planificacion_Tareas
             EliminarTareasbtn.Visible = False
             Crear.Visible = True
 
-            TabPage1.Parent = TabControl1
-            TabPage3.Parent = TabControl1
             TabPage2.Parent = TabControl1
+            TabPage3.Parent = TabControl1
+            TabPage1.Parent = TabControl1
             ModoClase.Visible = False
             DataGridView1.DataSource = Nothing
             DataGridView2.DataSource = Nothing
@@ -497,5 +508,6 @@ Public Class Planificacion_Tareas
 
         End If
     End Sub
+
 
 End Class

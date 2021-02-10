@@ -34,7 +34,6 @@ Partial Class Presentacion
         Me.PanelTareas = New System.Windows.Forms.Panel()
         Me.Button21 = New System.Windows.Forms.Button()
         Me.Button19 = New System.Windows.Forms.Button()
-        Me.Button20 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.PanelCreacion = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -209,7 +208,6 @@ Partial Class Presentacion
         Me.PanelTareas.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.PanelTareas.Controls.Add(Me.Button21)
         Me.PanelTareas.Controls.Add(Me.Button19)
-        Me.PanelTareas.Controls.Add(Me.Button20)
         Me.PanelTareas.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelTareas.Location = New System.Drawing.Point(0, 611)
         Me.PanelTareas.Name = "PanelTareas"
@@ -224,7 +222,7 @@ Partial Class Presentacion
         Me.Button21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button21.ForeColor = System.Drawing.Color.Silver
-        Me.Button21.Location = New System.Drawing.Point(0, 80)
+        Me.Button21.Location = New System.Drawing.Point(0, 40)
         Me.Button21.Name = "Button21"
         Me.Button21.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.Button21.Size = New System.Drawing.Size(229, 55)
@@ -241,7 +239,7 @@ Partial Class Presentacion
         Me.Button19.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button19.ForeColor = System.Drawing.Color.Silver
-        Me.Button19.Location = New System.Drawing.Point(0, 40)
+        Me.Button19.Location = New System.Drawing.Point(0, 0)
         Me.Button19.Name = "Button19"
         Me.Button19.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.Button19.Size = New System.Drawing.Size(229, 40)
@@ -249,23 +247,6 @@ Partial Class Presentacion
         Me.Button19.Text = "Planificacion de tareas"
         Me.Button19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button19.UseVisualStyleBackColor = True
-        '
-        'Button20
-        '
-        Me.Button20.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button20.FlatAppearance.BorderSize = 0
-        Me.Button20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.Button20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button20.ForeColor = System.Drawing.Color.Silver
-        Me.Button20.Location = New System.Drawing.Point(0, 0)
-        Me.Button20.Name = "Button20"
-        Me.Button20.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
-        Me.Button20.Size = New System.Drawing.Size(229, 40)
-        Me.Button20.TabIndex = 2
-        Me.Button20.Text = "Nueva Tarea"
-        Me.Button20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button20.UseVisualStyleBackColor = True
         '
         'Button18
         '
@@ -734,6 +715,5 @@ Partial Class Presentacion
     Friend WithEvents PanelTareas As Panel
     Private WithEvents Button21 As Button
     Private WithEvents Button19 As Button
-    Private WithEvents Button20 As Button
     Private WithEvents Button18 As Button
 End Class

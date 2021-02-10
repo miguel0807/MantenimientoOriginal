@@ -37,10 +37,10 @@ Partial Class Planificacion_Tareas
         Me.Crear = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.EliminarTareasbtn = New System.Windows.Forms.Button()
         Me.Tareas = New System.Windows.Forms.Button()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -56,8 +56,8 @@ Partial Class Planificacion_Tareas
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelActivo.SuspendLayout()
@@ -221,8 +221,8 @@ Partial Class Planificacion_Tareas
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.TabControl1.Location = New System.Drawing.Point(0, 259)
@@ -231,20 +231,20 @@ Partial Class Planificacion_Tareas
         Me.TabControl1.Size = New System.Drawing.Size(1136, 489)
         Me.TabControl1.TabIndex = 65
         '
-        'TabPage2
+        'TabPage1
         '
-        Me.TabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TabPage2.Controls.Add(Me.EliminarTareasbtn)
-        Me.TabPage2.Controls.Add(Me.Tareas)
-        Me.TabPage2.Controls.Add(Me.Crear)
-        Me.TabPage2.Controls.Add(Me.DataGridView2)
-        Me.TabPage2.Controls.Add(Me.Label4)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1128, 460)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Lista de tareas"
+        Me.TabPage1.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage1.Controls.Add(Me.EliminarTareasbtn)
+        Me.TabPage1.Controls.Add(Me.Tareas)
+        Me.TabPage1.Controls.Add(Me.Crear)
+        Me.TabPage1.Controls.Add(Me.DataGridView2)
+        Me.TabPage1.Controls.Add(Me.Label4)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1128, 460)
+        Me.TabPage1.TabIndex = 1
+        Me.TabPage1.Text = "Lista de tareas"
         '
         'EliminarTareasbtn
         '
@@ -268,18 +268,18 @@ Partial Class Planificacion_Tareas
         Me.Tareas.UseVisualStyleBackColor = True
         Me.Tareas.Visible = False
         '
-        'TabPage1
+        'TabPage2
         '
-        Me.TabPage1.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TabPage1.Controls.Add(Me.Button1)
-        Me.TabPage1.Controls.Add(Me.Label5)
-        Me.TabPage1.Controls.Add(Me.DataGridView1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1128, 460)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Tareas activas"
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage2.Controls.Add(Me.Button1)
+        Me.TabPage2.Controls.Add(Me.Label5)
+        Me.TabPage2.Controls.Add(Me.DataGridView1)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1128, 460)
+        Me.TabPage2.TabIndex = 0
+        Me.TabPage2.Text = "Tareas activas"
         '
         'Button1
         '
@@ -437,14 +437,14 @@ Partial Class Planificacion_Tareas
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Planificacion_Tareas"
-        Me.Text = "Planificacion_Tareas"
+        Me.Text = "s"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -469,9 +469,9 @@ Partial Class Planificacion_Tareas
     Friend WithEvents Crear As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents Button1 As Button
     Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents Label7 As Label
     Friend WithEvents DataGridView3 As DataGridView
