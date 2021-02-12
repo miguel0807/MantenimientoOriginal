@@ -673,8 +673,9 @@ Module MO_Tareas
 
         'El item selecciona de cual columna de la base de datos se conectara y row es la fila
         If dataS.Tables("Shutdowns").Rows.Count > 0 Then
+            btnFinalizado.Visible = False
 
-
+            btnContinuar.Visible = False
         Else
             btnFinalizado.Visible = True
 

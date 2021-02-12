@@ -138,15 +138,15 @@ Public Class Registro_Preventivo
         datagr = DataGridView1
         labe1 = Label7
         CargarPendientesTareas()
-        verficarEstado()
 
+#Region "Activa o desactiva los botones si ya se registro en las tareas"
         'En el parentesis entre & & se coloca cual valor se usara para la busqueda
         Dim adaptador As New SqlDataAdapter("select*from Historial_Equipos where convert(char,etiqueta)='" & Etiqueta.Text & "' and Año=" & Fecha.SelectionStart.Year.ToString & " and convert(char,Mes)='" & mes & "'", cn)
         Dim ds As New DataSet
         adaptador.Fill(ds, "Codigo")
-
+        ' MsgBox(adaptador.SelectCommand.CommandText)
         'El item selecciona de cual columna de la base de datos se conectara y row es la fila
-        If ds.Tables("Codigo").Rows.Count > 0 Then
+        If ds.Tables("Codigo").Rows.Count = 1 Then
             Finalizado.Visible = False
 
             Button1.Visible = False
@@ -157,6 +157,28 @@ Public Class Registro_Preventivo
 
             Button1.Visible = True
         End If
+
+#End Region
+
+        verficarEstado()
+#Region "Desactiva los botones si ya se encuentra registrado"
+        'En el parentesis entre & & se coloca cual valor se usara para la busqueda
+        Dim adaptador1 As New SqlDataAdapter("select*from Historial_Equipos where convert(char,etiqueta)='" & Etiqueta.Text & "' and Año=" & Fecha.SelectionStart.Year.ToString & " and convert(char,Mes)='" & mes & "'", cn)
+        Dim ds1 As New DataSet
+        adaptador1.Fill(ds1, "Codigo")
+        ' MsgBox(adaptador.SelectCommand.CommandText)
+        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
+        If ds1.Tables("Codigo").Rows.Count = 1 Then
+            Finalizado.Visible = False
+
+            Button1.Visible = False
+
+            '    cantidad_equipos = ds.Tables("datos").Rows(0).Item(2).ToString
+        Else
+
+        End If
+
+#End Region
     End Sub
 
     Private Sub Clase_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Clase.SelectedIndexChanged
@@ -288,6 +310,11 @@ Public Class Registro_Preventivo
 
         desconectar()
 
+
+
+
+
+
 #Region "Rebajar de conteo_equipos el mantenimiento del equipo"
         Try
             conectar()
@@ -340,6 +367,67 @@ Public Class Registro_Preventivo
         Comentarios.Text = "N/A"
         Etiqueta.Focus()
 
+
+#Region "Actualizar combobox"
+
+
+#Region "Cargar datos en combobox de Clase"
+
+        mes = Fecha.SelectionStart.Month.ToString
+        Select Case mes
+            Case "1"
+                mes = "Enero"
+            Case "2"
+                mes = "Febrero"
+            Case "3"
+                mes = "Marzo"
+            Case "4"
+                mes = "Abril"
+            Case "5"
+                mes = "Mayo"
+            Case "6"
+                mes = "Junio"
+            Case "7"
+                mes = "Julio"
+            Case "8"
+                mes = "Agosto"
+            Case "9"
+                mes = "Septiembre"
+            Case "10"
+                mes = "Octubre"
+            Case "11"
+                mes = "Noviembre"
+            Case "12"
+                mes = "Diciembre"
+
+        End Select
+
+        Try
+            Dim cmd As String = "select carac.Clase from ConteoPlanificacion_Equipos conteo, Caracteristicas_Equipo carac where año=" & Fecha.SelectionStart.Year.ToString & "  and " & mes & " <5000 and " & mes & ">0 and conteo.Codigo=carac.Codigo"
+
+            Dim da As New SqlDataAdapter(cmd, cn)
+            Dim ds As New DataSet
+            da.Fill(ds)
+            With Me.Clase
+                Me.Clase.DataSource = ds.Tables(0)
+                Me.Clase.DisplayMember = "Clase"
+            End With
+            cn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+#End Region
+        If Clase.Text = "" Then
+            Etiqueta.DataSource = Nothing
+            Responsable.DataSource = Nothing
+
+        End If
+
+
+
+#End Region
     End Sub
 
 
