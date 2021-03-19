@@ -148,13 +148,13 @@ Public Class Registro_Preventivo
         'El item selecciona de cual columna de la base de datos se conectara y row es la fila
         If ds.Tables("Codigo").Rows.Count = 1 Then
             Finalizado.Visible = False
-
+            '  MsgBox("1")
             Button1.Visible = False
 
             '    cantidad_equipos = ds.Tables("datos").Rows(0).Item(2).ToString
         Else
             Finalizado.Visible = True
-
+            ' MsgBox("2")
             Button1.Visible = True
         End If
 
