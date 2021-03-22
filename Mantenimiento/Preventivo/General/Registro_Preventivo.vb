@@ -63,6 +63,7 @@ Public Class Registro_Preventivo
             Responsable.DataSource = Nothing
 
         End If
+        VerificarBotones()
 
 
     End Sub
@@ -77,8 +78,8 @@ Public Class Registro_Preventivo
         SQLComentario = Comentarios
         SQLResponsable = Responsable
 
-
-        btnContinuar = Button1
+        cboClase2 = Clase
+        btnContinuar = FinalizadoContinuar
         btnFinalizado = Finalizado
         calendario = Fecha
     End Sub
@@ -113,17 +114,17 @@ Public Class Registro_Preventivo
 
 #Region "Cargar datos en combobox de Responsable"
         Try
-                Dim cmd3 As String = "select*from Usuarios"
-                Dim da3 As New SqlDataAdapter(cmd3, cn)
-                Dim ds3 As New DataSet
-                da3.Fill(ds3)
-                With Me.Responsable
-                    Me.Responsable.DataSource = ds3.Tables(0)
-                    Me.Responsable.DisplayMember = "Nombre"
-                End With
-                cn.Close()
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
+            Dim cmd3 As String = "select*from Usuarios"
+            Dim da3 As New SqlDataAdapter(cmd3, cn)
+            Dim ds3 As New DataSet
+            da3.Fill(ds3)
+            With Me.Responsable
+                Me.Responsable.DataSource = ds3.Tables(0)
+                Me.Responsable.DisplayMember = "Nombre"
+            End With
+            cn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
         End Try
 #End Region
 
@@ -149,13 +150,13 @@ Public Class Registro_Preventivo
         If ds.Tables("Codigo").Rows.Count = 1 Then
             Finalizado.Visible = False
             '  MsgBox("1")
-            Button1.Visible = False
+            FinalizadoContinuar.Visible = False
 
             '    cantidad_equipos = ds.Tables("datos").Rows(0).Item(2).ToString
         Else
             Finalizado.Visible = True
             ' MsgBox("2")
-            Button1.Visible = True
+            FinalizadoContinuar.Visible = True
         End If
 
 #End Region
@@ -171,7 +172,7 @@ Public Class Registro_Preventivo
         If ds1.Tables("Codigo").Rows.Count = 1 Then
             Finalizado.Visible = False
 
-            Button1.Visible = False
+            FinalizadoContinuar.Visible = False
 
             '    cantidad_equipos = ds.Tables("datos").Rows(0).Item(2).ToString
         Else
@@ -291,7 +292,7 @@ Public Class Registro_Preventivo
 #End Region
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles FinalizadoContinuar.Click
         If Clase.Text = "" Or Etiqueta.Text = "" Or Responsable.Text = "" Or Comentarios.Text = "" Then
             MsgBox("Complete todos los campos para registrar preventivo")
             Exit Sub
@@ -356,7 +357,7 @@ Public Class Registro_Preventivo
             MsgBox("Se registro correctamente")
 
             Finalizado.Visible = False
-            Button1.Visible = False
+            FinalizadoContinuar.Visible = False
 
         Catch ex As Exception
             MsgBox(ex.Message)

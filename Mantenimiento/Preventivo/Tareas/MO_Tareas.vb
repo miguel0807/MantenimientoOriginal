@@ -26,6 +26,9 @@ Module MO_Tareas
     Public btnFinalizado As Button
     Public btnContinuar As Button
 
+    Public cboClase2 As ComboBox
+
+
     Public calendario As MonthCalendar
 
 
@@ -703,5 +706,14 @@ Module MO_Tareas
 #End Region
     End Sub
 
+    Sub VerificarBotones()
+        If cboClase2.Text = "" Then
 
+            btnFinalizado.Visible = False
+            btnContinuar.Visible = False
+
+
+
+        End If
+    End Sub
 End Module

@@ -33,7 +33,7 @@ Partial Class Registro_Preventivo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.FinalizadoContinuar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -149,16 +149,16 @@ Partial Class Registro_Preventivo
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Clase"
         '
-        'Button1
+        'FinalizadoContinuar
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(685, 552)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(173, 88)
-        Me.Button1.TabIndex = 37
-        Me.Button1.Text = "Finalizado y Continuar"
-        Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
+        Me.FinalizadoContinuar.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FinalizadoContinuar.Location = New System.Drawing.Point(685, 552)
+        Me.FinalizadoContinuar.Name = "FinalizadoContinuar"
+        Me.FinalizadoContinuar.Size = New System.Drawing.Size(173, 88)
+        Me.FinalizadoContinuar.TabIndex = 37
+        Me.FinalizadoContinuar.Text = "Finalizado y Continuar"
+        Me.FinalizadoContinuar.UseVisualStyleBackColor = True
+        Me.FinalizadoContinuar.Visible = False
         '
         'Label5
         '
@@ -207,7 +207,7 @@ Partial Class Registro_Preventivo
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.FinalizadoContinuar)
         Me.Controls.Add(Me.Comentarios)
         Me.Controls.Add(Me.Fecha)
         Me.Controls.Add(Me.Clase)
@@ -238,7 +238,7 @@ Partial Class Registro_Preventivo
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents FinalizadoContinuar As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents DataGridView1 As DataGridView
