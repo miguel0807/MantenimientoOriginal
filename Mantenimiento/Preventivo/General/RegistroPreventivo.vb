@@ -1,13 +1,13 @@
 ﻿Public Class RegistroPreventivo
     Private Sub RegistroPreventivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        habilitaCerrarFormulario()
+        habilitaCerrarFormulario() 'Habilita el formulario para ser cerrado desde un boton en el form presentacion
+
 
 
         'Declaracion de item del formulario 
         formularioAbierto = Me
 
         mtcFecha = Fecha
-
 
         cboClase3 = Clase
         cboEtiqueta2 = Etiqueta
@@ -18,10 +18,11 @@
         btnSalirContinuar = FinalizadoContinuar
 
         dtgTareas = datagr
+        'Declaracion de item del formulario 
 
     End Sub
 
     Private Sub Fecha_DateChanged(sender As Object, e As DateRangeEventArgs) Handles Fecha.DateChanged
-        Cargarclase()
+        Cargarclase() 'Carga la lista de equipos para la fecha seleccionada
     End Sub
 End Class
