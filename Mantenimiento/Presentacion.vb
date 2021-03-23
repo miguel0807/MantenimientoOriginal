@@ -116,7 +116,7 @@ Public Class Presentacion
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        openChildForm(New Registro_Preventivo())
+        openChildForm(New RegistroPreventivo())
         hideSubmenu()
     End Sub
 

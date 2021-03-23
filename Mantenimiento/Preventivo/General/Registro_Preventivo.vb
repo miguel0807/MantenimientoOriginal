@@ -10,54 +10,7 @@ Public Class Registro_Preventivo
     Private Sub Fecha_DateChanged(sender As Object, e As DateRangeEventArgs) Handles Fecha.DateChanged
 
 
-#Region "Cargar datos en combobox de Clase"
 
-        mes = Fecha.SelectionStart.Month.ToString
-        Select Case mes
-            Case "1"
-                mes = "Enero"
-            Case "2"
-                mes = "Febrero"
-            Case "3"
-                mes = "Marzo"
-            Case "4"
-                mes = "Abril"
-            Case "5"
-                mes = "Mayo"
-            Case "6"
-                mes = "Junio"
-            Case "7"
-                mes = "Julio"
-            Case "8"
-                mes = "Agosto"
-            Case "9"
-                mes = "Septiembre"
-            Case "10"
-                mes = "Octubre"
-            Case "11"
-                mes = "Noviembre"
-            Case "12"
-                mes = "Diciembre"
-
-        End Select
-
-        Try
-            Dim cmd As String = "select carac.Clase from ConteoPlanificacion_Equipos conteo, Caracteristicas_Equipo carac where año=" & Fecha.SelectionStart.Year.ToString & "  and " & mes & " <5000 and " & mes & ">0 and conteo.Codigo=carac.Codigo"
-
-            Dim da As New SqlDataAdapter(cmd, cn)
-            Dim ds As New DataSet
-            da.Fill(ds)
-            With Me.Clase
-                Me.Clase.DataSource = ds.Tables(0)
-                Me.Clase.DisplayMember = "Clase"
-            End With
-            cn.Close()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-
-
-#End Region
         If Clase.Text = "" Then
             Etiqueta.DataSource = Nothing
             Responsable.DataSource = Nothing

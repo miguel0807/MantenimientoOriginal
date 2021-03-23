@@ -116,6 +116,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Preventivo\General\RegistroPreventivo.Designer.vb">
+      <DependentUpon>RegistroPreventivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Preventivo\General\RegistroPreventivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Preventivo\Tareas\Planificacion_Tareas.Designer.vb">
       <DependentUpon>Planificacion_Tareas.vb</DependentUpon>
     </Compile>
@@ -264,10 +270,14 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Preventivo\Tareas\MO_Tareas.vb" />
+    <Compile Include="Preventivo\Tareas\Registro_preventivo.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preventivo\General\RegistroPreventivo.resx">
+      <DependentUpon>RegistroPreventivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\Tareas\Planificacion_Tareas.resx">
       <DependentUpon>Planificacion_Tareas.vb</DependentUpon>
