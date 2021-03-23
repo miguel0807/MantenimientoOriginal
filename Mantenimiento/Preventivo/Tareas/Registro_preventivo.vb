@@ -10,8 +10,8 @@ Module Registro_preventivoModulo
     Public mtcFecha As MonthCalendar
 
 
-    Public cboClase As ComboBox
-    Public cboEtiqueta As ComboBox
+    Public cboClase3 As ComboBox
+    Public cboEtiqueta2 As ComboBox
     Public cboResponsable As ComboBox
 
     Public txtComentarios As TextBox
@@ -57,20 +57,18 @@ Module Registro_preventivoModulo
 
         End Select
 
-        'Try
-        '    Dim cmd As String = "select carac.Clase from ConteoPlanificacion_Equipos conteo, Caracteristicas_Equipo carac where año=" & Fecha.SelectionStart.Year.ToString & "  and " & mesRegistro & " <5000 and " & mesRegistro & ">0 and conteo.Codigo=carac.Codigo"
 
-        '    Dim da As New SqlDataAdapter(cmd, cn)
-        '    Dim ds As New DataSet
-        '    da.Fill(ds)
-        '    With Me.Clase
-        '        Me.Clase.DataSource = ds.Tables(0)
-        '        Me.Clase.DisplayMember = "Clase"
-        '    End With
-        '    cn.Close()
-        'Catch ex As Exception
-        '    MessageBox.Show(ex.Message)
-        'End Try
+        Dim cmd As String = "select carac.Clase from ConteoPlanificacion_Equipos conteo, Caracteristicas_Equipo carac where año=" & mtcFecha.SelectionStart.Year.ToString & "  and " & mesRegistro & " <5000 and " & mesRegistro & ">0 and conteo.Codigo=carac.Codigo"
+
+        Dim da As New SqlDataAdapter(cmd, cn)
+        Dim ds As New DataSet
+        da.Fill(ds)
+        With cboClase3
+            cboClase3.DataSource = ds.Tables(0)
+            cboClase3.DisplayMember = "Clase"
+        End With
+        cn.Close()
+
 
 
 #End Region
