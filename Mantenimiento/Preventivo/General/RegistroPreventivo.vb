@@ -25,4 +25,9 @@
     Private Sub Fecha_DateChanged(sender As Object, e As DateRangeEventArgs) Handles Fecha.DateChanged
         Cargarclase() 'Carga la lista de equipos para la fecha seleccionada
     End Sub
+
+    Private Sub Clase_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Clase.SelectedIndexChanged
+        CargarEtiqueta()
+
+    End Sub
 End Class

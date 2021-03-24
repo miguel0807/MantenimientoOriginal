@@ -21,6 +21,8 @@ Module Registro_preventivoModulo
 
     Public dtgTareas As DataGridView
 
+    Public CodigoClase As Integer
+
 
 
 
@@ -70,6 +72,66 @@ Module Registro_preventivoModulo
         cn.Close()
 
 
+
+#End Region
+    End Sub
+
+    Sub CargarEtiqueta()
+#Region "Verificar etiquetas"
+        'En el parentesis entre & & se coloca cual valor se usara para la busqueda
+        Dim adaptador As New SqlDataAdapter("select*from Caracteristicas_Equipo where CONVERT(char,Clase)='" & cboClase3.Text & "'", cn)
+        Dim ds As New DataSet
+        adaptador.Fill(ds, "Codigo")
+
+        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
+        If ds.Tables("Codigo").Rows.Count > 0 Then
+
+            CodigoClase = ds.Tables("Codigo").Rows(0).Item(0).ToString
+
+
+        End If
+#End Region
+
+#Region "Crear array con lista de equipos"
+        Dim cmd5 As String = "select*from Lista_Equipos where Codigo=" & CodigoClase & ""
+        Dim da5 As New SqlDataAdapter(cmd5, cn)
+        Dim dt5 As New DataTable()
+        da5.Fill(dt5)
+
+        Dim listaEquipos As String() = dt5.Rows.OfType(Of DataRow)().[Select](Function(x) x(1).ToString()).ToArray()
+
+        'For Each elemento As String In listaEquipos
+        '    MessageBox.Show(elemento)
+        'Next
+#End Region
+
+#Region "Crear array con equipos registrados en historial"
+        Dim cmd3 As String = "select*from Historial_Equipos where Codigo=8 and CONVERT(char,Mes)='Marzo' and Año=2021"
+        Dim da3 As New SqlDataAdapter(cmd3, cn)
+        Dim dt3 As New DataTable()
+        da3.Fill(dt3)
+
+        Dim listaRegistrados As String() = dt3.Rows.OfType(Of DataRow)().[Select](Function(x) x(1).ToString()).ToArray()
+
+        'For Each elemento As String In listaRegistrados
+        '    MessageBox.Show("Lista registrados y el equipo es:" + elemento)
+        'Next
+#End Region
+        Dim resultadoFinal As String
+
+
+#Region "Cargar datos en combobox de Etiqueta"
+
+        Dim cmd1 As String = "select*from Lista_Equipos where Codigo=" & CodigoClase & ""
+        Dim da1 As New SqlDataAdapter(cmd1, cn)
+        Dim ds1 As New DataSet
+        da1.Fill(ds1)
+        With cboResponsable
+            'cboEtiqueta2.DataSource = ds1.Tables(0)
+            'cboEtiqueta2.DisplayMember = "Etiqueta"
+
+        End With
+        cn.Close()
 
 #End Region
     End Sub
