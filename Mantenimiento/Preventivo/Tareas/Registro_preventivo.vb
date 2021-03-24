@@ -15,6 +15,8 @@ Module Registro_preventivoModulo
     Public cboResponsable As ComboBox
 
     Public txtComentarios As TextBox
+    Public txtFinal As TextBox
+    Public txtEliminacion As TextBox
 
     Public btnSalir As Button
     Public btnSalirContinuar As Button
@@ -24,12 +26,31 @@ Module Registro_preventivoModulo
     Public CodigoClase As Integer
 
 
+    Dim mesRegistro As String
+
+    Sub CargarResponsable()
+#Region "Cargar datos en combobox de Responsable"
+
+        Dim cmd3 As String = "select*from Usuarios"
+            Dim da3 As New SqlDataAdapter(cmd3, cn)
+            Dim ds3 As New DataSet
+            da3.Fill(ds3)
+            With cboResponsable
+                cboResponsable.DataSource = ds3.Tables(0)
+                cboResponsable.DisplayMember = "Nombre"
+            End With
+            cn.Close()
+
+
+
+#End Region
+    End Sub
 
 
 
     Sub Cargarclase()
 #Region "Cargar datos en combobox de Clase"
-        Dim mesRegistro As String
+
         mesRegistro = mtcFecha.SelectionStart.Month.ToString
         Select Case mesRegistro
             Case "1"
@@ -77,7 +98,7 @@ Module Registro_preventivoModulo
     End Sub
 
     Sub CargarEtiqueta()
-#Region "Verificar etiquetas"
+#Region "Obtener # de Clase"
         'En el parentesis entre & & se coloca cual valor se usara para la busqueda
         Dim adaptador As New SqlDataAdapter("select*from Caracteristicas_Equipo where CONVERT(char,Clase)='" & cboClase3.Text & "'", cn)
         Dim ds As New DataSet
@@ -88,52 +109,74 @@ Module Registro_preventivoModulo
 
             CodigoClase = ds.Tables("Codigo").Rows(0).Item(0).ToString
 
-
         End If
 #End Region
 
-#Region "Crear array con lista de equipos"
+#Region "Crear lista con lista de equipos"
         Dim cmd5 As String = "select*from Lista_Equipos where Codigo=" & CodigoClase & ""
         Dim da5 As New SqlDataAdapter(cmd5, cn)
         Dim dt5 As New DataTable()
         da5.Fill(dt5)
 
-        Dim listaEquipos As String() = dt5.Rows.OfType(Of DataRow)().[Select](Function(x) x(1).ToString()).ToArray()
+        Dim arrayEquipos As String() = dt5.Rows.OfType(Of DataRow)().[Select](Function(x) x(1).ToString()).ToArray() 'Se crea array
 
-        'For Each elemento As String In listaEquipos
-        '    MessageBox.Show(elemento)
-        'Next
+        Dim listaEquipos As New List(Of String) 'Se crea lista manipulable
+        For Each elemento As String In arrayEquipos 'Se carga la lista con la informacion del array
+            listaEquipos.Add(elemento)
+        Next
+
 #End Region
 
-#Region "Crear array con equipos registrados en historial"
-        Dim cmd3 As String = "select*from Historial_Equipos where Codigo=8 and CONVERT(char,Mes)='Marzo' and Año=2021"
+#Region "Crear lista con equipos registrados en historial"
+        Dim cmd3 As String = "select*from Historial_Equipos where Codigo=" & CodigoClase & " and CONVERT(char,Mes)='" & mesRegistro & "' and Año=" & mtcFecha.SelectionStart.Year.ToString & ""
         Dim da3 As New SqlDataAdapter(cmd3, cn)
         Dim dt3 As New DataTable()
         da3.Fill(dt3)
 
-        Dim listaRegistrados As String() = dt3.Rows.OfType(Of DataRow)().[Select](Function(x) x(1).ToString()).ToArray()
+        'Se crea array
+        Dim arrayRegistrados As String() = dt3.Rows.OfType(Of DataRow)().[Select](Function(x) x(1).ToString()).ToArray()
+        Dim listaRegistrados As New List(Of String) 'Se crea lista manipulable
+        For Each elemento As String In arrayRegistrados 'Se carga lista con la informacacion del array
+            listaRegistrados.Add(elemento)
+        Next
 
-        'For Each elemento As String In listaRegistrados
-        '    MessageBox.Show("Lista registrados y el equipo es:" + elemento)
-        'Next
 #End Region
-        Dim resultadoFinal As String
 
+#Region "Se crea lista con los resultados finales"
 
-#Region "Cargar datos en combobox de Etiqueta"
+        Dim resultadoFinal = listaEquipos.Except(listaRegistrados) 'Se crea lista para guardar los resultados
 
-        Dim cmd1 As String = "select*from Lista_Equipos where Codigo=" & CodigoClase & ""
-        Dim da1 As New SqlDataAdapter(cmd1, cn)
-        Dim ds1 As New DataSet
-        da1.Fill(ds1)
-        With cboResponsable
-            'cboEtiqueta2.DataSource = ds1.Tables(0)
-            'cboEtiqueta2.DisplayMember = "Etiqueta"
+        Dim listaFinal As New List(Of String)
+        For Each elemento As String In resultadoFinal
+            listaFinal.Add(elemento)
+        Next
+#End Region
 
+#Region "Asignacion de lista final en combobox de etiqueta"
+        With cboEtiqueta2
+            cboEtiqueta2.DataSource = listaFinal
         End With
-        cn.Close()
-
 #End Region
+
+        'Puede borrarse
+        txtComentarios.Text = ""
+        For Each elemento As String In listaEquipos
+            txtComentarios.Text = txtComentarios.Text & vbCrLf & (elemento)
+        Next
+        'Puede borrarse
+
+        txtEliminacion.Text = ""
+        'Puede borrarse
+        For Each elemento As String In listaRegistrados
+            txtEliminacion.Text = txtEliminacion.Text & vbCrLf & (elemento)
+        Next
+        'Puede borrarse
+        txtFinal.Text = ""
+        For Each elemento As String In resultadoFinal
+            txtFinal.Text = txtFinal.Text & vbCrLf & (elemento)
+            ' MessageBox.Show("Resultado Final" + elemento)
+
+        Next
     End Sub
 
     Sub habilitaCerrarFormulario()

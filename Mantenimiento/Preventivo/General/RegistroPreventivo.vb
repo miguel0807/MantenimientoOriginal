@@ -13,12 +13,18 @@
         cboEtiqueta2 = Etiqueta
         cboResponsable = Responsable
         txtComentarios = Comentarios
+        txtFinal = TextBox1
+        txtEliminacion = TextBox2
 
         btnSalir = FinalizadoSalir
         btnSalirContinuar = FinalizadoContinuar
 
         dtgTareas = datagr
         'Declaracion de item del formulario 
+
+
+        'Declaracion de modulos 
+        CargarResponsable()
 
     End Sub
 
