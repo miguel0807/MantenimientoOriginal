@@ -25,6 +25,8 @@ Module Registro_preventivoModulo
 
     Public CodigoClase As Integer
 
+    Public lblCantidad As Label
+
 
     Dim mesRegistro As String
 
@@ -184,5 +186,81 @@ Module Registro_preventivoModulo
 
     End Sub
 
+    Sub CargarTareas()
 
+
+
+
+        conectar()
+
+        Dim conteo As String
+        conteo = 1
+
+
+#Region "Buscar la planificacion"
+        Dim adaptador As New SqlDataAdapter("Select carac.Tarea , hist.ConteoSuma, hist.Estado from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & CodigoClase & " and CONVERT(CHAR,hist.Etiqueta)='" & cboEtiqueta2.Text & "' and hist.Año=" & mtcFecha.SelectionStart.Year.ToString & " and convert(CHAR,hist.MES)='" & mesRegistro & "'and Estado=0 ", cn)
+        Dim dataS As New DataSet
+        adaptador.Fill(dataS, "Shutdowns")
+        dtgTareas.DataSource = dataS.Tables("Shutdowns")
+
+#End Region
+        'If dataS.Tables("Shutdowns").Rows.Count > 0 Then
+        '    btnFinalizado.Visible = False
+
+        '    btnContinuar.Visible = False
+
+        'Else
+
+        'End If
+
+
+
+#Region "Configuracion datagridview1"
+#Region "Formato de letra"
+
+        dtgTareas.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        dtgTareas.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        dtgTareas.RowTemplate.Height = 30
+#End Region
+#Region "Color de los titulos"
+        dtgTareas.ColumnHeadersDefaultCellStyle.BackColor = Color.Green
+        dtgTareas.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+#End Region
+#Region "Cambios de color celdas y alternadas"
+        dtgTareas.RowsDefaultCellStyle.BackColor = Color.White
+        dtgTareas.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Alineacion de titulos"
+        dtgTareas.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+        dtgTareas.RowHeadersVisible = False
+        dtgTareas.EnableHeadersVisualStyles = False
+        dtgTareas.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        dtgTareas.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        dtgTareas.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        dtgTareas.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+        dtgTareas.RowHeadersVisible = False
+        dtgTareas.Columns(1).Visible = False
+        dtgTareas.Columns(2).Visible = False
+        dtgTareas.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dtgTareas.Columns(2).Width = 100
+
+        'Desactiva el autofiltro
+        Dim col As Integer
+        For col = 0 To dtgTareas.Columns.Count - 1
+            dtgTareas.Columns(col).SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        'Desactiva el autofiltro
+#End Region
+
+#Region "Conteo de cantidad de tareas"
+
+        lblCantidad.Visible = True
+        lblCantidad.Text = "Cantidad: " & dtgTareas.RowCount
+        conteo = dtgTareas.RowCount
+#End Region
+
+
+    End Sub
 End Module

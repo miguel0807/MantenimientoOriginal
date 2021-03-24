@@ -12,6 +12,7 @@
         cboClase3 = Clase
         cboEtiqueta2 = Etiqueta
         cboResponsable = Responsable
+
         txtComentarios = Comentarios
         txtFinal = TextBox1
         txtEliminacion = TextBox2
@@ -19,7 +20,9 @@
         btnSalir = FinalizadoSalir
         btnSalirContinuar = FinalizadoContinuar
 
-        dtgTareas = datagr
+        dtgTareas = DataGridView1
+
+        lblCantidad = Cantidad
         'Declaracion de item del formulario 
 
 
@@ -35,5 +38,9 @@
     Private Sub Clase_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Clase.SelectedIndexChanged
         CargarEtiqueta()
 
+    End Sub
+
+    Private Sub Etiqueta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Etiqueta.SelectedIndexChanged
+        CargarTareas()
     End Sub
 End Class
