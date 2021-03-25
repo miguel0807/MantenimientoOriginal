@@ -52,6 +52,7 @@ Module Registro_preventivoModulo
 
 
     Sub Cargarclase()
+        cboEtiqueta2.DataSource = Nothing
 #Region "Cargar datos en combobox de Clase"
 
         mesRegistro = mtcFecha.SelectionStart.Month.ToString
@@ -93,10 +94,12 @@ Module Registro_preventivoModulo
             cboClase3.DataSource = ds.Tables(0)
             cboClase3.DisplayMember = "Clase"
         End With
+
+
+
+
+
         cn.Close()
-
-
-
 #End Region
     End Sub
 
@@ -111,6 +114,7 @@ Module Registro_preventivoModulo
         If ds.Tables("Codigo").Rows.Count > 0 Then
 
             CodigoClase = ds.Tables("Codigo").Rows(0).Item(0).ToString
+
 
         End If
 #End Region
@@ -182,10 +186,7 @@ Module Registro_preventivoModulo
         'Next
     End Sub
 
-    Sub habilitaCerrarFormulario()
-        If Not formularios.Contains(formularioAbierto) Then formularios.Add(formularioAbierto) 'Agrega a la lista los formularios para luego cerrarlos
 
-    End Sub
 
     Sub CargarTareas() 'Carga las tareas en el datagridview del formulario
 
@@ -199,6 +200,22 @@ Module Registro_preventivoModulo
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "Shutdowns")
         dtgTareas.DataSource = dataS.Tables("Shutdowns")
+
+        'Condicional para detener el sub en caso de que los combobox esten vacios
+        If cboClase3.Text = "" Or cboEtiqueta2.Text = "" Or cboResponsable.Text = "" Then Exit Sub
+
+
+        'Condicional para habilitar los botones
+        If dataS.Tables("Shutdowns").Rows.Count <= 0 Then
+
+            btnSalir.Visible = True
+            btnSalirContinuar.Visible = True
+        Else
+
+            btnSalir.Visible = False
+            btnSalirContinuar.Visible = False
+        End If
+
 
 #End Region
 
@@ -248,14 +265,6 @@ Module Registro_preventivoModulo
         conteo = dtgTareas.RowCount
 #End Region
 
-        'If dataS.Tables("Shutdowns").Rows.Count > 0 Then
-        '    btnFinalizado.Visible = False
-
-        '    btnContinuar.Visible = False
-
-        'Else
-
-        'End If
 
     End Sub
 
@@ -279,7 +288,6 @@ Module Registro_preventivoModulo
                 desconectar()
                 MsgBox("Se registro correctamente")
 
-           '     CargarPendientesTareas()
 
 
             Case 7 'No
@@ -290,4 +298,35 @@ Module Registro_preventivoModulo
 
 
     End Sub
+
+    Sub InsertarHistorial()
+
+        Dim adaptador As New SqlCommand("insert into Historial_Equipos values (" & CodigoClase & ",'" & cboEtiqueta2.Text & "','" & txtComentarios.Text & "','" & cboResponsable.Text & "', " & mtcFecha.SelectionStart.Year.ToString & ", '" & mesRegistro & "'  ,  '" & mtcFecha.SelectionStart.ToShortDateString.ToString & "')", cn)
+        conectar()
+        'TextBox1.Text = adaptador.CommandText
+        'MsgBox(adaptador.CommandText)
+        adaptador.ExecuteNonQuery()
+
+        desconectar()
+    End Sub
+
+    Sub ActualizarConteoPlanificacion()
+        conectar()
+        Dim actualizarcantidadconteo As New SqlCommand("update ConteoPlanificacion_Equipos set " & mesRegistro & "=" & mesRegistro & " - 1 where codigo=" & CodigoClase & " and Año=" & mtcFecha.SelectionStart.Year.ToString & "", cn)
+        'TextBox1.Text = actualizarnombre.CommandText
+        actualizarcantidadconteo.ExecuteNonQuery()
+        ' MsgBox(actualizarcantidadconteo.CommandText)
+        cn.Close()
+        MsgBox("Se registro correctamente")
+
+        ' Finalizado.Visible = False
+        'FinalizadoContinuar.Visible = False
+    End Sub
+
+    Sub verificarEtiqueta()
+        If cboEtiqueta2.Text = "" Then
+            Cargarclase()
+        End If
+    End Sub
+
 End Module

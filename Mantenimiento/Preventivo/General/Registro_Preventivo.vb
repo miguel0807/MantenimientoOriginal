@@ -260,8 +260,6 @@ Public Class Registro_Preventivo
         '  MsgBox(adaptador.CommandText)
         adaptador.ExecuteNonQuery()
 
-
-
         desconectar()
 
 

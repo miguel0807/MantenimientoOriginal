@@ -42,6 +42,7 @@ Partial Class RegistroPreventivo
         '
         'Cantidad
         '
+        Me.Cantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Cantidad.AutoSize = True
         Me.Cantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cantidad.Location = New System.Drawing.Point(12, 730)
@@ -55,6 +56,9 @@ Partial Class RegistroPreventivo
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -80,6 +84,7 @@ Partial Class RegistroPreventivo
         '
         'FinalizadoContinuar
         '
+        Me.FinalizadoContinuar.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.FinalizadoContinuar.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FinalizadoContinuar.Location = New System.Drawing.Point(843, 501)
         Me.FinalizadoContinuar.Name = "FinalizadoContinuar"
@@ -91,16 +96,18 @@ Partial Class RegistroPreventivo
         '
         'Comentarios
         '
+        Me.Comentarios.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Comentarios.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Comentarios.Location = New System.Drawing.Point(586, 56)
+        Me.Comentarios.Location = New System.Drawing.Point(481, 27)
         Me.Comentarios.Multiline = True
         Me.Comentarios.Name = "Comentarios"
         Me.Comentarios.Size = New System.Drawing.Size(356, 154)
         Me.Comentarios.TabIndex = 56
+        Me.Comentarios.Text = "N/A"
         '
         'Fecha
         '
-        Me.Fecha.Location = New System.Drawing.Point(107, 27)
+        Me.Fecha.Location = New System.Drawing.Point(69, 27)
         Me.Fecha.MaxSelectionCount = 1
         Me.Fecha.Name = "Fecha"
         Me.Fecha.ShowTodayCircle = False
@@ -111,7 +118,7 @@ Partial Class RegistroPreventivo
         Me.Clase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Clase.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clase.FormattingEnabled = True
-        Me.Clase.Location = New System.Drawing.Point(211, 274)
+        Me.Clase.Location = New System.Drawing.Point(144, 269)
         Me.Clase.Name = "Clase"
         Me.Clase.Size = New System.Drawing.Size(200, 30)
         Me.Clase.TabIndex = 52
@@ -121,7 +128,7 @@ Partial Class RegistroPreventivo
         Me.Etiqueta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Etiqueta.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta.FormattingEnabled = True
-        Me.Etiqueta.Location = New System.Drawing.Point(211, 325)
+        Me.Etiqueta.Location = New System.Drawing.Point(144, 320)
         Me.Etiqueta.Name = "Etiqueta"
         Me.Etiqueta.Size = New System.Drawing.Size(200, 30)
         Me.Etiqueta.TabIndex = 53
@@ -138,6 +145,7 @@ Partial Class RegistroPreventivo
         '
         'FinalizadoSalir
         '
+        Me.FinalizadoSalir.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.FinalizadoSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FinalizadoSalir.Location = New System.Drawing.Point(843, 401)
         Me.FinalizadoSalir.Name = "FinalizadoSalir"
@@ -149,19 +157,21 @@ Partial Class RegistroPreventivo
         '
         'Responsable
         '
+        Me.Responsable.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Responsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Responsable.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Responsable.FormattingEnabled = True
-        Me.Responsable.Location = New System.Drawing.Point(765, 265)
+        Me.Responsable.Location = New System.Drawing.Point(638, 263)
         Me.Responsable.Name = "Responsable"
         Me.Responsable.Size = New System.Drawing.Size(200, 30)
         Me.Responsable.TabIndex = 54
         '
         'Label4
         '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(592, 27)
+        Me.Label4.Location = New System.Drawing.Point(476, -2)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(147, 26)
         Me.Label4.TabIndex = 61
@@ -171,7 +181,7 @@ Partial Class RegistroPreventivo
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(31, 27)
+        Me.Label3.Location = New System.Drawing.Point(64, -2)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(77, 26)
         Me.Label3.TabIndex = 60
@@ -179,9 +189,10 @@ Partial Class RegistroPreventivo
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(581, 263)
+        Me.Label2.Location = New System.Drawing.Point(477, 263)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(150, 26)
         Me.Label2.TabIndex = 59
@@ -201,6 +212,7 @@ Partial Class RegistroPreventivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1040, 755)
         Me.Controls.Add(Me.Cantidad)
         Me.Controls.Add(Me.DataGridView1)
