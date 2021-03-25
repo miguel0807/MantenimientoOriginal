@@ -15,8 +15,7 @@ Module Registro_preventivoModulo
     Public cboResponsable As ComboBox
 
     Public txtComentarios As TextBox
-    Public txtFinal As TextBox
-    Public txtEliminacion As TextBox
+
 
     Public btnSalir As Button
     Public btnSalirContinuar As Button
@@ -29,6 +28,8 @@ Module Registro_preventivoModulo
 
 
     Dim mesRegistro As String
+
+    Public CodigoTareaNumerico As String
 
     Sub CargarResponsable()
 #Region "Cargar datos en combobox de Responsable"
@@ -160,25 +161,25 @@ Module Registro_preventivoModulo
         End With
 #End Region
 
-        'Puede borrarse
-        txtComentarios.Text = ""
-        For Each elemento As String In listaEquipos
-            txtComentarios.Text = txtComentarios.Text & vbCrLf & (elemento)
-        Next
-        'Puede borrarse
+        ''Puede borrarse
+        'txtComentarios.Text = ""
+        'For Each elemento As String In listaEquipos
+        '    txtComentarios.Text = txtComentarios.Text & vbCrLf & (elemento)
+        'Next
+        ''Puede borrarse
 
-        txtEliminacion.Text = ""
-        'Puede borrarse
-        For Each elemento As String In listaRegistrados
-            txtEliminacion.Text = txtEliminacion.Text & vbCrLf & (elemento)
-        Next
-        'Puede borrarse
-        txtFinal.Text = ""
-        For Each elemento As String In resultadoFinal
-            txtFinal.Text = txtFinal.Text & vbCrLf & (elemento)
-            ' MessageBox.Show("Resultado Final" + elemento)
+        'txtEliminacion.Text = ""
+        ''Puede borrarse
+        'For Each elemento As String In listaRegistrados
+        '    txtEliminacion.Text = txtEliminacion.Text & vbCrLf & (elemento)
+        'Next
+        ''Puede borrarse
+        'txtFinal.Text = ""
+        'For Each elemento As String In resultadoFinal
+        '    txtFinal.Text = txtFinal.Text & vbCrLf & (elemento)
+        '    ' MessageBox.Show("Resultado Final" + elemento)
 
-        Next
+        'Next
     End Sub
 
     Sub habilitaCerrarFormulario()
@@ -186,34 +187,20 @@ Module Registro_preventivoModulo
 
     End Sub
 
-    Sub CargarTareas()
+    Sub CargarTareas() 'Carga las tareas en el datagridview del formulario
 
-
-
-
-        conectar()
-
-        Dim conteo As String
-        conteo = 1
 
 
 #Region "Buscar la planificacion"
+        conectar()
+        Dim conteo As String
+        conteo = 1
         Dim adaptador As New SqlDataAdapter("Select carac.Tarea , hist.ConteoSuma, hist.Estado from Historial_Tareas hist, Caracteristicas_Tareas carac where carac.CodTarea=hist.CodTarea and hist.Codigo=" & CodigoClase & " and CONVERT(CHAR,hist.Etiqueta)='" & cboEtiqueta2.Text & "' and hist.Año=" & mtcFecha.SelectionStart.Year.ToString & " and convert(CHAR,hist.MES)='" & mesRegistro & "'and Estado=0 ", cn)
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "Shutdowns")
         dtgTareas.DataSource = dataS.Tables("Shutdowns")
 
 #End Region
-        'If dataS.Tables("Shutdowns").Rows.Count > 0 Then
-        '    btnFinalizado.Visible = False
-
-        '    btnContinuar.Visible = False
-
-        'Else
-
-        'End If
-
-
 
 #Region "Configuracion datagridview1"
 #Region "Formato de letra"
@@ -260,6 +247,46 @@ Module Registro_preventivoModulo
         lblCantidad.Text = "Cantidad: " & dtgTareas.RowCount
         conteo = dtgTareas.RowCount
 #End Region
+
+        'If dataS.Tables("Shutdowns").Rows.Count > 0 Then
+        '    btnFinalizado.Visible = False
+
+        '    btnContinuar.Visible = False
+
+        'Else
+
+        'End If
+
+    End Sub
+
+    Sub RegistrarTarea()
+
+
+        Dim msgvalue As Integer
+
+
+
+        msgvalue = MsgBox("Está seguro de confirmar la tarea?", vbInformation + vbYesNo, "Mensaje de Alerta")
+
+        Select Case msgvalue
+
+            Case 6 'Yes
+                conectar()
+                Dim actualizarcantidadconteo As New SqlCommand("update Historial_Tareas set Estado=1 , Comentario='" & txtComentarios.Text & "' , Responsable='" & cboResponsable.Text & "' , Fecha='" & mtcFecha.SelectionStart.ToShortDateString.ToString & "' where ConteoSuma=" & CodigoTareaNumerico & "  ", cn)
+                ' prueba0.Text = actualizarcantidadconteo.CommandText
+                actualizarcantidadconteo.ExecuteNonQuery()
+                cn.Close()
+                desconectar()
+                MsgBox("Se registro correctamente")
+
+           '     CargarPendientesTareas()
+
+
+            Case 7 'No
+
+
+
+        End Select
 
 
     End Sub

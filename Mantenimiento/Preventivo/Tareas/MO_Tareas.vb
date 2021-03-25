@@ -624,37 +624,37 @@ Module MO_Tareas
 
     End Sub
 
-    Sub TareaRegistrada()
+    'Sub TareaRegistrada() 'Se puede borrar
 
-        Dim msgvalue As Integer
-
-
-
-        msgvalue = MsgBox("Está seguro de confirmar la tarea?", vbInformation + vbYesNo, "Mensaje de Alerta")
-
-        Select Case msgvalue
-
-            Case 6 'Yes
-                conectar()
-                Dim actualizarcantidadconteo As New SqlCommand("update Historial_Tareas set Estado=1 , Comentario='" & SQLComentario.Text & "' , Responsable='" & SQLResponsable.Text & "' , Fecha='" & calendario.SelectionStart.ToShortDateString.ToString & "' where ConteoSuma=" & SQLSumar & "  ", cn)
-                ' prueba0.Text = actualizarcantidadconteo.CommandText
-                actualizarcantidadconteo.ExecuteNonQuery()
-                cn.Close()
-                desconectar()
-                MsgBox("Se registro correctamente")
-
-                CargarPendientesTareas()
+    '    Dim msgvalue As Integer
 
 
 
+    '    msgvalue = MsgBox("Está seguro de confirmar la tarea?", vbInformation + vbYesNo, "Mensaje de Alerta")
 
-            Case 7 'No
+    '    Select Case msgvalue
+
+    '        Case 6 'Yes
+    '            conectar()
+    '            Dim actualizarcantidadconteo As New SqlCommand("update Historial_Tareas set Estado=1 , Comentario='" & SQLComentario.Text & "' , Responsable='" & SQLResponsable.Text & "' , Fecha='" & calendario.SelectionStart.ToShortDateString.ToString & "' where ConteoSuma=" & SQLSumar & "  ", cn)
+    '            ' prueba0.Text = actualizarcantidadconteo.CommandText
+    '            actualizarcantidadconteo.ExecuteNonQuery()
+    '            cn.Close()
+    '            desconectar()
+    '            MsgBox("Se registro correctamente")
+
+    '            CargarPendientesTareas()
 
 
 
-        End Select
 
-    End Sub
+    '        Case 7 'No
+
+
+
+    '    End Select
+
+    'End Sub
 
     Sub verficarEstado()
 

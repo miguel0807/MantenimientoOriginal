@@ -389,7 +389,7 @@ Public Class Registro_Preventivo
 
     Private Sub DataGridView1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseDoubleClick
         SQLSumar = DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
-        TareaRegistrada()
+        ' TareaRegistrada() '
         verficarEstado()
 
     End Sub

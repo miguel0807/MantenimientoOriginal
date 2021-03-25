@@ -14,8 +14,7 @@
         cboResponsable = Responsable
 
         txtComentarios = Comentarios
-        txtFinal = TextBox1
-        txtEliminacion = TextBox2
+
 
         btnSalir = FinalizadoSalir
         btnSalirContinuar = FinalizadoContinuar
@@ -42,5 +41,15 @@
 
     Private Sub Etiqueta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Etiqueta.SelectedIndexChanged
         CargarTareas()
+    End Sub
+
+    Private Sub DataGridView1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseDoubleClick
+        CodigoTareaNumerico = DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
+        RegistrarTarea()
+        CargarTareas()
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
     End Sub
 End Class
