@@ -24,12 +24,9 @@ Partial Class Presentacion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Presentacion))
         Me.panelLogo = New System.Windows.Forms.Panel()
-        Me.pictureBox1 = New System.Windows.Forms.PictureBox()
         Me.button3 = New System.Windows.Forms.Button()
         Me.button2 = New System.Windows.Forms.Button()
         Me.PanelSideMenu = New System.Windows.Forms.Panel()
-        Me.btnExit = New System.Windows.Forms.Button()
-        Me.btnHelp = New System.Windows.Forms.Button()
         Me.PanelToolsSubmenu = New System.Windows.Forms.Panel()
         Me.PanelTareas = New System.Windows.Forms.Panel()
         Me.Button21 = New System.Windows.Forms.Button()
@@ -50,17 +47,20 @@ Partial Class Presentacion
         Me.Button6 = New System.Windows.Forms.Button()
         Me.button12 = New System.Windows.Forms.Button()
         Me.button13 = New System.Windows.Forms.Button()
-        Me.btnTools = New System.Windows.Forms.Button()
         Me.PanelPlaylistSubmenu = New System.Windows.Forms.Panel()
         Me.button7 = New System.Windows.Forms.Button()
         Me.button8 = New System.Windows.Forms.Button()
-        Me.btnPlaylist = New System.Windows.Forms.Button()
         Me.PanelMediaSubmenu = New System.Windows.Forms.Panel()
-        Me.btnMedia = New System.Windows.Forms.Button()
         Me.PanelChildForm = New System.Windows.Forms.Panel()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.Button20 = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.btnHelp = New System.Windows.Forms.Button()
+        Me.btnTools = New System.Windows.Forms.Button()
+        Me.btnPlaylist = New System.Windows.Forms.Button()
+        Me.btnMedia = New System.Windows.Forms.Button()
+        Me.pictureBox1 = New System.Windows.Forms.PictureBox()
         Me.panelLogo.SuspendLayout()
-        CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSideMenu.SuspendLayout()
         Me.PanelToolsSubmenu.SuspendLayout()
         Me.PanelTareas.SuspendLayout()
@@ -70,6 +70,7 @@ Partial Class Presentacion
         Me.PanelMediaSubmenu.SuspendLayout()
         Me.PanelChildForm.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelLogo
@@ -80,16 +81,6 @@ Partial Class Presentacion
         Me.panelLogo.Name = "panelLogo"
         Me.panelLogo.Size = New System.Drawing.Size(229, 92)
         Me.panelLogo.TabIndex = 0
-        '
-        'pictureBox1
-        '
-        Me.pictureBox1.Image = CType(resources.GetObject("pictureBox1.Image"), System.Drawing.Image)
-        Me.pictureBox1.Location = New System.Drawing.Point(36, 15)
-        Me.pictureBox1.Name = "pictureBox1"
-        Me.pictureBox1.Size = New System.Drawing.Size(159, 60)
-        Me.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pictureBox1.TabIndex = 0
-        Me.pictureBox1.TabStop = False
         '
         'button3
         '
@@ -129,6 +120,7 @@ Partial Class Presentacion
         '
         Me.PanelSideMenu.AutoScroll = True
         Me.PanelSideMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.PanelSideMenu.Controls.Add(Me.Button20)
         Me.PanelSideMenu.Controls.Add(Me.btnExit)
         Me.PanelSideMenu.Controls.Add(Me.btnHelp)
         Me.PanelSideMenu.Controls.Add(Me.PanelToolsSubmenu)
@@ -143,46 +135,6 @@ Partial Class Presentacion
         Me.PanelSideMenu.Name = "PanelSideMenu"
         Me.PanelSideMenu.Size = New System.Drawing.Size(250, 768)
         Me.PanelSideMenu.TabIndex = 0
-        '
-        'btnExit
-        '
-        Me.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.btnExit.FlatAppearance.BorderSize = 0
-        Me.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExit.ForeColor = System.Drawing.Color.Silver
-        Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
-        Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 1415)
-        Me.btnExit.Name = "btnExit"
-        Me.btnExit.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnExit.Size = New System.Drawing.Size(229, 39)
-        Me.btnExit.TabIndex = 9
-        Me.btnExit.Text = "Salir"
-        Me.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnExit.UseVisualStyleBackColor = True
-        '
-        'btnHelp
-        '
-        Me.btnHelp.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnHelp.FlatAppearance.BorderSize = 0
-        Me.btnHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHelp.ForeColor = System.Drawing.Color.Silver
-        Me.btnHelp.Image = CType(resources.GetObject("btnHelp.Image"), System.Drawing.Image)
-        Me.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHelp.Location = New System.Drawing.Point(0, 1370)
-        Me.btnHelp.Name = "btnHelp"
-        Me.btnHelp.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnHelp.Size = New System.Drawing.Size(229, 45)
-        Me.btnHelp.TabIndex = 8
-        Me.btnHelp.Text = "Cerrar Formularios"
-        Me.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnHelp.UseVisualStyleBackColor = True
         '
         'PanelToolsSubmenu
         '
@@ -200,7 +152,7 @@ Partial Class Presentacion
         Me.PanelToolsSubmenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelToolsSubmenu.Location = New System.Drawing.Point(0, 503)
         Me.PanelToolsSubmenu.Name = "PanelToolsSubmenu"
-        Me.PanelToolsSubmenu.Size = New System.Drawing.Size(229, 867)
+        Me.PanelToolsSubmenu.Size = New System.Drawing.Size(229, 885)
         Me.PanelToolsSubmenu.TabIndex = 7
         '
         'PanelTareas
@@ -515,26 +467,6 @@ Partial Class Presentacion
         Me.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.button13.UseVisualStyleBackColor = True
         '
-        'btnTools
-        '
-        Me.btnTools.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnTools.FlatAppearance.BorderSize = 0
-        Me.btnTools.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.btnTools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.btnTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTools.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTools.ForeColor = System.Drawing.Color.Silver
-        Me.btnTools.Image = CType(resources.GetObject("btnTools.Image"), System.Drawing.Image)
-        Me.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTools.Location = New System.Drawing.Point(0, 424)
-        Me.btnTools.Name = "btnTools"
-        Me.btnTools.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnTools.Size = New System.Drawing.Size(229, 79)
-        Me.btnTools.TabIndex = 6
-        Me.btnTools.Text = "  Mantenimiento Preventivo"
-        Me.btnTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnTools.UseVisualStyleBackColor = True
-        '
         'PanelPlaylistSubmenu
         '
         Me.PanelPlaylistSubmenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer))
@@ -580,26 +512,6 @@ Partial Class Presentacion
         Me.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.button8.UseVisualStyleBackColor = True
         '
-        'btnPlaylist
-        '
-        Me.btnPlaylist.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnPlaylist.FlatAppearance.BorderSize = 0
-        Me.btnPlaylist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.btnPlaylist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.btnPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPlaylist.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPlaylist.ForeColor = System.Drawing.Color.Silver
-        Me.btnPlaylist.Image = CType(resources.GetObject("btnPlaylist.Image"), System.Drawing.Image)
-        Me.btnPlaylist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPlaylist.Location = New System.Drawing.Point(0, 264)
-        Me.btnPlaylist.Name = "btnPlaylist"
-        Me.btnPlaylist.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnPlaylist.Size = New System.Drawing.Size(229, 79)
-        Me.btnPlaylist.TabIndex = 3
-        Me.btnPlaylist.Text = "  Control de inventario"
-        Me.btnPlaylist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPlaylist.UseVisualStyleBackColor = True
-        '
         'PanelMediaSubmenu
         '
         Me.PanelMediaSubmenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(39, Byte), Integer))
@@ -610,26 +522,6 @@ Partial Class Presentacion
         Me.PanelMediaSubmenu.Name = "PanelMediaSubmenu"
         Me.PanelMediaSubmenu.Size = New System.Drawing.Size(229, 90)
         Me.PanelMediaSubmenu.TabIndex = 2
-        '
-        'btnMedia
-        '
-        Me.btnMedia.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnMedia.FlatAppearance.BorderSize = 0
-        Me.btnMedia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.btnMedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.btnMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMedia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMedia.ForeColor = System.Drawing.Color.Silver
-        Me.btnMedia.Image = Global.Mantenimiento.My.Resources.Resources.infografia__1_
-        Me.btnMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnMedia.Location = New System.Drawing.Point(0, 92)
-        Me.btnMedia.Name = "btnMedia"
-        Me.btnMedia.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnMedia.Size = New System.Drawing.Size(229, 82)
-        Me.btnMedia.TabIndex = 1
-        Me.btnMedia.Text = "  Indicadores"
-        Me.btnMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnMedia.UseVisualStyleBackColor = True
         '
         'PanelChildForm
         '
@@ -652,6 +544,138 @@ Partial Class Presentacion
         Me.PictureBox9.TabIndex = 0
         Me.PictureBox9.TabStop = False
         '
+        'Button20
+        '
+        Me.Button20.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button20.FlatAppearance.BorderSize = 0
+        Me.Button20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.Button20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Button20.ForeColor = System.Drawing.Color.Silver
+        Me.Button20.Image = Global.Mantenimiento.My.Resources.Resources.Delete_80_icon_icons_com_57340
+        Me.Button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button20.Location = New System.Drawing.Point(0, 1456)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.Button20.Size = New System.Drawing.Size(229, 66)
+        Me.Button20.TabIndex = 10
+        Me.Button20.Text = "Cerrar Formularios"
+        Me.Button20.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button20.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button20.UseVisualStyleBackColor = True
+        '
+        'btnExit
+        '
+        Me.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnExit.FlatAppearance.BorderSize = 0
+        Me.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExit.ForeColor = System.Drawing.Color.Silver
+        Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
+        Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnExit.Location = New System.Drawing.Point(0, 1522)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnExit.Size = New System.Drawing.Size(229, 39)
+        Me.btnExit.TabIndex = 9
+        Me.btnExit.Text = "Salir"
+        Me.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnExit.UseVisualStyleBackColor = True
+        '
+        'btnHelp
+        '
+        Me.btnHelp.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnHelp.FlatAppearance.BorderSize = 0
+        Me.btnHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHelp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.btnHelp.ForeColor = System.Drawing.Color.Silver
+        Me.btnHelp.Image = Global.Mantenimiento.My.Resources.Resources.checklist_118086__2_
+        Me.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnHelp.Location = New System.Drawing.Point(0, 1388)
+        Me.btnHelp.Name = "btnHelp"
+        Me.btnHelp.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnHelp.Size = New System.Drawing.Size(229, 68)
+        Me.btnHelp.TabIndex = 8
+        Me.btnHelp.Text = "   Notas"
+        Me.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnHelp.UseVisualStyleBackColor = True
+        '
+        'btnTools
+        '
+        Me.btnTools.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnTools.FlatAppearance.BorderSize = 0
+        Me.btnTools.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnTools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.btnTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTools.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTools.ForeColor = System.Drawing.Color.Silver
+        Me.btnTools.Image = CType(resources.GetObject("btnTools.Image"), System.Drawing.Image)
+        Me.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTools.Location = New System.Drawing.Point(0, 424)
+        Me.btnTools.Name = "btnTools"
+        Me.btnTools.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnTools.Size = New System.Drawing.Size(229, 79)
+        Me.btnTools.TabIndex = 6
+        Me.btnTools.Text = "  Mantenimiento Preventivo"
+        Me.btnTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTools.UseVisualStyleBackColor = True
+        '
+        'btnPlaylist
+        '
+        Me.btnPlaylist.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnPlaylist.FlatAppearance.BorderSize = 0
+        Me.btnPlaylist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnPlaylist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.btnPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPlaylist.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPlaylist.ForeColor = System.Drawing.Color.Silver
+        Me.btnPlaylist.Image = CType(resources.GetObject("btnPlaylist.Image"), System.Drawing.Image)
+        Me.btnPlaylist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPlaylist.Location = New System.Drawing.Point(0, 264)
+        Me.btnPlaylist.Name = "btnPlaylist"
+        Me.btnPlaylist.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnPlaylist.Size = New System.Drawing.Size(229, 79)
+        Me.btnPlaylist.TabIndex = 3
+        Me.btnPlaylist.Text = "  Control de inventario"
+        Me.btnPlaylist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPlaylist.UseVisualStyleBackColor = True
+        '
+        'btnMedia
+        '
+        Me.btnMedia.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnMedia.FlatAppearance.BorderSize = 0
+        Me.btnMedia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.btnMedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.btnMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMedia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMedia.ForeColor = System.Drawing.Color.Silver
+        Me.btnMedia.Image = Global.Mantenimiento.My.Resources.Resources.infografia__1_
+        Me.btnMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnMedia.Location = New System.Drawing.Point(0, 92)
+        Me.btnMedia.Name = "btnMedia"
+        Me.btnMedia.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnMedia.Size = New System.Drawing.Size(229, 82)
+        Me.btnMedia.TabIndex = 1
+        Me.btnMedia.Text = "  Indicadores"
+        Me.btnMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnMedia.UseVisualStyleBackColor = True
+        '
+        'pictureBox1
+        '
+        Me.pictureBox1.Image = CType(resources.GetObject("pictureBox1.Image"), System.Drawing.Image)
+        Me.pictureBox1.Location = New System.Drawing.Point(36, 15)
+        Me.pictureBox1.Name = "pictureBox1"
+        Me.pictureBox1.Size = New System.Drawing.Size(159, 60)
+        Me.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pictureBox1.TabIndex = 0
+        Me.pictureBox1.TabStop = False
+        '
         'Presentacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
@@ -666,7 +690,6 @@ Partial Class Presentacion
         Me.Name = "Presentacion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.panelLogo.ResumeLayout(False)
-        CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSideMenu.ResumeLayout(False)
         Me.PanelToolsSubmenu.ResumeLayout(False)
         Me.PanelTareas.ResumeLayout(False)
@@ -676,6 +699,7 @@ Partial Class Presentacion
         Me.PanelMediaSubmenu.ResumeLayout(False)
         Me.PanelChildForm.ResumeLayout(False)
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -716,4 +740,5 @@ Partial Class Presentacion
     Private WithEvents Button21 As Button
     Private WithEvents Button19 As Button
     Private WithEvents Button18 As Button
+    Private WithEvents Button20 As Button
 End Class

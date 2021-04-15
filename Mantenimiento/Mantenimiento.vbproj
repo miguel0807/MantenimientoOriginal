@@ -30,7 +30,7 @@
     <PublisherName>Miguel Alvarado</PublisherName>
     <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -116,6 +116,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extras\ConfNotas.vb" />
+    <Compile Include="Extras\Notas.Designer.vb">
+      <DependentUpon>Notas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extras\Notas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Preventivo\General\RegistroPreventivo.Designer.vb">
       <DependentUpon>RegistroPreventivo.vb</DependentUpon>
     </Compile>
@@ -251,10 +258,10 @@
     <Compile Include="Preventivo\General\Pendiente_Preventivos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preventivo\General\Registro_Preventivo.Designer.vb">
-      <DependentUpon>Registro_Preventivo.vb</DependentUpon>
+    <Compile Include="Preventivo\General\%28Eliminar%29Registro_Preventivo.Designer.vb">
+      <DependentUpon>%28Eliminar%29Registro_Preventivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Preventivo\General\Registro_Preventivo.vb">
+    <Compile Include="Preventivo\General\%28Eliminar%29Registro_Preventivo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Preventivo\ShutdownStartup\Shutdown.Designer.vb">
@@ -275,6 +282,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">
       <DependentUpon>Busqueda_Material.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extras\Notas.resx">
+      <DependentUpon>Notas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\General\RegistroPreventivo.resx">
       <DependentUpon>RegistroPreventivo.vb</DependentUpon>
@@ -333,8 +343,8 @@
     <EmbeddedResource Include="Preventivo\General\Pendiente_Preventivos.resx">
       <DependentUpon>Pendiente_Preventivos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preventivo\General\Registro_Preventivo.resx">
-      <DependentUpon>Registro_Preventivo.vb</DependentUpon>
+    <EmbeddedResource Include="Preventivo\General\%28Eliminar%29Registro_Preventivo.resx">
+      <DependentUpon>%28Eliminar%29Registro_Preventivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\ShutdownStartup\Shutdown.resx">
       <DependentUpon>Shutdown.vb</DependentUpon>
@@ -368,6 +378,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Otros\tools_22686.ico" />
+    <None Include="Resources\checklist_118086 %282%29.png" />
+    <None Include="Resources\Delete-80_icon-icons.com_57340.png" />
+    <None Include="Resources\salir1.png" />
+    <None Include="Resources\salir.png" />
+    <None Include="Resources\checklist_118086 %281%29.png" />
+    <None Include="Resources\checklist_118086.png" />
+    <None Include="Resources\nota.png" />
+    <None Include="Resources\lapiz1.png" />
+    <None Include="Resources\lapiz.png" />
     <None Include="Resources\matriz-de-ciclo.png" />
     <None Include="Resources\infografia %281%29.png" />
     <None Include="Resources\infografia.png" />

@@ -27,12 +27,32 @@ Mantenimiento
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Mantenimiento.My.Resources.Resources.checklist_118086">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.checklist_118086__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.checklist_118086__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Mantenimiento.My.Resources.Resources.crecimiento">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.crecimiento__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.Delete_80_icon_icons_com_57340">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -67,7 +87,32 @@ Mantenimiento
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Mantenimiento.My.Resources.Resources.lapiz">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.lapiz1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Mantenimiento.My.Resources.Resources.matriz_de_ciclo">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.nota">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.salir">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.salir1">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

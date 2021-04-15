@@ -149,7 +149,7 @@ Public Class Busqueda_Equipos
 #Region "Buscar todos los equipos"
 
         Dim tabla As DataGridView = Me.DataGridView1
-        Dim adaptador As New SqlDataAdapter("SELECT Lista_Equipos.Etiqueta,Lista_Equipos.Placa,Caracteristicas_Equipo.Clase,Lista_Equipos.Ubicacion from Lista_Equipos,Caracteristicas_Equipo where Lista_Equipos.Codigo=Caracteristicas_Equipo.Codigo", cn)
+        Dim adaptador As New SqlDataAdapter("SELECT Lista_Equipos.Etiqueta,Lista_Equipos.Información,Caracteristicas_Equipo.Clase,Lista_Equipos.Ubicación from Lista_Equipos,Caracteristicas_Equipo where Lista_Equipos.Codigo=Caracteristicas_Equipo.Codigo", cn)
         Dim dataS As New DataSet
         adaptador.Fill(dataS, "Lista_Equipos")
 

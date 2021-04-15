@@ -145,24 +145,7 @@ Public Class Presentacion
 
     End Sub
 
-    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-        '#Region "Preguntar si quiere cerrar la lista de formularios"
-        '        For Each frm As Form In formularios
-        '            If MessageBox.Show(String.Format("¿Deseas cerrar el formulario {0}?", frm.Name), "Cerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
-        '                frm.Close()
-        '            Else
-        '                Exit For
-        '            End If
-        '        Next
-        '#End Region
-        For Each frm As Form In formularios
-            frm.Close()
 
-
-
-        Next
-        hideSubmenu()
-    End Sub
 
 
 
@@ -242,6 +225,25 @@ Public Class Presentacion
 
     Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
         openChildForm(New Planificacion_Tareas())
+
+        hideSubmenu()
+    End Sub
+
+    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+
+        For Each frm As Form In formularios
+            frm.Close()
+
+
+
+        Next
+        hideSubmenu()
+    End Sub
+
+    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
+
+
+        openChildForm(New Notas())
 
         hideSubmenu()
     End Sub
