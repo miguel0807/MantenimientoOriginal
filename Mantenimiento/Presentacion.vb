@@ -10,8 +10,8 @@ Public Class Presentacion
 
     Private Sub hideSubmenu()
 
-        PanelMediaSubmenu.Visible = False
-        PanelPlaylistSubmenu.Visible = False
+        PanelIndicadores.Visible = False
+        PanelControlInventario.Visible = False
         PanelToolsSubmenu.Visible = False
         PanelToolsSubConfiguration.Visible = False
         PanelCreacion.Visible = False
@@ -32,11 +32,11 @@ Public Class Presentacion
     End Sub
 
     Private Sub btnMedia_Click(sender As Object, e As EventArgs) Handles btnMedia.Click
-        showSubmenu(PanelMediaSubmenu)
+        showSubmenu(PanelIndicadores)
     End Sub
 
     Private Sub btnPlaylist_Click(sender As Object, e As EventArgs) Handles btnPlaylist.Click
-        showSubmenu(PanelPlaylistSubmenu)
+        showSubmenu(PanelControlInventario)
     End Sub
 
     Private Sub btnTools_Click(sender As Object, e As EventArgs) Handles btnTools.Click
@@ -244,6 +244,12 @@ Public Class Presentacion
 
 
         openChildForm(New Notas())
+
+        hideSubmenu()
+    End Sub
+
+    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
+        openChildForm(New Exportar_indicadores())
 
         hideSubmenu()
     End Sub

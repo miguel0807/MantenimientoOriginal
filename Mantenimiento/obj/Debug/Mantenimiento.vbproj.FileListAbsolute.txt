@@ -38,3 +38,6 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimie
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Planificacion_Tareas.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.RegistroPreventivo.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Notas.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Exportar_Indicadores.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\ClosedXML.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DocumentFormat.OpenXml.dll

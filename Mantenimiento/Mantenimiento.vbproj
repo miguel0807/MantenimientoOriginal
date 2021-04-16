@@ -30,7 +30,7 @@
     <PublisherName>Miguel Alvarado</PublisherName>
     <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -88,6 +88,14 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.69.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ClosedXml\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ClosedXml\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp">
       <HintPath>Resources\itextsharp.dll</HintPath>
     </Reference>
@@ -121,6 +129,12 @@
       <DependentUpon>Notas.vb</DependentUpon>
     </Compile>
     <Compile Include="Extras\Notas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indicadores\Exportar_indicadores.Designer.vb">
+      <DependentUpon>Exportar_indicadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Indicadores\Exportar_indicadores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Preventivo\General\RegistroPreventivo.Designer.vb">
@@ -286,6 +300,9 @@
     <EmbeddedResource Include="Extras\Notas.resx">
       <DependentUpon>Notas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Indicadores\Exportar_indicadores.resx">
+      <DependentUpon>Exportar_indicadores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\General\RegistroPreventivo.resx">
       <DependentUpon>RegistroPreventivo.vb</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +394,8 @@
     <None Include="Resources\gris.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\ClosedXml\ClosedXML.dll" />
+    <Content Include="Resources\ClosedXml\DocumentFormat.OpenXml.dll" />
     <Content Include="Otros\tools_22686.ico" />
     <None Include="Resources\checklist_118086 %282%29.png" />
     <None Include="Resources\Delete-80_icon-icons.com_57340.png" />
