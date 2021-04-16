@@ -22,10 +22,9 @@ Partial Class Exportar_indicadores
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnExportExcel = New System.Windows.Forms.Button()
         Me.dataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -39,6 +38,7 @@ Partial Class Exportar_indicadores
         Me.btnExportExcel.TabIndex = 1
         Me.btnExportExcel.Text = "Exportar Indicadores"
         Me.btnExportExcel.UseVisualStyleBackColor = True
+        Me.btnExportExcel.Visible = False
         '
         'dataGridView1
         '
@@ -50,14 +50,14 @@ Partial Class Exportar_indicadores
         Me.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateGray
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView1.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateGray
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.dataGridView1.Location = New System.Drawing.Point(16, 55)
         Me.dataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.dataGridView1.MultiSelect = False
@@ -68,10 +68,6 @@ Partial Class Exportar_indicadores
         Me.dataGridView1.Size = New System.Drawing.Size(1408, 708)
         Me.dataGridView1.TabIndex = 0
         '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(32, 19)
@@ -79,7 +75,7 @@ Partial Class Exportar_indicadores
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(188, 28)
         Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Cargas lista"
+        Me.Button1.Text = "Cargar lista"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Exportar_indicadores
@@ -99,6 +95,5 @@ Partial Class Exportar_indicadores
     End Sub
     Friend WithEvents btnExportExcel As System.Windows.Forms.Button
     Friend WithEvents dataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Button1 As Button
 End Class
