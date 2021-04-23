@@ -231,24 +231,25 @@ Module Modulo_Indicadores
     End Sub
 
 
-    Sub btnFechaInicio()
+    Sub btnTiempoInicio()
 
 
-        MIfechaInicio.Text = DateTime.Now
+        MItxtTiempoInicio.Text = DateTime.Now
         Dim fechacreacion As Date
-        fechacreacion = MIfechaInicio.Text
-        MIfechaInicio.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
+        fechacreacion = MItxtTiempoInicio.Text
+
+        MItxtTiempoInicio.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
 
 
 
     End Sub
 
-    Sub btnFechaFinal()
+    Sub btnTiempoFinal()
 
-        MIfechaFinal.Text = DateTime.Now
+        MItxtTiempoFinal.Text = DateTime.Now
         Dim fechacreacion As Date
-        fechacreacion = MIfechaFinal.Text
-        MIfechaFinal.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
+        fechacreacion = MItxtTiempoFinal.Text
+        MItxtTiempoFinal.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
 
     End Sub
 
@@ -262,6 +263,27 @@ Module Modulo_Indicadores
 
         End If
 
+    End Sub
+
+    Sub btnFechaInicio()
+
+
+
+
+        MIfechaInicio.Text = DateTime.Now
+        Dim fechacreacion As Date
+        fechacreacion = MIfechaInicio.Text
+        MIfechaInicio.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
+
+
+    End Sub
+
+    Sub btnFechaFinal()
+
+        MIfechaFinal.Text = DateTime.Now
+        Dim fechacreacion As Date
+        fechacreacion = MIfechaFinal.Text
+        MIfechaFinal.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
     End Sub
 
     Sub btnCalcular()

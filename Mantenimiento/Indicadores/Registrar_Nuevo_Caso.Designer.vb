@@ -63,6 +63,12 @@ Partial Class Registrar_Nuevo_Caso
         Me.butonControlTiempo = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.panel_boton.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -86,7 +92,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.panel_boton.Controls.Add(Me.Button7)
         Me.panel_boton.Controls.Add(Me.Tiempo_Inicio)
         Me.panel_boton.Controls.Add(Me.Button6)
-        Me.panel_boton.Location = New System.Drawing.Point(12, 35)
+        Me.panel_boton.Location = New System.Drawing.Point(6, 481)
         Me.panel_boton.Name = "panel_boton"
         Me.panel_boton.Size = New System.Drawing.Size(1268, 579)
         Me.panel_boton.TabIndex = 82
@@ -319,7 +325,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
-        Me.Button2.Location = New System.Drawing.Point(210, 536)
+        Me.Button2.Location = New System.Drawing.Point(1061, 275)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(223, 78)
         Me.Button2.TabIndex = 84
@@ -330,7 +336,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
-        Me.Button3.Location = New System.Drawing.Point(547, 536)
+        Me.Button3.Location = New System.Drawing.Point(1061, 353)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(223, 78)
         Me.Button3.TabIndex = 85
@@ -342,10 +348,10 @@ Partial Class Registrar_Nuevo_Caso
         Me.Descripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Descripcion.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Descripcion.Location = New System.Drawing.Point(256, 330)
+        Me.Descripcion.Location = New System.Drawing.Point(653, 263)
         Me.Descripcion.Multiline = True
         Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.Size = New System.Drawing.Size(564, 156)
+        Me.Descripcion.Size = New System.Drawing.Size(370, 142)
         Me.Descripcion.TabIndex = 83
         '
         'Panel1
@@ -357,14 +363,22 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.Descripcion)
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Location = New System.Drawing.Point(12, 35)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1001, 256)
+        Me.Panel1.Size = New System.Drawing.Size(1043, 440)
         Me.Panel1.TabIndex = 81
         '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel4.Controls.Add(Me.ComboBox3)
+        Me.Panel4.Controls.Add(Me.Label11)
+        Me.Panel4.Controls.Add(Me.ComboBox1)
+        Me.Panel4.Controls.Add(Me.ComboBox2)
+        Me.Panel4.Controls.Add(Me.Label2)
+        Me.Panel4.Controls.Add(Me.Label4)
         Me.Panel4.Controls.Add(Me.Ubicacion)
         Me.Panel4.Controls.Add(Me.Clasificacion)
         Me.Panel4.Controls.Add(Me.Label9)
@@ -373,7 +387,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel4.Controls.Add(Me.Nombre)
         Me.Panel4.Location = New System.Drawing.Point(16, 19)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(432, 196)
+        Me.Panel4.Size = New System.Drawing.Size(432, 349)
         Me.Panel4.TabIndex = 1
         '
         'Ubicacion
@@ -382,8 +396,8 @@ Partial Class Registrar_Nuevo_Caso
         Me.Ubicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ubicacion.FormattingEnabled = True
-        Me.Ubicacion.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Bodega", "Contacto", "Oficinas", "Escritorio", "Electronicos", "CR7", "CR8", "Cuarto de compresor", "Tank Farm"})
-        Me.Ubicacion.Location = New System.Drawing.Point(182, 78)
+        Me.Ubicacion.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Bodega", "Contacto", "Oficinas", "Escritorio", "Electronicos", "CR7", "CR8", "Cuarto de compresor", "Tank Farm", "Laboratorio"})
+        Me.Ubicacion.Location = New System.Drawing.Point(184, 232)
         Me.Ubicacion.Name = "Ubicacion"
         Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
         Me.Ubicacion.TabIndex = 2
@@ -394,8 +408,8 @@ Partial Class Registrar_Nuevo_Caso
         Me.Clasificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clasificacion.FormattingEnabled = True
-        Me.Clasificacion.Items.AddRange(New Object() {"Electrico", "Mecanico", "Servicio", "Servicio Miguel"})
-        Me.Clasificacion.Location = New System.Drawing.Point(181, 144)
+        Me.Clasificacion.Items.AddRange(New Object() {"Electrico", "Mecanico", "Servicio", "IT"})
+        Me.Clasificacion.Location = New System.Drawing.Point(183, 298)
         Me.Clasificacion.Name = "Clasificacion"
         Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
         Me.Clasificacion.TabIndex = 3
@@ -404,7 +418,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label9.Location = New System.Drawing.Point(5, 152)
+        Me.Label9.Location = New System.Drawing.Point(7, 306)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(145, 31)
         Me.Label9.TabIndex = 74
@@ -414,7 +428,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label5.Location = New System.Drawing.Point(5, 78)
+        Me.Label5.Location = New System.Drawing.Point(7, 232)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(118, 31)
         Me.Label5.TabIndex = 72
@@ -445,7 +459,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Panel3.Controls.Add(Me.fecha_final)
         Me.Panel3.Controls.Add(Me.Button4)
-        Me.Panel3.Location = New System.Drawing.Point(566, 137)
+        Me.Panel3.Location = New System.Drawing.Point(595, 129)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(416, 73)
         Me.Panel3.TabIndex = 3
@@ -475,7 +489,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Panel2.Controls.Add(Me.Fecha_Inicio)
         Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Location = New System.Drawing.Point(566, 35)
+        Me.Panel2.Location = New System.Drawing.Point(595, 27)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(416, 73)
         Me.Panel2.TabIndex = 2
@@ -529,11 +543,77 @@ Partial Class Registrar_Nuevo_Caso
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label6.Location = New System.Drawing.Point(109, 333)
+        Me.Label6.Location = New System.Drawing.Point(497, 264)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(150, 32)
         Me.Label6.TabIndex = 86
         Me.Label6.Text = "Descripcion"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Bodega", "Contacto", "Oficinas", "Escritorio", "Electronicos", "CR7", "CR8", "Cuarto de compresor", "Tank Farm", "Laboratorio"})
+        Me.ComboBox1.Location = New System.Drawing.Point(183, 56)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(228, 33)
+        Me.ComboBox1.TabIndex = 75
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Electrico", "Mecanico", "Servicio", "Servicio Miguel"})
+        Me.ComboBox2.Location = New System.Drawing.Point(183, 118)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(228, 33)
+        Me.ComboBox2.TabIndex = 76
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label2.Location = New System.Drawing.Point(7, 126)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(88, 39)
+        Me.Label2.TabIndex = 78
+        Me.Label2.Text = "Clase"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label4.Location = New System.Drawing.Point(6, 56)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(185, 39)
+        Me.Label4.TabIndex = 77
+        Me.Label4.Text = "Responsable"
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Items.AddRange(New Object() {"Electrico", "Mecanico", "Servicio", "Servicio Miguel"})
+        Me.ComboBox3.Location = New System.Drawing.Point(187, 170)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(228, 33)
+        Me.ComboBox3.TabIndex = 79
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label11.Location = New System.Drawing.Point(11, 178)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(88, 31)
+        Me.Label11.TabIndex = 80
+        Me.Label11.Text = "Equipo"
         '
         'Registrar_Nuevo_Caso
         '
@@ -544,11 +624,9 @@ Partial Class Registrar_Nuevo_Caso
         Me.Controls.Add(Me.panel_boton)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Descripcion)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.butonControlTiempo)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label6)
         Me.Name = "Registrar_Nuevo_Caso"
         Me.Text = "Registrar_Nuevo_Caso"
         Me.panel_boton.ResumeLayout(False)
@@ -556,6 +634,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -608,4 +687,10 @@ Partial Class Registrar_Nuevo_Caso
     Friend WithEvents butonControlTiempo As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label4 As Label
 End Class

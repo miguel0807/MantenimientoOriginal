@@ -43,12 +43,12 @@
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        btnFechaInicio()
+        btnTiempoInicio()
 
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        btnFechaFinal()
+        btnTiempoFinal()
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
@@ -58,5 +58,13 @@
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         btnAgregarTiempo()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        btnFechaInicio()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        btnFechaFinal()
     End Sub
 End Class
