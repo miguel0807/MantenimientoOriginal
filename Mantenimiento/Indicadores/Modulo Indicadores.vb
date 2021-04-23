@@ -9,7 +9,7 @@ Imports System.Data.SqlClient
 Module Modulo_Indicadores
     Public datagridIndicadores As DataGridView
 
-    Public Conteo3 As Integer
+
     Public EtiquetaConteo As Label
     Public MItxtTiempoInicio As TextBox
     Public MItxtTiempoFinal As TextBox
@@ -19,14 +19,32 @@ Module Modulo_Indicadores
 
 
     Public MItitulo As TextBox
-    Public MIubicacion As TextBox
+    Public MIubicacion As ComboBox
     Public MIclasificacion As ComboBox
     Public MIfechaInicio As TextBox
     Public MIfechaFinal As TextBox
     Public MIdescripcion As TextBox
+    Public MIcalHoras As Label
+    Public MIcalMinutos As Label
+    Public MIpanelControlTiempo As Panel
+
+    Public MIbtnControlTiempo As Button
 
 
+
+    Public Conteo3 As Integer
     Public MIseleccion As Integer = 0
+
+    Dim hora As Integer
+    Dim minuto As Integer
+
+    Dim minutodivision As Integer
+    Dim minutoresta As Integer
+
+    Dim acumhora As Integer
+    Dim acumminuto As Integer
+
+    Dim almacenar As Boolean = False
 
 
 
@@ -148,11 +166,11 @@ Module Modulo_Indicadores
         End Try
     End Sub
 
-#End Region
 
-#Region "Cargar Pendiente"
 
-    Sub Pendiente()
+
+
+    Sub CargarPendiente()
 
         Try
             If MItitulo.Text = "" Or MIfechaInicio.Text = "" Then
@@ -160,15 +178,17 @@ Module Modulo_Indicadores
             Else
 
 
-                If MitxtTiempoInicio.Text = "00:00:00" Then
+                If MItxtTiempoInicio.Text = "00:00:00" Then
                     MIseleccion = 0
-                ElseIf mitxtTiempoInicio.Text = "" Then
+                ElseIf MItxtTiempoInicio.Text = "" Then
                     MIseleccion = 0
                 Else
 
                     MIseleccion = 1
                 End If
-                Dim adaptador As New SqlCommand("insert into Indicadores values (" & Conteo3 & ",'" & MItitulo.Text & "','" & MIubicacion.Text & "','" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIfechaInicio.Text & "','" & MIfechaFinal.Text & "'," & 1 & ",'" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & "," & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
+                Dim adaptador As New SqlCommand("insert into Indicadores values (" & Conteo3 & ",'" & MItitulo.Text & "','" & MIubicacion.Text & "',
+                                     '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIfechaInicio.Text & "','" & MIfechaFinal.Text & "'," & 1 & ",
+                                     '" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & "," & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
                 conectar()
                 adaptador.ExecuteNonQuery()
                 MsgBox("Se registro correctamente")
@@ -181,5 +201,142 @@ Module Modulo_Indicadores
         End Try
     End Sub
 
+    Sub CargarFinalizado()
+
+        If nombre.Text = "" Or MIfechaInicio.Text = "" Or MIfechaFinal.Text = "" Or MIdescripcion.Text = "" Then
+            MsgBox("Complete todos los campos para poder Finalizar")
+        Else
+
+            If MItxtTiempoInicio.Text = "00:00:00" Then
+                MIseleccion = 0
+            Else
+
+                MIseleccion = 1
+            End If
+
+
+            Dim adaptador As New SqlCommand("insert into Indicadores values (" & Conteo3 & ",'" & nombre.Text & "','" & MIubicacion.Text & "',
+                '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIfechaInicio.Text & "','" & MIfechaFinal.Text & "'," & 0 & ",
+                '" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & "," & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
+
+            conectar()
+            adaptador.ExecuteNonQuery()
+            MsgBox("Se registro correctamente")
+            desconectar()
+
+        End If
+
+
+
+    End Sub
+
+
+    Sub btnFechaInicio()
+
+
+        MIfechaInicio.Text = DateTime.Now
+        Dim fechacreacion As Date
+        fechacreacion = MIfechaInicio.Text
+        MIfechaInicio.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
+
+
+
+    End Sub
+
+    Sub btnFechaFinal()
+
+        MIfechaFinal.Text = DateTime.Now
+        Dim fechacreacion As Date
+        fechacreacion = MIfechaFinal.Text
+        MIfechaFinal.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
+
+    End Sub
+
+    Sub btnControlTiempo()
+        If MIpanelControlTiempo.Visible = True Then
+            MIpanelControlTiempo.Visible = False
+            MIbtnControlTiempo.Text = "Control de tiempo"
+        Else
+            MIpanelControlTiempo.Visible = True
+            MIbtnControlTiempo.Text = "Inicio"
+
+        End If
+
+    End Sub
+
+    Sub btnCalcular()
+        If MItxtTiempoInicio.Text = "" Or MItxtTiempoFinal.Text = "" Then
+            MsgBox("Favor complete los tiempos")
+        Else
+            Dim minutos As String
+
+
+            Dim FechaEntrada As String = MItxtTiempoInicio.Text
+            Dim FechaSalida As String = MItxtTiempoFinal.Text
+            Dim IntMinutos As Double
+
+
+
+            minutos = DateDiff(DateInterval.Minute, CDate(FechaEntrada), CDate(FechaSalida))
+
+            IntMinutos = minutos
+
+            hora = Math.Truncate(IntMinutos / 60)
+
+            minuto = Math.Truncate(IntMinutos - (hora * 60))
+
+            If hora = 1 Then
+                MIcalHoras.Text = hora & " hora"
+            Else
+                MIcalHoras.Text = hora & " horas"
+            End If
+
+            If minuto = 1 Then
+                MIcalMinutos.Text = minuto & " minuto"
+            Else
+                MIcalMinutos.Text = minuto & " minutos"
+            End If
+
+            almacenar = True
+        End If
+    End Sub
+
+    Sub btnAgregarTiempo()
+        Try
+            If almacenar = True Then
+                acumhora = MIhoraAcumulada.Text
+                acumhora = acumhora + hora
+
+                acumminuto = MIminutoAcumulado.Text
+                If minuto + acumminuto >= 60 Then
+                    minutodivision = Math.Truncate((minuto + acumminuto) / 60)
+                    minutoresta = (minuto + acumminuto) - (minutodivision * 60)
+                    acumminuto = minutoresta
+
+                    acumhora = acumhora + minutodivision
+                Else
+                    acumminuto = acumminuto + minuto
+                End If
+
+
+                MItxtTiempoInicio.Text = "00:00:00"
+                MItxtTiempoFinal.Text = "00:00:00"
+                MIcalHoras.Text = 0
+                MIcalMinutos.Text = 0
+
+
+
+                MIhoraAcumulada.Text = acumhora
+                MIminutoAcumulado.Text = acumminuto
+            End If
+            almacenar = False
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 #End Region
+
+
 End Module

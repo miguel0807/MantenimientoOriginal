@@ -133,13 +133,13 @@ Public Class Indicadores_Nuevo
         End Try
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnControlTiempo.Click
         If panel_boton.Visible = True Then
             panel_boton.Visible = False
-            Button5.Text = "Control de tiempo"
+            btnControlTiempo.Text = "Control de tiempo"
         Else
             panel_boton.Visible = True
-            Button5.Text = "Inicio"
+            btnControlTiempo.Text = "Inicio"
 
         End If
 

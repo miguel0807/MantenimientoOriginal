@@ -58,9 +58,9 @@ Partial Class Registrar_Nuevo_Caso
         Me.fecha_final = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Fecha = New System.Windows.Forms.TextBox()
+        Me.Fecha_Inicio = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.butonControlTiempo = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.panel_boton.SuspendLayout()
@@ -86,7 +86,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.panel_boton.Controls.Add(Me.Button7)
         Me.panel_boton.Controls.Add(Me.Tiempo_Inicio)
         Me.panel_boton.Controls.Add(Me.Button6)
-        Me.panel_boton.Location = New System.Drawing.Point(12, 342)
+        Me.panel_boton.Location = New System.Drawing.Point(12, 35)
         Me.panel_boton.Name = "panel_boton"
         Me.panel_boton.Size = New System.Drawing.Size(1268, 579)
         Me.panel_boton.TabIndex = 82
@@ -473,21 +473,21 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Panel2.Controls.Add(Me.Fecha)
+        Me.Panel2.Controls.Add(Me.Fecha_Inicio)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Location = New System.Drawing.Point(566, 35)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(416, 73)
         Me.Panel2.TabIndex = 2
         '
-        'Fecha
+        'Fecha_Inicio
         '
-        Me.Fecha.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Fecha.Location = New System.Drawing.Point(162, 17)
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.Size = New System.Drawing.Size(230, 34)
-        Me.Fecha.TabIndex = 2
+        Me.Fecha_Inicio.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Fecha_Inicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Fecha_Inicio.Location = New System.Drawing.Point(162, 17)
+        Me.Fecha_Inicio.Name = "Fecha_Inicio"
+        Me.Fecha_Inicio.Size = New System.Drawing.Size(230, 34)
+        Me.Fecha_Inicio.TabIndex = 2
         '
         'Button1
         '
@@ -499,15 +499,15 @@ Partial Class Registrar_Nuevo_Caso
         Me.Button1.Text = "Fecha Inicio"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button5
+        'butonControlTiempo
         '
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(12, 3)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(184, 29)
-        Me.Button5.TabIndex = 88
-        Me.Button5.Text = "Control de tiempo"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.butonControlTiempo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.butonControlTiempo.Location = New System.Drawing.Point(12, 3)
+        Me.butonControlTiempo.Name = "butonControlTiempo"
+        Me.butonControlTiempo.Size = New System.Drawing.Size(184, 29)
+        Me.butonControlTiempo.TabIndex = 88
+        Me.butonControlTiempo.Text = "Control de tiempo"
+        Me.butonControlTiempo.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -546,7 +546,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Descripcion)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.butonControlTiempo)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label6)
         Me.Name = "Registrar_Nuevo_Caso"
@@ -603,9 +603,9 @@ Partial Class Registrar_Nuevo_Caso
     Friend WithEvents fecha_final As TextBox
     Friend WithEvents Button4 As Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Fecha As TextBox
+    Friend WithEvents Fecha_Inicio As TextBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents butonControlTiempo As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label6 As Label
 End Class

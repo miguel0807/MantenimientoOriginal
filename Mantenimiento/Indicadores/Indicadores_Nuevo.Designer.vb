@@ -42,7 +42,7 @@ Partial Class Indicadores_Nuevo
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnControlTiempo = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Tiempo_Inicio = New System.Windows.Forms.TextBox()
         Me.Button7 = New System.Windows.Forms.Button()
@@ -282,15 +282,15 @@ Partial Class Indicadores_Nuevo
         Me.Label3.TabIndex = 79
         Me.Label3.Text = "Label3"
         '
-        'Button5
+        'btnControlTiempo
         '
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(25, 12)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(184, 29)
-        Me.Button5.TabIndex = 80
-        Me.Button5.Text = "Control de tiempo"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnControlTiempo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnControlTiempo.Location = New System.Drawing.Point(25, 12)
+        Me.btnControlTiempo.Name = "btnControlTiempo"
+        Me.btnControlTiempo.Size = New System.Drawing.Size(184, 29)
+        Me.btnControlTiempo.TabIndex = 80
+        Me.btnControlTiempo.Text = "Control de tiempo"
+        Me.btnControlTiempo.UseVisualStyleBackColor = True
         '
         'Button6
         '
@@ -547,7 +547,7 @@ Partial Class Indicadores_Nuevo
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Descripcion)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.btnControlTiempo)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label6)
         Me.Cursor = System.Windows.Forms.Cursors.Default
@@ -590,7 +590,7 @@ Partial Class Indicadores_Nuevo
     Friend WithEvents Button4 As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Button5 As Button
+    Friend WithEvents btnControlTiempo As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Tiempo_Inicio As TextBox
     Friend WithEvents Button7 As Button
