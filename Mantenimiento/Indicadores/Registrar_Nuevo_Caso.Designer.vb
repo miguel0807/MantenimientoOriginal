@@ -77,7 +77,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'panel_boton
         '
-        Me.panel_boton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.panel_boton.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.panel_boton.Controls.Add(Me.Panel5)
         Me.panel_boton.Controls.Add(Me.calminutos)
@@ -91,7 +90,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.panel_boton.Controls.Add(Me.Button6)
         Me.panel_boton.Location = New System.Drawing.Point(18, 462)
         Me.panel_boton.Name = "panel_boton"
-        Me.panel_boton.Size = New System.Drawing.Size(983, 393)
+        Me.panel_boton.Size = New System.Drawing.Size(1290, 334)
         Me.panel_boton.TabIndex = 82
         Me.panel_boton.Visible = False
         '
@@ -110,7 +109,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel5.Controls.Add(Me.Label10)
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.Label7)
-        Me.Panel5.Location = New System.Drawing.Point(510, 28)
+        Me.Panel5.Location = New System.Drawing.Point(734, 32)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(421, 269)
         Me.Panel5.TabIndex = 94
@@ -228,7 +227,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.calminutos.AutoSize = True
         Me.calminutos.BackColor = System.Drawing.Color.LightGray
         Me.calminutos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.calminutos.Location = New System.Drawing.Point(348, 297)
+        Me.calminutos.Location = New System.Drawing.Point(343, 272)
         Me.calminutos.Name = "calminutos"
         Me.calminutos.Size = New System.Drawing.Size(26, 29)
         Me.calminutos.TabIndex = 92
@@ -239,7 +238,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.LightGray
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label13.Location = New System.Drawing.Point(228, 297)
+        Me.Label13.Location = New System.Drawing.Point(223, 272)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(103, 29)
         Me.Label13.TabIndex = 91
@@ -250,7 +249,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.LightGray
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label14.Location = New System.Drawing.Point(228, 231)
+        Me.Label14.Location = New System.Drawing.Point(223, 206)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(83, 29)
         Me.Label14.TabIndex = 90
@@ -261,7 +260,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.calhoras.AutoSize = True
         Me.calhoras.BackColor = System.Drawing.Color.LightGray
         Me.calhoras.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.calhoras.Location = New System.Drawing.Point(348, 231)
+        Me.calhoras.Location = New System.Drawing.Point(343, 206)
         Me.calhoras.Name = "calhoras"
         Me.calhoras.Size = New System.Drawing.Size(26, 29)
         Me.calhoras.TabIndex = 89
@@ -270,7 +269,7 @@ Partial Class Registrar_Nuevo_Caso
         'Button8
         '
         Me.Button8.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.Location = New System.Drawing.Point(17, 251)
+        Me.Button8.Location = New System.Drawing.Point(12, 226)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(145, 67)
         Me.Button8.TabIndex = 83
@@ -320,44 +319,36 @@ Partial Class Registrar_Nuevo_Caso
         '
         'Button2
         '
-        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
-        Me.Button2.Location = New System.Drawing.Point(937, 56)
+        Me.Button2.Location = New System.Drawing.Point(1063, 332)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(186, 74)
+        Me.Button2.Size = New System.Drawing.Size(149, 58)
         Me.Button2.TabIndex = 84
         Me.Button2.Text = "Pendiente"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button3.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
-        Me.Button3.Location = New System.Drawing.Point(937, 144)
+        Me.Button3.Location = New System.Drawing.Point(1063, 271)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(186, 67)
+        Me.Button3.Size = New System.Drawing.Size(149, 55)
         Me.Button3.TabIndex = 85
         Me.Button3.Text = "Finalizado"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Descripcion
         '
-        Me.Descripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Descripcion.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Descripcion.Location = New System.Drawing.Point(485, 251)
+        Me.Descripcion.Location = New System.Drawing.Point(610, 261)
         Me.Descripcion.Multiline = True
         Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.Size = New System.Drawing.Size(402, 179)
+        Me.Descripcion.Size = New System.Drawing.Size(408, 127)
         Me.Descripcion.TabIndex = 83
         '
         'Panel4
         '
-        Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel4.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Panel4.Controls.Add(Me.ComboBox3)
         Me.Panel4.Controls.Add(Me.Label11)
@@ -373,7 +364,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel4.Controls.Add(Me.Nombre)
         Me.Panel4.Location = New System.Drawing.Point(18, 38)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(432, 349)
+        Me.Panel4.Size = New System.Drawing.Size(535, 383)
         Me.Panel4.TabIndex = 1
         '
         'ComboBox3
@@ -383,7 +374,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Items.AddRange(New Object() {"Electrico", "Mecanico", "Servicio", "Servicio Miguel"})
-        Me.ComboBox3.Location = New System.Drawing.Point(187, 170)
+        Me.ComboBox3.Location = New System.Drawing.Point(197, 183)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(228, 33)
         Me.ComboBox3.TabIndex = 79
@@ -392,7 +383,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label11.Location = New System.Drawing.Point(11, 178)
+        Me.Label11.Location = New System.Drawing.Point(21, 191)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(88, 31)
         Me.Label11.TabIndex = 80
@@ -404,8 +395,8 @@ Partial Class Registrar_Nuevo_Caso
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Bodega", "Contacto", "Oficinas", "Escritorio", "Electronicos", "CR7", "CR8", "Cuarto de compresor", "Tank Farm", "Laboratorio"})
-        Me.ComboBox1.Location = New System.Drawing.Point(183, 56)
+        Me.ComboBox1.Items.AddRange(New Object() {"Daniel Jimenez", "Miguel Alvarado"})
+        Me.ComboBox1.Location = New System.Drawing.Point(193, 69)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(228, 33)
         Me.ComboBox1.TabIndex = 75
@@ -417,7 +408,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Electrico", "Mecanico", "Servicio", "Servicio Miguel"})
-        Me.ComboBox2.Location = New System.Drawing.Point(183, 118)
+        Me.ComboBox2.Location = New System.Drawing.Point(193, 131)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(228, 33)
         Me.ComboBox2.TabIndex = 76
@@ -426,7 +417,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label2.Location = New System.Drawing.Point(7, 126)
+        Me.Label2.Location = New System.Drawing.Point(17, 139)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 31)
         Me.Label2.TabIndex = 78
@@ -436,7 +427,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label4.Location = New System.Drawing.Point(6, 56)
+        Me.Label4.Location = New System.Drawing.Point(16, 69)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(148, 31)
         Me.Label4.TabIndex = 77
@@ -449,7 +440,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Ubicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ubicacion.FormattingEnabled = True
         Me.Ubicacion.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Bodega", "Contacto", "Oficinas", "Escritorio", "Electronicos", "CR7", "CR8", "Cuarto de compresor", "Tank Farm", "Laboratorio"})
-        Me.Ubicacion.Location = New System.Drawing.Point(184, 232)
+        Me.Ubicacion.Location = New System.Drawing.Point(194, 245)
         Me.Ubicacion.Name = "Ubicacion"
         Me.Ubicacion.Size = New System.Drawing.Size(228, 33)
         Me.Ubicacion.TabIndex = 2
@@ -461,7 +452,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Clasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clasificacion.FormattingEnabled = True
         Me.Clasificacion.Items.AddRange(New Object() {"Electrico", "Mecanico", "Servicio", "IT"})
-        Me.Clasificacion.Location = New System.Drawing.Point(183, 298)
+        Me.Clasificacion.Location = New System.Drawing.Point(193, 311)
         Me.Clasificacion.Name = "Clasificacion"
         Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
         Me.Clasificacion.TabIndex = 3
@@ -470,27 +461,27 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label9.Location = New System.Drawing.Point(7, 306)
+        Me.Label9.Location = New System.Drawing.Point(17, 319)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(145, 31)
         Me.Label9.TabIndex = 74
-        Me.Label9.Text = "Clasificacion"
+        Me.Label9.Text = "Clasificación"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label5.Location = New System.Drawing.Point(7, 232)
+        Me.Label5.Location = New System.Drawing.Point(17, 245)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(118, 31)
         Me.Label5.TabIndex = 72
-        Me.Label5.Text = "Ubicacion"
+        Me.Label5.Text = "Ubicación"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(5, 8)
+        Me.Label1.Location = New System.Drawing.Point(15, 21)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(75, 31)
         Me.Label1.TabIndex = 66
@@ -500,21 +491,19 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.Nombre.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Nombre.Location = New System.Drawing.Point(182, 8)
+        Me.Nombre.Location = New System.Drawing.Point(192, 21)
         Me.Nombre.Name = "Nombre"
         Me.Nombre.Size = New System.Drawing.Size(229, 30)
         Me.Nombre.TabIndex = 1
         '
         'Panel3
         '
-        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Panel3.Controls.Add(Me.fecha_final)
         Me.Panel3.Controls.Add(Me.Button4)
-        Me.Panel3.Location = New System.Drawing.Point(471, 136)
+        Me.Panel3.Location = New System.Drawing.Point(599, 133)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(416, 73)
+        Me.Panel3.Size = New System.Drawing.Size(520, 77)
         Me.Panel3.TabIndex = 3
         '
         'fecha_final
@@ -538,14 +527,12 @@ Partial Class Registrar_Nuevo_Caso
         '
         'Panel2
         '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Panel2.Controls.Add(Me.Fecha_Inicio)
         Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Location = New System.Drawing.Point(471, 38)
+        Me.Panel2.Location = New System.Drawing.Point(599, 38)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(416, 92)
+        Me.Panel2.Size = New System.Drawing.Size(520, 84)
         Me.Panel2.TabIndex = 2
         '
         'Fecha_Inicio
@@ -569,17 +556,15 @@ Partial Class Registrar_Nuevo_Caso
         '
         'Label6
         '
-        Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label6.Location = New System.Drawing.Point(479, 216)
+        Me.Label6.Location = New System.Drawing.Point(608, 217)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(150, 32)
         Me.Label6.TabIndex = 86
-        Me.Label6.Text = "Descripcion"
+        Me.Label6.Text = "Descripción"
         '
         'butonControlTiempo
         '
@@ -598,7 +583,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Label3.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label3.Location = New System.Drawing.Point(1946, 6)
+        Me.Label3.Location = New System.Drawing.Point(2619, 8)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 29)
         Me.Label3.TabIndex = 87
@@ -608,8 +593,9 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1451, 882)
+        Me.ClientSize = New System.Drawing.Size(1346, 817)
         Me.Controls.Add(Me.panel_boton)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.butonControlTiempo)
