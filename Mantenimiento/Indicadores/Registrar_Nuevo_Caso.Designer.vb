@@ -46,8 +46,13 @@ Partial Class Registrar_Nuevo_Caso
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Descripcion = New System.Windows.Forms.TextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Ubicacion = New System.Windows.Forms.ComboBox()
         Me.Clasificacion = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -60,18 +65,11 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Fecha_Inicio = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.butonControlTiempo = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.panel_boton.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -79,8 +77,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         'panel_boton
         '
-        Me.panel_boton.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panel_boton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.panel_boton.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.panel_boton.Controls.Add(Me.Panel5)
         Me.panel_boton.Controls.Add(Me.calminutos)
@@ -92,9 +89,9 @@ Partial Class Registrar_Nuevo_Caso
         Me.panel_boton.Controls.Add(Me.Button7)
         Me.panel_boton.Controls.Add(Me.Tiempo_Inicio)
         Me.panel_boton.Controls.Add(Me.Button6)
-        Me.panel_boton.Location = New System.Drawing.Point(6, 481)
+        Me.panel_boton.Location = New System.Drawing.Point(18, 462)
         Me.panel_boton.Name = "panel_boton"
-        Me.panel_boton.Size = New System.Drawing.Size(1268, 579)
+        Me.panel_boton.Size = New System.Drawing.Size(983, 393)
         Me.panel_boton.TabIndex = 82
         Me.panel_boton.Visible = False
         '
@@ -113,7 +110,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel5.Controls.Add(Me.Label10)
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.Label7)
-        Me.Panel5.Location = New System.Drawing.Point(828, 37)
+        Me.Panel5.Location = New System.Drawing.Point(510, 28)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(421, 269)
         Me.Panel5.TabIndex = 94
@@ -231,7 +228,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.calminutos.AutoSize = True
         Me.calminutos.BackColor = System.Drawing.Color.LightGray
         Me.calminutos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.calminutos.Location = New System.Drawing.Point(339, 433)
+        Me.calminutos.Location = New System.Drawing.Point(348, 297)
         Me.calminutos.Name = "calminutos"
         Me.calminutos.Size = New System.Drawing.Size(26, 29)
         Me.calminutos.TabIndex = 92
@@ -242,7 +239,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.LightGray
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label13.Location = New System.Drawing.Point(219, 433)
+        Me.Label13.Location = New System.Drawing.Point(228, 297)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(103, 29)
         Me.Label13.TabIndex = 91
@@ -253,7 +250,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.LightGray
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label14.Location = New System.Drawing.Point(219, 367)
+        Me.Label14.Location = New System.Drawing.Point(228, 231)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(83, 29)
         Me.Label14.TabIndex = 90
@@ -264,7 +261,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.calhoras.AutoSize = True
         Me.calhoras.BackColor = System.Drawing.Color.LightGray
         Me.calhoras.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.calhoras.Location = New System.Drawing.Point(339, 367)
+        Me.calhoras.Location = New System.Drawing.Point(348, 231)
         Me.calhoras.Name = "calhoras"
         Me.calhoras.Size = New System.Drawing.Size(26, 29)
         Me.calhoras.TabIndex = 89
@@ -273,7 +270,7 @@ Partial Class Registrar_Nuevo_Caso
         'Button8
         '
         Me.Button8.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.Location = New System.Drawing.Point(26, 384)
+        Me.Button8.Location = New System.Drawing.Point(17, 251)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(145, 67)
         Me.Button8.TabIndex = 83
@@ -284,7 +281,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         Me.Tiempo_Final.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Tiempo_Final.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tiempo_Final.Location = New System.Drawing.Point(208, 208)
+        Me.Tiempo_Final.Location = New System.Drawing.Point(208, 135)
         Me.Tiempo_Final.Name = "Tiempo_Final"
         Me.Tiempo_Final.Size = New System.Drawing.Size(230, 34)
         Me.Tiempo_Final.TabIndex = 6
@@ -293,7 +290,7 @@ Partial Class Registrar_Nuevo_Caso
         'Button7
         '
         Me.Button7.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(13, 191)
+        Me.Button7.Location = New System.Drawing.Point(12, 120)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(145, 67)
         Me.Button7.TabIndex = 5
@@ -323,55 +320,44 @@ Partial Class Registrar_Nuevo_Caso
         '
         'Button2
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button2.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
-        Me.Button2.Location = New System.Drawing.Point(1061, 275)
+        Me.Button2.Location = New System.Drawing.Point(937, 56)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(223, 78)
+        Me.Button2.Size = New System.Drawing.Size(186, 74)
         Me.Button2.TabIndex = 84
         Me.Button2.Text = "Pendiente"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button3.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
-        Me.Button3.Location = New System.Drawing.Point(1061, 353)
+        Me.Button3.Location = New System.Drawing.Point(937, 144)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(223, 78)
+        Me.Button3.Size = New System.Drawing.Size(186, 67)
         Me.Button3.TabIndex = 85
         Me.Button3.Text = "Finalizado"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Descripcion
         '
-        Me.Descripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Descripcion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Descripcion.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Descripcion.Location = New System.Drawing.Point(653, 263)
+        Me.Descripcion.Location = New System.Drawing.Point(485, 251)
         Me.Descripcion.Multiline = True
         Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.Size = New System.Drawing.Size(370, 142)
+        Me.Descripcion.Size = New System.Drawing.Size(402, 179)
         Me.Descripcion.TabIndex = 83
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Panel4)
-        Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.Descripcion)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Location = New System.Drawing.Point(12, 35)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1043, 440)
-        Me.Panel1.TabIndex = 81
         '
         'Panel4
         '
+        Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel4.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Panel4.Controls.Add(Me.ComboBox3)
         Me.Panel4.Controls.Add(Me.Label11)
@@ -385,10 +371,76 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel4.Controls.Add(Me.Label5)
         Me.Panel4.Controls.Add(Me.Label1)
         Me.Panel4.Controls.Add(Me.Nombre)
-        Me.Panel4.Location = New System.Drawing.Point(16, 19)
+        Me.Panel4.Location = New System.Drawing.Point(18, 38)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(432, 349)
         Me.Panel4.TabIndex = 1
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Items.AddRange(New Object() {"Electrico", "Mecanico", "Servicio", "Servicio Miguel"})
+        Me.ComboBox3.Location = New System.Drawing.Point(187, 170)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(228, 33)
+        Me.ComboBox3.TabIndex = 79
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label11.Location = New System.Drawing.Point(11, 178)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(88, 31)
+        Me.Label11.TabIndex = 80
+        Me.Label11.Text = "Equipo"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Bodega", "Contacto", "Oficinas", "Escritorio", "Electronicos", "CR7", "CR8", "Cuarto de compresor", "Tank Farm", "Laboratorio"})
+        Me.ComboBox1.Location = New System.Drawing.Point(183, 56)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(228, 33)
+        Me.ComboBox1.TabIndex = 75
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Electrico", "Mecanico", "Servicio", "Servicio Miguel"})
+        Me.ComboBox2.Location = New System.Drawing.Point(183, 118)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(228, 33)
+        Me.ComboBox2.TabIndex = 76
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label2.Location = New System.Drawing.Point(7, 126)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(70, 31)
+        Me.Label2.TabIndex = 78
+        Me.Label2.Text = "Clase"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
+        Me.Label4.Location = New System.Drawing.Point(6, 56)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(148, 31)
+        Me.Label4.TabIndex = 77
+        Me.Label4.Text = "Responsable"
         '
         'Ubicacion
         '
@@ -440,7 +492,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Label1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(5, 8)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(94, 39)
+        Me.Label1.Size = New System.Drawing.Size(75, 31)
         Me.Label1.TabIndex = 66
         Me.Label1.Text = "Título"
         '
@@ -455,11 +507,12 @@ Partial Class Registrar_Nuevo_Caso
         '
         'Panel3
         '
-        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Panel3.Controls.Add(Me.fecha_final)
         Me.Panel3.Controls.Add(Me.Button4)
-        Me.Panel3.Location = New System.Drawing.Point(595, 129)
+        Me.Panel3.Location = New System.Drawing.Point(471, 136)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(416, 73)
         Me.Panel3.TabIndex = 3
@@ -485,13 +538,14 @@ Partial Class Registrar_Nuevo_Caso
         '
         'Panel2
         '
-        Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Panel2.Controls.Add(Me.Fecha_Inicio)
         Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Location = New System.Drawing.Point(595, 27)
+        Me.Panel2.Location = New System.Drawing.Point(471, 38)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(416, 73)
+        Me.Panel2.Size = New System.Drawing.Size(416, 92)
         Me.Panel2.TabIndex = 2
         '
         'Fecha_Inicio
@@ -506,17 +560,31 @@ Partial Class Registrar_Nuevo_Caso
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(11, 9)
+        Me.Button1.Location = New System.Drawing.Point(14, 11)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(91, 64)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Fecha Inicio"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Label6
+        '
+        Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label6.Location = New System.Drawing.Point(479, 216)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(150, 32)
+        Me.Label6.TabIndex = 86
+        Me.Label6.Text = "Descripcion"
+        '
         'butonControlTiempo
         '
         Me.butonControlTiempo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.butonControlTiempo.Location = New System.Drawing.Point(12, 3)
+        Me.butonControlTiempo.Location = New System.Drawing.Point(18, 427)
         Me.butonControlTiempo.Name = "butonControlTiempo"
         Me.butonControlTiempo.Size = New System.Drawing.Size(184, 29)
         Me.butonControlTiempo.TabIndex = 88
@@ -530,111 +598,34 @@ Partial Class Registrar_Nuevo_Caso
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Label3.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label3.Location = New System.Drawing.Point(927, 3)
+        Me.Label3.Location = New System.Drawing.Point(1946, 6)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 29)
         Me.Label3.TabIndex = 87
         Me.Label3.Text = "Label3"
-        '
-        'Label6
-        '
-        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label6.Location = New System.Drawing.Point(497, 264)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(150, 32)
-        Me.Label6.TabIndex = 86
-        Me.Label6.Text = "Descripcion"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"N/A", "Cartuchos Wilsonville", "Cartuchos DD", "Taller Mantenimiento", "Produccion Master batch", "Produccion Empaque", "Produccion Etiquetas", "Bodega", "Contacto", "Oficinas", "Escritorio", "Electronicos", "CR7", "CR8", "Cuarto de compresor", "Tank Farm", "Laboratorio"})
-        Me.ComboBox1.Location = New System.Drawing.Point(183, 56)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(228, 33)
-        Me.ComboBox1.TabIndex = 75
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Electrico", "Mecanico", "Servicio", "Servicio Miguel"})
-        Me.ComboBox2.Location = New System.Drawing.Point(183, 118)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(228, 33)
-        Me.ComboBox2.TabIndex = 76
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label2.Location = New System.Drawing.Point(7, 126)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 39)
-        Me.Label2.TabIndex = 78
-        Me.Label2.Text = "Clase"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label4.Location = New System.Drawing.Point(6, 56)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(185, 39)
-        Me.Label4.TabIndex = 77
-        Me.Label4.Text = "Responsable"
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"Electrico", "Mecanico", "Servicio", "Servicio Miguel"})
-        Me.ComboBox3.Location = New System.Drawing.Point(187, 170)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(228, 33)
-        Me.ComboBox3.TabIndex = 79
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
-        Me.Label11.Location = New System.Drawing.Point(11, 178)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(88, 31)
-        Me.Label11.TabIndex = 80
-        Me.Label11.Text = "Equipo"
         '
         'Registrar_Nuevo_Caso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1286, 768)
+        Me.ClientSize = New System.Drawing.Size(1451, 882)
         Me.Controls.Add(Me.panel_boton)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.butonControlTiempo)
         Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Descripcion)
         Me.Name = "Registrar_Nuevo_Caso"
         Me.Text = "Registrar_Nuevo_Caso"
         Me.panel_boton.ResumeLayout(False)
         Me.panel_boton.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -670,7 +661,6 @@ Partial Class Registrar_Nuevo_Caso
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Descripcion As TextBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Ubicacion As ComboBox
     Friend WithEvents Clasificacion As ComboBox
