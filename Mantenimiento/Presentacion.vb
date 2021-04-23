@@ -49,7 +49,7 @@ Public Class Presentacion
 #Region "Botones Indicadores"
     Private Sub button2_Click(sender As Object, e As EventArgs) Handles button2.Click
 
-        openChildForm(New Indicadores_Nuevo())
+        openChildForm(New Registrar_Nuevo_Caso())
 
         hideSubmenu()
 

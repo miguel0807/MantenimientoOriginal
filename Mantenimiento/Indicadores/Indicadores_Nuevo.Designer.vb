@@ -53,16 +53,16 @@ Partial Class Indicadores_Nuevo
         Me.Label13 = New System.Windows.Forms.Label()
         Me.calminutos = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtacuhora = New System.Windows.Forms.TextBox()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.txtacuminutos = New System.Windows.Forms.TextBox()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.txtacuminutos = New System.Windows.Forms.TextBox()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.txtacuhora = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.panel_boton = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -407,65 +407,41 @@ Partial Class Indicadores_Nuevo
         Me.Panel5.Size = New System.Drawing.Size(421, 269)
         Me.Panel5.TabIndex = 94
         '
-        'Label7
+        'Panel9
         '
-        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label7.Location = New System.Drawing.Point(167, 69)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(229, 29)
-        Me.Label7.TabIndex = 84
-        Me.Label7.Text = "Tiempo Acumulado:"
+        Me.Panel9.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel9.Location = New System.Drawing.Point(10, 257)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(399, 10)
+        Me.Panel9.TabIndex = 100
         '
-        'Label8
+        'Panel8
         '
-        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.LightGray
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label8.Location = New System.Drawing.Point(182, 139)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(83, 29)
-        Me.Label8.TabIndex = 86
-        Me.Label8.Text = "Horas:"
+        Me.Panel8.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel8.Location = New System.Drawing.Point(409, 10)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(10, 257)
+        Me.Panel8.TabIndex = 99
         '
-        'Label10
+        'Panel7
         '
-        Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.LightGray
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label10.Location = New System.Drawing.Point(182, 197)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(103, 29)
-        Me.Label10.TabIndex = 87
-        Me.Label10.Text = "Minutos:"
+        Me.Panel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel7.Location = New System.Drawing.Point(0, 10)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(10, 257)
+        Me.Panel7.TabIndex = 98
         '
-        'txtacuhora
+        'Panel6
         '
-        Me.txtacuhora.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtacuhora.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txtacuhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtacuhora.Location = New System.Drawing.Point(298, 136)
-        Me.txtacuhora.Name = "txtacuhora"
-        Me.txtacuhora.Size = New System.Drawing.Size(45, 34)
-        Me.txtacuhora.TabIndex = 95
-        Me.txtacuhora.Text = "0"
-        Me.txtacuhora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Button9
-        '
-        Me.Button9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button9.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.Location = New System.Drawing.Point(29, 104)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(110, 67)
-        Me.Button9.TabIndex = 93
-        Me.Button9.Text = "Agregar tiempo"
-        Me.Button9.UseVisualStyleBackColor = True
+        Me.Panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel6.Location = New System.Drawing.Point(0, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(419, 10)
+        Me.Panel6.TabIndex = 97
         '
         'txtacuminutos
         '
@@ -479,41 +455,65 @@ Partial Class Indicadores_Nuevo
         Me.txtacuminutos.Text = "0"
         Me.txtacuminutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel6
+        'Button9
         '
-        Me.Panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(419, 10)
-        Me.Panel6.TabIndex = 97
+        Me.Button9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button9.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.Location = New System.Drawing.Point(29, 104)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(110, 67)
+        Me.Button9.TabIndex = 93
+        Me.Button9.Text = "Agregar tiempo"
+        Me.Button9.UseVisualStyleBackColor = True
         '
-        'Panel7
+        'txtacuhora
         '
-        Me.Panel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel7.Location = New System.Drawing.Point(0, 10)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(10, 257)
-        Me.Panel7.TabIndex = 98
+        Me.txtacuhora.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtacuhora.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtacuhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtacuhora.Location = New System.Drawing.Point(298, 136)
+        Me.txtacuhora.Name = "txtacuhora"
+        Me.txtacuhora.Size = New System.Drawing.Size(45, 34)
+        Me.txtacuhora.TabIndex = 95
+        Me.txtacuhora.Text = "0"
+        Me.txtacuhora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel8
+        'Label10
         '
-        Me.Panel8.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel8.Location = New System.Drawing.Point(409, 10)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(10, 257)
-        Me.Panel8.TabIndex = 99
+        Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.LightGray
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label10.Location = New System.Drawing.Point(182, 197)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(103, 29)
+        Me.Label10.TabIndex = 87
+        Me.Label10.Text = "Minutos:"
         '
-        'Panel9
+        'Label8
         '
-        Me.Panel9.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel9.Location = New System.Drawing.Point(10, 257)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(399, 10)
-        Me.Panel9.TabIndex = 100
+        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.LightGray
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label8.Location = New System.Drawing.Point(182, 139)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(83, 29)
+        Me.Label8.TabIndex = 86
+        Me.Label8.Text = "Horas:"
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.Label7.Location = New System.Drawing.Point(167, 69)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(229, 29)
+        Me.Label7.TabIndex = 84
+        Me.Label7.Text = "Tiempo Acumulado:"
         '
         'panel_boton
         '

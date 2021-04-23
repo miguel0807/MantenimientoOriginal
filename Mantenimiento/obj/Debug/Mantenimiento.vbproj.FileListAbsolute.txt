@@ -41,3 +41,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimie
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Exportar_Indicadores.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\ClosedXML.dll
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Registrar_Nuevo_Caso.resources

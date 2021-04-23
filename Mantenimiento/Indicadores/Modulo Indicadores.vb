@@ -9,6 +9,30 @@ Imports System.Data.SqlClient
 Module Modulo_Indicadores
     Public datagridIndicadores As DataGridView
 
+    Public Conteo3 As Integer
+    Public EtiquetaConteo As Label
+    Public MItxtTiempoInicio As TextBox
+    Public MItxtTiempoFinal As TextBox
+    Public MIminutoAcumulado As TextBox
+    Public MIhoraAcumulada As TextBox
+
+
+
+    Public MItitulo As TextBox
+    Public MIubicacion As TextBox
+    Public MIclasificacion As ComboBox
+    Public MIfechaInicio As TextBox
+    Public MIfechaFinal As TextBox
+    Public MIdescripcion As TextBox
+
+
+    Public MIseleccion As Integer = 0
+
+
+
+
+
+
     Sub cargarIndicadores()
 #Region "Buscar casos abiertos"
         conectar()
@@ -101,4 +125,61 @@ Module Modulo_Indicadores
 
         MessageBox.Show("Exportación completa")
     End Sub
+
+
+
+#Region "Registro nuevo caso"
+    Sub CargarEtiquetas()
+        Try
+            conectar()
+
+            Dim Query As String
+            Query = ("select COUNT (Estado) from Indicadores")
+            Dim cmd As New SqlCommand(Query, cn)
+            Conteo3 = cmd.ExecuteScalar
+
+            EtiquetaConteo.Text = Conteo3
+            EtiquetaConteo.Text = "Caso #" + EtiquetaConteo.Text
+            'Coloca la cantidad de filas que hay en la tabla temporal
+            desconectar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+#End Region
+
+#Region "Cargar Pendiente"
+
+    Sub Pendiente()
+
+        Try
+            If MItitulo.Text = "" Or MIfechaInicio.Text = "" Then
+                MsgBox("Necesita completar problema y fecha de inicio")
+            Else
+
+
+                If MitxtTiempoInicio.Text = "00:00:00" Then
+                    MIseleccion = 0
+                ElseIf mitxtTiempoInicio.Text = "" Then
+                    MIseleccion = 0
+                Else
+
+                    MIseleccion = 1
+                End If
+                Dim adaptador As New SqlCommand("insert into Indicadores values (" & Conteo3 & ",'" & MItitulo.Text & "','" & MIubicacion.Text & "','" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIfechaInicio.Text & "','" & MIfechaFinal.Text & "'," & 1 & ",'" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & "," & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
+                conectar()
+                adaptador.ExecuteNonQuery()
+                MsgBox("Se registro correctamente")
+                desconectar()
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+#End Region
 End Module
