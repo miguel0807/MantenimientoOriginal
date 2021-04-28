@@ -5,13 +5,13 @@
 
 
 
-
-        MItitulo = Nombre
-        MIubicacion = Ubicacion
-        MIclasificacion = Clasificacion
-        MIfechaInicio = Fecha_Inicio
+        'Declaración de variables
+        MItitulo = txtTitulo
+        MIubicacion = cboUbicacion
+        MIclasificacion = cboClasificacion
+        MIfechaInicio = fecha_Inicio
         MIfechaFinal = fecha_final
-        MIdescripcion = Descripcion
+        MIdescripcion = txtDescripcion
 
 
         EtiquetaConteo = Label3
@@ -23,8 +23,8 @@
         MIcalHoras = calhoras
         MIcalMinutos = calminutos
 
-        MIpanelControlTiempo = panel_boton
-        MIbtnControlTiempo = butonControlTiempo
+        MIpanelControlTiempo = panelTiempos
+        MIbtnControlTiempo = btnPanelTiempo
 
 
 
@@ -32,32 +32,32 @@
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnPendiente.Click
         CargarPendiente()
     End Sub
 
-    Private Sub btnControlTiempo_Click(sender As Object, e As EventArgs) Handles butonControlTiempo.Click
+    Private Sub btnControlTiempo_Click(sender As Object, e As EventArgs) Handles btnPanelTiempo.Click
         btnControlTiempo()
 
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        btnTiempoInicio()
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles btnTiempoInicio.Click
+        Modulo_Indicadores.btnTiempoInicio()
 
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        btnTiempoFinal()
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnTiempoFinal.Click
+        Modulo_Indicadores.btnTiempoFinal()
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        btnCalcular()
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
+        Modulo_Indicadores.btnCalcular()
 
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        btnAgregarTiempo()
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles btnAgregarTiempo.Click
+        Modulo_Indicadores.btnAgregarTiempo()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
