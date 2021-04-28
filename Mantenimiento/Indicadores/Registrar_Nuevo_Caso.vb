@@ -23,8 +23,8 @@
         MIcalHoras = calhoras
         MIcalMinutos = calminutos
 
-        MIpanelControlTiempo = panelTiempos
-        MIbtnControlTiempo = btnPanelTiempo
+        'MIpanelControlTiempo = panelTiempos
+        'MIbtnControlTiempo = btnPanelTiempo
 
 
 
@@ -32,43 +32,31 @@
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnPendiente.Click
-        CargarPendiente()
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnFechaInicio.Click
+        Modulo_Indicadores.btnFechaInicio()
     End Sub
 
-    Private Sub btnControlTiempo_Click(sender As Object, e As EventArgs) Handles btnPanelTiempo.Click
-        btnControlTiempo()
-
-
-    End Sub
-
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles btnTiempoInicio.Click
+    Private Sub btnTiempoInicio_Click(sender As Object, e As EventArgs) Handles btnTiempoInicio.Click
         Modulo_Indicadores.btnTiempoInicio()
-
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnTiempoFinal.Click
+    Private Sub btnTiempoFinal_Click(sender As Object, e As EventArgs) Handles btnTiempoFinal.Click
         Modulo_Indicadores.btnTiempoFinal()
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
+    Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
         Modulo_Indicadores.btnCalcular()
-
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles btnAgregarTiempo.Click
+    Private Sub btnAgregarTiempo_Click(sender As Object, e As EventArgs) Handles btnAgregarTiempo.Click
         Modulo_Indicadores.btnAgregarTiempo()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        btnFechaInicio()
+    Private Sub btnFechaFinal_Click(sender As Object, e As EventArgs) Handles btnFechaFinal.Click
+        Modulo_Indicadores.btnFechaFinal()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        btnFechaFinal()
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
-
+    Private Sub btnPendiente_Click(sender As Object, e As EventArgs) Handles btnPendiente.Click
+        CargarPendiente()
     End Sub
 End Class

@@ -187,8 +187,9 @@ Module Modulo_Indicadores
                     MIseleccion = 1
                 End If
                 Dim adaptador As New SqlCommand("insert into Indicadores values (" & Conteo3 & ",'" & MItitulo.Text & "','" & MIubicacion.Text & "',
-                                     '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIfechaInicio.Text & "','" & MIfechaFinal.Text & "'," & 1 & ",
-                                     '" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & "," & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
+                                     '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIfechaInicio.Text & "',
+                                     '" & MIfechaFinal.Text & "'," & 1 & ",'" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & ",
+                                     " & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
                 conectar()
                 adaptador.ExecuteNonQuery()
                 MsgBox("Se registro correctamente")
