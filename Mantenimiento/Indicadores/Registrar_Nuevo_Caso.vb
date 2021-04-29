@@ -7,14 +7,16 @@
 
         'Declaración de variables
         MItitulo = txtTitulo
+        MIresponsable = cboResponsable
+        MIclase = cboClase
+        MIequipo = cboEquipo
         MIubicacion = cboUbicacion
         MIclasificacion = cboClasificacion
+        MIdescripcion = txtDescripcion
+        MIsolucionProblema = txtSolucionProblema
         MIfechaInicio = fecha_Inicio
         MIfechaFinal = fecha_final
-        MIdescripcion = txtDescripcion
 
-
-        EtiquetaConteo = Label3
 
         MItxtTiempoInicio = Tiempo_Inicio
         MItxtTiempoFinal = Tiempo_Final
@@ -23,12 +25,16 @@
         MIcalHoras = calhoras
         MIcalMinutos = calminutos
 
-        'MIpanelControlTiempo = panelTiempos
-        'MIbtnControlTiempo = btnPanelTiempo
+        EtiquetaConteo = Label3
 
 
+        MostrarCantidadCasos()
+        MIcargarClase()
+        MIcargarResponsable()
+        MIcargarEquipos()
+        MIcargarUbicacion()
+        MIcargarClasificación()
 
-        CargarEtiquetas()
 
     End Sub
 
@@ -59,4 +65,15 @@
     Private Sub btnPendiente_Click(sender As Object, e As EventArgs) Handles btnPendiente.Click
         CargarPendiente()
     End Sub
+
+
+    Private Sub btnFinalizado_Click(sender As Object, e As EventArgs) Handles btnFinalizado.Click
+        CargarFinalizado()
+    End Sub
+
+    Private Sub cboClase_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboClase.SelectedIndexChanged
+        MIcargarEquipos()
+    End Sub
+
+
 End Class

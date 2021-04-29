@@ -19,11 +19,18 @@ Module Modulo_Indicadores
 
 
     Public MItitulo As TextBox
+    Public MIresponsable As ComboBox
+    Public MIclase As ComboBox
+    Public MIequipo As ComboBox
     Public MIubicacion As ComboBox
     Public MIclasificacion As ComboBox
+    Public MIdescripcion As TextBox
+    Public MIsolucionProblema As TextBox
     Public MIfechaInicio As TextBox
     Public MIfechaFinal As TextBox
-    Public MIdescripcion As TextBox
+
+
+
     Public MIcalHoras As Label
     Public MIcalMinutos As Label
     Public MIpanelControlTiempo As Panel
@@ -147,12 +154,12 @@ Module Modulo_Indicadores
 
 
 #Region "Registro nuevo caso"
-    Sub CargarEtiquetas()
+    Sub MostrarCantidadCasos()
         Try
             conectar()
 
             Dim Query As String
-            Query = ("select COUNT (Estado) from Indicadores")
+            Query = ("select COUNT (Estado) from Indicadores1")
             Dim cmd As New SqlCommand(Query, cn)
             Conteo3 = cmd.ExecuteScalar
 
@@ -186,8 +193,9 @@ Module Modulo_Indicadores
 
                     MIseleccion = 1
                 End If
-                Dim adaptador As New SqlCommand("insert into Indicadores values (" & Conteo3 & ",'" & MItitulo.Text & "','" & MIubicacion.Text & "',
-                                     '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIfechaInicio.Text & "',
+                Dim adaptador As New SqlCommand("insert into Indicadores1 values (" & Conteo3 & ",'" & MItitulo.Text & "' ,'" & MIresponsable.Text & "',
+                                        '" & MIclase.Text & "','" & MIequipo.Text & "','" & MIubicacion.Text & "',
+                                     '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIsolucionProblema.Text & "','" & MIfechaInicio.Text & "',
                                      '" & MIfechaFinal.Text & "'," & 1 & ",'" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & ",
                                      " & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
                 conectar()
@@ -204,29 +212,35 @@ Module Modulo_Indicadores
 
     Sub CargarFinalizado()
 
-        If nombre.Text = "" Or MIfechaInicio.Text = "" Or MIfechaFinal.Text = "" Or MIdescripcion.Text = "" Then
-            MsgBox("Complete todos los campos para poder Finalizar")
-        Else
-
-            If MItxtTiempoInicio.Text = "00:00:00" Then
-                MIseleccion = 0
+        Try
+            If MItitulo.Text = "" Or MIfechaInicio.Text = "" Then
+                MsgBox("Necesita completar problema y fecha de inicio")
             Else
 
-                MIseleccion = 1
+
+                If MItxtTiempoInicio.Text = "00:00:00" Then
+                    MIseleccion = 0
+                ElseIf MItxtTiempoInicio.Text = "" Then
+                    MIseleccion = 0
+                Else
+
+                    MIseleccion = 1
+                End If
+                Dim adaptador As New SqlCommand("insert into Indicadores1 values (" & Conteo3 & ",'" & MItitulo.Text & "' ,'" & MIresponsable.Text & "',
+                                        '" & MIclase.Text & "','" & MIequipo.Text & "','" & MIubicacion.Text & "',
+                                     '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIsolucionProblema.Text & "','" & MIfechaInicio.Text & "',
+                                     '" & MIfechaFinal.Text & "'," & 0 & ",'" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & ",
+                                     " & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
+                conectar()
+                adaptador.ExecuteNonQuery()
+                MsgBox("Se registro correctamente")
+                desconectar()
+
             End If
 
-
-            Dim adaptador As New SqlCommand("insert into Indicadores values (" & Conteo3 & ",'" & nombre.Text & "','" & MIubicacion.Text & "',
-                '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIfechaInicio.Text & "','" & MIfechaFinal.Text & "'," & 0 & ",
-                '" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & "," & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
-
-            conectar()
-            adaptador.ExecuteNonQuery()
-            MsgBox("Se registro correctamente")
-            desconectar()
-
-        End If
-
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
 
     End Sub
@@ -361,5 +375,106 @@ Module Modulo_Indicadores
     End Sub
 #End Region
 
+    Sub MIcargarResponsable()
+#Region "Cargar datos en combobox de Responsable"
 
+        Dim cmd3 As String = "select*from Usuarios"
+        Dim da3 As New SqlDataAdapter(cmd3, cn)
+        Dim ds3 As New DataSet
+        da3.Fill(ds3)
+        With MIresponsable
+            MIresponsable.DataSource = ds3.Tables(0)
+            MIresponsable.DisplayMember = "Nombre"
+        End With
+        cn.Close()
+
+
+
+#End Region
+    End Sub
+
+    Sub MIcargarClase()
+
+        Dim cmd As String = "select*from Caracteristicas_Equipo"
+
+        Dim da As New SqlDataAdapter(cmd, cn)
+        Dim ds As New DataSet
+        da.Fill(ds)
+        With MIclase
+            MIclase.DataSource = ds.Tables(0)
+            MIclase.DisplayMember = "Clase"
+        End With
+
+
+
+
+
+        cn.Close()
+
+    End Sub
+
+    Sub MIcargarEquipos()
+        Dim Clasecodigo As Integer
+
+#Region "Obtener # de Clase"
+        'En el parentesis entre & & se coloca cual valor se usara para la busqueda
+        Dim adaptador As New SqlDataAdapter("select*from Caracteristicas_Equipo where CONVERT(char,Clase)='" & MIclase.Text & "'", cn)
+        Dim ds As New DataSet
+        adaptador.Fill(ds, "Codigo")
+
+        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
+        If ds.Tables("Codigo").Rows.Count > 0 Then
+
+            Clasecodigo = ds.Tables("Codigo").Rows(0).Item(0).ToString
+
+
+        End If
+#End Region
+
+#Region "Crear lista con lista de equipos"
+        Dim cmd5 As String = "select*from Lista_Equipos where Codigo=" & Clasecodigo & ""
+        Dim da5 As New SqlDataAdapter(cmd5, cn)
+        Dim dt5 As New DataTable()
+        da5.Fill(dt5)
+
+        Dim arrayEquipos As String() = dt5.Rows.OfType(Of DataRow)().[Select](Function(x) x(1).ToString()).ToArray() 'Se crea array
+
+        Dim listaEquipos As New List(Of String) 'Se crea lista manipulable
+        For Each elemento As String In arrayEquipos 'Se carga la lista con la informacion del array
+            listaEquipos.Add(elemento)
+        Next
+#Region "Asignacion de lista final en combobox de etiqueta"
+        With MIequipo
+            MIequipo.DataSource = listaEquipos
+        End With
+#End Region
+#End Region
+    End Sub
+
+    Sub MIcargarUbicacion()
+        Dim cmd As String = "select*from Ubicacion_Datos"
+
+        Dim da As New SqlDataAdapter(cmd, cn)
+        Dim ds As New DataSet
+        da.Fill(ds)
+        With MIubicacion
+            MIubicacion.DataSource = ds.Tables(0)
+            MIubicacion.DisplayMember = "Ubicacion"
+        End With
+
+        cn.Close()
+    End Sub
+    Sub MIcargarClasificación()
+        Dim cmd As String = "select*from Clasificación_Datos"
+
+        Dim da As New SqlDataAdapter(cmd, cn)
+        Dim ds As New DataSet
+        da.Fill(ds)
+        With MIclasificacion
+            MIclasificacion.DataSource = ds.Tables(0)
+            MIclasificacion.DisplayMember = "Clasificación"
+        End With
+
+        cn.Close()
+    End Sub
 End Module

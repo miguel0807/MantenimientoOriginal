@@ -31,9 +31,9 @@ Partial Class Registrar_Nuevo_Caso
         Me.lblAcumuladoMinutos = New System.Windows.Forms.Label()
         Me.lblAcumuladoHoras = New System.Windows.Forms.Label()
         Me.lblTiempoAcumulado = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtSolucionProblema = New System.Windows.Forms.TextBox()
         Me.btnFinalizado = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblSolucionProblema = New System.Windows.Forms.Label()
         Me.calminutos = New System.Windows.Forms.Label()
         Me.btnFechaInicio = New System.Windows.Forms.Button()
         Me.lblCalcularMinutos = New System.Windows.Forms.Label()
@@ -87,9 +87,9 @@ Partial Class Registrar_Nuevo_Caso
         Me.panelDatos.Controls.Add(Me.lblAcumuladoMinutos)
         Me.panelDatos.Controls.Add(Me.lblAcumuladoHoras)
         Me.panelDatos.Controls.Add(Me.lblTiempoAcumulado)
-        Me.panelDatos.Controls.Add(Me.TextBox1)
+        Me.panelDatos.Controls.Add(Me.txtSolucionProblema)
         Me.panelDatos.Controls.Add(Me.btnFinalizado)
-        Me.panelDatos.Controls.Add(Me.Label1)
+        Me.panelDatos.Controls.Add(Me.lblSolucionProblema)
         Me.panelDatos.Controls.Add(Me.calminutos)
         Me.panelDatos.Controls.Add(Me.btnFechaInicio)
         Me.panelDatos.Controls.Add(Me.lblCalcularMinutos)
@@ -203,16 +203,16 @@ Partial Class Registrar_Nuevo_Caso
         Me.lblTiempoAcumulado.TabIndex = 105
         Me.lblTiempoAcumulado.Text = "Tiempo Acumulado:"
         '
-        'TextBox1
+        'txtSolucionProblema
         '
-        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.TextBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(559, 259)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(380, 103)
-        Me.TextBox1.TabIndex = 87
+        Me.txtSolucionProblema.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.txtSolucionProblema.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtSolucionProblema.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSolucionProblema.Location = New System.Drawing.Point(559, 259)
+        Me.txtSolucionProblema.Multiline = True
+        Me.txtSolucionProblema.Name = "txtSolucionProblema"
+        Me.txtSolucionProblema.Size = New System.Drawing.Size(380, 103)
+        Me.txtSolucionProblema.TabIndex = 87
         '
         'btnFinalizado
         '
@@ -225,18 +225,18 @@ Partial Class Registrar_Nuevo_Caso
         Me.btnFinalizado.Text = "Finalizado"
         Me.btnFinalizado.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lblSolucionProblema
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(562, 227)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(258, 32)
-        Me.Label1.TabIndex = 88
-        Me.Label1.Text = "Solución al problema"
+        Me.lblSolucionProblema.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.lblSolucionProblema.AutoSize = True
+        Me.lblSolucionProblema.BackColor = System.Drawing.Color.Transparent
+        Me.lblSolucionProblema.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSolucionProblema.ForeColor = System.Drawing.SystemColors.Control
+        Me.lblSolucionProblema.Location = New System.Drawing.Point(562, 227)
+        Me.lblSolucionProblema.Name = "lblSolucionProblema"
+        Me.lblSolucionProblema.Size = New System.Drawing.Size(258, 32)
+        Me.lblSolucionProblema.TabIndex = 88
+        Me.lblSolucionProblema.Text = "Solución al problema"
         '
         'calminutos
         '
@@ -314,6 +314,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.cboEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboEquipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboEquipo.FormattingEnabled = True
+        Me.cboEquipo.Items.AddRange(New Object() {"c3-1"})
         Me.cboEquipo.Location = New System.Drawing.Point(296, 146)
         Me.cboEquipo.Name = "cboEquipo"
         Me.cboEquipo.Size = New System.Drawing.Size(228, 33)
@@ -487,6 +488,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.cboUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboUbicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboUbicacion.FormattingEnabled = True
+        Me.cboUbicacion.Items.AddRange(New Object() {"Mantenimiento"})
         Me.cboUbicacion.Location = New System.Drawing.Point(13, 252)
         Me.cboUbicacion.Name = "cboUbicacion"
         Me.cboUbicacion.Size = New System.Drawing.Size(228, 33)
@@ -499,6 +501,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.cboClasificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboClasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboClasificacion.FormattingEnabled = True
+        Me.cboClasificacion.Items.AddRange(New Object() {"electrico"})
         Me.cboClasificacion.Location = New System.Drawing.Point(296, 252)
         Me.cboClasificacion.Name = "cboClasificacion"
         Me.cboClasificacion.Size = New System.Drawing.Size(228, 33)
@@ -601,8 +604,8 @@ Partial Class Registrar_Nuevo_Caso
     Friend WithEvents cboClase As ComboBox
     Friend WithEvents lblClase As Label
     Friend WithEvents lblResponsable As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents lblSolucionProblema As Label
+    Friend WithEvents txtSolucionProblema As TextBox
     Friend WithEvents minutoAcumulado As TextBox
     Friend WithEvents btnAgregarTiempo As Button
     Friend WithEvents horaAcumulada As TextBox
