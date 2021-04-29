@@ -108,11 +108,11 @@ Public Class Indicadores_Proceso
 #Region "Buscar casos abiertos"
 
         Dim tabla As DataGridView = DataGridView1
-        Dim adaptador As New SqlDataAdapter("select*from Indicadores where Estado=" & conteo & "", cn)
+        Dim adaptador As New SqlDataAdapter("select*from Indicadores1 where Estado=" & conteo & "", cn)
         Dim dataS As New DataSet
-        adaptador.Fill(dataS, "Indicadores")
+        adaptador.Fill(dataS, "Indicadores1")
 
-        tabla.DataSource = dataS.Tables("Indicadores")
+        tabla.DataSource = dataS.Tables("Indicadores1")
 
 #End Region
 
@@ -122,28 +122,31 @@ Public Class Indicadores_Proceso
 
 
         tabla.RowHeadersVisible = False
-        tabla.Columns.Item(6).Visible = False
-        tabla.Columns.Item(7).Visible = False
         tabla.Columns.Item(0).Visible = False
+        tabla.Columns.Item(7).Visible = False
+        tabla.Columns.Item(8).Visible = False
+        tabla.Columns.Item(10).Visible = False
         tabla.Columns.Item(11).Visible = False
+        tabla.Columns.Item(12).Visible = False
+        tabla.Columns.Item(13).Visible = False
+        tabla.Columns.Item(14).Visible = False
+        tabla.Columns.Item(15).Visible = False
 
-
+        tabla.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         tabla.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
+        tabla.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         tabla.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        tabla.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
+        tabla.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         tabla.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        tabla.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
         tabla.Columns(1).Width = 380
-        tabla.Columns(2).Width = 240
-        tabla.Columns(3).Width = 170
-        tabla.Columns(4).Width = 450
-        tabla.Columns(5).DefaultCellStyle.Format = "MM/dd/yyyy"
-        tabla.Columns(5).Width = 140
-
+        tabla.Columns(2).Width = 150
+        tabla.Columns(3).Width = 150
+        tabla.Columns(4).Width = 100
+        tabla.Columns(5).Width = 170
+        tabla.Columns(6).Width = 150
+        tabla.Columns(9).DefaultCellStyle.Format = "MM/dd/yyyy"
 
         For Each r As DataGridViewRow In DataGridView1.Rows
             If r.Cells("Seleccion").Value = "1" Then
@@ -206,11 +209,15 @@ Public Class Indicadores_Proceso
 
 
         tabla.RowHeadersVisible = False
-        tabla.Columns.Item(6).Visible = False
-        tabla.Columns.Item(7).Visible = False
         tabla.Columns.Item(0).Visible = False
+        tabla.Columns.Item(7).Visible = False
+        tabla.Columns.Item(8).Visible = False
+        tabla.Columns.Item(10).Visible = False
         tabla.Columns.Item(11).Visible = False
-
+        tabla.Columns.Item(12).Visible = False
+        tabla.Columns.Item(13).Visible = False
+        tabla.Columns.Item(14).Visible = False
+        tabla.Columns.Item(15).Visible = False
 
         tabla.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -225,7 +232,7 @@ Public Class Indicadores_Proceso
         tabla.Columns(2).Width = 240
         tabla.Columns(3).Width = 170
         tabla.Columns(4).Width = 450
-        tabla.Columns(5).DefaultCellStyle.Format = "MM/dd/yyyy"
+        tabla.Columns(9).DefaultCellStyle.Format = "MM/dd/yyyy"
         tabla.Columns(5).Width = 140
 
 
