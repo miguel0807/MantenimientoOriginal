@@ -22,6 +22,7 @@ Partial Class Indicadores_Proceso
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -32,6 +33,7 @@ Partial Class Indicadores_Proceso
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Clasificacion = New System.Windows.Forms.ComboBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -147,6 +149,9 @@ Partial Class Indicadores_Proceso
         Me.Clasificacion.Size = New System.Drawing.Size(228, 33)
         Me.Clasificacion.TabIndex = 5
         '
+        'Timer1
+        '
+        '
         'Indicadores_Proceso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -173,4 +178,5 @@ Partial Class Indicadores_Proceso
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Clasificacion As ComboBox
+    Friend WithEvents Timer1 As Timer
 End Class

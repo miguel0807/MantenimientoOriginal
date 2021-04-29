@@ -6,6 +6,8 @@ Public Class Indicadores_Proceso
         If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
         Clasificacion.SelectedIndex = 0
 
+        datag()
+        Timer1.Start()
 
 
 
@@ -369,6 +371,20 @@ Public Class Indicadores_Proceso
     Private Sub Clasificacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Clasificacion.SelectedIndexChanged
 
     End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Dim segundo As Integer
+
+        segundo = segundo + 1
+
+        If segundo = 1 Then
+
+            Timer1.Stop()
+            datag()
+
+        End If
+    End Sub
+
 
 
 

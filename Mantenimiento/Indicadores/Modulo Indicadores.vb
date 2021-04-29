@@ -197,6 +197,7 @@ Module Modulo_Indicadores
 
                         MIseleccion = 1
                     End If
+
                     Dim adaptador As New SqlCommand("insert into Indicadores1 values (" & Conteo3 & ",'" & MItitulo.Text & "' ,'" & MIresponsable.Text & "',
                                         '" & MIclase.Text & "','" & MIequipo.Text & "','" & MIubicacion.Text & "',
                                      '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIsolucionProblema.Text & "','" & MIfechaInicio.Text & "',
@@ -216,6 +217,7 @@ Module Modulo_Indicadores
 
                         MIseleccion = 1
                     End If
+
                     'Update Indicadores SET Nombre =('" & Nombre.Text & "'), Ubicacion =('" & Ubicacion.Text & "'), Clasificacion =('" & Clasificacion.Text & "') , Descripcion =('" & Descripcion.Text & "'), [Fecha Inicial] =('" & Fecha.Text & "'), [Fecha Final] =('" & fecha_final.Text & "'), [Estado] =(" & 1 & "), [Tiempo Inicial]= ('" & Tiempo_Inicio.Text & "'), [Horas]= ('" & txtacuhora.Text & "'), [Minutos]= ('" & txtacuminutos.Text & "'),[Seleccion]=( " & seleccion & ")  where [Caso] = ('" & Caso & "')"
                     Dim adaptador As New SqlCommand("update Indicadores1 set Título =('" & MItitulo.Text & "'),
                                                     Responsable =('" & MIresponsable.Text & "'),Clase =('" & MIclase.Text & "'),
@@ -225,7 +227,7 @@ Module Modulo_Indicadores
                                                     [Fecha Inicial] =('" & MIfechaInicio.Text & "'),[Fecha Final] =('" & MIfechaFinal.Text & "'),
                                                      Estado =(1),[Tiempo Inicial] =('" & MItxtTiempoInicio.Text & "'),
                                                      Horas =('" & MIhoraAcumulada.Text & "'),Minutos =('" & MIminutoAcumulado.Text & "'),
-                                                     Seleccion =(1) where Caso =(" & Conteo3 & ")
+                                                     Seleccion =(" & MIseleccion & ") where Caso =(" & Conteo3 & ")
 ", cn)
                     conectar()
                     adaptador.ExecuteNonQuery()
@@ -276,12 +278,26 @@ Module Modulo_Indicadores
 
     Sub btnTiempoInicio()
 
+        Try
+#Region "Colocacion de fecha cuando se genera la licencia"
 
-        MItxtTiempoInicio.Text = DateTime.Now
-        Dim fechacreacion As Date
-        fechacreacion = MItxtTiempoInicio.Text
 
-        MItxtTiempoInicio.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
+            MItxtTiempoInicio.Text = DateTime.Now
+            Dim fechacreacion1 As Date
+            fechacreacion1 = MItxtTiempoInicio.Text
+            MItxtTiempoInicio.Text = Format(fechacreacion1, "HH:mm")
+#End Region
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+        'MItxtTiempoInicio.Text = DateTime.Now
+        'Dim fechacreacion As Date
+        'fechacreacion = MItxtTiempoInicio.Text
+
+        'MItxtTiempoInicio.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
 
 
 
@@ -289,10 +305,24 @@ Module Modulo_Indicadores
 
     Sub btnTiempoFinal()
 
-        MItxtTiempoFinal.Text = DateTime.Now
-        Dim fechacreacion As Date
-        fechacreacion = MItxtTiempoFinal.Text
-        MItxtTiempoFinal.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
+        'MItxtTiempoFinal.Text = DateTime.Now
+        'Dim fechacreacion As Date
+        'fechacreacion = MItxtTiempoFinal.Text
+        'MItxtTiempoFinal.Text = Format(fechacreacion, "yyyy/MM/dd HH:mm")
+
+        Try
+#Region "Colocacion de fecha cuando se genera la licencia"
+
+
+            MItxtTiempoFinal.Text = DateTime.Now
+            Dim fechacreacion1 As Date
+            fechacreacion1 = MItxtTiempoFinal.Text
+            MItxtTiempoFinal.Text = Format(fechacreacion1, "HH:mm")
+#End Region
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 

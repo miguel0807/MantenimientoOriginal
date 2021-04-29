@@ -382,7 +382,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.btnTiempoFinal.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTiempoFinal.Location = New System.Drawing.Point(574, 394)
         Me.btnTiempoFinal.Name = "btnTiempoFinal"
-        Me.btnTiempoFinal.Size = New System.Drawing.Size(138, 31)
+        Me.btnTiempoFinal.Size = New System.Drawing.Size(138, 62)
         Me.btnTiempoFinal.TabIndex = 97
         Me.btnTiempoFinal.Text = "Tiempo Final"
         Me.btnTiempoFinal.UseVisualStyleBackColor = True
@@ -403,7 +403,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.btnTiempoInicio.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTiempoInicio.Location = New System.Drawing.Point(58, 394)
         Me.btnTiempoInicio.Name = "btnTiempoInicio"
-        Me.btnTiempoInicio.Size = New System.Drawing.Size(138, 31)
+        Me.btnTiempoInicio.Size = New System.Drawing.Size(135, 62)
         Me.btnTiempoInicio.TabIndex = 95
         Me.btnTiempoInicio.Text = "Tiempo Inicio"
         Me.btnTiempoInicio.UseVisualStyleBackColor = True

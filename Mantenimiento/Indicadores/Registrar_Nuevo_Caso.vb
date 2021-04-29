@@ -66,6 +66,11 @@
 
     Private Sub btnPendiente_Click(sender As Object, e As EventArgs) Handles btnPendiente.Click
         CargarPendiente()
+
+        Me.Close()
+
+
+
     End Sub
 
 

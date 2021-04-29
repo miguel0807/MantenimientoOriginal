@@ -93,8 +93,6 @@ Public Class Indicadores_Editable
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Try
 #Region "Colocacion de fecha cuando se genera la licencia"
-
-
             Tiempo_Final.Text = DateTime.Now
             Dim fechacreacion As Date
             fechacreacion = Tiempo_Final.Text
