@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Registrar_Nuevo_Caso
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Registrar_Nuevo_Caso
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.panelDatos = New System.Windows.Forms.Panel()
@@ -61,7 +61,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.lblUbicacion = New System.Windows.Forms.Label()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.txtTitulo = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblCaso = New System.Windows.Forms.Label()
         Me.panelDatos.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -553,19 +553,19 @@ Partial Class Registrar_Nuevo_Caso
         Me.txtTitulo.Size = New System.Drawing.Size(229, 30)
         Me.txtTitulo.TabIndex = 1
         '
-        'Label3
+        'lblCaso
         '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.Label3.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label3.Location = New System.Drawing.Point(21, -1)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 29)
-        Me.Label3.TabIndex = 87
-        Me.Label3.Text = "Label3"
+        Me.lblCaso.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCaso.AutoSize = True
+        Me.lblCaso.BackColor = System.Drawing.Color.Transparent
+        Me.lblCaso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblCaso.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
+        Me.lblCaso.ForeColor = System.Drawing.SystemColors.Control
+        Me.lblCaso.Location = New System.Drawing.Point(21, -1)
+        Me.lblCaso.Name = "lblCaso"
+        Me.lblCaso.Size = New System.Drawing.Size(86, 29)
+        Me.lblCaso.TabIndex = 87
+        Me.lblCaso.Text = "Label3"
         '
         'Registrar_Nuevo_Caso
         '
@@ -574,7 +574,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1046, 745)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblCaso)
         Me.Controls.Add(Me.panelDatos)
         Me.Name = "Registrar_Nuevo_Caso"
         Me.Text = "Registrar_Nuevo_Caso"
@@ -596,7 +596,7 @@ Partial Class Registrar_Nuevo_Caso
     Friend WithEvents btnFechaFinal As Button
     Friend WithEvents fecha_Inicio As TextBox
     Friend WithEvents btnFechaInicio As Button
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblCaso As Label
     Friend WithEvents lblDescripcion As Label
     Friend WithEvents cboEquipo As ComboBox
     Friend WithEvents lblEquipo As Label

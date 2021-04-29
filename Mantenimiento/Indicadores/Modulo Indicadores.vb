@@ -9,6 +9,7 @@ Imports System.Data.SqlClient
 Module Modulo_Indicadores
     Public datagridIndicadores As DataGridView
 
+    Public Caso As Integer
 
     Public EtiquetaConteo As Label
     Public MItxtTiempoInicio As TextBox
@@ -41,6 +42,7 @@ Module Modulo_Indicadores
 
     Public Conteo3 As Integer
     Public MIseleccion As Integer = 0
+    Public MIvalorEditable As Integer
 
     Dim hora As Integer
     Dim minuto As Integer
@@ -180,31 +182,57 @@ Module Modulo_Indicadores
     Sub CargarPendiente()
 
         Try
+
+
             If MItitulo.Text = "" Or MIfechaInicio.Text = "" Then
                 MsgBox("Necesita completar problema y fecha de inicio")
             Else
+                If MIvalorEditable = 0 Then
 
+                    If MItxtTiempoInicio.Text = "00:00:00" Then
+                        MIseleccion = 0
+                    ElseIf MItxtTiempoInicio.Text = "" Then
+                        MIseleccion = 0
+                    Else
 
-                If MItxtTiempoInicio.Text = "00:00:00" Then
-                    MIseleccion = 0
-                ElseIf MItxtTiempoInicio.Text = "" Then
-                    MIseleccion = 0
-                Else
-
-                    MIseleccion = 1
-                End If
-                Dim adaptador As New SqlCommand("insert into Indicadores1 values (" & Conteo3 & ",'" & MItitulo.Text & "' ,'" & MIresponsable.Text & "',
+                        MIseleccion = 1
+                    End If
+                    Dim adaptador As New SqlCommand("insert into Indicadores1 values (" & Conteo3 & ",'" & MItitulo.Text & "' ,'" & MIresponsable.Text & "',
                                         '" & MIclase.Text & "','" & MIequipo.Text & "','" & MIubicacion.Text & "',
                                      '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIsolucionProblema.Text & "','" & MIfechaInicio.Text & "',
                                      '" & MIfechaFinal.Text & "'," & 1 & ",'" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & ",
                                      " & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
-                conectar()
-                adaptador.ExecuteNonQuery()
-                MsgBox("Se registro correctamente")
-                desconectar()
+                    conectar()
+                    adaptador.ExecuteNonQuery()
+                    MsgBox("Se registro correctamente")
+                    desconectar()
+                Else
 
+                    If MItxtTiempoInicio.Text = "00:00:00" Then
+                        MIseleccion = 0
+                    ElseIf MItxtTiempoInicio.Text = "" Then
+                        MIseleccion = 0
+                    Else
+
+                        MIseleccion = 1
+                    End If
+                    'Update Indicadores SET Nombre =('" & Nombre.Text & "'), Ubicacion =('" & Ubicacion.Text & "'), Clasificacion =('" & Clasificacion.Text & "') , Descripcion =('" & Descripcion.Text & "'), [Fecha Inicial] =('" & Fecha.Text & "'), [Fecha Final] =('" & fecha_final.Text & "'), [Estado] =(" & 1 & "), [Tiempo Inicial]= ('" & Tiempo_Inicio.Text & "'), [Horas]= ('" & txtacuhora.Text & "'), [Minutos]= ('" & txtacuminutos.Text & "'),[Seleccion]=( " & seleccion & ")  where [Caso] = ('" & Caso & "')"
+                    Dim adaptador As New SqlCommand("update Indicadores1 set Título =('" & MItitulo.Text & "'),
+                                                    Responsable =('" & MIresponsable.Text & "'),Clase =('" & MIclase.Text & "'),
+                                                    Equipo =('" & MIequipo.Text & "'),Ubicación =('" & MIubicacion.Text & "'),
+                                                    Clasificación =('" & MIclasificacion.Text & "'),Descripción =('" & MIdescripcion.Text & "'),
+                                                    SoluciónProblema =('" & MIsolucionProblema.Text & "'),
+                                                    [Fecha Inicial] =('" & MIfechaInicio.Text & "'),[Fecha Final] =('" & MIfechaFinal.Text & "'),
+                                                     Estado =(1),[Tiempo Inicial] =('" & MItxtTiempoInicio.Text & "'),
+                                                     Horas =('" & MIhoraAcumulada.Text & "'),Minutos =('" & MIminutoAcumulado.Text & "'),
+                                                     Seleccion =(1) where Caso =(" & Conteo3 & ")
+", cn)
+                    conectar()
+                    adaptador.ExecuteNonQuery()
+                    MsgBox("Se registro correctamente")
+                    desconectar()
+                End If
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

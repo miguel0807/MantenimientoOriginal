@@ -18,7 +18,7 @@ Public Class Indicadores_Proceso
             If conteo_total <= 0 Then
                 MsgBox("No hay casos pendientes")
             Else
-                Indicadores_Editable.Show()
+                Registrar_Nuevo_Caso.Show()
 
 
                 Me.DataGridView1.Select() 'Seleccionar primera fila del datagridview
@@ -26,16 +26,27 @@ Public Class Indicadores_Proceso
 
 
                 'Almacena informacion para ser impresa
-                Indicadores_Editable.Caso = Me.DataGridView1.CurrentRow.Cells.Item(0).Value.ToString
-                Indicadores_Editable.Nombre.Text = Me.DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
-                Indicadores_Editable.Ubicacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(2).Value.ToString
-                Indicadores_Editable.Clasificacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(3).Value.ToString
-                Indicadores_Editable.Descripcion.Text = Me.DataGridView1.CurrentRow.Cells.Item(4).Value.ToString
-                Indicadores_Editable.Fecha.Text = Me.DataGridView1.CurrentRow.Cells.Item(5).Value.ToString
 
-                Indicadores_Editable.Tiempo_Inicio.Text = Me.DataGridView1.CurrentRow.Cells.Item(8).Value.ToString
-                Indicadores_Editable.txtacuhora.Text = Me.DataGridView1.CurrentRow.Cells.Item(9).Value.ToString
-                Indicadores_Editable.txtacuminutos.Text = Me.DataGridView1.CurrentRow.Cells.Item(10).Value.ToString
+
+                EtiquetaConteo.Text = "Caso #" + Me.DataGridView1.CurrentRow.Cells.Item(0).Value.ToString
+                Conteo3 = Me.DataGridView1.CurrentRow.Cells.Item(0).Value.ToString
+                MItitulo.Text = Me.DataGridView1.CurrentRow.Cells.Item(1).Value.ToString
+                MIresponsable.Text = Me.DataGridView1.CurrentRow.Cells.Item(2).Value.ToString
+                MIclase.Text = Me.DataGridView1.CurrentRow.Cells.Item(3).Value.ToString
+                MIequipo.Text = Me.DataGridView1.CurrentRow.Cells.Item(4).Value.ToString
+                MIubicacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(5).Value.ToString
+                MIclasificacion.Text = Me.DataGridView1.CurrentRow.Cells.Item(6).Value.ToString
+                MIdescripcion.Text = Me.DataGridView1.CurrentRow.Cells.Item(7).Value.ToString
+                MIsolucionProblema.Text = Me.DataGridView1.CurrentRow.Cells.Item(8).Value.ToString
+                MIfechaInicio.Text = Me.DataGridView1.CurrentRow.Cells.Item(9).Value.ToString
+                'MIfechaFinal.Text = Me.DataGridView1.CurrentRow.Cells.Item(10).Value.ToString
+
+                MItxtTiempoInicio.Text = Me.DataGridView1.CurrentRow.Cells.Item(12).Value.ToString
+                MIhoraAcumulada.Text = Me.DataGridView1.CurrentRow.Cells.Item(13).Value.ToString
+                MIminutoAcumulado.Text = Me.DataGridView1.CurrentRow.Cells.Item(14).Value.ToString
+                MIseleccion = Me.DataGridView1.CurrentRow.Cells.Item(14).Value.ToString
+
+                MIvalorEditable = 1
                 ' Indicadores_Editable.fecha_final.Text = Me.DataGridView1.CurrentRow.Cells.Item(5).Value.ToString
                 'Almacena informacion para ser impresa
 

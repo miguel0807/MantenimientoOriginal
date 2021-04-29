@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Indicadores_Editable
-    Public Caso As Integer
+
 
     Dim count As Integer
     Dim hora As Integer
@@ -424,5 +424,9 @@ Public Class Indicadores_Editable
 
     Private Sub Indicadores_Editable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
+    End Sub
+
+    Private Sub panel_boton_Paint(sender As Object, e As PaintEventArgs) Handles panel_boton.Paint
+
     End Sub
 End Class

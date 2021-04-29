@@ -25,8 +25,10 @@
         MIcalHoras = calhoras
         MIcalMinutos = calminutos
 
-        EtiquetaConteo = Label3
+        EtiquetaConteo = lblCaso
 
+
+        MIvalorEditable = 0
 
         MostrarCantidadCasos()
         MIcargarClase()
