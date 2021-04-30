@@ -2,16 +2,18 @@
 Public Class Indicadores_Proceso
     Public conteo_total As Integer
 
+
     Private Sub Indicadores_Proceso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
-        Clasificacion.SelectedIndex = 0
+        'Clasificacion.SelectedIndex = 0
 
         datag()
         Timer1.Start()
 
 
+        MIclasificacion = Clasificacion
 
-
+        MIcargarClasificación()
 
     End Sub
 
@@ -71,12 +73,15 @@ Public Class Indicadores_Proceso
 
 
     Private Sub DataGridView1_Sorted(sender As Object, e As EventArgs) Handles DataGridView1.Sorted
-        prue()
+        'prue
+        datag()
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        datagFiltro()
 
-        datacombobox()
+        'datacombobox()
 
     End Sub
 
@@ -154,11 +159,12 @@ Public Class Indicadores_Proceso
         tabla.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
         tabla.Columns(1).Width = 380
-        tabla.Columns(2).Width = 150
-        tabla.Columns(3).Width = 150
+        tabla.Columns(2).Width = 180
+        tabla.Columns(3).Width = 290
         tabla.Columns(4).Width = 100
         tabla.Columns(5).Width = 170
-        tabla.Columns(6).Width = 150
+        tabla.Columns(6).Width = 170
+        tabla.Columns(9).Width = 170
         tabla.Columns(9).DefaultCellStyle.Format = "MM/dd/yyyy"
 
         For Each r As DataGridViewRow In DataGridView1.Rows
@@ -178,6 +184,105 @@ Public Class Indicadores_Proceso
         Me.Label1.Text = "Casos pendientes: " & tabla.RowCount
         Me.conteo_total = tabla.RowCount
 #End Region
+    End Sub
+
+    Sub datagFiltro()
+
+
+
+#Region "Configuracion datagridview1"
+        conectar()
+
+        Dim conteo As String
+        conteo = 1
+#Region "Formato de letra"
+        Me.DataGridView1.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+
+#End Region
+        ' Indicadores_Proceso.DataGridView1.RowTemplate.Height = 25
+#Region "Cambios de color celdas y alternadas"
+        Me.DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Personalizacion header"
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        'Me.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        Me.DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
+#End Region
+#Region "Alineacion de titulos"
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+#Region "Buscar casos abiertos"
+
+        Dim tabla As DataGridView = DataGridView1
+        Dim adaptador As New SqlDataAdapter("select*from Indicadores1 where Estado=" & conteo & "and convert(char,Clasificación)='" & Me.Clasificacion.Text & "'", cn)
+        Dim dataS As New DataSet
+        adaptador.Fill(dataS, "Indicadores1")
+
+        tabla.DataSource = dataS.Tables("Indicadores1")
+
+#End Region
+
+
+#Region "Configuracion tabla"
+
+
+
+        tabla.RowHeadersVisible = False
+        tabla.Columns.Item(0).Visible = False
+        tabla.Columns.Item(7).Visible = False
+        tabla.Columns.Item(8).Visible = False
+        tabla.Columns.Item(10).Visible = False
+        tabla.Columns.Item(11).Visible = False
+        tabla.Columns.Item(12).Visible = False
+        tabla.Columns.Item(13).Visible = False
+        tabla.Columns.Item(14).Visible = False
+        tabla.Columns.Item(15).Visible = False
+
+        tabla.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        tabla.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        tabla.Columns(1).Width = 380
+        tabla.Columns(2).Width = 180
+        tabla.Columns(3).Width = 290
+        tabla.Columns(4).Width = 100
+        tabla.Columns(5).Width = 170
+        tabla.Columns(6).Width = 170
+        tabla.Columns(9).Width = 170
+        tabla.Columns(9).DefaultCellStyle.Format = "MM/dd/yyyy"
+
+        For Each r As DataGridViewRow In DataGridView1.Rows
+            If r.Cells("Seleccion").Value = "1" Then
+                r.DefaultCellStyle.BackColor = Color.Green
+
+            End If
+        Next
+#End Region
+#End Region
+
+
+
+#Region "Conteo de casos abiertos"
+
+        Me.Label1.Visible = True
+        Me.Label1.Text = "Casos pendientes: " & tabla.RowCount
+        Me.conteo_total = tabla.RowCount
+#End Region
+
     End Sub
 
     Sub prue()
@@ -373,17 +478,20 @@ Public Class Indicadores_Proceso
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Dim segundo As Integer
 
-        segundo = segundo + 1
 
-        If segundo = 1 Then
+        segundotimer = segundotimer + 1
+
+        If segundotimer = 1 Then
 
             Timer1.Stop()
-            datag()
+            segundotimer = 0
 
+
+            datag()
         End If
     End Sub
+
 
 
 

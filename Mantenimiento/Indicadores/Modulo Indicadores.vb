@@ -9,6 +9,8 @@ Imports System.Data.SqlClient
 Module Modulo_Indicadores
     Public datagridIndicadores As DataGridView
 
+    Public segundotimer As Integer
+
     Public Caso As Integer
 
     Public EtiquetaConteo As Label
@@ -185,7 +187,7 @@ Module Modulo_Indicadores
 
 
             If MItitulo.Text = "" Or MIfechaInicio.Text = "" Then
-                MsgBox("Necesita completar problema y fecha de inicio")
+                MsgBox("Necesita completar título y fecha de inicio")
             Else
                 If MIvalorEditable = 0 Then
 
@@ -207,6 +209,12 @@ Module Modulo_Indicadores
                     adaptador.ExecuteNonQuery()
                     MsgBox("Se registro correctamente")
                     desconectar()
+
+
+                    For Each frm As Form In formularios
+                        frm.Close()
+
+                    Next
                 Else
 
                     If MItxtTiempoInicio.Text = "00:00:00" Then
@@ -218,7 +226,6 @@ Module Modulo_Indicadores
                         MIseleccion = 1
                     End If
 
-                    'Update Indicadores SET Nombre =('" & Nombre.Text & "'), Ubicacion =('" & Ubicacion.Text & "'), Clasificacion =('" & Clasificacion.Text & "') , Descripcion =('" & Descripcion.Text & "'), [Fecha Inicial] =('" & Fecha.Text & "'), [Fecha Final] =('" & fecha_final.Text & "'), [Estado] =(" & 1 & "), [Tiempo Inicial]= ('" & Tiempo_Inicio.Text & "'), [Horas]= ('" & txtacuhora.Text & "'), [Minutos]= ('" & txtacuminutos.Text & "'),[Seleccion]=( " & seleccion & ")  where [Caso] = ('" & Caso & "')"
                     Dim adaptador As New SqlCommand("update Indicadores1 set Título =('" & MItitulo.Text & "'),
                                                     Responsable =('" & MIresponsable.Text & "'),Clase =('" & MIclase.Text & "'),
                                                     Equipo =('" & MIequipo.Text & "'),Ubicación =('" & MIubicacion.Text & "'),
@@ -227,14 +234,18 @@ Module Modulo_Indicadores
                                                     [Fecha Inicial] =('" & MIfechaInicio.Text & "'),[Fecha Final] =('" & MIfechaFinal.Text & "'),
                                                      Estado =(1),[Tiempo Inicial] =('" & MItxtTiempoInicio.Text & "'),
                                                      Horas =('" & MIhoraAcumulada.Text & "'),Minutos =('" & MIminutoAcumulado.Text & "'),
-                                                     Seleccion =(" & MIseleccion & ") where Caso =(" & Conteo3 & ")
-", cn)
+                                                     Seleccion =(" & MIseleccion & ") where Caso =(" & Conteo3 & ")", cn)
                     conectar()
                     adaptador.ExecuteNonQuery()
                     MsgBox("Se registro correctamente")
                     desconectar()
+                    Registrar_Nuevo_Caso.Dispose()
                 End If
             End If
+
+
+
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -243,8 +254,13 @@ Module Modulo_Indicadores
     Sub CargarFinalizado()
 
         Try
-            If MItitulo.Text = "" Or MIfechaInicio.Text = "" Then
-                MsgBox("Necesita completar problema y fecha de inicio")
+            If MItitulo.Text = "" Or MIfechaInicio.Text = "" Or MIclasificacion.Text = "" Or MIresponsable.Text = "" & "
+                " Or MIubicacion.Text = "" Or MIclase.Text = "" Or MIequipo.Text = "" Or MIfechaFinal.Text = "" & "
+                " Or MIdescripcion.Text = "" Or MIsolucionProblema.Text = "" Then
+
+
+
+                MsgBox("Necesita completar todos los campos para finalizar")
             Else
 
 

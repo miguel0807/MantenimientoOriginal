@@ -108,12 +108,15 @@ Partial Class Registrar_Nuevo_Caso
         Me.panelDatos.Controls.Add(Me.lblTitulo)
         Me.panelDatos.Controls.Add(Me.txtTitulo)
         Me.panelDatos.Location = New System.Drawing.Point(18, 31)
+        Me.panelDatos.MinimumSize = New System.Drawing.Size(1016, 702)
         Me.panelDatos.Name = "panelDatos"
         Me.panelDatos.Size = New System.Drawing.Size(1016, 702)
         Me.panelDatos.TabIndex = 1
         '
         'Panel2
         '
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDark
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Panel3)
@@ -133,6 +136,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel2.Controls.Add(Me.lblCalcularHoras)
         Me.Panel2.Controls.Add(Me.btnCalcular)
         Me.Panel2.Location = New System.Drawing.Point(8, 405)
+        Me.Panel2.MinimumSize = New System.Drawing.Size(712, 274)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(712, 274)
         Me.Panel2.TabIndex = 112
@@ -163,7 +167,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.lblTiempoAcumulado.AutoSize = True
         Me.lblTiempoAcumulado.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lblTiempoAcumulado.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
-        Me.lblTiempoAcumulado.Location = New System.Drawing.Point(474, 18)
+        Me.lblTiempoAcumulado.Location = New System.Drawing.Point(456, 18)
         Me.lblTiempoAcumulado.Name = "lblTiempoAcumulado"
         Me.lblTiempoAcumulado.Size = New System.Drawing.Size(229, 29)
         Me.lblTiempoAcumulado.TabIndex = 105
@@ -256,7 +260,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Tiempo_Inicio.Name = "Tiempo_Inicio"
         Me.Tiempo_Inicio.Size = New System.Drawing.Size(230, 34)
         Me.Tiempo_Inicio.TabIndex = 96
-        Me.Tiempo_Inicio.Text = "00:00"
+        Me.Tiempo_Inicio.Text = "00:00:00"
         Me.Tiempo_Inicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnTiempoFinal
@@ -333,7 +337,8 @@ Partial Class Registrar_Nuevo_Caso
         '
         'btnFinalizado
         '
-        Me.btnFinalizado.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnFinalizado.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnFinalizado.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
         Me.btnFinalizado.Location = New System.Drawing.Point(762, 548)
         Me.btnFinalizado.Name = "btnFinalizado"
@@ -392,7 +397,8 @@ Partial Class Registrar_Nuevo_Caso
         '
         'btnPendiente
         '
-        Me.btnPendiente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnPendiente.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnPendiente.Font = New System.Drawing.Font("Microsoft PhagsPa", 16.2!)
         Me.btnPendiente.Location = New System.Drawing.Point(762, 441)
         Me.btnPendiente.Name = "btnPendiente"
@@ -592,6 +598,8 @@ Partial Class Registrar_Nuevo_Caso
         Me.ClientSize = New System.Drawing.Size(1046, 745)
         Me.Controls.Add(Me.lblCaso)
         Me.Controls.Add(Me.panelDatos)
+        Me.MaximumSize = New System.Drawing.Size(1064, 792)
+        Me.MinimumSize = New System.Drawing.Size(1064, 792)
         Me.Name = "Registrar_Nuevo_Caso"
         Me.Text = "x"
         Me.panelDatos.ResumeLayout(False)
