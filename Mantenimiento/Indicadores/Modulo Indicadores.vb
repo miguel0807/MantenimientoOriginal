@@ -445,7 +445,7 @@ Module Modulo_Indicadores
             MIresponsable.DisplayMember = "Nombre"
         End With
         cn.Close()
-
+        MIresponsable.SelectedIndex = -1
 
 
 #End Region
@@ -463,6 +463,7 @@ Module Modulo_Indicadores
             MIclase.DisplayMember = "Clase"
         End With
 
+        MIclase.SelectedIndex = -1
 
 
 
@@ -487,6 +488,7 @@ Module Modulo_Indicadores
 
 
         End If
+
 #End Region
 
 #Region "Crear lista con lista de equipos"
@@ -507,6 +509,7 @@ Module Modulo_Indicadores
         End With
 #End Region
 #End Region
+        MIequipo.SelectedIndex = -1
     End Sub
 
     Sub MIcargarUbicacion()
@@ -521,6 +524,8 @@ Module Modulo_Indicadores
         End With
 
         cn.Close()
+
+        MIubicacion.SelectedIndex = -1
     End Sub
     Sub MIcargarClasificación()
         Dim cmd As String = "select*from Clasificación_Datos"
@@ -534,5 +539,7 @@ Module Modulo_Indicadores
         End With
 
         cn.Close()
+
+        MIclasificacion.SelectedIndex = -1
     End Sub
 End Module
