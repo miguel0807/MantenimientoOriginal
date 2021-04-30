@@ -115,8 +115,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'Panel2
         '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDark
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Panel3)
@@ -598,10 +596,8 @@ Partial Class Registrar_Nuevo_Caso
         Me.ClientSize = New System.Drawing.Size(1046, 745)
         Me.Controls.Add(Me.lblCaso)
         Me.Controls.Add(Me.panelDatos)
-        Me.MaximumSize = New System.Drawing.Size(1064, 792)
         Me.MinimumSize = New System.Drawing.Size(1064, 792)
         Me.Name = "Registrar_Nuevo_Caso"
-        Me.Text = "x"
         Me.panelDatos.ResumeLayout(False)
         Me.panelDatos.PerformLayout()
         Me.Panel2.ResumeLayout(False)
