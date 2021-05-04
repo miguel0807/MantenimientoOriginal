@@ -95,9 +95,7 @@
         End If
     End Sub
 
-    Private Sub panelDatos_Paint(sender As Object, e As PaintEventArgs) Handles panelDatos.Paint
 
-    End Sub
 
     Private Sub cboClasificacion_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cboClasificacion.DrawItem
 

@@ -48,7 +48,7 @@ Public Class Presentacion
 
 #Region "Botones Indicadores"
     Private Sub button2_Click(sender As Object, e As EventArgs) Handles button2.Click
-
+        MIvalorEditable = 0
         openChildForm(New Registrar_Nuevo_Caso())
 
         hideSubmenu()
@@ -191,9 +191,7 @@ Public Class Presentacion
         openChildForm(New HistShutdownStartup())
     End Sub
 
-    Private Sub PanelChildForm_Paint(sender As Object, e As PaintEventArgs) Handles PanelChildForm.Paint
 
-    End Sub
 
     Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
         If PanelCreacion.Visible = True Then

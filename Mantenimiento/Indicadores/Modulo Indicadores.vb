@@ -254,35 +254,199 @@ Module Modulo_Indicadores
     Sub CargarFinalizado()
 
         Try
-            If MItitulo.Text = "" Or MIfechaInicio.Text = "" Or MIclasificacion.Text = "" Or MIresponsable.Text = "" & "
-                " Or MIubicacion.Text = "" Or MIclase.Text = "" Or MIequipo.Text = "" Or MIfechaFinal.Text = "" & "
-                " Or MIdescripcion.Text = "" Or MIsolucionProblema.Text = "" Then
-
-
+            If MIclasificacion.Text = "" Then
 
                 MsgBox("Necesita completar todos los campos para finalizar")
-            Else
+                Exit Sub
+            End If
+            If MIvalorEditable = 0 Then
+                If MIclasificacion.Text = "Servicio" Or MIclasificacion.Text = "Proyecto" Then
 
 
-                If MItxtTiempoInicio.Text = "00:00:00" Then
-                    MIseleccion = 0
-                ElseIf MItxtTiempoInicio.Text = "" Then
-                    MIseleccion = 0
-                Else
+                    If MItitulo.Text = "" Or MIfechaInicio.Text = "" Or MIclasificacion.Text = "" Or MIresponsable.Text = "" Or MIubicacion.Text = "" Or MIfechaFinal.Text = "" Or MIdescripcion.Text = "" Or MIsolucionProblema.Text = "" Then
 
-                    MIseleccion = 1
-                End If
-                Dim adaptador As New SqlCommand("insert into Indicadores1 values (" & Conteo3 & ",'" & MItitulo.Text & "' ,'" & MIresponsable.Text & "',
+
+
+                        MsgBox("Necesita completar todos los campos para finalizar")
+                        Exit Sub
+                    Else
+
+
+                        If MItxtTiempoInicio.Text = "00:00:00" Then
+                            MIseleccion = 0
+                        ElseIf MItxtTiempoInicio.Text = "" Then
+                            MIseleccion = 0
+                        Else
+
+                            MIseleccion = 1
+                        End If
+                        Dim adaptador As New SqlCommand("insert into Indicadores1 values (" & Conteo3 & ",'" & MItitulo.Text & "' ,'" & MIresponsable.Text & "',
+                                        'N/A','N/A','" & MIubicacion.Text & "',
+                                     '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIsolucionProblema.Text & "','" & MIfechaInicio.Text & "',
+                                     '" & MIfechaFinal.Text & "'," & 0 & ",'" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & ",
+                                     " & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
+                        conectar()
+                        adaptador.ExecuteNonQuery()
+                        MsgBox("Se registro correctamente")
+                        desconectar()
+                        For Each frm As Form In formularios
+                            frm.Close()
+
+                        Next
+
+                    End If
+
+
+
+
+
+
+
+                ElseIf MIclasificacion.Text = "Correctivo" Or MIclasificacion.Text = "Mejora" Then
+
+
+                    If MItitulo.Text = "" Or MIfechaInicio.Text = "" Or MIclasificacion.Text = "" Or MIresponsable.Text = "" Or MIubicacion.Text = "" Or MIclase.Text = "" Or MIequipo.Text = "" Or MIfechaFinal.Text = "" Or MIdescripcion.Text = "" Or MIsolucionProblema.Text = "" Then
+
+
+
+                        MsgBox("Necesita completar todos los campos para finalizar")
+                        Exit Sub
+                    Else
+
+
+                        If MItxtTiempoInicio.Text = "00:00:00" Then
+                            MIseleccion = 0
+                        ElseIf MItxtTiempoInicio.Text = "" Then
+                            MIseleccion = 0
+                        Else
+
+                            MIseleccion = 1
+                        End If
+                        Dim adaptador As New SqlCommand("insert into Indicadores1 values (" & Conteo3 & ",'" & MItitulo.Text & "' ,'" & MIresponsable.Text & "',
                                         '" & MIclase.Text & "','" & MIequipo.Text & "','" & MIubicacion.Text & "',
                                      '" & MIclasificacion.Text & "','" & MIdescripcion.Text & "','" & MIsolucionProblema.Text & "','" & MIfechaInicio.Text & "',
                                      '" & MIfechaFinal.Text & "'," & 0 & ",'" & MItxtTiempoInicio.Text & "'," & MIhoraAcumulada.Text & ",
                                      " & MIminutoAcumulado.Text & "," & MIseleccion & ")", cn)
-                conectar()
-                adaptador.ExecuteNonQuery()
-                MsgBox("Se registro correctamente")
-                desconectar()
+                        conectar()
+                        adaptador.ExecuteNonQuery()
+                        MsgBox("Se registro correctamente")
+                        desconectar()
+                        For Each frm As Form In formularios
+                            frm.Close()
+
+                        Next
+
+                    End If
+                End If
+
+
+
+
+
+
+            Else
+
+
+
+                'Si es actualizar entonces
+
+
+                If MIclasificacion.Text = "Servicio" Or MIclasificacion.Text = "Proyecto" Then
+
+
+                    If MItitulo.Text = "" Or MIfechaInicio.Text = "" Or MIclasificacion.Text = "" Or MIresponsable.Text = "" Or MIubicacion.Text = "" Or MIfechaFinal.Text = "" Or MIdescripcion.Text = "" Or MIsolucionProblema.Text = "" Then
+
+
+
+                        MsgBox("Necesita completar todos los campos para finalizar")
+                        Exit Sub
+                    Else
+
+
+                        If MItxtTiempoInicio.Text = "00:00:00" Then
+                            MIseleccion = 0
+                        ElseIf MItxtTiempoInicio.Text = "" Then
+                            MIseleccion = 0
+                        Else
+
+                            MIseleccion = 1
+                        End If
+
+
+                        Dim adaptador As New SqlCommand("update Indicadores1 set Título =('" & MItitulo.Text & "'),
+                                                    Responsable =('" & MIresponsable.Text & "'),Clase =('N/A'),
+                                                    Equipo =('N/A'),Ubicación =('" & MIubicacion.Text & "'),
+                                                    Clasificación =('" & MIclasificacion.Text & "'),Descripción =('" & MIdescripcion.Text & "'),
+                                                    SoluciónProblema =('" & MIsolucionProblema.Text & "'),
+                                                    [Fecha Inicial] =('" & MIfechaInicio.Text & "'),[Fecha Final] =('" & MIfechaFinal.Text & "'),
+                                                     Estado =(0),[Tiempo Inicial] =('" & MItxtTiempoInicio.Text & "'),
+                                                     Horas =('" & MIhoraAcumulada.Text & "'),Minutos =('" & MIminutoAcumulado.Text & "'),
+                                                     Seleccion =(" & MIseleccion & ") where Caso =(" & Conteo3 & ")", cn)
+
+
+
+                        conectar()
+                        adaptador.ExecuteNonQuery()
+                        MsgBox("Se registro correctamente")
+                        desconectar()
+                        For Each frm As Form In formularios
+                            frm.Close()
+
+                        Next
+                    End If
+
+
+
+
+
+
+
+                ElseIf MIclasificacion.Text = "Correctivo" Or MIclasificacion.Text = "Mejora" Then
+
+
+                    If MItitulo.Text = "" Or MIfechaInicio.Text = "" Or MIclasificacion.Text = "" Or MIresponsable.Text = "" Or MIubicacion.Text = "" Or MIclase.Text = "" Or MIequipo.Text = "" Or MIfechaFinal.Text = "" Or MIdescripcion.Text = "" Or MIsolucionProblema.Text = "" Then
+
+
+
+                        MsgBox("Necesita completar todos los campos para finalizar")
+
+                        Exit Sub
+                    Else
+
+
+                        If MItxtTiempoInicio.Text = "00:00:00" Then
+                            MIseleccion = 0
+                        ElseIf MItxtTiempoInicio.Text = "" Then
+                            MIseleccion = 0
+                        Else
+
+                            MIseleccion = 1
+                        End If
+                        Dim adaptador As New SqlCommand("update Indicadores1 set Título =('" & MItitulo.Text & "'),
+                                                    Responsable =('" & MIresponsable.Text & "'),Clase =('" & MIclase.Text & "'),
+                                                    Equipo =('" & MIequipo.Text & "'),Ubicación =('" & MIubicacion.Text & "'),
+                                                    Clasificación =('" & MIclasificacion.Text & "'),Descripción =('" & MIdescripcion.Text & "'),
+                                                    SoluciónProblema =('" & MIsolucionProblema.Text & "'),
+                                                    [Fecha Inicial] =('" & MIfechaInicio.Text & "'),[Fecha Final] =('" & MIfechaFinal.Text & "'),
+                                                     Estado =(0),[Tiempo Inicial] =('" & MItxtTiempoInicio.Text & "'),
+                                                     Horas =('" & MIhoraAcumulada.Text & "'),Minutos =('" & MIminutoAcumulado.Text & "'),
+                                                     Seleccion =(" & MIseleccion & ") where Caso =(" & Conteo3 & ")", cn)
+                        conectar()
+                        adaptador.ExecuteNonQuery()
+                        MsgBox("Se registro correctamente")
+                        desconectar()
+                        For Each frm As Form In formularios
+                            frm.Close()
+
+                        Next
+                    End If
+                End If
+
+
 
             End If
+
+
 
         Catch ex As Exception
             MsgBox(ex.Message)
