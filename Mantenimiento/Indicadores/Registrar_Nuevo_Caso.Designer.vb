@@ -70,7 +70,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.txtDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDescripcion.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcion.Location = New System.Drawing.Point(559, 143)
@@ -81,7 +81,9 @@ Partial Class Registrar_Nuevo_Caso
         '
         'panelDatos
         '
-        Me.panelDatos.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panelDatos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelDatos.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.panelDatos.Controls.Add(Me.Panel2)
         Me.panelDatos.Controls.Add(Me.Panel1)
@@ -115,6 +117,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         'Panel2
         '
+        Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDark
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Panel3)
@@ -324,7 +327,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         'txtSolucionProblema
         '
-        Me.txtSolucionProblema.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.txtSolucionProblema.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSolucionProblema.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtSolucionProblema.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSolucionProblema.Location = New System.Drawing.Point(559, 259)
@@ -347,7 +350,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         'lblSolucionProblema
         '
-        Me.lblSolucionProblema.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.lblSolucionProblema.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblSolucionProblema.AutoSize = True
         Me.lblSolucionProblema.BackColor = System.Drawing.Color.Transparent
         Me.lblSolucionProblema.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -360,7 +363,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         'btnFechaInicio
         '
-        Me.btnFechaInicio.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.btnFechaInicio.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnFechaInicio.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFechaInicio.Location = New System.Drawing.Point(559, 23)
         Me.btnFechaInicio.Name = "btnFechaInicio"
@@ -371,7 +374,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         'fecha_final
         '
-        Me.fecha_final.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.fecha_final.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.fecha_final.BackColor = System.Drawing.Color.WhiteSmoke
         Me.fecha_final.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.fecha_final.Location = New System.Drawing.Point(720, 75)
@@ -381,7 +384,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'cboEquipo
         '
-        Me.cboEquipo.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cboEquipo.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cboEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboEquipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -407,7 +409,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         'btnFechaFinal
         '
-        Me.btnFechaFinal.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.btnFechaFinal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnFechaFinal.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFechaFinal.Location = New System.Drawing.Point(559, 75)
         Me.btnFechaFinal.Name = "btnFechaFinal"
@@ -418,7 +420,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'lblEquipo
         '
-        Me.lblEquipo.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblEquipo.AutoSize = True
         Me.lblEquipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblEquipo.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
@@ -431,7 +432,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         'fecha_Inicio
         '
-        Me.fecha_Inicio.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.fecha_Inicio.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.fecha_Inicio.BackColor = System.Drawing.Color.WhiteSmoke
         Me.fecha_Inicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.fecha_Inicio.Location = New System.Drawing.Point(719, 21)
@@ -441,7 +442,7 @@ Partial Class Registrar_Nuevo_Caso
         '
         'lblDescripcion
         '
-        Me.lblDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.lblDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblDescripcion.AutoSize = True
         Me.lblDescripcion.BackColor = System.Drawing.Color.Transparent
         Me.lblDescripcion.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -454,7 +455,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'cboResponsable
         '
-        Me.cboResponsable.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cboResponsable.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cboResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboResponsable.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -466,7 +466,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'cboClase
         '
-        Me.cboClase.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cboClase.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cboClase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboClase.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -479,7 +478,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'lblClase
         '
-        Me.lblClase.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblClase.AutoSize = True
         Me.lblClase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblClase.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
@@ -492,7 +490,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'lblResponsable
         '
-        Me.lblResponsable.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblResponsable.AutoSize = True
         Me.lblResponsable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblResponsable.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
@@ -504,7 +501,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'cboUbicacion
         '
-        Me.cboUbicacion.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cboUbicacion.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cboUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboUbicacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -517,7 +513,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'cboClasificacion
         '
-        Me.cboClasificacion.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cboClasificacion.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cboClasificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboClasificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -529,7 +524,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'lblClasificacion
         '
-        Me.lblClasificacion.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblClasificacion.AutoSize = True
         Me.lblClasificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblClasificacion.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
@@ -541,7 +535,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'lblUbicacion
         '
-        Me.lblUbicacion.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblUbicacion.AutoSize = True
         Me.lblUbicacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblUbicacion.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!)
@@ -553,7 +546,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'lblTitulo
         '
-        Me.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblTitulo.Font = New System.Drawing.Font("Microsoft PhagsPa", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -565,7 +557,6 @@ Partial Class Registrar_Nuevo_Caso
         '
         'txtTitulo
         '
-        Me.txtTitulo.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.txtTitulo.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTitulo.Location = New System.Drawing.Point(299, 146)
@@ -575,7 +566,8 @@ Partial Class Registrar_Nuevo_Caso
         '
         'lblCaso
         '
-        Me.lblCaso.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCaso.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblCaso.AutoSize = True
         Me.lblCaso.BackColor = System.Drawing.Color.Transparent
         Me.lblCaso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
