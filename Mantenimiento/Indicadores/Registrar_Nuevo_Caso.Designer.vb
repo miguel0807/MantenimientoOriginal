@@ -77,7 +77,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(380, 81)
-        Me.txtDescripcion.TabIndex = 83
+        Me.txtDescripcion.TabIndex = 8
         '
         'panelDatos
         '
@@ -147,7 +147,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Panel3.Location = New System.Drawing.Point(429, -15)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(10, 309)
+        Me.Panel3.Size = New System.Drawing.Size(5, 309)
         Me.Panel3.TabIndex = 111
         '
         'lblAcumuladoMinutos
@@ -183,6 +183,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.minutoAcumulado.Name = "minutoAcumulado"
         Me.minutoAcumulado.Size = New System.Drawing.Size(45, 34)
         Me.minutoAcumulado.TabIndex = 110
+        Me.minutoAcumulado.TabStop = False
         Me.minutoAcumulado.Text = "0"
         Me.minutoAcumulado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -205,7 +206,8 @@ Partial Class Registrar_Nuevo_Caso
         Me.btnAgregarTiempo.Location = New System.Drawing.Point(477, 187)
         Me.btnAgregarTiempo.Name = "btnAgregarTiempo"
         Me.btnAgregarTiempo.Size = New System.Drawing.Size(193, 49)
-        Me.btnAgregarTiempo.TabIndex = 108
+        Me.btnAgregarTiempo.TabIndex = 15
+        Me.btnAgregarTiempo.TabStop = False
         Me.btnAgregarTiempo.Text = "Agregar tiempo"
         Me.btnAgregarTiempo.UseVisualStyleBackColor = True
         '
@@ -229,6 +231,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.horaAcumulada.Name = "horaAcumulada"
         Me.horaAcumulada.Size = New System.Drawing.Size(45, 34)
         Me.horaAcumulada.TabIndex = 109
+        Me.horaAcumulada.TabStop = False
         Me.horaAcumulada.Text = "0"
         Me.horaAcumulada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -238,7 +241,8 @@ Partial Class Registrar_Nuevo_Caso
         Me.btnTiempoInicio.Location = New System.Drawing.Point(10, 40)
         Me.btnTiempoInicio.Name = "btnTiempoInicio"
         Me.btnTiempoInicio.Size = New System.Drawing.Size(151, 52)
-        Me.btnTiempoInicio.TabIndex = 95
+        Me.btnTiempoInicio.TabIndex = 12
+        Me.btnTiempoInicio.TabStop = False
         Me.btnTiempoInicio.Text = "Tiempo Inicio"
         Me.btnTiempoInicio.UseVisualStyleBackColor = True
         '
@@ -261,6 +265,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Tiempo_Inicio.Name = "Tiempo_Inicio"
         Me.Tiempo_Inicio.Size = New System.Drawing.Size(230, 34)
         Me.Tiempo_Inicio.TabIndex = 96
+        Me.Tiempo_Inicio.TabStop = False
         Me.Tiempo_Inicio.Text = "00:00:00"
         Me.Tiempo_Inicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -270,7 +275,8 @@ Partial Class Registrar_Nuevo_Caso
         Me.btnTiempoFinal.Location = New System.Drawing.Point(10, 107)
         Me.btnTiempoFinal.Name = "btnTiempoFinal"
         Me.btnTiempoFinal.Size = New System.Drawing.Size(151, 52)
-        Me.btnTiempoFinal.TabIndex = 97
+        Me.btnTiempoFinal.TabIndex = 13
+        Me.btnTiempoFinal.TabStop = False
         Me.btnTiempoFinal.Text = "Tiempo Final"
         Me.btnTiempoFinal.UseVisualStyleBackColor = True
         '
@@ -293,6 +299,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.Tiempo_Final.Name = "Tiempo_Final"
         Me.Tiempo_Final.Size = New System.Drawing.Size(230, 34)
         Me.Tiempo_Final.TabIndex = 98
+        Me.Tiempo_Final.TabStop = False
         Me.Tiempo_Final.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblCalcularHoras
@@ -312,7 +319,8 @@ Partial Class Registrar_Nuevo_Caso
         Me.btnCalcular.Location = New System.Drawing.Point(10, 196)
         Me.btnCalcular.Name = "btnCalcular"
         Me.btnCalcular.Size = New System.Drawing.Size(136, 40)
-        Me.btnCalcular.TabIndex = 99
+        Me.btnCalcular.TabIndex = 14
+        Me.btnCalcular.TabStop = False
         Me.btnCalcular.Text = "Calcular"
         Me.btnCalcular.UseVisualStyleBackColor = True
         '
@@ -334,7 +342,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.txtSolucionProblema.Multiline = True
         Me.txtSolucionProblema.Name = "txtSolucionProblema"
         Me.txtSolucionProblema.Size = New System.Drawing.Size(380, 103)
-        Me.txtSolucionProblema.TabIndex = 87
+        Me.txtSolucionProblema.TabIndex = 9
         '
         'btnFinalizado
         '
@@ -344,7 +352,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.btnFinalizado.Location = New System.Drawing.Point(762, 548)
         Me.btnFinalizado.Name = "btnFinalizado"
         Me.btnFinalizado.Size = New System.Drawing.Size(233, 58)
-        Me.btnFinalizado.TabIndex = 85
+        Me.btnFinalizado.TabIndex = 11
         Me.btnFinalizado.Text = "Finalizado"
         Me.btnFinalizado.UseVisualStyleBackColor = True
         '
@@ -368,7 +376,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.btnFechaInicio.Location = New System.Drawing.Point(559, 23)
         Me.btnFechaInicio.Name = "btnFechaInicio"
         Me.btnFechaInicio.Size = New System.Drawing.Size(135, 31)
-        Me.btnFechaInicio.TabIndex = 1
+        Me.btnFechaInicio.TabIndex = 6
         Me.btnFechaInicio.Text = "Fecha Inicio"
         Me.btnFechaInicio.UseVisualStyleBackColor = True
         '
@@ -380,7 +388,8 @@ Partial Class Registrar_Nuevo_Caso
         Me.fecha_final.Location = New System.Drawing.Point(720, 75)
         Me.fecha_final.Name = "fecha_final"
         Me.fecha_final.Size = New System.Drawing.Size(230, 34)
-        Me.fecha_final.TabIndex = 2
+        Me.fecha_final.TabIndex = 111
+        Me.fecha_final.TabStop = False
         '
         'cboEquipo
         '
@@ -392,7 +401,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.cboEquipo.Location = New System.Drawing.Point(300, 250)
         Me.cboEquipo.Name = "cboEquipo"
         Me.cboEquipo.Size = New System.Drawing.Size(228, 33)
-        Me.cboEquipo.TabIndex = 79
+        Me.cboEquipo.TabIndex = 5
         Me.cboEquipo.Visible = False
         '
         'btnPendiente
@@ -403,7 +412,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.btnPendiente.Location = New System.Drawing.Point(762, 441)
         Me.btnPendiente.Name = "btnPendiente"
         Me.btnPendiente.Size = New System.Drawing.Size(233, 58)
-        Me.btnPendiente.TabIndex = 84
+        Me.btnPendiente.TabIndex = 10
         Me.btnPendiente.Text = "Pendiente"
         Me.btnPendiente.UseVisualStyleBackColor = True
         '
@@ -414,7 +423,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.btnFechaFinal.Location = New System.Drawing.Point(559, 75)
         Me.btnFechaFinal.Name = "btnFechaFinal"
         Me.btnFechaFinal.Size = New System.Drawing.Size(135, 31)
-        Me.btnFechaFinal.TabIndex = 1
+        Me.btnFechaFinal.TabIndex = 7
         Me.btnFechaFinal.Text = "Fecha Final"
         Me.btnFechaFinal.UseVisualStyleBackColor = True
         '
@@ -438,7 +447,8 @@ Partial Class Registrar_Nuevo_Caso
         Me.fecha_Inicio.Location = New System.Drawing.Point(719, 21)
         Me.fecha_Inicio.Name = "fecha_Inicio"
         Me.fecha_Inicio.Size = New System.Drawing.Size(230, 34)
-        Me.fecha_Inicio.TabIndex = 2
+        Me.fecha_Inicio.TabIndex = 111
+        Me.fecha_Inicio.TabStop = False
         '
         'lblDescripcion
         '
@@ -462,7 +472,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.cboResponsable.Location = New System.Drawing.Point(299, 47)
         Me.cboResponsable.Name = "cboResponsable"
         Me.cboResponsable.Size = New System.Drawing.Size(228, 33)
-        Me.cboResponsable.TabIndex = 75
+        Me.cboResponsable.TabIndex = 1
         '
         'cboClase
         '
@@ -473,7 +483,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.cboClase.Location = New System.Drawing.Point(17, 250)
         Me.cboClase.Name = "cboClase"
         Me.cboClase.Size = New System.Drawing.Size(228, 33)
-        Me.cboClase.TabIndex = 76
+        Me.cboClase.TabIndex = 4
         Me.cboClase.Visible = False
         '
         'lblClase
@@ -520,7 +530,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.cboClasificacion.Location = New System.Drawing.Point(17, 47)
         Me.cboClasificacion.Name = "cboClasificacion"
         Me.cboClasificacion.Size = New System.Drawing.Size(228, 33)
-        Me.cboClasificacion.TabIndex = 3
+        Me.cboClasificacion.TabIndex = 0
         '
         'lblClasificacion
         '
@@ -562,7 +572,7 @@ Partial Class Registrar_Nuevo_Caso
         Me.txtTitulo.Location = New System.Drawing.Point(299, 146)
         Me.txtTitulo.Name = "txtTitulo"
         Me.txtTitulo.Size = New System.Drawing.Size(229, 30)
-        Me.txtTitulo.TabIndex = 1
+        Me.txtTitulo.TabIndex = 3
         '
         'lblCaso
         '

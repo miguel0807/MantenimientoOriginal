@@ -100,6 +100,10 @@
     Private Sub cboClasificacion_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cboClasificacion.DrawItem
 
     End Sub
+
+    Private Sub panelDatos_Paint(sender As Object, e As PaintEventArgs) Handles panelDatos.Paint
+
+    End Sub
 End Class
 
 'Public Class CenteredComboBox
