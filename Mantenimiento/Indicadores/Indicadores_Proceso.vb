@@ -100,7 +100,7 @@ Public Class Indicadores_Proceso
 
 
 #Region "Configuracion datagridview1"
-        conectar()
+
 
         Dim conteo As String
         conteo = 1

@@ -30,6 +30,8 @@ Module Conexion
             Else
                 If CerrarSubs = False Then
                     MessageBox.Show("No hay conexión al servidor principal, vuelva a intentar mas tarde", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Exit Sub
+
 
                     CerrarSubs = True
 
