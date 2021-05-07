@@ -35,6 +35,7 @@ Partial Class Indicadores_Proceso
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Clasificacion = New System.Windows.Forms.ComboBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -160,12 +161,22 @@ Partial Class Indicadores_Proceso
         'Timer1
         '
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(557, 13)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(152, 26)
+        Me.Button4.TabIndex = 6
+        Me.Button4.Text = "Button4"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Indicadores_Proceso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(1437, 793)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Clasificacion)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -187,4 +198,5 @@ Partial Class Indicadores_Proceso
     Friend WithEvents Button3 As Button
     Friend WithEvents Clasificacion As ComboBox
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Button4 As Button
 End Class

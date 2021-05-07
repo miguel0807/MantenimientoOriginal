@@ -1,4 +1,5 @@
-﻿Module Conexion
+﻿Imports System.Data.SqlClient
+Module Conexion
 
     Public formularios As New List(Of Form) 'Crea una lista fe formularios para cerrar
 
@@ -12,27 +13,61 @@
 
     Public cn As New SqlClient.SqlConnection(conexion)
 
-        Sub conectar()
+    Sub conectar()
 
         Try
-            If cn.State = ConnectionState.Open Then
+            If PrConexion() = True Then
+                ' MessageBox.Show("Conexion correcta", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If cn.State = ConnectionState.Open Then
+                Else
+
+                    cn.Open()
+
+
+                End If
             Else
-
-                cn.Open()
-
+                MessageBox.Show("No hay conexión al servidor principal, el programa procedera a cerrarse", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End
 
             End If
+
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-        Sub desconectar()
+    Sub desconectar()
 
         cn.Close()
 
     End Sub
-    End Module
+
+
+    Public Function PrConexion() As Boolean
+        Try
+            Using ProbarConexion As New SqlConnection(conexion)
+                ProbarConexion.Open()
+            End Using
+        Catch Exp As Exception
+            ' MessageBox.Show(Exp.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return False
+        End Try
+        Return True
+    End Function
+
+    Sub VerificarConexion()
+        If PrConexion() = True Then
+            MessageBox.Show("Conexion correcta", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Conexion fallida", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+
+
+
+End Module
 
 
 
