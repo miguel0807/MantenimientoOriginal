@@ -131,6 +131,12 @@ Public Class Indicadores_Proceso
         Me.DataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 #End Region
 #Region "Buscar casos abiertos"
+        conectar()
+        If CerrarSubs = True Then
+            CerrarSubs = False
+            Exit Sub
+        End If
+
 
         Dim tabla As DataGridView = DataGridView1
         Dim adaptador As New SqlDataAdapter("select*from Indicadores1 where Estado=" & conteo & "", cn)
@@ -138,7 +144,7 @@ Public Class Indicadores_Proceso
         adaptador.Fill(dataS, "Indicadores1")
 
         tabla.DataSource = dataS.Tables("Indicadores1")
-
+        desconectar()
 #End Region
 
 
@@ -191,6 +197,7 @@ Public Class Indicadores_Proceso
         Me.Label1.Text = "Casos pendientes: " & tabla.RowCount
         Me.conteo_total = tabla.RowCount
 #End Region
+
     End Sub
 
     Sub datagFiltro()
@@ -229,7 +236,11 @@ Public Class Indicadores_Proceso
         Me.DataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 #End Region
 #Region "Buscar casos abiertos"
-
+        conectar()
+        If CerrarSubs = True Then
+            CerrarSubs = False
+            Exit Sub
+        End If
         Dim tabla As DataGridView = DataGridView1
         Dim adaptador As New SqlDataAdapter("select*from Indicadores1 where Estado=" & conteo & "and convert(char,Clasificación)='" & Me.Clasificacion.Text & "'", cn)
         Dim dataS As New DataSet
@@ -420,7 +431,11 @@ Public Class Indicadores_Proceso
         Me.DataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 #End Region
 #Region "Buscar casos abiertos"
-
+        conectar()
+        If CerrarSubs = True Then
+            CerrarSubs = False
+            Exit Sub
+        End If
         Dim tabla As DataGridView = Me.DataGridView1
         Dim adaptador As New SqlDataAdapter("select*from Indicadores where Estado=" & conteo & "and convert(char,Clasificacion)=" & "'" & Me.Clasificacion.Text & "'" & "", cn)
         Dim dataS As New DataSet

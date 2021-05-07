@@ -12,6 +12,8 @@ Module Conexion
 
 
     Public cn As New SqlClient.SqlConnection(conexion)
+    Public CerrarSubs As Boolean = False
+
 
     Sub conectar()
 
@@ -22,16 +24,18 @@ Module Conexion
                 Else
 
                     cn.Open()
-
+                    CerrarSubs = False
 
                 End If
             Else
-                MessageBox.Show("No hay conexión al servidor principal, el programa procedera a cerrarse", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End
+                If CerrarSubs = False Then
+                    MessageBox.Show("No hay conexión al servidor principal, vuelva a intentar mas tarde", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    CerrarSubs = True
+
+                End If
 
             End If
-
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

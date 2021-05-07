@@ -712,6 +712,11 @@ Module Modulo_Indicadores
 
         Dim da As New SqlDataAdapter(cmd, cn)
         Dim ds As New DataSet
+        conectar()
+        If CerrarSubs = True Then
+            CerrarSubs = False
+            Exit Sub
+        End If
         da.Fill(ds)
         With MIclasificacion
             MIclasificacion.DataSource = ds.Tables(0)
