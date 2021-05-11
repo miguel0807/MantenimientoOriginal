@@ -33,13 +33,17 @@ Partial Class Análisis_Datos
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"2020", "2021", "2022"})
+        Me.ComboBox1.Items.AddRange(New Object() {"2021", "2020", "2022"})
         Me.ComboBox1.Location = New System.Drawing.Point(57, 56)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(241, 24)
@@ -92,7 +96,7 @@ Partial Class Análisis_Datos
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(57, 407)
+        Me.Button1.Location = New System.Drawing.Point(12, 384)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(298, 153)
         Me.Button1.TabIndex = 7
@@ -119,12 +123,41 @@ Partial Class Análisis_Datos
         Me.Chart1.TabIndex = 8
         Me.Chart1.Text = "Chart1"
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(12, 577)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(225, 89)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Cargar datagridview"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(404, -1)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(832, 308)
+        Me.DataGridView1.TabIndex = 10
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(77, 120)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(203, 22)
+        Me.TextBox1.TabIndex = 11
+        '
         'Análisis_Datos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(1323, 689)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
@@ -136,6 +169,7 @@ Partial Class Análisis_Datos
         Me.Name = "Análisis_Datos"
         Me.Text = "Análisis_Datos"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -149,4 +183,7 @@ Partial Class Análisis_Datos
     Friend WithEvents Label3 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
+    Friend WithEvents Button2 As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents TextBox1 As TextBox
 End Class

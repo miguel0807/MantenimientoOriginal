@@ -1,24 +1,51 @@
 ﻿Imports System.Data.SqlClient
 Public Class Análisis_Datos
+    Dim dataS As New DataSet
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Chart1.Series("Ubicaciónes").Points.AddXY("Bodega", 6)
-        Chart1.Series("Ubicaciónes").Points.AddXY("Cartuchos DD", 9)
-        Chart1.Series("Ubicaciónes").Points.AddXY("Cartuchos Wilsonville", 22)
-        Chart1.Series("Ubicaciónes").Points.AddXY("Contacto", 4)
-        Chart1.Series("Ubicaciónes").Points.AddXY("CR7", 1)
-        Chart1.Series("Ubicaciónes").Points.AddXY("CR8", 5)
-        Chart1.Series("Ubicaciónes").Points.AddXY("Cuarto de compresor", 4)
-        Chart1.Series("Ubicaciónes").Points.AddXY("N/A", 10)
-
-        Chart1.Series("Ubicaciónes").Points.AddXY("Oficinas", 2)
-        Chart1.Series("Ubicaciónes").Points.AddXY("Producción Empaque", 5)
-        Chart1.Series("Ubicaciónes").Points.AddXY("Producción Etiquetas", 6)
-        Chart1.Series("Ubicaciónes").Points.AddXY("Producción Master batch", 15)
-        Chart1.Series("Ubicaciónes").Points.AddXY("Taller Mantenimiento", 39)
-        Chart1.Series("Ubicaciónes").Points.AddXY("Tank Farm", 9)
 
 
-        ' Dim tabla As DataGridView = DataGridView1
+        Dim miView As DataView = New DataView(dataS.Tables("Indicadores1")) 'Enviamos a un dataview los datos
+        Chart1.Series("Ubicaciónes").Points.Clear()
+        Chart1.Series("Ubicaciónes").Points.Clear()
+
+        For x = 0 To miView.Count - 1
+            'Tomanos los datos de DataView para la gráfica
+            Me.Chart1.Series("Ubicaciónes").Points.AddXY(miView(x)("Ubicación"), miView(x)("Conteo"))
+        Next
+
+
+    End Sub
+
+
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+
+        dataS.Clear()
+        Dim tabla As DataGridView = DataGridView1
+        Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación', COUNT(*) as 'Conteo' from Indicadores1 group by CAST(Ubicación AS varchar(max))", cn)
+        adaptador.Fill(dataS, "Indicadores1")
+        tabla.DataSource = dataS.Tables("Indicadores1")
+        desconectar()
+
+        Dim miView As DataView = New DataView(dataS.Tables("Indicadores1")) 'Enviamos a un dataview los datos
+
+
+
+
+        Chart1.Series("Ubicaciónes").Points.Clear()
+        Chart1.Series("Ubicaciónes").Points.Clear()
+
+
+        For x = 0 To miView.Count - 1
+                'Tomanos los datos de DataView para la gráfica
+                ' Me.Chart1.Series("Ubicaciónes").Points.AddXY(miView(x)("Ubicación"), miView(x)("Conteo"))
+                Me.Chart1.Series("Ubicaciónes").Points.AddXY(miView(x)("Ubicación"), miView(x)("Conteo"))
+            Next
+
+
+
 
     End Sub
 End Class
