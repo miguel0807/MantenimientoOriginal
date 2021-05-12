@@ -125,10 +125,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Análisis_Datos.Designer.vb">
+    <Compile Include="Indicadores\Análisis_Datos.Designer.vb">
       <DependentUpon>Análisis_Datos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Análisis_Datos.vb">
+    <Compile Include="Indicadores\Análisis_Datos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Extras\ConfNotas.vb" />
@@ -308,7 +308,7 @@
     <Compile Include="Preventivo\Tareas\Registro_preventivo.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Análisis_Datos.resx">
+    <EmbeddedResource Include="Indicadores\Análisis_Datos.resx">
       <DependentUpon>Análisis_Datos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bodega\Busqueda_Material.resx">

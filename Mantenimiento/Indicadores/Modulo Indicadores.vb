@@ -58,6 +58,24 @@ Module Modulo_Indicadores
     Dim almacenar As Boolean = False
 
 
+#Region "Reportes por area"
+    Public adatosAño As ComboBox
+    Public adatosMes As ComboBox
+    Public adatosUbicación As ComboBox
+    Public adatosCargar As Button
+
+    Public adatosDtg As DataGridView
+    Public adatosCheckAño As CheckBox
+    Public adatosCheckMes As CheckBox
+    Public adatosCheckUbicación As CheckBox
+    Public adatosDataSet As New DataSet
+    Public adatosChart1 As DataVisualization.Charting.Chart
+
+    Public adatosVariableMes As Integer
+
+
+#End Region
+
 
 
 
@@ -727,4 +745,98 @@ Module Modulo_Indicadores
 
         MIclasificacion.SelectedIndex = -1
     End Sub
+
+#Region "Reportes por área"
+    Sub AdatosCargarDatos1()
+        Dim mes12 As Integer
+        Select Case adatosMes.Text
+            Case "Enero"
+                mes12 = 1
+            Case "Febrero"
+                mes12 = 2
+            Case "Marzo"
+                mes12 = 3
+            Case "Abril"
+                mes12 = 4
+            Case "Mayo"
+                mes12 = 5
+            Case "Junio"
+                mes12 = 6
+            Case "Julio"
+                mes12 = 7
+            Case "Agosto"
+                mes12 = 8
+            Case "Septiembre"
+                mes12 = 9
+            Case "Octubre"
+                mes12 = 10
+            Case "Noviembre"
+                mes12 = 11
+            Case "Diciembre"
+                mes12 = 12
+
+        End Select
+
+        adatosDataSet.Clear()
+
+        If adatosCheckAño.Checked = False And adatosCheckMes.Checked = False And adatosCheckUbicación.Checked = False Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(adatosDataSet, "Indicadores1")
+
+
+
+        ElseIf adatosCheckAño.Checked = True And adatosCheckMes.Checked = True And adatosCheckUbicación.Checked = True Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where YEAR([Fecha Inicial])=" & adatosAño.Text & " and Month([Fecha Inicial])=" & mes12 & " and  convert(char,Ubicación)='" & adatosUbicación.Text & "'  group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(adatosDataSet, "Indicadores1")
+
+
+
+        ElseIf adatosCheckAño.Checked = True And adatosCheckMes.Checked = False And adatosCheckUbicación.Checked = False Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where YEAR([Fecha Inicial])=" & adatosAño.Text & "  group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(adatosDataSet, "Indicadores1")
+
+        ElseIf adatosCheckAño.Checked = False And adatosCheckMes.Checked = True And adatosCheckUbicación.Checked = False Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where Month([Fecha Inicial])=" & mes12 & " group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(adatosDataSet, "Indicadores1")
+
+        ElseIf adatosCheckAño.Checked = False And adatosCheckMes.Checked = False And adatosCheckUbicación.Checked = True Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as contar from  Indicadores1 where convert(char,Ubicación)='" & adatosUbicación.Text & "' group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(adatosDataSet, "Indicadores1")
+
+        ElseIf adatosCheckAño.Checked = True And adatosCheckMes.Checked = True And adatosCheckUbicación.Checked = False Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where YEAR([Fecha Inicial])=" & adatosAño.Text & " and MONTH([Fecha Inicial])=" & mes12 & " group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(adatosDataSet, "Indicadores1")
+
+        ElseIf adatosCheckAño.Checked = False And adatosCheckMes.Checked = True And adatosCheckUbicación.Checked = True Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where Month([Fecha Inicial])=" & mes12 & " and convert(char,Ubicación)='" & adatosUbicación.Text & "' group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(adatosDataSet, "Indicadores1")
+
+        ElseIf adatosCheckAño.Checked = True And adatosCheckMes.Checked = False And adatosCheckUbicación.Checked = True Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where YEAR([Fecha Inicial])=" & adatosAño.Text & " and convert(char,Ubicación)='" & adatosUbicación.Text & "' group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(adatosDataSet, "Indicadores1")
+        End If
+
+        adatosDtg.DataSource = adatosDataSet.Tables("Indicadores1")
+        desconectar()
+    End Sub
+
+    Sub AdatosCargarGrafico1()
+        Dim miView As DataView = New DataView(adatosDataSet.Tables("Indicadores1")) 'Enviamos a un dataview los datos
+
+
+
+
+        adatosChart1.Series("Reporte por área").Points.Clear()
+
+
+
+        For x = 0 To miView.Count - 1
+            adatosChart1.Series("Reporte por área").Points.AddXY(miView(x)("Ubicación"), miView(x)("Contar"))
+        Next
+
+
+    End Sub
+#End Region
+
+
 End Module

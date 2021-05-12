@@ -22,12 +22,12 @@ Partial Class Análisis_Datos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Me.adatosAño = New System.Windows.Forms.ComboBox()
-        Me.adatosMes = New System.Windows.Forms.ComboBox()
-        Me.adatosUbicación = New System.Windows.Forms.ComboBox()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Me.Año = New System.Windows.Forms.ComboBox()
+        Me.Mes = New System.Windows.Forms.ComboBox()
+        Me.Ubicación = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -42,38 +42,38 @@ Partial Class Análisis_Datos
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'adatosAño
+        'Año
         '
-        Me.adatosAño.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.adatosAño.FormattingEnabled = True
-        Me.adatosAño.Items.AddRange(New Object() {"2020", "2021", "2022", "2023", "2024", "2025"})
-        Me.adatosAño.Location = New System.Drawing.Point(42, 56)
-        Me.adatosAño.Name = "adatosAño"
-        Me.adatosAño.Size = New System.Drawing.Size(241, 24)
-        Me.adatosAño.TabIndex = 0
-        Me.adatosAño.Visible = False
+        Me.Año.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Año.FormattingEnabled = True
+        Me.Año.Items.AddRange(New Object() {"2020", "2021", "2022", "2023", "2024", "2025"})
+        Me.Año.Location = New System.Drawing.Point(42, 56)
+        Me.Año.Name = "Año"
+        Me.Año.Size = New System.Drawing.Size(241, 24)
+        Me.Año.TabIndex = 0
+        Me.Año.Visible = False
         '
-        'adatosMes
+        'Mes
         '
-        Me.adatosMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.adatosMes.FormattingEnabled = True
-        Me.adatosMes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
-        Me.adatosMes.Location = New System.Drawing.Point(42, 139)
-        Me.adatosMes.Name = "adatosMes"
-        Me.adatosMes.Size = New System.Drawing.Size(241, 24)
-        Me.adatosMes.TabIndex = 1
-        Me.adatosMes.Visible = False
+        Me.Mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Mes.FormattingEnabled = True
+        Me.Mes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
+        Me.Mes.Location = New System.Drawing.Point(42, 139)
+        Me.Mes.Name = "Mes"
+        Me.Mes.Size = New System.Drawing.Size(241, 24)
+        Me.Mes.TabIndex = 1
+        Me.Mes.Visible = False
         '
-        'adatosUbicación
+        'Ubicación
         '
-        Me.adatosUbicación.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.adatosUbicación.FormattingEnabled = True
-        Me.adatosUbicación.Items.AddRange(New Object() {"Bodega", "Cartuchos DD", "Cartuchos Wilsonville", "Contacto", "CR7", "CR8", "Cuarto de compresor", "N/A", "Oficinas", "Produccion Empaque", "Produccion Etiquetas", "Produccion Master batch", "Taller Mantenimiento", "Tank Farm", ""})
-        Me.adatosUbicación.Location = New System.Drawing.Point(42, 220)
-        Me.adatosUbicación.Name = "adatosUbicación"
-        Me.adatosUbicación.Size = New System.Drawing.Size(241, 24)
-        Me.adatosUbicación.TabIndex = 2
-        Me.adatosUbicación.Visible = False
+        Me.Ubicación.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Ubicación.FormattingEnabled = True
+        Me.Ubicación.Items.AddRange(New Object() {"Bodega", "Cartuchos DD", "Cartuchos Wilsonville", "Contacto", "CR7", "CR8", "Cuarto de compresor", "N/A", "Oficinas", "Produccion Empaque", "Produccion Etiquetas", "Produccion Master batch", "Taller Mantenimiento", "Tank Farm", ""})
+        Me.Ubicación.Location = New System.Drawing.Point(42, 220)
+        Me.Ubicación.Name = "Ubicación"
+        Me.Ubicación.Size = New System.Drawing.Size(241, 24)
+        Me.Ubicación.TabIndex = 2
+        Me.Ubicación.Visible = False
         '
         'Label1
         '
@@ -113,20 +113,20 @@ Partial Class Análisis_Datos
         '
         'Chart1
         '
-        ChartArea5.AxisX.Interval = 1.0R
-        ChartArea5.AxisX.IsLabelAutoFit = False
-        ChartArea5.AxisX.LabelStyle.Angle = -90
-        ChartArea5.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea5)
-        Legend5.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend5)
+        ChartArea2.AxisX.Interval = 1.0R
+        ChartArea2.AxisX.IsLabelAutoFit = False
+        ChartArea2.AxisX.LabelStyle.Angle = -90
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
         Me.Chart1.Location = New System.Drawing.Point(316, 313)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
-        Series5.ChartArea = "ChartArea1"
-        Series5.Legend = "Legend1"
-        Series5.Name = "Reporte por área"
-        Me.Chart1.Series.Add(Series5)
+        Series2.ChartArea = "ChartArea1"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Reporte por área"
+        Me.Chart1.Series.Add(Series2)
         Me.Chart1.Size = New System.Drawing.Size(950, 379)
         Me.Chart1.TabIndex = 8
         Me.Chart1.Text = "Chart1"
@@ -195,9 +195,9 @@ Partial Class Análisis_Datos
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.adatosUbicación)
-        Me.Controls.Add(Me.adatosMes)
-        Me.Controls.Add(Me.adatosAño)
+        Me.Controls.Add(Me.Ubicación)
+        Me.Controls.Add(Me.Mes)
+        Me.Controls.Add(Me.Año)
         Me.Name = "Análisis_Datos"
         Me.Text = "Análisis_Datos"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -207,9 +207,9 @@ Partial Class Análisis_Datos
 
     End Sub
 
-    Friend WithEvents adatosAño As ComboBox
-    Friend WithEvents adatosMes As ComboBox
-    Friend WithEvents adatosUbicación As ComboBox
+    Friend WithEvents Año As ComboBox
+    Friend WithEvents Mes As ComboBox
+    Friend WithEvents Ubicación As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
