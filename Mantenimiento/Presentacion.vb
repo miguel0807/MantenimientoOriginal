@@ -247,7 +247,13 @@ Public Class Presentacion
     End Sub
 
     Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
-        openChildForm(New Análisis_Datos())
+        openChildForm(New Exportar_indicadores())
+
+        hideSubmenu()
+    End Sub
+
+    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
+        openChildForm(New Reportes_área())
 
         hideSubmenu()
     End Sub

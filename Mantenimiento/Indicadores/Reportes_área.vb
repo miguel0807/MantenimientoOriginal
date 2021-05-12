@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class Análisis_Datos
+Public Class Reportes_área
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Análisis_Datos
+Partial Class Reportes_área
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,9 +22,9 @@ Partial Class Análisis_Datos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Año = New System.Windows.Forms.ComboBox()
         Me.Mes = New System.Windows.Forms.ComboBox()
         Me.Ubicación = New System.Windows.Forms.ComboBox()
@@ -113,20 +113,20 @@ Partial Class Análisis_Datos
         '
         'Chart1
         '
-        ChartArea2.AxisX.Interval = 1.0R
-        ChartArea2.AxisX.IsLabelAutoFit = False
-        ChartArea2.AxisX.LabelStyle.Angle = -90
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
+        ChartArea1.AxisX.Interval = 1.0R
+        ChartArea1.AxisX.IsLabelAutoFit = False
+        ChartArea1.AxisX.LabelStyle.Angle = -90
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(316, 313)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Reporte por área"
-        Me.Chart1.Series.Add(Series2)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Reporte por área"
+        Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(950, 379)
         Me.Chart1.TabIndex = 8
         Me.Chart1.Text = "Chart1"
@@ -179,7 +179,7 @@ Partial Class Análisis_Datos
         Me.checkUbicación.TabIndex = 13
         Me.checkUbicación.UseVisualStyleBackColor = True
         '
-        'Análisis_Datos
+        'Reportes_área
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -198,8 +198,7 @@ Partial Class Análisis_Datos
         Me.Controls.Add(Me.Ubicación)
         Me.Controls.Add(Me.Mes)
         Me.Controls.Add(Me.Año)
-        Me.Name = "Análisis_Datos"
-        Me.Text = "Análisis_Datos"
+        Me.Name = "Reportes_área"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
