@@ -23,7 +23,7 @@ Public Class Análisis_Datos
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim mes12 As Integer
-        Select Case ComboBox2.Text
+        Select Case adatosMes.Text
             Case "Enero"
                 mes12 = 1
             Case "Febrero"
@@ -53,9 +53,43 @@ Public Class Análisis_Datos
 
         dataS.Clear()
         Dim tabla As DataGridView = DataGridView1
-        '  Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación', COUNT(*) as 'Conteo' from Indicadores1 group by CAST(Ubicación AS varchar(max))", cn)
-        Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where YEAR([Fecha Inicial])=2021 group by CAST(Ubicación AS varchar(max))", cn)
-        adaptador.Fill(dataS, "Indicadores1")
+        If checkAño.Checked = False And checkMes.Checked = False And checkUbicación.Checked = False Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(dataS, "Indicadores1")
+
+
+
+        ElseIf checkAño.Checked = True And checkMes.Checked = True And checkUbicación.Checked = True Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where YEAR([Fecha Inicial])=" & adatosAño.Text & " and Month([Fecha Inicial])=" & mes12 & " and  convert(char,Ubicación)='" & adatosUbicación.Text & "'  group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(dataS, "Indicadores1")
+
+
+
+        ElseIf checkAño.Checked = True And checkMes.Checked = False And checkUbicación.Checked = False Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where YEAR([Fecha Inicial])=" & adatosAño.Text & "  group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(dataS, "Indicadores1")
+
+        ElseIf checkAño.Checked = False And checkMes.Checked = True And checkUbicación.Checked = False Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where Month([Fecha Inicial])=" & mes12 & " group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(dataS, "Indicadores1")
+
+        ElseIf checkAño.Checked = False And checkMes.Checked = False And checkUbicación.Checked = True Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as contar from  Indicadores1 where convert(char,Ubicación)='" & adatosUbicación.Text & "' group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(dataS, "Indicadores1")
+
+        ElseIf checkAño.Checked = True And checkMes.Checked = True And checkUbicación.Checked = False Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where YEAR([Fecha Inicial])=" & adatosAño.Text & " and MONTH([Fecha Inicial])=" & mes12 & " group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(dataS, "Indicadores1")
+
+        ElseIf checkAño.Checked = False And checkMes.Checked = True And checkUbicación.Checked = True Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where Month([Fecha Inicial])=" & mes12 & " and convert(char,Ubicación)='" & adatosUbicación.Text & "' group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(dataS, "Indicadores1")
+
+        ElseIf checkAño.Checked = True And checkMes.Checked = False And checkUbicación.Checked = True Then
+            Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where YEAR([Fecha Inicial])=" & adatosAño.Text & " and convert(char,Ubicación)='" & adatosUbicación.Text & "' group by CAST(Ubicación AS varchar(max))", cn)
+            adaptador.Fill(dataS, "Indicadores1")
+        End If
+
         tabla.DataSource = dataS.Tables("Indicadores1")
         desconectar()
 
@@ -78,6 +112,32 @@ Public Class Análisis_Datos
     End Sub
 
     Private Sub Análisis_Datos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        adatosAño.SelectedIndex = 0
+        adatosMes.SelectedIndex = 0
+        adatosUbicación.SelectedIndex = 0
+    End Sub
 
+    Private Sub checkAño_CheckedChanged(sender As Object, e As EventArgs) Handles checkAño.CheckedChanged
+        If checkAño.Checked = True Then
+            adatosAño.Visible = True
+        Else
+            adatosAño.Visible = False
+        End If
+    End Sub
+
+    Private Sub checkMes_CheckedChanged(sender As Object, e As EventArgs) Handles checkMes.CheckedChanged
+        If checkMes.Checked = True Then
+            adatosMes.Visible = True
+        Else
+            adatosMes.Visible = False
+        End If
+    End Sub
+
+    Private Sub checkUbicación_CheckedChanged(sender As Object, e As EventArgs) Handles checkUbicación.CheckedChanged
+        If checkUbicación.Checked = True Then
+            adatosUbicación.Visible = True
+        Else
+            adatosUbicación.Visible = False
+        End If
     End Sub
 End Class

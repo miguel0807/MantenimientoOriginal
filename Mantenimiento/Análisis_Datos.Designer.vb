@@ -25,9 +25,9 @@ Partial Class Análisis_Datos
         Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.adatosAño = New System.Windows.Forms.ComboBox()
+        Me.adatosMes = New System.Windows.Forms.ComboBox()
+        Me.adatosUbicación = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -35,42 +35,45 @@ Partial Class Análisis_Datos
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.checkAño = New System.Windows.Forms.CheckBox()
+        Me.checkMes = New System.Windows.Forms.CheckBox()
+        Me.checkUbicación = New System.Windows.Forms.CheckBox()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ComboBox1
+        'adatosAño
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"2020", "2021", "2022", "2023", "2024", "2025"})
-        Me.ComboBox1.Location = New System.Drawing.Point(42, 56)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(241, 24)
-        Me.ComboBox1.TabIndex = 0
+        Me.adatosAño.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.adatosAño.FormattingEnabled = True
+        Me.adatosAño.Items.AddRange(New Object() {"2020", "2021", "2022", "2023", "2024", "2025"})
+        Me.adatosAño.Location = New System.Drawing.Point(42, 56)
+        Me.adatosAño.Name = "adatosAño"
+        Me.adatosAño.Size = New System.Drawing.Size(241, 24)
+        Me.adatosAño.TabIndex = 0
+        Me.adatosAño.Visible = False
         '
-        'ComboBox2
+        'adatosMes
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", "Todos"})
-        Me.ComboBox2.Location = New System.Drawing.Point(42, 139)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(241, 24)
-        Me.ComboBox2.TabIndex = 1
+        Me.adatosMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.adatosMes.FormattingEnabled = True
+        Me.adatosMes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
+        Me.adatosMes.Location = New System.Drawing.Point(42, 139)
+        Me.adatosMes.Name = "adatosMes"
+        Me.adatosMes.Size = New System.Drawing.Size(241, 24)
+        Me.adatosMes.TabIndex = 1
+        Me.adatosMes.Visible = False
         '
-        'ComboBox3
+        'adatosUbicación
         '
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"Bodega", "Cartuchos DD", "Cartuchos Wilsonville", "Contacto", "CR7", "CR8", "Cuarto de compresor", "N/A", "Oficinas", "Produccion Empaque", "Produccion Etiquetas", "Produccion Master batch", "Taller Mantenimiento", "Tank Farm", ""})
-        Me.ComboBox3.Location = New System.Drawing.Point(42, 220)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(241, 24)
-        Me.ComboBox3.TabIndex = 2
+        Me.adatosUbicación.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.adatosUbicación.FormattingEnabled = True
+        Me.adatosUbicación.Items.AddRange(New Object() {"Bodega", "Cartuchos DD", "Cartuchos Wilsonville", "Contacto", "CR7", "CR8", "Cuarto de compresor", "N/A", "Oficinas", "Produccion Empaque", "Produccion Etiquetas", "Produccion Master batch", "Taller Mantenimiento", "Tank Farm", ""})
+        Me.adatosUbicación.Location = New System.Drawing.Point(42, 220)
+        Me.adatosUbicación.Name = "adatosUbicación"
+        Me.adatosUbicación.Size = New System.Drawing.Size(241, 24)
+        Me.adatosUbicación.TabIndex = 2
+        Me.adatosUbicación.Visible = False
         '
         'Label1
         '
@@ -149,32 +152,32 @@ Partial Class Análisis_Datos
         Me.DataGridView1.Size = New System.Drawing.Size(832, 308)
         Me.DataGridView1.TabIndex = 10
         '
-        'CheckBox1
+        'checkAño
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(292, 60)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(18, 17)
-        Me.CheckBox1.TabIndex = 11
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.checkAño.AutoSize = True
+        Me.checkAño.Location = New System.Drawing.Point(25, 37)
+        Me.checkAño.Name = "checkAño"
+        Me.checkAño.Size = New System.Drawing.Size(18, 17)
+        Me.checkAño.TabIndex = 11
+        Me.checkAño.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'checkMes
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(292, 146)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(18, 17)
-        Me.CheckBox2.TabIndex = 12
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.checkMes.AutoSize = True
+        Me.checkMes.Location = New System.Drawing.Point(25, 120)
+        Me.checkMes.Name = "checkMes"
+        Me.checkMes.Size = New System.Drawing.Size(18, 17)
+        Me.checkMes.TabIndex = 12
+        Me.checkMes.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'checkUbicación
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(292, 227)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(18, 17)
-        Me.CheckBox3.TabIndex = 13
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.checkUbicación.AutoSize = True
+        Me.checkUbicación.Location = New System.Drawing.Point(25, 201)
+        Me.checkUbicación.Name = "checkUbicación"
+        Me.checkUbicación.Size = New System.Drawing.Size(18, 17)
+        Me.checkUbicación.TabIndex = 13
+        Me.checkUbicación.UseVisualStyleBackColor = True
         '
         'Análisis_Datos
         '
@@ -182,9 +185,9 @@ Partial Class Análisis_Datos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(1323, 689)
-        Me.Controls.Add(Me.CheckBox3)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.checkUbicación)
+        Me.Controls.Add(Me.checkMes)
+        Me.Controls.Add(Me.checkAño)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Chart1)
@@ -192,9 +195,9 @@ Partial Class Análisis_Datos
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ComboBox3)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.adatosUbicación)
+        Me.Controls.Add(Me.adatosMes)
+        Me.Controls.Add(Me.adatosAño)
         Me.Name = "Análisis_Datos"
         Me.Text = "Análisis_Datos"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -204,9 +207,9 @@ Partial Class Análisis_Datos
 
     End Sub
 
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents adatosAño As ComboBox
+    Friend WithEvents adatosMes As ComboBox
+    Friend WithEvents adatosUbicación As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -214,7 +217,7 @@ Partial Class Análisis_Datos
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
     Friend WithEvents Button2 As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents checkAño As CheckBox
+    Friend WithEvents checkMes As CheckBox
+    Friend WithEvents checkUbicación As CheckBox
 End Class
