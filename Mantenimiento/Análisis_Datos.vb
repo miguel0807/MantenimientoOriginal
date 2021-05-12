@@ -6,14 +6,14 @@ Public Class Análisis_Datos
 
 
         Dim miView As DataView = New DataView(dataS.Tables("Indicadores1")) 'Enviamos a un dataview los datos
-        Chart1.Series("Ubicaciónes").Points.Clear()
+        Chart1.Series("Reporte por área").Points.Clear()
 
 
         For x = 0 To miView.Count - 1
             'Tomanos los datos de DataView para la gráfica
             ' Me.Chart1.Series("Ubicaciónes").Points.AddXY(miView(x)("Ubicación"), miView(x)("Conteo"))
 
-            Me.Chart1.Series("Ubicaciónes").Points.AddXY(miView(x)("Ubicación"), miView(x)("Fecha"))
+            Me.Chart1.Series("Reporte por área").Points.AddXY(miView(x)("Ubicación"), miView(x)("Contar"))
         Next
 
 
@@ -54,7 +54,7 @@ Public Class Análisis_Datos
         dataS.Clear()
         Dim tabla As DataGridView = DataGridView1
         '  Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación', COUNT(*) as 'Conteo' from Indicadores1 group by CAST(Ubicación AS varchar(max))", cn)
-        Dim adaptador As New SqlDataAdapter("select Ubicación, CONVERT(date,[Fecha Inicial])  as 'Fecha' from Indicadores1 where YEAR([Fecha Inicial])=" & ComboBox1.Text & " and MONTH([Fecha Inicial])=" & mes12 & "", cn)
+        Dim adaptador As New SqlDataAdapter("select CAST(Ubicación AS varchar(max)) as 'Ubicación',COUNT(*) as Contar from  Indicadores1 where YEAR([Fecha Inicial])=2021 group by CAST(Ubicación AS varchar(max))", cn)
         adaptador.Fill(dataS, "Indicadores1")
         tabla.DataSource = dataS.Tables("Indicadores1")
         desconectar()
@@ -64,13 +64,13 @@ Public Class Análisis_Datos
 
 
 
-        'Chart1.Series("Ubicaciónes").Points.Clear()
+        Chart1.Series("Reporte por área").Points.Clear()
 
 
 
-        'For x = 0 To miView.Count - 1
-        '    Me.Chart1.Series("Ubicaciónes").Points.AddXY(miView(x)("Ubicación"), miView(x)("[Fecha Inicial])"))
-        'Next
+        For x = 0 To miView.Count - 1
+            Me.Chart1.Series("Reporte por área").Points.AddXY(miView(x)("Ubicación"), miView(x)("Contar"))
+        Next
 
 
 
