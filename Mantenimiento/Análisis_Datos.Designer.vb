@@ -22,9 +22,9 @@ Partial Class Análisis_Datos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
@@ -42,8 +42,9 @@ Partial Class Análisis_Datos
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"2021", "2020", "2022"})
+        Me.ComboBox1.Items.AddRange(New Object() {"2020", "2021", "2022"})
         Me.ComboBox1.Location = New System.Drawing.Point(57, 56)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(241, 24)
@@ -51,6 +52,7 @@ Partial Class Análisis_Datos
         '
         'ComboBox2
         '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", "Todos"})
         Me.ComboBox2.Location = New System.Drawing.Point(57, 186)
@@ -96,38 +98,38 @@ Partial Class Análisis_Datos
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 384)
+        Me.Button1.Location = New System.Drawing.Point(12, 410)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(298, 153)
+        Me.Button1.Size = New System.Drawing.Size(286, 92)
         Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Cargar Grafico"
+        Me.Button1.Text = "Actualizar Grafico"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Chart1
         '
-        ChartArea1.AxisX.Interval = 1.0R
-        ChartArea1.AxisX.IsLabelAutoFit = False
-        ChartArea1.AxisX.LabelStyle.Angle = -90
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(404, 313)
+        ChartArea4.AxisX.Interval = 1.0R
+        ChartArea4.AxisX.IsLabelAutoFit = False
+        ChartArea4.AxisX.LabelStyle.Angle = -90
+        ChartArea4.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea4)
+        Legend4.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend4)
+        Me.Chart1.Location = New System.Drawing.Point(316, 313)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Ubicaciónes"
-        Me.Chart1.Series.Add(Series1)
+        Series4.ChartArea = "ChartArea1"
+        Series4.Legend = "Legend1"
+        Series4.Name = "Ubicaciónes"
+        Me.Chart1.Series.Add(Series4)
         Me.Chart1.Size = New System.Drawing.Size(950, 379)
         Me.Chart1.TabIndex = 8
         Me.Chart1.Text = "Chart1"
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 577)
+        Me.Button2.Location = New System.Drawing.Point(12, 560)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(225, 89)
+        Me.Button2.Size = New System.Drawing.Size(286, 103)
         Me.Button2.TabIndex = 9
         Me.Button2.Text = "Cargar datagridview"
         Me.Button2.UseVisualStyleBackColor = True
@@ -135,7 +137,7 @@ Partial Class Análisis_Datos
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(404, -1)
+        Me.DataGridView1.Location = New System.Drawing.Point(316, 0)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
