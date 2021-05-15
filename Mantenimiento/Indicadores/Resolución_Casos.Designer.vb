@@ -176,7 +176,8 @@ Partial Class Resolución_Casos
         Me.Chart1.Text = "Chart1"
         Title1.BackColor = System.Drawing.Color.Transparent
         Title1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
-        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title1.BorderColor = System.Drawing.Color.Black
+        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Title1.Name = "Title1"
         Title1.Text = "Resolución de Casos"
         Me.Chart1.Titles.Add(Title1)
