@@ -257,4 +257,10 @@ Public Class Presentacion
 
         hideSubmenu()
     End Sub
+
+    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
+        openChildForm(New Resolución_Casos())
+
+        hideSubmenu()
+    End Sub
 End Class

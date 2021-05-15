@@ -151,6 +151,12 @@
     <Compile Include="Indicadores\Registrar_Nuevo_Caso.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Indicadores\Resolución_Casos.Designer.vb">
+      <DependentUpon>Resolución_Casos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Indicadores\Resolución_Casos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Preventivo\General\RegistroPreventivo.Designer.vb">
       <DependentUpon>RegistroPreventivo.vb</DependentUpon>
     </Compile>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Indicadores\Registrar_Nuevo_Caso.resx">
       <DependentUpon>Registrar_Nuevo_Caso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indicadores\Resolución_Casos.resx">
+      <DependentUpon>Resolución_Casos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\General\RegistroPreventivo.resx">
       <DependentUpon>RegistroPreventivo.vb</DependentUpon>

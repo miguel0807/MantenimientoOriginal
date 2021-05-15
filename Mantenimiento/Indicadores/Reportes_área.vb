@@ -31,6 +31,9 @@ Public Class Reportes_área
     End Sub
 
     Private Sub Análisis_Datos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
+
+
         Año.SelectedIndex = 0
         Mes.SelectedIndex = 0
         Ubicación.SelectedIndex = 0
