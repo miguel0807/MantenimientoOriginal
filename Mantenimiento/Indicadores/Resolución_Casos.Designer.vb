@@ -182,10 +182,14 @@ Partial Class Resolución_Casos
         '
         'Chart1
         '
+        Me.Chart1.BackColor = System.Drawing.SystemColors.ActiveCaption
         ChartArea1.AxisX.Interval = 1.0R
         ChartArea1.AxisX.IsLabelAutoFit = False
         ChartArea1.Name = "ChartArea1"
         Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.BackColor = System.Drawing.SystemColors.ScrollBar
+        Legend1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Legend1.BorderWidth = 5
         Legend1.Name = "Legend1"
         Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(323, 379)
