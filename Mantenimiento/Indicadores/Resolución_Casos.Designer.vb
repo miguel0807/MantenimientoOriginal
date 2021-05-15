@@ -88,6 +88,7 @@ Partial Class Resolución_Casos
         ChartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic
         ChartArea1.AxisX.Interval = 1.0R
         ChartArea1.AxisX.IsLabelAutoFit = False
+        ChartArea1.AxisX.IsMarginVisible = False
         ChartArea1.AxisX.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         ChartArea1.AxisX.MaximumAutoSize = 100.0!
         ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -98,6 +99,7 @@ Partial Class Resolución_Casos
         ChartArea1.BackColor = System.Drawing.Color.White
         ChartArea1.Name = "ChartArea1"
         Me.Chart1.ChartAreas.Add(ChartArea1)
+        Me.Chart1.IsSoftShadows = False
         Legend1.BackColor = System.Drawing.SystemColors.ScrollBar
         Legend1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Legend1.BorderWidth = 5
@@ -172,6 +174,7 @@ Partial Class Resolución_Casos
         Me.Chart1.Series.Add(Series12)
         Me.Chart1.Size = New System.Drawing.Size(1243, 521)
         Me.Chart1.TabIndex = 28
+        Me.Chart1.TabStop = False
         Me.Chart1.Text = "Chart1"
         Title1.BackColor = System.Drawing.Color.Transparent
         Title1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
