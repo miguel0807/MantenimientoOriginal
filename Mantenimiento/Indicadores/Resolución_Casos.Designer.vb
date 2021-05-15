@@ -36,6 +36,7 @@ Partial Class Resolución_Casos
         Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Series11 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Series12 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.checkUbicación = New System.Windows.Forms.CheckBox()
         Me.checkMes = New System.Windows.Forms.CheckBox()
         Me.checkAño = New System.Windows.Forms.CheckBox()
@@ -185,6 +186,12 @@ Partial Class Resolución_Casos
         Me.Chart1.BackColor = System.Drawing.SystemColors.ActiveCaption
         ChartArea1.AxisX.Interval = 1.0R
         ChartArea1.AxisX.IsLabelAutoFit = False
+        ChartArea1.AxisX.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisX.MaximumAutoSize = 100.0!
+        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY.IsLabelAutoFit = False
+        ChartArea1.AxisY.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY.MaximumAutoSize = 100.0!
         ChartArea1.Name = "ChartArea1"
         Me.Chart1.ChartAreas.Add(ChartArea1)
         Legend1.BackColor = System.Drawing.SystemColors.ScrollBar
@@ -192,7 +199,7 @@ Partial Class Resolución_Casos
         Legend1.BorderWidth = 5
         Legend1.Name = "Legend1"
         Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(323, 379)
+        Me.Chart1.Location = New System.Drawing.Point(305, 379)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel
         Series1.ChartArea = "ChartArea1"
@@ -246,6 +253,12 @@ Partial Class Resolución_Casos
         Me.Chart1.Size = New System.Drawing.Size(950, 379)
         Me.Chart1.TabIndex = 28
         Me.Chart1.Text = "Chart1"
+        Title1.BackColor = System.Drawing.Color.Transparent
+        Title1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
+        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title1.Name = "Title1"
+        Title1.Text = "Resolución de Casos"
+        Me.Chart1.Titles.Add(Title1)
         '
         'Resolución_Casos
         '
