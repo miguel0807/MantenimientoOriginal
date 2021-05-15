@@ -146,7 +146,14 @@ PruebaCT as (
 		 group by Intervalo
 	
 		
-		
+		order by 
+		case Intervalo
+		when '0-2' then 1
+		when '3-4' then 2
+		when '5-6' then 3
+		when '7-10' then 4
+		when '10+' then 5
+		end
 
 
 
@@ -201,5 +208,6 @@ PruebaCT as (
 
 
     End Sub
+
 
 End Class
