@@ -84,11 +84,15 @@ Partial Class Resolución_Casos
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Chart1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        ChartArea1.Area3DStyle.Enable3D = True
+        ChartArea1.Area3DStyle.IsClustered = True
+        ChartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic
         ChartArea1.AxisX.Interval = 1.0R
         ChartArea1.AxisX.IsLabelAutoFit = False
         ChartArea1.AxisX.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         ChartArea1.AxisX.MaximumAutoSize = 100.0!
         ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
         ChartArea1.AxisY.IsLabelAutoFit = False
         ChartArea1.AxisY.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         ChartArea1.AxisY.MaximumAutoSize = 100.0!
@@ -106,39 +110,51 @@ Partial Class Resolución_Casos
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel
         Series1.ChartArea = "ChartArea1"
+        Series1.CustomProperties = "PointWidth=1"
         Series1.Legend = "Legend1"
         Series1.Name = "Enero"
         Series2.ChartArea = "ChartArea1"
+        Series2.CustomProperties = "PointWidth=1"
         Series2.Legend = "Legend1"
         Series2.Name = "Febrero"
         Series3.ChartArea = "ChartArea1"
+        Series3.CustomProperties = "PointWidth=1"
         Series3.Legend = "Legend1"
         Series3.Name = "Marzo"
         Series4.ChartArea = "ChartArea1"
+        Series4.CustomProperties = "PointWidth=1"
         Series4.Legend = "Legend1"
         Series4.Name = "Abril"
         Series5.ChartArea = "ChartArea1"
+        Series5.CustomProperties = "PointWidth=1"
         Series5.Legend = "Legend1"
         Series5.Name = "Mayo"
         Series6.ChartArea = "ChartArea1"
+        Series6.CustomProperties = "PointWidth=1"
         Series6.Legend = "Legend1"
         Series6.Name = "Junio"
         Series7.ChartArea = "ChartArea1"
+        Series7.CustomProperties = "PointWidth=1"
         Series7.Legend = "Legend1"
         Series7.Name = "Julio"
         Series8.ChartArea = "ChartArea1"
+        Series8.CustomProperties = "PointWidth=1"
         Series8.Legend = "Legend1"
         Series8.Name = "Agosto"
         Series9.ChartArea = "ChartArea1"
+        Series9.CustomProperties = "PointWidth=1"
         Series9.Legend = "Legend1"
         Series9.Name = "Septiembre"
         Series10.ChartArea = "ChartArea1"
+        Series10.CustomProperties = "PointWidth=1"
         Series10.Legend = "Legend1"
         Series10.Name = "Octubre"
         Series11.ChartArea = "ChartArea1"
+        Series11.CustomProperties = "PointWidth=1"
         Series11.Legend = "Legend1"
         Series11.Name = "Noviembre"
         Series12.ChartArea = "ChartArea1"
+        Series12.CustomProperties = "PointWidth=1"
         Series12.Legend = "Legend1"
         Series12.Name = "Diciembre"
         Me.Chart1.Series.Add(Series1)
