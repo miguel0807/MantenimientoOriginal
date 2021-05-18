@@ -9,6 +9,7 @@ Public Class Reportes_área
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         AdatosCargarDatos1()
         AdatosCargarGrafico1()
+        AdatosEsteticaDtg()
 
 
 
@@ -42,25 +43,26 @@ Public Class Reportes_área
 
     Private Sub checkAño_CheckedChanged(sender As Object, e As EventArgs) Handles checkAño.CheckedChanged
         If checkAño.Checked = True Then
-            Año.Visible = True
+            Año.Enabled = True
         Else
-            Año.Visible = False
+
+            Año.Enabled = False
         End If
     End Sub
 
     Private Sub checkMes_CheckedChanged(sender As Object, e As EventArgs) Handles checkMes.CheckedChanged
         If checkMes.Checked = True Then
-            Mes.Visible = True
+            Mes.Enabled = True
         Else
-            Mes.Visible = False
+            Mes.Enabled = False
         End If
     End Sub
 
     Private Sub checkUbicación_CheckedChanged(sender As Object, e As EventArgs) Handles checkUbicación.CheckedChanged
         If checkUbicación.Checked = True Then
-            Ubicación.Visible = True
+            Ubicación.Enabled = True
         Else
-            Ubicación.Visible = False
+            Ubicación.Enabled = False
         End If
     End Sub
 End Class

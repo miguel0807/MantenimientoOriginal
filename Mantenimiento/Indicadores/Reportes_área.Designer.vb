@@ -22,17 +22,16 @@ Partial Class Reportes_área
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Año = New System.Windows.Forms.ComboBox()
         Me.Mes = New System.Windows.Forms.ComboBox()
         Me.Ubicación = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.checkAño = New System.Windows.Forms.CheckBox()
@@ -40,43 +39,44 @@ Partial Class Reportes_área
         Me.checkUbicación = New System.Windows.Forms.CheckBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Año
         '
         Me.Año.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Año.Enabled = False
         Me.Año.FormattingEnabled = True
         Me.Año.Items.AddRange(New Object() {"2020", "2021", "2022", "2023", "2024", "2025"})
         Me.Año.Location = New System.Drawing.Point(17, 41)
         Me.Año.Name = "Año"
         Me.Año.Size = New System.Drawing.Size(241, 24)
         Me.Año.TabIndex = 0
-        Me.Año.Visible = False
         '
         'Mes
         '
         Me.Mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Mes.Enabled = False
         Me.Mes.FormattingEnabled = True
         Me.Mes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
         Me.Mes.Location = New System.Drawing.Point(17, 116)
         Me.Mes.Name = "Mes"
         Me.Mes.Size = New System.Drawing.Size(241, 24)
         Me.Mes.TabIndex = 1
-        Me.Mes.Visible = False
         '
         'Ubicación
         '
         Me.Ubicación.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Ubicación.Enabled = False
         Me.Ubicación.FormattingEnabled = True
         Me.Ubicación.Items.AddRange(New Object() {"Bodega", "Cartuchos DD", "Cartuchos Wilsonville", "Contacto", "CR7", "CR8", "Cuarto de compresor", "N/A", "Oficinas", "Produccion Empaque", "Produccion Etiquetas", "Produccion Master batch", "Taller Mantenimiento", "Tank Farm", ""})
         Me.Ubicación.Location = New System.Drawing.Point(17, 195)
         Me.Ubicación.Name = "Ubicación"
         Me.Ubicación.Size = New System.Drawing.Size(241, 24)
         Me.Ubicación.TabIndex = 2
-        Me.Ubicación.Visible = False
         '
         'Label1
         '
@@ -108,29 +108,6 @@ Partial Class Reportes_área
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Ubicación"
         '
-        'Chart1
-        '
-        Me.Chart1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        ChartArea1.AxisX.Interval = 1.0R
-        ChartArea1.AxisX.IsLabelAutoFit = False
-        ChartArea1.AxisX.LabelStyle.Angle = -90
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(25, 320)
-        Me.Chart1.Name = "Chart1"
-        Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Reporte por área"
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(1273, 342)
-        Me.Chart1.TabIndex = 8
-        Me.Chart1.Text = "Chart1"
-        '
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(67, 222)
@@ -151,7 +128,7 @@ Partial Class Reportes_área
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
@@ -192,10 +169,11 @@ Partial Class Reportes_área
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(877, 9)
+        Me.Label4.Location = New System.Drawing.Point(920, 9)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(197, 25)
+        Me.Label4.Size = New System.Drawing.Size(199, 27)
         Me.Label4.TabIndex = 14
         Me.Label4.Text = "Modo de busqueda"
         '
@@ -217,21 +195,46 @@ Partial Class Reportes_área
         Me.Panel1.Size = New System.Drawing.Size(283, 279)
         Me.Panel1.TabIndex = 15
         '
+        'Chart1
+        '
+        Me.Chart1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Chart1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        ChartArea1.AxisX.Interval = 1.0R
+        ChartArea1.AxisX.IsLabelAutoFit = False
+        ChartArea1.AxisX.LabelStyle.Angle = -90
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
+        Me.Chart1.Location = New System.Drawing.Point(25, 320)
+        Me.Chart1.Name = "Chart1"
+        Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
+        Me.Chart1.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(77, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(189, Byte), Integer))}
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Reporte por área"
+        Me.Chart1.Series.Add(Series1)
+        Me.Chart1.Size = New System.Drawing.Size(1273, 342)
+        Me.Chart1.TabIndex = 8
+        Me.Chart1.Text = "Chart1"
+        '
         'Reportes_área
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightGray
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1323, 689)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Chart1)
         Me.Name = "Reportes_área"
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -243,7 +246,6 @@ Partial Class Reportes_área
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
     Friend WithEvents Button2 As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents checkAño As CheckBox
@@ -251,4 +253,5 @@ Partial Class Reportes_área
     Friend WithEvents checkUbicación As CheckBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
 End Class
