@@ -83,6 +83,7 @@ Partial Class Resolución_Casos
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Chart1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Chart1.CausesValidation = False
         ChartArea1.Area3DStyle.Enable3D = True
         ChartArea1.Area3DStyle.IsClustered = True
         ChartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic
