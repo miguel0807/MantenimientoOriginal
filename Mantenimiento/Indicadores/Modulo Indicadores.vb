@@ -827,6 +827,59 @@ Module Modulo_Indicadores
         desconectar()
     End Sub
 
+    Sub AdatosEsteticaDtg()
+
+
+#Region "Formato de letra"
+        adatosDtg.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        adatosDtg.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+
+#End Region
+        ' Indicadores_Proceso.DataGridView1.RowTemplate.Height = 25
+#Region "Cambios de color celdas y alternadas"
+        adatosDtg.RowsDefaultCellStyle.BackColor = Color.White
+        adatosDtg.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Personalizacion header"
+        adatosDtg.EnableHeadersVisualStyles = False
+        adatosDtg.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        adatosDtg.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        'Me.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        adatosDtg.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        adatosDtg.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
+#End Region
+#Region "Alineacion de titulos"
+        adatosDtg.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+
+        If adatosDataSet.Tables("Indicadores1").Rows.Count > 0 Then
+            adatosDtg.RowHeadersVisible = False
+            adatosDtg.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            adatosDtg.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+            adatosDtg.Rows(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            adatosDtg.Columns(0).Width = 200
+            adatosDtg.Columns(1).Width = 200
+
+
+
+#Region "Bloquear filtro cuando se de click a columna"
+            For Each col As DataGridViewColumn In adatosDtg.Columns
+                col.SortMode = DataGridViewColumnSortMode.NotSortable
+
+
+            Next
+#End Region
+
+        End If
+    End Sub
+
     Sub AdatosCargarGrafico1()
         Dim miView As DataView = New DataView(adatosDataSet.Tables("Indicadores1")) 'Enviamos a un dataview los datos
 

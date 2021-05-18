@@ -34,6 +34,10 @@ Public Class Reportes_área
 
         adatosChart1 = Chart1
 
+        AdatosCargarDatos1()
+        AdatosCargarGrafico1()
+        AdatosEsteticaDtg()
+
     End Sub
 
     Private Sub checkAño_CheckedChanged(sender As Object, e As EventArgs) Handles checkAño.CheckedChanged
