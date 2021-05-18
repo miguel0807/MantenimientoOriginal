@@ -2,22 +2,7 @@
 Public Class Reportes_área
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-
-        'Dim miView As DataView = New DataView(dataS.Tables("Indicadores1")) 'Enviamos a un dataview los datos
-        'Chart1.Series("Reporte por área").Points.Clear()
-
-
-        'For x = 0 To miView.Count - 1
-        '    'Tomanos los datos de DataView para la gráfica
-        '    ' Me.Chart1.Series("Ubicaciónes").Points.AddXY(miView(x)("Ubicación"), miView(x)("Conteo"))
-
-        '    Me.Chart1.Series("Reporte por área").Points.AddXY(miView(x)("Ubicación"), miView(x)("Contar"))
-        'Next
-
-
-    End Sub
 
 
 

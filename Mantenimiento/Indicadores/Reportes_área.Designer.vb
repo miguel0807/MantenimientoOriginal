@@ -31,7 +31,6 @@ Partial Class Reportes_área
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -101,15 +100,6 @@ Partial Class Reportes_área
         Me.Label3.Size = New System.Drawing.Size(70, 17)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Ubicación"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(12, 566)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(286, 92)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Actualizar Grafico"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Chart1
         '
@@ -191,7 +181,6 @@ Partial Class Reportes_área
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Chart1)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -212,7 +201,6 @@ Partial Class Reportes_área
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
     Friend WithEvents Button2 As Button
     Friend WithEvents DataGridView1 As DataGridView

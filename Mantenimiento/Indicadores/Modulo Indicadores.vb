@@ -72,10 +72,16 @@ Module Modulo_Indicadores
     Public adatosChart1 As DataVisualization.Charting.Chart
 
     Public adatosVariableMes As Integer
-
-
 #End Region
 
+
+
+#Region "Resolucion de casos"
+    Public ResolucionDtg As DataGridView
+    Public ResolucionChar1 As DataVisualization.Charting.Chart
+    Public ResolucionDataSet As New DataSet
+    Public ResolucionCboFecha As ComboBox
+#End Region
 
 
 
@@ -776,7 +782,8 @@ Module Modulo_Indicadores
                 mes12 = 12
 
         End Select
-
+        adatosDtg.DataSource = Nothing
+        adatosDtg.Columns.Clear()
         adatosDataSet.Clear()
 
         If adatosCheckAño.Checked = False And adatosCheckMes.Checked = False And adatosCheckUbicación.Checked = False Then
@@ -838,5 +845,293 @@ Module Modulo_Indicadores
     End Sub
 #End Region
 
+#Region "Reportes por Casos"
+
+    Sub ResolucionEsteticaDtg()
+
+
+
+
+#Region "Formato de letra"
+        ResolucionDtg.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        ResolucionDtg.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+
+#End Region
+        ' Indicadores_Proceso.DataGridView1.RowTemplate.Height = 25
+#Region "Cambios de color celdas y alternadas"
+        ResolucionDtg.RowsDefaultCellStyle.BackColor = Color.White
+        ResolucionDtg.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Personalizacion header"
+        ResolucionDtg.EnableHeadersVisualStyles = False
+        ResolucionDtg.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        ResolucionDtg.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        'Me.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        ResolucionDtg.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        ResolucionDtg.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
+#End Region
+#Region "Alineacion de titulos"
+        ResolucionDtg.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+
+        If ResolucionDataSet.Tables("Indicadores1").Rows.Count > 0 Then
+            ResolucionDtg.RowHeadersVisible = False
+            ResolucionDtg.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(12).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            ResolucionDtg.Rows(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            ResolucionDtg.Columns(0).Width = 130
+            ResolucionDtg.Columns(1).Width = 70
+            ResolucionDtg.Columns(2).Width = 80
+            ResolucionDtg.Columns(3).Width = 70
+            ResolucionDtg.Columns(4).Width = 60
+            ResolucionDtg.Columns(5).Width = 70
+            ResolucionDtg.Columns(6).Width = 70
+            ResolucionDtg.Columns(7).Width = 70
+            ResolucionDtg.Columns(8).Width = 70
+            ResolucionDtg.Columns(9).Width = 100
+            ResolucionDtg.Columns(10).Width = 70
+            ResolucionDtg.Columns(11).Width = 100
+            ResolucionDtg.Columns(12).Width = 100
+
+
+
+
+        End If
+
+
+
+    End Sub
+
+    Sub ResolucionCargarDatos()
+        ResolucionDataSet.Clear()
+        ResolucionDtg.DataSource = Nothing
+        ResolucionDtg.Columns.Clear()
+
+
+
+
+        Dim adaptador As New SqlDataAdapter("
+    set language spanish;
+
+
+
+    with
+
+    indicadores4 as (
+    select Caso,[Fecha Inicial],[Fecha Final]
+      from Indicadores1
+    )
+    ,
+    IntervaloIndicador as (
+    select   month([Fecha Inicial]) Mes
+           , case 
+               when datediff(day, [Fecha Inicial], [Fecha Final]) <= 2 then '0-2'
+               when datediff(day, [Fecha Inicial], [Fecha Final]) <= 4 then '3-4'
+               when datediff(day, [Fecha Inicial], [Fecha Final]) <= 6 then '5-6'
+               when datediff(day, [Fecha Inicial], [Fecha Final]) <= 10 then '7-10'
+               else '10+'
+             end Intervalo
+      from Indicadores1
+     where year([Fecha Inicial]) = " & ResolucionCboFecha.Text & "
+
+    -- DateName( month , DateAdd( month , Mes , 0 ) - 1 )
+
+    ),
+
+
+    PruebaCT as (
+
+	       select Intervalo, 
+	       case 
+               when  Mes=1 then '1'
+		    else 0		
+             end Enero,
+		       case 
+               when  Mes=2 then '1'
+		       else 0
+             end Febrero,
+
+		      case 
+               when  Mes=3 then '1'
+               else 0
+             end Marzo,
+
+		       case 
+               when  Mes=4 then '1'
+		    else 0		
+             end Abril,
+
+		       case 
+               when  Mes=5 then '1'
+		       else 0
+             end Mayo,
+
+		      case 
+               when  Mes=6 then '1'
+               else 0
+             end Junio,
+
+		      case 
+               when  Mes=7 then '1'
+		    else 0		
+             end Julio,
+
+		       case 
+               when  Mes=8 then '1'
+		       else 0
+             end Agosto,
+
+		      case 
+               when  Mes=9 then '1'
+               else 0
+             end Septiembre,
+
+		       case 
+               when  Mes=10 then '1'
+		    else 0		
+             end Octubre,
+
+		       case 
+               when  Mes=11 then '1'
+		       else 0
+             end Noviembre,
+
+		      case 
+               when  Mes=12 then '1'
+               else 0
+             end Diciembre
+	
+		     from IntervaloIndicador
+	
+		     )
+		 	     --SELECT*FROM PruebaCT;
+		
+		
+	
+
+		     select Intervalo,case
+		     when Intervalo=Intervalo then SUM(enero)
+		    end Enero,
+		    case
+		    when Intervalo=Intervalo then sum (Febrero)
+		    end Febrero,
+		    case
+		    when Intervalo=Intervalo then sum (Marzo)
+		    end Marzo,
+		     case
+		    when Intervalo=Intervalo then sum (Abril)
+		    end Abril,case
+		    when Intervalo=Intervalo then sum (Mayo)
+		    end Mayo,
+		    case
+		    when Intervalo=Intervalo then sum (Junio)
+		    end Junio,
+		    case
+		    when Intervalo=Intervalo then sum (Julio)
+		    end Julio,
+		     case
+		    when Intervalo=Intervalo then sum (Agosto)
+		    end Agosto,
+		    case
+		    when Intervalo=Intervalo then sum (Septiembre)
+		    end Septiembre,
+		    case
+		    when Intervalo=Intervalo then sum (Octubre)
+		    end Octubre,
+		     case
+		    when Intervalo=Intervalo then sum (Noviembre)
+		    end Noviembre,
+		    case
+		    when Intervalo=Intervalo then sum (Diciembre)
+		    end Diciembre  from PruebaCT
+		     group by Intervalo
+	
+		
+		    order by 
+		    case Intervalo
+		    when '0-2' then 1
+		    when '3-4' then 2
+		    when '5-6' then 3
+		    when '7-10' then 4
+		    when '10+' then 5
+		    end
+
+
+
+", cn)
+
+        adaptador.Fill(ResolucionDataSet, "Indicadores1")
+
+        If ResolucionDataSet.Tables("Indicadores1").Rows.Count > 0 Then
+            ResolucionDtg.DataSource = ResolucionDataSet.Tables("Indicadores1")
+
+            desconectar()
+        Else
+            MsgBox("No hay datos para la fecha seleccionada")
+
+        End If
+
+
+
+
+    End Sub
+
+    Sub ResolucionCargaGrafico()
+        Dim miView As DataView = New DataView(ResolucionDataSet.Tables("Indicadores1")) 'Enviamos a un dataview los datos
+
+
+
+
+        ResolucionChar1.Series("Enero").Points.Clear()
+        ResolucionChar1.Series("Febrero").Points.Clear()
+        ResolucionChar1.Series("Marzo").Points.Clear()
+        ResolucionChar1.Series("Abril").Points.Clear()
+        ResolucionChar1.Series("Mayo").Points.Clear()
+        ResolucionChar1.Series("Junio").Points.Clear()
+        ResolucionChar1.Series("Julio").Points.Clear()
+        ResolucionChar1.Series("Agosto").Points.Clear()
+        ResolucionChar1.Series("Septiembre").Points.Clear()
+        ResolucionChar1.Series("Octubre").Points.Clear()
+        ResolucionChar1.Series("Noviembre").Points.Clear()
+        ResolucionChar1.Series("Diciembre").Points.Clear()
+
+        For x = 0 To miView.Count - 1
+            ResolucionChar1.Series("Enero").Points.AddXY(miView(x)("Intervalo"), miView(x)("Enero"))
+            ResolucionChar1.Series("Febrero").Points.AddXY(miView(x)("Intervalo"), miView(x)("Febrero"))
+            ResolucionChar1.Series("Marzo").Points.AddXY(miView(x)("Intervalo"), miView(x)("Marzo"))
+            ResolucionChar1.Series("Abril").Points.AddXY(miView(x)("Intervalo"), miView(x)("Abril"))
+            ResolucionChar1.Series("Mayo").Points.AddXY(miView(x)("Intervalo"), miView(x)("Mayo"))
+            ResolucionChar1.Series("Junio").Points.AddXY(miView(x)("Intervalo"), miView(x)("Junio"))
+            ResolucionChar1.Series("Julio").Points.AddXY(miView(x)("Intervalo"), miView(x)("Julio"))
+            ResolucionChar1.Series("Agosto").Points.AddXY(miView(x)("Intervalo"), miView(x)("Agosto"))
+            ResolucionChar1.Series("Septiembre").Points.AddXY(miView(x)("Intervalo"), miView(x)("Septiembre"))
+            ResolucionChar1.Series("Octubre").Points.AddXY(miView(x)("Intervalo"), miView(x)("Octubre"))
+            ResolucionChar1.Series("Noviembre").Points.AddXY(miView(x)("Intervalo"), miView(x)("Noviembre"))
+            ResolucionChar1.Series("Diciembre").Points.AddXY(miView(x)("Intervalo"), miView(x)("Diciembre"))
+
+
+
+        Next
+
+    End Sub
+#End Region
 
 End Module
+                   
