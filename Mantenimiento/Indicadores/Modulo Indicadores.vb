@@ -908,6 +908,8 @@ Module Modulo_Indicadores
             adatosChart1.Series(row.Item(0).ToString).XValueMember = 0
             adatosChart1.Series(row.Item(0).ToString).YValueMembers = 0
             adatosChart1.Series(row.Item(0).ToString).IsValueShownAsLabel = True
+
+
             arrayserie(x) = row.Item(0).ToString
             x = x + 1
         Next

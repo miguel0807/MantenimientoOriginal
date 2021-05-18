@@ -200,7 +200,9 @@ Partial Class Reportes_área
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Chart1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        ChartArea1.Area3DStyle.Enable3D = True
         ChartArea1.AxisX.Interval = 1.0R
+        ChartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
         ChartArea1.AxisX.IsLabelAutoFit = False
         ChartArea1.AxisX.LabelStyle.Angle = -90
         ChartArea1.Name = "ChartArea1"
