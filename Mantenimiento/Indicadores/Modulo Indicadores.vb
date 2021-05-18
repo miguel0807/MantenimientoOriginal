@@ -911,7 +911,13 @@ Module Modulo_Indicadores
             ResolucionDtg.Columns(12).Width = 100
 
 
+#Region "Bloquear filtro cuando se de click a columna"
+            For Each col As DataGridViewColumn In ResolucionDtg.Columns
+                col.SortMode = DataGridViewColumnSortMode.NotSortable
 
+
+            Next
+#End Region
 
         End If
 

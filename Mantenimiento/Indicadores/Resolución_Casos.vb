@@ -40,4 +40,6 @@ Public Class Resolución_Casos
 			End Using
 		End If
 	End Sub
+
+
 End Class
