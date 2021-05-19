@@ -1221,7 +1221,7 @@ Module Modulo_Indicadores
 
     Sub RepoCasosCerradosCargarDatos()
         Dim Mes As Integer
-        Dim Año As Integer = 2021
+
         repoCaCedtg.DataSource = Nothing
         repoCaCedtg.Columns.Clear()
         repoCaCeDataSet.Clear()
@@ -1248,7 +1248,7 @@ when 1=1 then " & Mes & "
 end as Meses
 
 
-,count(Estado) as 'Cantidad' from TablaDatos where Estado=0  and Año=" & Año & "  and Mes=" & Mes & "
+,count(Estado) as 'Cantidad' from TablaDatos where Estado=0  and Año=" & repoCaCeAño.Text & "  and Mes=" & Mes & "
 )
 select case
 when Meses=1 then 'Enero'
@@ -1278,12 +1278,7 @@ from TablaDatos2
 
             adaptador.Fill(repoCaCeDataSet, "Datos")
         Next
-        'repoCaCeDataSet.Tables("Datos").Columns.Add("Meses")
-        'Dim fila As Data.DataRow
-        'fila = repoCaCeDataSet.Tables("Datos").NewRow
-        'fila("Meses") = 1
-        'fila("Meses") = 2
-        'repoCaCeDataSet.Tables("Datos").Rows.Add(fila)
+
 
         If repoCaCeDataSet.Tables("Datos").Rows.Count > 0 Then
             repoCaCedtg.DataSource = repoCaCeDataSet.Tables("Datos")
