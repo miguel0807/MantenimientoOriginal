@@ -39,6 +39,7 @@ Public Class Reportes_área
         AdatosCargarGrafico1()
         AdatosEsteticaDtg()
 
+
     End Sub
 
     Private Sub checkAño_CheckedChanged(sender As Object, e As EventArgs) Handles checkAño.CheckedChanged
@@ -64,5 +65,9 @@ Public Class Reportes_área
         Else
             Ubicación.Enabled = False
         End If
+    End Sub
+
+    Private Sub Chart1_Click(sender As Object, e As EventArgs) Handles Chart1.Click
+
     End Sub
 End Class

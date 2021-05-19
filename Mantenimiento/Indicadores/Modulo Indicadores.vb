@@ -884,43 +884,15 @@ Module Modulo_Indicadores
         Dim miView As DataView = New DataView(adatosDataSet.Tables("Indicadores1")) 'Enviamos a un dataview los datos
 
         Dim minombre As DataView = New DataView(adatosDataSet.Tables("Indicadores1")) 'Buscamos los titulos
-        Dim CantidadSerie As Integer
-        CantidadSerie = 0
 
-        For f = 0 To miView.Count - 1
-            CantidadSerie = CantidadSerie + 1
-        Next
-
-        Dim arrayserie(CantidadSerie) As String
-
-
-        ' adatosChart1.Series("Reporte por área").Points.Clear()
-        'For f = 0 To miView.Count - 1
-        '    adatosChart1.Series("Reporte por área").Points.AddXY(miView(f)("Ubicación"), miView(f)("Contar"))
-        '    'adatosChart1.Series("Reporte por área").Points.AddXY(miView(x)("Ubicación"), miView(x)("Contar"))
-        'Next
-
-        Dim x As Integer
-        x = 0
-        For Each row As DataRow In adatosDataSet.Tables("Indicadores1").Rows
-
-            adatosChart1.Series.Add(row.Item(0).ToString)
-            adatosChart1.Series(row.Item(0).ToString).XValueMember = 0
-            adatosChart1.Series(row.Item(0).ToString).YValueMembers = 0
-            adatosChart1.Series(row.Item(0).ToString).IsValueShownAsLabel = True
-
-
-            arrayserie(x) = row.Item(0).ToString
-            x = x + 1
-        Next
 
 
         For f = 0 To miView.Count - 1
-            adatosChart1.Series(arrayserie(f)).Points.AddXY(miView(f)("Ubicación"), miView(f)("Contar"))
-            MsgBox("ver")
+
+            adatosChart1.Series("Ubicación").Points.AddXY(miView(f)("Ubicación"), miView(f)("Contar"))
         Next
 
-        ' adatosChart1.Series(Row.Item(0).ToString).Points.AddXY(miView(x)("Ubicación"), miView(x)("Contar"))
+
 
 
 
