@@ -263,4 +263,10 @@ Public Class Presentacion
 
         hideSubmenu()
     End Sub
+
+    Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
+        openChildForm(New Reporte_Casos_Cerrados())
+
+        hideSubmenu()
+    End Sub
 End Class

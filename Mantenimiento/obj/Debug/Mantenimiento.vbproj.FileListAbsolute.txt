@@ -44,3 +44,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DocumentFo
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Registrar_Nuevo_Caso.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Reportes_área.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Resolución_Casos.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Reporte_Casos_Cerrados.resources
