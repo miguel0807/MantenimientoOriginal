@@ -83,7 +83,12 @@ Module Modulo_Indicadores
     Public ResolucionCboFecha As ComboBox
 #End Region
 
-
+#Region "Reporte Casos Cerrados"
+    Public repoCaCedtg As DataGridView
+    Public repoCaCeDataSet As New DataSet
+    Public repoCaCeAño As ComboBox
+    Public repoCaCeMes As ComboBox
+#End Region
 
 
     Sub cargarIndicadores()
@@ -1212,6 +1217,45 @@ Module Modulo_Indicadores
 
     End Sub
 #End Region
+#Region "Reportes Casos"
 
+    Sub RepoCasosCerradosCargarDatos()
+
+        repoCaCedtg.DataSource = Nothing
+        repoCaCedtg.Columns.Clear()
+        repoCaCeDataSet.Clear()
+
+        Dim adaptador As New SqlDataAdapter("
+
+with
+TablaDatos as(
+select Título,Descripción,Caso,month([Fecha Inicial])as 'Mes',year([Fecha Inicial]) as 'Año' , 
+case 
+
+when month([Fecha Final])>month([Fecha Inicial]) THEN 0 
+else 1
+end as Estado
+
+from Indicadores1 
+
+)
+select count(Estado) from TablaDatos where Estado=0 and Mes=" & repoCaCeMes.Text & " and Año=" & repoCaCeAño.Text & "
+
+
+", cn)
+
+        adaptador.Fill(repoCaCeDataSet, "Datos")
+
+        If repoCaCeDataSet.Tables("Datos").Rows.Count > 0 Then
+            repoCaCedtg.DataSource = repoCaCeDataSet.Tables("Datos")
+
+            desconectar()
+        Else
+
+
+        End If
+    End Sub
+
+#End Region
 End Module
                    

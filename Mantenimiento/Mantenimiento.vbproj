@@ -312,10 +312,10 @@
     </Compile>
     <Compile Include="Preventivo\Tareas\MO_Tareas.vb" />
     <Compile Include="Preventivo\Tareas\Registro_preventivo.vb" />
-    <Compile Include="Reporte_Casos_Cerrados.Designer.vb">
+    <Compile Include="Indicadores\Reporte_Casos_Cerrados.Designer.vb">
       <DependentUpon>Reporte_Casos_Cerrados.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reporte_Casos_Cerrados.vb">
+    <Compile Include="Indicadores\Reporte_Casos_Cerrados.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -407,7 +407,7 @@
     <EmbeddedResource Include="Preventivo\Tareas\Configuracion_Tarea.resx">
       <DependentUpon>Configuracion_Tarea.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_Casos_Cerrados.resx">
+    <EmbeddedResource Include="Indicadores\Reporte_Casos_Cerrados.resx">
       <DependentUpon>Reporte_Casos_Cerrados.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
