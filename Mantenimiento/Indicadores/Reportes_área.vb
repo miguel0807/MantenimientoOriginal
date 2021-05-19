@@ -22,11 +22,13 @@ Public Class Reportes_área
 
         Año.SelectedIndex = 0
         Mes.SelectedIndex = 0
-        Ubicación.SelectedIndex = 0
+        ' Ubicación.SelectedIndex = 0
 
         adatosAño = Año
         adatosMes = Mes
         adatosUbicación = Ubicación
+
+        MIubicacion = Ubicación
 
         adatosDtg = DataGridView1
         adatosCheckAño = checkAño
@@ -39,6 +41,7 @@ Public Class Reportes_área
         AdatosCargarGrafico1()
         AdatosEsteticaDtg()
 
+        MIcargarUbicacion()
 
     End Sub
 
