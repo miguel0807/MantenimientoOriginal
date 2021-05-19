@@ -1225,7 +1225,7 @@ Module Modulo_Indicadores
         repoCaCedtg.DataSource = Nothing
         repoCaCedtg.Columns.Clear()
         repoCaCeDataSet.Clear()
-        For Mes = 0 To 12
+        For Mes = 1 To 12
             Dim adaptador As New SqlDataAdapter("
 
 with
@@ -1240,19 +1240,50 @@ end as Estado
 from Indicadores1 
 
 )
-select count(Estado) as 'Cantidad' from TablaDatos where Estado=0  and Año=" & Año & "  and Mes=" & Mes & "
+,
+
+TablaDatos2 as (
+select case
+when 1=1 then " & Mes & "
+end as Meses
+
+
+,count(Estado) as 'Cantidad' from TablaDatos where Estado=0  and Año=" & Año & "  and Mes=" & Mes & "
+)
+select case
+when Meses=1 then 'Enero'
+when Meses=2 then 'Febrero'
+when Meses=3 then 'Marzo'
+when Meses=4 then 'Abril'
+when Meses=5 then 'Mayo'
+when Meses=6 then 'Junio'
+when Meses=7 then 'Julio'
+when Meses=8 then 'Agosto'
+when Meses=9 then 'Septiembre'
+when Meses=10 then 'Octubre'
+when Meses=11 then 'Noviembre'
+when Meses=12 then 'Diciembre'
+
+end as Meses,Cantidad
+
+
+from TablaDatos2
+
+
+
+
 
 
 ", cn)
 
             adaptador.Fill(repoCaCeDataSet, "Datos")
         Next
-        repoCaCeDataSet.Tables("Datos").Columns.Add("Meses")
-        Dim fila As Data.DataRow
-        fila = repoCaCeDataSet.Tables("Datos").NewRow
-        fila("Meses") = 1
-        fila("Meses") = 2
-        repoCaCeDataSet.Tables("Datos").Rows.Add(fila)
+        'repoCaCeDataSet.Tables("Datos").Columns.Add("Meses")
+        'Dim fila As Data.DataRow
+        'fila = repoCaCeDataSet.Tables("Datos").NewRow
+        'fila("Meses") = 1
+        'fila("Meses") = 2
+        'repoCaCeDataSet.Tables("Datos").Rows.Add(fila)
 
         If repoCaCeDataSet.Tables("Datos").Rows.Count > 0 Then
             repoCaCedtg.DataSource = repoCaCeDataSet.Tables("Datos")

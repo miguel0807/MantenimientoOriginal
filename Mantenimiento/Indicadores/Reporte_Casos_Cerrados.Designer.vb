@@ -57,7 +57,7 @@ Partial Class Reporte_Casos_Cerrados
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(961, 293)
+        Me.DataGridView1.Size = New System.Drawing.Size(1056, 328)
         Me.DataGridView1.TabIndex = 31
         '
         'Button1
