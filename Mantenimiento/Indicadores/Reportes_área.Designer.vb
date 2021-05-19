@@ -207,6 +207,8 @@ Partial Class Reportes_área
         Me.Chart1.BorderlineColor = System.Drawing.Color.Black
         Me.Chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
         ChartArea1.Area3DStyle.Enable3D = True
+        ChartArea1.Area3DStyle.IsClustered = True
+        ChartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic
         ChartArea1.AxisX.Interval = 1.0R
         ChartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
         ChartArea1.AxisX.IsLabelAutoFit = False
