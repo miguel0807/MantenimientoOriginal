@@ -22,7 +22,7 @@ Public Class Reportes_área
 
         Año.SelectedIndex = 0
         Mes.SelectedIndex = 0
-        ' Ubicación.SelectedIndex = 0
+
 
         adatosAño = Año
         adatosMes = Mes
@@ -42,7 +42,7 @@ Public Class Reportes_área
         AdatosEsteticaDtg()
 
         MIcargarUbicacion()
-
+        Ubicación.SelectedIndex = 0
     End Sub
 
     Private Sub checkAño_CheckedChanged(sender As Object, e As EventArgs) Handles checkAño.CheckedChanged
