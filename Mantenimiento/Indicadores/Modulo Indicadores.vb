@@ -823,8 +823,15 @@ Module Modulo_Indicadores
             adaptador.Fill(adatosDataSet, "Indicadores1")
         End If
 
-        adatosDtg.DataSource = adatosDataSet.Tables("Indicadores1")
-        desconectar()
+
+
+        If adatosDataSet.Tables("Indicadores1").Rows.Count > 0 Then
+            adatosDtg.DataSource = adatosDataSet.Tables("Indicadores1")
+            desconectar()
+        Else
+
+
+        End If
     End Sub
 
     Sub AdatosEsteticaDtg()
@@ -890,7 +897,13 @@ Module Modulo_Indicadores
             adatosChart1.Series("Ubicación").Points.AddXY(miView(f)("Ubicación"), miView(f)("Cantidad"))
         Next
 
+        If adatosDataSet.Tables("Indicadores1").Rows.Count > 0 Then
+            adatosDtg.DataSource = adatosDataSet.Tables("Indicadores1")
+            desconectar()
+        Else
 
+            MsgBox("No hay datos para el filtro seleccionado")
+        End If
 
 
 
@@ -1142,7 +1155,7 @@ Module Modulo_Indicadores
 
             desconectar()
         Else
-            MsgBox("No hay datos para la fecha seleccionada")
+
 
         End If
 
@@ -1187,6 +1200,15 @@ Module Modulo_Indicadores
 
 
         Next
+        If ResolucionDataSet.Tables("Indicadores1").Rows.Count > 0 Then
+
+        Else
+            MsgBox("No hay datos para la fecha seleccionada")
+
+        End If
+
+
+
 
     End Sub
 #End Region
