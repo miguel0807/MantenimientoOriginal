@@ -1220,12 +1220,13 @@ Module Modulo_Indicadores
 #Region "Reportes Casos"
 
     Sub RepoCasosCerradosCargarDatos()
-
+        Dim Mes As Integer
+        Dim Año As Integer = 2021
         repoCaCedtg.DataSource = Nothing
         repoCaCedtg.Columns.Clear()
         repoCaCeDataSet.Clear()
-
-        Dim adaptador As New SqlDataAdapter("
+        For Mes = 0 To 12
+            Dim adaptador As New SqlDataAdapter("
 
 with
 TablaDatos as(
@@ -1239,12 +1240,19 @@ end as Estado
 from Indicadores1 
 
 )
-select count(Estado) from TablaDatos where Estado=0 and Mes=" & repoCaCeMes.Text & " and Año=" & repoCaCeAño.Text & "
+select count(Estado) as 'Cantidad' from TablaDatos where Estado=0  and Año=" & Año & "  and Mes=" & Mes & "
 
 
 ", cn)
 
-        adaptador.Fill(repoCaCeDataSet, "Datos")
+            adaptador.Fill(repoCaCeDataSet, "Datos")
+        Next
+        repoCaCeDataSet.Tables("Datos").Columns.Add("Meses")
+        Dim fila As Data.DataRow
+        fila = repoCaCeDataSet.Tables("Datos").NewRow
+        fila("Meses") = 1
+        fila("Meses") = 2
+        repoCaCeDataSet.Tables("Datos").Rows.Add(fila)
 
         If repoCaCeDataSet.Tables("Datos").Rows.Count > 0 Then
             repoCaCedtg.DataSource = repoCaCeDataSet.Tables("Datos")
