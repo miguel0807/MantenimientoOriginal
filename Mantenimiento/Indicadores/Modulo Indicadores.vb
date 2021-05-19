@@ -883,9 +883,7 @@ Module Modulo_Indicadores
     Sub AdatosCargarGrafico1()
         Dim miView As DataView = New DataView(adatosDataSet.Tables("Indicadores1")) 'Enviamos a un dataview los datos
 
-        Dim minombre As DataView = New DataView(adatosDataSet.Tables("Indicadores1")) 'Buscamos los titulos
-
-
+        adatosChart1.Series("Ubicación").Points.Clear()
 
         For f = 0 To miView.Count - 1
 
