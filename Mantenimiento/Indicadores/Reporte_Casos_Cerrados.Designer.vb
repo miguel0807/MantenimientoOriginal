@@ -52,7 +52,7 @@ Partial Class Reporte_Casos_Cerrados
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.Location = New System.Drawing.Point(66, 292)
+        Me.DataGridView1.Location = New System.Drawing.Point(36, 263)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51

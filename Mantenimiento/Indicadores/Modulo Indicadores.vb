@@ -1219,57 +1219,77 @@ Module Modulo_Indicadores
 #End Region
 #Region "Reportes Casos"
 
-    Sub RepoCasosCerradosCargarDatos()
-        Dim Mes As Integer
+    Sub RepoPreventivosCerradosCargarDatos()
+        Dim mesletra As String
+
 
         repoCaCedtg.DataSource = Nothing
         repoCaCedtg.Columns.Clear()
         repoCaCeDataSet.Clear()
         For Mes = 1 To 12
+
+            Select Case Mes
+                Case 1
+                    mesletra = "Enero"
+                Case 2
+                    mesletra = "Febrero"
+                Case 3
+                    mesletra = "Marzo"
+                Case 4
+                    mesletra = "Abril"
+                Case 5
+                    mesletra = "Mayo"
+                Case 6
+                    mesletra = "Junio"
+                Case 7
+                    mesletra = "Julio"
+                Case 8
+                    mesletra = "Agosto"
+                Case 9
+                    mesletra = "Septiembre"
+                Case 10
+                    mesletra = "Octubre"
+                Case 11
+                    mesletra = "Noviembre"
+                Case 12
+                    mesletra = "Diciembre"
+                Case Else
+                    mesletra = "N/A"
+
+            End Select
             Dim adaptador As New SqlDataAdapter("
 
 with
-TablaDatos as(
-select Título,Descripción,Caso,month([Fecha Inicial])as 'Mes',year([Fecha Inicial]) as 'Año' , 
-case 
 
-when month([Fecha Final])>month([Fecha Inicial]) THEN 0 
-else 1
-end as Estado
+Datos1 as(
 
-from Indicadores1 
+select
 
-)
-,
 
-TablaDatos2 as (
-select case
+case
 when 1=1 then " & Mes & "
-end as Meses
+end as Meses,
+case
+when SUM(" & mesletra & ") is Null then 0
+else sum(" & mesletra & ")
+end as Cantidad
 
 
-,count(Estado) as 'Cantidad' from TablaDatos where Estado=0  and Año=" & repoCaCeAño.Text & "  and Mes=" & Mes & "
+from ConteoPlanificacion_Equipos cont
+
+where 
+Año=" & repoCaCeAño.Text & " 
+and 
+cont." & mesletra & " <>9999
+and
+cont." & mesletra & "<>0
+
+
 )
-select case
-when Meses=1 then 'Enero'
-when Meses=2 then 'Febrero'
-when Meses=3 then 'Marzo'
-when Meses=4 then 'Abril'
-when Meses=5 then 'Mayo'
-when Meses=6 then 'Junio'
-when Meses=7 then 'Julio'
-when Meses=8 then 'Agosto'
-when Meses=9 then 'Septiembre'
-when Meses=10 then 'Octubre'
-when Meses=11 then 'Noviembre'
-when Meses=12 then 'Diciembre'
 
-end as Meses,Cantidad
-
-
-from TablaDatos2
-
-
+Select *
+from datos1
+group by Meses,Cantidad
 
 
 
@@ -1289,6 +1309,50 @@ from TablaDatos2
 
         End If
     End Sub
+
+    'with
+    'TablaDatos as(
+    'select Título,Descripción,Caso,month([Fecha Inicial])as 'Mes',year([Fecha Inicial]) as 'Año' , 
+    'case 
+
+    'when month([Fecha Final])>month([Fecha Inicial]) THEN 0 
+    'else 1
+    'end as Estado
+
+    'from Indicadores1 
+
+    ')
+    ',
+
+    'TablaDatos2 as (
+    'select case
+    'when 1=1 then " & Mes & "
+    'end as Meses
+
+
+    ',count(Estado) as 'Cantidad' from TablaDatos where Estado=0  and Año=" & repoCaCeAño.Text & "  and Mes=" & Mes & "
+    ')
+    'select case
+    'when Meses=1 then 'Enero'
+    'when Meses=2 then 'Febrero'
+    'when Meses=3 then 'Marzo'
+    'when Meses=4 then 'Abril'
+    'when Meses=5 then 'Mayo'
+    'when Meses=6 then 'Junio'
+    'when Meses=7 then 'Julio'
+    'when Meses=8 then 'Agosto'
+    'when Meses=9 then 'Septiembre'
+    'when Meses=10 then 'Octubre'
+    'when Meses=11 then 'Noviembre'
+    'when Meses=12 then 'Diciembre'
+
+    'end as Meses,Cantidad
+
+
+    'from TablaDatos2
+
+
+
 
 #End Region
 End Module
