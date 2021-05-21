@@ -83,7 +83,8 @@ Public Class Login
             If validLogin = True Then
                 'Dim frm As New FormPrincipal()
 
-                Dim frm As New Proyecto.FormPrincipal()
+                Dim frm As New Mantenimiento.Presentacion()
+
                 frm.Show()
 
                 AddHandler frm.FormClosed, AddressOf Me.logout
@@ -138,7 +139,7 @@ Public Class Login
                     If validLogin = True Then
                         'Dim frm As New FormPrincipal()
 
-                        Dim frm As New Proyecto.FormPrincipal()
+                        Dim frm As New Mantenimiento.Presentacion()
                         frm.Show()
 
                         AddHandler frm.FormClosed, AddressOf Me.logout

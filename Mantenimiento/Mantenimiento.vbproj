@@ -422,6 +422,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Otros\Mantenimiento_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -445,6 +446,7 @@
     <Content Include="Resources\ClosedXml\ClosedXML.dll" />
     <Content Include="Resources\ClosedXml\DocumentFormat.OpenXml.dll" />
     <Content Include="Otros\tools_22686.ico" />
+    <None Include="Resources\presen.png" />
     <None Include="Resources\checklist_118086 %282%29.png" />
     <None Include="Resources\Delete-80_icon-icons.com_57340.png" />
     <None Include="Resources\salir1.png" />
