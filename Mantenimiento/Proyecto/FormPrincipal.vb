@@ -457,7 +457,15 @@ Public Class FormPrincipal
         CenterToScreen()
     End Sub
 
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
     Private Sub btnCerrar_MouseHover(sender As Object, e As EventArgs) Handles btnCerrar.MouseHover
+
+    End Sub
+
+    Private Sub FormPrincipal_Closed(sender As Object, e As EventArgs) Handles Me.Closed
 
     End Sub
 End Class

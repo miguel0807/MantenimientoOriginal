@@ -107,6 +107,11 @@ Mantenimiento
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Mantenimiento.My.Resources.Resources.presen">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Mantenimiento.My.Resources.Resources.salir">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

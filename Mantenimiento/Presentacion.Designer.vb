@@ -64,6 +64,9 @@ Partial Class Presentacion
         Me.btnMedia = New System.Windows.Forms.Button()
         Me.PanelChildForm = New System.Windows.Forms.Panel()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.panelLogo.SuspendLayout()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSideMenu.SuspendLayout()
@@ -79,19 +82,24 @@ Partial Class Presentacion
         '
         'panelLogo
         '
+        Me.panelLogo.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.panelLogo.Controls.Add(Me.Label1)
         Me.panelLogo.Controls.Add(Me.pictureBox1)
+        Me.panelLogo.Controls.Add(Me.Label2)
+        Me.panelLogo.Controls.Add(Me.Label3)
         Me.panelLogo.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelLogo.Location = New System.Drawing.Point(0, 0)
         Me.panelLogo.Name = "panelLogo"
-        Me.panelLogo.Size = New System.Drawing.Size(229, 92)
+        Me.panelLogo.Size = New System.Drawing.Size(229, 214)
         Me.panelLogo.TabIndex = 0
         '
         'pictureBox1
         '
+        Me.pictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(17, Byte), Integer))
         Me.pictureBox1.Image = CType(resources.GetObject("pictureBox1.Image"), System.Drawing.Image)
-        Me.pictureBox1.Location = New System.Drawing.Point(36, 15)
+        Me.pictureBox1.Location = New System.Drawing.Point(12, 3)
         Me.pictureBox1.Name = "pictureBox1"
-        Me.pictureBox1.Size = New System.Drawing.Size(159, 60)
+        Me.pictureBox1.Size = New System.Drawing.Size(213, 108)
         Me.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureBox1.TabIndex = 0
         Me.pictureBox1.TabStop = False
@@ -161,7 +169,7 @@ Partial Class Presentacion
         Me.Button20.ForeColor = System.Drawing.Color.Silver
         Me.Button20.Image = Global.Mantenimiento.My.Resources.Resources.Delete_80_icon_icons_com_57340
         Me.Button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button20.Location = New System.Drawing.Point(0, 1615)
+        Me.Button20.Location = New System.Drawing.Point(0, 1637)
         Me.Button20.Name = "Button20"
         Me.Button20.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.Button20.Size = New System.Drawing.Size(229, 66)
@@ -181,7 +189,7 @@ Partial Class Presentacion
         Me.btnExit.ForeColor = System.Drawing.Color.Silver
         Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 1681)
+        Me.btnExit.Location = New System.Drawing.Point(0, 1703)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnExit.Size = New System.Drawing.Size(229, 39)
@@ -202,7 +210,7 @@ Partial Class Presentacion
         Me.btnHelp.ForeColor = System.Drawing.Color.Silver
         Me.btnHelp.Image = Global.Mantenimiento.My.Resources.Resources.checklist_118086__2_
         Me.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHelp.Location = New System.Drawing.Point(0, 1547)
+        Me.btnHelp.Location = New System.Drawing.Point(0, 1569)
         Me.btnHelp.Name = "btnHelp"
         Me.btnHelp.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnHelp.Size = New System.Drawing.Size(229, 68)
@@ -226,9 +234,9 @@ Partial Class Presentacion
         Me.PanelToolsSubmenu.Controls.Add(Me.button12)
         Me.PanelToolsSubmenu.Controls.Add(Me.button13)
         Me.PanelToolsSubmenu.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelToolsSubmenu.Location = New System.Drawing.Point(0, 662)
+        Me.PanelToolsSubmenu.Location = New System.Drawing.Point(0, 784)
         Me.PanelToolsSubmenu.Name = "PanelToolsSubmenu"
-        Me.PanelToolsSubmenu.Size = New System.Drawing.Size(229, 885)
+        Me.PanelToolsSubmenu.Size = New System.Drawing.Size(229, 785)
         Me.PanelToolsSubmenu.TabIndex = 7
         '
         'PanelTareas
@@ -554,7 +562,7 @@ Partial Class Presentacion
         Me.btnTools.ForeColor = System.Drawing.Color.Silver
         Me.btnTools.Image = CType(resources.GetObject("btnTools.Image"), System.Drawing.Image)
         Me.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTools.Location = New System.Drawing.Point(0, 583)
+        Me.btnTools.Location = New System.Drawing.Point(0, 705)
         Me.btnTools.Name = "btnTools"
         Me.btnTools.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnTools.Size = New System.Drawing.Size(229, 79)
@@ -569,7 +577,7 @@ Partial Class Presentacion
         Me.PanelControlInventario.Controls.Add(Me.button7)
         Me.PanelControlInventario.Controls.Add(Me.button8)
         Me.PanelControlInventario.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControlInventario.Location = New System.Drawing.Point(0, 502)
+        Me.PanelControlInventario.Location = New System.Drawing.Point(0, 624)
         Me.PanelControlInventario.Name = "PanelControlInventario"
         Me.PanelControlInventario.Size = New System.Drawing.Size(229, 81)
         Me.PanelControlInventario.TabIndex = 4
@@ -619,7 +627,7 @@ Partial Class Presentacion
         Me.btnPlaylist.ForeColor = System.Drawing.Color.Silver
         Me.btnPlaylist.Image = CType(resources.GetObject("btnPlaylist.Image"), System.Drawing.Image)
         Me.btnPlaylist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPlaylist.Location = New System.Drawing.Point(0, 423)
+        Me.btnPlaylist.Location = New System.Drawing.Point(0, 545)
         Me.btnPlaylist.Name = "btnPlaylist"
         Me.btnPlaylist.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnPlaylist.Size = New System.Drawing.Size(229, 79)
@@ -638,7 +646,7 @@ Partial Class Presentacion
         Me.PanelIndicadores.Controls.Add(Me.button3)
         Me.PanelIndicadores.Controls.Add(Me.button2)
         Me.PanelIndicadores.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelIndicadores.Location = New System.Drawing.Point(0, 174)
+        Me.PanelIndicadores.Location = New System.Drawing.Point(0, 296)
         Me.PanelIndicadores.Name = "PanelIndicadores"
         Me.PanelIndicadores.Size = New System.Drawing.Size(229, 249)
         Me.PanelIndicadores.TabIndex = 2
@@ -722,7 +730,7 @@ Partial Class Presentacion
         Me.btnMedia.ForeColor = System.Drawing.Color.Silver
         Me.btnMedia.Image = Global.Mantenimiento.My.Resources.Resources.infografia__1_
         Me.btnMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnMedia.Location = New System.Drawing.Point(0, 92)
+        Me.btnMedia.Location = New System.Drawing.Point(0, 214)
         Me.btnMedia.Name = "btnMedia"
         Me.btnMedia.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnMedia.Size = New System.Drawing.Size(229, 82)
@@ -752,6 +760,42 @@ Partial Class Presentacion
         Me.PictureBox9.TabIndex = 0
         Me.PictureBox9.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Silver
+        Me.Label1.Location = New System.Drawing.Point(11, 111)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(81, 20)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Posicion"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Silver
+        Me.Label2.Location = New System.Drawing.Point(11, 143)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(74, 20)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Nombre"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Silver
+        Me.Label3.Location = New System.Drawing.Point(11, 179)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(66, 20)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Correo"
+        '
         'Presentacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
@@ -767,6 +811,7 @@ Partial Class Presentacion
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.panelLogo.ResumeLayout(False)
+        Me.panelLogo.PerformLayout()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSideMenu.ResumeLayout(False)
         Me.PanelToolsSubmenu.ResumeLayout(False)
@@ -822,4 +867,7 @@ Partial Class Presentacion
     Private WithEvents Button23 As Button
     Private WithEvents Button24 As Button
     Private WithEvents Button25 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class

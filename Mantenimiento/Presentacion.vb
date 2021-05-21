@@ -1,9 +1,12 @@
-﻿
+﻿Imports Common
 
 Public Class Presentacion
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         hideSubmenu()
+        Label1.Text = ActiveUser.firstName + " " + ActiveUser.lastName
+        Label2.Text = ActiveUser.email
+        Label3.Text = ActiveUser.position
 
 
     End Sub
@@ -141,7 +144,17 @@ Public Class Presentacion
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Application.Exit()
+
+        If MessageBox.Show("Esta seguro de cerrar sesión?", "Precaución",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+
+
+
+
+            Me.Close()
+        End If
+
+        '  Application.Exit()
 
     End Sub
 
@@ -268,5 +281,9 @@ Public Class Presentacion
         openChildForm(New Reporte_Casos_Cerrados())
 
         hideSubmenu()
+    End Sub
+
+    Private Sub PanelChildForm_Paint(sender As Object, e As PaintEventArgs) Handles PanelChildForm.Paint
+
     End Sub
 End Class

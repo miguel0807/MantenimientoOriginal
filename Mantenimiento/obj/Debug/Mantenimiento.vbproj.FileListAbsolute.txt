@@ -46,3 +46,12 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimie
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Resolución_Casos.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Reporte_Casos_Cerrados.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Login.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Common.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Common.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Common.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.xml
