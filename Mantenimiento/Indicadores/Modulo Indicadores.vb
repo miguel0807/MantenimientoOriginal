@@ -1350,8 +1350,8 @@ group by Meses,Cantidad
 
 
             repoCaCedtg.Rows(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            repoCaCedtg.Columns(0).Width = 200
-            repoCaCedtg.Columns(1).Width = 200
+            'repoCaCedtg.Columns(0).Width = 200
+            'repoCaCedtg.Columns(1).Width = 200
 
 
 

@@ -52,17 +52,17 @@ Partial Class Reporte_Casos_Cerrados
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.Location = New System.Drawing.Point(36, 263)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 120)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1056, 328)
+        Me.DataGridView1.Size = New System.Drawing.Size(1093, 379)
         Me.DataGridView1.TabIndex = 31
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(118, 93)
+        Me.Button1.Location = New System.Drawing.Point(478, 24)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(215, 90)
         Me.Button1.TabIndex = 32
@@ -74,7 +74,7 @@ Partial Class Reporte_Casos_Cerrados
         Me.Mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Mes.FormattingEnabled = True
         Me.Mes.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
-        Me.Mes.Location = New System.Drawing.Point(513, 53)
+        Me.Mes.Location = New System.Drawing.Point(36, 67)
         Me.Mes.Name = "Mes"
         Me.Mes.Size = New System.Drawing.Size(121, 24)
         Me.Mes.TabIndex = 33
@@ -84,7 +84,7 @@ Partial Class Reporte_Casos_Cerrados
         Me.Año.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Año.FormattingEnabled = True
         Me.Año.Items.AddRange(New Object() {"2020", "2021", "2022", "2023", "2024", "2025"})
-        Me.Año.Location = New System.Drawing.Point(708, 53)
+        Me.Año.Location = New System.Drawing.Point(231, 67)
         Me.Año.Name = "Año"
         Me.Año.Size = New System.Drawing.Size(121, 24)
         Me.Año.TabIndex = 34
@@ -92,7 +92,7 @@ Partial Class Reporte_Casos_Cerrados
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(510, 24)
+        Me.Label1.Location = New System.Drawing.Point(80, 38)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(34, 17)
         Me.Label1.TabIndex = 35
@@ -101,7 +101,7 @@ Partial Class Reporte_Casos_Cerrados
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(705, 24)
+        Me.Label2.Location = New System.Drawing.Point(266, 38)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(33, 17)
         Me.Label2.TabIndex = 36
