@@ -120,6 +120,8 @@ Partial Class Reportes_área
         'checkAño
         '
         Me.checkAño.AutoSize = True
+        Me.checkAño.Checked = True
+        Me.checkAño.CheckState = System.Windows.Forms.CheckState.Checked
         Me.checkAño.Location = New System.Drawing.Point(262, 45)
         Me.checkAño.Name = "checkAño"
         Me.checkAño.Size = New System.Drawing.Size(18, 17)

@@ -20,7 +20,7 @@ Public Class Reportes_área
         If Not formularios.Contains(Me) Then formularios.Add(Me) 'Agrega a la lista los formularios para luego cerrarlos
 
 
-        Año.SelectedIndex = 0
+        Año.Text = Year(Now)
         Mes.SelectedIndex = 0
 
 
@@ -71,6 +71,10 @@ Public Class Reportes_área
     End Sub
 
     Private Sub Chart1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Chart1_Click_1(sender As Object, e As EventArgs) Handles Chart1.Click
 
     End Sub
 End Class

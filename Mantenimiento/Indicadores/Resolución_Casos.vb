@@ -7,7 +7,7 @@ Public Class Resolución_Casos
 		ResolucionChar1 = Chart1
 		ResolucionDtg = DataGridView1
 		ResolucionCboFecha = CboFecha
-		ResolucionCboFecha.SelectedIndex = 1
+		ResolucionCboFecha.Text = Year(Now)
 
 		ResolucionCargarDatos()
 		ResolucionEsteticaDtg()
