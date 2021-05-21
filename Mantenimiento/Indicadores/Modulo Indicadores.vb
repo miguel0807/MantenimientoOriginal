@@ -83,11 +83,12 @@ Module Modulo_Indicadores
     Public ResolucionCboFecha As ComboBox
 #End Region
 
-#Region "Reporte Casos Cerrados"
+#Region "Reporte Preventivo Casos Cerrados"
     Public repoCaCedtg As DataGridView
     Public repoCaCeDataSet As New DataSet
     Public repoCaCeAño As ComboBox
     Public repoCaCeMes As ComboBox
+    Public repoCaCeChar1 As DataVisualization.Charting.Chart
 #End Region
 
 
@@ -1217,7 +1218,7 @@ Module Modulo_Indicadores
 
     End Sub
 #End Region
-#Region "Reportes Casos"
+#Region "Reportes Casos preventivos cerrados"
 
     Sub RepoPreventivosCerradosCargarDatos()
         Dim mesletra As String
@@ -1331,7 +1332,7 @@ group by Meses,Cantidad
 
 
 
-    Sub ReportePreventivosCerradoEstetica()
+    Sub ReportePreventivosCerradosEstetica()
 
 #Region "Formato de letra"
         repoCaCedtg.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
@@ -1383,6 +1384,20 @@ group by Meses,Cantidad
         End If
     End Sub
 
+    Sub ReportePreventivosCerradosGrafica()
+        Dim miView As DataView = New DataView(repoCaCeDataSet.Tables("Datos"))
+
+        repoCaCeChar1.Series("Meses").Points.Clear()
+
+        For f = 0 To miView.Count - 1
+
+
+            repoCaCeChar1.Series("Meses").Points.AddXY(miView(f)("Meses"), miView(f)("Cantidad"))
+
+
+        Next
+        repoCaCedtg.DataSource = repoCaCeDataSet.Tables("Datos")
+    End Sub
 #End Region
 End Module
                    

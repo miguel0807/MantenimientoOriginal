@@ -1,7 +1,10 @@
 ﻿Public Class Reporte_Casos_Cerrados
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         RepoPreventivosCerradosCargarDatos()
-        ReportePreventivosCerradoEstetica()
+        ReportePreventivosCerradosEstetica()
+
+        ReportePreventivosCerradosGrafica()
+
 
 
     End Sub
@@ -10,6 +13,7 @@
         repoCaCedtg = DataGridView1
         repoCaCeAño = Año
         repoCaCeMes = Mes
+        repoCaCeChar1 = Chart1
         Año.SelectedIndex = 0
         Mes.SelectedIndex = 0
 
