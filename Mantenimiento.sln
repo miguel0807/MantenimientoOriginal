@@ -11,6 +11,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Domain", "Mantenimiento\Dom
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DataAccess", "Mantenimiento\DataAccess\DataAccess.vbproj", "{1C56964E-62F5-4DC1-83F6-D8D259E6A598}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Common", "Mantenimiento\Common\Common.vbproj", "{C03234CD-CCC5-4922-8566-05AE70D7DA3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,14 @@ Global
 		{1C56964E-62F5-4DC1-83F6-D8D259E6A598}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1C56964E-62F5-4DC1-83F6-D8D259E6A598}.Release|x86.ActiveCfg = Release|Any CPU
 		{1C56964E-62F5-4DC1-83F6-D8D259E6A598}.Release|x86.Build.0 = Release|Any CPU
+		{C03234CD-CCC5-4922-8566-05AE70D7DA3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03234CD-CCC5-4922-8566-05AE70D7DA3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C03234CD-CCC5-4922-8566-05AE70D7DA3B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C03234CD-CCC5-4922-8566-05AE70D7DA3B}.Debug|x86.Build.0 = Debug|Any CPU
+		{C03234CD-CCC5-4922-8566-05AE70D7DA3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C03234CD-CCC5-4922-8566-05AE70D7DA3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C03234CD-CCC5-4922-8566-05AE70D7DA3B}.Release|x86.ActiveCfg = Release|Any CPU
+		{C03234CD-CCC5-4922-8566-05AE70D7DA3B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
