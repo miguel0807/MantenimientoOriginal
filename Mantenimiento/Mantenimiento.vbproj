@@ -157,6 +157,12 @@
     <Compile Include="Indicadores\Resolución_Casos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Login.designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Preventivo\General\RegistroPreventivo.Designer.vb">
       <DependentUpon>RegistroPreventivo.vb</DependentUpon>
     </Compile>
@@ -337,6 +343,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Indicadores\Resolución_Casos.resx">
       <DependentUpon>Resolución_Casos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Preventivo\General\RegistroPreventivo.resx">
       <DependentUpon>RegistroPreventivo.vb</DependentUpon>
