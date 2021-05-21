@@ -102,7 +102,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Projecto\Common\Common.vbproj">
+    <ProjectReference Include="..\Common\Common.vbproj">
       <Project>{c03234cd-ccc5-4922-8566-05ae70d7da3b}</Project>
       <Name>Common</Name>
     </ProjectReference>
