@@ -1221,12 +1221,13 @@ Module Modulo_Indicadores
 
     Sub RepoPreventivosCerradosCargarDatos()
         Dim mesletra As String
-
+        Dim mescbo As Integer
+        mescbo = repoCaCeMes.Text
 
         repoCaCedtg.DataSource = Nothing
         repoCaCedtg.Columns.Clear()
         repoCaCeDataSet.Clear()
-        For Mes = 1 To 12
+        For Mes = 1 To mescbo
 
             Select Case Mes
                 Case 1
@@ -1270,8 +1271,8 @@ case
 when 1=1 then " & Mes & "
 end as Meses,
 case
-when SUM(" & mesletra & ") is Null then 0
-else sum(" & mesletra & ")
+when SUM(" & mesletra & ") is Null then 'Completado'
+else (CAST(sum(" & mesletra & ") AS varchar(max)))
 end as Cantidad
 
 
@@ -1310,49 +1311,60 @@ group by Meses,Cantidad
         End If
     End Sub
 
-    'with
-    'TablaDatos as(
-    'select Título,Descripción,Caso,month([Fecha Inicial])as 'Mes',year([Fecha Inicial]) as 'Año' , 
-    'case 
-
-    'when month([Fecha Final])>month([Fecha Inicial]) THEN 0 
-    'else 1
-    'end as Estado
-
-    'from Indicadores1 
-
-    ')
-    ',
-
-    'TablaDatos2 as (
-    'select case
-    'when 1=1 then " & Mes & "
-    'end as Meses
-
-
-    ',count(Estado) as 'Cantidad' from TablaDatos where Estado=0  and Año=" & repoCaCeAño.Text & "  and Mes=" & Mes & "
-    ')
-    'select case
-    'when Meses=1 then 'Enero'
-    'when Meses=2 then 'Febrero'
-    'when Meses=3 then 'Marzo'
-    'when Meses=4 then 'Abril'
-    'when Meses=5 then 'Mayo'
-    'when Meses=6 then 'Junio'
-    'when Meses=7 then 'Julio'
-    'when Meses=8 then 'Agosto'
-    'when Meses=9 then 'Septiembre'
-    'when Meses=10 then 'Octubre'
-    'when Meses=11 then 'Noviembre'
-    'when Meses=12 then 'Diciembre'
-
-    'end as Meses,Cantidad
-
-
-    'from TablaDatos2
 
 
 
+    Sub ReportePreventivosCerradoEstetica()
+
+#Region "Formato de letra"
+        repoCaCedtg.DefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+        repoCaCedtg.ColumnHeadersDefaultCellStyle.Font = New Font("Mircrosoft Sans Serif", 15)
+
+#End Region
+        ' Indicadores_Proceso.DataGridView1.RowTemplate.Height = 25
+#Region "Cambios de color celdas y alternadas"
+        repoCaCedtg.RowsDefaultCellStyle.BackColor = Color.White
+        repoCaCedtg.AlternatingRowsDefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control)
+
+#End Region
+#Region "Personalizacion header"
+        repoCaCedtg.EnableHeadersVisualStyles = False
+        repoCaCedtg.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51, 51, 51)
+        repoCaCedtg.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        'Me.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(218, 218, 218)
+        repoCaCedtg.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+
+        repoCaCedtg.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(51, 51, 51)
+
+        'formulario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
+#End Region
+#Region "Alineacion de titulos"
+        repoCaCedtg.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+#End Region
+
+        If repoCaCeDataSet.Tables("Datos").Rows.Count > 0 Then
+            repoCaCedtg.RowHeadersVisible = False
+            repoCaCedtg.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            repoCaCedtg.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+
+            repoCaCedtg.Rows(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            repoCaCedtg.Columns(0).Width = 200
+            repoCaCedtg.Columns(1).Width = 200
+
+
+
+#Region "Bloquear filtro cuando se de click a columna"
+            For Each col As DataGridViewColumn In repoCaCedtg.Columns
+                col.SortMode = DataGridViewColumnSortMode.NotSortable
+
+
+            Next
+#End Region
+
+        End If
+    End Sub
 
 #End Region
 End Module
