@@ -145,16 +145,16 @@ Public Class Presentacion
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
 
-        If MessageBox.Show("Esta seguro de cerrar sesión?", "Precaución",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+        'If MessageBox.Show("Esta seguro de cerrar sesión?", "Precaución",
+        '    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
 
 
 
 
-            Me.Close()
-        End If
+        '    Me.Close()
+        'End If
 
-        '  Application.Exit()
+        Application.Exit()
 
     End Sub
 
