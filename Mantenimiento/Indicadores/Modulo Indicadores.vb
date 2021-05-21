@@ -1259,7 +1259,7 @@ Module Modulo_Indicadores
 
             End Select
             Dim adaptador As New SqlDataAdapter("
-
+set language spanish;
 with
 
 Datos1 as(
@@ -1288,7 +1288,23 @@ cont." & mesletra & "<>0
 
 )
 
-Select *
+Select 
+case
+
+when Meses=1 then 'Enero'
+when Meses=2 then 'Febrero'
+when Meses=3 then 'Marzo'
+when Meses=4 then 'Abril'
+when Meses=5 then 'Mayo'
+when Meses=6 then 'Junio'
+when Meses=7 then 'Julio'
+when Meses=8 then 'Agosto'
+when Meses=9 then 'Septiembre'
+when Meses=10 then 'Octubre'
+when Meses=11 then 'Noviembre'
+when Meses = 12 then 'Diciembre'
+end as Meses
+,Cantidad
 from datos1
 group by Meses,Cantidad
 
@@ -1298,6 +1314,7 @@ group by Meses,Cantidad
 ", cn)
 
             adaptador.Fill(repoCaCeDataSet, "Datos")
+
         Next
 
 
