@@ -131,11 +131,13 @@ Partial Class Reporte_Casos_Cerrados
         ChartArea1.Area3DStyle.Enable3D = True
         ChartArea1.Area3DStyle.IsClustered = True
         ChartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic
+        ChartArea1.AxisX.Crossing = -1.7976931348623157E+308R
         ChartArea1.AxisX.Interval = 1.0R
         ChartArea1.AxisX.IsLabelAutoFit = False
         ChartArea1.AxisX.IsMarginVisible = False
-        ChartArea1.AxisX.LabelStyle.Angle = -45
+        ChartArea1.AxisX.LabelAutoFitMinFontSize = 5
         ChartArea1.AxisX.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisX.LabelStyle.TruncatedLabels = True
         ChartArea1.AxisX.MaximumAutoSize = 100.0!
         ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         ChartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
@@ -154,7 +156,7 @@ Partial Class Reporte_Casos_Cerrados
         Legend1.Name = "Legend1"
         Legend1.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(27, 487)
+        Me.Chart1.Location = New System.Drawing.Point(12, 487)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
         Me.Chart1.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(189, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(77, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(89, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(162, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(172, Byte), Integer), CType(CType(198, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(70, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(117, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(119, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(42, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(95, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(48, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(98, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(124, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(182, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(8, Byte), Integer))}
@@ -162,7 +164,7 @@ Partial Class Reporte_Casos_Cerrados
         Series1.Legend = "Legend1"
         Series1.Name = "Meses"
         Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(1124, 241)
+        Me.Chart1.Size = New System.Drawing.Size(1153, 241)
         Me.Chart1.TabIndex = 37
         Me.Chart1.TabStop = False
         Me.Chart1.Text = "Chart1"
