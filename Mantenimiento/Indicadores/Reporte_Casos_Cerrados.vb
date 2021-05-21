@@ -14,9 +14,12 @@
         repoCaCeAño = Año
         repoCaCeMes = Mes
         repoCaCeChar1 = Chart1
-        Año.SelectedIndex = 0
-        Mes.SelectedIndex = 0
+        Año.Text = Year(Now)
+        Mes.SelectedIndex = 11
+        RepoPreventivosCerradosCargarDatos()
+        ReportePreventivosCerradosEstetica()
 
+        ReportePreventivosCerradosGrafica()
 
     End Sub
 End Class
