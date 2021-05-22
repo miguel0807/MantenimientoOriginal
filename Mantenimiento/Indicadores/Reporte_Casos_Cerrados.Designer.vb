@@ -60,19 +60,19 @@ Partial Class Reporte_Casos_Cerrados
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.Location = New System.Drawing.Point(631, 56)
+        Me.DataGridView1.Location = New System.Drawing.Point(269, 46)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.DataGridView1.Size = New System.Drawing.Size(457, 403)
+        Me.DataGridView1.Size = New System.Drawing.Size(856, 377)
         Me.DataGridView1.TabIndex = 31
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(164, 195)
+        Me.Button1.Location = New System.Drawing.Point(3, 238)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(144, 71)
         Me.Button1.TabIndex = 32
@@ -85,7 +85,7 @@ Partial Class Reporte_Casos_Cerrados
         Me.Mes.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Mes.FormattingEnabled = True
         Me.Mes.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
-        Me.Mes.Location = New System.Drawing.Point(60, 76)
+        Me.Mes.Location = New System.Drawing.Point(18, 56)
         Me.Mes.Name = "Mes"
         Me.Mes.Size = New System.Drawing.Size(121, 37)
         Me.Mes.TabIndex = 33
@@ -96,7 +96,7 @@ Partial Class Reporte_Casos_Cerrados
         Me.Año.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Año.FormattingEnabled = True
         Me.Año.Items.AddRange(New Object() {"2020", "2021", "2022", "2023", "2024", "2025"})
-        Me.Año.Location = New System.Drawing.Point(301, 76)
+        Me.Año.Location = New System.Drawing.Point(18, 178)
         Me.Año.Name = "Año"
         Me.Año.Size = New System.Drawing.Size(121, 37)
         Me.Año.TabIndex = 34
@@ -105,7 +105,7 @@ Partial Class Reporte_Casos_Cerrados
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(82, 44)
+        Me.Label1.Location = New System.Drawing.Point(40, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(62, 29)
         Me.Label1.TabIndex = 35
@@ -115,7 +115,7 @@ Partial Class Reporte_Casos_Cerrados
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(332, 44)
+        Me.Label2.Location = New System.Drawing.Point(40, 133)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 29)
         Me.Label2.TabIndex = 36
@@ -143,6 +143,7 @@ Partial Class Reporte_Casos_Cerrados
         ChartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
         ChartArea1.AxisY.IsLabelAutoFit = False
         ChartArea1.AxisY.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY.Maximum = 100.0R
         ChartArea1.AxisY.MaximumAutoSize = 100.0!
         ChartArea1.BackColor = System.Drawing.Color.White
         ChartArea1.Name = "ChartArea1"
@@ -184,9 +185,9 @@ Partial Class Reporte_Casos_Cerrados
         Me.Panel1.Controls.Add(Me.Año)
         Me.Panel1.Controls.Add(Me.Mes)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(38, 86)
+        Me.Panel1.Location = New System.Drawing.Point(38, 77)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(501, 305)
+        Me.Panel1.Size = New System.Drawing.Size(177, 314)
         Me.Panel1.TabIndex = 38
         '
         'Reporte_Casos_Cerrados
