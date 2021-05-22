@@ -1260,54 +1260,23 @@ Module Modulo_Indicadores
 
             End Select
             Dim adaptador As New SqlDataAdapter("
-set language spanish;
 with
 
-Datos1 as(
-
-select
-
-
-case
-when 1=1 then " & Mes & "
-end as Meses,
-case
-when SUM(" & mesletra & ") is Null then 'Completado'
-else (CAST(sum(" & mesletra & ") AS varchar(max)))
-end as Cantidad
-
-
-from ConteoPlanificacion_Equipos cont
-
-where 
-Año=" & repoCaCeAño.Text & " 
-and 
-cont." & mesletra & " <>9999
-and
-cont." & mesletra & "<>0
-
-
+CantidadFaltante as (select sum(" & mesletra & ")as Suma  from ConteoPlanificacion_Equipos where Año=" & repoCaCeAño.Text & " and " & mesletra & "<>9999
 )
+,
+CantidadRealizada as (select count(Codigo) as ConteoCodigo from Historial_Equipos where Año=" & repoCaCeAño.Text & " and convert(char,Mes)='" & mesletra & "'
+)
+,
+CantidadTotal as (select sum(Suma+ConteoCodigo) as Total from CantidadFaltante,CantidadRealizada)
 
-Select 
-case
 
-when Meses=1 then 'Enero'
-when Meses=2 then 'Febrero'
-when Meses=3 then 'Marzo'
-when Meses=4 then 'Abril'
-when Meses=5 then 'Mayo'
-when Meses=6 then 'Junio'
-when Meses=7 then 'Julio'
-when Meses=8 then 'Agosto'
-when Meses=9 then 'Septiembre'
-when Meses=10 then 'Octubre'
-when Meses=11 then 'Noviembre'
-when Meses = 12 then 'Diciembre'
-end as Meses
-,Cantidad
-from datos1
-group by Meses,Cantidad
+select case
+when 1=1 then '" & mesletra & "'
+end as Meses,
+CAST((convert(float,ConteoCodigo*100)/Total) as numeric(36,2)) as 'Porcentaje Completado',ConteoCodigo as 'Equipos Realizados',Total as 'Total de equipos'
+
+from CantidadTotal,CantidadRealizada 
 
 
 
@@ -1392,7 +1361,7 @@ group by Meses,Cantidad
         For f = 0 To miView.Count - 1
 
 
-            repoCaCeChar1.Series("Meses").Points.AddXY(miView(f)("Meses"), miView(f)("Cantidad"))
+            repoCaCeChar1.Series("Meses").Points.AddXY(miView(f)("Meses"), miView(f)("Porcentaje Completado"))
 
 
         Next
