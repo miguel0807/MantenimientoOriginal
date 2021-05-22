@@ -169,6 +169,7 @@ Partial Class Indicadores_Proceso
         Me.Button4.TabIndex = 6
         Me.Button4.Text = "Button4"
         Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.Visible = False
         '
         'Indicadores_Proceso
         '

@@ -87,7 +87,7 @@ Module Modulo_Indicadores
     Public repoCaCedtg As DataGridView
     Public repoCaCeDataSet As New DataSet
     Public repoCaCeAño As ComboBox
-    Public repoCaCeMes As ComboBox
+    ' Public repoCaCeMes As ComboBox
     Public repoCaCeChar1 As DataVisualization.Charting.Chart
 #End Region
 
@@ -1223,7 +1223,7 @@ Module Modulo_Indicadores
     Sub RepoPreventivosCerradosCargarDatos()
         Dim mesletra As String
         Dim mescbo As Integer
-        mescbo = repoCaCeMes.Text
+        mescbo = 12
 
         repoCaCedtg.DataSource = Nothing
         repoCaCedtg.Columns.Clear()
@@ -1334,9 +1334,11 @@ from CantidadTotal,CantidadRealizada
             repoCaCedtg.RowHeadersVisible = False
             repoCaCedtg.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             repoCaCedtg.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            repoCaCedtg.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            repoCaCedtg.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
 
-            repoCaCedtg.Rows(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            '  repoCaCedtg.Rows(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             'repoCaCedtg.Columns(0).Width = 200
             'repoCaCedtg.Columns(1).Width = 200
 

@@ -178,14 +178,14 @@ Partial Class Resolución_Casos
         Title1.BorderColor = System.Drawing.Color.Black
         Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Title1.Name = "Title1"
-        Title1.Text = "Resolución de Casos"
+        Title1.Text = "Tiempo de ciclo resolución de casos"
         Me.Chart1.Titles.Add(Title1)
         '
         'CboFecha
         '
         Me.CboFecha.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable
         Me.CboFecha.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CboFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboFecha.FormattingEnabled = True
         Me.CboFecha.Items.AddRange(New Object() {"2020", "2021", "2022", "2023", "2024", "2025"})
         Me.CboFecha.Location = New System.Drawing.Point(12, 12)
