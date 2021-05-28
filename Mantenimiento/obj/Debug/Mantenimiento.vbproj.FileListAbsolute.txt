@@ -2,7 +2,6 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Mantenimie
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Mantenimiento.exe
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Mantenimiento.pdb
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Mantenimiento.xml
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbprojAssemblyReference.cache
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Resources.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.GenerateResource.cache
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.CoreCompileInputs.cache
@@ -55,3 +54,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess.xml
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.pdb
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.AssemblyReference.cache
