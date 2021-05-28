@@ -110,7 +110,7 @@ Public Class Modificar_Material
         Try
 
             conectar()
-            Dim actualizarnombre As New SqlCommand("Update Bodega SET Material =('" & Material.Text & "'), Cantidad =(" & Cantidad.Text & "), Unidad =('" & Unidad.Text & "') , Empresa =('" & Empresa.Text & "'), [#Parte] =('" & Parte.Text & "'), [Equipo] =('" & Equipo.Text & "'), [Marca] =('" & Marca.Text & "'), [Modelo]= ('" & Modelo.Text & "'), [Serie]= ('" & Serie.Text & "'), [Ubicacion]= ('" & Ubicacion.Text & "'),[Clasificacion]= ('" & Clasificacion.Text & "'),[Descripcion]= ('" & Descripcion.Text & "')  where [Conteo] = (" & conteo & ")", cn)
+            Dim actualizarnombre As New SqlCommand("Update Bodega SET Material =('" & Material.Text & "'), Cantidad =(" & Cantidad.Text & "), Unidad =('" & Unidad.Text & "') , Empresa =('" & Empresa.Text & "'), [#Parte] =('" & Parte.Text & "'), [Equipo] =('" & Equipo.Text & "'), [Marca] =('" & Marca.Text & "'), [Modelo]= ('" & Modelo.Text & "'), [Minimo]= (" & Serie.Text & "), [Ubicacion]= ('" & Ubicacion.Text & "'),[Clasificacion]= ('" & Clasificacion.Text & "'),[Descripcion]= ('" & Descripcion.Text & "')  where [Conteo] = (" & conteo & ")", cn)
             'TextBox1.Text = actualizarnombre.CommandText
             actualizarnombre.ExecuteNonQuery()
             cn.Close()

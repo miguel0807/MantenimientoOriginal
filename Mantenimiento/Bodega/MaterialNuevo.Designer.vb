@@ -74,9 +74,9 @@ Partial Class MaterialNuevo
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(683, 143)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(71, 29)
+        Me.Label7.Size = New System.Drawing.Size(92, 29)
         Me.Label7.TabIndex = 48
-        Me.Label7.Text = "Serie"
+        Me.Label7.Text = "Mínimo"
         '
         'Label8
         '

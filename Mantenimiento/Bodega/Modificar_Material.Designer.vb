@@ -254,9 +254,9 @@ Partial Class Modificar_Material
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!)
         Me.Label7.Location = New System.Drawing.Point(575, 302)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(71, 29)
+        Me.Label7.Size = New System.Drawing.Size(92, 29)
         Me.Label7.TabIndex = 81
-        Me.Label7.Text = "Serie"
+        Me.Label7.Text = "Mínimo"
         '
         'Label8
         '
