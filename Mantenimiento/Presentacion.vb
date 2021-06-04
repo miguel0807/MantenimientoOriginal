@@ -283,7 +283,9 @@ Public Class Presentacion
         hideSubmenu()
     End Sub
 
-    Private Sub PanelChildForm_Paint(sender As Object, e As PaintEventArgs) Handles PanelChildForm.Paint
+    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
+        openChildForm(New Tank_Farm.Nivel_de_solventes())
 
+        hideSubmenu()
     End Sub
 End Class

@@ -55,3 +55,8 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.pdb
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.xml
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.AssemblyReference.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.exe.config
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\S7.Net.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\S7.Net.xml

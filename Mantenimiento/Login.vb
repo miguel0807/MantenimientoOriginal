@@ -1,6 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
 Imports Domain
-Imports Proyecto
+
 
 Public Class Login
 #Region "Customize Controls - Personalizar Controles"

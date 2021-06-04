@@ -24,7 +24,10 @@ Partial Class Presentacion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Presentacion))
         Me.panelLogo = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.pictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.button3 = New System.Windows.Forms.Button()
         Me.button2 = New System.Windows.Forms.Button()
         Me.PanelSideMenu = New System.Windows.Forms.Panel()
@@ -64,9 +67,7 @@ Partial Class Presentacion
         Me.btnMedia = New System.Windows.Forms.Button()
         Me.PanelChildForm = New System.Windows.Forms.Panel()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button26 = New System.Windows.Forms.Button()
         Me.panelLogo.SuspendLayout()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSideMenu.SuspendLayout()
@@ -93,6 +94,18 @@ Partial Class Presentacion
         Me.panelLogo.Size = New System.Drawing.Size(229, 214)
         Me.panelLogo.TabIndex = 0
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Silver
+        Me.Label1.Location = New System.Drawing.Point(11, 111)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(81, 20)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Posicion"
+        '
         'pictureBox1
         '
         Me.pictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(17, Byte), Integer))
@@ -103,6 +116,30 @@ Partial Class Presentacion
         Me.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureBox1.TabIndex = 0
         Me.pictureBox1.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Silver
+        Me.Label2.Location = New System.Drawing.Point(11, 143)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(74, 20)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Nombre"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Silver
+        Me.Label3.Location = New System.Drawing.Point(11, 179)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(66, 20)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Correo"
         '
         'button3
         '
@@ -142,6 +179,7 @@ Partial Class Presentacion
         '
         Me.PanelSideMenu.AutoScroll = True
         Me.PanelSideMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(17, Byte), Integer))
+        Me.PanelSideMenu.Controls.Add(Me.Button26)
         Me.PanelSideMenu.Controls.Add(Me.Button20)
         Me.PanelSideMenu.Controls.Add(Me.btnExit)
         Me.PanelSideMenu.Controls.Add(Me.btnHelp)
@@ -189,7 +227,7 @@ Partial Class Presentacion
         Me.btnExit.ForeColor = System.Drawing.Color.Silver
         Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 1703)
+        Me.btnExit.Location = New System.Drawing.Point(0, 1771)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnExit.Size = New System.Drawing.Size(229, 39)
@@ -664,7 +702,7 @@ Partial Class Presentacion
         Me.Button25.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.Button25.Size = New System.Drawing.Size(229, 51)
         Me.Button25.TabIndex = 5
-        Me.Button25.Text = "Reporte Casos Cerrados"
+        Me.Button25.Text = "Reporte Estado Preventivos"
         Me.Button25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button25.UseVisualStyleBackColor = True
         '
@@ -760,41 +798,26 @@ Partial Class Presentacion
         Me.PictureBox9.TabIndex = 0
         Me.PictureBox9.TabStop = False
         '
-        'Label1
+        'Button26
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Silver
-        Me.Label1.Location = New System.Drawing.Point(11, 111)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 20)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Posicion"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Silver
-        Me.Label2.Location = New System.Drawing.Point(11, 143)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(74, 20)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Nombre"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Silver
-        Me.Label3.Location = New System.Drawing.Point(11, 179)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(66, 20)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Correo"
+        Me.Button26.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button26.FlatAppearance.BorderSize = 0
+        Me.Button26.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.Button26.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Button26.ForeColor = System.Drawing.Color.Silver
+        Me.Button26.Image = Global.Mantenimiento.My.Resources.Resources.checklist_118086__2_
+        Me.Button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button26.Location = New System.Drawing.Point(0, 1703)
+        Me.Button26.Name = "Button26"
+        Me.Button26.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.Button26.Size = New System.Drawing.Size(229, 68)
+        Me.Button26.TabIndex = 11
+        Me.Button26.Text = "Tank Farm"
+        Me.Button26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button26.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button26.UseVisualStyleBackColor = True
         '
         'Presentacion
         '
@@ -870,4 +893,5 @@ Partial Class Presentacion
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Private WithEvents Button26 As Button
 End Class

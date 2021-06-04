@@ -30,7 +30,7 @@
     <PublisherName>Miguel Alvarado</PublisherName>
     <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationRevision>30</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -468,7 +468,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -481,6 +481,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tank Farm\Tank Farm.csproj">
+      <Project>{8535cdbb-6b3f-4ef4-a459-f4899b6d9857}</Project>
+      <Name>Tank Farm</Name>
+    </ProjectReference>
     <ProjectReference Include="Common\Common.vbproj">
       <Project>{c03234cd-ccc5-4922-8566-05ae70d7da3b}</Project>
       <Name>Common</Name>

@@ -1,0 +1,13 @@
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\bin\Debug\Tank Farm.exe.config
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\bin\Debug\Tank Farm.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\bin\Debug\Tank Farm.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.csproj.AssemblyReference.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank_Farm.Properties.Resources.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.csproj.GenerateResource.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.csproj.CoreCompileInputs.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank_Farm.Nivel_de_solventes.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\bin\Debug\S7.Net.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\bin\Debug\S7.Net.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.csproj.CopyComplete
