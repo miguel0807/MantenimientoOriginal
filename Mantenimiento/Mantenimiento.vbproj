@@ -30,7 +30,7 @@
     <PublisherName>Miguel Alvarado</PublisherName>
     <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -446,6 +446,7 @@
     <Content Include="Resources\ClosedXml\ClosedXML.dll" />
     <Content Include="Resources\ClosedXml\DocumentFormat.OpenXml.dll" />
     <Content Include="Otros\tools_22686.ico" />
+    <None Include="Resources\icons8-tanque-de-almacenamiento-químico-64.png" />
     <None Include="Resources\presen.png" />
     <None Include="Resources\checklist_118086 %282%29.png" />
     <None Include="Resources\Delete-80_icon-icons.com_57340.png" />

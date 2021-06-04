@@ -8,118 +8,123 @@ Mantenimiento
 <members>
 <member name="T:Mantenimiento.My.Resources.Resources">
 <summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.ResourceManager">
 <summary>
-  Returns the cached ResourceManager instance used by this class.
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.Culture">
 <summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources._109634705_blue_dark_blue_black_abstract_background_blur_gradient">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.checklist_118086">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.checklist_118086__1_">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.checklist_118086__2_">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.crecimiento">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.crecimiento__1_">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.Delete_80_icon_icons_com_57340">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.Flecha_Derecha">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.FlechaIzquierda">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.gris">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.hoy">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.icons8_tanque_de_almacenamiento_químico_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.infografia">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.infografia__1_">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.lapiz">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.lapiz1">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.matriz_de_ciclo">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.nota">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.presen">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.salir">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.salir1">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 </members>

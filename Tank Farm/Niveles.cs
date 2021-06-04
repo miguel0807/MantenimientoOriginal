@@ -65,19 +65,56 @@ namespace Tank_Farm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string address = "MD168";
-            object result = plc.Read(address);
-            string varSting = string.Format("{0}", result.ToString());
-            int b = Convert.ToInt32(varSting);
-            //Segundo convertirla a byte
-            byte[] bytes = BitConverter.GetBytes(b);
+            string direcEtyl, direcEtylAcetone, direcEtylNPropanol, direcEtylMEK;
+            int conteo = 0;
+            float nivelEtyl=0, nivelEtylAcetone=0, nivelEtylNPropanol=0, nivelEtylMEK=0, flotante = 0;
+            direcEtyl = "MD168";
+            direcEtylAcetone = "MD172";
+            direcEtylNPropanol = "MD176";
+            direcEtylMEK = "MD180";
 
-            //Tercero pasarla a float
-            float flotante = BitConverter.ToSingle(bytes, 0);
+            string[] direciones = new string[4];
+            direciones[0] = direcEtyl;
+            direciones[1] = direcEtylAcetone;
+            direciones[2] = direcEtylNPropanol;
+            direciones[3] = direcEtylMEK;
+
+            float[] niveles = new float[4];
+            niveles[0] = nivelEtyl;
+            niveles[1] = nivelEtylAcetone;
+            niveles[2] = nivelEtylNPropanol;
+            niveles[3] = nivelEtylMEK;
+
+
+        
 
 
 
-            nivelEtyl.Text = flotante.ToString();
+            foreach (string direccion in direciones)
+            {
+               
+                //string direccion = "MD168";
+                object resultado = plc.Read(direccion);
+                string varString = string.Format("{0}", resultado.ToString());
+                int b = Convert.ToInt32(varString);
+                //Segundo convertirla a byte
+                byte[] bytes = BitConverter.GetBytes(b);
+
+                //Tercero pasarla a float
+                flotante = BitConverter.ToSingle(bytes, 0);
+
+                niveles[conteo] = flotante;
+                conteo = conteo + 1;
+               
+
+            }
+
+            txtnivelEtyl.Text = niveles[0].ToString();
+            txtnivelAcetona.Text = niveles[1].ToString();
+            txtnivelNPropanol.Text = niveles[2].ToString();
+            txtnivelMEK.Text = niveles[3].ToString();
+
+           
         }
 
         private void Desconectar()
