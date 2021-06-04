@@ -63,7 +63,22 @@ namespace Tank_Farm
             
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string address = "MD168";
+            object result = plc.Read(address);
+            string varSting = string.Format("{0}", result.ToString());
+            int b = Convert.ToInt32(varSting);
+            //Segundo convertirla a byte
+            byte[] bytes = BitConverter.GetBytes(b);
+
+            //Tercero pasarla a float
+            float flotante = BitConverter.ToSingle(bytes, 0);
+
+
+
+            nivelEtyl.Text = flotante.ToString();
+        }
 
         private void Desconectar()
         {

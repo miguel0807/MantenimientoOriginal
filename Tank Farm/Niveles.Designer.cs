@@ -32,6 +32,21 @@ namespace Tank_Farm
             this.Estado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnConectar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nivelEtyl = new System.Windows.Forms.TextBox();
+            this.nivelAcetona = new System.Windows.Forms.TextBox();
+            this.nivelNPropanol = new System.Windows.Forms.TextBox();
+            this.nivelMEK = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.hMEK = new System.Windows.Forms.TextBox();
+            this.hNPropanol = new System.Windows.Forms.TextBox();
+            this.hAcetone = new System.Windows.Forms.TextBox();
+            this.hEtyl = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Estado
@@ -65,11 +80,162 @@ namespace Tank_Farm
             this.btnConectar.Visible = false;
             this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(123, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Etyl Acetate";
+            // 
+            // nivelEtyl
+            // 
+            this.nivelEtyl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nivelEtyl.Location = new System.Drawing.Point(98, 100);
+            this.nivelEtyl.Name = "nivelEtyl";
+            this.nivelEtyl.Size = new System.Drawing.Size(154, 22);
+            this.nivelEtyl.TabIndex = 4;
+            this.nivelEtyl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nivelAcetona
+            // 
+            this.nivelAcetona.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nivelAcetona.Location = new System.Drawing.Point(365, 100);
+            this.nivelAcetona.Name = "nivelAcetona";
+            this.nivelAcetona.Size = new System.Drawing.Size(154, 22);
+            this.nivelAcetona.TabIndex = 5;
+            this.nivelAcetona.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nivelNPropanol
+            // 
+            this.nivelNPropanol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nivelNPropanol.Location = new System.Drawing.Point(615, 100);
+            this.nivelNPropanol.Name = "nivelNPropanol";
+            this.nivelNPropanol.Size = new System.Drawing.Size(154, 22);
+            this.nivelNPropanol.TabIndex = 6;
+            this.nivelNPropanol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nivelMEK
+            // 
+            this.nivelMEK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nivelMEK.Location = new System.Drawing.Point(871, 100);
+            this.nivelMEK.Name = "nivelMEK";
+            this.nivelMEK.Size = new System.Drawing.Size(154, 22);
+            this.nivelMEK.TabIndex = 7;
+            this.nivelMEK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Nivel (lb)";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(402, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Acetone";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(661, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 17);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "N-Propanol";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(931, 68);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 17);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "MEK";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 185);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Altura(cm)";
+            // 
+            // hMEK
+            // 
+            this.hMEK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.hMEK.Location = new System.Drawing.Point(871, 185);
+            this.hMEK.Name = "hMEK";
+            this.hMEK.Size = new System.Drawing.Size(154, 22);
+            this.hMEK.TabIndex = 16;
+            this.hMEK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // hNPropanol
+            // 
+            this.hNPropanol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.hNPropanol.Location = new System.Drawing.Point(615, 185);
+            this.hNPropanol.Name = "hNPropanol";
+            this.hNPropanol.Size = new System.Drawing.Size(154, 22);
+            this.hNPropanol.TabIndex = 15;
+            this.hNPropanol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // hAcetone
+            // 
+            this.hAcetone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.hAcetone.Location = new System.Drawing.Point(365, 185);
+            this.hAcetone.Name = "hAcetone";
+            this.hAcetone.Size = new System.Drawing.Size(154, 22);
+            this.hAcetone.TabIndex = 14;
+            this.hAcetone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // hEtyl
+            // 
+            this.hEtyl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.hEtyl.Location = new System.Drawing.Point(98, 185);
+            this.hEtyl.Name = "hEtyl";
+            this.hEtyl.Size = new System.Drawing.Size(154, 22);
+            this.hEtyl.TabIndex = 13;
+            this.hEtyl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(70, 290);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(215, 78);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Niveles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 583);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.hMEK);
+            this.Controls.Add(this.hNPropanol);
+            this.Controls.Add(this.hAcetone);
+            this.Controls.Add(this.hEtyl);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.nivelMEK);
+            this.Controls.Add(this.nivelNPropanol);
+            this.Controls.Add(this.nivelAcetona);
+            this.Controls.Add(this.nivelEtyl);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Estado);
@@ -86,5 +252,20 @@ namespace Tank_Farm
         private System.Windows.Forms.TextBox Estado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnConectar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox nivelEtyl;
+        private System.Windows.Forms.TextBox nivelAcetona;
+        private System.Windows.Forms.TextBox nivelNPropanol;
+        private System.Windows.Forms.TextBox nivelMEK;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox hMEK;
+        private System.Windows.Forms.TextBox hNPropanol;
+        private System.Windows.Forms.TextBox hAcetone;
+        private System.Windows.Forms.TextBox hEtyl;
+        private System.Windows.Forms.Button button1;
     }
 }
