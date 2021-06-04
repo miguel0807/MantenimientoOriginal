@@ -284,7 +284,7 @@ Public Class Presentacion
     End Sub
 
     Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
-        openChildForm(New Tank_Farm.Nivel_de_solventes())
+        openChildForm(New Tank_Farm.Niveles())
 
         hideSubmenu()
     End Sub

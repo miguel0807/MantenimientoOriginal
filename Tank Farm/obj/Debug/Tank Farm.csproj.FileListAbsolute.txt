@@ -11,3 +11,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank_Farm.Nive
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\bin\Debug\S7.Net.dll
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\bin\Debug\S7.Net.xml
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.csproj.CopyComplete
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank_Farm.Niveles.resources

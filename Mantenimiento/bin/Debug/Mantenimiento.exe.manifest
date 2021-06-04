@@ -122,7 +122,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/oohMBB23hhZy00wYDd4WV8AMGgTRppUVxtZnPIsdxk=</dsig:DigestValue>
+        <dsig:DigestValue>N8YaDiIsCxNviWZ6bDW+UHvPpJkVvvOBSyR0G7w4guE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -139,14 +139,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tank Farm.exe" size="13312">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tank Farm.exe" size="14848">
       <assemblyIdentity name="Tank Farm" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6eoRL/FLilQWAgo7fu71Mee4pWRCpRdM+L13s6mj1zg=</dsig:DigestValue>
+        <dsig:DigestValue>7R1d5M5twktwS9mZ3V+dfEIhajcKy2gH1iBqKRA3IpU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
