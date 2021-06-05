@@ -7,8 +7,11 @@ C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.cspr
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.csproj.CoreCompileInputs.cache
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.exe
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.pdb
-C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank_Farm.Nivel_de_solventes.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\bin\Debug\S7.Net.dll
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\bin\Debug\S7.Net.xml
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.csproj.CopyComplete
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank_Farm.Niveles.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\bin\Debug\Tank Farm.exe.manifest
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\bin\Debug\Tank Farm.application
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.exe.manifest
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.application

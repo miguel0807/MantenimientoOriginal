@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>T:\Public\Production\Maintenance\Actualizacion Controlador Casos\</PublishUrl>
+    <PublishUrl>T:\Public\Production\Maintenance\Actualizacion Oficial Controlador Casos\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,12 +25,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Actualizacion Controlador Casos\</UpdateUrl>
+    <UpdateUrl>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Actualizacion Oficial Controlador Casos\</UpdateUrl>
     <ProductName>Controlador de casos</ProductName>
     <PublisherName>Miguel Alvarado</PublisherName>
     <WebPage>publish.htm</WebPage>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>35</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -98,6 +97,9 @@
     </Reference>
     <Reference Include="itextsharp">
       <HintPath>Resources\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="S7.Net, Version=0.12.0.0, Culture=neutral, PublicKeyToken=d5812d469e84c693, processorArchitecture=MSIL">
+      <HintPath>..\packages\S7netplus.0.12.0\lib\net452\S7.Net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -437,6 +439,7 @@
     <None Include="Otros\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\109634705-blue-dark-blue-black-abstract-background-blur-gradient.jpg" />
   </ItemGroup>
   <ItemGroup>

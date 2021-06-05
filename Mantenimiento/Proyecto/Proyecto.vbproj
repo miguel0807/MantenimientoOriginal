@@ -93,6 +93,9 @@
     <Reference Include="MessagingToolkit.QRCode">
       <HintPath>..\..\..\..\Desktop\Visual basic\Nueva carpeta\MessagingToolkit.QRCode.dll</HintPath>
     </Reference>
+    <Reference Include="S7.Net, Version=0.12.0.0, Culture=neutral, PublicKeyToken=d5812d469e84c693, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\S7netplus.0.12.0\lib\net452\S7.Net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -318,6 +321,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Proyecto_TemporaryKey.pfx" />
     <None Include="Resources\reimpresion481.ico" />
     <None Include="Resources\reimpresion48.ico" />

@@ -16,7 +16,7 @@ namespace Tank_Farm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Nivel_de_solventes());
+            Application.Run(new Niveles());
         }
     }
 }
