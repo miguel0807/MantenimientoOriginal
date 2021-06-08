@@ -42,6 +42,7 @@ namespace Tank_Farm
                 rack = 0;
                 slot = 0;
                 CpuType cpu = (CpuType)Enum.Parse(typeof(CpuType), "S71200");
+
             plc = new Plc(cpu, ip, Convert.ToInt16(rack), Convert.ToInt16(slot));
            
             plc.Open();
