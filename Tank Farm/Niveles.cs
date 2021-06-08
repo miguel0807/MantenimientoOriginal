@@ -20,27 +20,17 @@ namespace Tank_Farm
         private string ip;
         private int rack, slot;
 
-        //Declaracion de direcciones
-        string direcEtyl = "MD168", direcAcetone = "MD172", direclNPropanol = "MD176", direcMEK = "MD180";
-      
-        float nivelEtyl = 0, nivelEtylAcetone = 0, nivelEtylNPropanol = 0, nivelEtylMEK = 0, flotante = 0;
-        
-       
+        //Direcciones de Peso        
+        string direcEtyl = "MD168", direcAcetone = "MD172", direclNPropanol = "MD176", direcMEK = "MD180"; 
+   
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-           txtnivelAcetona.Text = CargarDireccion(direcAcetone);
-            txtnivelMEK.Text = CargarDireccion(direcMEK);
-            txtnivelNPropanol.Text = CargarDireccion(direclNPropanol);
-            txtnivelEtyl.Text = CargarDireccion(direcEtyl);
-             
-        }
 
         public Niveles()
         {
             InitializeComponent();
         }
 
+        //Carga al inicio del proyecto variables o funciones
         private void Niveles_Load(object sender, EventArgs e)
         {
           
@@ -48,14 +38,20 @@ namespace Tank_Farm
 
             Conectar();
 
-            
+            txtnivelAcetona.Text = CargarDireccion(direcAcetone);
+            txtnivelMEK.Text = CargarDireccion(direcMEK);
+            txtnivelNPropanol.Text = CargarDireccion(direclNPropanol);
+            txtnivelEtyl.Text = CargarDireccion(direcEtyl);
+
         }
 
+        //Boton para realizar la reconexion cuando se desconecte la conexion
         private void btnConectar_Click(object sender, EventArgs e)
         {
             Conectar();
         }
 
+        //Realiza la conexion al PLC
         private void Conectar()
         {
             
@@ -88,7 +84,7 @@ namespace Tank_Farm
         }
 
       
-
+        //Funcion para cargar las direcciones del PLC
         private string CargarDireccion (string direccion)
         {
             float numFlotante;
@@ -101,9 +97,8 @@ namespace Tank_Farm
             byte[] bytes = BitConverter.GetBytes(b);
 
             //Tercero pasarla a float
-            flotante = BitConverter.ToSingle(bytes, 0);
+            numFlotante = BitConverter.ToSingle(bytes, 0);
 
-            numFlotante = flotante;
 
             dato = numFlotante.ToString();
             return dato;
@@ -111,7 +106,7 @@ namespace Tank_Farm
         }
 
 
-
+        //Desconecta la conexion al PLC
         private void Desconectar()
         {
             plc.Close();
