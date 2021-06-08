@@ -8,15 +8,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using S7.Net;
+//Programa interfaz del plc
+//Autor: Miguel Alvarado
 
 namespace Tank_Farm
 {
     public partial class Niveles : Form
     {
-        private Plc plc = null;
+        //Declaracion de variables
+        public Plc plc = null;
         private string ip;
         private int rack, slot;
+
+        //Declaracion de direcciones
+        string direcEtyl = "MD168", direcAcetone = "MD172", direclNPropanol = "MD176", direcMEK = "MD180";
       
+        float nivelEtyl = 0, nivelEtylAcetone = 0, nivelEtylNPropanol = 0, nivelEtylMEK = 0, flotante = 0;
+        
+       
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           txtnivelAcetona.Text = CargarDireccion(direcAcetone);
+            txtnivelMEK.Text = CargarDireccion(direcMEK);
+            txtnivelNPropanol.Text = CargarDireccion(direclNPropanol);
+            txtnivelEtyl.Text = CargarDireccion(direcEtyl);
+             
+        }
+
         public Niveles()
         {
             InitializeComponent();
@@ -24,8 +43,12 @@ namespace Tank_Farm
 
         private void Niveles_Load(object sender, EventArgs e)
         {
-            
+          
+
+
             Conectar();
+
+            
         }
 
         private void btnConectar_Click(object sender, EventArgs e)
@@ -54,7 +77,7 @@ namespace Tank_Farm
             }
 
             }
-            catch(Exception ex)
+            catch(Exception )
             {
                 
                 MessageBox.Show("No se logro conectar al PLC con la ip " + ip);
@@ -64,59 +87,30 @@ namespace Tank_Farm
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+      
+
+        private string CargarDireccion (string direccion)
         {
-            string direcEtyl, direcEtylAcetone, direcEtylNPropanol, direcEtylMEK;
-            int conteo = 0;
-            float nivelEtyl=0, nivelEtylAcetone=0, nivelEtylNPropanol=0, nivelEtylMEK=0, flotante = 0;
-            direcEtyl = "MD168";
-            direcEtylAcetone = "MD172";
-            direcEtylNPropanol = "MD176";
-            direcEtylMEK = "MD180";
+            float numFlotante;
+            string dato;
+            //string direccion = "MD168";
+            object resultado = plc.Read(direccion);
+            string varString = string.Format("{0}", resultado.ToString());
+            int b = Convert.ToInt32(varString);
+            //Segundo convertirla a byte
+            byte[] bytes = BitConverter.GetBytes(b);
 
-            string[] direciones = new string[4];
-            direciones[0] = direcEtyl;
-            direciones[1] = direcEtylAcetone;
-            direciones[2] = direcEtylNPropanol;
-            direciones[3] = direcEtylMEK;
+            //Tercero pasarla a float
+            flotante = BitConverter.ToSingle(bytes, 0);
 
-            float[] niveles = new float[4];
-            niveles[0] = nivelEtyl;
-            niveles[1] = nivelEtylAcetone;
-            niveles[2] = nivelEtylNPropanol;
-            niveles[3] = nivelEtylMEK;
+            numFlotante = flotante;
 
+            dato = numFlotante.ToString();
+            return dato;
 
-        
-
-
-
-            foreach (string direccion in direciones)
-            {
-               
-                //string direccion = "MD168";
-                object resultado = plc.Read(direccion);
-                string varString = string.Format("{0}", resultado.ToString());
-                int b = Convert.ToInt32(varString);
-                //Segundo convertirla a byte
-                byte[] bytes = BitConverter.GetBytes(b);
-
-                //Tercero pasarla a float
-                flotante = BitConverter.ToSingle(bytes, 0);
-
-                niveles[conteo] = flotante;
-                conteo = conteo + 1;
-               
-
-            }
-
-            txtnivelEtyl.Text = niveles[0].ToString();
-            txtnivelAcetona.Text = niveles[1].ToString();
-            txtnivelNPropanol.Text = niveles[2].ToString();
-            txtnivelMEK.Text = niveles[3].ToString();
-
-           
         }
+
+
 
         private void Desconectar()
         {
@@ -125,3 +119,51 @@ namespace Tank_Farm
         }
     }
 }
+
+
+//int conteo = 0;
+//direcEtyl = "MD168";
+//direcEtylAcetone = "MD172";
+//direcEtylNPropanol = "MD176";
+//direcEtylMEK = "MD180";
+
+//string[] direciones = new string[4];
+//direciones[0] = direcEtyl;
+//direciones[1] = direcEtylAcetone;
+//direciones[2] = direcEtylNPropanol;
+//direciones[3] = direcEtylMEK;
+
+//float[] niveles = new float[4];
+//niveles[0] = nivelEtyl;
+//niveles[1] = nivelEtylAcetone;
+//niveles[2] = nivelEtylNPropanol;
+//niveles[3] = nivelEtylMEK;
+
+
+
+
+
+
+//foreach (string direccion in direciones)
+//{
+
+//    //string direccion = "MD168";
+//    object resultado = plc.Read(direccion);
+//    string varString = string.Format("{0}", resultado.ToString());
+//    int b = Convert.ToInt32(varString);
+//    //Segundo convertirla a byte
+//    byte[] bytes = BitConverter.GetBytes(b);
+
+//    //Tercero pasarla a float
+//    flotante = BitConverter.ToSingle(bytes, 0);
+
+//    niveles[conteo] = flotante;
+//    conteo = conteo + 1;
+
+
+//}
+
+//txtnivelEtyl.Text = niveles[0].ToString();
+//txtnivelAcetona.Text = niveles[1].ToString();
+//txtnivelNPropanol.Text = niveles[2].ToString();
+//txtnivelMEK.Text = niveles[3].ToString();
