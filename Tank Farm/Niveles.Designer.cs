@@ -41,13 +41,22 @@ namespace Tank_Farm
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.picMEK = new System.Windows.Forms.PictureBox();
+            this.picNPropanol = new System.Windows.Forms.PictureBox();
+            this.picAcetone = new System.Windows.Forms.PictureBox();
+            this.picEtyl = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.picMEK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNPropanol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAcetone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEtyl)).BeginInit();
             this.SuspendLayout();
             // 
             // Estado
             // 
             this.Estado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Estado.Location = new System.Drawing.Point(110, 547);
+            this.Estado.Location = new System.Drawing.Point(110, 705);
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             this.Estado.Size = new System.Drawing.Size(154, 34);
@@ -60,7 +69,7 @@ namespace Tank_Farm
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 552);
+            this.label1.Location = new System.Drawing.Point(10, 710);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 29);
             this.label1.TabIndex = 1;
@@ -71,7 +80,7 @@ namespace Tank_Farm
             this.btnConectar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnConectar.BackColor = System.Drawing.Color.Green;
             this.btnConectar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConectar.Location = new System.Drawing.Point(110, 503);
+            this.btnConectar.Location = new System.Drawing.Point(110, 661);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(123, 38);
             this.btnConectar.TabIndex = 2;
@@ -84,7 +93,7 @@ namespace Tank_Farm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(142, 68);
+            this.label2.Location = new System.Drawing.Point(167, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 29);
             this.label2.TabIndex = 3;
@@ -93,7 +102,7 @@ namespace Tank_Farm
             // txtnivelEtyl
             // 
             this.txtnivelEtyl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnivelEtyl.Location = new System.Drawing.Point(138, 117);
+            this.txtnivelEtyl.Location = new System.Drawing.Point(163, 154);
             this.txtnivelEtyl.Name = "txtnivelEtyl";
             this.txtnivelEtyl.ReadOnly = true;
             this.txtnivelEtyl.Size = new System.Drawing.Size(154, 34);
@@ -104,9 +113,8 @@ namespace Tank_Farm
             // txtnivelAcetona
             // 
             this.txtnivelAcetona.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnivelAcetona.Location = new System.Drawing.Point(377, 117);
+            this.txtnivelAcetona.Location = new System.Drawing.Point(509, 154);
             this.txtnivelAcetona.Name = "txtnivelAcetona";
-            this.txtnivelAcetona.ReadOnly = true;
             this.txtnivelAcetona.Size = new System.Drawing.Size(154, 34);
             this.txtnivelAcetona.TabIndex = 5;
             this.txtnivelAcetona.TabStop = false;
@@ -115,7 +123,7 @@ namespace Tank_Farm
             // txtnivelNPropanol
             // 
             this.txtnivelNPropanol.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnivelNPropanol.Location = new System.Drawing.Point(644, 117);
+            this.txtnivelNPropanol.Location = new System.Drawing.Point(848, 154);
             this.txtnivelNPropanol.Name = "txtnivelNPropanol";
             this.txtnivelNPropanol.ReadOnly = true;
             this.txtnivelNPropanol.Size = new System.Drawing.Size(154, 34);
@@ -126,7 +134,7 @@ namespace Tank_Farm
             // txtnivelMEK
             // 
             this.txtnivelMEK.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnivelMEK.Location = new System.Drawing.Point(881, 117);
+            this.txtnivelMEK.Location = new System.Drawing.Point(1183, 154);
             this.txtnivelMEK.Name = "txtnivelMEK";
             this.txtnivelMEK.ReadOnly = true;
             this.txtnivelMEK.Size = new System.Drawing.Size(154, 34);
@@ -138,7 +146,7 @@ namespace Tank_Farm
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 120);
+            this.label3.Location = new System.Drawing.Point(10, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 29);
             this.label3.TabIndex = 8;
@@ -148,7 +156,7 @@ namespace Tank_Farm
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(402, 68);
+            this.label4.Location = new System.Drawing.Point(534, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 29);
             this.label4.TabIndex = 9;
@@ -158,7 +166,7 @@ namespace Tank_Farm
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(651, 68);
+            this.label5.Location = new System.Drawing.Point(855, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(147, 29);
             this.label5.TabIndex = 10;
@@ -168,17 +176,73 @@ namespace Tank_Farm
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(923, 68);
+            this.label6.Location = new System.Drawing.Point(1225, 105);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 29);
             this.label6.TabIndex = 11;
             this.label6.Text = "MEK";
             // 
+            // picMEK
+            // 
+            this.picMEK.Image = global::Tank_Farm.Properties.Resources.Vacio;
+            this.picMEK.Location = new System.Drawing.Point(1117, 207);
+            this.picMEK.Name = "picMEK";
+            this.picMEK.Size = new System.Drawing.Size(282, 368);
+            this.picMEK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMEK.TabIndex = 15;
+            this.picMEK.TabStop = false;
+            // 
+            // picNPropanol
+            // 
+            this.picNPropanol.Image = global::Tank_Farm.Properties.Resources.Vacio;
+            this.picNPropanol.Location = new System.Drawing.Point(782, 207);
+            this.picNPropanol.Name = "picNPropanol";
+            this.picNPropanol.Size = new System.Drawing.Size(282, 368);
+            this.picNPropanol.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picNPropanol.TabIndex = 14;
+            this.picNPropanol.TabStop = false;
+            // 
+            // picAcetone
+            // 
+            this.picAcetone.Image = global::Tank_Farm.Properties.Resources.Vacio;
+            this.picAcetone.Location = new System.Drawing.Point(442, 207);
+            this.picAcetone.Name = "picAcetone";
+            this.picAcetone.Size = new System.Drawing.Size(282, 368);
+            this.picAcetone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAcetone.TabIndex = 13;
+            this.picAcetone.TabStop = false;
+            // 
+            // picEtyl
+            // 
+            this.picEtyl.Image = global::Tank_Farm.Properties.Resources.Vacio;
+            this.picEtyl.Location = new System.Drawing.Point(97, 207);
+            this.picEtyl.Name = "picEtyl";
+            this.picEtyl.Size = new System.Drawing.Size(282, 368);
+            this.picEtyl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEtyl.TabIndex = 12;
+            this.picEtyl.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(389, 635);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 37);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Cargar imagen";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Niveles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 583);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1443, 741);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.picMEK);
+            this.Controls.Add(this.picNPropanol);
+            this.Controls.Add(this.picAcetone);
+            this.Controls.Add(this.picEtyl);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -194,6 +258,10 @@ namespace Tank_Farm
             this.Name = "Niveles";
             this.Text = "Niveles";
             this.Load += new System.EventHandler(this.Niveles_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picMEK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNPropanol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAcetone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEtyl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +281,10 @@ namespace Tank_Farm
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox picEtyl;
+        private System.Windows.Forms.PictureBox picAcetone;
+        private System.Windows.Forms.PictureBox picNPropanol;
+        private System.Windows.Forms.PictureBox picMEK;
+        private System.Windows.Forms.Button button1;
     }
 }

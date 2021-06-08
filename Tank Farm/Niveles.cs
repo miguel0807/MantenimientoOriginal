@@ -20,10 +20,18 @@ namespace Tank_Farm
         private string ip;
         private int rack, slot;
 
-        //Direcciones de Peso        
-        string direcEtyl = "MD168", direcAcetone = "MD172", direclNPropanol = "MD176", direcMEK = "MD180"; 
-   
+        //Masa de tanques
+        float masaAcetona = 39235.07019f;
+        float masaMEK = 39830.44303f;
+        float masaNPropanil = 39770.90575f;
+        float masaEtyl = 44593.42576f;
 
+
+
+        //Direcciones de Peso        
+        string direcEtyl = "MD168", direcAcetone = "MD172", direclNPropanol = "MD176", direcMEK = "MD180";
+
+       
 
         public Niveles()
         {
@@ -33,15 +41,15 @@ namespace Tank_Farm
         //Carga al inicio del proyecto variables o funciones
         private void Niveles_Load(object sender, EventArgs e)
         {
-          
+
 
 
             Conectar();
 
-            txtnivelAcetona.Text = CargarDireccion(direcAcetone);
-            txtnivelMEK.Text = CargarDireccion(direcMEK);
-            txtnivelNPropanol.Text = CargarDireccion(direclNPropanol);
-            txtnivelEtyl.Text = CargarDireccion(direcEtyl);
+            txtnivelAcetona.Text = CargarDireccion(direcAcetone).ToString();
+            txtnivelMEK.Text = CargarDireccion(direcMEK).ToString();
+            txtnivelNPropanol.Text = CargarDireccion(direclNPropanol).ToString();
+            txtnivelEtyl.Text = CargarDireccion(direcEtyl).ToString();
 
         }
 
@@ -51,10 +59,15 @@ namespace Tank_Farm
             Conectar();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CargaImagen(float.Parse(txtnivelAcetona.Text), masaAcetona, "Acetona");
+        }
+
         //Realiza la conexion al PLC
         private void Conectar()
         {
-            
+
             try {
 
                 ip = "10.164.104.210";
@@ -62,33 +75,33 @@ namespace Tank_Farm
                 slot = 0;
                 CpuType cpu = (CpuType)Enum.Parse(typeof(CpuType), "S71200");
 
-            plc = new Plc(cpu, ip, Convert.ToInt16(rack), Convert.ToInt16(slot));
-           
-            plc.Open();
+                plc = new Plc(cpu, ip, Convert.ToInt16(rack), Convert.ToInt16(slot));
 
-            if (plc.IsConnected)
-            {
-                Estado.Text = "Conectado";
+                plc.Open();
+
+                if (plc.IsConnected)
+                {
+                    Estado.Text = "Conectado";
                     btnConectar.Visible = false;
-            }
+                }
 
             }
-            catch(Exception )
+            catch (Exception)
             {
-                
+
                 MessageBox.Show("No se logro conectar al PLC con la ip " + ip);
                 Estado.Text = "Desconectado";
                 btnConectar.Visible = true;
             }
-            
+
         }
 
-      
+
         //Funcion para cargar las direcciones del PLC
-        private string CargarDireccion (string direccion)
+        private float CargarDireccion(string direccion)
         {
-            float numFlotante;
-            string dato;
+
+            float dato;
             //string direccion = "MD168";
             object resultado = plc.Read(direccion);
             string varString = string.Format("{0}", resultado.ToString());
@@ -97,10 +110,10 @@ namespace Tank_Farm
             byte[] bytes = BitConverter.GetBytes(b);
 
             //Tercero pasarla a float
-            numFlotante = BitConverter.ToSingle(bytes, 0);
+            dato = BitConverter.ToSingle(bytes, 0);
 
 
-            dato = numFlotante.ToString();
+
             return dato;
 
         }
@@ -112,7 +125,44 @@ namespace Tank_Farm
             plc.Close();
             Estado.Text = "Desconectado";
         }
+
+        //Cargar imagenes
+
+        private void CargaImagen (float Peso, float maxMasa, string Solvente){
+            if (Peso <= 0 && Solvente == "Acetona") {
+                picAcetone.Image = Tank_Farm.Properties.Resources.Vacio;
+            }
+
+            else if (Peso * 100 / maxMasa >= 1 && Peso * 100 / maxMasa <= 10) { picAcetone.Image = Tank_Farm.Properties.Resources._10; }
+
+            else if (Peso * 100 / maxMasa >= 11 && Peso * 100 / maxMasa <= 20) { picAcetone.Image = Tank_Farm.Properties.Resources._20; }
+
+            else if (Peso * 100 / maxMasa >= 21 && Peso * 100 / maxMasa <= 30) { picAcetone.Image = Tank_Farm.Properties.Resources._30; }
+
+            else if (Peso * 100 / maxMasa >= 31 && Peso * 100 / maxMasa <= 40) { picAcetone.Image = Tank_Farm.Properties.Resources._40; }
+
+            else if (Peso * 100 / maxMasa >= 41 && Peso * 100 / maxMasa <= 50) { picAcetone.Image = Tank_Farm.Properties.Resources._50; }
+
+            else if (Peso * 100 / maxMasa >= 51 && Peso * 100 / maxMasa <= 60) { picAcetone.Image = Tank_Farm.Properties.Resources._60; }
+
+            else if (Peso * 100 / maxMasa >= 61 && Peso * 100 / maxMasa <= 70) { picAcetone.Image = Tank_Farm.Properties.Resources._70; }
+
+            else if (Peso * 100 / maxMasa >= 71 && Peso * 100 / maxMasa <= 80) { picAcetone.Image = Tank_Farm.Properties.Resources._80; }
+
+            else if (Peso * 100 / maxMasa >= 81 && Peso * 100 / maxMasa <= 90) { picAcetone.Image = Tank_Farm.Properties.Resources._90; }
+
+            else if (Peso * 100 / maxMasa >= 91) { picAcetone.Image = Tank_Farm.Properties.Resources._100_1; }
+
+
+
+
+        }
+    
+
+
+
     }
+
 }
 
 
