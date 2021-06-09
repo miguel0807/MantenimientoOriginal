@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Mantenimiento", "Mantenimiento\Mantenimiento.vbproj", "{BB736895-0087-460B-8882-28B9EF605924}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Proyecto", "Mantenimiento\Proyecto\Proyecto.vbproj", "{74A0B2AD-288C-4E3E-B461-ECCCF2DD0AA6}"
-EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Domain", "Mantenimiento\Domain\Domain.vbproj", "{37B3F3E9-FE85-4FF7-A6FF-C74425381DE3}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DataAccess", "Mantenimiento\DataAccess\DataAccess.vbproj", "{1C56964E-62F5-4DC1-83F6-D8D259E6A598}"
@@ -14,6 +12,8 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Common", "Mantenimiento\Common\Common.vbproj", "{C03234CD-CCC5-4922-8566-05AE70D7DA3B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tank Farm", "Tank Farm\Tank Farm.csproj", "{8535CDBB-6B3F-4EF4-A459-F4899B6D9857}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaz Presentación", "Interfaz Presentación\Interfaz Presentación.csproj", "{1D5D7AFA-C39D-4E28-8624-F03D86A135C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,6 @@ Global
 		{BB736895-0087-460B-8882-28B9EF605924}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB736895-0087-460B-8882-28B9EF605924}.Release|x86.ActiveCfg = Release|Any CPU
 		{BB736895-0087-460B-8882-28B9EF605924}.Release|x86.Build.0 = Release|Any CPU
-		{74A0B2AD-288C-4E3E-B461-ECCCF2DD0AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74A0B2AD-288C-4E3E-B461-ECCCF2DD0AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74A0B2AD-288C-4E3E-B461-ECCCF2DD0AA6}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{74A0B2AD-288C-4E3E-B461-ECCCF2DD0AA6}.Debug|x86.Build.0 = Debug|Any CPU
-		{74A0B2AD-288C-4E3E-B461-ECCCF2DD0AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74A0B2AD-288C-4E3E-B461-ECCCF2DD0AA6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{74A0B2AD-288C-4E3E-B461-ECCCF2DD0AA6}.Release|x86.ActiveCfg = Release|Any CPU
-		{74A0B2AD-288C-4E3E-B461-ECCCF2DD0AA6}.Release|x86.Build.0 = Release|Any CPU
 		{37B3F3E9-FE85-4FF7-A6FF-C74425381DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{37B3F3E9-FE85-4FF7-A6FF-C74425381DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37B3F3E9-FE85-4FF7-A6FF-C74425381DE3}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -71,6 +63,14 @@ Global
 		{8535CDBB-6B3F-4EF4-A459-F4899B6D9857}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8535CDBB-6B3F-4EF4-A459-F4899B6D9857}.Release|x86.ActiveCfg = Release|Any CPU
 		{8535CDBB-6B3F-4EF4-A459-F4899B6D9857}.Release|x86.Build.0 = Release|Any CPU
+		{1D5D7AFA-C39D-4E28-8624-F03D86A135C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D5D7AFA-C39D-4E28-8624-F03D86A135C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D5D7AFA-C39D-4E28-8624-F03D86A135C7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1D5D7AFA-C39D-4E28-8624-F03D86A135C7}.Debug|x86.Build.0 = Debug|Any CPU
+		{1D5D7AFA-C39D-4E28-8624-F03D86A135C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D5D7AFA-C39D-4E28-8624-F03D86A135C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D5D7AFA-C39D-4E28-8624-F03D86A135C7}.Release|x86.ActiveCfg = Release|Any CPU
+		{1D5D7AFA-C39D-4E28-8624-F03D86A135C7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

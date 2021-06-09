@@ -29,6 +29,7 @@ namespace Tank_Farm
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Estado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnConectar = new System.Windows.Forms.Button();
@@ -51,6 +52,8 @@ namespace Tank_Farm
             this.porcentajeNPropanol = new System.Windows.Forms.TextBox();
             this.porcentajeAcetona = new System.Windows.Forms.TextBox();
             this.porcentajeAcetato = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picMEK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNPropanol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAcetone)).BeginInit();
@@ -271,12 +274,13 @@ namespace Tank_Farm
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(389, 598);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(607, 661);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(268, 97);
+            this.button1.Size = new System.Drawing.Size(160, 63);
             this.button1.TabIndex = 16;
-            this.button1.Text = "Actualizar Datos";
+            this.button1.Text = "Actualizar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -351,12 +355,29 @@ namespace Tank_Farm
             this.porcentajeAcetato.TabStop = false;
             this.porcentajeAcetato.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(773, 646);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(277, 78);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "   ";
+            // 
             // Niveles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1052, 726);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.porcentajeMEK);
             this.Controls.Add(this.porcentajeNPropanol);
@@ -415,5 +436,7 @@ namespace Tank_Farm
         private System.Windows.Forms.TextBox porcentajeNPropanol;
         private System.Windows.Forms.TextBox porcentajeAcetona;
         private System.Windows.Forms.TextBox porcentajeAcetato;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label8;
     }
 }

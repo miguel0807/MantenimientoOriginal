@@ -19,6 +19,7 @@ namespace Tank_Farm
         public Plc plc = null;
         private string ip;
         private int rack, slot;
+        private int segundos = 60;
 
         //Masa de tanques
         float masaAcetona = 39235.07019f;
@@ -46,19 +47,9 @@ namespace Tank_Farm
 
             Conectar();
 
-            txtnivelAcetona.Text = CargarDireccion(direcAcetone).ToString();
-            txtnivelMEK.Text = CargarDireccion(direcMEK).ToString();
-            txtnivelNPropanol.Text = CargarDireccion(direclNPropanol).ToString();
-            txtnivelEtyl.Text = CargarDireccion(direcEtyl).ToString();
-
-            CargaImagen(float.Parse(txtnivelAcetona.Text), masaAcetona, "Acetona");
-            CargaImagen(float.Parse(txtnivelEtyl.Text), masaEtyl, "Etyl");
-            CargaImagen(float.Parse(txtnivelMEK.Text), masaMEK, "MEK");
-            CargaImagen(float.Parse(txtnivelNPropanol.Text), masaNPropanol, "N-Propanol");
-            CalculaPorcentaje(txtnivelAcetona, masaAcetona, porcentajeAcetona);
-            CalculaPorcentaje(txtnivelEtyl, masaEtyl, porcentajeAcetato);
-            CalculaPorcentaje(txtnivelMEK, masaMEK, porcentajeMEK);
-            CalculaPorcentaje(txtnivelNPropanol, masaNPropanol, porcentajeNPropanol);
+            ActualizarInterfaz();
+            timer1.Enabled = true;
+            timer1.Start();
 
         }
 
@@ -71,19 +62,8 @@ namespace Tank_Farm
         //Boton para cargar pruebas
         private void button1_Click(object sender, EventArgs e)
         {
-            txtnivelAcetona.Text = CargarDireccion(direcAcetone).ToString();
-            txtnivelMEK.Text = CargarDireccion(direcMEK).ToString();
-            txtnivelNPropanol.Text = CargarDireccion(direclNPropanol).ToString();
-            txtnivelEtyl.Text = CargarDireccion(direcEtyl).ToString();
-
-            CargaImagen(float.Parse(txtnivelAcetona.Text), masaAcetona, "Acetona");
-            CargaImagen(float.Parse(txtnivelEtyl.Text), masaEtyl, "Etyl");
-            CargaImagen(float.Parse(txtnivelMEK.Text), masaMEK, "MEK");
-            CargaImagen(float.Parse(txtnivelNPropanol.Text), masaNPropanol, "N-Propanol");
-            CalculaPorcentaje(txtnivelAcetona,masaAcetona,porcentajeAcetona);
-            CalculaPorcentaje(txtnivelEtyl, masaEtyl, porcentajeAcetato);
-            CalculaPorcentaje(txtnivelMEK, masaMEK, porcentajeMEK);
-            CalculaPorcentaje(txtnivelNPropanol, masaNPropanol, porcentajeNPropanol);
+            ActualizarInterfaz();
+           
 
 
         }
@@ -117,6 +97,20 @@ namespace Tank_Farm
                 Estado.Text = "Desconectado";
                 btnConectar.Visible = true;
             }
+
+        }
+        
+        //Timer para actualizar información
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+           
+            if (segundos == 0)
+            {
+                ActualizarInterfaz();
+                segundos = 60;
+            }
+            label8.Text = "El sistema se \nactualizara en: " +segundos.ToString();
+            segundos = segundos-1;
 
         }
 
@@ -159,8 +153,8 @@ namespace Tank_Farm
             else if (Solvente == "N-Propanol") { imagen = picNPropanol; }
             else { imagen = picAcetone; }
            
-            if (Peso <= 0 && Solvente == "Acetona") {
-                picAcetone.Image = Tank_Farm.Properties.Resources.Vacio;
+            if (Peso * 100 / maxMasa <= 0 ) {
+                imagen.Image = Tank_Farm.Properties.Resources.Vacio;
             }
 
             else if (Peso*100/maxMasa>= 1 && Peso * 100 / maxMasa <= 10) { imagen.Image = Tank_Farm.Properties.Resources._10; }
@@ -198,6 +192,26 @@ namespace Tank_Farm
             txtbox.Text =  porcentaje.ToString("#.##")+"%";
         }
 
+        //Actualiza los datos para ser mostrados
+        void ActualizarInterfaz()
+        {
+            
+            txtnivelAcetona.Text = CargarDireccion(direcAcetone).ToString();
+            txtnivelMEK.Text = CargarDireccion(direcMEK).ToString();
+            txtnivelNPropanol.Text = CargarDireccion(direclNPropanol).ToString();
+            txtnivelEtyl.Text = CargarDireccion(direcEtyl).ToString();
+
+            CargaImagen(float.Parse(txtnivelAcetona.Text), masaAcetona, "Acetona");
+            CargaImagen(float.Parse(txtnivelEtyl.Text), masaEtyl, "Etyl");
+            CargaImagen(float.Parse(txtnivelMEK.Text), masaMEK, "MEK");
+            CargaImagen(float.Parse(txtnivelNPropanol.Text), masaNPropanol, "N-Propanol");
+            CalculaPorcentaje(txtnivelAcetona, masaAcetona, porcentajeAcetona);
+            CalculaPorcentaje(txtnivelEtyl, masaEtyl, porcentajeAcetato);
+            CalculaPorcentaje(txtnivelMEK, masaMEK, porcentajeMEK);
+            CalculaPorcentaje(txtnivelNPropanol, masaNPropanol, porcentajeNPropanol);
+            
+            segundos = 60;
+        }
 
     }
 

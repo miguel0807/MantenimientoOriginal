@@ -1,0 +1,10 @@
+C:\Users\malvarado\source\repos\Mantenimiento\Interfaz Presentación\bin\Debug\Interfaz Presentación.exe.config
+C:\Users\malvarado\source\repos\Mantenimiento\Interfaz Presentación\bin\Debug\Interfaz Presentación.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Interfaz Presentación\bin\Debug\Interfaz Presentación.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Interfaz Presentación\obj\Debug\Interfaz Presentación.csproj.AssemblyReference.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Interfaz Presentación\obj\Debug\Interfaz_Presentación.Form1.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Interfaz Presentación\obj\Debug\Interfaz_Presentación.Properties.Resources.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Interfaz Presentación\obj\Debug\Interfaz Presentación.csproj.GenerateResource.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Interfaz Presentación\obj\Debug\Interfaz Presentación.csproj.CoreCompileInputs.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Interfaz Presentación\obj\Debug\Interfaz Presentación.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Interfaz Presentación\obj\Debug\Interfaz Presentación.pdb
