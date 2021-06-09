@@ -497,6 +497,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Projecto\Proyecto\Proyecto.vbproj">
+      <Project>{74a0b2ad-288c-4e3e-b461-ecccf2dd0aa6}</Project>
+      <Name>Proyecto</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tank Farm\Tank Farm.csproj">
       <Project>{8535cdbb-6b3f-4ef4-a459-f4899b6d9857}</Project>
       <Name>Tank Farm</Name>

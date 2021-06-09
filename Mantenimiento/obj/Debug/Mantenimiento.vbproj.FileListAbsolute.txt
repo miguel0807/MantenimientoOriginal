@@ -61,3 +61,11 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\S7.Net.dll
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\S7.Net.xml
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Programas.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CircularProgressBar.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\MessagingToolkit.QRCode.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\WinFormAnimation.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.exe.config
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CircularProgressBar.xml
