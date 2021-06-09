@@ -57,6 +57,11 @@ Mantenimiento
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Mantenimiento.My.Resources.Resources.etiquetas_64">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Mantenimiento.My.Resources.Resources.Flecha_Derecha">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -82,6 +87,11 @@ Mantenimiento
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Mantenimiento.My.Resources.Resources.icons8_tanque_de_almacenamiento_químico_641">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Mantenimiento.My.Resources.Resources.infografia">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -98,6 +108,11 @@ Mantenimiento
 </summary>
 </member>
 <member name="P:Mantenimiento.My.Resources.Resources.lapiz1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Mantenimiento.My.Resources.Resources.mantenimiento_64">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

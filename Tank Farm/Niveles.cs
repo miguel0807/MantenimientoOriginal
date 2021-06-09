@@ -136,6 +136,11 @@ namespace Tank_Farm
 
         }
 
+        private void Niveles_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
 
         //Desconecta la conexion al PLC
         private void Desconectar()

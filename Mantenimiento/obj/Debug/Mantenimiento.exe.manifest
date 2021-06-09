@@ -115,14 +115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mantenimiento.exe" size="864696">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mantenimiento.exe" size="934840">
       <assemblyIdentity name="Mantenimiento" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/PJE+Pu6Xks7mxSC+wdOsdWpJlCS4NiTnXG7o9zh/0k=</dsig:DigestValue>
+        <dsig:DigestValue>D/MWj/1mZg1TH2L8v44+/kFfstLjA+TxDMs22xL7Wv4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -146,7 +146,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CskyNVU2M904fk244CrpO3WBc1gH2jC+mUFLNuzES5w=</dsig:DigestValue>
+        <dsig:DigestValue>pTRPBwMEu4CXESiK0DNHMIY4IewZV0IqOaxDk9fL7s0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

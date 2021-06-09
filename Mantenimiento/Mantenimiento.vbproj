@@ -127,6 +127,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Programas.Designer.vb">
+      <DependentUpon>Programas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Programas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Indicadores\Reportes_área.Designer.vb">
       <DependentUpon>Reportes_área.vb</DependentUpon>
     </Compile>
@@ -328,6 +334,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Programas.resx">
+      <DependentUpon>Programas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Indicadores\Reportes_área.resx">
       <DependentUpon>Reportes_área.vb</DependentUpon>
     </EmbeddedResource>
@@ -449,6 +458,9 @@
     <Content Include="Resources\ClosedXml\ClosedXML.dll" />
     <Content Include="Resources\ClosedXml\DocumentFormat.OpenXml.dll" />
     <Content Include="Otros\tools_22686.ico" />
+    <None Include="Resources\interfaz\etiquetas 64.png" />
+    <None Include="Resources\interfaz\mantenimiento 64.png" />
+    <None Include="Resources\interfaz\icons8-tanque-de-almacenamiento-químico-64.png" />
     <None Include="Resources\icons8-tanque-de-almacenamiento-químico-64.png" />
     <None Include="Resources\presen.png" />
     <None Include="Resources\checklist_118086 %282%29.png" />

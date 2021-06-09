@@ -60,3 +60,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.exe.config
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\S7.Net.dll
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\S7.Net.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Programas.resources

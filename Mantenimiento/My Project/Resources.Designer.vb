@@ -133,6 +133,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property etiquetas_64() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("etiquetas 64", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Flecha_Derecha() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Flecha_Derecha", resourceCulture)
@@ -183,6 +193,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property icons8_tanque_de_almacenamiento_químico_641() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("icons8-tanque-de-almacenamiento-químico-641", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property infografia() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("infografia", resourceCulture)
@@ -216,6 +236,16 @@ Namespace My.Resources
         Friend ReadOnly Property lapiz1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("lapiz1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property mantenimiento_64() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mantenimiento 64", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

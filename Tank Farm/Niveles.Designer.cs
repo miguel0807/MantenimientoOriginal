@@ -402,6 +402,7 @@ namespace Tank_Farm
             this.Controls.Add(this.Estado);
             this.Name = "Niveles";
             this.Text = "Niveles";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Niveles_FormClosed);
             this.Load += new System.EventHandler(this.Niveles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picMEK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNPropanol)).EndInit();

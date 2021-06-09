@@ -31,7 +31,6 @@ Partial Class Presentacion
         Me.button3 = New System.Windows.Forms.Button()
         Me.button2 = New System.Windows.Forms.Button()
         Me.PanelSideMenu = New System.Windows.Forms.Panel()
-        Me.Button26 = New System.Windows.Forms.Button()
         Me.Button20 = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnHelp = New System.Windows.Forms.Button()
@@ -179,7 +178,6 @@ Partial Class Presentacion
         '
         Me.PanelSideMenu.AutoScroll = True
         Me.PanelSideMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(17, Byte), Integer))
-        Me.PanelSideMenu.Controls.Add(Me.Button26)
         Me.PanelSideMenu.Controls.Add(Me.Button20)
         Me.PanelSideMenu.Controls.Add(Me.btnExit)
         Me.PanelSideMenu.Controls.Add(Me.btnHelp)
@@ -195,27 +193,6 @@ Partial Class Presentacion
         Me.PanelSideMenu.Name = "PanelSideMenu"
         Me.PanelSideMenu.Size = New System.Drawing.Size(250, 768)
         Me.PanelSideMenu.TabIndex = 0
-        '
-        'Button26
-        '
-        Me.Button26.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button26.FlatAppearance.BorderSize = 0
-        Me.Button26.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.Button26.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Button26.ForeColor = System.Drawing.Color.Silver
-        Me.Button26.Image = Global.Mantenimiento.My.Resources.Resources.icons8_tanque_de_almacenamiento_químico_64
-        Me.Button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button26.Location = New System.Drawing.Point(0, 1703)
-        Me.Button26.Name = "Button26"
-        Me.Button26.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.Button26.Size = New System.Drawing.Size(229, 68)
-        Me.Button26.TabIndex = 11
-        Me.Button26.Text = "Tank Farm"
-        Me.Button26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button26.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button26.UseVisualStyleBackColor = True
         '
         'Button20
         '
@@ -248,7 +225,7 @@ Partial Class Presentacion
         Me.btnExit.ForeColor = System.Drawing.Color.Silver
         Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 1771)
+        Me.btnExit.Location = New System.Drawing.Point(0, 1703)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnExit.Size = New System.Drawing.Size(229, 39)
@@ -893,5 +870,4 @@ Partial Class Presentacion
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Private WithEvents Button26 As Button
 End Class

@@ -283,11 +283,7 @@ Public Class Presentacion
         hideSubmenu()
     End Sub
 
-    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
-        openChildForm(New Tank_Farm.Niveles())
-
-        hideSubmenu()
+    Private Sub Presentacion_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Mantenimiento.Login.Close()
     End Sub
-
-
 End Class

@@ -83,7 +83,7 @@ Public Class Login
             If validLogin = True Then
                 'Dim frm As New FormPrincipal()
 
-                Dim frm As New Mantenimiento.Presentacion()
+                Dim frm As New Mantenimiento.Programas()
 
                 frm.Show()
 
@@ -94,7 +94,8 @@ Public Class Login
                     My.Settings.recordarusuario = 1
                     My.Settings.Save()
                 End If
-                Me.Hide()
+                Me.Close()
+                'Me.Hide()
 
             Else
                 My.Settings.logout = 0
@@ -108,17 +109,19 @@ Public Class Login
             MsgBox(vbCrLf & ex.Message)
         End Try
     End Sub
-
+    'Fuera de servicio el sistema de logout
     Private Sub logout(sender As Object, e As FormClosedEventArgs)
         If My.Settings.logout = 1 Then
 
             txtPass.Clear()
-            Me.Show()
+            ' Mantenimiento.Programas.Show()
+            'Me.Show()
             txtPass.Focus()
         ElseIf My.Settings.logout = 0 Then
             txtUser.Clear()
             txtPass.Clear()
-            Me.Show()
+            'Mantenimiento.Programas.Show()
+            'Me.Show()
             txtPass.Focus()
         End If
 
@@ -139,11 +142,11 @@ Public Class Login
                     If validLogin = True Then
                         'Dim frm As New FormPrincipal()
 
-                        Dim frm As New Mantenimiento.Presentacion()
+                        Dim frm As New Mantenimiento.Programas()
                         frm.Show()
 
                         AddHandler frm.FormClosed, AddressOf Me.logout
-
+                        'Me.Close()
                         Me.Hide()
 
                     Else
