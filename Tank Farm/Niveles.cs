@@ -142,6 +142,7 @@ namespace Tank_Farm
         }
 
 
+
         //Desconecta la conexion al PLC
         private void Desconectar()
         {
@@ -157,30 +158,31 @@ namespace Tank_Farm
             else if (Solvente == "MEK") { imagen = picMEK; }
             else if (Solvente == "N-Propanol") { imagen = picNPropanol; }
             else { imagen = picAcetone; }
-           
-            if (Peso * 100 / maxMasa <= 0 ) {
+            float porce;
+            porce = Peso * 100 / maxMasa;
+            if (porce <= 0 ) {
                 imagen.Image = Tank_Farm.Properties.Resources.Vacio;
             }
+           
+            else if (porce>= 0.001 && porce  <= 10) { imagen.Image = Tank_Farm.Properties.Resources._10; }
 
-            else if (Peso*100/maxMasa>= 1 && Peso * 100 / maxMasa <= 10) { imagen.Image = Tank_Farm.Properties.Resources._10; }
+            else if (porce >= 10.001 && porce <= 20) { imagen.Image = Tank_Farm.Properties.Resources._20; }
 
-            else if (Peso * 100 / maxMasa >= 11 && Peso * 100 / maxMasa <= 20) { imagen.Image = Tank_Farm.Properties.Resources._20; }
+            else if (porce >= 20.001 && porce <= 30) { imagen.Image = Tank_Farm.Properties.Resources._30; }
 
-            else if (Peso * 100 / maxMasa >= 21 && Peso * 100 / maxMasa <= 30) { imagen.Image = Tank_Farm.Properties.Resources._30; }
+            else if (porce >= 30.001 && porce <= 40) { imagen.Image = Tank_Farm.Properties.Resources._40; }
 
-            else if (Peso * 100 / maxMasa >= 31 && Peso * 100 / maxMasa <= 40) { imagen.Image = Tank_Farm.Properties.Resources._40; }
+            else if (porce >= 40.001 && porce <= 50) { imagen.Image = Tank_Farm.Properties.Resources._50; }
 
-            else if (Peso * 100 / maxMasa >= 41 && Peso * 100 / maxMasa <= 50) { imagen.Image = Tank_Farm.Properties.Resources._50; }
+            else if (porce >= 50.001 && porce <= 60) { imagen.Image = Tank_Farm.Properties.Resources._60; }
 
-            else if (Peso * 100 / maxMasa >= 51 && Peso * 100 / maxMasa <= 60) { imagen.Image = Tank_Farm.Properties.Resources._60; }
+            else if (porce >= 60.001 && porce <= 70) { imagen.Image = Tank_Farm.Properties.Resources._70; }
 
-            else if (Peso * 100 / maxMasa >= 61 && Peso * 100 / maxMasa <= 70) { imagen.Image = Tank_Farm.Properties.Resources._70; }
+            else if (porce >= 70.001 && porce <= 80) { imagen.Image = Tank_Farm.Properties.Resources._80; }
 
-            else if (Peso * 100 / maxMasa >= 71 && Peso * 100 / maxMasa <= 80) { imagen.Image = Tank_Farm.Properties.Resources._80; }
+            else if (porce >= 80.001 && porce <= 90) { imagen.Image = Tank_Farm.Properties.Resources._90; }
 
-            else if (Peso * 100 / maxMasa >= 81 && Peso * 100 / maxMasa <= 90) { imagen.Image = Tank_Farm.Properties.Resources._90; }
-
-            else if (Peso * 100 / maxMasa >= 91) { imagen.Image = Tank_Farm.Properties.Resources._100_1; }
+            else if (porce >= 90.001) { imagen.Image = Tank_Farm.Properties.Resources._100_1; }
 
 
 
