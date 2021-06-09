@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Mantenimiento.exe" version="3.0.0.37" publicKeyToken="3bd51f91ae165d88" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="SIM PRO.exe" version="3.0.0.39" publicKeyToken="3bd51f91ae165d88" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Otros\tools_22686.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Mantenimiento" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-    <commandLine file="Mantenimiento.exe" parameters="" />
+    <assemblyIdentity name="SIM PRO" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SIM PRO.exe" parameters="" />
   </entryPoint>
   <trustInfo>
     <security>
@@ -139,18 +139,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mantenimiento.exe" size="935352">
-      <assemblyIdentity name="Mantenimiento" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>krDgJHhhn8KlNvXzZf92RfzKwX5iTRg1c8ioWn/Cj6U=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MessagingToolkit.QRCode.dll" size="6193152">
       <assemblyIdentity name="MessagingToolkit.QRCode" version="1.0.3541.23206" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -171,6 +159,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>zXLWnDlhkytIrl2oogPfnDwMtji5Z9t1vgdl4cE0hpE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIM PRO.exe" size="935352">
+      <assemblyIdentity name="SIM PRO" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>StAHwYEYmj8vo8ahO45AcjbiblDaGsSYmGUi0tWqxb8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -198,15 +198,6 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Mantenimiento.exe.config" size="2276">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>78EUuGpXuXI4CzsuBiqL11zVSdM86qBIMJv4zM8HEK0=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Otros\tools_22686.ico" size="16958">
     <hash>
       <dsig:Transforms>
@@ -234,6 +225,15 @@
       <dsig:DigestValue>uxjFQNbB7IDX066aU48yBebj5pXGeI5AbXk8U9UO1BU=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="SIM PRO.exe.config" size="2276">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>78EUuGpXuXI4CzsuBiqL11zVSdM86qBIMJv4zM8HEK0=</dsig:DigestValue>
+    </hash>
+  </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
     <application>
       <!-- A list of the Windows versions that this application has been tested on
@@ -251,4 +251,4 @@
       <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
     </application>
   </compatibility>
-<publisherIdentity name="CN=MATW\MAlvarado" issuerKeyHash="e60325b744c1248f6db394300d893e65a7fd8612" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>2Nmn6QcgFlMgnv9EGAVB0h6+FZFzD7zu/5jNweXQQi4=</DigestValue></Reference></SignedInfo><SignatureValue>Ng4usOhXR8NAknoQa05UxEH19tC9wLLozavuxckCDCfj66YdTUM7aAUuX99OTjuTFW7xg7AdRCJ7HKe9naEA+pxpV6XheGA4kf04zFTvEL/MbBn7Jk8IzJ5wbgNcjWHFeIMS4Q8NuoUiWnsJtPudo0KqBQidyYGYB6DfrieAgSQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>t0SZrpDu7l/fAMFVHyJ/xDPVk3TB9D21u5TGCZQQ8vfsHKnYMqbeTdsETrwTtu+RDZaZc6/wiuwjv1ay6S0i7yTSL32uAkMDg9DoNGWELPbCX5uiXBj7tK0yJHTUL88vvLqkpr/MMWTcuYZOSaOIkkFaoZ10Xwc7UuEFNyWVLq0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="2e42d0e5c1cd98ffeebc0f739115be1ed241051844ff9e2053162007e9a7d9d8" Description="" Url=""><as:assemblyIdentity name="Mantenimiento.exe" version="3.0.0.37" publicKeyToken="3bd51f91ae165d88" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=MATW\MAlvarado</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>5lxGjpOoFRXupZ8kTYg0aN7itGudM5bH+WCrL0kUNZ0=</DigestValue></Reference></SignedInfo><SignatureValue>nkxTKgMUS2cggdk9ePz6FZwpSqrRtOTBGZ7Mg62OD5Y6HEMRV2vnWIMfwwGBnajcOsrhtWHuqNnDw6j6dA+DCzGJ6CaA6fy+ryYJ4E74pSsJEbYhKZPlJPB5pA7s+sgLKeu5T7gSOaRrnI0H6EuRuOTxnD3Es2gdn/9RExVyjE8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>t0SZrpDu7l/fAMFVHyJ/xDPVk3TB9D21u5TGCZQQ8vfsHKnYMqbeTdsETrwTtu+RDZaZc6/wiuwjv1ay6S0i7yTSL32uAkMDg9DoNGWELPbCX5uiXBj7tK0yJHTUL88vvLqkpr/MMWTcuYZOSaOIkkFaoZ10Xwc7UuEFNyWVLq0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQWJwmGW7wTIFNnHrSM/+v5jANBgkqhkiG9w0BAQsFADAnMSUwIwYDVQQDHhwATQBBAFQAVwBcAE0AQQBsAHYAYQByAGEAZABvMB4XDTIwMDkwNTE2MTIzM1oXDTIxMDkwNTIyMTIzM1owJzElMCMGA1UEAx4cAE0AQQBUAFcAXABNAEEAbAB2AGEAcgBhAGQAbzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAt0SZrpDu7l/fAMFVHyJ/xDPVk3TB9D21u5TGCZQQ8vfsHKnYMqbeTdsETrwTtu+RDZaZc6/wiuwjv1ay6S0i7yTSL32uAkMDg9DoNGWELPbCX5uiXBj7tK0yJHTUL88vvLqkpr/MMWTcuYZOSaOIkkFaoZ10Xwc7UuEFNyWVLq0CAwEAATANBgkqhkiG9w0BAQsFAAOBgQCeKVziWjWJBJy0/pIV88MPu6qWt4FK0Vzj4qcnAhlXC8SlMAQ6EdmrjT/F3A8zO0vx4+dOgqysqfRqC/yLG8YRif9kkbLtpvTdjQfNMNjP3JYfks3kym7EjF8Rcxks4npwlM4P/ZRm9Z6kj4Wo9bZ+U8h687vVA2uOOv7Uoaxtlg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=MATW\MAlvarado" issuerKeyHash="e60325b744c1248f6db394300d893e65a7fd8612" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>vV0Ki5aKj5swO9tj63S48Lh7Agxx+DFsX/bGqUqz50s=</DigestValue></Reference></SignedInfo><SignatureValue>UEUpBZ0Q4pMykWozJmIk6S9MRhZo8ZPkwHEkfCw/BkstZNfdyWky1fdJTJ581tzJUbmsFzRpmXe65grfWFd6ImyLsICaIxzGolCuvDRRUqzb0ROPaBx9tpbeu0iQ8yrT2rZaq6C38j9avMUKSLalwxKqS8U7RaMMFMSELsr1GTA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>t0SZrpDu7l/fAMFVHyJ/xDPVk3TB9D21u5TGCZQQ8vfsHKnYMqbeTdsETrwTtu+RDZaZc6/wiuwjv1ay6S0i7yTSL32uAkMDg9DoNGWELPbCX5uiXBj7tK0yJHTUL88vvLqkpr/MMWTcuYZOSaOIkkFaoZ10Xwc7UuEFNyWVLq0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="4be7b34aa9c6f65f6c31f8710c027bb8f0b874eb63db3b309b8f8a968b0a5dbd" Description="" Url=""><as:assemblyIdentity name="SIM PRO.exe" version="3.0.0.39" publicKeyToken="3bd51f91ae165d88" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=MATW\MAlvarado</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>8bHlA1SC6QO+wnFxgOShOKQatdEzCntkAyNOOieDYAM=</DigestValue></Reference></SignedInfo><SignatureValue>i55IA7gxCerYsxM1gkvyuwtmqr3/qPp5J3sE/kaYxzfT31Tfjx+RmVhHZLcweIXc8fJBM/+AN1N0/Cv06dnjgdV9M3VLbwzJ0t/61H3GDB4HPPHTMBmq7u9Gm492f2KBLMoW/jme/AN3iqPta8YICifCAtxgfs0N6n9xkOvdUC8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>t0SZrpDu7l/fAMFVHyJ/xDPVk3TB9D21u5TGCZQQ8vfsHKnYMqbeTdsETrwTtu+RDZaZc6/wiuwjv1ay6S0i7yTSL32uAkMDg9DoNGWELPbCX5uiXBj7tK0yJHTUL88vvLqkpr/MMWTcuYZOSaOIkkFaoZ10Xwc7UuEFNyWVLq0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQWJwmGW7wTIFNnHrSM/+v5jANBgkqhkiG9w0BAQsFADAnMSUwIwYDVQQDHhwATQBBAFQAVwBcAE0AQQBsAHYAYQByAGEAZABvMB4XDTIwMDkwNTE2MTIzM1oXDTIxMDkwNTIyMTIzM1owJzElMCMGA1UEAx4cAE0AQQBUAFcAXABNAEEAbAB2AGEAcgBhAGQAbzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAt0SZrpDu7l/fAMFVHyJ/xDPVk3TB9D21u5TGCZQQ8vfsHKnYMqbeTdsETrwTtu+RDZaZc6/wiuwjv1ay6S0i7yTSL32uAkMDg9DoNGWELPbCX5uiXBj7tK0yJHTUL88vvLqkpr/MMWTcuYZOSaOIkkFaoZ10Xwc7UuEFNyWVLq0CAwEAATANBgkqhkiG9w0BAQsFAAOBgQCeKVziWjWJBJy0/pIV88MPu6qWt4FK0Vzj4qcnAhlXC8SlMAQ6EdmrjT/F3A8zO0vx4+dOgqysqfRqC/yLG8YRif9kkbLtpvTdjQfNMNjP3JYfks3kym7EjF8Rcxks4npwlM4P/ZRm9Z6kj4Wo9bZ+U8h687vVA2uOOv7Uoaxtlg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

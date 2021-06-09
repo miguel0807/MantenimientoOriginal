@@ -94,8 +94,8 @@ Public Class Login
                     My.Settings.recordarusuario = 1
                     My.Settings.Save()
                 End If
-                Me.Close()
-                'Me.Hide()
+                'Me.Close()
+                Me.Hide()
 
             Else
                 My.Settings.logout = 0
