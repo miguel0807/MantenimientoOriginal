@@ -51,4 +51,14 @@
     Private Sub Programas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'sympro
     End Sub
+
+    Private Sub Panel1_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel1.MouseMove
+        Proyecto.FormPrincipal.ReleaseCapture()
+        Proyecto.FormPrincipal.SendMessage(Me.Handle, &H112&, &HF012&, 0)
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Application.Exit()
+
+    End Sub
 End Class

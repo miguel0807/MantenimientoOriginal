@@ -50,10 +50,10 @@ namespace Tank_Farm
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.picMEK = new System.Windows.Forms.PictureBox();
             this.picEtyl = new System.Windows.Forms.PictureBox();
             this.picAcetone = new System.Windows.Forms.PictureBox();
@@ -100,7 +100,7 @@ namespace Tank_Farm
             this.btnConectar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConectar.Location = new System.Drawing.Point(17, 650);
             this.btnConectar.Name = "btnConectar";
-            this.btnConectar.Size = new System.Drawing.Size(123, 38);
+            this.btnConectar.Size = new System.Drawing.Size(140, 38);
             this.btnConectar.TabIndex = 2;
             this.btnConectar.Text = "Conectar";
             this.btnConectar.UseVisualStyleBackColor = false;
@@ -325,23 +325,14 @@ namespace Tank_Farm
             this.panel1.Size = new System.Drawing.Size(1033, 426);
             this.panel1.TabIndex = 23;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanel4
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkRed;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(10, 426);
-            this.flowLayoutPanel1.TabIndex = 16;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.DarkRed;
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(1023, 0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(10, 426);
-            this.flowLayoutPanel2.TabIndex = 17;
+            this.flowLayoutPanel4.BackColor = System.Drawing.Color.DarkRed;
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(10, 0);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1013, 10);
+            this.flowLayoutPanel4.TabIndex = 18;
             // 
             // flowLayoutPanel3
             // 
@@ -352,14 +343,23 @@ namespace Tank_Farm
             this.flowLayoutPanel3.Size = new System.Drawing.Size(1013, 10);
             this.flowLayoutPanel3.TabIndex = 17;
             // 
-            // flowLayoutPanel4
+            // flowLayoutPanel2
             // 
-            this.flowLayoutPanel4.BackColor = System.Drawing.Color.DarkRed;
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(10, 0);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(1013, 10);
-            this.flowLayoutPanel4.TabIndex = 18;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.DarkRed;
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(1023, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(10, 426);
+            this.flowLayoutPanel2.TabIndex = 17;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkRed;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(10, 426);
+            this.flowLayoutPanel1.TabIndex = 16;
             // 
             // picMEK
             // 
@@ -466,6 +466,7 @@ namespace Tank_Farm
             this.MinimumSize = new System.Drawing.Size(1070, 773);
             this.Name = "Niveles";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tank Farm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Niveles_FormClosed);
             this.Load += new System.EventHandler(this.Niveles_Load);

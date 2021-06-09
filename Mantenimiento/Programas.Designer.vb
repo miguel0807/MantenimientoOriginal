@@ -27,7 +27,11 @@ Partial Class Programas
         Me.button1 = New System.Windows.Forms.Button()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Button26 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnClose = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'button2
@@ -60,7 +64,7 @@ Partial Class Programas
         Me.button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.button1.ForeColor = System.Drawing.Color.Black
         Me.button1.Image = Global.Mantenimiento.My.Resources.Resources.mantenimiento_64
-        Me.button1.Location = New System.Drawing.Point(466, 282)
+        Me.button1.Location = New System.Drawing.Point(438, 282)
         Me.button1.Name = "button1"
         Me.button1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.button1.Size = New System.Drawing.Size(308, 136)
@@ -101,22 +105,49 @@ Partial Class Programas
         Me.Button26.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button26.UseVisualStyleBackColor = False
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.btnClose)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1167, 38)
+        Me.Panel1.TabIndex = 21
+        '
+        'btnClose
+        '
+        Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.Image = Global.Mantenimiento.My.Resources.Resources.Delete_80_icon_icons_com_57340
+        Me.btnClose.Location = New System.Drawing.Point(1122, 0)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(32, 32)
+        Me.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnClose.TabIndex = 22
+        Me.btnClose.TabStop = False
+        '
         'Programas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1167, 512)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.button2)
         Me.Controls.Add(Me.button1)
         Me.Controls.Add(Me.PictureBox9)
         Me.Controls.Add(Me.Button26)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Programas"
         Me.Opacity = 0.98R
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -125,4 +156,6 @@ Partial Class Programas
     Private WithEvents button1 As Button
     Friend WithEvents PictureBox9 As PictureBox
     Private WithEvents Button26 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnClose As PictureBox
 End Class
