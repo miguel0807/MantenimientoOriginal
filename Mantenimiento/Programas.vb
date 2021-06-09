@@ -47,4 +47,8 @@
         f.Show()
         Me.Close()
     End Sub
+
+    Private Sub Programas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'sympro
+    End Sub
 End Class
