@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Tank Farm.exe.manifest" size="4199">
+    <dependentAssembly dependencyType="install" codebase="Tank Farm.exe.manifest" size="4200">
       <assemblyIdentity name="Tank Farm.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CAa83xf0vt3DOhsb+C/nB2nf2J5WPZW9+uD39eFV0I0=</dsig:DigestValue>
+        <dsig:DigestValue>7l78XWX7PhhCw/+xLVOehDmnyAufNTEuSSZ492gHpSg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

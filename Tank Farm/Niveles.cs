@@ -23,7 +23,7 @@ namespace Tank_Farm
         //Masa de tanques
         float masaAcetona = 39235.07019f;
         float masaMEK = 39830.44303f;
-        float masaNPropanil = 39770.90575f;
+        float masaNPropanol = 39770.90575f;
         float masaEtyl = 44593.42576f;
 
 
@@ -51,6 +51,15 @@ namespace Tank_Farm
             txtnivelNPropanol.Text = CargarDireccion(direclNPropanol).ToString();
             txtnivelEtyl.Text = CargarDireccion(direcEtyl).ToString();
 
+            CargaImagen(float.Parse(txtnivelAcetona.Text), masaAcetona, "Acetona");
+            CargaImagen(float.Parse(txtnivelEtyl.Text), masaEtyl, "Etyl");
+            CargaImagen(float.Parse(txtnivelMEK.Text), masaMEK, "MEK");
+            CargaImagen(float.Parse(txtnivelNPropanol.Text), masaNPropanol, "N-Propanol");
+            CalculaPorcentaje(txtnivelAcetona, masaAcetona, porcentajeAcetona);
+            CalculaPorcentaje(txtnivelEtyl, masaEtyl, porcentajeAcetato);
+            CalculaPorcentaje(txtnivelMEK, masaMEK, porcentajeMEK);
+            CalculaPorcentaje(txtnivelNPropanol, masaNPropanol, porcentajeNPropanol);
+
         }
 
         //Boton para realizar la reconexion cuando se desconecte la conexion
@@ -59,9 +68,24 @@ namespace Tank_Farm
             Conectar();
         }
 
+        //Boton para cargar pruebas
         private void button1_Click(object sender, EventArgs e)
         {
+            txtnivelAcetona.Text = CargarDireccion(direcAcetone).ToString();
+            txtnivelMEK.Text = CargarDireccion(direcMEK).ToString();
+            txtnivelNPropanol.Text = CargarDireccion(direclNPropanol).ToString();
+            txtnivelEtyl.Text = CargarDireccion(direcEtyl).ToString();
+
             CargaImagen(float.Parse(txtnivelAcetona.Text), masaAcetona, "Acetona");
+            CargaImagen(float.Parse(txtnivelEtyl.Text), masaEtyl, "Etyl");
+            CargaImagen(float.Parse(txtnivelMEK.Text), masaMEK, "MEK");
+            CargaImagen(float.Parse(txtnivelNPropanol.Text), masaNPropanol, "N-Propanol");
+            CalculaPorcentaje(txtnivelAcetona,masaAcetona,porcentajeAcetona);
+            CalculaPorcentaje(txtnivelEtyl, masaEtyl, porcentajeAcetato);
+            CalculaPorcentaje(txtnivelMEK, masaMEK, porcentajeMEK);
+            CalculaPorcentaje(txtnivelNPropanol, masaNPropanol, porcentajeNPropanol);
+
+
         }
 
         //Realiza la conexion al PLC
@@ -127,38 +151,52 @@ namespace Tank_Farm
         }
 
         //Cargar imagenes
-
         private void CargaImagen (float Peso, float maxMasa, string Solvente){
+            PictureBox imagen;
+            if (Solvente == "Acetona") { imagen = picAcetone; }
+            else if (Solvente == "Etyl") { imagen = picEtyl; }
+            else if (Solvente == "MEK") { imagen = picMEK; }
+            else if (Solvente == "N-Propanol") { imagen = picNPropanol; }
+            else { imagen = picAcetone; }
+           
             if (Peso <= 0 && Solvente == "Acetona") {
                 picAcetone.Image = Tank_Farm.Properties.Resources.Vacio;
             }
 
-            else if (Peso * 100 / maxMasa >= 1 && Peso * 100 / maxMasa <= 10) { picAcetone.Image = Tank_Farm.Properties.Resources._10; }
+            else if (Peso*100/maxMasa>= 1 && Peso * 100 / maxMasa <= 10) { imagen.Image = Tank_Farm.Properties.Resources._10; }
 
-            else if (Peso * 100 / maxMasa >= 11 && Peso * 100 / maxMasa <= 20) { picAcetone.Image = Tank_Farm.Properties.Resources._20; }
+            else if (Peso * 100 / maxMasa >= 11 && Peso * 100 / maxMasa <= 20) { imagen.Image = Tank_Farm.Properties.Resources._20; }
 
-            else if (Peso * 100 / maxMasa >= 21 && Peso * 100 / maxMasa <= 30) { picAcetone.Image = Tank_Farm.Properties.Resources._30; }
+            else if (Peso * 100 / maxMasa >= 21 && Peso * 100 / maxMasa <= 30) { imagen.Image = Tank_Farm.Properties.Resources._30; }
 
-            else if (Peso * 100 / maxMasa >= 31 && Peso * 100 / maxMasa <= 40) { picAcetone.Image = Tank_Farm.Properties.Resources._40; }
+            else if (Peso * 100 / maxMasa >= 31 && Peso * 100 / maxMasa <= 40) { imagen.Image = Tank_Farm.Properties.Resources._40; }
 
-            else if (Peso * 100 / maxMasa >= 41 && Peso * 100 / maxMasa <= 50) { picAcetone.Image = Tank_Farm.Properties.Resources._50; }
+            else if (Peso * 100 / maxMasa >= 41 && Peso * 100 / maxMasa <= 50) { imagen.Image = Tank_Farm.Properties.Resources._50; }
 
-            else if (Peso * 100 / maxMasa >= 51 && Peso * 100 / maxMasa <= 60) { picAcetone.Image = Tank_Farm.Properties.Resources._60; }
+            else if (Peso * 100 / maxMasa >= 51 && Peso * 100 / maxMasa <= 60) { imagen.Image = Tank_Farm.Properties.Resources._60; }
 
-            else if (Peso * 100 / maxMasa >= 61 && Peso * 100 / maxMasa <= 70) { picAcetone.Image = Tank_Farm.Properties.Resources._70; }
+            else if (Peso * 100 / maxMasa >= 61 && Peso * 100 / maxMasa <= 70) { imagen.Image = Tank_Farm.Properties.Resources._70; }
 
-            else if (Peso * 100 / maxMasa >= 71 && Peso * 100 / maxMasa <= 80) { picAcetone.Image = Tank_Farm.Properties.Resources._80; }
+            else if (Peso * 100 / maxMasa >= 71 && Peso * 100 / maxMasa <= 80) { imagen.Image = Tank_Farm.Properties.Resources._80; }
 
-            else if (Peso * 100 / maxMasa >= 81 && Peso * 100 / maxMasa <= 90) { picAcetone.Image = Tank_Farm.Properties.Resources._90; }
+            else if (Peso * 100 / maxMasa >= 81 && Peso * 100 / maxMasa <= 90) { imagen.Image = Tank_Farm.Properties.Resources._90; }
 
-            else if (Peso * 100 / maxMasa >= 91) { picAcetone.Image = Tank_Farm.Properties.Resources._100_1; }
+            else if (Peso * 100 / maxMasa >= 91) { imagen.Image = Tank_Farm.Properties.Resources._100_1; }
 
 
 
 
         }
     
+        //Calcula porcentaje de cilindro
+        private void CalculaPorcentaje (TextBox txtPeso, float maxMasa, TextBox txtbox)
+        { float porcentaje=0;
 
+           
+            porcentaje = float.Parse(txtPeso.Text) * 100 / maxMasa ;
+
+            txtbox.Text =  porcentaje.ToString("#.##")+"%";
+        }
 
 
     }
