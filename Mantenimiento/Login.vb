@@ -63,12 +63,12 @@ Public Class Login
         Me.CenterToScreen()
         txtPass.Focus()
 
-        If My.Settings.recordarusuario = 1 Then
-            CheckBox1.Checked = True
-            txtPass.Focus()
-        Else
-            CheckBox1.Checked = False
-        End If
+        'If My.Settings.recordarusuario = 1 Then
+        'CheckBox1.Checked = True
+        'txtPass.Focus()
+        'Else
+        'CheckBox1.Checked = False
+        'End If
 
     End Sub
 
@@ -76,7 +76,12 @@ Public Class Login
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Try
-
+            If CheckBox1.Checked = True Then
+                My.Settings.usuario = txtUser.Text
+                My.Settings.logout = 1
+                My.Settings.recordarusuario = 1
+                My.Settings.Save()
+            End If
 
             Dim userModel As New UserModel()
             Dim validLogin = userModel.Login(txtUser.Text, txtPass.Text)
@@ -135,7 +140,12 @@ Public Class Login
         Select Case e.KeyData
             Case Keys.Enter
                 Try
-
+                    If CheckBox1.Checked = True Then
+                        My.Settings.usuario = txtUser.Text
+                        My.Settings.logout = 1
+                        My.Settings.recordarusuario = 1
+                        My.Settings.Save()
+                    End If
 
                     Dim userModel As New UserModel()
                     Dim validLogin = userModel.Login(txtUser.Text, txtPass.Text)
@@ -161,5 +171,7 @@ Public Class Login
         End Select
     End Sub
 
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
 
+    End Sub
 End Class
