@@ -143,6 +143,7 @@ Partial Class Presentacion
         'button3
         '
         Me.button3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.button3.Enabled = False
         Me.button3.FlatAppearance.BorderSize = 0
         Me.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -160,6 +161,7 @@ Partial Class Presentacion
         'button2
         '
         Me.button2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.button2.Enabled = False
         Me.button2.FlatAppearance.BorderSize = 0
         Me.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -205,7 +207,7 @@ Partial Class Presentacion
         Me.Button20.ForeColor = System.Drawing.Color.Silver
         Me.Button20.Image = Global.Mantenimiento.My.Resources.Resources.Delete_80_icon_icons_com_57340
         Me.Button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button20.Location = New System.Drawing.Point(0, 1637)
+        Me.Button20.Location = New System.Drawing.Point(0, 1648)
         Me.Button20.Name = "Button20"
         Me.Button20.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.Button20.Size = New System.Drawing.Size(229, 66)
@@ -225,7 +227,7 @@ Partial Class Presentacion
         Me.btnExit.ForeColor = System.Drawing.Color.Silver
         Me.btnExit.Image = CType(resources.GetObject("btnExit.Image"), System.Drawing.Image)
         Me.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExit.Location = New System.Drawing.Point(0, 1703)
+        Me.btnExit.Location = New System.Drawing.Point(0, 1714)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnExit.Size = New System.Drawing.Size(229, 39)
@@ -238,6 +240,7 @@ Partial Class Presentacion
         'btnHelp
         '
         Me.btnHelp.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnHelp.Enabled = False
         Me.btnHelp.FlatAppearance.BorderSize = 0
         Me.btnHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(34, Byte), Integer))
@@ -249,7 +252,7 @@ Partial Class Presentacion
         Me.btnHelp.Location = New System.Drawing.Point(0, 1569)
         Me.btnHelp.Name = "btnHelp"
         Me.btnHelp.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnHelp.Size = New System.Drawing.Size(229, 68)
+        Me.btnHelp.Size = New System.Drawing.Size(229, 79)
         Me.btnHelp.TabIndex = 8
         Me.btnHelp.Text = "   Notas"
         Me.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -289,6 +292,7 @@ Partial Class Presentacion
         'Button21
         '
         Me.Button21.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button21.Enabled = False
         Me.Button21.FlatAppearance.BorderSize = 0
         Me.Button21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -306,6 +310,7 @@ Partial Class Presentacion
         'Button19
         '
         Me.Button19.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button19.Enabled = False
         Me.Button19.FlatAppearance.BorderSize = 0
         Me.Button19.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button19.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -323,6 +328,7 @@ Partial Class Presentacion
         'Button18
         '
         Me.Button18.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button18.Enabled = False
         Me.Button18.FlatAppearance.BorderSize = 0
         Me.Button18.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button18.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -352,6 +358,7 @@ Partial Class Presentacion
         'Button1
         '
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button1.Enabled = False
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -369,6 +376,7 @@ Partial Class Presentacion
         'button10
         '
         Me.button10.Dock = System.Windows.Forms.DockStyle.Top
+        Me.button10.Enabled = False
         Me.button10.FlatAppearance.BorderSize = 0
         Me.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -386,6 +394,7 @@ Partial Class Presentacion
         'Button4
         '
         Me.Button4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button4.Enabled = False
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -403,6 +412,7 @@ Partial Class Presentacion
         'Button17
         '
         Me.Button17.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button17.Enabled = False
         Me.Button17.FlatAppearance.BorderSize = 0
         Me.Button17.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -420,6 +430,7 @@ Partial Class Presentacion
         'Button9
         '
         Me.Button9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button9.Enabled = False
         Me.Button9.FlatAppearance.BorderSize = 0
         Me.Button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -450,6 +461,7 @@ Partial Class Presentacion
         'Button16
         '
         Me.Button16.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button16.Enabled = False
         Me.Button16.FlatAppearance.BorderSize = 0
         Me.Button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray
@@ -468,6 +480,7 @@ Partial Class Presentacion
         'Button15
         '
         Me.Button15.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button15.Enabled = False
         Me.Button15.FlatAppearance.BorderSize = 0
         Me.Button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray
@@ -486,6 +499,7 @@ Partial Class Presentacion
         'Button14
         '
         Me.Button14.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button14.Enabled = False
         Me.Button14.FlatAppearance.BorderSize = 0
         Me.Button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray
@@ -504,6 +518,7 @@ Partial Class Presentacion
         'Button5
         '
         Me.Button5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button5.Enabled = False
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray
@@ -522,6 +537,7 @@ Partial Class Presentacion
         'Button11
         '
         Me.Button11.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button11.Enabled = False
         Me.Button11.FlatAppearance.BorderSize = 0
         Me.Button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -539,6 +555,7 @@ Partial Class Presentacion
         'Button6
         '
         Me.Button6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button6.Enabled = False
         Me.Button6.FlatAppearance.BorderSize = 0
         Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -556,6 +573,7 @@ Partial Class Presentacion
         'button12
         '
         Me.button12.Dock = System.Windows.Forms.DockStyle.Top
+        Me.button12.Enabled = False
         Me.button12.FlatAppearance.BorderSize = 0
         Me.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -573,6 +591,7 @@ Partial Class Presentacion
         'button13
         '
         Me.button13.Dock = System.Windows.Forms.DockStyle.Top
+        Me.button13.Enabled = False
         Me.button13.FlatAppearance.BorderSize = 0
         Me.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -621,6 +640,7 @@ Partial Class Presentacion
         'button7
         '
         Me.button7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.button7.Enabled = False
         Me.button7.FlatAppearance.BorderSize = 0
         Me.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -638,6 +658,7 @@ Partial Class Presentacion
         'button8
         '
         Me.button8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.button8.Enabled = False
         Me.button8.FlatAppearance.BorderSize = 0
         Me.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -690,6 +711,7 @@ Partial Class Presentacion
         'Button25
         '
         Me.Button25.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button25.Enabled = False
         Me.Button25.FlatAppearance.BorderSize = 0
         Me.Button25.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button25.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -707,6 +729,7 @@ Partial Class Presentacion
         'Button24
         '
         Me.Button24.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button24.Enabled = False
         Me.Button24.FlatAppearance.BorderSize = 0
         Me.Button24.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button24.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -724,6 +747,7 @@ Partial Class Presentacion
         'Button23
         '
         Me.Button23.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button23.Enabled = False
         Me.Button23.FlatAppearance.BorderSize = 0
         Me.Button23.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button23.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -741,6 +765,7 @@ Partial Class Presentacion
         'Button22
         '
         Me.Button22.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button22.Enabled = False
         Me.Button22.FlatAppearance.BorderSize = 0
         Me.Button22.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.Button22.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(46, Byte), Integer))

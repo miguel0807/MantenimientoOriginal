@@ -23,15 +23,16 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\</InstallUrl>
     <UpdateUrl>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\</UpdateUrl>
     <ProductName>SIM PRO</ProductName>
     <PublisherName>Miguel Alvarado</PublisherName>
+    <MinimumRequiredVersion>4.0.0.1</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>40</ApplicationRevision>
-    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

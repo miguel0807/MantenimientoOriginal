@@ -21,6 +21,73 @@ Public Class Presentacion
         PanelTareas.Visible = False
         PanelToolsSubmenu.Size = New Size(229, 550)
 
+        If Label3.Text = "Administrador" Then
+            btnHelp.Enabled = True
+            button2.Enabled = True
+            button3.Enabled = True
+            Button22.Enabled = True
+            Button23.Enabled = True
+            Button24.Enabled = True
+            Button25.Enabled = True
+            button8.Enabled = True
+            button7.Enabled = True
+            button13.Enabled = True
+            button12.Enabled = True
+            Button6.Enabled = True
+            Button11.Enabled = True
+            Button5.Enabled = True
+            Button14.Enabled = True
+            Button15.Enabled = True
+            Button16.Enabled = True
+            Button9.Enabled = True
+            Button17.Enabled = True
+            Button4.Enabled = True
+            button10.Enabled = True
+            Button1.Enabled = True
+            Button18.Enabled = True
+            Button19.Enabled = True
+            Button21.Enabled = True
+            btnHelp.Enabled = True
+
+        ElseIf Label3.Text = "Técnico Mantenimiento" Then
+            button2.Enabled = True
+            button3.Enabled = True
+            'Button22.Enabled = True
+            Button23.Enabled = True
+            Button24.Enabled = True
+            Button25.Enabled = True
+
+            'button8.Enabled = True
+            button7.Enabled = True
+
+            button13.Enabled = True
+            'button12.Enabled = True
+            Button6.Enabled = True
+            Button11.Enabled = True
+            Button5.Enabled = True
+            Button14.Enabled = True
+            'Button15.Enabled = True
+            'Button16.Enabled = True
+
+
+            Button9.Enabled = True
+            'Button17.Enabled = True
+            'Button4.Enabled = True
+
+            'button10.Enabled = True
+            'Button1.Enabled = True
+            ' Button18.Enabled = True
+            ' Button19.Enabled = True
+            'Button21.Enabled = True
+            btnHelp.Enabled = True
+
+        ElseIf Label3.Text = "Manager" Then
+            Button23.Enabled = True
+            Button24.Enabled = True
+            Button25.Enabled = True
+        End If
+
+
     End Sub
 
     Private Sub showSubmenu(submenu As Panel)
@@ -285,5 +352,9 @@ Public Class Presentacion
 
     Private Sub Presentacion_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Mantenimiento.Login.Close()
+    End Sub
+
+    Private Sub PanelChildForm_Paint(sender As Object, e As PaintEventArgs) Handles PanelChildForm.Paint
+
     End Sub
 End Class
