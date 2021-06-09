@@ -19,7 +19,7 @@ namespace Tank_Farm
         public Plc plc = null;
         private string ip;
         private int rack, slot;
-        private int segundos = 60;
+        private int segundos = 20;
 
         //Masa de tanques
         float masaAcetona = 39235.07019f;
@@ -107,7 +107,7 @@ namespace Tank_Farm
             if (segundos == 0)
             {
                 ActualizarInterfaz();
-                segundos = 60;
+                segundos = 20;
             }
             label8.Text = "El sistema se \nactualizara en: " +segundos.ToString();
             segundos = segundos-1;
@@ -164,25 +164,25 @@ namespace Tank_Farm
                 imagen.Image = Tank_Farm.Properties.Resources.Vacio;
             }
            
-            else if (porce>= 0.001 && porce  <= 10) { imagen.Image = Tank_Farm.Properties.Resources._10; }
+            else if (porce>= 0.00001 && porce  <= 10) { imagen.Image = Tank_Farm.Properties.Resources._10; }
 
-            else if (porce >= 10.001 && porce <= 20) { imagen.Image = Tank_Farm.Properties.Resources._20; }
+            else if (porce >= 10.00001 && porce <= 20) { imagen.Image = Tank_Farm.Properties.Resources._20; }
 
-            else if (porce >= 20.001 && porce <= 30) { imagen.Image = Tank_Farm.Properties.Resources._30; }
+            else if (porce >= 20.00001 && porce <= 30) { imagen.Image = Tank_Farm.Properties.Resources._30; }
 
-            else if (porce >= 30.001 && porce <= 40) { imagen.Image = Tank_Farm.Properties.Resources._40; }
+            else if (porce >= 30.00001 && porce <= 40) { imagen.Image = Tank_Farm.Properties.Resources._40; }
 
-            else if (porce >= 40.001 && porce <= 50) { imagen.Image = Tank_Farm.Properties.Resources._50; }
+            else if (porce >= 40.00001 && porce <= 50) { imagen.Image = Tank_Farm.Properties.Resources._50; }
 
-            else if (porce >= 50.001 && porce <= 60) { imagen.Image = Tank_Farm.Properties.Resources._60; }
+            else if (porce >= 50.00001 && porce <= 60) { imagen.Image = Tank_Farm.Properties.Resources._60; }
 
-            else if (porce >= 60.001 && porce <= 70) { imagen.Image = Tank_Farm.Properties.Resources._70; }
+            else if (porce >= 60.00001 && porce <= 70) { imagen.Image = Tank_Farm.Properties.Resources._70; }
 
-            else if (porce >= 70.001 && porce <= 80) { imagen.Image = Tank_Farm.Properties.Resources._80; }
+            else if (porce >= 70.00001 && porce <= 80) { imagen.Image = Tank_Farm.Properties.Resources._80; }
 
-            else if (porce >= 80.001 && porce <= 90) { imagen.Image = Tank_Farm.Properties.Resources._90; }
+            else if (porce >= 80.00001 && porce <= 90) { imagen.Image = Tank_Farm.Properties.Resources._90; }
 
-            else if (porce >= 90.001) { imagen.Image = Tank_Farm.Properties.Resources._100_1; }
+            else if (porce >= 90.00001) { imagen.Image = Tank_Farm.Properties.Resources._100_1; }
 
 
 
@@ -217,7 +217,7 @@ namespace Tank_Farm
             CalculaPorcentaje(txtnivelMEK, masaMEK, porcentajeMEK);
             CalculaPorcentaje(txtnivelNPropanol, masaNPropanol, porcentajeNPropanol);
             
-            segundos = 60;
+            segundos = 20;
         }
 
     }
