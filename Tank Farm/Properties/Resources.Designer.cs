@@ -193,6 +193,26 @@ namespace Tank_Farm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap relleno {
+            get {
+                object obj = ResourceManager.GetObject("relleno", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap relleno_total {
+            get {
+                object obj = ResourceManager.GetObject("relleno total", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Vacio {
             get {
                 object obj = ResourceManager.GetObject("Vacio", resourceCulture);

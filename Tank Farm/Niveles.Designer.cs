@@ -50,6 +50,7 @@ namespace Tank_Farm
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -58,9 +59,16 @@ namespace Tank_Farm
             this.picEtyl = new System.Windows.Forms.PictureBox();
             this.picAcetone = new System.Windows.Forms.PictureBox();
             this.picNPropanol = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.vScrollBar3 = new System.Windows.Forms.VScrollBar();
+            this.TXTALTURA = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TXTY = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMEK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEtyl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAcetone)).BeginInit();
@@ -312,6 +320,7 @@ namespace Tank_Farm
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.flowLayoutPanel4);
             this.panel1.Controls.Add(this.flowLayoutPanel3);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
@@ -320,10 +329,20 @@ namespace Tank_Farm
             this.panel1.Controls.Add(this.picEtyl);
             this.panel1.Controls.Add(this.picAcetone);
             this.panel1.Controls.Add(this.picNPropanol);
-            this.panel1.Location = new System.Drawing.Point(109, 21);
+            this.panel1.Location = new System.Drawing.Point(913, 629);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1033, 426);
             this.panel1.TabIndex = 23;
+            this.panel1.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Tank_Farm.Properties.Resources.relleno_total;
+            this.pictureBox1.Location = new System.Drawing.Point(38, 132);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(204, 195);
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
             // flowLayoutPanel4
             // 
@@ -377,12 +396,11 @@ namespace Tank_Farm
             // picEtyl
             // 
             this.picEtyl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.picEtyl.Image = global::Tank_Farm.Properties.Resources.Vacio;
+            this.picEtyl.Image = global::Tank_Farm.Properties.Resources._10;
             this.picEtyl.Location = new System.Drawing.Point(23, 23);
-            this.picEtyl.MaximumSize = new System.Drawing.Size(226, 384);
             this.picEtyl.MinimumSize = new System.Drawing.Size(226, 384);
             this.picEtyl.Name = "picEtyl";
-            this.picEtyl.Size = new System.Drawing.Size(226, 384);
+            this.picEtyl.Size = new System.Drawing.Size(229, 384);
             this.picEtyl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEtyl.TabIndex = 12;
             this.picEtyl.TabStop = false;
@@ -413,6 +431,16 @@ namespace Tank_Farm
             this.picNPropanol.TabIndex = 14;
             this.picNPropanol.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.Estado);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(14, 694);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(310, 68);
+            this.panel2.TabIndex = 24;
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -427,15 +455,68 @@ namespace Tank_Farm
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel2
+            // vScrollBar3
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.Estado);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(14, 694);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(310, 68);
-            this.panel2.TabIndex = 24;
+            this.vScrollBar3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.vScrollBar3.Location = new System.Drawing.Point(-3, -3);
+            this.vScrollBar3.Maximum = 1000;
+            this.vScrollBar3.Name = "vScrollBar3";
+            this.vScrollBar3.Size = new System.Drawing.Size(239, 74);
+            this.vScrollBar3.TabIndex = 34;
+            this.vScrollBar3.Value = 500;
+            this.vScrollBar3.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar3_Scroll);
+            // 
+            // TXTALTURA
+            // 
+            this.TXTALTURA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TXTALTURA.Location = new System.Drawing.Point(767, 49);
+            this.TXTALTURA.Name = "TXTALTURA";
+            this.TXTALTURA.Size = new System.Drawing.Size(187, 22);
+            this.TXTALTURA.TabIndex = 33;
+            this.TXTALTURA.TextChanged += new System.EventHandler(this.TXTALTURA_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(815, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 25);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "altura";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(559, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(26, 25);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "Y";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // TXTY
+            // 
+            this.TXTY.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TXTY.Location = new System.Drawing.Point(488, 49);
+            this.TXTY.Name = "TXTY";
+            this.TXTY.Size = new System.Drawing.Size(187, 22);
+            this.TXTY.TabIndex = 36;
+            this.TXTY.TextChanged += new System.EventHandler(this.TXTY_TextChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gray;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(89, 77);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1066, 335);
+            this.panel3.TabIndex = 38;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // Niveles
             // 
@@ -443,6 +524,12 @@ namespace Tank_Farm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(1179, 771);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.TXTY);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.vScrollBar3);
+            this.Controls.Add(this.TXTALTURA);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label8);
@@ -470,7 +557,9 @@ namespace Tank_Farm
             this.Text = "Tank Farm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Niveles_FormClosed);
             this.Load += new System.EventHandler(this.Niveles_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Niveles_Paint);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMEK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEtyl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAcetone)).EndInit();
@@ -514,5 +603,12 @@ namespace Tank_Farm
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.VScrollBar vScrollBar3;
+        private System.Windows.Forms.TextBox TXTALTURA;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox TXTY;
+        private System.Windows.Forms.Panel panel3;
     }
 }

@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tank Farm.exe" size="110520">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tank Farm.exe" size="117176">
       <assemblyIdentity name="Tank Farm" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VWlzBEsnT7O8a8MwackQAZdObDQHoTPU7s4WFsxoWeU=</dsig:DigestValue>
+        <dsig:DigestValue>NyCBTIXGgAKlMR7g8ay4BGSUlDHoG3QFMmfQxqHvto0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

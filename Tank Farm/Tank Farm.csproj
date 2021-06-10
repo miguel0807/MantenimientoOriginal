@@ -173,5 +173,11 @@
   <ItemGroup>
     <None Include="Resources\actualizar 45.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\relleno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\relleno total.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

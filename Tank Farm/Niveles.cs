@@ -15,11 +15,29 @@ namespace Tank_Farm
 {
     public partial class Niveles : Form
     {
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void TXTALTURA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void TXTY_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         //Declaracion de variables
         public Plc plc = null;
         private string ip;
         private int rack, slot;
         private int segundos = 20;
+        public int altura,ancho,ancho2,x1,x2,x3,x4,y1,y2,y3,y4;
 
         //Masa de tanques
         float masaAcetona = 39235.07019f;
@@ -42,16 +60,56 @@ namespace Tank_Farm
         //Carga al inicio del proyecto variables o funciones
         private void Niveles_Load(object sender, EventArgs e)
         {
+            x1 = 20;
+            x2 = 220;
+            x3 = 420;
+            x4 = 620;
+            y1 = 30;
 
+            altura = 216;
+            ancho = 160;
+            ancho2 = 200;
+
+            
 
 
             Conectar();
 
-            ActualizarInterfaz();
+            //ActualizarInterfaz();
             timer1.Enabled = true;
             timer1.Start();
 
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Point[] puntos = { new Point(10, 45), new Point(110, 75), new Point(175, 200) };
+            // g.FillClosedCurve(Brushes.Aquamarine, puntos);
+            //g.DrawRectangle(Pens.Red, new Rectangle(100, 100, 160, 75));
+            //g.FillRectangle(Brushes.DarkGoldenrod, new Rectangle(100, 200, 160, 100));
+
+
+            g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(20, 30, ancho, 216));
+            g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(220, 30, ancho, 216));
+            g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(420, 30, ancho, 216));
+            g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(620, 30, ancho, 216));
+
+            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x1, y1, ancho, altura));
+            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x2, y1, ancho, altura));
+            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x3, y1, ancho, altura));
+            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x4, y1, ancho, altura));
+
+
+
+
+            g.DrawRectangle(Pens.Black, new Rectangle(20, 30, ancho, 216));
+            g.DrawRectangle(Pens.Black, new Rectangle(220, 30, ancho, 216));
+            g.DrawRectangle(Pens.Black, new Rectangle(420, 30, ancho, 216));
+            g.DrawRectangle(Pens.Black, new Rectangle(620, 30, ancho, 216));
+        }
+
+        
 
         //Boton para realizar la reconexion cuando se desconecte la conexion
         private void btnConectar_Click(object sender, EventArgs e)
@@ -108,6 +166,7 @@ namespace Tank_Farm
             {
                 ActualizarInterfaz();
                 segundos = 20;
+                
             }
             label8.Text = "El sistema se \nactualizara en: " +segundos.ToString();
             segundos = segundos-1;
@@ -139,6 +198,77 @@ namespace Tank_Farm
         private void Niveles_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+      
+
+        private void vScrollBar3_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (vScrollBar3.Value < 500)
+            {
+                if (altura < 216) { 
+                y1 = y1 - 1;
+                altura = altura + 1;
+                TXTALTURA.Text = altura.ToString();
+                TXTY.Text = y1.ToString();
+                this.Refresh();
+                vScrollBar3.Value = 500;
+                }
+            }
+
+            if (vScrollBar3.Value > 500)
+            {
+                if   (altura > 0) { 
+                
+               
+                y1 = y1 + 1;
+                altura = altura - 1;
+                TXTALTURA.Text = altura.ToString();
+                TXTY.Text = y1.ToString();
+                this.Refresh();
+                vScrollBar3.Value = 500;
+                }
+            }
+           
+
+        }
+
+        private void Niveles_Paint(object sender, PaintEventArgs e)
+        {
+            //Graphics g = e.Graphics;
+            //Point[] puntos = { new Point(10, 45), new Point(110, 75), new Point(175, 200) };
+            //// g.FillClosedCurve(Brushes.Aquamarine, puntos);
+            ////g.DrawRectangle(Pens.Red, new Rectangle(100, 100, 160, 75));
+            ////g.FillRectangle(Brushes.DarkGoldenrod, new Rectangle(100, 200, 160, 100));
+
+
+            //g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(0, 84, ancho, 216));
+            //g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(200, 84, ancho, 216));
+            //g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(400, 84, ancho, 216));
+            //g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(600, 84, ancho, 216));
+
+            //g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x1, y1, ancho, altura));
+            //g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x2, y1, ancho, altura));
+            //g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x3, y1, ancho, altura));
+            //g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x4, y1, ancho, altura));
+
+          
+
+
+            //g.DrawRectangle(Pens.Black, new Rectangle(0, 216, ancho, 216));
+            //g.DrawRectangle(Pens.Black, new Rectangle(200, 216, ancho, 216));
+            //g.DrawRectangle(Pens.Black, new Rectangle(400, 216, ancho, 216));
+            //g.DrawRectangle(Pens.Black, new Rectangle(600, 216, ancho, 216));
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            
         }
 
 
