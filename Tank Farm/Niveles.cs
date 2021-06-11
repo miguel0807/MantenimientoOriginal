@@ -13,8 +13,15 @@ using S7.Net;
 
 namespace Tank_Farm
 {
+
     public partial class Niveles : Form
     {
+        public void CreateARectangleFromLTRB(PaintEventArgs e)
+        {
+            Rectangle myRectangle = Rectangle.FromLTRB(40, 40, 140, altura);
+            e.Graphics.DrawRectangle(SystemPens.ControlText, myRectangle);
+        }
+
         private void label9_Click(object sender, EventArgs e)
         {
 
@@ -28,6 +35,10 @@ namespace Tank_Farm
 
         }
         private void TXTY_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void picEtyl_Click(object sender, EventArgs e)
         {
 
         }
@@ -50,7 +61,54 @@ namespace Tank_Farm
         //Direcciones de Peso        
         string direcEtyl = "MD168", direcAcetone = "MD172", direclNPropanol = "MD176", direcMEK = "MD180";
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+            float porcentaje,alturap;
+            porcentaje = float.Parse(textBox1.Text);
+            alturap = (porcentaje * 216) / 100;
+            Math.Round(alturap);
+            double numeroDouble = alturap;
+
+            int numeroEntero = Convert.ToInt32(Math.Floor(numeroDouble));
+
+         
+            while (altura!= numeroEntero)
+            {
+                if (altura < numeroEntero)
+                {
+                    y1 = y1 - 1;
+                    altura = altura + 1;
+                    TXTALTURA.Text = altura.ToString();
+                    TXTY.Text = y1.ToString();
+                    this.Refresh();
+
+                }
+
+                else if (altura>numeroEntero)
+                {
+                    y1 = y1 + 1;
+                    altura = altura - 1;
+                    TXTALTURA.Text = altura.ToString();
+                    TXTY.Text = y1.ToString();
+                    this.Refresh();
+                }
+
+             
+                   
+                //}
+
+
+            }
+            //altura = altura - 40;
+            //TXTALTURA.Text = altura.ToString();
+            //TXTY.Text = y1.ToString();
+            //this.Refresh();
+
+            Console.WriteLine("alturap", Math.Round(alturap));
+            
+        }
+
+   
 
         public Niveles()
         {
@@ -75,20 +133,22 @@ namespace Tank_Farm
 
             Conectar();
 
-            //ActualizarInterfaz();
+            ActualizarInterfaz();
             timer1.Enabled = true;
             timer1.Start();
 
         }
 
+        //Pinta en el panel los tanques
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Point[] puntos = { new Point(10, 45), new Point(110, 75), new Point(175, 200) };
-            // g.FillClosedCurve(Brushes.Aquamarine, puntos);
-            //g.DrawRectangle(Pens.Red, new Rectangle(100, 100, 160, 75));
-            //g.FillRectangle(Brushes.DarkGoldenrod, new Rectangle(100, 200, 160, 100));
+          
 
+
+         
+
+        
 
             g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(20, 30, ancho, 216));
             g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(220, 30, ancho, 216));
@@ -117,7 +177,7 @@ namespace Tank_Farm
             Conectar();
         }
 
-        //Boton para cargar pruebas
+        //Boton actualizar niveles
         private void button1_Click(object sender, EventArgs e)
         {
             ActualizarInterfaz();
@@ -195,13 +255,14 @@ namespace Tank_Farm
 
         }
 
+        //Funcion para cerrar aplicacion cuando se cierra el form
         private void Niveles_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
       
-
+        //Configuracion del scroll bar
         private void vScrollBar3_Scroll(object sender, ScrollEventArgs e)
         {
             if (vScrollBar3.Value < 500)
@@ -233,43 +294,9 @@ namespace Tank_Farm
 
         }
 
-        private void Niveles_Paint(object sender, PaintEventArgs e)
-        {
-            //Graphics g = e.Graphics;
-            //Point[] puntos = { new Point(10, 45), new Point(110, 75), new Point(175, 200) };
-            //// g.FillClosedCurve(Brushes.Aquamarine, puntos);
-            ////g.DrawRectangle(Pens.Red, new Rectangle(100, 100, 160, 75));
-            ////g.FillRectangle(Brushes.DarkGoldenrod, new Rectangle(100, 200, 160, 100));
+       
 
-
-            //g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(0, 84, ancho, 216));
-            //g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(200, 84, ancho, 216));
-            //g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(400, 84, ancho, 216));
-            //g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(600, 84, ancho, 216));
-
-            //g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x1, y1, ancho, altura));
-            //g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x2, y1, ancho, altura));
-            //g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x3, y1, ancho, altura));
-            //g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x4, y1, ancho, altura));
-
-          
-
-
-            //g.DrawRectangle(Pens.Black, new Rectangle(0, 216, ancho, 216));
-            //g.DrawRectangle(Pens.Black, new Rectangle(200, 216, ancho, 216));
-            //g.DrawRectangle(Pens.Black, new Rectangle(400, 216, ancho, 216));
-            //g.DrawRectangle(Pens.Black, new Rectangle(600, 216, ancho, 216));
-        }
-
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
-
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            
-        }
+    
 
 
 
