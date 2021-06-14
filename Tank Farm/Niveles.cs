@@ -16,11 +16,7 @@ namespace Tank_Farm
 
     public partial class Niveles : Form
     {
-        public void CreateARectangleFromLTRB(PaintEventArgs e)
-        {
-            Rectangle myRectangle = Rectangle.FromLTRB(40, 40, 140, altura);
-            e.Graphics.DrawRectangle(SystemPens.ControlText, myRectangle);
-        }
+       
 
         private void label9_Click(object sender, EventArgs e)
         {
@@ -48,7 +44,7 @@ namespace Tank_Farm
         private string ip;
         private int rack, slot;
         private int segundos = 20;
-        public int altura,ancho,ancho2,x1,x2,x3,x4,y1,y2,y3,y4;
+        public int alturatotal, ancho, ancho2, x1, x2, x3, x4, y1, y2, y3, y4,h1,h2,h3,h4;
 
         //Masa de tanques
         float masaAcetona = 39235.07019f;
@@ -61,54 +57,80 @@ namespace Tank_Farm
         //Direcciones de Peso        
         string direcEtyl = "MD168", direcAcetone = "MD172", direclNPropanol = "MD176", direcMEK = "MD180";
 
-        private void button2_Click(object sender, EventArgs e)
+        private void porcentajeAcetona_TextChanged(object sender, EventArgs e)
         {
-            float porcentaje,alturap;
-            porcentaje = float.Parse(textBox1.Text);
-            alturap = (porcentaje * 216) / 100;
-            Math.Round(alturap);
-            double numeroDouble = alturap;
+            y2 = ActualizarGraficoPosicion(float.Parse(porcentajeAcetona.Text), h2, y2);
+            h2 = ActualizarGrafico(float.Parse(porcentajeAcetona.Text), h2, y2);
 
-            int numeroEntero = Convert.ToInt32(Math.Floor(numeroDouble));
-
-         
-            while (altura!= numeroEntero)
-            {
-                if (altura < numeroEntero)
-                {
-                    y1 = y1 - 1;
-                    altura = altura + 1;
-                    TXTALTURA.Text = altura.ToString();
-                    TXTY.Text = y1.ToString();
-                    this.Refresh();
-
-                }
-
-                else if (altura>numeroEntero)
-                {
-                    y1 = y1 + 1;
-                    altura = altura - 1;
-                    TXTALTURA.Text = altura.ToString();
-                    TXTY.Text = y1.ToString();
-                    this.Refresh();
-                }
-
-             
-                   
-                //}
-
-
-            }
-            //altura = altura - 40;
-            //TXTALTURA.Text = altura.ToString();
-            //TXTY.Text = y1.ToString();
-            //this.Refresh();
-
-            Console.WriteLine("alturap", Math.Round(alturap));
-            
+            this.Refresh();
         }
 
-   
+        private void porcentajeNPropanol_TextChanged(object sender, EventArgs e)
+        {
+            //y3 = ActualizarGraficoPosicion(float.Parse(porcentajeNPropanol.Text), h3, y3);
+            //h3 = ActualizarGrafico(float.Parse(porcentajeNPropanol.Text), h3, y3);
+
+            //this.Refresh();
+        }
+
+        private void porcentajeMEK_TextChanged(object sender, EventArgs e)
+        {
+            //y3 = ActualizarGraficoPosicion(float.Parse(porcentajeMEK.Text), h4, y4);
+            //h4 = ActualizarGrafico(float.Parse(porcentajeMEK.Text), h4, y4);
+
+            //this.Refresh();
+        }
+
+        //Acetato de etilo cambia
+        private void porcentajeAcetato_TextChanged(object sender, EventArgs e)
+        {
+          
+
+            //MessageBox.Show(h1 + " " + y1 + " "+float.Parse(porcentajeAcetato.Text));
+            y1 = ActualizarGraficoPosicion(float.Parse(porcentajeAcetato.Text), h1, y1);
+            h1 = ActualizarGrafico(float.Parse(porcentajeAcetato.Text), h1, y1);
+
+        
+
+            this.Refresh();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //float porcentaje, alturap;
+            //porcentaje = float.Parse(textBox1.Text);
+            //alturap = (porcentaje * 216) / 100;
+            //Math.Round(alturap);
+            //double numeroDouble = alturap;
+
+            //int numeroEntero = Convert.ToInt32(Math.Floor(numeroDouble));
+
+
+            //while (altura != numeroEntero)
+            //{
+            //    if (altura < numeroEntero)
+            //    {
+            //        y1 = y1 - 1;
+            //        altura = altura + 1;
+            //        TXTALTURA.Text = altura.ToString();
+            //        TXTY.Text = y1.ToString();
+            //        this.Refresh();
+
+            //    }
+
+            //    else if (altura > numeroEntero)
+            //    {
+            //        y1 = y1 + 1;
+            //        altura = altura - 1;
+            //        TXTALTURA.Text = altura.ToString();
+            //        TXTY.Text = y1.ToString();
+            //        this.Refresh();
+            //    }
+            //}    
+        }
+
+
 
         public Niveles()
         {
@@ -118,17 +140,14 @@ namespace Tank_Farm
         //Carga al inicio del proyecto variables o funciones
         private void Niveles_Load(object sender, EventArgs e)
         {
-            x1 = 20;
-            x2 = 220;
-            x3 = 420;
-            x4 = 620;
-            y1 = 30;
+           
 
-            altura = 216;
+            
+            alturatotal = 216;
             ancho = 160;
             ancho2 = 200;
 
-            
+
 
 
             Conectar();
@@ -137,28 +156,45 @@ namespace Tank_Farm
             timer1.Enabled = true;
             timer1.Start();
 
+            x1 = 20;
+            x2 = 220;
+            x3 = 420;
+            x4 = 620;
+            //y1 = 30;
+            y1 = 30;
+            h1 = 216;
+
+            y2 = 30;
+            h2 = 216;
+
+            y3 = 30;
+            h3 = 216;
+
+            y4 = 30;
+            h4 = 216;
+
         }
 
         //Pinta en el panel los tanques
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-          
 
 
-         
 
-        
+
+
+
 
             g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(20, 30, ancho, 216));
             g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(220, 30, ancho, 216));
             g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(420, 30, ancho, 216));
             g.FillRectangle(Brushes.WhiteSmoke, new Rectangle(620, 30, ancho, 216));
 
-            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x1, y1, ancho, altura));
-            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x2, y1, ancho, altura));
-            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x3, y1, ancho, altura));
-            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x4, y1, ancho, altura));
+            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x1, y1, ancho, h1));
+            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x2, y2, ancho, h3));
+            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x3, y3, ancho, h3));
+            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(x4, y4, ancho, h4));
 
 
 
@@ -169,7 +205,7 @@ namespace Tank_Farm
             g.DrawRectangle(Pens.Black, new Rectangle(620, 30, ancho, 216));
         }
 
-        
+
 
         //Boton para realizar la reconexion cuando se desconecte la conexion
         private void btnConectar_Click(object sender, EventArgs e)
@@ -181,7 +217,7 @@ namespace Tank_Farm
         private void button1_Click(object sender, EventArgs e)
         {
             ActualizarInterfaz();
-           
+
 
 
         }
@@ -190,7 +226,8 @@ namespace Tank_Farm
         private void Conectar()
         {
 
-            try {
+            try
+            {
 
                 ip = "10.164.104.210";
                 rack = 0;
@@ -217,19 +254,19 @@ namespace Tank_Farm
             }
 
         }
-        
+
         //Timer para actualizar información
         private void timer1_Tick(object sender, EventArgs e)
         {
-           
+
             if (segundos == 0)
             {
                 ActualizarInterfaz();
                 segundos = 20;
-                
+
             }
-            label8.Text = "El sistema se \nactualizara en: " +segundos.ToString();
-            segundos = segundos-1;
+            label8.Text = "El sistema se \nactualizara en: " + segundos.ToString();
+            segundos = segundos - 1;
 
         }
 
@@ -261,42 +298,44 @@ namespace Tank_Farm
             Application.Exit();
         }
 
-      
+
         //Configuracion del scroll bar
         private void vScrollBar3_Scroll(object sender, ScrollEventArgs e)
         {
-            if (vScrollBar3.Value < 500)
-            {
-                if (altura < 216) { 
-                y1 = y1 - 1;
-                altura = altura + 1;
-                TXTALTURA.Text = altura.ToString();
-                TXTY.Text = y1.ToString();
-                this.Refresh();
-                vScrollBar3.Value = 500;
-                }
-            }
+            //if (vScrollBar3.Value < 500)
+            //{
+            //    if (altura < 216)
+            //    {
+            //        y1 = y1 - 1;
+            //        altura = altura + 1;
+            //        TXTALTURA.Text = altura.ToString();
+            //        TXTY.Text = y1.ToString();
+            //        this.Refresh();
+            //        vScrollBar3.Value = 500;
+            //    }
+            //}
 
-            if (vScrollBar3.Value > 500)
-            {
-                if   (altura > 0) { 
-                
-               
-                y1 = y1 + 1;
-                altura = altura - 1;
-                TXTALTURA.Text = altura.ToString();
-                TXTY.Text = y1.ToString();
-                this.Refresh();
-                vScrollBar3.Value = 500;
-                }
-            }
-           
+            //if (vScrollBar3.Value > 500)
+            //{
+            //    if (altura > 0)
+            //    {
+
+
+            //        y1 = y1 + 1;
+            //        altura = altura - 1;
+            //        TXTALTURA.Text = altura.ToString();
+            //        TXTY.Text = y1.ToString();
+            //        this.Refresh();
+            //        vScrollBar3.Value = 500;
+            //    }
+            //}
+
 
         }
 
-       
 
-    
+
+
 
 
 
@@ -308,7 +347,8 @@ namespace Tank_Farm
         }
 
         //Cargar imagenes
-        private void CargaImagen (float Peso, float maxMasa, string Solvente){
+        private void CargaImagen(float Peso, float maxMasa, string Solvente)
+        {
             PictureBox imagen;
             if (Solvente == "Acetona") { imagen = picAcetone; }
             else if (Solvente == "Etyl") { imagen = picEtyl; }
@@ -317,11 +357,12 @@ namespace Tank_Farm
             else { imagen = picAcetone; }
             float porce;
             porce = Peso * 100 / maxMasa;
-            if (porce <= 0 ) {
+            if (porce <= 0)
+            {
                 imagen.Image = Tank_Farm.Properties.Resources.Vacio;
             }
-           
-            else if (porce>= 0.00001 && porce  <= 10) { imagen.Image = Tank_Farm.Properties.Resources._10; }
+
+            else if (porce >= 0.00001 && porce <= 10) { imagen.Image = Tank_Farm.Properties.Resources._10; }
 
             else if (porce >= 10.00001 && porce <= 20) { imagen.Image = Tank_Farm.Properties.Resources._20; }
 
@@ -345,21 +386,22 @@ namespace Tank_Farm
 
 
         }
-    
+
         //Calcula porcentaje de cilindro
-        private void CalculaPorcentaje (TextBox txtPeso, float maxMasa, TextBox txtbox)
-        { float porcentaje=0;
+        private void CalculaPorcentaje(TextBox txtPeso, float maxMasa, TextBox txtbox)
+        {
+            float porcentaje = 0;
 
-           
-            porcentaje = float.Parse(txtPeso.Text) * 100 / maxMasa ;
 
-            txtbox.Text =  porcentaje.ToString("#.##")+"%";
+            porcentaje = float.Parse(txtPeso.Text) * 100 / maxMasa;
+
+            txtbox.Text = porcentaje.ToString("#.##") ;
         }
 
         //Actualiza los datos para ser mostrados
         void ActualizarInterfaz()
         {
-            
+
             txtnivelAcetona.Text = CargarDireccion(direcAcetone).ToString();
             txtnivelMEK.Text = CargarDireccion(direcMEK).ToString();
             txtnivelNPropanol.Text = CargarDireccion(direclNPropanol).ToString();
@@ -373,58 +415,85 @@ namespace Tank_Farm
             CalculaPorcentaje(txtnivelEtyl, masaEtyl, porcentajeAcetato);
             CalculaPorcentaje(txtnivelMEK, masaMEK, porcentajeMEK);
             CalculaPorcentaje(txtnivelNPropanol, masaNPropanol, porcentajeNPropanol);
-            
+
             segundos = 20;
         }
 
+        //Conseguir altura
+       int ActualizarGrafico(float porcentajeAltura,int valorAltura, int valorPosicion)
+        {
+            float alturap;
+            alturap = (porcentajeAltura * alturatotal) / 100;
+            Math.Round(alturap);
+            double numeroDouble = alturap;
+
+            int numeroEntero = Convert.ToInt32(Math.Floor(numeroDouble));
+            
+
+            while (valorAltura != numeroEntero)
+            {
+                if (valorAltura < numeroEntero)
+                {
+                    
+                    valorPosicion = valorPosicion - 1;
+                    valorAltura = valorAltura + 1;
+
+                   
+                  
+                    
+                }
+
+                else if (valorAltura > numeroEntero)
+                {
+                    y1 = y1 + 1;
+                    valorAltura = valorAltura - 1;
+                 
+                  
+                    
+                }
+                
+            }
+            return (valorAltura);
+        }
+
+        //Conseguir posicion
+        int ActualizarGraficoPosicion(float porcentajeAltura, int valorAltura, int valorPosicion)
+        {
+            float alturap;
+            alturap = (porcentajeAltura * alturatotal) / 100;
+            Math.Round(alturap);
+            double numeroDouble = alturap;
+
+            int numeroEntero = Convert.ToInt32(Math.Floor(numeroDouble));
+
+
+            while (valorAltura != numeroEntero)
+            {
+                if (valorAltura < numeroEntero)
+                {
+
+                    valorPosicion = valorPosicion - 1;
+                    valorAltura = valorAltura + 1;
+
+
+                  
+
+                }
+
+                else if (valorAltura > numeroEntero)
+                {
+                    valorPosicion = valorPosicion + 1;
+                    valorAltura = valorAltura - 1;
+
+                  
+
+                }
+
+            }
+            return (valorPosicion);
+        }
     }
 
 }
 
 
-//int conteo = 0;
-//direcEtyl = "MD168";
-//direcEtylAcetone = "MD172";
-//direcEtylNPropanol = "MD176";
-//direcEtylMEK = "MD180";
-
-//string[] direciones = new string[4];
-//direciones[0] = direcEtyl;
-//direciones[1] = direcEtylAcetone;
-//direciones[2] = direcEtylNPropanol;
-//direciones[3] = direcEtylMEK;
-
-//float[] niveles = new float[4];
-//niveles[0] = nivelEtyl;
-//niveles[1] = nivelEtylAcetone;
-//niveles[2] = nivelEtylNPropanol;
-//niveles[3] = nivelEtylMEK;
-
-
-
-
-
-
-//foreach (string direccion in direciones)
-//{
-
-//    //string direccion = "MD168";
-//    object resultado = plc.Read(direccion);
-//    string varString = string.Format("{0}", resultado.ToString());
-//    int b = Convert.ToInt32(varString);
-//    //Segundo convertirla a byte
-//    byte[] bytes = BitConverter.GetBytes(b);
-
-//    //Tercero pasarla a float
-//    flotante = BitConverter.ToSingle(bytes, 0);
-
-//    niveles[conteo] = flotante;
-//    conteo = conteo + 1;
-
-
-//}
-
-//txtnivelEtyl.Text = niveles[0].ToString();
-//txtnivelAcetona.Text = niveles[1].ToString();
-//txtnivelNPropanol.Text = niveles[2].ToString();
-//txtnivelMEK.Text = niveles[3].ToString();

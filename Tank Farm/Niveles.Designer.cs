@@ -270,6 +270,7 @@ namespace Tank_Farm
             this.porcentajeMEK.TabIndex = 20;
             this.porcentajeMEK.TabStop = false;
             this.porcentajeMEK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.porcentajeMEK.TextChanged += new System.EventHandler(this.porcentajeMEK_TextChanged);
             // 
             // porcentajeNPropanol
             // 
@@ -284,6 +285,7 @@ namespace Tank_Farm
             this.porcentajeNPropanol.TabIndex = 19;
             this.porcentajeNPropanol.TabStop = false;
             this.porcentajeNPropanol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.porcentajeNPropanol.TextChanged += new System.EventHandler(this.porcentajeNPropanol_TextChanged);
             // 
             // porcentajeAcetona
             // 
@@ -298,6 +300,7 @@ namespace Tank_Farm
             this.porcentajeAcetona.TabIndex = 18;
             this.porcentajeAcetona.TabStop = false;
             this.porcentajeAcetona.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.porcentajeAcetona.TextChanged += new System.EventHandler(this.porcentajeAcetona_TextChanged);
             // 
             // porcentajeAcetato
             // 
@@ -312,6 +315,7 @@ namespace Tank_Farm
             this.porcentajeAcetato.TabIndex = 17;
             this.porcentajeAcetato.TabStop = false;
             this.porcentajeAcetato.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.porcentajeAcetato.TextChanged += new System.EventHandler(this.porcentajeAcetato_TextChanged);
             // 
             // timer1
             // 
@@ -343,7 +347,7 @@ namespace Tank_Farm
             this.panel1.Controls.Add(this.picEtyl);
             this.panel1.Controls.Add(this.picAcetone);
             this.panel1.Controls.Add(this.picNPropanol);
-            this.panel1.Location = new System.Drawing.Point(982, 634);
+            this.panel1.Location = new System.Drawing.Point(547, 729);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1033, 426);
             this.panel1.TabIndex = 23;
