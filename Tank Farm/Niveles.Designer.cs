@@ -60,12 +60,6 @@ namespace Tank_Farm
             this.picAcetone = new System.Windows.Forms.PictureBox();
             this.picNPropanol = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.vScrollBar3 = new System.Windows.Forms.VScrollBar();
-            this.TXTALTURA = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.TXTY = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -79,7 +73,7 @@ namespace Tank_Farm
             this.panel10 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMEK)).BeginInit();
@@ -159,7 +153,7 @@ namespace Tank_Farm
             // 
             this.txtnivelAcetona.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtnivelAcetona.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnivelAcetona.Location = new System.Drawing.Point(474, 517);
+            this.txtnivelAcetona.Location = new System.Drawing.Point(475, 512);
             this.txtnivelAcetona.MaximumSize = new System.Drawing.Size(123, 34);
             this.txtnivelAcetona.MinimumSize = new System.Drawing.Size(123, 34);
             this.txtnivelAcetona.Name = "txtnivelAcetona";
@@ -173,7 +167,7 @@ namespace Tank_Farm
             // 
             this.txtnivelNPropanol.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtnivelNPropanol.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnivelNPropanol.Location = new System.Drawing.Point(700, 512);
+            this.txtnivelNPropanol.Location = new System.Drawing.Point(714, 512);
             this.txtnivelNPropanol.MaximumSize = new System.Drawing.Size(123, 34);
             this.txtnivelNPropanol.MinimumSize = new System.Drawing.Size(123, 34);
             this.txtnivelNPropanol.Name = "txtnivelNPropanol";
@@ -187,7 +181,7 @@ namespace Tank_Farm
             // 
             this.txtnivelMEK.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtnivelMEK.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnivelMEK.Location = new System.Drawing.Point(1000, 512);
+            this.txtnivelMEK.Location = new System.Drawing.Point(973, 512);
             this.txtnivelMEK.MaximumSize = new System.Drawing.Size(123, 34);
             this.txtnivelMEK.MinimumSize = new System.Drawing.Size(123, 34);
             this.txtnivelMEK.Name = "txtnivelMEK";
@@ -215,7 +209,7 @@ namespace Tank_Farm
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(479, 461);
+            this.label4.Location = new System.Drawing.Point(480, 456);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 29);
             this.label4.TabIndex = 9;
@@ -227,7 +221,7 @@ namespace Tank_Farm
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(695, 461);
+            this.label5.Location = new System.Drawing.Point(709, 461);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(147, 29);
             this.label5.TabIndex = 10;
@@ -239,7 +233,7 @@ namespace Tank_Farm
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(1022, 461);
+            this.label6.Location = new System.Drawing.Point(995, 461);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 29);
             this.label6.TabIndex = 11;
@@ -253,15 +247,15 @@ namespace Tank_Farm
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label7.Location = new System.Drawing.Point(9, 576);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(139, 29);
+            this.label7.Size = new System.Drawing.Size(180, 29);
             this.label7.TabIndex = 21;
-            this.label7.Text = "Porcentaje";
+            this.label7.Text = "Porcentaje(%)";
             // 
             // porcentajeMEK
             // 
             this.porcentajeMEK.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.porcentajeMEK.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.porcentajeMEK.Location = new System.Drawing.Point(1000, 571);
+            this.porcentajeMEK.Location = new System.Drawing.Point(973, 571);
             this.porcentajeMEK.MaximumSize = new System.Drawing.Size(123, 34);
             this.porcentajeMEK.MinimumSize = new System.Drawing.Size(123, 34);
             this.porcentajeMEK.Name = "porcentajeMEK";
@@ -276,7 +270,7 @@ namespace Tank_Farm
             // 
             this.porcentajeNPropanol.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.porcentajeNPropanol.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.porcentajeNPropanol.Location = new System.Drawing.Point(700, 573);
+            this.porcentajeNPropanol.Location = new System.Drawing.Point(714, 573);
             this.porcentajeNPropanol.MaximumSize = new System.Drawing.Size(123, 34);
             this.porcentajeNPropanol.MinimumSize = new System.Drawing.Size(123, 34);
             this.porcentajeNPropanol.Name = "porcentajeNPropanol";
@@ -291,7 +285,7 @@ namespace Tank_Farm
             // 
             this.porcentajeAcetona.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.porcentajeAcetona.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.porcentajeAcetona.Location = new System.Drawing.Point(474, 576);
+            this.porcentajeAcetona.Location = new System.Drawing.Point(475, 571);
             this.porcentajeAcetona.MaximumSize = new System.Drawing.Size(123, 34);
             this.porcentajeAcetona.MinimumSize = new System.Drawing.Size(123, 34);
             this.porcentajeAcetona.Name = "porcentajeAcetona";
@@ -347,7 +341,7 @@ namespace Tank_Farm
             this.panel1.Controls.Add(this.picEtyl);
             this.panel1.Controls.Add(this.picAcetone);
             this.panel1.Controls.Add(this.picNPropanol);
-            this.panel1.Location = new System.Drawing.Point(547, 729);
+            this.panel1.Location = new System.Drawing.Point(424, 765);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1033, 426);
             this.panel1.TabIndex = 23;
@@ -459,78 +453,6 @@ namespace Tank_Farm
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(310, 68);
             this.panel2.TabIndex = 24;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Tank_Farm.Properties.Resources.actualizar_45;
-            this.button1.Location = new System.Drawing.Point(1116, 708);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 51);
-            this.button1.TabIndex = 16;
-            this.button1.TabStop = false;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // vScrollBar3
-            // 
-            this.vScrollBar3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.vScrollBar3.Location = new System.Drawing.Point(347, 668);
-            this.vScrollBar3.Maximum = 1000;
-            this.vScrollBar3.Name = "vScrollBar3";
-            this.vScrollBar3.Size = new System.Drawing.Size(239, 74);
-            this.vScrollBar3.TabIndex = 34;
-            this.vScrollBar3.Value = 500;
-            this.vScrollBar3.Visible = false;
-            this.vScrollBar3.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar3_Scroll);
-            // 
-            // TXTALTURA
-            // 
-            this.TXTALTURA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TXTALTURA.Location = new System.Drawing.Point(620, 740);
-            this.TXTALTURA.Name = "TXTALTURA";
-            this.TXTALTURA.Size = new System.Drawing.Size(113, 22);
-            this.TXTALTURA.TabIndex = 33;
-            this.TXTALTURA.Visible = false;
-            this.TXTALTURA.TextChanged += new System.EventHandler(this.TXTALTURA_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(622, 701);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 25);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "altura";
-            this.label9.Visible = false;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(677, 634);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(26, 25);
-            this.label10.TabIndex = 37;
-            this.label10.Text = "Y";
-            this.label10.Visible = false;
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // TXTY
-            // 
-            this.TXTY.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TXTY.Location = new System.Drawing.Point(606, 662);
-            this.TXTY.Name = "TXTY";
-            this.TXTY.Size = new System.Drawing.Size(187, 22);
-            this.TXTY.TabIndex = 36;
-            this.TXTY.Visible = false;
-            this.TXTY.TextChanged += new System.EventHandler(this.TXTY_TextChanged);
             // 
             // panel3
             // 
@@ -662,20 +584,28 @@ namespace Tank_Farm
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(24, 130);
+            this.button2.Location = new System.Drawing.Point(25, 149);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(46, 71);
+            this.button2.Size = new System.Drawing.Size(51, 75);
             this.button2.TabIndex = 45;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // textBox1
+            // button1
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 267);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(44, 22);
-            this.textBox1.TabIndex = 46;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Tank_Farm.Properties.Resources.actualizar_45;
+            this.button1.Location = new System.Drawing.Point(1116, 708);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 51);
+            this.button1.TabIndex = 16;
+            this.button1.TabStop = false;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Niveles
             // 
@@ -683,7 +613,6 @@ namespace Tank_Farm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(1179, 771);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.panel10);
@@ -693,11 +622,6 @@ namespace Tank_Farm
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.TXTY);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.vScrollBar3);
-            this.Controls.Add(this.TXTALTURA);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label8);
@@ -773,11 +697,6 @@ namespace Tank_Farm
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.VScrollBar vScrollBar3;
-        private System.Windows.Forms.TextBox TXTALTURA;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox TXTY;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
@@ -791,6 +710,5 @@ namespace Tank_Farm
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
