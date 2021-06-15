@@ -33,6 +33,7 @@ Partial Class Programas
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Iconostrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ProgramasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,15 +144,23 @@ Partial Class Programas
         'Iconostrip
         '
         Me.Iconostrip.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.Iconostrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProgramasToolStripMenuItem})
+        Me.Iconostrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProgramasToolStripMenuItem, Me.CerrarToolStripMenuItem})
         Me.Iconostrip.Name = "Iconostrip"
-        Me.Iconostrip.Size = New System.Drawing.Size(150, 28)
+        Me.Iconostrip.Size = New System.Drawing.Size(215, 84)
         '
         'ProgramasToolStripMenuItem
         '
+        Me.ProgramasToolStripMenuItem.Image = Global.Mantenimiento.My.Resources.Resources.tools_22686
         Me.ProgramasToolStripMenuItem.Name = "ProgramasToolStripMenuItem"
-        Me.ProgramasToolStripMenuItem.Size = New System.Drawing.Size(149, 24)
+        Me.ProgramasToolStripMenuItem.Size = New System.Drawing.Size(214, 26)
         Me.ProgramasToolStripMenuItem.Text = "Programas"
+        '
+        'CerrarToolStripMenuItem
+        '
+        Me.CerrarToolStripMenuItem.Image = Global.Mantenimiento.My.Resources.Resources.salir1
+        Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
+        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(214, 26)
+        Me.CerrarToolStripMenuItem.Text = "Cerrar"
         '
         'Programas
         '
@@ -187,4 +196,5 @@ Partial Class Programas
     Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents Iconostrip As ContextMenuStrip
     Friend WithEvents ProgramasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CerrarToolStripMenuItem As ToolStripMenuItem
 End Class

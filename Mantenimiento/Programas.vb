@@ -46,6 +46,8 @@
     Private Sub button2_Click(sender As Object, e As EventArgs) Handles button2.Click
         Dim f As New Proyecto.FormPrincipal()
 
+
+
         f.Show()
         ' Me.Close()
         esconder()
@@ -92,5 +94,10 @@
         NotifyIcon1.BalloonTipText = "Interfaz minimizada"
         NotifyIcon1.ShowBalloonTip(1000)
         Me.Hide()
+    End Sub
+
+    Private Sub CerrarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem.Click
+        Application.Exit()
+
     End Sub
 End Class

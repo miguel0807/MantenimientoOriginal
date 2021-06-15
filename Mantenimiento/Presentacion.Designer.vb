@@ -236,6 +236,7 @@ Partial Class Presentacion
         Me.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnExit.UseVisualStyleBackColor = True
+        Me.btnExit.Visible = False
         '
         'btnHelp
         '
