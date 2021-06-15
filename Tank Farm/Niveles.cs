@@ -311,7 +311,7 @@ namespace Tank_Farm
         //Funcion para cerrar aplicacion cuando se cierra el form
         private void Niveles_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
         }
 
 

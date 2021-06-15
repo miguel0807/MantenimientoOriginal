@@ -30,13 +30,15 @@
         Dim f As New Tank_Farm.Niveles()
 
         f.Show()
-        Me.Close()
+        'Me.Close()
+        esconder()
 
     End Sub
 
     Private Sub button1_Click(sender As Object, e As EventArgs) Handles button1.Click
         Presentacion.Show()
-        Me.Close()
+        ' Me.Close()
+        esconder()
     End Sub
 
 
@@ -45,7 +47,8 @@
         Dim f As New Proyecto.FormPrincipal()
 
         f.Show()
-        Me.Close()
+        ' Me.Close()
+        esconder()
     End Sub
 
     Private Sub Programas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -60,5 +63,34 @@
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Application.Exit()
 
+    End Sub
+
+    Private Sub ContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs)
+        Me.Show()
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ContextMenuStrip1_Opening_1(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Iconostrip.Opening
+
+    End Sub
+
+    Private Sub ContextMenuStrip1_MouseClick(sender As Object, e As MouseEventArgs) Handles Iconostrip.MouseClick
+        Me.Show()
+    End Sub
+
+    Private Sub Iconostrip_Click(sender As Object, e As EventArgs) Handles Iconostrip.Click
+        Me.Show()
+    End Sub
+
+    Sub esconder()
+        NotifyIcon1.BalloonTipIcon = ToolTipIcon.Info
+        '  NotifyIcon1.BalloonTipTitle = "Enviado notificacion"
+        NotifyIcon1.BalloonTipText = "Interfaz minimizada"
+        NotifyIcon1.ShowBalloonTip(1000)
+        Me.Hide()
     End Sub
 End Class

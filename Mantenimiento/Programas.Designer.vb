@@ -22,6 +22,7 @@ Partial Class Programas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Programas))
         Me.button2 = New System.Windows.Forms.Button()
         Me.button1 = New System.Windows.Forms.Button()
@@ -29,9 +30,13 @@ Partial Class Programas
         Me.Button26 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnClose = New System.Windows.Forms.PictureBox()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.Iconostrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ProgramasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Iconostrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'button2
@@ -128,6 +133,26 @@ Partial Class Programas
         Me.btnClose.TabIndex = 22
         Me.btnClose.TabStop = False
         '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.ContextMenuStrip = Me.Iconostrip
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Text = "SI PRO"
+        Me.NotifyIcon1.Visible = True
+        '
+        'Iconostrip
+        '
+        Me.Iconostrip.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.Iconostrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProgramasToolStripMenuItem})
+        Me.Iconostrip.Name = "Iconostrip"
+        Me.Iconostrip.Size = New System.Drawing.Size(150, 28)
+        '
+        'ProgramasToolStripMenuItem
+        '
+        Me.ProgramasToolStripMenuItem.Name = "ProgramasToolStripMenuItem"
+        Me.ProgramasToolStripMenuItem.Size = New System.Drawing.Size(149, 24)
+        Me.ProgramasToolStripMenuItem.Text = "Programas"
+        '
         'Programas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -148,6 +173,7 @@ Partial Class Programas
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Iconostrip.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -158,4 +184,7 @@ Partial Class Programas
     Private WithEvents Button26 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnClose As PictureBox
+    Friend WithEvents NotifyIcon1 As NotifyIcon
+    Friend WithEvents Iconostrip As ContextMenuStrip
+    Friend WithEvents ProgramasToolStripMenuItem As ToolStripMenuItem
 End Class

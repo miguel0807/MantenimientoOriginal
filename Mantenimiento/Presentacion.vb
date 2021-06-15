@@ -85,6 +85,11 @@ Public Class Presentacion
             Button23.Enabled = True
             Button24.Enabled = True
             Button25.Enabled = True
+
+        ElseIf Label3.Text = "General Manager" Then
+            Button23.Enabled = True
+            Button24.Enabled = True
+            Button25.Enabled = True
         End If
 
 
@@ -221,7 +226,21 @@ Public Class Presentacion
         '    Me.Close()
         'End If
 
-        Application.Exit()
+        If MessageBox.Show("Esta seguro de cerrar sesión?", "Precaución",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+
+
+            'AbrirFormEnPanel(Of Cargar)()
+            'Formulario.Close()
+            'AbrirFormEnPanel(Of Generar)()
+            'Formulario.Close()
+            'AbrirFormEnPanel(Of Modulo_de_reimpresion)()
+
+            'Formulario.Close()
+
+
+            Me.Close()
+        End If
 
     End Sub
 
@@ -351,7 +370,7 @@ Public Class Presentacion
     End Sub
 
     Private Sub Presentacion_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        Mantenimiento.Login.Close()
+        'Mantenimiento.Login.Close()
     End Sub
 
     Private Sub PanelChildForm_Paint(sender As Object, e As PaintEventArgs) Handles PanelChildForm.Paint
