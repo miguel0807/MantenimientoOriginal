@@ -70,11 +70,49 @@ namespace CR7
                     vCbo = "[CPU Serial#]";
                     break;
 
-
-                default:
+                case 6:
                     vCbo = "[LCD Serial#]";
                     break;
+
+                case 7:
+                    vCbo = "[Controller Software Version]";
+                    break;
+
+                case 8:
+                    vCbo = "[Print Head Firmware]";
+                    break;
+
+                case 9:
+                    vCbo = "[Print Head Software Version]";
+                    break;
+                case 10:
+                    vCbo = "Date";
+                    break;
+
+                case 11:
+                    vCbo = "[User]";
+                    break;
+
+
+                case 12:
+                    vCbo = "[System Model]";
+                    break;
+                case 13:
+                    vCbo = "[Controller Hardware Version]";
+                    break;
+
+                case 14:
+                    vCbo = "[Driver Hardware Version]";
+                    break;
+
+                default:
+                    vCbo = "[POGO Hardware Version]";
+                    break;
             }
+         
+
+
+
 
 
 
