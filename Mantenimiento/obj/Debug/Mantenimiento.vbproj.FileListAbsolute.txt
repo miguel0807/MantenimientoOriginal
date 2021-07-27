@@ -69,3 +69,6 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\SIM PRO.ap
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\SIM PRO.exe
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\SIM PRO.xml
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\SIM PRO.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CR7.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CR7.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CR7.exe.config

@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>T:\Public\Production\Maintenance\SIM PRO\</PublishUrl>
+    <PublishUrl>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,13 +25,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\</InstallUrl>
     <UpdateUrl>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\</UpdateUrl>
     <ProductName>SIM PRO</ProductName>
     <PublisherName>Miguel Alvarado</PublisherName>
     <MinimumRequiredVersion>5.0.0.10</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>5.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -457,6 +457,9 @@
     <None Include="Resources\gris.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Chip1_icon-icons.com_55238.ico" />
+    <None Include="Resources\Chip1_icon-icons.com_55238 %281%29.ico" />
+    <None Include="Resources\Chip1_icon-icons.com_55238 %282%29.ico" />
     <Content Include="Resources\ClosedXml\ClosedXML.dll" />
     <Content Include="Resources\ClosedXml\DocumentFormat.OpenXml.dll" />
     <Content Include="Otros\tools_22686.ico" />
@@ -499,6 +502,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CR7\CR7.csproj">
+      <Project>{dc5b6d2d-eb2c-425d-9db6-55c0f028a2d5}</Project>
+      <Name>CR7</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Projecto\Proyecto\Proyecto.vbproj">
       <Project>{74a0b2ad-288c-4e3e-b461-ecccf2dd0aa6}</Project>
       <Name>Proyecto</Name>

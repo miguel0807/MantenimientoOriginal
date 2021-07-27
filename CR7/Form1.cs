@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+using System.IO;
 
 namespace CR7
 {
@@ -109,14 +110,8 @@ namespace CR7
                     vCbo = "[POGO Hardware Version]";
                     break;
             }
-         
 
-
-
-
-
-
-            SqlCommand cmd = new SqlCommand("select * from Serial# where CONVERT(char,"+ vCbo + ")  like '%"+ txtSearch.Text +"%'", cn);
+            SqlCommand cmd = new SqlCommand("select   * from Serial# where CONVERT(char," + vCbo + ")  like '%"+ txtSearch.Text +"%'", cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -135,6 +130,39 @@ namespace CR7
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+          
+           
+
+
+            SqlCommand cmd = new SqlCommand("bulk insert Serial# from '\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Production\\Licencias Tintas\\Licencias Temporales\\" + Path.GetFileName(openFileDialog1.FileName) + " ' with (fieldterminator = '\t',rowterminator = '\n')", cn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            cn.Close();
+
+
+
+            SqlCommand cmd2 = new SqlCommand("with indicadores4 as (SELECT convert(char,[System Serial#]) as System,Row_Number() OVER (PARTITION BY convert(char,[System Serial#]) ORDER BY convert(char,[System Serial#]) DESC) AS RowNum FROM Serial#) delete from indicadores4 where RowNum=2", cn);
+            SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+            DataTable dt2 = new DataTable();
+            da2.Fill(dt2);
+            dataGridView1.DataSource = dt2;
+            cn.Close();
+
+            SqlCommand cmd3 = new SqlCommand("with indicadores4 as (SELECT convert(char,[System Serial#]) as System,Row_Number() OVER (PARTITION BY convert(char,[System Serial#]) ORDER BY convert(char,[System Serial#]) DESC) AS RowNum FROM Serial#) delete from indicadores4 where RowNum=2", cn);
+            SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
+            DataTable dt3 = new DataTable();
+            da2.Fill(dt3);
+            dataGridView1.DataSource = dt3;
+            cn.Close();
+
+            MessageBox.Show("Se cargo correctamente");
         }
     }
 }
