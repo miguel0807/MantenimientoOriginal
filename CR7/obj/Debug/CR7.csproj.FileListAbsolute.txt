@@ -2,7 +2,6 @@ C:\Users\malvarado\source\repos\Mantenimiento\CR7\bin\Debug\CR7.exe.config
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\bin\Debug\CR7.exe
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\bin\Debug\CR7.pdb
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.csproj.AssemblyReference.cache
-C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.Form1.resources
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.Properties.Resources.resources
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.csproj.GenerateResource.cache
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.csproj.CoreCompileInputs.cache
@@ -12,3 +11,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\CR7\bin\Debug\CR7.exe.manifest
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\bin\Debug\CR7.application
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.exe.manifest
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.application
+C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.SN_Evolution.resources

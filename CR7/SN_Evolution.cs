@@ -13,11 +13,11 @@ using System.IO;
 
 namespace CR7
 {
-    public partial class Form1 : Form
+    public partial class SN_Evolution : Form
     {
         SqlConnection cn = new SqlConnection("Data Source=tcp:COS-F4Z1XQ2\\SQLEXPRESS,49500;Initial Catalog=CR7; User Id=malvarado; Password=1234Admin");
         
-        public Form1()
+        public SN_Evolution()
         {
             InitializeComponent();
         }
@@ -125,6 +125,9 @@ namespace CR7
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[14].Visible = false;
 
+            lblRegistros.Visible = true;
+            lblRegistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,35 +137,41 @@ namespace CR7
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-          
+            
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
            
-
-
-            SqlCommand cmd = new SqlCommand("bulk insert Serial# from '\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Production\\Licencias Tintas\\Licencias Temporales\\" + Path.GetFileName(openFileDialog1.FileName) + " ' with (fieldterminator = '\t',rowterminator = '\n')", cn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            cn.Close();
+                SqlCommand cmd = new SqlCommand("bulk insert Serial# from '\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\" + Path.GetFileName(openFileDialog1.FileName) + " ' with (fieldterminator = '\t',rowterminator = '\n')", cn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                cn.Close();
 
 
 
-            SqlCommand cmd2 = new SqlCommand("with indicadores4 as (SELECT convert(char,[System Serial#]) as System,Row_Number() OVER (PARTITION BY convert(char,[System Serial#]) ORDER BY convert(char,[System Serial#]) DESC) AS RowNum FROM Serial#) delete from indicadores4 where RowNum=2", cn);
-            SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
-            DataTable dt2 = new DataTable();
-            da2.Fill(dt2);
-            dataGridView1.DataSource = dt2;
-            cn.Close();
+                SqlCommand cmd2 = new SqlCommand("with indicadores4 as (SELECT convert(char,[System Serial#]) as System,Row_Number() OVER (PARTITION BY convert(char,[System Serial#]) ORDER BY convert(char,[System Serial#]) DESC) AS RowNum FROM Serial#) delete from indicadores4 where RowNum=2", cn);
+                SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+                DataTable dt2 = new DataTable();
+                da2.Fill(dt2);
+                dataGridView1.DataSource = dt2;
+                cn.Close();
 
-            SqlCommand cmd3 = new SqlCommand("with indicadores4 as (SELECT convert(char,[System Serial#]) as System,Row_Number() OVER (PARTITION BY convert(char,[System Serial#]) ORDER BY convert(char,[System Serial#]) DESC) AS RowNum FROM Serial#) delete from indicadores4 where RowNum=2", cn);
-            SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
-            DataTable dt3 = new DataTable();
-            da2.Fill(dt3);
-            dataGridView1.DataSource = dt3;
-            cn.Close();
+                SqlCommand cmd3 = new SqlCommand("with indicadores4 as (SELECT convert(char,[System Serial#]) as System,Row_Number() OVER (PARTITION BY convert(char,[System Serial#]) ORDER BY convert(char,[System Serial#]) DESC) AS RowNum FROM Serial#) delete from indicadores4 where RowNum=2", cn);
+                SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
+                DataTable dt3 = new DataTable();
+                da3.Fill(dt3);
+                dataGridView1.DataSource = dt3;
+                cn.Close();
 
-            MessageBox.Show("Se cargo correctamente");
+                MessageBox.Show("Se cargo correctamente");
+            }
+
+
+
+
+           
         }
     }
 }

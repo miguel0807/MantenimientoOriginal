@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>T:\Public\Production\Maintenance\SIM PRO\|D:\WebSite\|T:\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\|T:\Public\Production\Maintenance\Actualizacion Oficial Controlador Casos\|T:\Public\Production\Maintenance\Actualizacion Controlador Casos\</PublishUrlHistory>
+    <PublishUrlHistory>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\|T:\Public\Production\Maintenance\SIM PRO\|D:\WebSite\|T:\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\|T:\Public\Production\Maintenance\Actualizacion Oficial Controlador Casos\</PublishUrlHistory>
     <InstallUrlHistory>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\|\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Actualizacion Controlador Casos\</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\|\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Actualizacion Oficial Controlador Casos\</UpdateUrlHistory>
