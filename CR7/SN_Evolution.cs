@@ -21,7 +21,8 @@ namespace CR7
         {
             InitializeComponent();
         }
-    
+
+       
         
         private void button1_Click(object sender, EventArgs e)
         {
@@ -40,6 +41,56 @@ namespace CR7
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+           
+                SqlCommand cmd = new SqlCommand("bulk insert Serial# from '\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\" + Path.GetFileName(openFileDialog1.FileName) + " ' with (fieldterminator = '\t',rowterminator = '\n')", cn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                cn.Close();
+
+
+
+                SqlCommand cmd2 = new SqlCommand("with indicadores4 as (SELECT convert(char,[System Serial#]) as System,Row_Number() OVER (PARTITION BY convert(char,[System Serial#]) ORDER BY convert(char,[System Serial#]) DESC) AS RowNum FROM Serial#) delete from indicadores4 where RowNum=2", cn);
+                SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+                DataTable dt2 = new DataTable();
+                da2.Fill(dt2);
+                dataGridView1.DataSource = dt2;
+                cn.Close();
+
+                SqlCommand cmd3 = new SqlCommand("with indicadores4 as (SELECT convert(char,[System Serial#]) as System,Row_Number() OVER (PARTITION BY convert(char,[System Serial#]) ORDER BY convert(char,[System Serial#]) DESC) AS RowNum FROM Serial#) delete from indicadores4 where RowNum=2", cn);
+                SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
+                DataTable dt3 = new DataTable();
+                da3.Fill(dt3);
+                dataGridView1.DataSource = dt3;
+                cn.Close();
+
+                MessageBox.Show("Se cargo correctamente");
+            }
+
+
+
+
+           
+        }
+
+        //Busca los registros en la base de datos y los imprime en el datagridview1
+        public void Search()
         {
             //Declaracion de variable
             string vCbo;
@@ -111,7 +162,7 @@ namespace CR7
                     break;
             }
 
-            SqlCommand cmd = new SqlCommand("select   * from Serial# where CONVERT(char," + vCbo + ")  like '%"+ txtSearch.Text +"%'", cn);
+            SqlCommand cmd = new SqlCommand("select   * from Serial# where CONVERT(char," + vCbo + ")  like '%" + txtSearch.Text + "%'", cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -128,50 +179,15 @@ namespace CR7
             lblRegistros.Visible = true;
             lblRegistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
 
+
+
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            
-            DialogResult result = openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-           
-                SqlCommand cmd = new SqlCommand("bulk insert Serial# from '\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\" + Path.GetFileName(openFileDialog1.FileName) + " ' with (fieldterminator = '\t',rowterminator = '\n')", cn);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-                cn.Close();
-
-
-
-                SqlCommand cmd2 = new SqlCommand("with indicadores4 as (SELECT convert(char,[System Serial#]) as System,Row_Number() OVER (PARTITION BY convert(char,[System Serial#]) ORDER BY convert(char,[System Serial#]) DESC) AS RowNum FROM Serial#) delete from indicadores4 where RowNum=2", cn);
-                SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
-                DataTable dt2 = new DataTable();
-                da2.Fill(dt2);
-                dataGridView1.DataSource = dt2;
-                cn.Close();
-
-                SqlCommand cmd3 = new SqlCommand("with indicadores4 as (SELECT convert(char,[System Serial#]) as System,Row_Number() OVER (PARTITION BY convert(char,[System Serial#]) ORDER BY convert(char,[System Serial#]) DESC) AS RowNum FROM Serial#) delete from indicadores4 where RowNum=2", cn);
-                SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
-                DataTable dt3 = new DataTable();
-                da3.Fill(dt3);
-                dataGridView1.DataSource = dt3;
-                cn.Close();
-
-                MessageBox.Show("Se cargo correctamente");
-            }
-
-
-
-
-           
+            string path = "C:\\File\\file.txt";
+            string Text = "Hello, Hi, holaa\ncasa";
+            File.WriteAllText(path, Text);
         }
     }
 }
