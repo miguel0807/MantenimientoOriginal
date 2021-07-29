@@ -185,112 +185,16 @@ namespace CR7
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string path = "C:\\File\\file.txt";
-            using (StreamReader readtext = new StreamReader(path))
-            {
-
-                string readText = readtext.ReadLine();
-               // listBox1.Items.Add(readText);
-          
-
-            listBox1.Items.Clear();
-            string ruta = @"" + txtruta.Text; //Escribir ruta
-            string texto = txtSearch.Text; //Escribir texto a buscar
-
-            string[] files = Directory.GetFiles(ruta, "*txt", SearchOption.AllDirectories);
-            //List<string> encontrados = new List<string>();
-            foreach (string item in files)
-            {
-               
-                string contenido = File.ReadAllText(item);
-
-                if (contenido.Contains(texto))
-
-                    listBox1.Items.Add(readtext.ReadLine());
-            }
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-            string path = "C:\\File\\file.txt";
-            string readText = File.ReadAllText(path);
-            listBox1.Items.Add(readText);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            string path = "C:\\File\\file.txt";
-            using (StreamReader readtext = new StreamReader(path))
-            {   
-                
-                string readText = readtext.ReadLine();
-                listBox1.Items.Add(readText);
-            }
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            string path = "C:\\File\\file.txt";
-            
-            using (StreamWriter writetext = new StreamWriter(path))
-            {
-                writetext.WriteLine(txtSearch.Text);
-            }
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            string path = "C:\\File\\file.txt";
-            StreamWriter agregar = File.AppendText(path);
-
-            agregar.WriteLine("Nueva linea agregada!");
-            agregar.Close();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-            string path = "C:\\File\\1SNTABLE1.TBL"; 
-            //string path = "C:\\File\\file.txt";
-            string path2 = "C:\\File\\output.txt";
-            // TextReader Leer = new StreamReader(path);
-            //textBox1.Text = Leer.ReadLine();
-
-            using (var input = File.OpenText(path))
-            using (var output = new StreamWriter(path2))
-            {
-                string line;
-                while (null != (line = input.ReadLine()))
-                {
-                    // optionally modify line.
-                    output.WriteLine(line);
-                }
-            }
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text.Substring(textBox1.Text.Count() - 1) == "d")
-            {
-                MessageBox.Show("Error", "Error");
-            }
-            else
-            {
-                textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Count() - 1);
-            }
-        }
+       
 
         private void button10_Click(object sender, EventArgs e)
         {
+            string path;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
 
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                txtruta.Text = fbd.SelectedPath;
+                path= fbd.SelectedPath;
             }
         }
 
@@ -305,11 +209,8 @@ namespace CR7
             System.IO.StreamReader file = new System.IO.StreamReader(@"C:\\File\\1SNTABLE1.TBL");
 
             while ((line = file.ReadLine()) != null)
-            {
-                textBox1.Text = textBox1.Text + line + "\r\n";
-              
-                
-
+            {     
+         
                 SystemSerial(line, counter);
                 PrintHeadSerial(line, counter);
                 DriverPcbSerial(line, counter);
@@ -332,11 +233,10 @@ namespace CR7
 
             }
             RowWrite();
-           // MessageBox.Show(matriz[0, 0] + matriz[0,1] + matriz[0,2] + matriz[0,3] + matriz[0,3] + matriz[0,4] + matriz[0,5] + matriz[0, 6] + matriz[0, 7] + matriz[0, 8] + matriz[0, 9] + matriz[0, 10] + matriz[0, 11] + matriz[0, 12] + matriz[0, 13] + matriz[0, 14] + matriz[0, 15]);
+           
             
             file.Close();
 
-            txtContador.Text = "Cantidad de filas: " + counter;
             
         }
 
