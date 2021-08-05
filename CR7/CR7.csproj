@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusquedaOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusquedaOrden.Designer.cs">
+      <DependentUpon>BusquedaOrden.cs</DependentUpon>
+    </Compile>
     <Compile Include="SN_Evolution.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BusquedaOrden.resx">
+      <DependentUpon>BusquedaOrden.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SN_Evolution.resx">
       <DependentUpon>SN_Evolution.cs</DependentUpon>
     </EmbeddedResource>

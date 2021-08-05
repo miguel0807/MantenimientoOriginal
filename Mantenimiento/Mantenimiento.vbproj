@@ -28,10 +28,10 @@
     <UpdateUrl>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\</UpdateUrl>
     <ProductName>SIM PRO</ProductName>
     <PublisherName>Miguel Alvarado</PublisherName>
-    <MinimumRequiredVersion>5.0.0.19</MinimumRequiredVersion>
+    <MinimumRequiredVersion>5.0.0.20</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>20</ApplicationRevision>
+    <ApplicationRevision>21</ApplicationRevision>
     <ApplicationVersion>5.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

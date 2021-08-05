@@ -12,3 +12,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\CR7\bin\Debug\CR7.application
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.exe.manifest
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.application
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.SN_Evolution.resources
+C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.BusquedaOrden.resources
