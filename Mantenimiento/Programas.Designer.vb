@@ -25,19 +25,19 @@ Partial Class Programas
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Programas))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Iconostrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ProgramasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.button2 = New System.Windows.Forms.Button()
         Me.button1 = New System.Windows.Forms.Button()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Button26 = New System.Windows.Forms.Button()
-        Me.ProgramasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
-        Me.Iconostrip.SuspendLayout()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Iconostrip.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -51,11 +51,24 @@ Partial Class Programas
         Me.Panel1.Size = New System.Drawing.Size(1167, 38)
         Me.Panel1.TabIndex = 21
         '
+        'btnClose
+        '
+        Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.Image = Global.Mantenimiento.My.Resources.Resources.Delete_80_icon_icons_com_57340
+        Me.btnClose.Location = New System.Drawing.Point(1122, 0)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(32, 32)
+        Me.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnClose.TabIndex = 22
+        Me.btnClose.TabStop = False
+        '
         'NotifyIcon1
         '
         Me.NotifyIcon1.ContextMenuStrip = Me.Iconostrip
         Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
-        Me.NotifyIcon1.Text = "SI PRO"
+        Me.NotifyIcon1.Text = "SIM PRO"
         Me.NotifyIcon1.Visible = True
         '
         'Iconostrip
@@ -64,6 +77,20 @@ Partial Class Programas
         Me.Iconostrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProgramasToolStripMenuItem, Me.CerrarToolStripMenuItem})
         Me.Iconostrip.Name = "Iconostrip"
         Me.Iconostrip.Size = New System.Drawing.Size(154, 56)
+        '
+        'ProgramasToolStripMenuItem
+        '
+        Me.ProgramasToolStripMenuItem.Image = Global.Mantenimiento.My.Resources.Resources.tools_22686
+        Me.ProgramasToolStripMenuItem.Name = "ProgramasToolStripMenuItem"
+        Me.ProgramasToolStripMenuItem.Size = New System.Drawing.Size(153, 26)
+        Me.ProgramasToolStripMenuItem.Text = "Programas"
+        '
+        'CerrarToolStripMenuItem
+        '
+        Me.CerrarToolStripMenuItem.Image = Global.Mantenimiento.My.Resources.Resources.salir1
+        Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
+        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(153, 26)
+        Me.CerrarToolStripMenuItem.Text = "Cerrar"
         '
         'Button3
         '
@@ -84,19 +111,6 @@ Partial Class Programas
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = False
-        '
-        'btnClose
-        '
-        Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClose.Image = Global.Mantenimiento.My.Resources.Resources.Delete_80_icon_icons_com_57340
-        Me.btnClose.Location = New System.Drawing.Point(1122, 0)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(32, 32)
-        Me.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnClose.TabIndex = 22
-        Me.btnClose.TabStop = False
         '
         'button2
         '
@@ -169,20 +183,6 @@ Partial Class Programas
         Me.Button26.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button26.UseVisualStyleBackColor = False
         '
-        'ProgramasToolStripMenuItem
-        '
-        Me.ProgramasToolStripMenuItem.Image = Global.Mantenimiento.My.Resources.Resources.tools_22686
-        Me.ProgramasToolStripMenuItem.Name = "ProgramasToolStripMenuItem"
-        Me.ProgramasToolStripMenuItem.Size = New System.Drawing.Size(153, 26)
-        Me.ProgramasToolStripMenuItem.Text = "Programas"
-        '
-        'CerrarToolStripMenuItem
-        '
-        Me.CerrarToolStripMenuItem.Image = Global.Mantenimiento.My.Resources.Resources.salir1
-        Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
-        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(153, 26)
-        Me.CerrarToolStripMenuItem.Text = "Cerrar"
-        '
         'Programas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -200,10 +200,11 @@ Partial Class Programas
         Me.Opacity = 0.98R
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SIM PRO"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Iconostrip.ResumeLayout(False)
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Iconostrip.ResumeLayout(False)
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

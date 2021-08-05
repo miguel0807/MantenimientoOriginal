@@ -203,7 +203,7 @@ Partial Class Login
         Me.Name = "Login"
         Me.Opacity = 0.95R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Generador QR"
+        Me.Text = "SIM PRO"
         Me.titleBar.ResumeLayout(False)
         Me.titleBar.PerformLayout()
         CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).EndInit()
