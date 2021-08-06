@@ -3,10 +3,7 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimie
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.CoreCompileInputs.cache
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.MaterialNuevo.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Presentacion.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Ejemplo.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Indicadores_Nuevo.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Indicadores_Proceso.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Indicadores_Editable.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Busqueda_Material.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Modificar_Material.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Busqueda_Equipos.resources
@@ -15,7 +12,6 @@ C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimie
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.BusquedaPlanificacion_Preventivo.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.NuevoProvedor_Preventivo.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Pendiente_Preventivos.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Registro_Preventivo.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\itextsharp.dll
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.CopyComplete
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Startup.resources

@@ -127,14 +127,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Generador QR.exe" size="929280">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Generador QR.exe" size="833536">
       <assemblyIdentity name="Generador QR" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>i+nA04dBdY1x0OTPivl/MB38Zo1XU5mvNkCgwXO8cKs=</dsig:DigestValue>
+        <dsig:DigestValue>sN6N/UNxHH4lxWNqqvN7bqPPVyRmfhWX37T7u3Zq3EU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -175,14 +175,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIM PRO.exe" size="974776">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIM PRO.exe" size="894392">
       <assemblyIdentity name="SIM PRO" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AkexAWHipt/9mvyw+9qTWcgsQSelJLZm0yJXILqXZaE=</dsig:DigestValue>
+        <dsig:DigestValue>7+srmFfTBCWkqPOa7hHjtR9kEsMZmhW8Hw5i0JW1YRE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
