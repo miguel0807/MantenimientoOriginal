@@ -96,13 +96,13 @@ Module Modulo_Indicadores
 #Region "Buscar casos abiertos"
         conectar()
         Dim tabla As DataGridView = datagridIndicadores
-        Dim adaptador As New SqlDataAdapter("select Caso,Título,Responsable,Clase,Equipo,Ubicación,Clasificación,Descripción,
+        Dim adaptador As New SqlDataAdapter("select Caso,Título,Responsable,Clase,Equipo,Ubicación,Clasificación,Descripción,[SoluciónProblema],
         [Fecha Inicial] as 'Fecha Inicial',
         [Fecha Final] as 'Fecha Final', Horas,Minutos from Indicadores1", cn)
         Dim dataS As New DataSet
-        adaptador.Fill(dataS, "Indicadores")
+        adaptador.Fill(dataS, "Indicadores1")
 
-        tabla.DataSource = dataS.Tables("Indicadores")
+        tabla.DataSource = dataS.Tables("Indicadores1")
         desconectar()
 
 
