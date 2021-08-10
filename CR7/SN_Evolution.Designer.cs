@@ -54,6 +54,7 @@ namespace CR7
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.txtruta = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -360,12 +361,29 @@ namespace CR7
             this.txtruta.TabIndex = 30;
             this.txtruta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(90)))), ((int)(((byte)(164)))));
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(1054, 94);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(157, 51);
+            this.button6.TabIndex = 31;
+            this.button6.Text = "Duplicate Search ";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // SN_Evolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(58)))), ((int)(((byte)(81)))));
             this.ClientSize = new System.Drawing.Size(1306, 707);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.txtruta);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -419,6 +437,7 @@ namespace CR7
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtruta;
+        private System.Windows.Forms.Button button6;
     }
 }
 

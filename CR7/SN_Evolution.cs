@@ -57,78 +57,84 @@ namespace CR7
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string path,ConvertedFile;
-            ConvertedFile = "file.txt";
-           
-            path = "\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\" + ConvertedFile;
-                SqlCommand cmd = new SqlCommand("bulk insert Serial# from '\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\" + ConvertedFile + " ' with (fieldterminator = '\t',rowterminator = ',')", cn);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);       
-                DataTable dt = new DataTable();
+            string path;
+            //ConvertedFile = "file.txt";
+
           
-             
+            openFileDialog2.InitialDirectory = "\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\";
 
-
-            if (File.Exists(path))
+            DialogResult result = openFileDialog2.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                try
+                path = openFileDialog2.FileName;
+               
+                //path = "\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\" + ConvertedFile;
+
+                //SqlCommand cmd = new SqlCommand("bulk insert Serial# from '\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\" + ConvertedFile + " ' with (fieldterminator = '\t',rowterminator = ',')", cn);
+                SqlCommand cmd = new SqlCommand("bulk insert Serial# from '" + path +  "' with (fieldterminator = '\\t',rowterminator = ',')", cn);
+                txtfiltro.Text = cmd.CommandText;
+
+                
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+
+
+                if (File.Exists(path))
                 {
-                    da.Fill(dt);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                    MessageBox.Show("No se encontro el archivo");
-                }
-            }
-            else { MessageBox.Show("No se encontro el archivo"); }
-
-
-
-
-       
-            cn.Close();
-            
-
-            for (int i = 0; i < 50; i ++)
+                    try
                     {
+                        da.Fill(dt);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                        //MessageBox.Show("No se encontro el archivo");
+                        return;
+                    }
+                }
+                    else 
+                    { 
+                        MessageBox.Show("No se encontro el archivo"); 
+                    }
+
+
+                cn.Close();
+
+                /* Adicional
+                for (int i = 0; i < 50; i++)
+                {
                     SqlCommand cmd2 = new SqlCommand("with indicadores4 as (SELECT convert(char,[System Serial#]) as System,Row_Number() OVER (PARTITION BY convert(char,[System Serial#]) ORDER BY convert(char,[System Serial#]) DESC) AS RowNum FROM Serial#) delete from indicadores4 where RowNum=2", cn);
                     SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
                     DataTable dt2 = new DataTable();
                     da2.Fill(dt2);
                     dataGridView1.DataSource = dt2;
-                     
+
                     cn.Close();
 
                 }
 
-            
 
-            
+
+
                 if (File.Exists(path))
                 {
                     try
                     {
                         File.Delete(path);
-                    MessageBox.Show("Se cargo correctamente");
+                        MessageBox.Show("Se cargo correctamente");
 
 
-                }
+                    }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.ToString());
                         MessageBox.Show("No se encontro el archivo");
                     }
 
-                }
-           
-            
-            
-            
+                }*/
 
-
-
-
-
+            }
+            MessageBox.Show("Data upload finished", "Status");
         }
 
         //Busca los registros en la base de datos y los imprime en el datagridview1
@@ -210,6 +216,7 @@ namespace CR7
 
             //DataView dataView2 = new DataView(dt);
             //dataGridView1.DataSource = dataView2;
+
             dataGridView1.DataSource = dt;
             cn.Close();
 
@@ -220,7 +227,7 @@ namespace CR7
             lblRegistros.Visible = true;
             lblRegistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
 
-
+           
 
         }
 
@@ -240,50 +247,62 @@ namespace CR7
            
         int counter = 0;
             string line,path;
-
+            openFileDialog2.InitialDirectory = "\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\";
+           
             DialogResult result = openFileDialog2.ShowDialog();
             if (result == DialogResult.OK)
             {
-                path = "\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\Originales\\" + Path.GetFileName(openFileDialog2.FileName);
-                Path.GetFileName(openFileDialog2.FileName);
-                // Read the file and display it line by line.  
-                StreamReader file = new System.IO.StreamReader(@"\\cor-sv-fs01\Costa Rica Share\Public\Engineering\DD Backup\CR\Backup\Evolution\Numeros de Serie Produccion\Serial Number\Originales\" + Path.GetFileName(openFileDialog2.FileName));
+                path = openFileDialog2.FileName ;
+               
+
+                
+               // path = "\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\Originales\\" + Path.GetFileName(openFileDialog2.FileName);
+                //Path.GetFileName(openFileDialog2.FileName);
+               
+
                 try
                 {
+                    // Read the file and display it line by line.  
+                    //StreamReader file = new System.IO.StreamReader(@"\\cor-sv-fs01\Costa Rica Share\Public\Engineering\DD Backup\CR\Backup\Evolution\Numeros de Serie Produccion\Serial Number\Originales\" + Path.GetFileName(openFileDialog2.FileName));
+                    StreamReader file = new System.IO.StreamReader(path);
+               
                     while ((line = file.ReadLine()) != null)
-                {
+                    {
                     
-                    SystemSerial(line, counter);
-                    PrintHeadSerial(line, counter);
-                    DriverPcbSerial(line, counter);
-                    PogoSerial(line, counter);
-                    ControllerSerial(line, counter);
-                    CpuSerial(line, counter);
-                    LcdSerial(line, counter);
-                    ControllerSoftwareVersion(line, counter);
-                    PrintHeadFirmware(line, counter);
-                    PrintHeadSoftwareVersion(line, counter);
-                    Date(line, counter);
-                    User(line, counter);
-                    SystemModel(line, counter);
-                    ControllerHardwareVersion(line, counter);
-                    DriverHardwareVersion(line, counter);
-                    PogoHardwareVersion(line, counter);
+                        SystemSerial(line, counter);
+                        PrintHeadSerial(line, counter);
+                        DriverPcbSerial(line, counter);
+                        PogoSerial(line, counter);
+                        ControllerSerial(line, counter);
+                        CpuSerial(line, counter);
+                        LcdSerial(line, counter);
+                        ControllerSoftwareVersion(line, counter);
+                        PrintHeadFirmware(line, counter);
+                        PrintHeadSoftwareVersion(line, counter);
+                        Date(line, counter);
+                        User(line, counter);
+                        SystemModel(line, counter);
+                        ControllerHardwareVersion(line, counter);
+                        DriverHardwareVersion(line, counter);
+                        PogoHardwareVersion(line, counter);
 
-                    counter++;
+                        counter++;
                    
 
 
+                    }
+
+                    file.Close();
                 }
-                 }
-                        catch (Exception ex)
+                catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);                
+                    return;
 
                 }
                 RowWrite(path);        
             
-                file.Close();
+                
                 /*
 
                 if (File.Exists(path))
@@ -299,7 +318,7 @@ namespace CR7
                     }
                 }
                 */
-                MessageBox.Show("Finalizado","Status");
+                MessageBox.Show("File conversion completed successfully", "Status");
             }
 
            
@@ -313,9 +332,10 @@ namespace CR7
                 for (int i = 0; i < 1; i++)
                 {
 
-                    matrix[counter, 0] = (line.Substring(i, 6)) + Delimiter;         
+                    matrix[counter, 0] = 1 + "\t" + (line.Substring(i, 6)) + Delimiter;
+                    //matrix[counter, 0] = (line.Substring(i, 6)) + Delimiter;
 
-                }
+            }
 
         }
 
@@ -467,18 +487,22 @@ namespace CR7
 
         void RowWrite(string pathOrigin)
         {
-            string path = "\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\file.txt";
-            int TotalRow = CountRowsPath(pathOrigin);
+            
+            //string path = "\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\Converted files\\file.txt";
+            string path = "\\\\cor-sv-fs01\\Costa Rica Share\\Public\\Engineering\\DD Backup\\CR\\Backup\\Evolution\\Numeros de Serie Produccion\\Serial Number\\Converted files\\" + Path.GetFileNameWithoutExtension(openFileDialog2.FileName) + "(converted).txt";
+            int TotalRow = CountRowsPath(pathOrigin) - 1;
             
             StreamWriter add = File.AppendText(path);
             
            
 
-            for (int i = 0; i < TotalRow; i++)
+            for (int i = 0; i < TotalRow ; i++)
             {
-                add.WriteLine((matrix[i, 0] + matrix[i, 1] + matrix[i, 2] + matrix[i, 3] + matrix[i, 4] + matrix[i, 5] + matrix[i, 6] + matrix[i, 7] + matrix[i, 8] + matrix[i, 9] + matrix[i, 10] + matrix[i, 11] + matrix[i, 12] + matrix[i, 13] + matrix[i, 14] + matrix[i, 15]));
+               // add.WriteLine((1 + "\t" + matrix[i, 0] + matrix[i, 1] + matrix[i, 2] + matrix[i, 3] + matrix[i, 4] + matrix[i, 5] + matrix[i, 6] + matrix[i, 7] + matrix[i, 8] + matrix[i, 9] + matrix[i, 10] + matrix[i, 11] + matrix[i, 12] + matrix[i, 13] + matrix[i, 14]));
+                add.WriteLine(( matrix[i, 0] + matrix[i, 1] + matrix[i, 2] + matrix[i, 3] + matrix[i, 4] + matrix[i, 5] + matrix[i, 6] + matrix[i, 7] + matrix[i, 8] + matrix[i, 9] + matrix[i, 10] + matrix[i, 11] + matrix[i, 12] + matrix[i, 13] + matrix[i, 14] + matrix[i, 15]));
             }
-          
+           
+
             add.Close();
         }
 
@@ -539,6 +563,25 @@ namespace CR7
             }
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("select*from Serial# where CONVERT(char,[System Serial#]) in (select CONVERT(char,[System Serial#]) from Serial# group by CONVERT(char,[System Serial#]) having COUNT (CONVERT(char,[System Serial#])) >=2 ) order by CONVERT(char,[System Serial#])", cn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            //DataView dataView2 = new DataView(dt);
+            //dataGridView1.DataSource = dataView2;
+            dataGridView1.DataSource = dt;
+            cn.Close();
+
+
+
+
+
+            lblRegistros.Visible = true;
+            lblRegistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
+        }
     }
     
 }
