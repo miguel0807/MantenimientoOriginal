@@ -80,7 +80,6 @@
     <Compile Include="Abis.Designer.cs">
       <DependentUpon>Abis.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbisCSM.cs" />
     <Compile Include="BusquedaOrden.cs">
       <SubType>Form</SubType>
     </Compile>

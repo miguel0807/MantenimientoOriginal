@@ -8,8 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
-using System.Threading;
 
+/*
+ * Autor:  Miguel Alvarado
+ * Título: Programador de CSM del proyecto Abis 
+ * Fecha:  12/08/2021
+ */
 
 namespace CR7
 {
@@ -30,8 +34,19 @@ namespace CR7
             strBufferIn = accion;
 
 
+           // textBox1.Text = "\n" + strBufferIn + "\n";
+            
+            txtDatosRecibidos.Text = txtDatosRecibidos.Text + strBufferIn;
 
-            txtDatosRecibidos.Text = strBufferIn;
+            txtDatosRecibidos.Focus();
+            //move the caret to the end of the text
+            txtDatosRecibidos.SelectionStart = txtDatosRecibidos.TextLength;
+            //scroll to the caret
+            txtDatosRecibidos.ScrollToCaret();
+            txtDatosAEnviar.Focus();
+
+        
+            
 
         }
 
@@ -51,7 +66,7 @@ namespace CR7
             strBufferIn = "";
             strbufferOut = "";
             btnConectar.Enabled = false;
-            btnEnviarDatos.Enabled = false;
+            
 
         }
 
@@ -80,12 +95,12 @@ namespace CR7
                 strBufferIn = "";
                 strbufferOut = "";
                 btnConectar.Enabled = false;
-                btnEnviarDatos.Enabled = false;
+                
 
 
             }
 
-            cboPuertos.SelectedIndex = 1;
+           // cboPuertos.SelectedIndex = 1;
         }
 
         private void btnConectar_Click(object sender, EventArgs e)
@@ -94,7 +109,7 @@ namespace CR7
             {
                 if (btnConectar.Text == "Conectar")
                 {
-                    serialPort1.BaudRate = Int32.Parse(cboBaudRate.Text);
+                    serialPort1.BaudRate = 115200;
                     serialPort1.DataBits = 8;
                     serialPort1.Parity = Parity.None;
                     serialPort1.StopBits = StopBits.One;
@@ -105,7 +120,7 @@ namespace CR7
                     {
                         serialPort1.Open();
                         btnConectar.Text = "Desconectar";
-                        btnEnviarDatos.Enabled = true;
+                        
 
                     }
                     catch(Exception exc)
@@ -120,7 +135,7 @@ namespace CR7
                 {
                     serialPort1.Close();
                     btnConectar.Text = "Conectar";
-                    btnEnviarDatos.Enabled = true;
+                    
                 }
             }
             catch(Exception exc)
@@ -129,22 +144,6 @@ namespace CR7
             }
         }
 
-        private void btnEnviarDatos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                serialPort1.DiscardOutBuffer();
-                strbufferOut = txtDatosAEnviar.Text;
-                serialPort1.Write(strbufferOut);
-                serialPort1.Write(new byte[] { 13, 10 }, 0, 2);
-                // serialPort1.Write("\r\n");
-
-            }
-            catch(Exception exc)
-            {
-                MessageBox.Show(exc.Message.ToString());
-            }
-        }
 
         private void DatoRecibido(object sender, SerialDataReceivedEventArgs e)
         {
@@ -156,15 +155,44 @@ namespace CR7
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+
+        
+
+        private void txtDatosAEnviar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            serialPort1.Write(new byte[] { 27, 10 }, 0, 2);
-            serialPort1.Write(new byte[] { 13, 10 }, 0, 2);
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                try
+                {
+                    serialPort1.DiscardOutBuffer();
+                    strbufferOut = txtDatosAEnviar.Text;
+                    serialPort1.Write(strbufferOut);
+                    serialPort1.Write(new byte[] { 13, 10 }, 0, 2);
+                    // serialPort1.Write("\r\n");
+                    txtDatosAEnviar.Text = "";
+
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message.ToString());
+                }
+            }
+
+            else if ((int)e.KeyChar == (int)Keys.Escape)
+            {
+                serialPort1.Write(new byte[] { 27, 10 }, 0, 2);
+                txtDatosAEnviar.Text = "";
+            }
+
+
+
+            
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void txtDatosAEnviar_TextChanged(object sender, EventArgs e)
         {
-            serialPort1.Write(new byte[] { 27, 10 }, 0, 2);
+            
         }
     }
 }
