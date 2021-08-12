@@ -285,7 +285,7 @@ namespace CR7
             this.txtShow.Name = "txtShow";
             this.txtShow.Size = new System.Drawing.Size(56, 26);
             this.txtShow.TabIndex = 22;
-            this.txtShow.Text = "1000";
+            this.txtShow.Text = "30";
             this.txtShow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button6

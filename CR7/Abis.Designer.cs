@@ -30,23 +30,12 @@ namespace CR7
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnBuscaPuerto = new System.Windows.Forms.Button();
             this.btnConectar = new System.Windows.Forms.Button();
             this.cboPuertos = new System.Windows.Forms.ComboBox();
-            this.txtDatosAEnviar = new System.Windows.Forms.TextBox();
-            this.txtDatosRecibidos = new System.Windows.Forms.TextBox();
+            this.txtEnviarDatos = new System.Windows.Forms.TextBox();
+            this.txtMostrarDatos = new System.Windows.Forms.TextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
-            // 
-            // btnBuscaPuerto
-            // 
-            this.btnBuscaPuerto.Location = new System.Drawing.Point(77, 12);
-            this.btnBuscaPuerto.Name = "btnBuscaPuerto";
-            this.btnBuscaPuerto.Size = new System.Drawing.Size(155, 37);
-            this.btnBuscaPuerto.TabIndex = 0;
-            this.btnBuscaPuerto.Text = "Buscar puertos";
-            this.btnBuscaPuerto.UseVisualStyleBackColor = true;
-            this.btnBuscaPuerto.Click += new System.EventHandler(this.btnBuscaPuerto_Click);
             // 
             // btnConectar
             // 
@@ -67,27 +56,26 @@ namespace CR7
             this.cboPuertos.Size = new System.Drawing.Size(192, 24);
             this.cboPuertos.TabIndex = 5;
             // 
-            // txtDatosAEnviar
+            // txtEnviarDatos
             // 
-            this.txtDatosAEnviar.Location = new System.Drawing.Point(77, 71);
-            this.txtDatosAEnviar.Name = "txtDatosAEnviar";
-            this.txtDatosAEnviar.Size = new System.Drawing.Size(195, 22);
-            this.txtDatosAEnviar.TabIndex = 7;
-            this.txtDatosAEnviar.TextChanged += new System.EventHandler(this.txtDatosAEnviar_TextChanged);
-            this.txtDatosAEnviar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDatosAEnviar_KeyPress);
+            this.txtEnviarDatos.Location = new System.Drawing.Point(77, 71);
+            this.txtEnviarDatos.Name = "txtEnviarDatos";
+            this.txtEnviarDatos.Size = new System.Drawing.Size(195, 22);
+            this.txtEnviarDatos.TabIndex = 7;
+            this.txtEnviarDatos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDatosAEnviar_KeyPress);
             // 
-            // txtDatosRecibidos
+            // txtMostrarDatos
             // 
-            this.txtDatosRecibidos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtMostrarDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDatosRecibidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDatosRecibidos.Location = new System.Drawing.Point(77, 99);
-            this.txtDatosRecibidos.Multiline = true;
-            this.txtDatosRecibidos.Name = "txtDatosRecibidos";
-            this.txtDatosRecibidos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDatosRecibidos.Size = new System.Drawing.Size(1114, 544);
-            this.txtDatosRecibidos.TabIndex = 8;
+            this.txtMostrarDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMostrarDatos.Location = new System.Drawing.Point(77, 99);
+            this.txtMostrarDatos.Multiline = true;
+            this.txtMostrarDatos.Name = "txtMostrarDatos";
+            this.txtMostrarDatos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMostrarDatos.Size = new System.Drawing.Size(1114, 544);
+            this.txtMostrarDatos.TabIndex = 8;
             // 
             // serialPort1
             // 
@@ -98,11 +86,10 @@ namespace CR7
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 686);
-            this.Controls.Add(this.txtDatosRecibidos);
-            this.Controls.Add(this.txtDatosAEnviar);
+            this.Controls.Add(this.txtMostrarDatos);
+            this.Controls.Add(this.txtEnviarDatos);
             this.Controls.Add(this.cboPuertos);
             this.Controls.Add(this.btnConectar);
-            this.Controls.Add(this.btnBuscaPuerto);
             this.Name = "Abis";
             this.Text = "Abis";
             this.Load += new System.EventHandler(this.Abis_Load);
@@ -112,12 +99,10 @@ namespace CR7
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnBuscaPuerto;
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.ComboBox cboPuertos;
-        private System.Windows.Forms.TextBox txtDatosAEnviar;
-        private System.Windows.Forms.TextBox txtDatosRecibidos;
+        private System.Windows.Forms.TextBox txtEnviarDatos;
+        private System.Windows.Forms.TextBox txtMostrarDatos;
         private System.IO.Ports.SerialPort serialPort1;
     }
 }

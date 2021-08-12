@@ -529,9 +529,11 @@ namespace CR7
 
         private void SearchDuplicates()
         {
-            SqlCommand cmd = new SqlCommand("select*from Serial# where CONVERT(char,[System Serial#]) in (select CONVERT(char,[System Serial#]) from Serial# group by CONVERT(char,[System Serial#]) having COUNT (CONVERT(char,[System Serial#])) >=2 ) order by CONVERT(char,[System Serial#])", cn);
+           
+            SqlCommand cmd = new SqlCommand("select top " + txtShow.Text + " *from Serial# where CONVERT(char,[System Serial#]) in (select CONVERT(char,[System Serial#]) from Serial# group by CONVERT(char,[System Serial#]) having COUNT (CONVERT(char,[System Serial#])) >=2 ) order by CONVERT(char,[System Serial#])", cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
+            
             da.Fill(dt);
 
             dataGridView1.DataSource = dt;
