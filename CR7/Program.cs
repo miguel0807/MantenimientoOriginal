@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CR7
 {
     static class Program
@@ -11,12 +12,15 @@ namespace CR7
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        [STAThread]
+        /// 
+
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SN_Evolution());
+            Application.Run(new Abis());
+
         }
     }
 }
+
