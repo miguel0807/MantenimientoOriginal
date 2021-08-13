@@ -31,7 +31,6 @@ namespace CR7
         {
             this.components = new System.ComponentModel.Container();
             this.btnConectar = new System.Windows.Forms.Button();
-            this.cboPuertos = new System.Windows.Forms.ComboBox();
             this.txtEnviarDatos = new System.Windows.Forms.TextBox();
             this.txtMostrarDatos = new System.Windows.Forms.TextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
@@ -46,15 +45,6 @@ namespace CR7
             this.btnConectar.Text = "Conectar";
             this.btnConectar.UseVisualStyleBackColor = true;
             this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
-            // 
-            // cboPuertos
-            // 
-            this.cboPuertos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPuertos.FormattingEnabled = true;
-            this.cboPuertos.Location = new System.Drawing.Point(276, 19);
-            this.cboPuertos.Name = "cboPuertos";
-            this.cboPuertos.Size = new System.Drawing.Size(192, 24);
-            this.cboPuertos.TabIndex = 5;
             // 
             // txtEnviarDatos
             // 
@@ -88,7 +78,6 @@ namespace CR7
             this.ClientSize = new System.Drawing.Size(1221, 686);
             this.Controls.Add(this.txtMostrarDatos);
             this.Controls.Add(this.txtEnviarDatos);
-            this.Controls.Add(this.cboPuertos);
             this.Controls.Add(this.btnConectar);
             this.Name = "Abis";
             this.Text = "Abis";
@@ -100,7 +89,6 @@ namespace CR7
 
         #endregion
         private System.Windows.Forms.Button btnConectar;
-        private System.Windows.Forms.ComboBox cboPuertos;
         private System.Windows.Forms.TextBox txtEnviarDatos;
         private System.Windows.Forms.TextBox txtMostrarDatos;
         private System.IO.Ports.SerialPort serialPort1;
