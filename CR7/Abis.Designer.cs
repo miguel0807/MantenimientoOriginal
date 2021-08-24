@@ -46,10 +46,8 @@ namespace CR7
             this.btnColocarAbajo = new System.Windows.Forms.Button();
             this.btnColocarLado = new System.Windows.Forms.Button();
             this.btnColocarArriba = new System.Windows.Forms.Button();
-            this.btnDetener = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnLineas = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +71,6 @@ namespace CR7
             this.txtEnviarDatos.Name = "txtEnviarDatos";
             this.txtEnviarDatos.Size = new System.Drawing.Size(195, 22);
             this.txtEnviarDatos.TabIndex = 7;
-
             this.txtEnviarDatos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDatosAEnviar_KeyPress);
             // 
             // txtMostrarDatos
@@ -244,20 +241,6 @@ namespace CR7
             this.btnColocarArriba.Visible = false;
             this.btnColocarArriba.Click += new System.EventHandler(this.btnColocarArriba_Click);
             // 
-            // btnDetener
-            // 
-            this.btnDetener.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.btnDetener.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetener.ForeColor = System.Drawing.Color.Silver;
-            this.btnDetener.Location = new System.Drawing.Point(610, 9);
-            this.btnDetener.Name = "btnDetener";
-            this.btnDetener.Size = new System.Drawing.Size(153, 53);
-            this.btnDetener.TabIndex = 23;
-            this.btnDetener.Text = "Detener Calibración";
-            this.btnDetener.UseVisualStyleBackColor = false;
-            this.btnDetener.Visible = false;
-            this.btnDetener.Click += new System.EventHandler(this.btnDetener_Click);
-            // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -286,29 +269,14 @@ namespace CR7
             this.btnLineas.UseVisualStyleBackColor = false;
             this.btnLineas.Click += new System.EventHandler(this.btnLineas_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Silver;
-            this.button1.Location = new System.Drawing.Point(737, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 39);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Inicio escritura";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // Abis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1221, 686);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLineas);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnDetener);
             this.Controls.Add(this.btnColocarArriba);
             this.Controls.Add(this.btnColocarLado);
             this.Controls.Add(this.btnColocarAbajo);
@@ -343,9 +311,7 @@ namespace CR7
         private System.Windows.Forms.Button btnColocarAbajo;
         private System.Windows.Forms.Button btnColocarLado;
         private System.Windows.Forms.Button btnColocarArriba;
-        private System.Windows.Forms.Button btnDetener;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnLineas;
-        private System.Windows.Forms.Button button1;
     }
 }
