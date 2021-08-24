@@ -206,9 +206,9 @@ namespace CR7
             this.btnColocarAbajo.ForeColor = System.Drawing.Color.Silver;
             this.btnColocarAbajo.Location = new System.Drawing.Point(589, 175);
             this.btnColocarAbajo.Name = "btnColocarAbajo";
-            this.btnColocarAbajo.Size = new System.Drawing.Size(162, 39);
+            this.btnColocarAbajo.Size = new System.Drawing.Size(181, 39);
             this.btnColocarAbajo.TabIndex = 20;
-            this.btnColocarAbajo.Text = "Colocar abajo";
+            this.btnColocarAbajo.Text = "Colocado abajo";
             this.btnColocarAbajo.UseVisualStyleBackColor = false;
             this.btnColocarAbajo.Visible = false;
             this.btnColocarAbajo.Click += new System.EventHandler(this.btnColocarAbajo_Click);
@@ -220,9 +220,9 @@ namespace CR7
             this.btnColocarLado.ForeColor = System.Drawing.Color.Silver;
             this.btnColocarLado.Location = new System.Drawing.Point(840, 175);
             this.btnColocarLado.Name = "btnColocarLado";
-            this.btnColocarLado.Size = new System.Drawing.Size(181, 39);
+            this.btnColocarLado.Size = new System.Drawing.Size(198, 39);
             this.btnColocarLado.TabIndex = 21;
-            this.btnColocarLado.Text = "Colocar de lado";
+            this.btnColocarLado.Text = "Colocado de lado";
             this.btnColocarLado.UseVisualStyleBackColor = false;
             this.btnColocarLado.Visible = false;
             this.btnColocarLado.Click += new System.EventHandler(this.btnColocarLado_Click);
@@ -234,9 +234,9 @@ namespace CR7
             this.btnColocarArriba.ForeColor = System.Drawing.Color.Silver;
             this.btnColocarArriba.Location = new System.Drawing.Point(376, 175);
             this.btnColocarArriba.Name = "btnColocarArriba";
-            this.btnColocarArriba.Size = new System.Drawing.Size(162, 39);
+            this.btnColocarArriba.Size = new System.Drawing.Size(172, 39);
             this.btnColocarArriba.TabIndex = 22;
-            this.btnColocarArriba.Text = "Colocar arriba";
+            this.btnColocarArriba.Text = "Colocado arriba";
             this.btnColocarArriba.UseVisualStyleBackColor = false;
             this.btnColocarArriba.Visible = false;
             this.btnColocarArriba.Click += new System.EventHandler(this.btnColocarArriba_Click);

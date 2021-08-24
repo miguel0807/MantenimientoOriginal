@@ -139,17 +139,27 @@ namespace CR7
         //Recibe la información del buffer de entrada y la muestra en textbox
         private void RecoleccionDatos(string bufferSalida)
         {
-           
+
+            if (bufferSalida.Contains("Port status: [KMISSING"))
+            {
+                textBox1.Text = "";
+                return;
+            }
 
             textBox1.Text = textBox1.Text + bufferSalida;
             txtMostrarDatos.Text = txtMostrarDatos.Text + bufferSalida;
-
+            
+           
+            /*
             //Mueve el scroll hasta el final de la linea
             txtMostrarDatos.Focus();
             txtMostrarDatos.SelectionStart = txtMostrarDatos.TextLength;
             txtMostrarDatos.ScrollToCaret();
 
             txtEnviarDatos.Focus();
+            */
+            Decodificador();
+            
         }
 
         //Configurarción y conexión al puerto serial
@@ -222,7 +232,7 @@ namespace CR7
         //Función que simula la letra escape 3 veces
         private void BtEscape()
         {
-
+            
             serialPort1.Write(new byte[] { 27, 10 }, 0, 2);
 
         }
@@ -230,8 +240,8 @@ namespace CR7
 
         private void Abis_Load(object sender, EventArgs e)
         {
+
            
-            
             btnConectar.Enabled = true;
         }    
 
@@ -247,41 +257,40 @@ namespace CR7
                 serialPort1.DiscardOutBuffer();
 
                 textBox1.Text = "";
-
-                
+       
 
                 serialPort1.Write("calibrate");
 
 
-                BtEnter();
+                BtEnter();       
 
-              
                 btnColocarArriba.Visible = true;
+
+                btnCalibracion.Visible = false;
+                btnColocarArriba.Focus();
             }
+
             else
             {
                 MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
-            }
-            
-
+            }            
         }
 
 
-   
-
-
-      
-
         private void btnColocarArriba_Click(object sender, EventArgs e)
         {
+            textBox1.Text = "";
             BtEnter();
             btnColocarAbajo.Visible = true;
             btnColocarArriba.Visible = false;
             btnColocarAbajo.Focus();
+
+            
         }
 
         private void btnColocarAbajo_Click(object sender, EventArgs e)
         {
+            textBox1.Text = "";
             BtEnter();
             btnColocarLado.Visible = true;
             btnColocarAbajo.Visible = false;
@@ -290,28 +299,36 @@ namespace CR7
 
         private void btnColocarLado_Click(object sender, EventArgs e)
         {
+            textBox1.Text = "";
             BtEnter();
             btnColocarLado.Visible = false;
-            MessageBox.Show("Finalizada la calibración");
+          
            
         }
 
         private void btnLineas_Click(object sender, EventArgs e)
         {
 
-            Decodificador();   
-        }
+            RegresoInicio();
 
+
+        }
+        private void RegresoInicio()
+        {
+            textBox1.Text = "";
+            BtEscape();
+            AccesoInterrupcion("");
+            BtEscape();
+            AccesoInterrupcion("");
+            textBox1.Text = "";
+        }
         private void Decodificador()
         {
             int numeroLinea = 1;
-            string Mensaje = "";
-
-            
+            string Mensaje = "";            
 
             foreach (string linea in textBox1.Lines)
             {
-
 
                 if (linea == "Place CSM with LED side up and press Enter!")
                 {
@@ -323,24 +340,32 @@ namespace CR7
                     Mensaje = "Coloque el CSM en posición hacia abajo";
                 }
 
-                else if (linea == "Port status: [KREAD")
+                else if (linea == "Place CSM in orientation the reference bracket and press Enter!")
                 {
-                    Mensaje = "Estatus";
+                    Mensaje = "Coloque el CSM de lado";
                 }
 
-                if (linea.Contains("Calibration: ["))
+
+
+
+                //Almacenar valore de la calibración
+                if (linea.Contains("Calibration:"))
                 {
                     MessageBox.Show(linea);
                 }
 
-                else if (linea.Contains("CALIBRATION FAILED! PRESS ENTER TO CONTINUE!"))
+
+                if (linea.Contains("CALIBRATION FAILED! PRESS ENTER TO CONTINUE!"))
                 {
-                    MessageBox.Show("LA calibración fallo, vuelva a repetir el proceso");
+                    MessageBox.Show("La calibración fallo, vuelva a repetir el proceso");
+                    
+                    RestablecerControles();
                 }
 
-
-
-
+                else if (linea.Contains("===> OK"))
+                {
+                    Mensaje = "La desviación es " + linea;
+                }
 
                 numeroLinea++;
             }
@@ -352,16 +377,22 @@ namespace CR7
             }
         }
 
-        
+        private void RestablecerControles() 
+        {
+            btnColocarArriba.Visible = false;
+            btnColocarAbajo.Visible = false;
+            btnColocarLado.Visible = false;
+            btnCalibracion.Visible = true;
 
-       
-
-      
-
-       
+            textBox1.Text = "";
+            BtEscape();
+            AccesoInterrupcion("");
+            BtEscape();
+            AccesoInterrupcion("");
+            textBox1.Text = "";
+            btnCalibracion.Focus();
+        }
     }
-
-
 
 }
 
