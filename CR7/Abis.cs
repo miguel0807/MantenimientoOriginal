@@ -308,8 +308,15 @@ namespace CR7
 
         private void btnLineas_Click(object sender, EventArgs e)
         {
+            int v1, v2, v3;
+            v1 = 0;
+            v2 = 0;
+            v3 = 0;
+            string cadena = "Calibration: [-1245 -43 230]";
+            obtenerCaracteres(cadena, ref v1, ref v2, ref v3);
 
-            RegresoInicio();
+            MessageBox.Show("Valores: " + v1 + " " + v2 + " " + v3);
+
 
 
         }
@@ -362,6 +369,11 @@ namespace CR7
                     RestablecerControles();
                 }
 
+                else if (linea.Contains("Calibration saved! Disconnect the CSM!"))
+                {
+                    Mensaje = "La calibración fue un exito, desconecte el cable del CSM";
+                }
+
                 else if (linea.Contains("===> OK"))
                 {
                     Mensaje = "La desviación es " + linea;
@@ -391,6 +403,42 @@ namespace CR7
             AccesoInterrupcion("");
             textBox1.Text = "";
             btnCalibracion.Focus();
+        }
+
+        //Obtiene los valores de la calibración del CSM y los devuelve por referencia
+        private void obtenerCaracteres(string cadena, ref int valor1, ref int valor2, ref int valor3)
+        {
+            int conteo = 1;
+            
+
+            char[] separador = new char[] { ' ', '[', ']' };
+
+            string[] subs = cadena.Split(separador, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (string sub in subs)
+            {
+                
+
+                if (conteo == 2)
+                {
+                    valor1 = Int32.Parse(sub);
+                    MessageBox.Show(valor1.ToString());
+                }
+
+                else if (conteo == 3)
+                {
+                    valor3 = Int32.Parse(sub);
+                    MessageBox.Show(valor2.ToString());
+                }
+
+                else if (conteo == 4)
+                {
+                    valor3 = Int32.Parse(sub);
+                    MessageBox.Show(valor3.ToString());
+                }
+
+                conteo ++;
+            }
         }
     }
 
