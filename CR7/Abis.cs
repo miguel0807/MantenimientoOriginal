@@ -329,6 +329,8 @@ namespace CR7
             AccesoInterrupcion("");
             textBox1.Text = "";
         }
+
+        //Decodifica los mensajes generados en el textbox de ingles al español
         private void Decodificador()
         {
             int numeroLinea = 1;
@@ -353,9 +355,7 @@ namespace CR7
                 }
 
 
-
-
-                //Almacenar valore de la calibración
+                //Almacenar valores de la calibración
                 if (linea.Contains("Calibration:"))
                 {
                     MessageBox.Show(linea);
@@ -373,11 +373,7 @@ namespace CR7
                 {
                     Mensaje = "La calibración fue un exito, desconecte el cable del CSM";
                 }
-
-                else if (linea.Contains("===> OK"))
-                {
-                    Mensaje = "La desviación es " + linea;
-                }
+          
 
                 numeroLinea++;
             }
