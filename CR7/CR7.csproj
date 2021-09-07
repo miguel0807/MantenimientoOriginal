@@ -91,6 +91,7 @@
     <Compile Include="BusquedaOrden.Designer.cs">
       <DependentUpon>BusquedaOrden.cs</DependentUpon>
     </Compile>
+    <Compile Include="Conexion.cs" />
     <Compile Include="SN_Evolution.cs">
       <SubType>Form</SubType>
     </Compile>

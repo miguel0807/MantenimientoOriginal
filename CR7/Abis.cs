@@ -330,6 +330,9 @@ namespace CR7
             
            
             btnConectar.Enabled = true;
+
+            Conexion con = new Conexion();
+            con.abrir();
         }    
 
         //Restablece la configuración a sus valores iniciales
@@ -420,17 +423,7 @@ namespace CR7
                 {
                     Mensaje = "Coloque CSM en posición hacia Arriba";
                 }
-
-                
-
-               
-
-                //Almacenar valores de la calibración
-                if (linea.Contains("Calibration:"))
-                {
-                    MessageBox.Show(linea);
-                }
-              
+                  
 
                 numeroLinea++;
             }

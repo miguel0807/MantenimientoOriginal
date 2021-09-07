@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CR7.exe" size="109496">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CR7.exe" size="110008">
       <assemblyIdentity name="CR7" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cXC0PtauyiA7S0xf3LjXxtSI1XO0p0IWdMioPZjFSAU=</dsig:DigestValue>
+        <dsig:DigestValue>WkbcX4Z6jCr7iY1cBlgSSkorf+2LuJ0FhjPy/W7c8ac=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
