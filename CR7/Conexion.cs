@@ -10,12 +10,12 @@ namespace CR7
 {
     class Conexion
     {
-        string cadena = "Data Source=tcp:COS-F37HWK2\\SQLEXPRESS,49500;Initial Catalog=CR7a; User Id=simpro; Password=Trpo25MgL452"; //Nuevo servidor
-        public SqlConnection conectar = new SqlConnection();
+        string cadena = "Data Source=tcp:COS-F37HWK2\\SQLEXPRESS,49500;Initial Catalog=CR7; User Id=simpro; Password=Trpo25MgL452"; //Nuevo servidor
+        public SqlConnection conectarBD = new SqlConnection();
 
         public Conexion()
         {
-            conectar.ConnectionString = cadena;
+            conectarBD.ConnectionString = cadena;
 
         }
 
@@ -23,9 +23,8 @@ namespace CR7
         {
             try
             {
-                conectar.Open();
-                Console.WriteLine("Conexion Abierta");
-               // MessageBox.Show("Conexion Abierta");
+                conectarBD.Open();
+        
             }
             catch (Exception ex)
             {
@@ -36,7 +35,7 @@ namespace CR7
 
         public void cerrar()
         {
-            conectar.Close();
+            conectarBD.Close();
         }
     }
 

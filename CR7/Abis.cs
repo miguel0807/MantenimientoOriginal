@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
+using System.Data.SqlClient;
 
 /*
  * Autor:  Miguel Alvarado
@@ -18,7 +19,8 @@ namespace CR7
     {
         private delegate void DelegadoAcceso(string accion);
         bool deco = false;
-        
+        Conexion cn = new Conexion();
+
 
 
         public Abis()
@@ -69,7 +71,7 @@ namespace CR7
                 {
                     serialPort1.DiscardOutBuffer();
 
-                   
+
 
                     serialPort1.Write(txtEnviarDatos.Text);
 
@@ -122,14 +124,14 @@ namespace CR7
         {
             if (serialPort1.IsOpen == true)
             {
-                
+
 
                 BtEscape();
 
                 serialPort1.DiscardOutBuffer();
 
                 textBox1.Text = "";
-             
+
                 serialPort1.Write("calibrate");
 
                 BtEnter();
@@ -178,7 +180,7 @@ namespace CR7
             textBox1.Text = "";
             BtEnter();
             btnColocarLado.Visible = false;
-            
+
             RestablecerControles();
 
         }
@@ -314,7 +316,7 @@ namespace CR7
         //Función que simula la letra escape 
         private void BtEscape()
         {
-            
+
             serialPort1.Write(new byte[] { 27, 10 }, 0, 2);
 
         }
@@ -327,13 +329,11 @@ namespace CR7
                 RegresoInicio();
                 MessageBox.Show("Hubo un error durante el proceso de la calibración, el CSM requiere que se calibre nuevamente.");
             }
-            
-           
+
+
             btnConectar.Enabled = true;
 
-            Conexion con = new Conexion();
-            con.abrir();
-        }    
+        }
 
         //Restablece la configuración a sus valores iniciales
         private void RegresoInicio()
@@ -351,17 +351,17 @@ namespace CR7
         {
             int numeroLinea = 1;
             string Mensaje = "";
-            
+
             if (deco == true)
             {
                 DecodificadorInicial();
-               
+
                 return;
             }
-            
+
             foreach (string linea in textBox1.Lines)
             {
-
+                //Indicar posición del CSM
                 if (linea == "Place CSM with LED side up and press Enter!")
                 {
                     Mensaje = "Coloque CSM en posición hacia Arriba";
@@ -381,14 +381,22 @@ namespace CR7
                 //Almacenar valores de la calibración
                 if (linea.Contains("Calibration:"))
                 {
-                    MessageBox.Show(linea);
+                    
+                    //MessageBox.Show(linea.Substring(12,13));
+
+                    
+                    int inicio = linea.IndexOf("[") ;
+                    int final = linea.IndexOf("]"  , inicio);
+                    string resultado = linea.Substring(inicio, final + 1 - inicio);
+
+                    MessageBox.Show(resultado);
                 }
 
-
+                //Condcionales en caso de errores o finalizado de la calibración
                 if (linea.Contains("CALIBRATION FAILED! PRESS ENTER TO CONTINUE!"))
                 {
                     MessageBox.Show("La calibración fallo, vuelva a repetir el proceso");
-                    
+
                     RestablecerControles();
                 }
 
@@ -397,12 +405,12 @@ namespace CR7
                     Mensaje = "La calibración fue un exito, desconecte el cable del CSM";
                     deco = true;
                 }
-          
+
 
                 numeroLinea++;
             }
 
-         
+            //Enviar mensaje a mostrar
             if (Mensaje != "")
             {
                 MessageBox.Show(Mensaje);
@@ -415,7 +423,7 @@ namespace CR7
         {
             int numeroLinea = 1;
             string Mensaje = "";
-        
+
             foreach (string linea in textBox1.Lines)
             {
 
@@ -423,7 +431,7 @@ namespace CR7
                 {
                     Mensaje = "Coloque CSM en posición hacia Arriba";
                 }
-                  
+
 
                 numeroLinea++;
             }
@@ -433,11 +441,11 @@ namespace CR7
             {
                 MessageBox.Show(Mensaje);
             }
-       
+
         }
 
         //Restablece la configuración a sus valores iniciales al finalizar la calibración
-        private void RestablecerControles() 
+        private void RestablecerControles()
         {
             btnColocarArriba.Visible = false;
             btnColocarAbajo.Visible = false;
@@ -457,7 +465,7 @@ namespace CR7
         private void obtenerCaracteres(string cadena, ref int valor1, ref int valor2, ref int valor3)
         {
             int conteo = 1;
-            
+
 
             char[] separador = new char[] { ' ', '[', ']' };
 
@@ -465,7 +473,7 @@ namespace CR7
 
             foreach (string sub in subs)
             {
-                
+
 
                 if (conteo == 2)
                 {
@@ -485,8 +493,33 @@ namespace CR7
                     MessageBox.Show(valor3.ToString());
                 }
 
-                conteo ++;
+                conteo++;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            cn.abrir();
+
+            SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Número de parte],[Usuario Calibración],[Número de serie]) values (71212775,'Miguel Alvarado','03599');", cn.conectarBD);
+            cmd.ExecuteNonQuery();
+            cn.cerrar();
+            MessageBox.Show("Completado con exito");
+
+
+        }
+
+       
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cn.abrir();
+            SqlCommand cmd = new SqlCommand("update CSM set [Número de parte] = 502635 where id = 1;");
+            cmd.ExecuteNonQuery();
+            cn.cerrar();
+            MessageBox.Show("Actualizado con exito");
         }
     }
 
