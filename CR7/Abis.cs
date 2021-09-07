@@ -23,6 +23,7 @@ namespace CR7
 
         string NumeroSerie = "";
         string Calibracion1 = "";
+        string Desviacion = "";
 
 
 
@@ -184,7 +185,7 @@ namespace CR7
             BtEnter();
             btnColocarLado.Visible = false;
 
-            RestablecerControles();
+            
 
         }
 
@@ -389,8 +390,21 @@ namespace CR7
                     int inicio = linea.IndexOf("[") ;
                     int final = linea.IndexOf("]"  , inicio);                    
 
-                    Calibracion1 = linea.Substring(inicio, final + 1 - inicio); ;
+                    Calibracion1 = linea.Substring(inicio, final + 1 - inicio); 
                     
+                }
+
+                //Almacenar valores de la calibración
+                if (linea.Contains("Deviation:"))
+                {
+
+
+                    int inicio = linea.IndexOf("[") -1;
+                    int final = linea.IndexOf("]", inicio);
+
+                    Desviacion = linea.Substring(inicio, final + 1 - inicio);
+                    
+
                 }
 
                 //Condcionales en caso de errores o finalizado de la calibración
@@ -403,7 +417,9 @@ namespace CR7
 
                 else if (linea.Contains("Calibration saved! Disconnect the CSM!"))
                 {
+                    Insertar();
                     Mensaje = "La calibración fue un exito, desconecte el cable del CSM";
+                    RestablecerControles();
                     deco = true;
                 }
 
@@ -536,11 +552,23 @@ namespace CR7
 
         private void button3_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(DateTime.Now.ToString("HH:mm:ss"));
+        }
+
+        private void Insertar()
+        {
             cn.abrir();
-            SqlCommand cmd = new SqlCommand("select*from CSM where convert(char,[Número de serie]) ='03599';");
+            SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Calibración 1],[Bracket 1],[Fecha Ingreso],[Hora ingreso]) values (@Usuario,@NumeroSerie,@Calibracion1,@Desviacion,@fechaIngreso,@horaIngreso)", cn.conectarBD);
+            cmd.Parameters.AddWithValue("@Usuario", "Miguel Alvarado");
+            cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+            cmd.Parameters.AddWithValue("@Calibracion1", Calibracion1);
+            cmd.Parameters.AddWithValue("@Desviacion", Desviacion);
+            cmd.Parameters.AddWithValue("@fechaIngreso", DateTime.Now.ToString("dd/MM/yyyy"));
+            cmd.Parameters.AddWithValue("@horaIngreso", DateTime.Now.ToString("HH:mm:ss"));
+
             cmd.ExecuteNonQuery();
             cn.cerrar();
-            MessageBox.Show("Actualizado con exito");
+           
         }
     }
 
