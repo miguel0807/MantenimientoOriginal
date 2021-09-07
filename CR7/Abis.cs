@@ -17,6 +17,7 @@ namespace CR7
     public partial class Abis : Form
     {
         private delegate void DelegadoAcceso(string accion);
+        bool deco = false;
         
 
 
@@ -116,6 +117,85 @@ namespace CR7
 
 
         }
+
+        private void btnCalibracion_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen == true)
+            {
+                
+
+                BtEscape();
+
+                serialPort1.DiscardOutBuffer();
+
+                textBox1.Text = "";
+             
+                serialPort1.Write("calibrate");
+
+                BtEnter();
+
+                btnColocarArriba.Visible = true;
+
+                btnCalibracion.Visible = false;
+
+                btnColocarArriba.Focus();
+
+                deco = true;
+
+
+            }
+
+            else
+            {
+                MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
+            }
+        }
+
+        private void btnColocarArriba_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            BtEnter();
+            btnColocarAbajo.Visible = true;
+            btnColocarArriba.Visible = false;
+            btnColocarAbajo.Focus();
+
+            deco = false;
+
+
+        }
+
+        private void btnColocarAbajo_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            BtEnter();
+            btnColocarLado.Visible = true;
+            btnColocarAbajo.Visible = false;
+            btnColocarLado.Focus();
+        }
+
+        private void btnColocarLado_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            BtEnter();
+            btnColocarLado.Visible = false;
+            
+            RestablecerControles();
+
+        }
+
+        private void btnLineas_Click(object sender, EventArgs e)
+        {
+            int v1, v2, v3;
+            v1 = 0;
+            v2 = 0;
+            v3 = 0;
+            string cadena = "Calibration: [-1245 -43 230]";
+            obtenerCaracteres(cadena, ref v1, ref v2, ref v3);
+
+            MessageBox.Show("Valores: " + v1 + " " + v2 + " " + v3);
+
+        }
+
         #endregion
 
         #region Conexión, desconexión y lectura al puerto Serial
@@ -148,8 +228,9 @@ namespace CR7
 
             textBox1.Text = textBox1.Text + bufferSalida;
             txtMostrarDatos.Text = txtMostrarDatos.Text + bufferSalida;
-            
-           
+
+            Decodificador();
+
             /*
             //Mueve el scroll hasta el final de la linea
             txtMostrarDatos.Focus();
@@ -158,8 +239,9 @@ namespace CR7
 
             txtEnviarDatos.Focus();
             */
-            Decodificador();
-            
+
+
+
         }
 
         //Configurarción y conexión al puerto serial
@@ -171,7 +253,7 @@ namespace CR7
             serialPort1.Parity = Parity.None;
             serialPort1.StopBits = StopBits.One;
             serialPort1.Handshake = Handshake.None;
-            serialPort1.PortName = "COM7";
+            serialPort1.PortName = "COM30";
 
             try
             {
@@ -229,7 +311,7 @@ namespace CR7
 
         }
 
-        //Función que simula la letra escape 3 veces
+        //Función que simula la letra escape 
         private void BtEscape()
         {
             
@@ -240,86 +322,17 @@ namespace CR7
 
         private void Abis_Load(object sender, EventArgs e)
         {
-
+            if (Properties.Settings.Default.ProcesoCalibracion == true)
+            {
+                RegresoInicio();
+                MessageBox.Show("Hubo un error durante el proceso de la calibración, el CSM requiere que se calibre nuevamente.");
+            }
+            
            
             btnConectar.Enabled = true;
         }    
 
-
-
-
-        private void btnCalibracion_Click(object sender, EventArgs e)
-        {
-            if (serialPort1.IsOpen == true)
-            {
-                BtEscape();
-
-                serialPort1.DiscardOutBuffer();
-
-                textBox1.Text = "";
-       
-
-                serialPort1.Write("calibrate");
-
-
-                BtEnter();       
-
-                btnColocarArriba.Visible = true;
-
-                btnCalibracion.Visible = false;
-                btnColocarArriba.Focus();
-            }
-
-            else
-            {
-                MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
-            }            
-        }
-
-
-        private void btnColocarArriba_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            BtEnter();
-            btnColocarAbajo.Visible = true;
-            btnColocarArriba.Visible = false;
-            btnColocarAbajo.Focus();
-
-            
-        }
-
-        private void btnColocarAbajo_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            BtEnter();
-            btnColocarLado.Visible = true;
-            btnColocarAbajo.Visible = false;
-            btnColocarLado.Focus();
-        }
-
-        private void btnColocarLado_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            BtEnter();
-            btnColocarLado.Visible = false;
-          
-           
-        }
-
-        private void btnLineas_Click(object sender, EventArgs e)
-        {
-            int v1, v2, v3;
-            v1 = 0;
-            v2 = 0;
-            v3 = 0;
-            string cadena = "Calibration: [-1245 -43 230]";
-            obtenerCaracteres(cadena, ref v1, ref v2, ref v3);
-
-            MessageBox.Show("Valores: " + v1 + " " + v2 + " " + v3);
-
-
-
-        }
+        //Restablece la configuración a sus valores iniciales
         private void RegresoInicio()
         {
             textBox1.Text = "";
@@ -334,8 +347,15 @@ namespace CR7
         private void Decodificador()
         {
             int numeroLinea = 1;
-            string Mensaje = "";            
-
+            string Mensaje = "";
+            
+            if (deco == true)
+            {
+                DecodificadorInicial();
+               
+                return;
+            }
+            
             foreach (string linea in textBox1.Lines)
             {
 
@@ -372,8 +392,45 @@ namespace CR7
                 else if (linea.Contains("Calibration saved! Disconnect the CSM!"))
                 {
                     Mensaje = "La calibración fue un exito, desconecte el cable del CSM";
+                    deco = true;
                 }
           
+
+                numeroLinea++;
+            }
+
+         
+            if (Mensaje != "")
+            {
+                MessageBox.Show(Mensaje);
+            }
+            Properties.Settings.Default.ProcesoCalibracion = false;
+        }
+
+        //Decodifica los mensajes generados en el textbox de ingles al español
+        private void DecodificadorInicial()
+        {
+            int numeroLinea = 1;
+            string Mensaje = "";
+        
+            foreach (string linea in textBox1.Lines)
+            {
+
+                if (linea == "Place CSM with LED side up and press Enter!")
+                {
+                    Mensaje = "Coloque CSM en posición hacia Arriba";
+                }
+
+                
+
+               
+
+                //Almacenar valores de la calibración
+                if (linea.Contains("Calibration:"))
+                {
+                    MessageBox.Show(linea);
+                }
+              
 
                 numeroLinea++;
             }
@@ -383,8 +440,10 @@ namespace CR7
             {
                 MessageBox.Show(Mensaje);
             }
+       
         }
 
+        //Restablece la configuración a sus valores iniciales al finalizar la calibración
         private void RestablecerControles() 
         {
             btnColocarArriba.Visible = false;
