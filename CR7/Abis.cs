@@ -21,6 +21,9 @@ namespace CR7
         bool deco = false;
         Conexion cn = new Conexion();
 
+        string NumeroSerie = "";
+        string Calibracion1 = "";
+
 
 
         public Abis()
@@ -265,7 +268,7 @@ namespace CR7
             }
             catch (Exception exc)
             {
-                if (exc.Message == "The port 'COM7' does not exist.") // Error cuando no encuentra el puerto serial
+                if (exc.Message == "The port 'COM30' does not exist.") // Error cuando no encuentra el puerto serial
                 {
                     MessageBox.Show("No se encontro el puerto COM#30, verifique que el USB este correctamente conectado y configurado.", "Alerta!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     exito = 0;
@@ -361,7 +364,7 @@ namespace CR7
 
             foreach (string linea in textBox1.Lines)
             {
-                //Indicar posición del CSM
+                //Indica la posición del CSM
                 if (linea == "Place CSM with LED side up and press Enter!")
                 {
                     Mensaje = "Coloque CSM en posición hacia Arriba";
@@ -382,14 +385,12 @@ namespace CR7
                 if (linea.Contains("Calibration:"))
                 {
                     
-                    //MessageBox.Show(linea.Substring(12,13));
-
                     
                     int inicio = linea.IndexOf("[") ;
-                    int final = linea.IndexOf("]"  , inicio);
-                    string resultado = linea.Substring(inicio, final + 1 - inicio);
+                    int final = linea.IndexOf("]"  , inicio);                    
 
-                    MessageBox.Show(resultado);
+                    Calibracion1 = linea.Substring(inicio, final + 1 - inicio); ;
+                    
                 }
 
                 //Condcionales en caso de errores o finalizado de la calibración
@@ -418,7 +419,7 @@ namespace CR7
             Properties.Settings.Default.ProcesoCalibracion = false;
         }
 
-        //Decodifica los mensajes generados en el textbox de ingles al español
+        //Decodifica los mensajes generados en el textbox de ingles al español al inicio de la calibración
         private void DecodificadorInicial()
         {
             int numeroLinea = 1;
@@ -426,6 +427,13 @@ namespace CR7
 
             foreach (string linea in textBox1.Lines)
             {
+                //Obtiene el número de serie 
+                if (linea.Contains("Serial number:"))
+                {
+                    int inicio = linea.IndexOf(":") + 1;                   
+                    NumeroSerie = linea.Substring(inicio, linea.Length - inicio); 
+                   
+                }
 
                 if (linea == "Place CSM with LED side up and press Enter!")
                 {
@@ -458,6 +466,8 @@ namespace CR7
             BtEscape();
             AccesoInterrupcion("");
             textBox1.Text = "";
+            NumeroSerie = "";
+            Calibracion1 = "";
             btnCalibracion.Focus();
         }
 
@@ -516,7 +526,18 @@ namespace CR7
         private void button2_Click(object sender, EventArgs e)
         {
             cn.abrir();
-            SqlCommand cmd = new SqlCommand("update CSM set [Número de parte] = 502635 where id = 1;");
+            SqlCommand cmd = new SqlCommand("update CSM set [Número de serie] = @NumeroSerie where id = 1;",cn.conectarBD);
+            cmd.Parameters.AddWithValue("@NumeroSerie", "12345");
+            MessageBox.Show(cmd.CommandText);
+            cmd.ExecuteNonQuery();
+            cn.cerrar();
+            MessageBox.Show("Actualizado con exito");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            cn.abrir();
+            SqlCommand cmd = new SqlCommand("select*from CSM where convert(char,[Número de serie]) ='03599';");
             cmd.ExecuteNonQuery();
             cn.cerrar();
             MessageBox.Show("Actualizado con exito");
