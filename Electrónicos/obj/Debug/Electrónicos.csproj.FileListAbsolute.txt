@@ -1,0 +1,13 @@
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\Electrónicos.exe.config
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\Electrónicos.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\Electrónicos.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Properties.Resources.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.csproj.GenerateResource.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.csproj.CoreCompileInputs.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\Guna.UI.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Form1.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.csproj.CopyComplete
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.csproj.AssemblyReference.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Abis.resources

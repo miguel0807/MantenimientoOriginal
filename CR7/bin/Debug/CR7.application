@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="CR7.exe.manifest" size="4150">
+    <dependentAssembly dependencyType="install" codebase="CR7.exe.manifest" size="4166">
       <assemblyIdentity name="CR7.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6pe0x1SP+i2Pr2Y2DkIBJR7bHXtrq+XPiTABORfG9Ms=</dsig:DigestValue>
+        <dsig:DigestValue>r6u6xr1/kgX+JpivtEUL0iNQQsUaz8Xn6xm32DdQkmA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
