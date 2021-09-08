@@ -33,7 +33,15 @@ namespace Electrónicos
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new Abis());
+            if (panelAbis.Visible == true)
+            {
+                panelAbis.Visible = false;
+            }
+
+            else
+            {
+                panelAbis.Visible = true;
+            }
            
         }
 
@@ -155,6 +163,11 @@ namespace Electrónicos
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void gunaButton3_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new Abis());
         }
 
         int sw, sh;

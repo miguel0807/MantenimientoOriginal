@@ -36,7 +36,6 @@ namespace Electrónicos
             this.lblCorreo = new Guna.UI.WinForms.GunaLabel();
             this.lblPuesto = new Guna.UI.WinForms.GunaLabel();
             this.lblNombre = new Guna.UI.WinForms.GunaLabel();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -51,6 +50,11 @@ namespace Electrónicos
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.PanelTotal = new Guna.UI.WinForms.GunaPanel();
             this.panelContenedor = new Guna.UI.WinForms.GunaPanel();
+            this.panelAbis = new Guna.UI.WinForms.GunaPanel();
+            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
+            this.panelBotones = new Guna.UI.WinForms.GunaPanel();
+            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.PanelLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.PanelSuperior.SuspendLayout();
@@ -59,6 +63,8 @@ namespace Electrónicos
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.PanelTotal.SuspendLayout();
+            this.panelAbis.SuspendLayout();
+            this.panelBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaElipse1
@@ -68,11 +74,10 @@ namespace Electrónicos
             // PanelLateral
             // 
             this.PanelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(39)))));
+            this.PanelLateral.Controls.Add(this.panelBotones);
             this.PanelLateral.Controls.Add(this.lblCorreo);
             this.PanelLateral.Controls.Add(this.lblPuesto);
             this.PanelLateral.Controls.Add(this.lblNombre);
-            this.PanelLateral.Controls.Add(this.gunaButton2);
-            this.PanelLateral.Controls.Add(this.gunaButton1);
             this.PanelLateral.Controls.Add(this.gunaSeparator1);
             this.PanelLateral.Controls.Add(this.gunaLabel3);
             this.PanelLateral.Controls.Add(this.gunaLabel2);
@@ -117,30 +122,6 @@ namespace Electrónicos
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "Miguel Alvarado";
             // 
-            // gunaButton2
-            // 
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(79)))));
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton2.Image")));
-            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(16, 276);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Size = new System.Drawing.Size(237, 42);
-            this.gunaButton2.TabIndex = 6;
-            this.gunaButton2.Text = "Abis Main Unit";
-            // 
             // gunaButton1
             // 
             this.gunaButton1.AnimationHoverSpeed = 0.07F;
@@ -149,21 +130,22 @@ namespace Electrónicos
             this.gunaButton1.BorderColor = System.Drawing.Color.Black;
             this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
             this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaButton1.ForeColor = System.Drawing.Color.White;
             this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(16, 228);
+            this.gunaButton1.Location = new System.Drawing.Point(0, 0);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton1.OnHoverImage = null;
             this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(237, 42);
+            this.gunaButton1.Size = new System.Drawing.Size(264, 42);
             this.gunaButton1.TabIndex = 5;
-            this.gunaButton1.Text = "Abis CSM";
+            this.gunaButton1.Text = "Abis";
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // gunaSeparator1
@@ -313,6 +295,104 @@ namespace Electrónicos
             this.panelContenedor.Size = new System.Drawing.Size(1090, 728);
             this.panelContenedor.TabIndex = 0;
             // 
+            // panelAbis
+            // 
+            this.panelAbis.Controls.Add(this.gunaButton4);
+            this.panelAbis.Controls.Add(this.gunaButton3);
+            this.panelAbis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAbis.Location = new System.Drawing.Point(0, 42);
+            this.panelAbis.Name = "panelAbis";
+            this.panelAbis.Size = new System.Drawing.Size(264, 84);
+            this.panelAbis.TabIndex = 10;
+            this.panelAbis.Visible = false;
+            // 
+            // gunaButton3
+            // 
+            this.gunaButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaButton3.AnimationSpeed = 0.03F;
+            this.gunaButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton3.ForeColor = System.Drawing.Color.White;
+            this.gunaButton3.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton3.Image")));
+            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton3.Location = new System.Drawing.Point(0, 0);
+            this.gunaButton3.Name = "gunaButton3";
+            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton3.OnHoverImage = null;
+            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton3.Size = new System.Drawing.Size(264, 42);
+            this.gunaButton3.TabIndex = 11;
+            this.gunaButton3.Text = "CSM";
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
+            // 
+            // gunaButton4
+            // 
+            this.gunaButton4.AnimationHoverSpeed = 0.07F;
+            this.gunaButton4.AnimationSpeed = 0.03F;
+            this.gunaButton4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaButton4.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaButton4.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton4.ForeColor = System.Drawing.Color.White;
+            this.gunaButton4.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton4.Image")));
+            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton4.Location = new System.Drawing.Point(0, 42);
+            this.gunaButton4.Name = "gunaButton4";
+            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton4.OnHoverImage = null;
+            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton4.Size = new System.Drawing.Size(264, 42);
+            this.gunaButton4.TabIndex = 12;
+            this.gunaButton4.Text = "Main Unit";
+            // 
+            // panelBotones
+            // 
+            this.panelBotones.AutoScroll = true;
+            this.panelBotones.Controls.Add(this.gunaButton2);
+            this.panelBotones.Controls.Add(this.panelAbis);
+            this.panelBotones.Controls.Add(this.gunaButton1);
+            this.panelBotones.Location = new System.Drawing.Point(3, 202);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(264, 563);
+            this.panelBotones.TabIndex = 10;
+            // 
+            // gunaButton2
+            // 
+            this.gunaButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaButton2.AnimationSpeed = 0.03F;
+            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(79)))));
+            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton2.Image")));
+            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton2.Location = new System.Drawing.Point(0, 126);
+            this.gunaButton2.Name = "gunaButton2";
+            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton2.OnHoverImage = null;
+            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton2.Size = new System.Drawing.Size(264, 42);
+            this.gunaButton2.TabIndex = 11;
+            this.gunaButton2.Text = "Configuración";
+            // 
             // Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -337,6 +417,8 @@ namespace Electrónicos
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.PanelTotal.ResumeLayout(false);
+            this.panelAbis.ResumeLayout(false);
+            this.panelBotones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -347,7 +429,6 @@ namespace Electrónicos
         private Guna.UI.WinForms.GunaPanel PanelLateral;
         private Guna.UI.WinForms.GunaPanel PanelSuperior;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator1;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
@@ -363,5 +444,10 @@ namespace Electrónicos
         private Guna.UI.WinForms.GunaLabel lblCorreo;
         private Guna.UI.WinForms.GunaLabel lblPuesto;
         public Guna.UI.WinForms.GunaLabel lblNombre;
+        private Guna.UI.WinForms.GunaPanel panelAbis;
+        private Guna.UI.WinForms.GunaButton gunaButton4;
+        private Guna.UI.WinForms.GunaButton gunaButton3;
+        private Guna.UI.WinForms.GunaPanel panelBotones;
+        private Guna.UI.WinForms.GunaButton gunaButton2;
     }
 }
