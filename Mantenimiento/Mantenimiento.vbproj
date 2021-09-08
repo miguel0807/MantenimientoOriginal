@@ -470,6 +470,10 @@
       <Project>{dc5b6d2d-eb2c-425d-9db6-55c0f028a2d5}</Project>
       <Name>CR7</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Electrónicos\Electrónicos.csproj">
+      <Project>{f0f8d35d-1b96-41c1-8a43-98769c1eecb2}</Project>
+      <Name>Electrónicos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Projecto\Proyecto\Proyecto.vbproj">
       <Project>{74a0b2ad-288c-4e3e-b461-ecccf2dd0aa6}</Project>
       <Name>Proyecto</Name>

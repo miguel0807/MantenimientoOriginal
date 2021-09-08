@@ -28,6 +28,7 @@ namespace Electrónicos
         string NumeroSerie = "";
         string Calibracion1 = "";
         string Desviacion = "";
+      
 
 
 
@@ -532,9 +533,11 @@ namespace Electrónicos
             MessageBox.Show("Actualizado con exito");
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(DateTime.Now.ToString("HH:mm:ss"));
+
+            MessageBox.Show(Presentacion.hhNombre);
+            
         }
 
         private void Insertar()

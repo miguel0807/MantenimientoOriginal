@@ -101,5 +101,19 @@
   <ItemGroup>
     <None Include="Iconos\cancel.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mantenimiento\Common\Common.vbproj">
+      <Project>{c03234cd-ccc5-4922-8566-05ae70d7da3b}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mantenimiento\DataAccess\DataAccess.vbproj">
+      <Project>{1c56964e-62f5-4dc1-83f6-d8d259e6a598}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mantenimiento\Domain\Domain.vbproj">
+      <Project>{37b3f3e9-fe85-4ff7-a6ff-c74425381de3}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,6 +12,8 @@ namespace Electrónicos
     {
         string cadena = "Data Source=tcp:COS-F37HWK2\\SQLEXPRESS,49500;Initial Catalog=CR7; User Id=simpro; Password=Trpo25MgL452"; //Nuevo servidor
         public SqlConnection conectarBD = new SqlConnection();
+        
+
 
         public Conexion()
         {

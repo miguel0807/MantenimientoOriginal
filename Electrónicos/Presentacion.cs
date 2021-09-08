@@ -7,11 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccess;
+
+
 
 namespace Electrónicos
-{
+{ /*
+    public static class compartida
+    {
+        
+
+
+    }*/
+    
     public partial class Presentacion : Form
     {
+
+        public static string hhNombre;
+        public static string hhPosicion;
+
         public Presentacion()
         {
             InitializeComponent();
@@ -20,6 +34,7 @@ namespace Electrónicos
         private void gunaButton1_Click(object sender, EventArgs e)
         {
             AbrirFormHijo(new Abis());
+           
         }
 
         private void gunaPictureBox2_Click(object sender, EventArgs e)
@@ -33,19 +48,25 @@ namespace Electrónicos
 
         private void Presentacion_Load(object sender, EventArgs e)
         {
+            //compartida.hhNombre = lblNombre.Text;
+            hhNombre = lblNombre.Text;
+            hhPosicion = lblPuesto.Text;
 
+            
         }
 
         private void AbrirFormHijo(object formHijo)
         {
             if (this.panelContenedor.Controls.Count > 0)
                 this.panelContenedor.Controls.RemoveAt(0);
-            Form fh = formHijo as Form;
+            Form fh = formHijo as Form;            
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
             this.panelContenedor.Controls.Add(fh);
             this.panelContenedor.Tag = fh;
             fh.Show();
+            
+            
         }
 
         private void PanelContenedor_Paint(object sender, PaintEventArgs e)
