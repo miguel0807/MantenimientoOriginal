@@ -28,6 +28,8 @@ namespace Electrónicos
         string NumeroSerie = "";
         string Calibracion1 = "";
         string Desviacion = "";
+        int NumeroParte = 0;
+        string Descripcion = "";
       
 
 
@@ -420,6 +422,8 @@ namespace Electrónicos
         {
             int numeroLinea = 1;
             string Mensaje = "";
+            bool CrearCSM = false;
+            
 
             foreach (string linea in textBox1.Lines)
             {
@@ -428,7 +432,7 @@ namespace Electrónicos
                 {
                     int inicio = linea.IndexOf(":") + 1;
                     NumeroSerie = linea.Substring(inicio, linea.Length - inicio);
-
+                    CrearCSM = true;
                 }
 
                 if (linea == "Place CSM with LED side up and press Enter!")
@@ -443,6 +447,72 @@ namespace Electrónicos
 
             if (Mensaje != "")
             {
+               
+
+                if (CrearCSM == true)
+                {
+
+
+
+                    CrearCSM = false;
+                    //Busca si hay numero de serie ya creado
+                    cn.abrir();
+                    SqlCommand cmd1 = new SqlCommand("select COUNT(*) from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cmd1.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                    
+                    int conteo = Convert.ToInt32(cmd1.ExecuteScalar());
+                    cn.cerrar();
+                    //Si no esta creado se procede a crear uno nuevo con un insert
+                    if (conteo == 0)
+                    {
+                        
+
+                        cn.abrir();
+                        SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Número de parte],Descripción,[Fecha Ingreso 1],[Hora ingreso 1]) values (@Usuario,@NumeroSerie,@NumeroParte,@Descripcion,@fechaIngreso,@horaIngreso)", cn.conectarBD);
+                        cmd.Parameters.AddWithValue("@Usuario", "Miguel Alvarado");
+                        cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                        cmd.Parameters.AddWithValue("@NumeroParte", NumeroParte);
+                        cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
+                        cmd.Parameters.AddWithValue("@fechaIngreso", DateTime.Now.ToString("dd/MM/yyyy"));
+                        cmd.Parameters.AddWithValue("@horaIngreso", DateTime.Now.ToString("HH:mm:ss"));
+
+                        cmd.ExecuteNonQuery();
+                        cn.cerrar();
+                    }
+                    
+                    //Si esta creado se verifica si se completo
+                    else
+                    {
+                        //Se verfica si podemos calibrar o se rechaza la solicitud
+                        cn.abrir();
+                        SqlCommand cmd2 = new SqlCommand("select COUNT([Fecha Final 1]) from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                        cmd2.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                        
+                        int conteo2 = Convert.ToInt32(cmd2.ExecuteScalar());
+                        cn.cerrar();
+                        //Si no esta completado, se procede a completar
+                        if (conteo2 == 0)
+                        {
+                            MessageBox.Show("Este CSM quedo incompleto, comenzado nuevamente la calibración");
+                        }
+
+                        //Si se completo, se procede a rechazar la solicitud
+                        else
+                        {
+                            MessageBox.Show("No se puede proceder con la calibración, este producto ya fue calibrado anteriormente");
+                            RestablecerControles();
+                            return;
+                        }
+        
+
+                    }
+
+
+                    
+                    
+
+                }
+
                 MessageBox.Show(Mensaje);
             }
 
@@ -527,14 +597,32 @@ namespace Electrónicos
         public void button3_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show(Presentacion.hhNombre);
-            
+            cn.abrir();
+            SqlCommand cmd1 = new SqlCommand("select COUNT(*) from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+            cmd1.Parameters.AddWithValue("@NumeroSerie", "03598");
+
+            int conteo = Convert.ToInt32(cmd1.ExecuteScalar());
+
+            if (conteo == 0)
+            {
+                MessageBox.Show("NO existe");
+            }
+            else
+            {
+                MessageBox.Show("existe");
+
+            }
+
+
+
+            cn.cerrar();
+
         }
 
         private void Insertar()
         {
             cn.abrir();
-            SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Calibración 1],[Bracket 1],[Fecha Ingreso],[Hora ingreso]) values (@Usuario,@NumeroSerie,@Calibracion1,@Desviacion,@fechaIngreso,@horaIngreso)", cn.conectarBD);
+            SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Calibración 1],[Bracket 1],[Fecha Ingreso 1],[Hora ingreso 1]) values (@Usuario,@NumeroSerie,@Calibracion1,@Desviacion,@fechaIngreso,@horaIngreso)", cn.conectarBD);
             cmd.Parameters.AddWithValue("@Usuario", "Miguel Alvarado");
             cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
             cmd.Parameters.AddWithValue("@Calibracion1", Calibracion1);
@@ -556,7 +644,8 @@ namespace Electrónicos
         {
             if (PuertoSerie.IsOpen == true)
             {
-
+                NumeroParte = 71212730;
+                Descripcion = "ISU, L-SERIES, ABIS CSM";
 
                 BtEscape();
 
