@@ -355,6 +355,7 @@ namespace Electrónicos
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtMostrarDatos);
             this.Controls.Add(this.txtEnviarDatos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Abis";
             this.Text = "Abis";
             this.Load += new System.EventHandler(this.Abis_Load);

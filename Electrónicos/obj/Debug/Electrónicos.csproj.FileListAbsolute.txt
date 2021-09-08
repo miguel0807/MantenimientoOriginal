@@ -7,7 +7,7 @@ C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electróni
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.exe
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.pdb
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\Guna.UI.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Form1.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.csproj.CopyComplete
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.csproj.AssemblyReference.cache
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Abis.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Presentacion.resources

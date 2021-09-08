@@ -16,7 +16,7 @@ namespace Electrónicos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Abis());
+            Application.Run(new Presentacion());
         }
     }
 }
