@@ -291,9 +291,9 @@ namespace Electrónicos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panelContenedor.Location = new System.Drawing.Point(273, 43);
+            this.panelContenedor.Location = new System.Drawing.Point(273, 33);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1177, 728);
+            this.panelContenedor.Size = new System.Drawing.Size(1177, 738);
             this.panelContenedor.TabIndex = 0;
             // 
             // panelAbis
@@ -404,7 +404,7 @@ namespace Electrónicos
             this.Controls.Add(this.PanelLateral);
             this.Controls.Add(this.PanelTotal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(1221, 686);
+            this.MinimumSize = new System.Drawing.Size(1447, 768);
             this.Name = "Presentacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Presentacion";

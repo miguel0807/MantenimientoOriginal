@@ -160,29 +160,17 @@ namespace Electrónicos
 
         private void btnColocarArriba_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            BtEnter();
-            btnColocarAbajo.Visible = true;
-            btnColocarArriba.Visible = false;
-            btnColocarAbajo.Focus();
-
-            deco = false;
+           
         }
 
         private void btnColocarAbajo_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            BtEnter();
-            btnColocarLado.Visible = true;
-            btnColocarAbajo.Visible = false;
-            btnColocarLado.Focus();
+           
         }
 
         private void btnColocarLado_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            BtEnter();
-            btnColocarLado.Visible = false;
+            
         }
 
         private void btnLineas_Click(object sender, EventArgs e)
@@ -596,6 +584,33 @@ namespace Electrónicos
             {
                 MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
             }
+        }
+
+        private void gunaGradientCircleButton1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            BtEnter();
+            btnColocarAbajo.Visible = true;
+            btnColocarArriba.Visible = false;
+            btnColocarAbajo.Focus();
+
+            deco = false;
+        }
+
+        private void gunaGradientCircleButton2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            BtEnter();
+            btnColocarLado.Visible = true;
+            btnColocarAbajo.Visible = false;
+            btnColocarLado.Focus();
+        }
+
+        private void gunaGradientCircleButton3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            BtEnter();
+            btnColocarLado.Visible = false;
         }
     }
 }

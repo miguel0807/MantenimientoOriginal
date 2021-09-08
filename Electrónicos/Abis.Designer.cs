@@ -36,9 +36,6 @@ namespace Electrónicos
             this.button1 = new System.Windows.Forms.Button();
             this.btnLineas = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnColocarArriba = new System.Windows.Forms.Button();
-            this.btnColocarLado = new System.Windows.Forms.Button();
-            this.btnColocarAbajo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -53,9 +50,9 @@ namespace Electrónicos
             this.PuertoSerie = new System.IO.Ports.SerialPort(this.components);
             this.btnCalibracion = new Guna.UI.WinForms.GunaGradientTileButton();
             this.btnRetrabajo = new Guna.UI.WinForms.GunaGradientTileButton();
-            this.gunaGradientCircleButton1 = new Guna.UI.WinForms.GunaGradientCircleButton();
-            this.gunaGradientCircleButton2 = new Guna.UI.WinForms.GunaGradientCircleButton();
-            this.gunaGradientCircleButton3 = new Guna.UI.WinForms.GunaGradientCircleButton();
+            this.btnColocarArriba = new Guna.UI.WinForms.GunaGradientCircleButton();
+            this.btnColocarAbajo = new Guna.UI.WinForms.GunaGradientCircleButton();
+            this.btnColocarLado = new Guna.UI.WinForms.GunaGradientCircleButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,60 +110,17 @@ namespace Electrónicos
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.textBox1.Location = new System.Drawing.Point(516, 323);
+            this.textBox1.Location = new System.Drawing.Point(466, 323);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(703, 319);
             this.textBox1.TabIndex = 36;
-            // 
-            // btnColocarArriba
-            // 
-            this.btnColocarArriba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.btnColocarArriba.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnColocarArriba.ForeColor = System.Drawing.Color.Silver;
-            this.btnColocarArriba.Location = new System.Drawing.Point(745, 49);
-            this.btnColocarArriba.Name = "btnColocarArriba";
-            this.btnColocarArriba.Size = new System.Drawing.Size(172, 39);
-            this.btnColocarArriba.TabIndex = 35;
-            this.btnColocarArriba.Text = "Colocado arriba";
-            this.btnColocarArriba.UseVisualStyleBackColor = false;
-            this.btnColocarArriba.Visible = false;
-            this.btnColocarArriba.Click += new System.EventHandler(this.btnColocarArriba_Click);
-            // 
-            // btnColocarLado
-            // 
-            this.btnColocarLado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.btnColocarLado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnColocarLado.ForeColor = System.Drawing.Color.Silver;
-            this.btnColocarLado.Location = new System.Drawing.Point(958, 49);
-            this.btnColocarLado.Name = "btnColocarLado";
-            this.btnColocarLado.Size = new System.Drawing.Size(198, 39);
-            this.btnColocarLado.TabIndex = 34;
-            this.btnColocarLado.Text = "Colocado de lado";
-            this.btnColocarLado.UseVisualStyleBackColor = false;
-            this.btnColocarLado.Visible = false;
-            this.btnColocarLado.Click += new System.EventHandler(this.btnColocarLado_Click);
-            // 
-            // btnColocarAbajo
-            // 
-            this.btnColocarAbajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.btnColocarAbajo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnColocarAbajo.ForeColor = System.Drawing.Color.Silver;
-            this.btnColocarAbajo.Location = new System.Drawing.Point(835, 4);
-            this.btnColocarAbajo.Name = "btnColocarAbajo";
-            this.btnColocarAbajo.Size = new System.Drawing.Size(181, 39);
-            this.btnColocarAbajo.TabIndex = 33;
-            this.btnColocarAbajo.Text = "Colocado abajo";
-            this.btnColocarAbajo.UseVisualStyleBackColor = false;
-            this.btnColocarAbajo.Visible = false;
-            this.btnColocarAbajo.Click += new System.EventHandler(this.btnColocarAbajo_Click);
             // 
             // panel1
             // 
@@ -276,9 +230,8 @@ namespace Electrónicos
             // 
             // txtMostrarDatos
             // 
-            this.txtMostrarDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMostrarDatos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtMostrarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.txtMostrarDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMostrarDatos.Font = new System.Drawing.Font("Century Gothic", 10.2F);
@@ -357,83 +310,89 @@ namespace Electrónicos
             this.btnRetrabajo.Text = "Retrabajo";
             this.btnRetrabajo.Visible = false;
             // 
-            // gunaGradientCircleButton1
+            // btnColocarArriba
             // 
-            this.gunaGradientCircleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaGradientCircleButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientCircleButton1.AnimationSpeed = 0.03F;
-            this.gunaGradientCircleButton1.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.gunaGradientCircleButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.gunaGradientCircleButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaGradientCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientCircleButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaGradientCircleButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientCircleButton1.Image = null;
-            this.gunaGradientCircleButton1.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaGradientCircleButton1.Location = new System.Drawing.Point(676, 104);
-            this.gunaGradientCircleButton1.Name = "gunaGradientCircleButton1";
-            this.gunaGradientCircleButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.gunaGradientCircleButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.gunaGradientCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientCircleButton1.OnHoverImage = null;
-            this.gunaGradientCircleButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientCircleButton1.Size = new System.Drawing.Size(208, 98);
-            this.gunaGradientCircleButton1.TabIndex = 42;
-            this.gunaGradientCircleButton1.Text = "CSM colocado hacia arriba";
+            this.btnColocarArriba.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnColocarArriba.AnimationHoverSpeed = 0.07F;
+            this.btnColocarArriba.AnimationSpeed = 0.03F;
+            this.btnColocarArriba.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnColocarArriba.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.btnColocarArriba.BorderColor = System.Drawing.Color.Black;
+            this.btnColocarArriba.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnColocarArriba.FocusedColor = System.Drawing.Color.Empty;
+            this.btnColocarArriba.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnColocarArriba.ForeColor = System.Drawing.Color.White;
+            this.btnColocarArriba.Image = null;
+            this.btnColocarArriba.ImageSize = new System.Drawing.Size(52, 52);
+            this.btnColocarArriba.Location = new System.Drawing.Point(676, 104);
+            this.btnColocarArriba.Name = "btnColocarArriba";
+            this.btnColocarArriba.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btnColocarArriba.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnColocarArriba.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnColocarArriba.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnColocarArriba.OnHoverImage = null;
+            this.btnColocarArriba.OnPressedColor = System.Drawing.Color.Black;
+            this.btnColocarArriba.Size = new System.Drawing.Size(208, 98);
+            this.btnColocarArriba.TabIndex = 42;
+            this.btnColocarArriba.Text = "CSM colocado hacia arriba";
+            this.btnColocarArriba.Visible = false;
+            this.btnColocarArriba.Click += new System.EventHandler(this.gunaGradientCircleButton1_Click);
             // 
-            // gunaGradientCircleButton2
+            // btnColocarAbajo
             // 
-            this.gunaGradientCircleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaGradientCircleButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientCircleButton2.AnimationSpeed = 0.03F;
-            this.gunaGradientCircleButton2.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.gunaGradientCircleButton2.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.gunaGradientCircleButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaGradientCircleButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientCircleButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientCircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaGradientCircleButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientCircleButton2.Image = null;
-            this.gunaGradientCircleButton2.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaGradientCircleButton2.Location = new System.Drawing.Point(676, 209);
-            this.gunaGradientCircleButton2.Name = "gunaGradientCircleButton2";
-            this.gunaGradientCircleButton2.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.gunaGradientCircleButton2.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.gunaGradientCircleButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientCircleButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientCircleButton2.OnHoverImage = null;
-            this.gunaGradientCircleButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientCircleButton2.Size = new System.Drawing.Size(208, 98);
-            this.gunaGradientCircleButton2.TabIndex = 43;
-            this.gunaGradientCircleButton2.Text = "CSM colocado hacia abajo";
+            this.btnColocarAbajo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnColocarAbajo.AnimationHoverSpeed = 0.07F;
+            this.btnColocarAbajo.AnimationSpeed = 0.03F;
+            this.btnColocarAbajo.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnColocarAbajo.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.btnColocarAbajo.BorderColor = System.Drawing.Color.Black;
+            this.btnColocarAbajo.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnColocarAbajo.FocusedColor = System.Drawing.Color.Empty;
+            this.btnColocarAbajo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnColocarAbajo.ForeColor = System.Drawing.Color.White;
+            this.btnColocarAbajo.Image = null;
+            this.btnColocarAbajo.ImageSize = new System.Drawing.Size(52, 52);
+            this.btnColocarAbajo.Location = new System.Drawing.Point(676, 209);
+            this.btnColocarAbajo.Name = "btnColocarAbajo";
+            this.btnColocarAbajo.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btnColocarAbajo.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnColocarAbajo.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnColocarAbajo.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnColocarAbajo.OnHoverImage = null;
+            this.btnColocarAbajo.OnPressedColor = System.Drawing.Color.Black;
+            this.btnColocarAbajo.Size = new System.Drawing.Size(208, 98);
+            this.btnColocarAbajo.TabIndex = 43;
+            this.btnColocarAbajo.Text = "CSM colocado hacia abajo";
+            this.btnColocarAbajo.Visible = false;
+            this.btnColocarAbajo.Click += new System.EventHandler(this.gunaGradientCircleButton2_Click);
             // 
-            // gunaGradientCircleButton3
+            // btnColocarLado
             // 
-            this.gunaGradientCircleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaGradientCircleButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientCircleButton3.AnimationSpeed = 0.03F;
-            this.gunaGradientCircleButton3.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.gunaGradientCircleButton3.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.gunaGradientCircleButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaGradientCircleButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientCircleButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientCircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaGradientCircleButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientCircleButton3.Image = null;
-            this.gunaGradientCircleButton3.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaGradientCircleButton3.Location = new System.Drawing.Point(929, 156);
-            this.gunaGradientCircleButton3.Name = "gunaGradientCircleButton3";
-            this.gunaGradientCircleButton3.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.gunaGradientCircleButton3.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.gunaGradientCircleButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientCircleButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientCircleButton3.OnHoverImage = null;
-            this.gunaGradientCircleButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientCircleButton3.Size = new System.Drawing.Size(208, 98);
-            this.gunaGradientCircleButton3.TabIndex = 44;
-            this.gunaGradientCircleButton3.Text = "CSM colocado de lado";
+            this.btnColocarLado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnColocarLado.AnimationHoverSpeed = 0.07F;
+            this.btnColocarLado.AnimationSpeed = 0.03F;
+            this.btnColocarLado.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnColocarLado.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.btnColocarLado.BorderColor = System.Drawing.Color.Black;
+            this.btnColocarLado.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnColocarLado.FocusedColor = System.Drawing.Color.Empty;
+            this.btnColocarLado.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnColocarLado.ForeColor = System.Drawing.Color.White;
+            this.btnColocarLado.Image = null;
+            this.btnColocarLado.ImageSize = new System.Drawing.Size(52, 52);
+            this.btnColocarLado.Location = new System.Drawing.Point(929, 156);
+            this.btnColocarLado.Name = "btnColocarLado";
+            this.btnColocarLado.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btnColocarLado.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnColocarLado.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnColocarLado.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnColocarLado.OnHoverImage = null;
+            this.btnColocarLado.OnPressedColor = System.Drawing.Color.Black;
+            this.btnColocarLado.Size = new System.Drawing.Size(208, 98);
+            this.btnColocarLado.TabIndex = 44;
+            this.btnColocarLado.Text = "CSM colocado de lado";
+            this.btnColocarLado.Visible = false;
+            this.btnColocarLado.Click += new System.EventHandler(this.gunaGradientCircleButton3_Click);
             // 
             // Abis
             // 
@@ -441,9 +400,9 @@ namespace Electrónicos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1221, 686);
-            this.Controls.Add(this.gunaGradientCircleButton3);
-            this.Controls.Add(this.gunaGradientCircleButton2);
-            this.Controls.Add(this.gunaGradientCircleButton1);
+            this.Controls.Add(this.btnColocarLado);
+            this.Controls.Add(this.btnColocarAbajo);
+            this.Controls.Add(this.btnColocarArriba);
             this.Controls.Add(this.btnRetrabajo);
             this.Controls.Add(this.btnCalibracion);
             this.Controls.Add(this.button3);
@@ -451,9 +410,6 @@ namespace Electrónicos
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLineas);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnColocarArriba);
-            this.Controls.Add(this.btnColocarLado);
-            this.Controls.Add(this.btnColocarAbajo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtMostrarDatos);
             this.Controls.Add(this.txtEnviarDatos);
@@ -476,9 +432,6 @@ namespace Electrónicos
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnLineas;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnColocarArriba;
-        private System.Windows.Forms.Button btnColocarLado;
-        private System.Windows.Forms.Button btnColocarAbajo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
@@ -493,8 +446,8 @@ namespace Electrónicos
         private System.IO.Ports.SerialPort PuertoSerie;
         private Guna.UI.WinForms.GunaGradientTileButton btnCalibracion;
         private Guna.UI.WinForms.GunaGradientTileButton btnRetrabajo;
-        private Guna.UI.WinForms.GunaGradientCircleButton gunaGradientCircleButton1;
-        private Guna.UI.WinForms.GunaGradientCircleButton gunaGradientCircleButton2;
-        private Guna.UI.WinForms.GunaGradientCircleButton gunaGradientCircleButton3;
+        private Guna.UI.WinForms.GunaGradientCircleButton btnColocarArriba;
+        private Guna.UI.WinForms.GunaGradientCircleButton btnColocarAbajo;
+        private Guna.UI.WinForms.GunaGradientCircleButton btnColocarLado;
     }
 }
