@@ -210,7 +210,7 @@ namespace Electrónicos
             this.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSuperior.Location = new System.Drawing.Point(273, 0);
             this.PanelSuperior.Name = "PanelSuperior";
-            this.PanelSuperior.Size = new System.Drawing.Size(1093, 42);
+            this.PanelSuperior.Size = new System.Drawing.Size(1174, 42);
             this.PanelSuperior.TabIndex = 3;
             // 
             // btnMinimizar
@@ -219,7 +219,7 @@ namespace Electrónicos
             this.btnMinimizar.BaseColor = System.Drawing.Color.White;
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(917, 6);
+            this.btnMinimizar.Location = new System.Drawing.Point(998, 6);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(50, 31);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -233,7 +233,7 @@ namespace Electrónicos
             this.btnRestaurar.BaseColor = System.Drawing.Color.White;
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(973, 6);
+            this.btnRestaurar.Location = new System.Drawing.Point(1054, 6);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(50, 31);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -248,7 +248,7 @@ namespace Electrónicos
             this.btnMaximizar.BaseColor = System.Drawing.Color.White;
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(973, 6);
+            this.btnMaximizar.Location = new System.Drawing.Point(1054, 6);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(50, 31);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -262,7 +262,7 @@ namespace Electrónicos
             this.btnCerrar.BaseColor = System.Drawing.Color.White;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1031, 6);
+            this.btnCerrar.Location = new System.Drawing.Point(1112, 6);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(50, 31);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -276,12 +276,12 @@ namespace Electrónicos
             // 
             // PanelTotal
             // 
-            this.PanelTotal.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.PanelTotal.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PanelTotal.Controls.Add(this.panelContenedor);
             this.PanelTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelTotal.Location = new System.Drawing.Point(0, 0);
             this.PanelTotal.Name = "PanelTotal";
-            this.PanelTotal.Size = new System.Drawing.Size(1366, 768);
+            this.PanelTotal.Size = new System.Drawing.Size(1447, 768);
             this.PanelTotal.TabIndex = 4;
             this.PanelTotal.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
             // 
@@ -290,9 +290,10 @@ namespace Electrónicos
             this.panelContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelContenedor.Location = new System.Drawing.Point(273, 40);
+            this.panelContenedor.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelContenedor.Location = new System.Drawing.Point(273, 43);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1090, 728);
+            this.panelContenedor.Size = new System.Drawing.Size(1177, 728);
             this.panelContenedor.TabIndex = 0;
             // 
             // panelAbis
@@ -398,7 +399,7 @@ namespace Electrónicos
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1447, 768);
             this.Controls.Add(this.PanelSuperior);
             this.Controls.Add(this.PanelLateral);
             this.Controls.Add(this.PanelTotal);

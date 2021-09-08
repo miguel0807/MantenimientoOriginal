@@ -119,6 +119,7 @@ namespace Electrónicos
             {
                 btnConectar.Visible = true;
                 panel1.Size = new System.Drawing.Size(244, 110);
+                btnCalibracion.Focus();
             }
 
 
@@ -292,12 +293,14 @@ namespace Electrónicos
         private void ConectarActivado()
         {
             btnCalibracion.Visible = true;
+            btnRetrabajo.Visible = true;
         }
 
         //Acciones que se ejecutaran cuando se este desconectado al puerto serial
         private void DesconectarActivado()
         {
             btnCalibracion.Visible = false;
+            btnRetrabajo.Visible = false;
         }
 
         #endregion
@@ -556,6 +559,43 @@ namespace Electrónicos
 
         }
 
-       
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void gunaGradientTileButton1_Click(object sender, EventArgs e)
+        {
+            if (PuertoSerie.IsOpen == true)
+            {
+
+
+                BtEscape();
+
+                PuertoSerie.DiscardOutBuffer();
+
+                textBox1.Text = "";
+
+                PuertoSerie.Write("calibrate");
+
+                BtEnter();
+
+                btnColocarArriba.Visible = true;
+
+                btnCalibracion.Visible = false;
+                btnRetrabajo.Visible = false;   
+
+                btnColocarArriba.Focus();
+
+                deco = true;
+
+
+            }
+
+            else
+            {
+                MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
+            }
+        }
     }
 }

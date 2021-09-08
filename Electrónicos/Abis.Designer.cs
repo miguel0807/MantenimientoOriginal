@@ -30,6 +30,7 @@ namespace Electrónicos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Abis));
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@ namespace Electrónicos
             this.btnColocarArriba = new System.Windows.Forms.Button();
             this.btnColocarLado = new System.Windows.Forms.Button();
             this.btnColocarAbajo = new System.Windows.Forms.Button();
-            this.btnCalibracion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -51,6 +51,11 @@ namespace Electrónicos
             this.txtMostrarDatos = new System.Windows.Forms.TextBox();
             this.txtEnviarDatos = new System.Windows.Forms.TextBox();
             this.PuertoSerie = new System.IO.Ports.SerialPort(this.components);
+            this.btnCalibracion = new Guna.UI.WinForms.GunaGradientTileButton();
+            this.btnRetrabajo = new Guna.UI.WinForms.GunaGradientTileButton();
+            this.gunaGradientCircleButton1 = new Guna.UI.WinForms.GunaGradientCircleButton();
+            this.gunaGradientCircleButton2 = new Guna.UI.WinForms.GunaGradientCircleButton();
+            this.gunaGradientCircleButton3 = new Guna.UI.WinForms.GunaGradientCircleButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +64,7 @@ namespace Electrónicos
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.button3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Silver;
-            this.button3.Location = new System.Drawing.Point(556, 123);
+            this.button3.Location = new System.Drawing.Point(367, 84);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(147, 39);
             this.button3.TabIndex = 39;
@@ -72,7 +77,7 @@ namespace Electrónicos
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Silver;
-            this.button2.Location = new System.Drawing.Point(556, 87);
+            this.button2.Location = new System.Drawing.Point(367, 48);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 39);
             this.button2.TabIndex = 38;
@@ -85,7 +90,7 @@ namespace Electrónicos
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Silver;
-            this.button1.Location = new System.Drawing.Point(556, 49);
+            this.button1.Location = new System.Drawing.Point(367, 10);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 39);
             this.button1.TabIndex = 31;
@@ -98,7 +103,7 @@ namespace Electrónicos
             this.btnLineas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.btnLineas.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLineas.ForeColor = System.Drawing.Color.Silver;
-            this.btnLineas.Location = new System.Drawing.Point(915, 58);
+            this.btnLineas.Location = new System.Drawing.Point(544, 18);
             this.btnLineas.Name = "btnLineas";
             this.btnLineas.Size = new System.Drawing.Size(162, 39);
             this.btnLineas.TabIndex = 37;
@@ -126,7 +131,7 @@ namespace Electrónicos
             this.btnColocarArriba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.btnColocarArriba.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnColocarArriba.ForeColor = System.Drawing.Color.Silver;
-            this.btnColocarArriba.Location = new System.Drawing.Point(386, 185);
+            this.btnColocarArriba.Location = new System.Drawing.Point(745, 49);
             this.btnColocarArriba.Name = "btnColocarArriba";
             this.btnColocarArriba.Size = new System.Drawing.Size(172, 39);
             this.btnColocarArriba.TabIndex = 35;
@@ -140,7 +145,7 @@ namespace Electrónicos
             this.btnColocarLado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.btnColocarLado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnColocarLado.ForeColor = System.Drawing.Color.Silver;
-            this.btnColocarLado.Location = new System.Drawing.Point(850, 185);
+            this.btnColocarLado.Location = new System.Drawing.Point(958, 49);
             this.btnColocarLado.Name = "btnColocarLado";
             this.btnColocarLado.Size = new System.Drawing.Size(198, 39);
             this.btnColocarLado.TabIndex = 34;
@@ -154,7 +159,7 @@ namespace Electrónicos
             this.btnColocarAbajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.btnColocarAbajo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnColocarAbajo.ForeColor = System.Drawing.Color.Silver;
-            this.btnColocarAbajo.Location = new System.Drawing.Point(599, 185);
+            this.btnColocarAbajo.Location = new System.Drawing.Point(835, 4);
             this.btnColocarAbajo.Name = "btnColocarAbajo";
             this.btnColocarAbajo.Size = new System.Drawing.Size(181, 39);
             this.btnColocarAbajo.TabIndex = 33;
@@ -162,20 +167,6 @@ namespace Electrónicos
             this.btnColocarAbajo.UseVisualStyleBackColor = false;
             this.btnColocarAbajo.Visible = false;
             this.btnColocarAbajo.Click += new System.EventHandler(this.btnColocarAbajo_Click);
-            // 
-            // btnCalibracion
-            // 
-            this.btnCalibracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.btnCalibracion.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalibracion.ForeColor = System.Drawing.Color.Silver;
-            this.btnCalibracion.Location = new System.Drawing.Point(47, 185);
-            this.btnCalibracion.Name = "btnCalibracion";
-            this.btnCalibracion.Size = new System.Drawing.Size(147, 39);
-            this.btnCalibracion.TabIndex = 32;
-            this.btnCalibracion.Text = "Calibración";
-            this.btnCalibracion.UseVisualStyleBackColor = false;
-            this.btnCalibracion.Visible = false;
-            this.btnCalibracion.Click += new System.EventHandler(this.btnCalibracion_Click);
             // 
             // panel1
             // 
@@ -301,7 +292,7 @@ namespace Electrónicos
             // txtEnviarDatos
             // 
             this.txtEnviarDatos.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtEnviarDatos.Location = new System.Drawing.Point(47, 272);
+            this.txtEnviarDatos.Location = new System.Drawing.Point(24, 285);
             this.txtEnviarDatos.Name = "txtEnviarDatos";
             this.txtEnviarDatos.Size = new System.Drawing.Size(195, 22);
             this.txtEnviarDatos.TabIndex = 28;
@@ -311,12 +302,150 @@ namespace Electrónicos
             // 
             this.PuertoSerie.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.PuertoSerie_DataReceived);
             // 
+            // btnCalibracion
+            // 
+            this.btnCalibracion.AnimationHoverSpeed = 0.07F;
+            this.btnCalibracion.AnimationSpeed = 0.03F;
+            this.btnCalibracion.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnCalibracion.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.btnCalibracion.BorderColor = System.Drawing.Color.Black;
+            this.btnCalibracion.BorderSize = 2;
+            this.btnCalibracion.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCalibracion.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCalibracion.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
+            this.btnCalibracion.ForeColor = System.Drawing.Color.White;
+            this.btnCalibracion.Image = ((System.Drawing.Image)(resources.GetObject("btnCalibracion.Image")));
+            this.btnCalibracion.ImageSize = new System.Drawing.Size(52, 52);
+            this.btnCalibracion.Location = new System.Drawing.Point(12, 156);
+            this.btnCalibracion.Name = "btnCalibracion";
+            this.btnCalibracion.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btnCalibracion.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnCalibracion.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCalibracion.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCalibracion.OnHoverImage = null;
+            this.btnCalibracion.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCalibracion.Size = new System.Drawing.Size(289, 110);
+            this.btnCalibracion.TabIndex = 1;
+            this.btnCalibracion.Text = "Calibración";
+            this.btnCalibracion.Visible = false;
+            this.btnCalibracion.Click += new System.EventHandler(this.gunaGradientTileButton1_Click);
+            // 
+            // btnRetrabajo
+            // 
+            this.btnRetrabajo.AnimationHoverSpeed = 0.07F;
+            this.btnRetrabajo.AnimationSpeed = 0.03F;
+            this.btnRetrabajo.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnRetrabajo.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.btnRetrabajo.BorderColor = System.Drawing.Color.Black;
+            this.btnRetrabajo.BorderSize = 2;
+            this.btnRetrabajo.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRetrabajo.FocusedColor = System.Drawing.Color.Empty;
+            this.btnRetrabajo.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
+            this.btnRetrabajo.ForeColor = System.Drawing.Color.White;
+            this.btnRetrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnRetrabajo.Image")));
+            this.btnRetrabajo.ImageSize = new System.Drawing.Size(52, 52);
+            this.btnRetrabajo.Location = new System.Drawing.Point(331, 156);
+            this.btnRetrabajo.Name = "btnRetrabajo";
+            this.btnRetrabajo.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btnRetrabajo.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnRetrabajo.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnRetrabajo.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnRetrabajo.OnHoverImage = null;
+            this.btnRetrabajo.OnPressedColor = System.Drawing.Color.Black;
+            this.btnRetrabajo.Size = new System.Drawing.Size(289, 110);
+            this.btnRetrabajo.TabIndex = 2;
+            this.btnRetrabajo.Text = "Retrabajo";
+            this.btnRetrabajo.Visible = false;
+            // 
+            // gunaGradientCircleButton1
+            // 
+            this.gunaGradientCircleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaGradientCircleButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaGradientCircleButton1.AnimationSpeed = 0.03F;
+            this.gunaGradientCircleButton1.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.gunaGradientCircleButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.gunaGradientCircleButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaGradientCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaGradientCircleButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaGradientCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaGradientCircleButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaGradientCircleButton1.Image = null;
+            this.gunaGradientCircleButton1.ImageSize = new System.Drawing.Size(52, 52);
+            this.gunaGradientCircleButton1.Location = new System.Drawing.Point(676, 104);
+            this.gunaGradientCircleButton1.Name = "gunaGradientCircleButton1";
+            this.gunaGradientCircleButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.gunaGradientCircleButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.gunaGradientCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaGradientCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradientCircleButton1.OnHoverImage = null;
+            this.gunaGradientCircleButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradientCircleButton1.Size = new System.Drawing.Size(208, 98);
+            this.gunaGradientCircleButton1.TabIndex = 42;
+            this.gunaGradientCircleButton1.Text = "CSM colocado hacia arriba";
+            // 
+            // gunaGradientCircleButton2
+            // 
+            this.gunaGradientCircleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaGradientCircleButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaGradientCircleButton2.AnimationSpeed = 0.03F;
+            this.gunaGradientCircleButton2.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.gunaGradientCircleButton2.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.gunaGradientCircleButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaGradientCircleButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaGradientCircleButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaGradientCircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaGradientCircleButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaGradientCircleButton2.Image = null;
+            this.gunaGradientCircleButton2.ImageSize = new System.Drawing.Size(52, 52);
+            this.gunaGradientCircleButton2.Location = new System.Drawing.Point(676, 209);
+            this.gunaGradientCircleButton2.Name = "gunaGradientCircleButton2";
+            this.gunaGradientCircleButton2.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.gunaGradientCircleButton2.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.gunaGradientCircleButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaGradientCircleButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradientCircleButton2.OnHoverImage = null;
+            this.gunaGradientCircleButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradientCircleButton2.Size = new System.Drawing.Size(208, 98);
+            this.gunaGradientCircleButton2.TabIndex = 43;
+            this.gunaGradientCircleButton2.Text = "CSM colocado hacia abajo";
+            // 
+            // gunaGradientCircleButton3
+            // 
+            this.gunaGradientCircleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaGradientCircleButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaGradientCircleButton3.AnimationSpeed = 0.03F;
+            this.gunaGradientCircleButton3.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.gunaGradientCircleButton3.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.gunaGradientCircleButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaGradientCircleButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaGradientCircleButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaGradientCircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaGradientCircleButton3.ForeColor = System.Drawing.Color.White;
+            this.gunaGradientCircleButton3.Image = null;
+            this.gunaGradientCircleButton3.ImageSize = new System.Drawing.Size(52, 52);
+            this.gunaGradientCircleButton3.Location = new System.Drawing.Point(929, 156);
+            this.gunaGradientCircleButton3.Name = "gunaGradientCircleButton3";
+            this.gunaGradientCircleButton3.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.gunaGradientCircleButton3.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.gunaGradientCircleButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaGradientCircleButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradientCircleButton3.OnHoverImage = null;
+            this.gunaGradientCircleButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradientCircleButton3.Size = new System.Drawing.Size(208, 98);
+            this.gunaGradientCircleButton3.TabIndex = 44;
+            this.gunaGradientCircleButton3.Text = "CSM colocado de lado";
+            // 
             // Abis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1221, 686);
+            this.Controls.Add(this.gunaGradientCircleButton3);
+            this.Controls.Add(this.gunaGradientCircleButton2);
+            this.Controls.Add(this.gunaGradientCircleButton1);
+            this.Controls.Add(this.btnRetrabajo);
+            this.Controls.Add(this.btnCalibracion);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -325,7 +454,6 @@ namespace Electrónicos
             this.Controls.Add(this.btnColocarArriba);
             this.Controls.Add(this.btnColocarLado);
             this.Controls.Add(this.btnColocarAbajo);
-            this.Controls.Add(this.btnCalibracion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtMostrarDatos);
             this.Controls.Add(this.txtEnviarDatos);
@@ -351,7 +479,6 @@ namespace Electrónicos
         private System.Windows.Forms.Button btnColocarArriba;
         private System.Windows.Forms.Button btnColocarLado;
         private System.Windows.Forms.Button btnColocarAbajo;
-        private System.Windows.Forms.Button btnCalibracion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
@@ -364,5 +491,10 @@ namespace Electrónicos
         private System.Windows.Forms.TextBox txtMostrarDatos;
         private System.Windows.Forms.TextBox txtEnviarDatos;
         private System.IO.Ports.SerialPort PuertoSerie;
+        private Guna.UI.WinForms.GunaGradientTileButton btnCalibracion;
+        private Guna.UI.WinForms.GunaGradientTileButton btnRetrabajo;
+        private Guna.UI.WinForms.GunaGradientCircleButton gunaGradientCircleButton1;
+        private Guna.UI.WinForms.GunaGradientCircleButton gunaGradientCircleButton2;
+        private Guna.UI.WinForms.GunaGradientCircleButton gunaGradientCircleButton3;
     }
 }
