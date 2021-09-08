@@ -36,7 +36,6 @@ namespace Electrónicos
             this.button1 = new System.Windows.Forms.Button();
             this.btnLineas = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -53,6 +52,7 @@ namespace Electrónicos
             this.btnColocarArriba = new Guna.UI.WinForms.GunaGradientCircleButton();
             this.btnColocarAbajo = new Guna.UI.WinForms.GunaGradientCircleButton();
             this.btnColocarLado = new Guna.UI.WinForms.GunaGradientCircleButton();
+            this.panel1 = new Guna.UI.WinForms.GunaGradientPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,7 @@ namespace Electrónicos
             this.button3.TabIndex = 39;
             this.button3.Text = "Buscar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
@@ -80,6 +81,7 @@ namespace Electrónicos
             this.button2.TabIndex = 38;
             this.button2.Text = "Actualizar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
@@ -93,6 +95,7 @@ namespace Electrónicos
             this.button1.TabIndex = 31;
             this.button1.Text = "Insertar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnLineas
@@ -106,6 +109,7 @@ namespace Electrónicos
             this.btnLineas.TabIndex = 37;
             this.btnLineas.Text = "Lineas";
             this.btnLineas.UseVisualStyleBackColor = false;
+            this.btnLineas.Visible = false;
             this.btnLineas.Click += new System.EventHandler(this.btnLineas_Click);
             // 
             // textBox1
@@ -121,58 +125,42 @@ namespace Electrónicos
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(703, 319);
             this.textBox1.TabIndex = 36;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.btnConectar);
-            this.panel1.Controls.Add(this.lblEstadoConexion);
-            this.panel1.Controls.Add(this.btnEsconderConexion);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(325, 135);
-            this.panel1.TabIndex = 30;
+            this.textBox1.Visible = false;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(5, 0);
+            this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(313, 5);
+            this.panel5.Size = new System.Drawing.Size(320, 5);
             this.panel5.TabIndex = 15;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(5, 128);
+            this.panel4.Location = new System.Drawing.Point(0, 130);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(313, 5);
+            this.panel4.Size = new System.Drawing.Size(320, 5);
             this.panel4.TabIndex = 14;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 133);
+            this.panel2.Size = new System.Drawing.Size(5, 125);
             this.panel2.TabIndex = 13;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(318, 0);
+            this.panel3.Location = new System.Drawing.Point(320, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 133);
+            this.panel3.Size = new System.Drawing.Size(5, 135);
             this.panel3.TabIndex = 14;
             // 
             // btnConectar
@@ -180,7 +168,7 @@ namespace Electrónicos
             this.btnConectar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.btnConectar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConectar.ForeColor = System.Drawing.Color.Silver;
-            this.btnConectar.Location = new System.Drawing.Point(72, 74);
+            this.btnConectar.Location = new System.Drawing.Point(88, 76);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(147, 39);
             this.btnConectar.TabIndex = 2;
@@ -194,9 +182,10 @@ namespace Electrónicos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEstadoConexion.AutoSize = true;
+            this.lblEstadoConexion.BackColor = System.Drawing.Color.Transparent;
             this.lblEstadoConexion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoConexion.ForeColor = System.Drawing.Color.White;
-            this.lblEstadoConexion.Location = new System.Drawing.Point(40, 36);
+            this.lblEstadoConexion.Location = new System.Drawing.Point(56, 38);
             this.lblEstadoConexion.Name = "lblEstadoConexion";
             this.lblEstadoConexion.Size = new System.Drawing.Size(237, 23);
             this.lblEstadoConexion.TabIndex = 10;
@@ -206,7 +195,7 @@ namespace Electrónicos
             // 
             this.btnEsconderConexion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.btnEsconderConexion.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.btnEsconderConexion.Location = new System.Drawing.Point(11, 36);
+            this.btnEsconderConexion.Location = new System.Drawing.Point(27, 38);
             this.btnEsconderConexion.Name = "btnEsconderConexion";
             this.btnEsconderConexion.Size = new System.Drawing.Size(23, 23);
             this.btnEsconderConexion.TabIndex = 11;
@@ -220,9 +209,10 @@ namespace Electrónicos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(93, 13);
+            this.label1.Location = new System.Drawing.Point(109, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 9;
@@ -241,6 +231,7 @@ namespace Electrónicos
             this.txtMostrarDatos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMostrarDatos.Size = new System.Drawing.Size(395, 319);
             this.txtMostrarDatos.TabIndex = 29;
+            this.txtMostrarDatos.Visible = false;
             // 
             // txtEnviarDatos
             // 
@@ -249,6 +240,7 @@ namespace Electrónicos
             this.txtEnviarDatos.Name = "txtEnviarDatos";
             this.txtEnviarDatos.Size = new System.Drawing.Size(195, 22);
             this.txtEnviarDatos.TabIndex = 28;
+            this.txtEnviarDatos.Visible = false;
             this.txtEnviarDatos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEnviarDatos_KeyPress);
             // 
             // PuertoSerie
@@ -394,12 +386,35 @@ namespace Electrónicos
             this.btnColocarLado.Visible = false;
             this.btnColocarLado.Click += new System.EventHandler(this.gunaGradientCircleButton3_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.btnEsconderConexion);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblEstadoConexion);
+            this.panel1.Controls.Add(this.btnConectar);
+            this.panel1.GradientColor1 = System.Drawing.SystemColors.Highlight;
+            this.panel1.GradientColor2 = System.Drawing.Color.DarkGray;
+            this.panel1.GradientColor3 = System.Drawing.Color.DarkSalmon;
+            this.panel1.GradientColor4 = System.Drawing.Color.RosyBrown;
+            this.panel1.Location = new System.Drawing.Point(12, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(325, 135);
+            this.panel1.TabIndex = 46;
+            this.panel1.Text = "gunaGradientPanel1";
+            // 
             // Abis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1221, 686);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnColocarLado);
             this.Controls.Add(this.btnColocarAbajo);
             this.Controls.Add(this.btnColocarArriba);
@@ -410,7 +425,6 @@ namespace Electrónicos
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLineas);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtMostrarDatos);
             this.Controls.Add(this.txtEnviarDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -432,7 +446,6 @@ namespace Electrónicos
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnLineas;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
@@ -449,5 +462,6 @@ namespace Electrónicos
         private Guna.UI.WinForms.GunaGradientCircleButton btnColocarArriba;
         private Guna.UI.WinForms.GunaGradientCircleButton btnColocarAbajo;
         private Guna.UI.WinForms.GunaGradientCircleButton btnColocarLado;
+        private Guna.UI.WinForms.GunaGradientPanel panel1;
     }
 }

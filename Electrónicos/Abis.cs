@@ -402,23 +402,45 @@ namespace Electrónicos
 
                 }
 
-                //Condcionales en caso de errores o finalizado de la calibración
+                //En caso de fallo
                 if (linea.Contains("CALIBRATION FAILED! PRESS ENTER TO CONTINUE!"))
                 {
                     MessageBox.Show("La calibración fallo, vuelva a repetir el proceso");
 
-                    //Actualizar el contador de errores humanos
-                    cn.abrir();
-                    SqlCommand cmd = new SqlCommand("update CSM set [Fecha Final 1] = @fechaFinal, [Hora Final 1] = @horaFinal,[Calibración 1] = @Calibracion, [Bracket 1]= @Desviacion   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
-                    cmd.Parameters.AddWithValue("@errorHumano", NumeroSerie);
-                   
 
-                    cmd.ExecuteNonQuery();
+                    //Verificar los errores humanos
+                    cn.abrir();
+                    SqlCommand cmd = new SqlCommand("select [Error Humano] from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+
+                    int conteoErrores = Convert.ToInt32(cmd.ExecuteScalar());
                     cn.cerrar();
+
+                    if (conteoErrores == 0)
+                    {
+                        MessageBox.Show("No se permiten mas intentos");
+                    }
+                    else if (conteoErrores >= 1)
+                    {
+                        conteoErrores = conteoErrores - 1;
+                        cn.abrir();
+                        SqlCommand cmd1 = new SqlCommand("update CSM set [Error Humano] = @ErrorHumano where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                        cmd1.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                        cmd1.Parameters.AddWithValue("@ErrorHumano", conteoErrores);                     
+                        cmd1.ExecuteNonQuery();
+                        cn.cerrar();
+                        MessageBox.Show("Se resto 1 al contador de errores");
+
+                    }
+
+                    
+
+
+                    
 
                     RestablecerControles();
                 }
-
+                //En caso de que finalice sin problemas
                 else if (linea.Contains("Calibration saved! Disconnect the CSM!"))
                 {
                    
@@ -455,11 +477,12 @@ namespace Electrónicos
                     int inicio = linea.IndexOf(":") + 2;
                     NumeroSerie = linea.Substring(inicio, linea.Length - inicio);                    
                     CrearCSM = true;
+
                 }
 
                 if (linea == "Place CSM with LED side up and press Enter!")
                 {
-                    Mensaje = "Coloque CSM en posición hacia Arriba";
+                    //Mensaje = "Coloque CSM en posición hacia Arriba";
                     Mensaje = "Inicio del proceso de calibración";
                 }
 
@@ -507,6 +530,24 @@ namespace Electrónicos
                     //Si esta creado se verifica si se completo
                     else
                     {
+                        //Verificar los errores humanos
+                        cn.abrir();
+                        SqlCommand cmd = new SqlCommand("select [Error Humano] from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                        cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+
+                        int conteoErrores = Convert.ToInt32(cmd.ExecuteScalar());
+                        cn.cerrar();
+
+                        if (conteoErrores == 0)
+                        {
+                            MessageBox.Show("Este CSM no se puede continuar calibrando, se cometieron los 5 errores permitidos, ahora se encuentra en retrabajo.");
+                            RestablecerControles();
+                            return;
+                        }
+                       
+
+
+
                         //Se verfica si podemos calibrar o se rechaza la solicitud
                         cn.abrir();
                         SqlCommand cmd2 = new SqlCommand("select COUNT([Fecha Final 1]) from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
@@ -617,7 +658,7 @@ namespace Electrónicos
 
         public void button3_Click(object sender, EventArgs e)
         {
-
+            /*
             cn.abrir();
             SqlCommand cmd1 = new SqlCommand("select Error from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
             cmd1.Parameters.AddWithValue("@NumeroSerie", "03598");
@@ -637,6 +678,28 @@ namespace Electrónicos
 
 
             cn.cerrar();
+            */
+
+            //Actualizar el contador de errores humanos
+            cn.abrir();
+            SqlCommand cmd = new SqlCommand("select [Error Humano] from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+            cmd.Parameters.AddWithValue("@NumeroSerie", "03407");
+
+
+            int conteo = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (conteo == 0)
+            {
+                MessageBox.Show("No se permiten mas intentos");
+            }
+            else if (conteo >= 1)
+            {
+                MessageBox.Show("Aun puede continuar intentando");
+
+            }
+           
+            cn.cerrar();
+
 
         }
 
