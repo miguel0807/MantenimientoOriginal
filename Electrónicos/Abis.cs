@@ -350,17 +350,17 @@ namespace Electrónicos
                 //Indica la posición del CSM
                 if (linea == "Place CSM with LED side up and press Enter!")
                 {
-                    Mensaje = "Coloque CSM en posición hacia Arriba";
+                   // Mensaje = "Coloque CSM en posición hacia Arriba";
                 }
 
                 else if (linea == "Place CSM with flat side down and press Enter!")
                 {
-                    Mensaje = "Coloque el CSM en posición hacia abajo";
+                   // Mensaje = "Coloque el CSM en posición hacia abajo";
                 }
 
                 else if (linea == "Place CSM in orientation the reference bracket and press Enter!")
                 {
-                    Mensaje = "Coloque el CSM de lado";
+                    //Mensaje = "Coloque el CSM de lado";
                 }
 
 
@@ -386,6 +386,19 @@ namespace Electrónicos
 
                     Desviacion = linea.Substring(inicio, final + 1 - inicio);
 
+                    //Actualizar los datos finales de la calibración del CSM
+                    cn.abrir();
+                    SqlCommand cmd = new SqlCommand("update CSM set [Fecha Final 1] = @fechaFinal, [Hora Final 1] = @horaFinal,[Calibración 1] = @Calibracion, [Bracket 1]= @Desviacion   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);                                     
+                    cmd.Parameters.AddWithValue("@fechaFinal", DateTime.Now.ToString("dd/MM/yyyy"));
+                    cmd.Parameters.AddWithValue("@horaFinal", DateTime.Now.ToString("HH:mm:ss"));
+                    cmd.Parameters.AddWithValue("@Calibracion", Calibracion1);
+                    cmd.Parameters.AddWithValue("@Desviacion", Desviacion);
+                   
+                    cmd.ExecuteNonQuery();
+                    cn.cerrar();
+                    
+
 
                 }
 
@@ -394,12 +407,21 @@ namespace Electrónicos
                 {
                     MessageBox.Show("La calibración fallo, vuelva a repetir el proceso");
 
+                    //Actualizar el contador de errores humanos
+                    cn.abrir();
+                    SqlCommand cmd = new SqlCommand("update CSM set [Fecha Final 1] = @fechaFinal, [Hora Final 1] = @horaFinal,[Calibración 1] = @Calibracion, [Bracket 1]= @Desviacion   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cmd.Parameters.AddWithValue("@errorHumano", NumeroSerie);
+                   
+
+                    cmd.ExecuteNonQuery();
+                    cn.cerrar();
+
                     RestablecerControles();
                 }
 
                 else if (linea.Contains("Calibration saved! Disconnect the CSM!"))
                 {
-                    Insertar();
+                   
                     Mensaje = "La calibración fue un exito, desconecte el cable del CSM";
                     RestablecerControles();
                     deco = true;
@@ -430,14 +452,15 @@ namespace Electrónicos
                 //Obtiene el número de serie 
                 if (linea.Contains("Serial number:"))
                 {
-                    int inicio = linea.IndexOf(":") + 1;
-                    NumeroSerie = linea.Substring(inicio, linea.Length - inicio);
+                    int inicio = linea.IndexOf(":") + 2;
+                    NumeroSerie = linea.Substring(inicio, linea.Length - inicio);                    
                     CrearCSM = true;
                 }
 
                 if (linea == "Place CSM with LED side up and press Enter!")
                 {
                     Mensaje = "Coloque CSM en posición hacia Arriba";
+                    Mensaje = "Inicio del proceso de calibración";
                 }
 
 
@@ -468,13 +491,14 @@ namespace Electrónicos
                         
 
                         cn.abrir();
-                        SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Número de parte],Descripción,[Fecha Ingreso 1],[Hora ingreso 1]) values (@Usuario,@NumeroSerie,@NumeroParte,@Descripcion,@fechaIngreso,@horaIngreso)", cn.conectarBD);
+                        SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Número de parte],Descripción,[Fecha Ingreso 1],[Hora ingreso 1],[Error Humano]) values (@Usuario,@NumeroSerie,@NumeroParte,@Descripcion,@fechaIngreso,@horaIngreso,@ErrorHumano)", cn.conectarBD);
                         cmd.Parameters.AddWithValue("@Usuario", "Miguel Alvarado");
                         cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
                         cmd.Parameters.AddWithValue("@NumeroParte", NumeroParte);
                         cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
                         cmd.Parameters.AddWithValue("@fechaIngreso", DateTime.Now.ToString("dd/MM/yyyy"));
                         cmd.Parameters.AddWithValue("@horaIngreso", DateTime.Now.ToString("HH:mm:ss"));
+                        cmd.Parameters.AddWithValue("@ErrorHumano", 5);
 
                         cmd.ExecuteNonQuery();
                         cn.cerrar();
@@ -506,10 +530,7 @@ namespace Electrónicos
         
 
                     }
-
-
-                    
-                    
+           
 
                 }
 
@@ -598,7 +619,7 @@ namespace Electrónicos
         {
 
             cn.abrir();
-            SqlCommand cmd1 = new SqlCommand("select COUNT(*) from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+            SqlCommand cmd1 = new SqlCommand("select Error from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
             cmd1.Parameters.AddWithValue("@NumeroSerie", "03598");
 
             int conteo = Convert.ToInt32(cmd1.ExecuteScalar());
@@ -619,21 +640,7 @@ namespace Electrónicos
 
         }
 
-        private void Insertar()
-        {
-            cn.abrir();
-            SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Calibración 1],[Bracket 1],[Fecha Ingreso 1],[Hora ingreso 1]) values (@Usuario,@NumeroSerie,@Calibracion1,@Desviacion,@fechaIngreso,@horaIngreso)", cn.conectarBD);
-            cmd.Parameters.AddWithValue("@Usuario", "Miguel Alvarado");
-            cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
-            cmd.Parameters.AddWithValue("@Calibracion1", Calibracion1);
-            cmd.Parameters.AddWithValue("@Desviacion", Desviacion);
-            cmd.Parameters.AddWithValue("@fechaIngreso", DateTime.Now.ToString("dd/MM/yyyy"));
-            cmd.Parameters.AddWithValue("@horaIngreso", DateTime.Now.ToString("HH:mm:ss"));
-
-            cmd.ExecuteNonQuery();
-            cn.cerrar();
-
-        }
+       
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
