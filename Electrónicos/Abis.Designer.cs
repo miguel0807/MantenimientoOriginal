@@ -53,7 +53,6 @@ namespace Electrónicos
             this.btnColocarLado = new Guna.UI.WinForms.GunaGradientCircleButton();
             this.panel1 = new Guna.UI.WinForms.GunaGradientPanel();
             this.btnConectar = new Guna.UI.WinForms.GunaGradientButton();
-            this.btnCargarCSM = new Guna.UI.WinForms.GunaGradientCircleButton();
             this.lblNumeroSerie = new Guna.UI.WinForms.GunaLabel();
             this.panelInformacion = new Guna.UI.WinForms.GunaGradientPanel();
             this.lblErrorHumano = new Guna.UI.WinForms.GunaLabel();
@@ -65,6 +64,8 @@ namespace Electrónicos
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnCargarCSM = new Guna.UI.WinForms.GunaGradientButton();
+            this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.panel1.SuspendLayout();
             this.panelInformacion.SuspendLayout();
             this.SuspendLayout();
@@ -247,6 +248,7 @@ namespace Electrónicos
             // 
             // btnCalibracion
             // 
+            this.btnCalibracion.Animated = true;
             this.btnCalibracion.AnimationHoverSpeed = 0.07F;
             this.btnCalibracion.AnimationSpeed = 0.03F;
             this.btnCalibracion.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
@@ -259,7 +261,7 @@ namespace Electrónicos
             this.btnCalibracion.ForeColor = System.Drawing.Color.White;
             this.btnCalibracion.Image = ((System.Drawing.Image)(resources.GetObject("btnCalibracion.Image")));
             this.btnCalibracion.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnCalibracion.Location = new System.Drawing.Point(709, 180);
+            this.btnCalibracion.Location = new System.Drawing.Point(37, 331);
             this.btnCalibracion.Name = "btnCalibracion";
             this.btnCalibracion.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnCalibracion.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -275,6 +277,7 @@ namespace Electrónicos
             // 
             // btnRetrabajo
             // 
+            this.btnRetrabajo.Animated = true;
             this.btnRetrabajo.AnimationHoverSpeed = 0.07F;
             this.btnRetrabajo.AnimationSpeed = 0.03F;
             this.btnRetrabajo.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
@@ -287,7 +290,7 @@ namespace Electrónicos
             this.btnRetrabajo.ForeColor = System.Drawing.Color.White;
             this.btnRetrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnRetrabajo.Image")));
             this.btnRetrabajo.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnRetrabajo.Location = new System.Drawing.Point(709, 296);
+            this.btnRetrabajo.Location = new System.Drawing.Point(648, 331);
             this.btnRetrabajo.Name = "btnRetrabajo";
             this.btnRetrabajo.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnRetrabajo.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -435,36 +438,6 @@ namespace Electrónicos
             this.btnConectar.Text = "Conectar";
             this.btnConectar.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
-            // btnCargarCSM
-            // 
-            this.btnCargarCSM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCargarCSM.Animated = true;
-            this.btnCargarCSM.AnimationHoverSpeed = 0.07F;
-            this.btnCargarCSM.AnimationSpeed = 0.03F;
-            this.btnCargarCSM.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.btnCargarCSM.BaseColor2 = System.Drawing.Color.DimGray;
-            this.btnCargarCSM.BorderColor = System.Drawing.Color.Black;
-            this.btnCargarCSM.BorderSize = 1;
-            this.btnCargarCSM.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCargarCSM.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCargarCSM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarCSM.ForeColor = System.Drawing.Color.White;
-            this.btnCargarCSM.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.btnCargarCSM.Image = null;
-            this.btnCargarCSM.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnCargarCSM.Location = new System.Drawing.Point(64, 239);
-            this.btnCargarCSM.Name = "btnCargarCSM";
-            this.btnCargarCSM.OnHoverBaseColor1 = System.Drawing.Color.Plum;
-            this.btnCargarCSM.OnHoverBaseColor2 = System.Drawing.Color.Teal;
-            this.btnCargarCSM.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnCargarCSM.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnCargarCSM.OnHoverImage = null;
-            this.btnCargarCSM.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCargarCSM.Size = new System.Drawing.Size(208, 98);
-            this.btnCargarCSM.TabIndex = 47;
-            this.btnCargarCSM.Text = "Cargar CSM";
-            this.btnCargarCSM.Click += new System.EventHandler(this.gunaGradientCircleButton1_Click_1);
-            // 
             // lblNumeroSerie
             // 
             this.lblNumeroSerie.AutoSize = true;
@@ -493,12 +466,11 @@ namespace Electrónicos
             this.panelInformacion.GradientColor2 = System.Drawing.Color.DarkGray;
             this.panelInformacion.GradientColor3 = System.Drawing.Color.DarkSalmon;
             this.panelInformacion.GradientColor4 = System.Drawing.Color.RosyBrown;
-            this.panelInformacion.Location = new System.Drawing.Point(545, 15);
+            this.panelInformacion.Location = new System.Drawing.Point(648, 61);
             this.panelInformacion.Name = "panelInformacion";
             this.panelInformacion.Size = new System.Drawing.Size(325, 135);
             this.panelInformacion.TabIndex = 49;
             this.panelInformacion.Text = "gunaGradientPanel1";
-            this.panelInformacion.Visible = false;
             // 
             // lblErrorHumano
             // 
@@ -580,18 +552,20 @@ namespace Electrónicos
             this.gunaCircleProgressBar1.IdleOffset = 20;
             this.gunaCircleProgressBar1.Image = null;
             this.gunaCircleProgressBar1.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(364, 180);
+            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(361, 23);
             this.gunaCircleProgressBar1.Name = "gunaCircleProgressBar1";
             this.gunaCircleProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.gunaCircleProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaCircleProgressBar1.ProgressOffset = 20;
-            this.gunaCircleProgressBar1.Size = new System.Drawing.Size(244, 207);
+            this.gunaCircleProgressBar1.Size = new System.Drawing.Size(219, 190);
             this.gunaCircleProgressBar1.TabIndex = 54;
             this.gunaCircleProgressBar1.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             this.gunaCircleProgressBar1.UseProgressPercentText = true;
+            this.gunaCircleProgressBar1.Visible = false;
             // 
             // gunaGradientButton1
             // 
+            this.gunaGradientButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaGradientButton1.Animated = true;
             this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton1.AnimationSpeed = 0.03F;
@@ -606,7 +580,7 @@ namespace Electrónicos
             this.gunaGradientButton1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.gunaGradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton1.Image")));
             this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(364, 15);
+            this.gunaGradientButton1.Location = new System.Drawing.Point(648, 16);
             this.gunaGradientButton1.Name = "gunaGradientButton1";
             this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.Gray;
             this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -619,12 +593,55 @@ namespace Electrónicos
             this.gunaGradientButton1.Text = "Información";
             this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click_1);
             // 
+            // btnCargarCSM
+            // 
+            this.btnCargarCSM.Animated = true;
+            this.btnCargarCSM.AnimationHoverSpeed = 0.07F;
+            this.btnCargarCSM.AnimationSpeed = 0.03F;
+            this.btnCargarCSM.BackColor = System.Drawing.Color.Transparent;
+            this.btnCargarCSM.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnCargarCSM.BaseColor2 = System.Drawing.Color.DimGray;
+            this.btnCargarCSM.BorderColor = System.Drawing.Color.Black;
+            this.btnCargarCSM.BorderSize = 1;
+            this.btnCargarCSM.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCargarCSM.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCargarCSM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarCSM.ForeColor = System.Drawing.Color.White;
+            this.btnCargarCSM.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.btnCargarCSM.Image = ((System.Drawing.Image)(resources.GetObject("btnCargarCSM.Image")));
+            this.btnCargarCSM.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnCargarCSM.Location = new System.Drawing.Point(24, 164);
+            this.btnCargarCSM.Name = "btnCargarCSM";
+            this.btnCargarCSM.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.btnCargarCSM.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCargarCSM.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCargarCSM.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCargarCSM.OnHoverImage = null;
+            this.btnCargarCSM.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCargarCSM.Radius = 20;
+            this.btnCargarCSM.Size = new System.Drawing.Size(205, 56);
+            this.btnCargarCSM.TabIndex = 56;
+            this.btnCargarCSM.Text = "Cargar CSM";
+            this.btnCargarCSM.Visible = false;
+            this.btnCargarCSM.Click += new System.EventHandler(this.gunaGradientButton2_Click);
+            // 
+            // gunaSeparator1
+            // 
+            this.gunaSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator1.Location = new System.Drawing.Point(24, 226);
+            this.gunaSeparator1.Name = "gunaSeparator1";
+            this.gunaSeparator1.Size = new System.Drawing.Size(1168, 17);
+            this.gunaSeparator1.TabIndex = 57;
+            // 
             // Abis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1221, 686);
+            this.Controls.Add(this.gunaSeparator1);
             this.Controls.Add(this.btnCargarCSM);
             this.Controls.Add(this.gunaGradientButton1);
             this.Controls.Add(this.btnColocarAbajo);
@@ -680,7 +697,6 @@ namespace Electrónicos
         private Guna.UI.WinForms.GunaGradientCircleButton btnColocarLado;
         private Guna.UI.WinForms.GunaGradientPanel panel1;
         private Guna.UI.WinForms.GunaGradientButton btnConectar;
-        private Guna.UI.WinForms.GunaGradientCircleButton btnCargarCSM;
         private Guna.UI.WinForms.GunaLabel lblNumeroSerie;
         private Guna.UI.WinForms.GunaGradientPanel panelInformacion;
         private Guna.UI.WinForms.GunaLabel lblErrorHumano;
@@ -692,5 +708,7 @@ namespace Electrónicos
         private System.Windows.Forms.Timer timer1;
         private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
+        private Guna.UI.WinForms.GunaGradientButton btnCargarCSM;
+        private Guna.UI.WinForms.GunaSeparator gunaSeparator1;
     }
 }

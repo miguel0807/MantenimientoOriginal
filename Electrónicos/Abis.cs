@@ -98,7 +98,7 @@ namespace Electrónicos
             {
                 btnConectar.Visible = true;
                 panel1.Size = new System.Drawing.Size(244, 110);
-                btnCalibracion.Focus();
+                
             }
 
 
@@ -224,7 +224,7 @@ namespace Electrónicos
             try
             {
                 PuertoSerie.Open();
-                ConectarActivado();
+                //ConectarActivado();
                 exito = 1;
             }
             catch (Exception exc)
@@ -456,7 +456,7 @@ namespace Electrónicos
                     int inicio = linea.IndexOf(":") + 2;
                     NumeroSerie = linea.Substring(inicio, linea.Length - inicio);                    
                     CrearCSM = true;
-                    lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
+                    
 
                 }
 
@@ -728,6 +728,7 @@ namespace Electrónicos
                     btnConectar.Text = "Desconectar";
                     // btnConectar.BackColor = Color.FromArgb(0, 128, 0);
                     lblEstadoConexion.Text = "Estado : Conectado";
+                    btnCargarCSM.Visible = true;
 
                 }
 
@@ -739,6 +740,10 @@ namespace Electrónicos
                 Desconectar();
                 btnConectar.Text = "Conectar";
                 lblEstadoConexion.Text = "Estado : Desconectado";
+                btnCargarCSM.Visible = false;
+
+                lblNumeroSerie.Text = "Número de serie: N/A";
+                lblErrorHumano.Text = "Intentos restantes: N/A";
 
             }
 
@@ -747,80 +752,7 @@ namespace Electrónicos
 
         private void gunaGradientCircleButton1_Click_1(object sender, EventArgs e)
         {
-            if (panelInformacion.Visible == true)
-            {
-                panelInformacion.Visible = false;
-            }
-
-            else
-            {
-                
-
-                if (PuertoSerie.IsOpen == true)
-                {
-                    gunaCircleProgressBar1.Value = 0;
-                    
-                    timer1.Start();
-                    //Configuro los procesos y variables por defecto
-                    NumeroParte = 71212730;
-                    Descripcion = "ISU, L-SERIES, ABIS CSM";
-
-                    BtEscape();
-
-                    PuertoSerie.DiscardOutBuffer();
-
-                    textBox1.Text = "";
-
-                    PuertoSerie.Write("sensor 0");
-
-                    BtEnter();
-
-                  
-
-                    BtEnter();
-
-                    deco = true;    //Activo el modo decodificador inicial
-
-
-
-
-
-                   // panelInformacion.Visible = true;
-
-                   // MessageBox.Show("Carga completada");
-                   
-
-                    // MessageBox.Show(NumeroSerie);                
-
-
-
-                    //Verificar los errores humanos
-                    cn.abrir();
-                    SqlCommand cmd = new SqlCommand("select [Error Humano] from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
-                    cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
-
-                    int conteoErrores = Convert.ToInt32(cmd.ExecuteScalar());
-                    cn.cerrar();
-
-                    lblErrorHumano.Text = "Intentos restantes: " + conteoErrores;
-
-
-                    
-                   // return;
-                    
-
-                    
-                }
-
-                else
-                {
-                    MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
-                    return;
-                }
-
-            
-                
-            }
+           
         }
 
         private void gunaLabel1_Click(object sender, EventArgs e)
@@ -871,6 +803,31 @@ namespace Electrónicos
         private void timer1_Tick(object sender, EventArgs e)
         {
             gunaCircleProgressBar1.Increment(1);
+
+            if (gunaCircleProgressBar1.Value == 100)
+            {
+                timer1.Stop();
+                NumeroParte = 71212730;
+                Descripcion = "ISU, L-SERIES, ABIS CSM";
+                
+                lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
+
+                //Verificar los errores humanos
+                cn.abrir();
+                SqlCommand cmd = new SqlCommand("select [Error Humano] from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+
+                int conteoErrores = Convert.ToInt32(cmd.ExecuteScalar());
+                cn.cerrar();
+
+                lblErrorHumano.Text = "Intentos restantes: " + conteoErrores;
+
+                gunaCircleProgressBar1.Visible = false;
+                btnCalibracion.Visible = true;
+                btnRetrabajo.Visible = true;
+                btnCargarCSM.Visible = false;
+
+            }
             
             
         }
@@ -888,5 +845,37 @@ namespace Electrónicos
             }
         }
 
+        private void gunaGradientButton2_Click(object sender, EventArgs e)
+        {
+            if (PuertoSerie.IsOpen == true)
+            {
+                gunaCircleProgressBar1.Value = 0;
+                gunaCircleProgressBar1.Visible = true;
+
+                timer1.Start();
+
+                BtEscape();
+
+                PuertoSerie.DiscardOutBuffer();
+
+                textBox1.Text = "";
+
+                PuertoSerie.Write("sensor 0");
+
+                BtEnter();
+
+
+                deco = true;    //Activo el modo decodificador inicial
+
+
+
+            }
+
+            else
+            {
+                MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
+                return;
+            }
+        }
     }
 }
