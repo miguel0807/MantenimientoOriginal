@@ -302,12 +302,16 @@ namespace Electrónicos
         //Restablece la configuración a sus valores iniciales
         private void RegresoInicio()
         {
-            textBox1.Text = "";
-            BtEscape();
-            AccesoInterrupcion("");
-            BtEscape();
-            AccesoInterrupcion("");
-            textBox1.Text = "";
+            lblResgistros.Visible = false;
+            dataGridView1.Visible = false;
+            txtMostrar.Visible = false;
+            label3.Visible = false;
+            btnCalibracion.Visible = false;
+            btnRetrabajo.Visible = false;
+            btnColocarAbajo.Visible = false;
+            btnColocarArriba.Visible = false;
+            btnColocarLado.Visible = false;
+            btnCargarCSM.Visible = false;
         }
 
         //Decodifica los mensajes generados en el textbox de ingles al español
@@ -745,6 +749,8 @@ namespace Electrónicos
                 lblNumeroSerie.Text = "Número de serie: N/A";
                 lblErrorHumano.Text = "Intentos restantes: N/A";
 
+                RegresoInicio();
+
             }
 
             EsconderPanel();
@@ -881,12 +887,20 @@ namespace Electrónicos
         private void btnRetrabajo_Click(object sender, EventArgs e)
         {
             cn.abrir();
-            SqlCommand cmd = new SqlCommand("select*from CSM", cn.conectarBD);
-            cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text +" * from CSM", cn.conectarBD);                     
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            gunaDataGridView1.DataSource = dt;
+            
+            dataGridView1.DataSource = dt;
+
+            dataGridView1.Columns[0].Visible = false;
+            txtMostrar.Visible = true;
+            label3.Visible = true;
+            dataGridView1.Visible = true;
+            lblResgistros.Visible = true;
+
+            lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
             cn.cerrar();
 
           
@@ -895,5 +909,7 @@ namespace Electrónicos
             
             
         }
+
+       
     }
 }
