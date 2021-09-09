@@ -877,5 +877,23 @@ namespace Electrónicos
                 return;
             }
         }
+
+        private void btnRetrabajo_Click(object sender, EventArgs e)
+        {
+            cn.abrir();
+            SqlCommand cmd = new SqlCommand("select*from CSM", cn.conectarBD);
+            cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            gunaDataGridView1.DataSource = dt;
+            cn.cerrar();
+
+          
+            
+            
+            
+            
+        }
     }
 }
