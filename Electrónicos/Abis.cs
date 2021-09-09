@@ -22,7 +22,8 @@ namespace Electrónicos
     {
 
         private delegate void DelegadoAcceso(string accion);
-        bool deco = false;
+        bool decoCalibracion = false;
+        bool decoLeerCSM = true;
         Conexion cn = new Conexion();
 
         string NumeroSerie = "";
@@ -30,7 +31,7 @@ namespace Electrónicos
         string Desviacion = "";
         int NumeroParte = 0;
         string Descripcion = "";
-      
+
 
 
 
@@ -39,10 +40,10 @@ namespace Electrónicos
             InitializeComponent();
         }
 
-       
+
         private void btnConectar_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         //Evento cuando se presiona alguna tecla en txtDatosEnviar
@@ -79,7 +80,7 @@ namespace Electrónicos
                 txtEnviarDatos.Text = "";
             }
         }
-        
+
         //Evento que esconde el panel al ser presionado
         private void btnEsconderConexion_Click(object sender, EventArgs e)
         {
@@ -98,7 +99,7 @@ namespace Electrónicos
             {
                 btnConectar.Visible = true;
                 panel1.Size = new System.Drawing.Size(244, 110);
-                
+
             }
 
 
@@ -126,7 +127,7 @@ namespace Electrónicos
 
                 btnColocarArriba.Focus();
 
-                deco = true;
+                decoCalibracion = true;
 
 
             }
@@ -139,17 +140,17 @@ namespace Electrónicos
 
         private void btnColocarArriba_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnColocarAbajo_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnColocarLado_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnLineas_Click(object sender, EventArgs e)
@@ -165,8 +166,8 @@ namespace Electrónicos
         }
 
         #region Conexión, desconexión y lectura al puerto Serial
-        
-      
+
+
         //Lee la información del puerto Serial y la envia hacia el delegado
         private void PuertoSerie_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -289,11 +290,11 @@ namespace Electrónicos
 
         private void Abis_Load(object sender, EventArgs e)
         {
-           
 
-               //RegresoInicio();
-               // MessageBox.Show("Hubo un error durante el proceso de la calibración, el CSM requiere que se calibre nuevamente.");
-            
+
+            //RegresoInicio();
+            // MessageBox.Show("Hubo un error durante el proceso de la calibración, el CSM requiere que se calibre nuevamente.");
+
 
 
             btnConectar.Enabled = true;
@@ -312,6 +313,11 @@ namespace Electrónicos
             btnColocarArriba.Visible = false;
             btnColocarLado.Visible = false;
             btnCargarCSM.Visible = false;
+
+       
+
+            lblNumeroSerie.Text = "Número de serie: N/A";
+            lblErrorHumano.Text = "Intentos restantes: N/A";
         }
 
         //Decodifica los mensajes generados en el textbox de ingles al español
@@ -320,10 +326,16 @@ namespace Electrónicos
             int numeroLinea = 1;
             string Mensaje = "";
 
-            if (deco == true)
+            if (decoCalibracion == true)
             {
                 DecodificadorInicial();
 
+                return;
+            }
+
+            else if (decoLeerCSM == true)
+            {
+                DecodificadorLeerCSM();
                 return;
             }
 
@@ -332,12 +344,12 @@ namespace Electrónicos
                 //Indica la posición del CSM
                 if (linea == "Place CSM with LED side up and press Enter!")
                 {
-                   // Mensaje = "Coloque CSM en posición hacia Arriba";
+                    // Mensaje = "Coloque CSM en posición hacia Arriba";
                 }
 
                 else if (linea == "Place CSM with flat side down and press Enter!")
                 {
-                   // Mensaje = "Coloque el CSM en posición hacia abajo";
+                    // Mensaje = "Coloque el CSM en posición hacia abajo";
                 }
 
                 else if (linea == "Place CSM in orientation the reference bracket and press Enter!")
@@ -359,7 +371,7 @@ namespace Electrónicos
                 }
 
                 //Almacenar valores de la calibración
-                if (linea.Contains("Deviation:"))
+                if (linea.Contains("Deviation: ["))
                 {
 
 
@@ -368,18 +380,8 @@ namespace Electrónicos
 
                     Desviacion = linea.Substring(inicio, final + 1 - inicio);
 
-                    //Actualizar los datos finales de la calibración del CSM
-                    cn.abrir();
-                    SqlCommand cmd = new SqlCommand("update CSM set [Fecha Final 1] = @fechaFinal, [Hora Final 1] = @horaFinal,[Calibración 1] = @Calibracion, [Bracket 1]= @Desviacion   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
-                    cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);                                     
-                    cmd.Parameters.AddWithValue("@fechaFinal", DateTime.Now.ToString("dd/MM/yyyy"));
-                    cmd.Parameters.AddWithValue("@horaFinal", DateTime.Now.ToString("HH:mm:ss"));
-                    cmd.Parameters.AddWithValue("@Calibracion", Calibracion1);
-                    cmd.Parameters.AddWithValue("@Desviacion", Desviacion);
-                   
-                    cmd.ExecuteNonQuery();
-                    cn.cerrar();
-                    
+                  
+
 
 
                 }
@@ -408,17 +410,17 @@ namespace Electrónicos
                         cn.abrir();
                         SqlCommand cmd1 = new SqlCommand("update CSM set [Error Humano] = @ErrorHumano where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
                         cmd1.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
-                        cmd1.Parameters.AddWithValue("@ErrorHumano", conteoErrores);                     
+                        cmd1.Parameters.AddWithValue("@ErrorHumano", conteoErrores);
                         cmd1.ExecuteNonQuery();
                         cn.cerrar();
                         MessageBox.Show("Se resto 1 al contador de errores");
 
                     }
 
-                    
 
 
-                    
+
+
 
                     RestablecerControles();
                 }
@@ -426,10 +428,24 @@ namespace Electrónicos
                 //En caso de que finalice sin problemas
                 else if (linea.Contains("Calibration saved! Disconnect the CSM!"))
                 {
-                   
+                    //Actualizar los datos finales de la calibración del CSM
+                    cn.abrir();
+                    SqlCommand cmd = new SqlCommand("update CSM set [Fecha Final 1] = @fechaFinal, [Hora Final 1] = @horaFinal,[Calibración 1] = @Calibracion, [Bracket 1]= @Desviacion   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                    cmd.Parameters.AddWithValue("@fechaFinal", DateTime.Now.ToString("dd/MM/yyyy"));
+                    cmd.Parameters.AddWithValue("@horaFinal", DateTime.Now.ToString("HH:mm:ss"));
+                    cmd.Parameters.AddWithValue("@Calibracion", Calibracion1);
+                    cmd.Parameters.AddWithValue("@Desviacion", Desviacion);
+
+                    cmd.ExecuteNonQuery();
+                    cn.cerrar();
+
+
                     Mensaje = "La calibración fue un exito, desconecte el cable del CSM";
                     RestablecerControles();
-                    deco = true;
+                    decoCalibracion = true;
+                    RegresoInicio();
+                    btnCargarCSM.Visible = true;
                 }
 
 
@@ -441,8 +457,31 @@ namespace Electrónicos
             {
                 MessageBox.Show(Mensaje);
             }
-            
+
         }
+
+        private void DecodificadorLeerCSM()
+        {
+
+            int numeroLinea = 1;
+
+            foreach (string linea in textBox1.Lines)
+            {
+                //Obtiene el número de serie 
+                if (linea.Contains("Serial number:"))
+                {
+                    int inicio = linea.IndexOf(":") + 2;
+                    NumeroSerie = linea.Substring(inicio, linea.Length - inicio);
+
+                }
+
+                
+                numeroLinea++;
+            }
+
+
+        }
+    
 
         //Decodifica los mensajes generados en el textbox de ingles al español al inicio de la calibración
         private void DecodificadorInicial()
@@ -701,7 +740,7 @@ namespace Electrónicos
             btnColocarArriba.Visible = false;
             btnColocarAbajo.Focus();
 
-            deco = false;
+            decoCalibracion = false;
         }
 
         private void gunaGradientCircleButton2_Click(object sender, EventArgs e)
@@ -741,14 +780,12 @@ namespace Electrónicos
 
             else if (btnConectar.Text == "Desconectar")
             {
+
                 Desconectar();
+
                 btnConectar.Text = "Conectar";
                 lblEstadoConexion.Text = "Estado : Desconectado";
                 btnCargarCSM.Visible = false;
-
-                lblNumeroSerie.Text = "Número de serie: N/A";
-                lblErrorHumano.Text = "Intentos restantes: N/A";
-
                 RegresoInicio();
 
             }
@@ -790,7 +827,7 @@ namespace Electrónicos
 
                 btnColocarArriba.Focus();
 
-                deco = true;
+                decoCalibracion = true;
 
 
             }
@@ -832,6 +869,7 @@ namespace Electrónicos
                 btnCalibracion.Visible = true;
                 btnRetrabajo.Visible = true;
                 btnCargarCSM.Visible = false;
+                decoLeerCSM = false;
 
             }
             
@@ -871,7 +909,7 @@ namespace Electrónicos
                 BtEnter();
 
 
-                deco = true;    //Activo el modo decodificador inicial
+                decoLeerCSM = true;    //Activo el modo decodificador inicial
 
 
 

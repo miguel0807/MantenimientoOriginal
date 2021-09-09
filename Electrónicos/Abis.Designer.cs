@@ -234,13 +234,12 @@ namespace Electrónicos
             this.txtMostrarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.txtMostrarDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMostrarDatos.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.txtMostrarDatos.Location = new System.Drawing.Point(699, 258);
+            this.txtMostrarDatos.Location = new System.Drawing.Point(214, 425);
             this.txtMostrarDatos.Multiline = true;
             this.txtMostrarDatos.Name = "txtMostrarDatos";
             this.txtMostrarDatos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMostrarDatos.Size = new System.Drawing.Size(115, 43);
+            this.txtMostrarDatos.Size = new System.Drawing.Size(625, 286);
             this.txtMostrarDatos.TabIndex = 29;
-            this.txtMostrarDatos.Visible = false;
             // 
             // txtEnviarDatos
             // 
@@ -262,6 +261,7 @@ namespace Electrónicos
             this.btnCalibracion.Animated = true;
             this.btnCalibracion.AnimationHoverSpeed = 0.07F;
             this.btnCalibracion.AnimationSpeed = 0.03F;
+            this.btnCalibracion.BackColor = System.Drawing.Color.Transparent;
             this.btnCalibracion.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.btnCalibracion.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.btnCalibracion.BorderColor = System.Drawing.Color.Black;
@@ -280,6 +280,7 @@ namespace Electrónicos
             this.btnCalibracion.OnHoverForeColor = System.Drawing.Color.White;
             this.btnCalibracion.OnHoverImage = null;
             this.btnCalibracion.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCalibracion.Radius = 20;
             this.btnCalibracion.Size = new System.Drawing.Size(289, 110);
             this.btnCalibracion.TabIndex = 1;
             this.btnCalibracion.Text = "Calibración";
@@ -291,6 +292,7 @@ namespace Electrónicos
             this.btnRetrabajo.Animated = true;
             this.btnRetrabajo.AnimationHoverSpeed = 0.07F;
             this.btnRetrabajo.AnimationSpeed = 0.03F;
+            this.btnRetrabajo.BackColor = System.Drawing.Color.Transparent;
             this.btnRetrabajo.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.btnRetrabajo.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.btnRetrabajo.BorderColor = System.Drawing.Color.Black;
@@ -309,6 +311,7 @@ namespace Electrónicos
             this.btnRetrabajo.OnHoverForeColor = System.Drawing.Color.White;
             this.btnRetrabajo.OnHoverImage = null;
             this.btnRetrabajo.OnPressedColor = System.Drawing.Color.Black;
+            this.btnRetrabajo.Radius = 20;
             this.btnRetrabajo.Size = new System.Drawing.Size(289, 110);
             this.btnRetrabajo.TabIndex = 2;
             this.btnRetrabajo.Text = "Retrabajo";
@@ -426,6 +429,7 @@ namespace Electrónicos
             this.btnConectar.Animated = true;
             this.btnConectar.AnimationHoverSpeed = 0.07F;
             this.btnConectar.AnimationSpeed = 0.03F;
+            this.btnConectar.BackColor = System.Drawing.Color.Transparent;
             this.btnConectar.BaseColor1 = System.Drawing.Color.SlateBlue;
             this.btnConectar.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.btnConectar.BorderColor = System.Drawing.Color.Black;
@@ -583,6 +587,7 @@ namespace Electrónicos
             this.gunaGradientButton1.Animated = true;
             this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton1.AnimationSpeed = 0.03F;
+            this.gunaGradientButton1.BackColor = System.Drawing.Color.Transparent;
             this.gunaGradientButton1.BaseColor1 = System.Drawing.Color.SlateBlue;
             this.gunaGradientButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.gunaGradientButton1.BorderColor = System.Drawing.Color.Black;
