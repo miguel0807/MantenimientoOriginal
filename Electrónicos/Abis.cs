@@ -418,6 +418,7 @@ namespace Electrónicos
 
                     RestablecerControles();
                 }
+
                 //En caso de que finalice sin problemas
                 else if (linea.Contains("Calibration saved! Disconnect the CSM!"))
                 {
@@ -753,10 +754,14 @@ namespace Electrónicos
 
             else
             {
-                //------------------------------------------------------------------
+                
 
                 if (PuertoSerie.IsOpen == true)
                 {
+                    gunaCircleProgressBar1.Value = 0;
+                    
+                    timer1.Start();
+                    //Configuro los procesos y variables por defecto
                     NumeroParte = 71212730;
                     Descripcion = "ISU, L-SERIES, ABIS CSM";
 
@@ -770,17 +775,25 @@ namespace Electrónicos
 
                     BtEnter();
 
-                   
-
                   
 
-                    deco = true;
+                    BtEnter();
 
-                    //--------------------------------------------
-                    panelInformacion.Visible = true;
+                    deco = true;    //Activo el modo decodificador inicial
 
-                    
-                    /*
+
+
+
+
+                   // panelInformacion.Visible = true;
+
+                   // MessageBox.Show("Carga completada");
+                   
+
+                    // MessageBox.Show(NumeroSerie);                
+
+
+
                     //Verificar los errores humanos
                     cn.abrir();
                     SqlCommand cmd = new SqlCommand("select [Error Humano] from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
@@ -789,11 +802,14 @@ namespace Electrónicos
                     int conteoErrores = Convert.ToInt32(cmd.ExecuteScalar());
                     cn.cerrar();
 
+                    lblErrorHumano.Text = "Intentos restantes: " + conteoErrores;
 
-                    MessageBox.Show("Intentos restantes: " + conteoErrores);
 
-                    return;
-                    */
+                    
+                   // return;
+                    
+
+                    
                 }
 
                 else
@@ -846,5 +862,31 @@ namespace Electrónicos
                 MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
             }
         }
+
+        private void txtEnviarDatos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            gunaCircleProgressBar1.Increment(1);
+            
+            
+        }
+
+        private void gunaGradientButton1_Click_1(object sender, EventArgs e)
+        {
+            if (panelInformacion.Visible == true)
+            {
+                panelInformacion.Visible = false;
+            }
+
+            else
+            {
+                panelInformacion.Visible = true;
+            }
+        }
+
     }
 }
