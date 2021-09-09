@@ -39,33 +39,10 @@ namespace Electrónicos
             InitializeComponent();
         }
 
-        //Evento click del boton btnConectar
+       
         private void btnConectar_Click(object sender, EventArgs e)
         {
-            int exito = 0;
-            if (btnConectar.Text == "Conectar")
-            {
-                exito = Conectar();
-                if (exito == 1)
-                {
-                    btnConectar.Text = "Desconectar";
-                    // btnConectar.BackColor = Color.FromArgb(0, 128, 0);
-                    lblEstadoConexion.Text = "Estado : Conectado";
-
-                }
-
-
-            }
-
-            else if (btnConectar.Text == "Desconectar")
-            {
-                Desconectar();
-                btnConectar.Text = "Conectar";
-                lblEstadoConexion.Text = "Estado : Desconectado";
-
-            }
-
-            EsconderPanel();
+           
         }
 
         //Evento cuando se presiona alguna tecla en txtDatosEnviar
@@ -313,6 +290,7 @@ namespace Electrónicos
         private void Abis_Load(object sender, EventArgs e)
         {
            
+
                //RegresoInicio();
                // MessageBox.Show("Hubo un error durante el proceso de la calibración, el CSM requiere que se calibre nuevamente.");
             
@@ -477,6 +455,7 @@ namespace Electrónicos
                     int inicio = linea.IndexOf(":") + 2;
                     NumeroSerie = linea.Substring(inicio, linea.Length - inicio);                    
                     CrearCSM = true;
+                    lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
 
                 }
 
@@ -705,45 +684,9 @@ namespace Electrónicos
 
        
 
-        private void gunaButton1_Click(object sender, EventArgs e)
-        {
-           
-        }
+      
 
-        private void gunaGradientTileButton1_Click(object sender, EventArgs e)
-        {
-            if (PuertoSerie.IsOpen == true)
-            {
-                NumeroParte = 71212730;
-                Descripcion = "ISU, L-SERIES, ABIS CSM";
-
-                BtEscape();
-
-                PuertoSerie.DiscardOutBuffer();
-
-                textBox1.Text = "";
-
-                PuertoSerie.Write("calibrate");
-
-                BtEnter();
-
-                btnColocarArriba.Visible = true;
-
-                btnCalibracion.Visible = false;
-                btnRetrabajo.Visible = false;   
-
-                btnColocarArriba.Focus();
-
-                deco = true;
-
-
-            }
-
-            else
-            {
-                MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
-            }
-        }
+       
 
         private void gunaGradientCircleButton1_Click(object sender, EventArgs e)
         {
@@ -770,6 +713,138 @@ namespace Electrónicos
             textBox1.Text = "";
             BtEnter();
             btnColocarLado.Visible = false;
+        }
+
+        //Evento click del boton btnConectar
+        private void gunaGradientButton1_Click(object sender, EventArgs e)
+        {
+            int exito = 0;
+            if (btnConectar.Text == "Conectar")
+            {
+                exito = Conectar();
+                if (exito == 1)
+                {
+                    btnConectar.Text = "Desconectar";
+                    // btnConectar.BackColor = Color.FromArgb(0, 128, 0);
+                    lblEstadoConexion.Text = "Estado : Conectado";
+
+                }
+
+
+            }
+
+            else if (btnConectar.Text == "Desconectar")
+            {
+                Desconectar();
+                btnConectar.Text = "Conectar";
+                lblEstadoConexion.Text = "Estado : Desconectado";
+
+            }
+
+            EsconderPanel();
+        }
+
+        private void gunaGradientCircleButton1_Click_1(object sender, EventArgs e)
+        {
+            if (panelInformacion.Visible == true)
+            {
+                panelInformacion.Visible = false;
+            }
+
+            else
+            {
+                //------------------------------------------------------------------
+
+                if (PuertoSerie.IsOpen == true)
+                {
+                    NumeroParte = 71212730;
+                    Descripcion = "ISU, L-SERIES, ABIS CSM";
+
+                    BtEscape();
+
+                    PuertoSerie.DiscardOutBuffer();
+
+                    textBox1.Text = "";
+
+                    PuertoSerie.Write("sensor 0");
+
+                    BtEnter();
+
+                   
+
+                  
+
+                    deco = true;
+
+                    //--------------------------------------------
+                    panelInformacion.Visible = true;
+
+                    
+                    /*
+                    //Verificar los errores humanos
+                    cn.abrir();
+                    SqlCommand cmd = new SqlCommand("select [Error Humano] from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+
+                    int conteoErrores = Convert.ToInt32(cmd.ExecuteScalar());
+                    cn.cerrar();
+
+
+                    MessageBox.Show("Intentos restantes: " + conteoErrores);
+
+                    return;
+                    */
+                }
+
+                else
+                {
+                    MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
+                    return;
+                }
+
+            
+                
+            }
+        }
+
+        private void gunaLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCalibracion_Click_1(object sender, EventArgs e)
+        {
+            if (PuertoSerie.IsOpen == true)
+            {
+                NumeroParte = 71212730;
+                Descripcion = "ISU, L-SERIES, ABIS CSM";
+
+                BtEscape();
+
+                PuertoSerie.DiscardOutBuffer();
+
+                textBox1.Text = "";
+
+                PuertoSerie.Write("calibrate");
+
+                BtEnter();
+
+                btnColocarArriba.Visible = true;
+
+                btnCalibracion.Visible = false;
+                btnRetrabajo.Visible = false;
+
+                btnColocarArriba.Focus();
+
+                deco = true;
+
+
+            }
+
+            else
+            {
+                MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
+            }
         }
     }
 }

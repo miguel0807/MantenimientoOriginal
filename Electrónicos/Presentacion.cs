@@ -71,7 +71,7 @@ namespace Electrónicos
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
             this.panelContenedor.Controls.Add(fh);
-            this.panelContenedor.Tag = fh;
+            this.panelContenedor.Tag = fh;                 
             fh.Show();
             
             
