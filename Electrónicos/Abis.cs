@@ -1103,13 +1103,17 @@ namespace Electrónicos
                 txtMostrarDatos.Visible = false;
                 txtEnviarDatos.Visible= false;
                 textBox1.Visible = false;
-               
+                panelConsola.Visible = false;
+                //panelConsola.Size = new System.Drawing.Size(246, 56); 
             }
             else
             {
                 txtEnviarDatos.Visible = true;
                 txtMostrarDatos.Visible = true;
                 textBox1.Visible = true;
+                panelConsola.Visible = true;
+                //panelConsola.Size = new System.Drawing.Size(953, 484);
+                panelConsola.Location = new Point(24, 237);
             }
         }
 
