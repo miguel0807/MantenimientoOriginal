@@ -19,8 +19,8 @@ namespace Electrónicos
 
       
 
-        internal static string CompartidoNombre;
-        internal static string CompartidoPosicion;
+       // internal static string CompartidoNombre;
+        //internal static string CompartidoPosicion;
 
         public Presentacion()
         {
@@ -52,11 +52,12 @@ namespace Electrónicos
 
         private void Presentacion_Load(object sender, EventArgs e)
         {
-            //compartida.hhNombre = lblNombre.Text;
+            
            
-            CompartidoNombre = lblNombre.Text;
-            CompartidoPosicion = lblPuesto.Text;
-
+           
+            lblNombre.Text = Common.ActiveUser.firstName.ToString() + " " + Common.ActiveUser.lastName.ToString();
+            lblPuesto.Text = Common.ActiveUser.position.ToString();
+            lblCorreo.Text = Common.ActiveUser.email.ToString();
 
 
         }

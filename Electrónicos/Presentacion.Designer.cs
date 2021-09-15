@@ -230,9 +230,9 @@ namespace Electrónicos
             this.lblCorreo.Location = new System.Drawing.Point(67, 119);
             this.lblCorreo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(131, 15);
+            this.lblCorreo.Size = new System.Drawing.Size(29, 15);
             this.lblCorreo.TabIndex = 9;
-            this.lblCorreo.Text = "malvarado@matw.com";
+            this.lblCorreo.Text = "N/A";
             // 
             // lblPuesto
             // 
@@ -242,9 +242,9 @@ namespace Electrónicos
             this.lblPuesto.Location = new System.Drawing.Point(67, 103);
             this.lblPuesto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(83, 15);
+            this.lblPuesto.Size = new System.Drawing.Size(29, 15);
             this.lblPuesto.TabIndex = 8;
-            this.lblPuesto.Text = "Administrador";
+            this.lblPuesto.Text = "N/A";
             // 
             // lblNombre
             // 
@@ -254,9 +254,9 @@ namespace Electrónicos
             this.lblNombre.Location = new System.Drawing.Point(67, 87);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(94, 15);
+            this.lblNombre.Size = new System.Drawing.Size(29, 15);
             this.lblNombre.TabIndex = 7;
-            this.lblNombre.Text = "Miguel Alvarado";
+            this.lblNombre.Text = "N/A";
             // 
             // gunaSeparator1
             // 

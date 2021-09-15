@@ -613,7 +613,7 @@ namespace Electrónicos
 
                         cn.abrir();
                         SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Número de parte],Descripción,[Fecha Ingreso 1],[Hora ingreso 1],[Error Humano],Estado) values (@Usuario,@NumeroSerie,@NumeroParte,@Descripcion,@fechaIngreso,@horaIngreso,@ErrorHumano,@Estado)", cn.conectarBD);
-                        cmd.Parameters.AddWithValue("@Usuario", Presentacion.CompartidoNombre);
+                        cmd.Parameters.AddWithValue("@Usuario", Common.ActiveUser.firstName + " " + Common.ActiveUser.lastName);
                         cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
                         cmd.Parameters.AddWithValue("@NumeroParte", NumeroParte);
                         cmd.Parameters.AddWithValue("@Descripcion", Descripcion);

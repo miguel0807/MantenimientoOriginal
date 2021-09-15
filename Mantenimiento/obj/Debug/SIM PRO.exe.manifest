@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>b/lTJAAicNsLcOeanrZgQ6ua5oO5KuhAJ4fRNtVVs1U=</dsig:DigestValue>
+        <dsig:DigestValue>NSbymsWh8FvzTIx8eQ3IMg6g8Wbdivc5t5TZA0uImrU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -127,14 +127,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Electrónicos.exe" size="86528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Electrónicos.exe" size="89600">
       <assemblyIdentity name="Electrónicos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vEpuqTBOnbiivshB2lQvT8GcnE6cG/1E5mMTdlZjFaY=</dsig:DigestValue>
+        <dsig:DigestValue>WVdowOxnSl9w0HepJ7QaQhqn35cftyGgyZWJIZCSM7o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -206,7 +206,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/r6eB+F5e9+sUnBxr4DniIM38O/rT+V+lWdJF8qhxt8=</dsig:DigestValue>
+        <dsig:DigestValue>Sdb/FA6zCwQ0fKOxMbZLoE/LrTn2OXb4u4lAsshVH2Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

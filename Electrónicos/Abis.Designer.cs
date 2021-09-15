@@ -524,10 +524,10 @@ namespace Electrónicos
             this.panelConsola.GradientColor2 = System.Drawing.Color.White;
             this.panelConsola.GradientColor3 = System.Drawing.Color.White;
             this.panelConsola.GradientColor4 = System.Drawing.Color.White;
-            this.panelConsola.Location = new System.Drawing.Point(604, 557);
+            this.panelConsola.Location = new System.Drawing.Point(101, 253);
             this.panelConsola.Margin = new System.Windows.Forms.Padding(2);
             this.panelConsola.Name = "panelConsola";
-            this.panelConsola.Size = new System.Drawing.Size(174, 37);
+            this.panelConsola.Size = new System.Drawing.Size(751, 309);
             this.panelConsola.TabIndex = 63;
             this.panelConsola.Text = "gunaGradientPanel1";
             this.panelConsola.Visible = false;
@@ -543,7 +543,7 @@ namespace Electrónicos
             this.txtMostrarDatos.Multiline = true;
             this.txtMostrarDatos.Name = "txtMostrarDatos";
             this.txtMostrarDatos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMostrarDatos.Size = new System.Drawing.Size(469, 17);
+            this.txtMostrarDatos.Size = new System.Drawing.Size(469, 289);
             this.txtMostrarDatos.TabIndex = 29;
             this.txtMostrarDatos.Visible = false;
             // 
@@ -553,12 +553,12 @@ namespace Electrónicos
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.textBox1.Location = new System.Drawing.Point(-179, 20);
+            this.textBox1.Location = new System.Drawing.Point(398, 20);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(353, 17);
+            this.textBox1.Size = new System.Drawing.Size(353, 289);
             this.textBox1.TabIndex = 36;
             this.textBox1.Visible = false;
             // 
@@ -569,7 +569,7 @@ namespace Electrónicos
             this.txtEnviarDatos.Location = new System.Drawing.Point(0, 0);
             this.txtEnviarDatos.Margin = new System.Windows.Forms.Padding(2);
             this.txtEnviarDatos.Name = "txtEnviarDatos";
-            this.txtEnviarDatos.Size = new System.Drawing.Size(174, 20);
+            this.txtEnviarDatos.Size = new System.Drawing.Size(751, 20);
             this.txtEnviarDatos.TabIndex = 28;
             this.txtEnviarDatos.Visible = false;
             this.txtEnviarDatos.TextChanged += new System.EventHandler(this.txtEnviarDatos_TextChanged);

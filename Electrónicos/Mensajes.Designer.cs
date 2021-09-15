@@ -31,7 +31,7 @@ namespace Electrónicos
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mensajes));
-            Guna.UI.Animation.Animation animation16 = new Guna.UI.Animation.Animation();
+            Guna.UI.Animation.Animation animation17 = new Guna.UI.Animation.Animation();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaGradientPanel1 = new Guna.UI.WinForms.GunaGradientPanel();
             this.gunaGradientPanel2 = new Guna.UI.WinForms.GunaGradientPanel();
@@ -156,29 +156,29 @@ namespace Electrónicos
             // gunaAnimateWindow1
             // 
             this.gunaAnimateWindow1.AnimationType = Guna.UI.WinForms.GunaAnimateWindow.AnimateWindowType.AW_CENTER;
-            this.gunaAnimateWindow1.Interval = 1500;
+            this.gunaAnimateWindow1.Interval = 500;
             this.gunaAnimateWindow1.TargetControl = this;
             // 
             // gunaTransition1
             // 
             this.gunaTransition1.AnimationType = Guna.UI.Animation.AnimationType.Leaf;
             this.gunaTransition1.Cursor = null;
-            animation16.AnimateOnlyDifferences = true;
-            animation16.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation16.BlindCoeff")));
-            animation16.LeafCoeff = 1F;
-            animation16.MaxTime = 1F;
-            animation16.MinTime = 0F;
-            animation16.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation16.MosaicCoeff")));
-            animation16.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation16.MosaicShift")));
-            animation16.MosaicSize = 0;
-            animation16.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation16.RotateCoeff = 0F;
-            animation16.RotateLimit = 0F;
-            animation16.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation16.ScaleCoeff")));
-            animation16.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation16.SlideCoeff")));
-            animation16.TimeCoeff = 0F;
-            animation16.TransparencyCoeff = 0F;
-            this.gunaTransition1.DefaultAnimation = animation16;
+            animation17.AnimateOnlyDifferences = true;
+            animation17.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.BlindCoeff")));
+            animation17.LeafCoeff = 1F;
+            animation17.MaxTime = 1F;
+            animation17.MinTime = 0F;
+            animation17.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.MosaicCoeff")));
+            animation17.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation17.MosaicShift")));
+            animation17.MosaicSize = 0;
+            animation17.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation17.RotateCoeff = 0F;
+            animation17.RotateLimit = 0F;
+            animation17.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.ScaleCoeff")));
+            animation17.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.SlideCoeff")));
+            animation17.TimeCoeff = 0F;
+            animation17.TransparencyCoeff = 0F;
+            this.gunaTransition1.DefaultAnimation = animation17;
             // 
             // Mensajes
             // 
