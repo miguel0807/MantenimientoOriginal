@@ -27,6 +27,14 @@ namespace Electrónicos
         private void Mensajes_Load(object sender, EventArgs e)
         {
             label1.Text = Abis.variableMensaje;
+            //gunaAnimateWindow1.AnimationType = Guna.UI.WinForms.GunaAnimateWindow.AnimateWindowType.AW_SLIDE;
+            gunaAnimateWindow1.Start();
+            
+        }
+
+        private void gunaGradientPanel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

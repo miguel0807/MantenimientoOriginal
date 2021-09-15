@@ -684,7 +684,7 @@ namespace Electrónicos
                         //Si se completo, se procede a rechazar la solicitud
                         else
                         {
-                            MensajeError("No se puede proceder con la calibración, este producto ya fue calibrado anteriormente");
+                            MensajeError("No se puede proceder con la calibración, este producto ya fue calibrado anteriormente.");
                             //MessageBox.Show("No se puede proceder con la calibración, este producto ya fue calibrado anteriormente");
                             RestablecerControles();
                             return;

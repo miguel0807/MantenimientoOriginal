@@ -179,8 +179,9 @@ namespace Electrónicos
             Abis.variableMensaje= "Prueba de animaciónes";
 
                 Form frm = new Mensajes();
-
-                frm.ShowDialog();
+            
+            
+            frm.ShowDialog();
             
         }
 
