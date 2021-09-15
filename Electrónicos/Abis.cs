@@ -874,21 +874,43 @@ namespace Electrónicos
 
                     lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
 
-                    //Verificar los errores humanos
+                    //Verificar los errores humanos y el estado del CSM en la base de datos
                     cn.abrir();
-                    SqlCommand cmd = new SqlCommand("select [Error Humano] from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    SqlCommand cmd = new SqlCommand("select [Error Humano],Estado from CSM where convert(char,[Número de serie]) = @NumeroSerie ", cn.conectarBD);
                     cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                    SqlDataReader leer;
+                    leer = cmd.ExecuteReader();
+                   
 
-                    int conteoErrores = Convert.ToInt32(cmd.ExecuteScalar());
-                    cn.cerrar();
+                   
+                    if (leer.Read() == true)
+                    {   
+                      
 
-                    lblErrorHumano.Text = "Intentos restantes: " + conteoErrores;
+                        lblErrorHumano.Text = "Intentos restantes: " + leer.GetInt32(0);
+
+                        lblEstado.Text = "Estado: " + leer.GetString(1); 
+
+                        btnCalibracion.Visible = true;
+                        btnCargarCSM.Visible = false;
+                        decoLeerCSM = false;
+
+                    }
+
+                    else
+                    {
+                        lblEstado.Text = "Estado: Equipo Nuevo";
+                        lblErrorHumano.Text = "Intentos restantes: 5";
+                    }
 
                     
-                    btnCalibracion.Visible = true;
-                
-                    btnCargarCSM.Visible = false;
-                    decoLeerCSM = false;
+                    leer.Close();
+                    cn.cerrar();
+
+                    
+
+                  
+
                 }
                 
             }
