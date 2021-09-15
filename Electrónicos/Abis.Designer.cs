@@ -797,7 +797,7 @@ namespace Electrónicos
             this.lblEstado.Size = new System.Drawing.Size(107, 19);
             this.lblEstado.TabIndex = 50;
             this.lblEstado.Text = "Estado: N/A";
-            this.lblEstado.Click += new System.EventHandler(this.lblEstado_Click);
+
             // 
             // Abis
             // 

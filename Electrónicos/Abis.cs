@@ -400,24 +400,32 @@ namespace Electrónicos
                     int conteoErrores = Convert.ToInt32(cmd.ExecuteScalar());
                     cn.cerrar();
 
+                    //Actualiza la información del CSM
+                    SqlCommand cmd1 = new SqlCommand("update CSM set [Error Humano] = @ErrorHumano , Estado = @Estado where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cn.abrir();
                     if (conteoErrores == 0)
                     {
+
+                        cmd1.Parameters.AddWithValue("@Estado", "Retrabajo");
                         MessageBox.Show("No se permiten mas intentos");
                     }
                     else if (conteoErrores >= 1)
                     {
                         conteoErrores = conteoErrores - 1;
-                        cn.abrir();
-                        SqlCommand cmd1 = new SqlCommand("update CSM set [Error Humano] = @ErrorHumano where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
-                        cmd1.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
-                        cmd1.Parameters.AddWithValue("@ErrorHumano", conteoErrores);
-                        cmd1.ExecuteNonQuery();
-                        cn.cerrar();
+                       
+                        
+                        
+                        cmd1.Parameters.AddWithValue("@Estado", "Pendiente calibración");
+                        
+                        
                         MessageBox.Show("Se resto 1 al contador de errores");
 
                     }
+                    cmd1.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                    cmd1.Parameters.AddWithValue("@ErrorHumano", conteoErrores);
+                    cmd1.ExecuteNonQuery();
 
-
+                    cn.cerrar();
 
 
 
@@ -430,12 +438,13 @@ namespace Electrónicos
                 {
                     //Actualizar los datos finales de la calibración del CSM
                     cn.abrir();
-                    SqlCommand cmd = new SqlCommand("update CSM set [Fecha Final 1] = @fechaFinal, [Hora Final 1] = @horaFinal,[Calibración 1] = @Calibracion, [Bracket 1]= @Desviacion   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    SqlCommand cmd = new SqlCommand("update CSM set [Fecha Final 1] = @fechaFinal, [Hora Final 1] = @horaFinal,[Calibración 1] = @Calibracion, [Bracket 1]= @Desviacion, Estado = @Estado   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
                     cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
                     cmd.Parameters.AddWithValue("@fechaFinal", DateTime.Now.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@horaFinal", DateTime.Now.ToString("HH:mm:ss"));
                     cmd.Parameters.AddWithValue("@Calibracion", Calibracion1);
                     cmd.Parameters.AddWithValue("@Desviacion", Desviacion);
+                    cmd.Parameters.AddWithValue("@Estado", "Completado");
 
                     cmd.ExecuteNonQuery();
                     cn.cerrar();
@@ -451,6 +460,8 @@ namespace Electrónicos
 
                 numeroLinea++;
             }
+
+            ActualizarDatos();  //Actualiza la información de error humano y Estado
 
             //Enviar mensaje a mostrar
             if (Mensaje != "")
@@ -540,7 +551,7 @@ namespace Electrónicos
 
 
                         cn.abrir();
-                        SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Número de parte],Descripción,[Fecha Ingreso 1],[Hora ingreso 1],[Error Humano]) values (@Usuario,@NumeroSerie,@NumeroParte,@Descripcion,@fechaIngreso,@horaIngreso,@ErrorHumano)", cn.conectarBD);
+                        SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Número de parte],Descripción,[Fecha Ingreso 1],[Hora ingreso 1],[Error Humano],Estado) values (@Usuario,@NumeroSerie,@NumeroParte,@Descripcion,@fechaIngreso,@horaIngreso,@ErrorHumano,@Estado)", cn.conectarBD);
                         cmd.Parameters.AddWithValue("@Usuario", "Miguel Alvarado");
                         cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
                         cmd.Parameters.AddWithValue("@NumeroParte", NumeroParte);
@@ -548,6 +559,7 @@ namespace Electrónicos
                         cmd.Parameters.AddWithValue("@fechaIngreso", DateTime.Now.ToString("yyyy-MM-dd"));
                         cmd.Parameters.AddWithValue("@horaIngreso", DateTime.Now.ToString("HH:mm:ss"));
                         cmd.Parameters.AddWithValue("@ErrorHumano", 5);
+                        cmd.Parameters.AddWithValue("@Estado", "Pendiente Calibración");
 
 
                         cmd.ExecuteNonQuery();
@@ -565,10 +577,28 @@ namespace Electrónicos
                         int conteoErrores = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.cerrar();
 
+                        //Actualiza la información del CSM
+                        SqlCommand cmd5 = new SqlCommand("update CSM set  Estado = @Estado where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                       
+
+
+
                         if (conteoErrores == 0)
                         {
+                            cn.abrir();
+                            cmd5.Parameters.AddWithValue("@Estado", "Retrabajo");
+
+                            cmd5.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                        
+                            cmd5.ExecuteNonQuery();
+
+                            cn.cerrar();
+
                             MessageBox.Show("Este CSM no se puede continuar calibrando, se cometieron los 5 errores permitidos, ahora se encuentra en retrabajo.");
+
+                            ActualizarDatos();
                             RestablecerControles();
+
                             return;
                         }
 
@@ -602,6 +632,8 @@ namespace Electrónicos
 
                 }
 
+                ActualizarDatos();
+                
                 MessageBox.Show(Mensaje);
             }
 
@@ -891,9 +923,7 @@ namespace Electrónicos
 
                         lblEstado.Text = "Estado: " + leer.GetString(1); 
 
-                        btnCalibracion.Visible = true;
-                        btnCargarCSM.Visible = false;
-                        decoLeerCSM = false;
+                       
 
                     }
 
@@ -903,7 +933,10 @@ namespace Electrónicos
                         lblErrorHumano.Text = "Intentos restantes: 5";
                     }
 
-                    
+                    btnCalibracion.Visible = true;
+                    btnCargarCSM.Visible = false;
+                    decoLeerCSM = false;
+
                     leer.Close();
                     cn.cerrar();
 
@@ -1066,9 +1099,54 @@ namespace Electrónicos
             MessageBox.Show("hoda");
         }
 
-        private void lblEstado_Click(object sender, EventArgs e)
+        //Actualizar los datos de la información erroresHumanos y Estado, el número de serie no se actualiza
+        private void ActualizarDatos()
         {
 
+      
+
+            if (NumeroSerie == "")
+            {
+               
+                
+
+            }
+            else
+            {
+                
+
+                lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
+
+                //Verificar los errores humanos y el estado del CSM en la base de datos
+                cn.abrir();
+                SqlCommand cmd = new SqlCommand("select [Error Humano],Estado from CSM where convert(char,[Número de serie]) = @NumeroSerie ", cn.conectarBD);
+                cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                SqlDataReader leer;
+                leer = cmd.ExecuteReader();
+
+
+
+                if (leer.Read() == true)
+                {
+
+
+                    lblErrorHumano.Text = "Intentos restantes: " + leer.GetInt32(0);
+
+                    lblEstado.Text = "Estado: " + leer.GetString(1);
+
+             
+
+                }
+
+
+                leer.Close();
+                cn.cerrar();
+            
+
+            }
+
+
         }
+           
     }
 }
