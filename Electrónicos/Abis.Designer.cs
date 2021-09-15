@@ -57,6 +57,7 @@ namespace Electrónicos
             this.btnConectar = new Guna.UI.WinForms.GunaGradientButton();
             this.lblNumeroSerie = new Guna.UI.WinForms.GunaLabel();
             this.panelInformacion = new Guna.UI.WinForms.GunaGradientPanel();
+            this.lblEstado = new Guna.UI.WinForms.GunaLabel();
             this.lblErrorHumano = new Guna.UI.WinForms.GunaLabel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -76,7 +77,7 @@ namespace Electrónicos
             this.derecho = new Guna.UI.WinForms.GunaContextMenuStrip();
             this.cASAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hofarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblEstado = new Guna.UI.WinForms.GunaLabel();
+            this.timerDesconectadoCSM = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panelInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -146,11 +147,11 @@ namespace Electrónicos
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.textBox1.Location = new System.Drawing.Point(434, 275);
+            this.textBox1.Location = new System.Drawing.Point(344, 163);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(83, 60);
+            this.textBox1.Size = new System.Drawing.Size(502, 254);
             this.textBox1.TabIndex = 36;
             this.textBox1.Visible = false;
             // 
@@ -464,6 +465,18 @@ namespace Electrónicos
             this.panelInformacion.Size = new System.Drawing.Size(325, 135);
             this.panelInformacion.TabIndex = 49;
             this.panelInformacion.Text = "gunaGradientPanel1";
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.ForeColor = System.Drawing.Color.White;
+            this.lblEstado.Location = new System.Drawing.Point(11, 108);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(107, 19);
+            this.lblEstado.TabIndex = 50;
+            this.lblEstado.Text = "Estado: N/A";
             // 
             // lblErrorHumano
             // 
@@ -786,18 +799,10 @@ namespace Electrónicos
             this.hofarToolStripMenuItem.Text = "hofar";
             this.hofarToolStripMenuItem.Click += new System.EventHandler(this.hofarToolStripMenuItem_Click);
             // 
-            // lblEstado
+            // timerDesconectadoCSM
             // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.BackColor = System.Drawing.Color.Transparent;
-            this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.ForeColor = System.Drawing.Color.White;
-            this.lblEstado.Location = new System.Drawing.Point(11, 108);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(107, 19);
-            this.lblEstado.TabIndex = 50;
-            this.lblEstado.Text = "Estado: N/A";
-
+            this.timerDesconectadoCSM.Interval = 1000;
+            this.timerDesconectadoCSM.Tick += new System.EventHandler(this.timerDesconectadoCSM_Tick);
             // 
             // Abis
             // 
@@ -805,6 +810,7 @@ namespace Electrónicos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1221, 744);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtMostrarDatos);
             this.Controls.Add(this.btnConsola);
             this.Controls.Add(this.lblResgistros);
@@ -825,7 +831,6 @@ namespace Electrónicos
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLineas);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtEnviarDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1221, 686);
@@ -888,5 +893,6 @@ namespace Electrónicos
         private System.Windows.Forms.ToolStripMenuItem cASAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hofarToolStripMenuItem;
         private Guna.UI.WinForms.GunaLabel lblEstado;
+        private System.Windows.Forms.Timer timerDesconectadoCSM;
     }
 }

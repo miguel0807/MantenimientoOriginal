@@ -74,10 +74,11 @@
     <ApplicationIcon>Otros\tools_22686.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FE85F22A9A8F16C9D60C1539CDE9401B9C853026</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>022E60C95224E6C6AC8DF4A6D92405DEDEC76520</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Mantenimiento_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>

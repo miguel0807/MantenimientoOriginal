@@ -14,14 +14,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="SIM PRO.exe.manifest" size="14313">
+    <dependentAssembly dependencyType="install" codebase="SIM PRO.exe.manifest" size="15624">
       <assemblyIdentity name="SIM PRO.exe" version="5.0.0.28" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MF/R2mqFbtzHR7EoQ+KkmRVYGHBTPOK7EF9eusUGP50=</dsig:DigestValue>
+        <dsig:DigestValue>iGopEB2zp4rMFLHqvpwkaG+112/Fd4TSnoj0FGuxALY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -24,6 +24,8 @@ namespace Electrónicos
         private delegate void DelegadoAcceso(string accion);
         bool decoCalibracion = false;
         bool decoLeerCSM = true;
+        bool sinConectarCSM = false;
+        int contadorCSMdesconectado = 0;
         Conexion cn = new Conexion();
 
         string NumeroSerie = "";
@@ -190,22 +192,52 @@ namespace Electrónicos
             if (bufferSalida.Contains("Port status: [KMISSING"))
             {
                 textBox1.Text = "";
+                sinConectarCSM = true;
+
                 return;
             }
+
+            if (bufferSalida.Contains("Port status: [KREADY "))
+            {
+
+                
+
+                return;
+            }
+
+
+            if (bufferSalida.Contains(" Port status: [KUPDATING"))
+            {
+
+                timerDesconectadoCSM.Start();
+
+                return;
+            }
+           
 
             textBox1.Text = textBox1.Text + bufferSalida;
             txtMostrarDatos.Text = txtMostrarDatos.Text + bufferSalida;
 
-            Decodificador();
+            if (sinConectarCSM == false)
+            {
+                
+                Decodificador();
+            }
 
-            /*
+            else
+            {
+                
+            }
+            
+
+            
             //Mueve el scroll hasta el final de la linea
             txtMostrarDatos.Focus();
             txtMostrarDatos.SelectionStart = txtMostrarDatos.TextLength;
             txtMostrarDatos.ScrollToCaret();
 
             txtEnviarDatos.Focus();
-            */
+            
 
 
 
@@ -318,6 +350,7 @@ namespace Electrónicos
 
             lblNumeroSerie.Text = "Número de serie: N/A";
             lblErrorHumano.Text = "Intentos restantes: N/A";
+            lblEstado.Text = "Estado: N/A";
         }
 
         //Decodifica los mensajes generados en el textbox de ingles al español
@@ -364,9 +397,19 @@ namespace Electrónicos
 
 
                     int inicio = linea.IndexOf("[");
-                    int final = linea.IndexOf("]", inicio);
 
-                    Calibracion1 = linea.Substring(inicio, final + 1 - inicio);
+                    try
+                    {
+                        int final = linea.IndexOf("]", inicio);
+                        Calibracion1 = linea.Substring(inicio, final + 1 - inicio);
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine("{0} Exception caught.", e);
+                    }
+                    
+
+                    
 
                 }
 
@@ -378,7 +421,15 @@ namespace Electrónicos
                     int inicio = linea.IndexOf("[") - 1;
                     int final = linea.IndexOf("]", inicio);
 
-                    Desviacion = linea.Substring(inicio, final + 1 - inicio);
+                    try
+                    {
+                        Desviacion = linea.Substring(inicio, final + 1 - inicio);
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine("{0} Exception caught.", e);
+                    }
+                    
 
 
 
@@ -537,7 +588,7 @@ namespace Electrónicos
 
 
 
-                    CrearCSM = false;
+                    //CrearCSM = false;
                     //Busca si hay numero de serie ya creado
                     cn.abrir();
                     SqlCommand cmd1 = new SqlCommand("select COUNT(*) from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
@@ -1003,7 +1054,7 @@ namespace Electrónicos
 
                 BtEnter();
 
-
+                sinConectarCSM = false;//Activa el modo actualizar puerto del CSM luego de haberse completado
                 decoLeerCSM = true;    //Activo el modo decodificador inicial
 
 
@@ -1051,12 +1102,14 @@ namespace Electrónicos
             {
                 txtMostrarDatos.Visible = false;
                 txtEnviarDatos.Visible= false;
+                textBox1.Visible = false;
                
             }
             else
             {
                 txtEnviarDatos.Visible = true;
                 txtMostrarDatos.Visible = true;
+                textBox1.Visible = true;
             }
         }
 
@@ -1145,8 +1198,24 @@ namespace Electrónicos
 
             }
 
-
+            //Port status: [KMISSING
+            //Port status: [KUPDATING
+            //Port status: [KREADY 
         }
-           
+
+        private void timerDesconectadoCSM_Tick(object sender, EventArgs e)
+        {
+
+            if (contadorCSMdesconectado == 5)
+            {
+                sinConectarCSM = false;
+                timerDesconectadoCSM.Stop();
+                contadorCSMdesconectado = 0;
+
+                ActualizarDatos();
+
+            }
+            contadorCSMdesconectado ++;
+        }
     }
 }
