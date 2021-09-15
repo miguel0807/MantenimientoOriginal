@@ -261,14 +261,14 @@ namespace Electrónicos
         private void ConectarActivado()
         {
             btnCalibracion.Visible = true;
-            btnRetrabajo.Visible = true;
+            
         }
 
         //Acciones que se ejecutaran cuando se este desconectado al puerto serial
         private void DesconectarActivado()
         {
             btnCalibracion.Visible = false;
-            btnRetrabajo.Visible = false;
+           
         }
 
         #endregion
@@ -308,7 +308,7 @@ namespace Electrónicos
             txtMostrar.Visible = false;
             label3.Visible = false;
             btnCalibracion.Visible = false;
-            btnRetrabajo.Visible = false;
+           
             btnColocarAbajo.Visible = false;
             btnColocarArriba.Visible = false;
             btnColocarLado.Visible = false;
@@ -475,8 +475,11 @@ namespace Electrónicos
 
                 }
 
+              
+            
 
-                numeroLinea++;
+
+           numeroLinea++;
             }
 
 
@@ -772,6 +775,8 @@ namespace Electrónicos
                     btnConectar.Text = "Desconectar";
                     // btnConectar.BackColor = Color.FromArgb(0, 128, 0);
                     lblEstadoConexion.Text = "Estado : Conectado";
+                    btnRetrabajo.Visible = true;
+                    btnConsola.Visible = true;
                     btnCargarCSM.Visible = true;
 
                 }
@@ -787,6 +792,8 @@ namespace Electrónicos
                 btnConectar.Text = "Conectar";
                 lblEstadoConexion.Text = "Estado : Desconectado";
                 btnCargarCSM.Visible = false;
+                btnRetrabajo.Visible = false;
+                btnConsola.Visible = false;
                 RegresoInicio();
 
             }
@@ -824,7 +831,7 @@ namespace Electrónicos
                 btnColocarArriba.Visible = true;
 
                 btnCalibracion.Visible = false;
-                btnRetrabajo.Visible = false;
+              
 
                 btnColocarArriba.Focus();
 
@@ -851,27 +858,39 @@ namespace Electrónicos
             if (gunaCircleProgressBar1.Value == 100)
             {
                 timer1.Stop();
-                NumeroParte = 71212730;
-                Descripcion = "ISU, L-SERIES, ABIS CSM";
-
-                lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
-
-                //Verificar los errores humanos
-                cn.abrir();
-                SqlCommand cmd = new SqlCommand("select [Error Humano] from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
-                cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
-
-                int conteoErrores = Convert.ToInt32(cmd.ExecuteScalar());
-                cn.cerrar();
-
-                lblErrorHumano.Text = "Intentos restantes: " + conteoErrores;
-
                 gunaCircleProgressBar1.Visible = false;
-                btnCalibracion.Visible = true;
-                btnRetrabajo.Visible = true;
-                btnCargarCSM.Visible = false;
-                decoLeerCSM = false;
 
+                //Verifica si el N/A esta habilitado
+
+                if (NumeroSerie == "")
+                {
+                    MessageBox.Show("No se encontro el dispositivo, verifique que haya algun CSM conectado");
+                    
+                }
+                else 
+                {    
+                    NumeroParte = 71212730;
+                    Descripcion = "ISU, L-SERIES, ABIS CSM";
+
+                    lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
+
+                    //Verificar los errores humanos
+                    cn.abrir();
+                    SqlCommand cmd = new SqlCommand("select [Error Humano] from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+
+                    int conteoErrores = Convert.ToInt32(cmd.ExecuteScalar());
+                    cn.cerrar();
+
+                    lblErrorHumano.Text = "Intentos restantes: " + conteoErrores;
+
+                    
+                    btnCalibracion.Visible = true;
+                
+                    btnCargarCSM.Visible = false;
+                    decoLeerCSM = false;
+                }
+                
             }
 
 
@@ -879,15 +898,35 @@ namespace Electrónicos
 
         private void gunaGradientButton1_Click_1(object sender, EventArgs e)
         {
-            if (panelInformacion.Visible == true)
+            if (dataGridView1.Visible == true)
             {
-                panelInformacion.Visible = false;
+                dataGridView1.Visible = false;
+                txtMostrar.Visible = false;
+                label3.Visible = false;                
+                lblResgistros.Visible = false;
             }
-
             else
             {
-                panelInformacion.Visible = true;
+                cn.abrir();
+                //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM where [Error Humano] = 0 and [Hora ingreso 2] is null and [Fecha Final 2] is null", cn.conectarBD);
+                SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM ", cn.conectarBD);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+
+                dataGridView1.Columns[0].Visible = false;
+                txtMostrar.Visible = true;
+                label3.Visible = true;
+                dataGridView1.Visible = true;
+                lblResgistros.Visible = true;
+
+                lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
+                cn.cerrar();
             }
+            
+
         }
 
         private void gunaGradientButton2_Click(object sender, EventArgs e)
@@ -956,11 +995,12 @@ namespace Electrónicos
             if (txtMostrarDatos.Visible == true)
             {
                 txtMostrarDatos.Visible = false;
+                txtEnviarDatos.Visible= false;
                
             }
             else
             {
-                
+                txtEnviarDatos.Visible = true;
                 txtMostrarDatos.Visible = true;
             }
         }
@@ -1002,6 +1042,11 @@ namespace Electrónicos
         private void hofarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("hoda");
+        }
+
+        private void lblEstado_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
