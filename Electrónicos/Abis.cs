@@ -28,6 +28,8 @@ namespace Electrónicos
         int contadorCSMdesconectado = 0;
         Conexion cn = new Conexion();
 
+        internal static string variableMensaje;
+
         string NumeroSerie = "";
         string Calibracion1 = "";
         string Desviacion = "";
@@ -322,14 +324,14 @@ namespace Electrónicos
 
         private void Abis_Load(object sender, EventArgs e)
         {
+            
+
+        //RegresoInicio();
+        // MessageBox.Show("Hubo un error durante el proceso de la calibración, el CSM requiere que se calibre nuevamente.");
 
 
-            //RegresoInicio();
-            // MessageBox.Show("Hubo un error durante el proceso de la calibración, el CSM requiere que se calibre nuevamente.");
 
-
-
-            btnConectar.Enabled = true;
+        btnConectar.Enabled = true;
         }
 
         //Restablece la configuración a sus valores iniciales
@@ -1226,6 +1228,20 @@ namespace Electrónicos
         private void gunaGradientButton1_Click_2(object sender, EventArgs e)
         {
             EsconderPanel();
+
+            MensajeError("Prueba de comunicación");
+            
+            
+            
+
+        }
+        private void MensajeError(string mensaje)
+        {
+            variableMensaje = mensaje;
+
+            Form frm = new Mensajes();
+
+            frm.ShowDialog();
         }
     }
 }
