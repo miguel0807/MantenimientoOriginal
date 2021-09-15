@@ -42,13 +42,15 @@ namespace Electrónicos
             // 
             // gunaGradientPanel1
             // 
+            this.gunaGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gunaGradientPanel1.BackgroundImage")));
             this.gunaGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gunaGradientPanel1.Controls.Add(this.gunaGradientPanel2);
             this.gunaGradientPanel1.Controls.Add(this.label1);
             this.gunaGradientPanel1.Controls.Add(this.label2);
             this.gunaGradientPanel1.Controls.Add(this.btnConsola);
-            this.gunaGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaGradientPanel1.GradientColor1 = System.Drawing.SystemColors.Highlight;
             this.gunaGradientPanel1.GradientColor2 = System.Drawing.Color.DarkGray;
             this.gunaGradientPanel1.GradientColor3 = System.Drawing.Color.Salmon;
@@ -101,7 +103,7 @@ namespace Electrónicos
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(125, 89);
+            this.label2.Location = new System.Drawing.Point(73, 45);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 19);
@@ -113,14 +115,13 @@ namespace Electrónicos
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(125, 108);
+            this.label1.Location = new System.Drawing.Point(73, 80);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(302, 19);
+            this.label1.Size = new System.Drawing.Size(411, 77);
             this.label1.TabIndex = 66;
             this.label1.Text = "Comienzo del proceso de calibración";
             // 

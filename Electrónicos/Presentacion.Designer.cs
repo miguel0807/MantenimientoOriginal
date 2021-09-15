@@ -85,8 +85,9 @@ namespace Electrónicos
             this.PanelLateral.Controls.Add(this.gunaPictureBox1);
             this.PanelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelLateral.Location = new System.Drawing.Point(0, 0);
+            this.PanelLateral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PanelLateral.Name = "PanelLateral";
-            this.PanelLateral.Size = new System.Drawing.Size(273, 768);
+            this.PanelLateral.Size = new System.Drawing.Size(205, 624);
             this.PanelLateral.TabIndex = 2;
             // 
             // panelBotones
@@ -95,9 +96,10 @@ namespace Electrónicos
             this.panelBotones.Controls.Add(this.gunaButton2);
             this.panelBotones.Controls.Add(this.panelAbis);
             this.panelBotones.Controls.Add(this.gunaButton1);
-            this.panelBotones.Location = new System.Drawing.Point(3, 202);
+            this.panelBotones.Location = new System.Drawing.Point(2, 164);
+            this.panelBotones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(264, 563);
+            this.panelBotones.Size = new System.Drawing.Size(198, 457);
             this.panelBotones.TabIndex = 10;
             this.panelBotones.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBotones_Paint);
             // 
@@ -115,25 +117,28 @@ namespace Electrónicos
             this.gunaButton2.ForeColor = System.Drawing.Color.White;
             this.gunaButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton2.Image")));
             this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(0, 126);
+            this.gunaButton2.Location = new System.Drawing.Point(0, 102);
+            this.gunaButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaButton2.Name = "gunaButton2";
             this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton2.OnHoverImage = null;
             this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Size = new System.Drawing.Size(264, 42);
+            this.gunaButton2.Size = new System.Drawing.Size(198, 34);
             this.gunaButton2.TabIndex = 11;
             this.gunaButton2.Text = "Configuración";
+            this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
             // 
             // panelAbis
             // 
             this.panelAbis.Controls.Add(this.gunaButton4);
             this.panelAbis.Controls.Add(this.gunaButton3);
             this.panelAbis.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAbis.Location = new System.Drawing.Point(0, 42);
+            this.panelAbis.Location = new System.Drawing.Point(0, 34);
+            this.panelAbis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelAbis.Name = "panelAbis";
-            this.panelAbis.Size = new System.Drawing.Size(264, 84);
+            this.panelAbis.Size = new System.Drawing.Size(198, 68);
             this.panelAbis.TabIndex = 10;
             this.panelAbis.Visible = false;
             // 
@@ -151,14 +156,15 @@ namespace Electrónicos
             this.gunaButton4.ForeColor = System.Drawing.Color.White;
             this.gunaButton4.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton4.Image")));
             this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(0, 42);
+            this.gunaButton4.Location = new System.Drawing.Point(0, 34);
+            this.gunaButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaButton4.Name = "gunaButton4";
             this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton4.OnHoverImage = null;
             this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton4.Size = new System.Drawing.Size(264, 42);
+            this.gunaButton4.Size = new System.Drawing.Size(198, 34);
             this.gunaButton4.TabIndex = 12;
             this.gunaButton4.Text = "Main Unit";
             // 
@@ -177,13 +183,14 @@ namespace Electrónicos
             this.gunaButton3.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton3.Image")));
             this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton3.Location = new System.Drawing.Point(0, 0);
+            this.gunaButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaButton3.Name = "gunaButton3";
             this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton3.OnHoverImage = null;
             this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Size = new System.Drawing.Size(264, 42);
+            this.gunaButton3.Size = new System.Drawing.Size(198, 34);
             this.gunaButton3.TabIndex = 11;
             this.gunaButton3.Text = "CSM";
             this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
@@ -203,13 +210,14 @@ namespace Electrónicos
             this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton1.Location = new System.Drawing.Point(0, 0);
+            this.gunaButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton1.OnHoverImage = null;
             this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(264, 42);
+            this.gunaButton1.Size = new System.Drawing.Size(198, 34);
             this.gunaButton1.TabIndex = 5;
             this.gunaButton1.Text = "Abis";
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
@@ -219,9 +227,10 @@ namespace Electrónicos
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblCorreo.ForeColor = System.Drawing.Color.White;
-            this.lblCorreo.Location = new System.Drawing.Point(89, 147);
+            this.lblCorreo.Location = new System.Drawing.Point(67, 119);
+            this.lblCorreo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(163, 20);
+            this.lblCorreo.Size = new System.Drawing.Size(131, 15);
             this.lblCorreo.TabIndex = 9;
             this.lblCorreo.Text = "malvarado@matw.com";
             // 
@@ -230,9 +239,10 @@ namespace Electrónicos
             this.lblPuesto.AutoSize = true;
             this.lblPuesto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblPuesto.ForeColor = System.Drawing.Color.White;
-            this.lblPuesto.Location = new System.Drawing.Point(89, 127);
+            this.lblPuesto.Location = new System.Drawing.Point(67, 103);
+            this.lblPuesto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(104, 20);
+            this.lblPuesto.Size = new System.Drawing.Size(83, 15);
             this.lblPuesto.TabIndex = 8;
             this.lblPuesto.Text = "Administrador";
             // 
@@ -241,18 +251,20 @@ namespace Electrónicos
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(89, 107);
+            this.lblNombre.Location = new System.Drawing.Point(67, 87);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(119, 20);
+            this.lblNombre.Size = new System.Drawing.Size(94, 15);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "Miguel Alvarado";
             // 
             // gunaSeparator1
             // 
             this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator1.Location = new System.Drawing.Point(10, 186);
+            this.gunaSeparator1.Location = new System.Drawing.Point(8, 151);
+            this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaSeparator1.Name = "gunaSeparator1";
-            this.gunaSeparator1.Size = new System.Drawing.Size(216, 8);
+            this.gunaSeparator1.Size = new System.Drawing.Size(162, 6);
             this.gunaSeparator1.TabIndex = 4;
             // 
             // gunaLabel3
@@ -260,9 +272,10 @@ namespace Electrónicos
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunaLabel3.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel3.Location = new System.Drawing.Point(12, 147);
+            this.gunaLabel3.Location = new System.Drawing.Point(9, 119);
+            this.gunaLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(61, 20);
+            this.gunaLabel3.Size = new System.Drawing.Size(49, 15);
             this.gunaLabel3.TabIndex = 3;
             this.gunaLabel3.Text = "Correo :";
             // 
@@ -271,9 +284,10 @@ namespace Electrónicos
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(12, 127);
+            this.gunaLabel2.Location = new System.Drawing.Point(9, 103);
+            this.gunaLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(60, 20);
+            this.gunaLabel2.Size = new System.Drawing.Size(49, 15);
             this.gunaLabel2.TabIndex = 2;
             this.gunaLabel2.Text = "Puesto :";
             // 
@@ -282,9 +296,10 @@ namespace Electrónicos
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(12, 107);
+            this.gunaLabel1.Location = new System.Drawing.Point(9, 87);
+            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(71, 20);
+            this.gunaLabel1.Size = new System.Drawing.Size(57, 15);
             this.gunaLabel1.TabIndex = 1;
             this.gunaLabel1.Text = "Nombre :";
             // 
@@ -292,9 +307,10 @@ namespace Electrónicos
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::Electrónicos.Properties.Resources.user;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(30, 12);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(22, 10);
+            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(183, 81);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(137, 66);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox1.TabIndex = 0;
             this.gunaPictureBox1.TabStop = false;
@@ -307,9 +323,10 @@ namespace Electrónicos
             this.PanelSuperior.Controls.Add(this.btnMaximizar);
             this.PanelSuperior.Controls.Add(this.btnCerrar);
             this.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelSuperior.Location = new System.Drawing.Point(273, 0);
+            this.PanelSuperior.Location = new System.Drawing.Point(205, 0);
+            this.PanelSuperior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PanelSuperior.Name = "PanelSuperior";
-            this.PanelSuperior.Size = new System.Drawing.Size(1215, 42);
+            this.PanelSuperior.Size = new System.Drawing.Size(911, 34);
             this.PanelSuperior.TabIndex = 3;
             // 
             // btnMinimizar
@@ -318,9 +335,10 @@ namespace Electrónicos
             this.btnMinimizar.BaseColor = System.Drawing.Color.White;
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1059, 6);
+            this.btnMinimizar.Location = new System.Drawing.Point(794, 5);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(50, 31);
+            this.btnMinimizar.Size = new System.Drawing.Size(38, 25);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 3;
             this.btnMinimizar.TabStop = false;
@@ -332,9 +350,10 @@ namespace Electrónicos
             this.btnRestaurar.BaseColor = System.Drawing.Color.White;
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(1106, 6);
+            this.btnRestaurar.Location = new System.Drawing.Point(830, 5);
+            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(50, 31);
+            this.btnRestaurar.Size = new System.Drawing.Size(38, 25);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRestaurar.TabIndex = 2;
             this.btnRestaurar.TabStop = false;
@@ -347,9 +366,10 @@ namespace Electrónicos
             this.btnMaximizar.BaseColor = System.Drawing.Color.White;
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1106, 6);
+            this.btnMaximizar.Location = new System.Drawing.Point(830, 5);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(50, 31);
+            this.btnMaximizar.Size = new System.Drawing.Size(38, 25);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMaximizar.TabIndex = 1;
             this.btnMaximizar.TabStop = false;
@@ -361,9 +381,10 @@ namespace Electrónicos
             this.btnCerrar.BaseColor = System.Drawing.Color.White;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1153, 6);
+            this.btnCerrar.Location = new System.Drawing.Point(865, 5);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(50, 31);
+            this.btnCerrar.Size = new System.Drawing.Size(38, 25);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
@@ -379,8 +400,9 @@ namespace Electrónicos
             this.PanelTotal.Controls.Add(this.panelContenedor);
             this.PanelTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelTotal.Location = new System.Drawing.Point(0, 0);
+            this.PanelTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PanelTotal.Name = "PanelTotal";
-            this.PanelTotal.Size = new System.Drawing.Size(1488, 768);
+            this.PanelTotal.Size = new System.Drawing.Size(1116, 624);
             this.PanelTotal.TabIndex = 4;
             this.PanelTotal.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
             // 
@@ -390,22 +412,24 @@ namespace Electrónicos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panelContenedor.Location = new System.Drawing.Point(273, 33);
+            this.panelContenedor.Location = new System.Drawing.Point(205, 27);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1218, 738);
+            this.panelContenedor.Size = new System.Drawing.Size(914, 600);
             this.panelContenedor.TabIndex = 0;
             // 
             // Presentacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1488, 768);
+            this.ClientSize = new System.Drawing.Size(1116, 624);
             this.Controls.Add(this.PanelSuperior);
             this.Controls.Add(this.PanelLateral);
             this.Controls.Add(this.PanelTotal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(1447, 768);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(1085, 624);
             this.Name = "Presentacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Presentacion";

@@ -74,7 +74,8 @@ namespace Electrónicos
                 }
                 catch (Exception exc)
                 {
-                    MessageBox.Show(exc.Message.ToString());
+                    MensajeError(exc.Message.ToString());
+                   // MessageBox.Show(exc.Message.ToString());
                 }
             }
 
@@ -138,7 +139,8 @@ namespace Electrónicos
 
             else
             {
-                MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
+                MensajeError("El puerto se desconecto, reinicie el programa y vuelta a intentar");
+               
             }
         }
 
@@ -166,7 +168,8 @@ namespace Electrónicos
             string cadena = "Calibration: [-1245 -43 230]";
             obtenerCaracteres(cadena, ref v1, ref v2, ref v3);
 
-            MessageBox.Show("Valores: " + v1 + " " + v2 + " " + v3);
+            MensajeError("Valores: " + v1 + " " + v2 + " " + v3);
+           // MessageBox.Show("Valores: " + v1 + " " + v2 + " " + v3);
         }
 
         #region Conexión, desconexión y lectura al puerto Serial
@@ -266,13 +269,15 @@ namespace Electrónicos
             {
                 if (exc.Message == "The port 'COM30' does not exist.") // Error cuando no encuentra el puerto serial
                 {
-                    MessageBox.Show("No se encontro el puerto COM#30, verifique que el USB este correctamente conectado y configurado.", "Alerta!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MensajeError("No se encontro el puerto COM#30, verifique que el USB este correctamente conectado y configurado.");
+                   // MessageBox.Show("No se encontro el puerto COM#30, verifique que el USB este correctamente conectado y configurado.", "Alerta!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     exito = 0;
                 }
 
                 else
                 {
-                    MessageBox.Show(exc.Message.ToString());
+                    MensajeError(exc.Message.ToString());
+                    //MessageBox.Show(exc.Message.ToString());
                 }
 
 
@@ -442,7 +447,8 @@ namespace Electrónicos
                 //En caso de fallo
                 if (linea.Contains("CALIBRATION FAILED! PRESS ENTER TO CONTINUE!"))
                 {
-                    MessageBox.Show("La calibración fallo, vuelva a repetir el proceso");
+                    MensajeError("La calibración fallo, vuelva a repetir el proceso");
+                    //MessageBox.Show("La calibración fallo, vuelva a repetir el proceso");
 
 
                     //Verificar los errores humanos
@@ -460,7 +466,8 @@ namespace Electrónicos
                     {
 
                         cmd1.Parameters.AddWithValue("@Estado", "Retrabajo");
-                        MessageBox.Show("No se permiten mas intentos");
+                        MensajeError("No se permiten mas intentos");
+                        //MessageBox.Show("No se permiten mas intentos");
                     }
                     else if (conteoErrores >= 1)
                     {
@@ -470,8 +477,8 @@ namespace Electrónicos
                         
                         cmd1.Parameters.AddWithValue("@Estado", "Pendiente calibración");
                         
-                        
-                        MessageBox.Show("Se resto 1 al contador de errores");
+                        MensajeError("Se resto 1 al contador de errores");
+                        //MessageBox.Show("Se resto 1 al contador de errores");
 
                     }
                     cmd1.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
@@ -519,7 +526,8 @@ namespace Electrónicos
             //Enviar mensaje a mostrar
             if (Mensaje != "")
             {
-                MessageBox.Show(Mensaje);
+                MensajeError(Mensaje);
+                //MessageBox.Show(Mensaje);
             }
 
         }
@@ -605,7 +613,7 @@ namespace Electrónicos
 
                         cn.abrir();
                         SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Número de parte],Descripción,[Fecha Ingreso 1],[Hora ingreso 1],[Error Humano],Estado) values (@Usuario,@NumeroSerie,@NumeroParte,@Descripcion,@fechaIngreso,@horaIngreso,@ErrorHumano,@Estado)", cn.conectarBD);
-                        cmd.Parameters.AddWithValue("@Usuario", "Miguel Alvarado");
+                        cmd.Parameters.AddWithValue("@Usuario", Presentacion.CompartidoNombre);
                         cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
                         cmd.Parameters.AddWithValue("@NumeroParte", NumeroParte);
                         cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
@@ -647,7 +655,8 @@ namespace Electrónicos
 
                             cn.cerrar();
 
-                            MessageBox.Show("Este CSM no se puede continuar calibrando, se cometieron los 5 errores permitidos, ahora se encuentra en retrabajo.");
+                            MensajeError("Este CSM no se puede continuar calibrando, se cometieron los 5 errores permitidos, ahora se encuentra en retrabajo.");
+                            //MessageBox.Show("Este CSM no se puede continuar calibrando, se cometieron los 5 errores permitidos, ahora se encuentra en retrabajo.");
 
                             ActualizarDatos();
                             RestablecerControles();
@@ -668,13 +677,15 @@ namespace Electrónicos
                         //Si no esta completado, se procede a completar
                         if (conteo2 == 0)
                         {
-                            MessageBox.Show("Este CSM quedo incompleto, comenzado nuevamente la calibración");
+                            MensajeError("Este CSM quedo incompleto, comenzado nuevamente la calibración");
+                            //MessageBox.Show("Este CSM quedo incompleto, comenzado nuevamente la calibración");
                         }
 
                         //Si se completo, se procede a rechazar la solicitud
                         else
                         {
-                            MessageBox.Show("No se puede proceder con la calibración, este producto ya fue calibrado anteriormente");
+                            MensajeError("No se puede proceder con la calibración, este producto ya fue calibrado anteriormente");
+                            //MessageBox.Show("No se puede proceder con la calibración, este producto ya fue calibrado anteriormente");
                             RestablecerControles();
                             return;
                         }
@@ -686,8 +697,9 @@ namespace Electrónicos
                 }
 
                 ActualizarDatos();
-                
-                MessageBox.Show(Mensaje);
+
+                MensajeError(Mensaje);
+                //MessageBox.Show(Mensaje);
             }
 
         }
@@ -728,19 +740,22 @@ namespace Electrónicos
                 if (conteo == 2)
                 {
                     valor1 = Int32.Parse(sub);
-                    MessageBox.Show(valor1.ToString());
+                    MensajeError(valor1.ToString());
+                    //MessageBox.Show(valor1.ToString());
                 }
 
                 else if (conteo == 3)
                 {
                     valor3 = Int32.Parse(sub);
-                    MessageBox.Show(valor2.ToString());
+                    MensajeError(valor2.ToString());
+                    //MessageBox.Show(valor2.ToString());
                 }
 
                 else if (conteo == 4)
                 {
                     valor3 = Int32.Parse(sub);
-                    MessageBox.Show(valor3.ToString());
+                    MensajeError(valor3.ToString());
+                    //MessageBox.Show(valor3.ToString());
                 }
 
                 conteo++;
@@ -754,7 +769,8 @@ namespace Electrónicos
             SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Número de parte],[Usuario Calibración],[Número de serie]) values (71212775,'Miguel Alvarado','03599');", cn.conectarBD);
             cmd.ExecuteNonQuery();
             cn.cerrar();
-            MessageBox.Show("Completado con exito");
+            MensajeError("Completado con exito");
+            //MessageBox.Show("Completado con exito");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -762,7 +778,7 @@ namespace Electrónicos
             cn.abrir();
             SqlCommand cmd = new SqlCommand("update CSM set [Número de serie] = @NumeroSerie where id = 1;", cn.conectarBD);
             cmd.Parameters.AddWithValue("@NumeroSerie", "12345");
-            MessageBox.Show(cmd.CommandText);
+            //MessageBox.Show(cmd.CommandText);
             cmd.ExecuteNonQuery();
             cn.cerrar();
             MessageBox.Show("Actualizado con exito");
@@ -928,7 +944,8 @@ namespace Electrónicos
 
             else
             {
-                MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
+                MensajeError("El puerto se desconecto, reinicie el programa y vuelta a intentar");
+                //MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
             }
         }
 
@@ -950,7 +967,8 @@ namespace Electrónicos
 
                 if (NumeroSerie == "")
                 {
-                    MessageBox.Show("No se encontro el dispositivo, verifique que haya algun CSM conectado");
+                    MensajeError("No se encontro el dispositivo, verifique que haya algun CSM conectado");
+                   // MessageBox.Show("No se encontro el dispositivo, verifique que haya algun CSM conectado");
                     
                 }
                 else 
@@ -1066,7 +1084,8 @@ namespace Electrónicos
 
             else
             {
-                MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
+                MensajeError("El puerto se desconecto, reinicie el programa y vuelta a intentar");
+                //MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
                 return;
             }
         }
@@ -1229,7 +1248,7 @@ namespace Electrónicos
         {
             EsconderPanel();
 
-            MensajeError("Prueba de comunicación");
+           
             
             
             

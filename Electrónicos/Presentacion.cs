@@ -12,19 +12,15 @@ using DataAccess;
 
 
 namespace Electrónicos
-{ /*
-    public static class compartida
-    {
-        
-
-
-    }*/
+{ 
     
     public partial class Presentacion : Form
     {
 
-        public static string hhNombre;
-        public static string hhPosicion;
+      
+
+        internal static string CompartidoNombre;
+        internal static string CompartidoPosicion;
 
         public Presentacion()
         {
@@ -57,10 +53,12 @@ namespace Electrónicos
         private void Presentacion_Load(object sender, EventArgs e)
         {
             //compartida.hhNombre = lblNombre.Text;
-            hhNombre = lblNombre.Text;
-            hhPosicion = lblPuesto.Text;
+           
+            CompartidoNombre = lblNombre.Text;
+            CompartidoPosicion = lblPuesto.Text;
 
-     
+
+
         }
 
         private void AbrirFormHijo(object formHijo)
@@ -173,6 +171,17 @@ namespace Electrónicos
         private void panelBotones_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+
+            Abis.variableMensaje= "Prueba de animaciónes";
+
+                Form frm = new Mensajes();
+
+                frm.ShowDialog();
+            
         }
 
         int sw, sh;
