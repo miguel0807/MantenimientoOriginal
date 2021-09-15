@@ -99,6 +99,7 @@ namespace Electrónicos
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(264, 563);
             this.panelBotones.TabIndex = 10;
+            this.panelBotones.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBotones_Paint);
             // 
             // gunaButton2
             // 

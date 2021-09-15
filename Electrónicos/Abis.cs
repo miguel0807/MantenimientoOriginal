@@ -432,7 +432,7 @@ namespace Electrónicos
                     cn.abrir();
                     SqlCommand cmd = new SqlCommand("update CSM set [Fecha Final 1] = @fechaFinal, [Hora Final 1] = @horaFinal,[Calibración 1] = @Calibracion, [Bracket 1]= @Desviacion   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
                     cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
-                    cmd.Parameters.AddWithValue("@fechaFinal", DateTime.Now.ToString("dd/MM/yyyy"));
+                    cmd.Parameters.AddWithValue("@fechaFinal", DateTime.Now.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@horaFinal", DateTime.Now.ToString("HH:mm:ss"));
                     cmd.Parameters.AddWithValue("@Calibracion", Calibracion1);
                     cmd.Parameters.AddWithValue("@Desviacion", Desviacion);
@@ -542,10 +542,11 @@ namespace Electrónicos
                         cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
                         cmd.Parameters.AddWithValue("@NumeroParte", NumeroParte);
                         cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
-                        cmd.Parameters.AddWithValue("@fechaIngreso", DateTime.Now.ToString("dd/MM/yyyy"));
+                        cmd.Parameters.AddWithValue("@fechaIngreso", DateTime.Now.ToString("yyyy-MM-dd"));
                         cmd.Parameters.AddWithValue("@horaIngreso", DateTime.Now.ToString("HH:mm:ss"));
                         cmd.Parameters.AddWithValue("@ErrorHumano", 5);
 
+                        
                         cmd.ExecuteNonQuery();
                         cn.cerrar();
                     }
@@ -925,7 +926,7 @@ namespace Electrónicos
         private void btnRetrabajo_Click(object sender, EventArgs e)
         {
             cn.abrir();
-            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text +" * from CSM", cn.conectarBD);                     
+            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM where [Error Humano] = 0 and [Hora ingreso 2] is null and [Fecha Final 2] is null", cn.conectarBD);                     
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -948,6 +949,16 @@ namespace Electrónicos
             
         }
 
-       
+        private void gunaGradientButton2_Click_1(object sender, EventArgs e)
+        {
+            if (txtMostrarDatos.Visible == true)
+            {
+                txtMostrarDatos.Visible = false;
+            }
+            else
+            {
+                txtMostrarDatos.Visible = true;
+            }
+        }
     }
 }

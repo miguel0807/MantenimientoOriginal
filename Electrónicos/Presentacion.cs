@@ -60,7 +60,7 @@ namespace Electrónicos
             hhNombre = lblNombre.Text;
             hhPosicion = lblPuesto.Text;
 
-            
+     
         }
 
         private void AbrirFormHijo(object formHijo)
@@ -168,6 +168,11 @@ namespace Electrónicos
         private void gunaButton3_Click(object sender, EventArgs e)
         {
             AbrirFormHijo(new Abis());
+        }
+
+        private void panelBotones_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         int sw, sh;
