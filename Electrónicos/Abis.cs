@@ -314,7 +314,7 @@ namespace Electrónicos
             btnColocarLado.Visible = false;
             btnCargarCSM.Visible = false;
 
-       
+
 
             lblNumeroSerie.Text = "Número de serie: N/A";
             lblErrorHumano.Text = "Intentos restantes: N/A";
@@ -380,7 +380,7 @@ namespace Electrónicos
 
                     Desviacion = linea.Substring(inicio, final + 1 - inicio);
 
-                  
+
 
 
 
@@ -475,13 +475,13 @@ namespace Electrónicos
 
                 }
 
-                
+
                 numeroLinea++;
             }
 
 
         }
-    
+
 
         //Decodifica los mensajes generados en el textbox de ingles al español al inicio de la calibración
         private void DecodificadorInicial()
@@ -489,7 +489,7 @@ namespace Electrónicos
             int numeroLinea = 1;
             string Mensaje = "";
             bool CrearCSM = false;
-            
+
 
             foreach (string linea in textBox1.Lines)
             {
@@ -497,9 +497,9 @@ namespace Electrónicos
                 if (linea.Contains("Serial number:"))
                 {
                     int inicio = linea.IndexOf(":") + 2;
-                    NumeroSerie = linea.Substring(inicio, linea.Length - inicio);                    
+                    NumeroSerie = linea.Substring(inicio, linea.Length - inicio);
                     CrearCSM = true;
-                    
+
 
                 }
 
@@ -516,7 +516,7 @@ namespace Electrónicos
 
             if (Mensaje != "")
             {
-               
+
 
                 if (CrearCSM == true)
                 {
@@ -528,13 +528,13 @@ namespace Electrónicos
                     cn.abrir();
                     SqlCommand cmd1 = new SqlCommand("select COUNT(*) from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
                     cmd1.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
-                    
+
                     int conteo = Convert.ToInt32(cmd1.ExecuteScalar());
                     cn.cerrar();
                     //Si no esta creado se procede a crear uno nuevo con un insert
                     if (conteo == 0)
                     {
-                        
+
 
                         cn.abrir();
                         SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Número de parte],Descripción,[Fecha Ingreso 1],[Hora ingreso 1],[Error Humano]) values (@Usuario,@NumeroSerie,@NumeroParte,@Descripcion,@fechaIngreso,@horaIngreso,@ErrorHumano)", cn.conectarBD);
@@ -546,11 +546,11 @@ namespace Electrónicos
                         cmd.Parameters.AddWithValue("@horaIngreso", DateTime.Now.ToString("HH:mm:ss"));
                         cmd.Parameters.AddWithValue("@ErrorHumano", 5);
 
-                        
+
                         cmd.ExecuteNonQuery();
                         cn.cerrar();
                     }
-                    
+
                     //Si esta creado se verifica si se completo
                     else
                     {
@@ -568,7 +568,7 @@ namespace Electrónicos
                             RestablecerControles();
                             return;
                         }
-                       
+
 
 
 
@@ -576,7 +576,7 @@ namespace Electrónicos
                         cn.abrir();
                         SqlCommand cmd2 = new SqlCommand("select COUNT([Fecha Final 1]) from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
                         cmd2.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
-                        
+
                         int conteo2 = Convert.ToInt32(cmd2.ExecuteScalar());
                         cn.cerrar();
                         //Si no esta completado, se procede a completar
@@ -592,10 +592,10 @@ namespace Electrónicos
                             RestablecerControles();
                             return;
                         }
-        
+
 
                     }
-           
+
 
                 }
 
@@ -721,17 +721,17 @@ namespace Electrónicos
                 MessageBox.Show("Aun puede continuar intentando");
 
             }
-           
+
             cn.cerrar();
 
 
         }
 
-       
 
-      
 
-       
+
+
+
 
         private void gunaGradientCircleButton1_Click(object sender, EventArgs e)
         {
@@ -796,7 +796,7 @@ namespace Electrónicos
 
         private void gunaGradientCircleButton1_Click_1(object sender, EventArgs e)
         {
-           
+
         }
 
         private void gunaLabel1_Click(object sender, EventArgs e)
@@ -853,7 +853,7 @@ namespace Electrónicos
                 timer1.Stop();
                 NumeroParte = 71212730;
                 Descripcion = "ISU, L-SERIES, ABIS CSM";
-                
+
                 lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
 
                 //Verificar los errores humanos
@@ -873,8 +873,8 @@ namespace Electrónicos
                 decoLeerCSM = false;
 
             }
-            
-            
+
+
         }
 
         private void gunaGradientButton1_Click_1(object sender, EventArgs e)
@@ -926,11 +926,12 @@ namespace Electrónicos
         private void btnRetrabajo_Click(object sender, EventArgs e)
         {
             cn.abrir();
-            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM where [Error Humano] = 0 and [Hora ingreso 2] is null and [Fecha Final 2] is null", cn.conectarBD);                     
+            //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM where [Error Humano] = 0 and [Hora ingreso 2] is null and [Fecha Final 2] is null", cn.conectarBD);
+            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM ", cn.conectarBD);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            
+
             dataGridView1.DataSource = dt;
 
             dataGridView1.Columns[0].Visible = false;
@@ -942,23 +943,65 @@ namespace Electrónicos
             lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
             cn.cerrar();
 
-          
-            
-            
-            
-            
+
+
+
+
+
         }
 
         private void gunaGradientButton2_Click_1(object sender, EventArgs e)
         {
+            
             if (txtMostrarDatos.Visible == true)
             {
                 txtMostrarDatos.Visible = false;
+               
             }
             else
             {
+                
                 txtMostrarDatos.Visible = true;
             }
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Right)
+            {
+                
+                dataGridView1.CurrentCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                ContextMenuStrip menu = new ContextMenuStrip();
+                menu.Items.Add("agregar").Name = "AGREGAR";
+                menu.Items.Add("eliminar").Name = "Eliminar";
+                menu.Items.Add("detalles").Name = "DETALLES";
+
+
+                //Obtienes las coordenadas de la celda seleccionada. 
+                Rectangle coordenada = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+
+                int anchoCelda = coordenada.Location.X; //Ancho de la localizacion de la celda
+                int altoCelda = coordenada.Location.Y;  //Alto de la localizacion de la celda
+
+                //Y para mostrar el menú lo haces de esta forma:  
+                int X = anchoCelda + dataGridView1.Location.X;
+                int Y = altoCelda + dataGridView1.Location.Y -400;
+               
+                //menu.Show(dataGridView1, new Point(X, altoCelda));
+                derecho.Show(dataGridView1, new Point(X, altoCelda));
+            }
+        }
+
+        private void cASAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("casa");
+        }
+
+        private void hofarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("hoda");
         }
     }
 }
