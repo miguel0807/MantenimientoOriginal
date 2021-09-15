@@ -127,14 +127,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Electrónicos.exe" size="80896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Electrónicos.exe" size="81920">
       <assemblyIdentity name="Electrónicos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>D3QSPLkRlj95wJ+82A7e+sEY218/ndfs2RooRSyca4o=</dsig:DigestValue>
+        <dsig:DigestValue>UNvDEJ+zNBD39OT65v62YMirg6s/VzbqAswpIeG50DY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

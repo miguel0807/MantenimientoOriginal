@@ -877,6 +877,7 @@ namespace Electrónicos
                 btnCargarCSM.Visible = false;
                 btnRetrabajo.Visible = false;
                 btnConsola.Visible = false;
+               
                 RegresoInicio();
 
             }
@@ -1220,6 +1221,11 @@ namespace Electrónicos
 
             }
             contadorCSMdesconectado ++;
+        }
+
+        private void gunaGradientButton1_Click_2(object sender, EventArgs e)
+        {
+            EsconderPanel();
         }
     }
 }
