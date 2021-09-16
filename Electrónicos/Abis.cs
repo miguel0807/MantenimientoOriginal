@@ -28,7 +28,9 @@ namespace Electrónicos
         int contadorCSMdesconectado = 0;
         Conexion cn = new Conexion();
 
-        internal static string variableMensaje;
+        internal static string variableMensaje,variableConsola;
+
+        
 
         string NumeroSerie = "";
         string Calibracion1 = "";
@@ -159,18 +161,7 @@ namespace Electrónicos
 
         }
 
-        private void btnLineas_Click(object sender, EventArgs e)
-        {
-            int v1, v2, v3;
-            v1 = 0;
-            v2 = 0;
-            v3 = 0;
-            string cadena = "Calibration: [-1245 -43 230]";
-            obtenerCaracteres(cadena, ref v1, ref v2, ref v3);
-
-            MensajeError("Valores: " + v1 + " " + v2 + " " + v3);
-           // MessageBox.Show("Valores: " + v1 + " " + v2 + " " + v3);
-        }
+      
 
         #region Conexión, desconexión y lectura al puerto Serial
 
@@ -221,6 +212,7 @@ namespace Electrónicos
            
 
             textBox1.Text = textBox1.Text + bufferSalida;
+            variableConsola = variableConsola + bufferSalida;
             txtMostrarDatos.Text = txtMostrarDatos.Text + bufferSalida;
 
             if (sinConectarCSM == false)
@@ -762,74 +754,11 @@ namespace Electrónicos
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            cn.abrir();
+   
 
-            SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Número de parte],[Usuario Calibración],[Número de serie]) values (71212775,'Miguel Alvarado','03599');", cn.conectarBD);
-            cmd.ExecuteNonQuery();
-            cn.cerrar();
-            MensajeError("Completado con exito");
-            //MessageBox.Show("Completado con exito");
-        }
+     
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            cn.abrir();
-            SqlCommand cmd = new SqlCommand("update CSM set [Número de serie] = @NumeroSerie where id = 1;", cn.conectarBD);
-            cmd.Parameters.AddWithValue("@NumeroSerie", "12345");
-            //MessageBox.Show(cmd.CommandText);
-            cmd.ExecuteNonQuery();
-            cn.cerrar();
-            MessageBox.Show("Actualizado con exito");
-        }
-
-        public void button3_Click(object sender, EventArgs e)
-        {
-            /*
-            cn.abrir();
-            SqlCommand cmd1 = new SqlCommand("select Error from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
-            cmd1.Parameters.AddWithValue("@NumeroSerie", "03598");
-
-            int conteo = Convert.ToInt32(cmd1.ExecuteScalar());
-
-            if (conteo == 0)
-            {
-                MessageBox.Show("NO existe");
-            }
-            else
-            {
-                MessageBox.Show("existe");
-
-            }
-
-
-
-            cn.cerrar();
-            */
-
-            //Actualizar el contador de errores humanos
-            cn.abrir();
-            SqlCommand cmd = new SqlCommand("select [Error Humano] from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
-            cmd.Parameters.AddWithValue("@NumeroSerie", "03407");
-
-
-            int conteo = Convert.ToInt32(cmd.ExecuteScalar());
-
-            if (conteo == 0)
-            {
-                MessageBox.Show("No se permiten mas intentos");
-            }
-            else if (conteo >= 1)
-            {
-                MessageBox.Show("Aun puede continuar intentando");
-
-            }
-
-            cn.cerrar();
-
-
-        }
+        
 
 
 
@@ -1136,6 +1065,14 @@ namespace Electrónicos
                 panelConsola.Visible = true;
                 //panelConsola.Size = new System.Drawing.Size(953, 484);
                 panelConsola.Location = new Point(24, 237);
+
+                
+
+                Form frm = new Consola();
+
+
+                frm.Show();
+
             }
         }
 

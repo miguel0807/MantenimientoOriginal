@@ -58,6 +58,12 @@
       <DependentUpon>Abis.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
+    <Compile Include="Consola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consola.Designer.cs">
+      <DependentUpon>Consola.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mensajes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Abis.resx">
       <DependentUpon>Abis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consola.resx">
+      <DependentUpon>Consola.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mensajes.resx">
       <DependentUpon>Mensajes.cs</DependentUpon>
