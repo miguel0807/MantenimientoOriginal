@@ -53,8 +53,9 @@ namespace Electrónicos
         }
 
         //Evento cuando se presiona alguna tecla en txtDatosEnviar
-        private void txtEnviarDatos_KeyPress(object sender, KeyPressEventArgs e)
+        public  void txtEnviarDatos_KeyPress(object sender, KeyPressEventArgs e)
         {
+            /*
             textBox1.Text = "";
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
@@ -86,8 +87,46 @@ namespace Electrónicos
                 PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
                 txtEnviarDatos.Text = "";
             }
+            */
+
+            metodoClick(sender,  e);
+
         }
 
+        public void metodoClick(object sender, KeyPressEventArgs e)
+        {
+            textBox1.Text = "";
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+
+                try
+                {
+                    //PuertoSerie.DiscardOutBuffer();
+
+
+
+                    PuertoSerie.Write(txtEnviarDatos.Text);
+
+                    PuertoSerie.Write(new byte[] { 13, 10 }, 0, 2);
+
+                    txtEnviarDatos.Text = "";
+
+
+
+                }
+                catch (Exception exc)
+                {
+                    MensajeError(exc.Message.ToString());
+                    // MessageBox.Show(exc.Message.ToString());
+                }
+            }
+
+            else if ((int)e.KeyChar == (int)Keys.Escape)
+            {
+                PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
+                txtEnviarDatos.Text = "";
+            }
+        }
         //Evento que esconde el panel al ser presionado
         private void btnEsconderConexion_Click(object sender, EventArgs e)
         {
@@ -832,15 +871,7 @@ namespace Electrónicos
             EsconderPanel();
         }
 
-        private void gunaGradientCircleButton1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btnCalibracion_Click_1(object sender, EventArgs e)
         {
@@ -878,10 +909,7 @@ namespace Electrónicos
             }
         }
 
-        private void txtEnviarDatos_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -1072,6 +1100,8 @@ namespace Electrónicos
 
 
                 frm.Show();
+                
+
 
             }
         }
@@ -1198,6 +1228,16 @@ namespace Electrónicos
             Form frm = new Mensajes();
 
             frm.ShowDialog();
+        }
+
+        public void button1_Click(object sender, EventArgs e)
+        {
+            btnCargarCSM.Visible = false;
+        }
+
+        public void publico()
+        {
+            btnCargarCSM.Visible = false;
         }
     }
 }

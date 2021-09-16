@@ -75,6 +75,7 @@ namespace Electrónicos
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEstadoConexion = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.derecho.SuspendLayout();
             this.panelConsola.SuspendLayout();
@@ -506,7 +507,6 @@ namespace Electrónicos
             this.txtEnviarDatos.Size = new System.Drawing.Size(176, 22);
             this.txtEnviarDatos.TabIndex = 28;
             this.txtEnviarDatos.Visible = false;
-            this.txtEnviarDatos.TextChanged += new System.EventHandler(this.txtEnviarDatos_TextChanged);
             this.txtEnviarDatos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEnviarDatos_KeyPress);
             // 
             // btnCargarCSM
@@ -601,7 +601,6 @@ namespace Electrónicos
             this.lblNumeroSerie.Size = new System.Drawing.Size(190, 19);
             this.lblNumeroSerie.TabIndex = 48;
             this.lblNumeroSerie.Text = "Número de serie: N/A";
-            this.lblNumeroSerie.Click += new System.EventHandler(this.gunaLabel1_Click);
             // 
             // panel6
             // 
@@ -814,12 +813,23 @@ namespace Electrónicos
             this.lblEstadoConexion.TabIndex = 10;
             this.lblEstadoConexion.Text = "Estado : Desconectado";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(493, 144);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 48);
+            this.button1.TabIndex = 64;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Abis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1221, 743);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panelConsola);
             this.Controls.Add(this.btnColocarArriba);
             this.Controls.Add(this.btnConsola);
@@ -897,5 +907,6 @@ namespace Electrónicos
         private System.Windows.Forms.Timer timerDesconectadoCSM;
         private Guna.UI.WinForms.GunaGradientPanel panelConsola;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
+        public System.Windows.Forms.Button button1;
     }
 }
