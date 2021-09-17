@@ -723,7 +723,7 @@ namespace Electrónicos
 
 
 
-                        if (conteoErrores == 0)
+                        if (conteoErrores == 0 & TipoEstado!="Completado")
                         {
                             cn.abrir();
                             cmd5.Parameters.AddWithValue("@Estado", "Retrabajo");
@@ -793,7 +793,43 @@ namespace Electrónicos
             int numeroLinea = 1;
             string Mensaje = "";
 
-            
+           
+
+                //Verificar si se completo y detiene el seguimiento de la macro
+            cn.abrir();
+            SqlCommand cmd3 = new SqlCommand("select Estado from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+            cmd3.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+
+
+            SqlDataReader leer1;
+            string TipoEstado = "";
+            leer1 = cmd3.ExecuteReader();
+
+            if (leer1.Read() == true)
+            {
+                TipoEstado = leer1.GetString(0);
+
+            }
+
+
+
+            leer1.Close();
+            cn.cerrar();
+
+
+
+
+            if (TipoEstado == "Completado")
+            {
+                
+                btnCalibracion.Visible = true;
+                pic1.Visible = false;
+                btnEnPosicion.Visible = false;
+                lblInstruccion.Visible = false;
+                return;
+            }
+
+
 
             foreach (string linea in textBox1.Lines)
             {
@@ -898,7 +934,7 @@ namespace Electrónicos
                     cmd.Parameters.AddWithValue("@Estado", "Completado");
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Se actualizo" + NumeroSerie + "desviacion =" + Desviacion + " calibracion= " + Calibracion1); 
+                   // MessageBox.Show("Se actualizo" + NumeroSerie + "desviacion =" + Desviacion + " calibracion= " + Calibracion1); 
                     cn.cerrar();
 
 
@@ -1077,8 +1113,35 @@ namespace Electrónicos
 
                 btnCalibracion.Visible = false;
 
+
+                //Verificar si se completo y detiene el seguimiento de la macro
+                cn.abrir();
+                SqlCommand cmd3 = new SqlCommand("select Estado from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                cmd3.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+
+
+                SqlDataReader leer1;
+                string TipoEstado = "";
+                leer1 = cmd3.ExecuteReader();
+
+                if (leer1.Read() == true)
+                {
+                    TipoEstado = leer1.GetString(0);
+
+                }
+
+
+
+                leer1.Close();
+                cn.cerrar();
+
+
+
+                
+
+
                 //Activa botones e imagenes si el modo retrabajo se encuentra activo
-                if (ModoRetrabajo == true)
+                if (ModoRetrabajo == true & TipoEstado != "Completado")
                 {
                     pic1.Visible = true;
                     lblInstruccion.Visible = true;

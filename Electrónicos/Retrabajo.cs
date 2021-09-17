@@ -23,7 +23,7 @@ namespace Electrónicos
         {
             cn.abrir();
             //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM where [Error Humano] = 0 and [Hora ingreso 2] is null and [Fecha Final 2] is null", cn.conectarBD);
-            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM ", cn.conectarBD);
+            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM where CONVERT(char,Estado)='Retrabajo' ", cn.conectarBD);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -38,6 +38,11 @@ namespace Electrónicos
 
             lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
             cn.cerrar();
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                gunaGradientButton1.Visible = false;
+            }
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -102,6 +107,7 @@ namespace Electrónicos
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
             Abis.ModoRetrabajo = true;
+            this.Close();
         }
     }
 }
