@@ -98,5 +98,10 @@ namespace Electrónicos
                 cn.cerrar();
             }
         }
+
+        private void gunaGradientButton1_Click(object sender, EventArgs e)
+        {
+            Abis.ModoRetrabajo = true;
+        }
     }
 }

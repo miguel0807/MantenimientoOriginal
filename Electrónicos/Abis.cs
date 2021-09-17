@@ -22,6 +22,7 @@ namespace Electrónicos
     {
 
         private delegate void DelegadoAcceso(string accion);
+        public static bool ModoRetrabajo = false;
         bool decoCalibracion = false;
         bool decoLeerCSM = true;
         bool sinConectarCSM = false;
@@ -393,8 +394,14 @@ namespace Electrónicos
         {
             int numeroLinea = 1;
             string Mensaje = "";
+            
+            if (ModoRetrabajo == true)
+            {
+                DecodificadorRetrabajo();
+                return;
+            }
 
-            if (decoCalibracion == true)
+            else if (decoCalibracion == true)
             {
                 DecodificadorInicial();
 
@@ -629,7 +636,37 @@ namespace Electrónicos
 
                 numeroLinea++;
             }
+            cn.cerrar();
+            //Verificar si se completo y detiene el seguimiento de la macro
+            cn.abrir();
+            SqlCommand cmd3 = new SqlCommand("select Estado from CSM where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+            cmd3.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+           
+            
+            SqlDataReader leer1;
+            string TipoEstado = "";
+            leer1 = cmd3.ExecuteReader();
 
+            if (leer1.Read() == true)
+            {
+                TipoEstado = leer1.GetString(0);
+
+            }
+
+
+
+            leer1.Close();
+            cn.cerrar();
+
+
+
+
+            if (TipoEstado == "Completado")
+            {
+                //RestablecerControles();
+                btnCalibracion.Visible = false;
+                return;
+            }
 
             if (Mensaje != "")
             {
@@ -751,6 +788,148 @@ namespace Electrónicos
 
         }
 
+        private void DecodificadorRetrabajo()
+        {
+            int numeroLinea = 1;
+            string Mensaje = "";
+
+            
+
+            foreach (string linea in textBox1.Lines)
+            {
+                //Indica la posición del CSM
+                if (linea == "Place CSM with LED side up and press Enter!")
+                {
+
+                    pic1.Image = Properties.Resources.Picture2;
+                    lblInstruccion.Text = "Coloque en posición hacia arriba el CSM";
+                    // Mensaje = "Coloque CSM en posición hacia Arriba";
+                }
+
+                else if (linea == "Place CSM with flat side down and press Enter!")
+                {
+                    pic1.Image = Properties.Resources.Picture3;
+                    lblInstruccion.Text = "Coloque en posición hacia abajo el CSM";
+
+                    // Mensaje = "Coloque el CSM en posición hacia abajo";
+                }
+
+                else if (linea == "Place CSM in orientation the reference bracket and press Enter!")
+                {
+                    pic1.Image = Properties.Resources.Picture1;
+                    lblInstruccion.Text = "Coloque el CSM en el bracket";
+                    //Mensaje = "Coloque el CSM de lado";
+                }
+
+
+                //Almacenar valores de la calibración
+                if (linea.Contains("Calibration:"))
+                {
+
+
+                    int inicio = linea.IndexOf("[");
+
+                    try
+                    {
+                        int final = linea.IndexOf("]", inicio);
+                        Calibracion1 = linea.Substring(inicio, final + 1 - inicio);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("{0} Exception caught.", e);
+                    }
+
+
+
+
+                }
+
+                //Almacenar valores de la calibración
+                if (linea.Contains("Deviation: ["))
+                {
+
+
+                    int inicio = linea.IndexOf("[") - 1;
+                    int final = linea.IndexOf("]", inicio);
+
+                    try
+                    {
+                        Desviacion = linea.Substring(inicio, final + 1 - inicio);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("{0} Exception caught.", e);
+                    }
+
+
+
+
+
+
+                }
+
+             
+
+                //En caso de fallo
+                if (linea.Contains("CALIBRATION FAILED! PRESS ENTER TO CONTINUE!"))
+                {
+                    MensajeError("La calibración fallo, vuelva a repetir el proceso.");
+                    //MessageBox.Show("La calibración fallo, vuelva a repetir el proceso");
+
+                   
+
+                    RestablecerControles();
+
+                    
+
+                }
+
+                //En caso de que finalice sin problemas
+                else if (linea.Contains("Calibration saved! Disconnect the CSM!"))
+                {
+                    //Actualizar los datos finales de la calibración del CSM
+                    cn.abrir();
+                    SqlCommand cmd = new SqlCommand("update CSM set [Fecha Final 2] = @fechaFinal, [Hora Final 2] = @horaFinal,[Calibración 2] = @Calibracion, [Bracket 2]= @Desviacion, Estado = @Estado   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                    cmd.Parameters.AddWithValue("@fechaFinal", DateTime.Now.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@horaFinal", DateTime.Now.ToString("HH:mm:ss"));
+                    cmd.Parameters.AddWithValue("@Calibracion", Calibracion1);
+                    cmd.Parameters.AddWithValue("@Desviacion", Desviacion);
+                    cmd.Parameters.AddWithValue("@Estado", "Completado");
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Se actualizo" + NumeroSerie + "desviacion =" + Desviacion + " calibracion= " + Calibracion1); 
+                    cn.cerrar();
+
+
+                    Mensaje = "La calibración fue un exito, desconecte el cable del CSM";
+                    RestablecerControles();
+                   // decoCalibracion = true;
+                    RegresoInicio();
+                    btnCargarCSM.Visible = true;
+
+                    ModoRetrabajo = false;
+                    decoCalibracion = false;
+                    decoLeerCSM = true;
+                    sinConectarCSM = false;
+
+                }
+
+
+                numeroLinea++;
+            }
+
+            ActualizarDatos();  //Actualiza la información de error humano y Estado
+
+            //Enviar mensaje a mostrar
+            if (Mensaje != "")
+            {
+                MensajeError(Mensaje);
+                //MessageBox.Show(Mensaje);
+            }
+        
+        }
+
         //Restablece la configuración a sus valores iniciales al finalizar la calibración
         private void RestablecerControles()
         {
@@ -765,7 +944,7 @@ namespace Electrónicos
             BtEscape();
             AccesoInterrupcion("");
             textBox1.Text = "";
-            NumeroSerie = "";
+            //NumeroSerie = "";
             Calibracion1 = "";
             btnCalibracion.Focus();
         }
@@ -839,6 +1018,14 @@ namespace Electrónicos
                     btnConsola.Visible = true;
                     btnCargarCSM.Visible = true;
 
+                    ModoRetrabajo = false;
+                    decoCalibracion = false;
+                    decoLeerCSM = true;
+                    sinConectarCSM = false;
+        
+
+
+
                 }
 
 
@@ -854,11 +1041,15 @@ namespace Electrónicos
                 btnCargarCSM.Visible = false;
                 btnRetrabajo.Visible = false;
                 btnConsola.Visible = false;
-               
+                pic1.Visible = false;
+                lblInstruccion.Visible = false;
+                btnEnPosicion.Visible = false;
+
                 RegresoInicio();
 
             }
 
+            ModoRetrabajo = false; //Desactiva el modo retrabajo
             EsconderPanel();
         }
 
@@ -886,8 +1077,13 @@ namespace Electrónicos
 
                 btnCalibracion.Visible = false;
 
-
-                
+                //Activa botones e imagenes si el modo retrabajo se encuentra activo
+                if (ModoRetrabajo == true)
+                {
+                    pic1.Visible = true;
+                    lblInstruccion.Visible = true;
+                    btnEnPosicion.Visible = true;
+                }
 
                
                 decoCalibracion = true;
@@ -1137,6 +1333,11 @@ namespace Electrónicos
         {
             Form frm = new Retrabajo();
             frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cn.abrir();
         }
 
         private void btnEnPosicion_Click(object sender, EventArgs e)
