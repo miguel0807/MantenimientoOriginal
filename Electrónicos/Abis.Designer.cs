@@ -145,12 +145,12 @@ namespace Electrónicos
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.textBox1.Location = new System.Drawing.Point(867, 206);
+            this.textBox1.Location = new System.Drawing.Point(517, 196);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(282, 27);
+            this.textBox1.Size = new System.Drawing.Size(308, 25);
             this.textBox1.TabIndex = 36;
             this.textBox1.Visible = false;
             // 
@@ -670,8 +670,8 @@ namespace Electrónicos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1221, 743);
-            this.Controls.Add(this.btnCalibracion);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnCalibracion);
             this.Controls.Add(this.lblInstruccion);
             this.Controls.Add(this.txtEnviarDatos);
             this.Controls.Add(this.txtMostrarDatos);

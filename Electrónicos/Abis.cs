@@ -412,6 +412,7 @@ namespace Electrónicos
                 //Indica la posición del CSM
                 if (linea == "Place CSM with LED side up and press Enter!")
                 {
+                    
                     pic1.Image = Properties.Resources.Picture2;
                     lblInstruccion.Text = "Coloque en posición hacia arriba el CSM";
                     // Mensaje = "Coloque CSM en posición hacia Arriba";
@@ -421,6 +422,7 @@ namespace Electrónicos
                 {
                     pic1.Image = Properties.Resources.Picture3;
                     lblInstruccion.Text = "Coloque en posición hacia abajo el CSM";
+                   
                     // Mensaje = "Coloque el CSM en posición hacia abajo";
                 }
 
@@ -481,7 +483,7 @@ namespace Electrónicos
                 //En caso de fallo
                 if (linea.Contains("CALIBRATION FAILED! PRESS ENTER TO CONTINUE!"))
                 {
-                    MensajeError("La calibración fallo, vuelva a repetir el proceso");
+                    MensajeError("La calibración fallo, vuelva a repetir el proceso.");
                     //MessageBox.Show("La calibración fallo, vuelva a repetir el proceso");
 
 
@@ -500,7 +502,7 @@ namespace Electrónicos
                     {
 
                         cmd1.Parameters.AddWithValue("@Estado", "Retrabajo");
-                        MensajeError("No se permiten mas intentos");
+                        MensajeError("No se permiten mas intentos.");
                         //MessageBox.Show("No se permiten mas intentos");
                     }
                     else if (conteoErrores >= 1)
@@ -511,7 +513,7 @@ namespace Electrónicos
                         
                         cmd1.Parameters.AddWithValue("@Estado", "Pendiente calibración");
                         
-                        MensajeError("Se resto 1 al contador de errores");
+                        MensajeError("Se resto 1 al contador de errores.");
                         //MessageBox.Show("Se resto 1 al contador de errores");
 
                     }
@@ -525,6 +527,9 @@ namespace Electrónicos
 
 
                     RestablecerControles();
+                    
+                    decoCalibracion = true;
+                    
                 }
 
                 //En caso de que finalice sin problemas
@@ -614,8 +619,11 @@ namespace Electrónicos
 
                 if (linea == "Place CSM with LED side up and press Enter!")
                 {
+                    
+                    pic1.Image = Properties.Resources.Picture2;
+                    lblInstruccion.Text = "Coloque en posición hacia arriba el CSM";
                     //Mensaje = "Coloque CSM en posición hacia Arriba";
-                    Mensaje = "Inicio del proceso de calibración";
+                    Mensaje = "Inicio del proceso de calibración.";
                 }
 
 
@@ -711,7 +719,7 @@ namespace Electrónicos
                         //Si no esta completado, se procede a completar
                         if (conteo2 == 0)
                         {
-                            MensajeError("Este CSM quedo incompleto, comenzado nuevamente la calibración");
+                            MensajeError("Este CSM quedo incompleto, comenzado nuevamente la calibración.");
                             //MessageBox.Show("Este CSM quedo incompleto, comenzado nuevamente la calibración");
                         }
 
@@ -733,6 +741,11 @@ namespace Electrónicos
                 ActualizarDatos();
 
                 MensajeError(Mensaje);
+
+                pic1.Visible = true;
+                lblInstruccion.Visible = true;
+                btnEnPosicion.Visible = true;
+
                 //MessageBox.Show(Mensaje);
             }
 
@@ -741,8 +754,9 @@ namespace Electrónicos
         //Restablece la configuración a sus valores iniciales al finalizar la calibración
         private void RestablecerControles()
         {
+            lblInstruccion.Visible = false;
+            pic1.Visible = false;
             btnEnPosicion.Visible = false;
-          
             btnCalibracion.Visible = true;
 
             textBox1.Text = "";
@@ -873,10 +887,9 @@ namespace Electrónicos
                 btnCalibracion.Visible = false;
 
 
-                btnEnPosicion.Visible = true;
+                
 
-                pic1.Visible = true;
-                lblInstruccion.Visible = true;
+               
                 decoCalibracion = true;
                 tipoCalibracion = 0;
 
