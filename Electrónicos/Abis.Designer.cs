@@ -30,32 +30,23 @@ namespace Electrónicos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Abis));
             this.PuertoSerie = new System.IO.Ports.SerialPort(this.components);
             this.btnCalibracion = new Guna.UI.WinForms.GunaGradientTileButton();
-            this.btnColocarArriba = new Guna.UI.WinForms.GunaGradientCircleButton();
-            this.btnColocarAbajo = new Guna.UI.WinForms.GunaGradientCircleButton();
-            this.btnColocarLado = new Guna.UI.WinForms.GunaGradientCircleButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblInstruccion = new System.Windows.Forms.Label();
+            this.txtMostrarDatos = new System.Windows.Forms.TextBox();
+            this.txtEnviarDatos = new System.Windows.Forms.TextBox();
             this.btnRetrabajo = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMostrar = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblResgistros = new System.Windows.Forms.Label();
             this.btnConsola = new Guna.UI.WinForms.GunaGradientButton();
             this.derecho = new Guna.UI.WinForms.GunaContextMenuStrip();
             this.cASAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hofarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerDesconectadoCSM = new System.Windows.Forms.Timer(this.components);
-            this.panelConsola = new Guna.UI.WinForms.GunaGradientPanel();
-            this.txtMostrarDatos = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtEnviarDatos = new System.Windows.Forms.TextBox();
+            this.pic1 = new Guna.UI.WinForms.GunaPictureBox();
             this.btnCargarCSM = new Guna.UI.WinForms.GunaGradientButton();
             this.panelInformacion = new Guna.UI.WinForms.GunaGradientPanel();
             this.lblEstado = new Guna.UI.WinForms.GunaLabel();
@@ -75,10 +66,10 @@ namespace Electrónicos
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEstadoConexion = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnEnPosicion = new Guna.UI.WinForms.GunaGradientButton();
+            this.timerConsola = new System.Windows.Forms.Timer(this.components);
             this.derecho.SuspendLayout();
-            this.panelConsola.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.panelInformacion.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +94,7 @@ namespace Electrónicos
             this.btnCalibracion.ForeColor = System.Drawing.Color.White;
             this.btnCalibracion.Image = null;
             this.btnCalibracion.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnCalibracion.Location = new System.Drawing.Point(37, 258);
+            this.btnCalibracion.Location = new System.Drawing.Point(281, 164);
             this.btnCalibracion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCalibracion.Name = "btnCalibracion";
             this.btnCalibracion.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
@@ -113,98 +104,11 @@ namespace Electrónicos
             this.btnCalibracion.OnHoverImage = null;
             this.btnCalibracion.OnPressedColor = System.Drawing.Color.Black;
             this.btnCalibracion.Radius = 20;
-            this.btnCalibracion.Size = new System.Drawing.Size(289, 110);
+            this.btnCalibracion.Size = new System.Drawing.Size(150, 65);
             this.btnCalibracion.TabIndex = 1;
             this.btnCalibracion.Text = "Calibración";
             this.btnCalibracion.Visible = false;
             this.btnCalibracion.Click += new System.EventHandler(this.btnCalibracion_Click_1);
-            // 
-            // btnColocarArriba
-            // 
-            this.btnColocarArriba.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnColocarArriba.AnimationHoverSpeed = 0.07F;
-            this.btnColocarArriba.AnimationSpeed = 0.03F;
-            this.btnColocarArriba.BaseColor1 = System.Drawing.Color.Gray;
-            this.btnColocarArriba.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.btnColocarArriba.BorderColor = System.Drawing.Color.Black;
-            this.btnColocarArriba.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnColocarArriba.FocusedColor = System.Drawing.Color.Empty;
-            this.btnColocarArriba.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnColocarArriba.ForeColor = System.Drawing.Color.White;
-            this.btnColocarArriba.Image = null;
-            this.btnColocarArriba.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnColocarArriba.Location = new System.Drawing.Point(437, 249);
-            this.btnColocarArriba.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnColocarArriba.Name = "btnColocarArriba";
-            this.btnColocarArriba.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.btnColocarArriba.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.btnColocarArriba.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnColocarArriba.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnColocarArriba.OnHoverImage = null;
-            this.btnColocarArriba.OnPressedColor = System.Drawing.Color.Black;
-            this.btnColocarArriba.Size = new System.Drawing.Size(231, 92);
-            this.btnColocarArriba.TabIndex = 42;
-            this.btnColocarArriba.Text = "CSM colocado hacia arriba";
-            this.btnColocarArriba.Visible = false;
-            this.btnColocarArriba.Click += new System.EventHandler(this.gunaGradientCircleButton1_Click);
-            // 
-            // btnColocarAbajo
-            // 
-            this.btnColocarAbajo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnColocarAbajo.AnimationHoverSpeed = 0.07F;
-            this.btnColocarAbajo.AnimationSpeed = 0.03F;
-            this.btnColocarAbajo.BaseColor1 = System.Drawing.Color.Gray;
-            this.btnColocarAbajo.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.btnColocarAbajo.BorderColor = System.Drawing.Color.Black;
-            this.btnColocarAbajo.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnColocarAbajo.FocusedColor = System.Drawing.Color.Empty;
-            this.btnColocarAbajo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnColocarAbajo.ForeColor = System.Drawing.Color.White;
-            this.btnColocarAbajo.Image = null;
-            this.btnColocarAbajo.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnColocarAbajo.Location = new System.Drawing.Point(436, 346);
-            this.btnColocarAbajo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnColocarAbajo.Name = "btnColocarAbajo";
-            this.btnColocarAbajo.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.btnColocarAbajo.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.btnColocarAbajo.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnColocarAbajo.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnColocarAbajo.OnHoverImage = null;
-            this.btnColocarAbajo.OnPressedColor = System.Drawing.Color.Black;
-            this.btnColocarAbajo.Size = new System.Drawing.Size(232, 92);
-            this.btnColocarAbajo.TabIndex = 43;
-            this.btnColocarAbajo.Text = "CSM colocado hacia abajo";
-            this.btnColocarAbajo.Visible = false;
-            this.btnColocarAbajo.Click += new System.EventHandler(this.gunaGradientCircleButton2_Click);
-            // 
-            // btnColocarLado
-            // 
-            this.btnColocarLado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnColocarLado.AnimationHoverSpeed = 0.07F;
-            this.btnColocarLado.AnimationSpeed = 0.03F;
-            this.btnColocarLado.BaseColor1 = System.Drawing.Color.Gray;
-            this.btnColocarLado.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.btnColocarLado.BorderColor = System.Drawing.Color.Black;
-            this.btnColocarLado.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnColocarLado.FocusedColor = System.Drawing.Color.Empty;
-            this.btnColocarLado.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnColocarLado.ForeColor = System.Drawing.Color.White;
-            this.btnColocarLado.Image = null;
-            this.btnColocarLado.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnColocarLado.Location = new System.Drawing.Point(704, 311);
-            this.btnColocarLado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnColocarLado.Name = "btnColocarLado";
-            this.btnColocarLado.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.btnColocarLado.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.btnColocarLado.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnColocarLado.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnColocarLado.OnHoverImage = null;
-            this.btnColocarLado.OnPressedColor = System.Drawing.Color.Black;
-            this.btnColocarLado.Size = new System.Drawing.Size(245, 84);
-            this.btnColocarLado.TabIndex = 44;
-            this.btnColocarLado.Text = "CSM colocado de lado";
-            this.btnColocarLado.Visible = false;
-            this.btnColocarLado.Click += new System.EventHandler(this.gunaGradientCircleButton3_Click);
             // 
             // timer1
             // 
@@ -224,7 +128,7 @@ namespace Electrónicos
             this.gunaCircleProgressBar1.IdleOffset = 20;
             this.gunaCircleProgressBar1.Image = null;
             this.gunaCircleProgressBar1.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(521, 12);
+            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(479, 15);
             this.gunaCircleProgressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaCircleProgressBar1.Name = "gunaCircleProgressBar1";
             this.gunaCircleProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -235,6 +139,65 @@ namespace Electrónicos
             this.gunaCircleProgressBar1.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             this.gunaCircleProgressBar1.UseProgressPercentText = true;
             this.gunaCircleProgressBar1.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.textBox1.Location = new System.Drawing.Point(867, 206);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(282, 27);
+            this.textBox1.TabIndex = 36;
+            this.textBox1.Visible = false;
+            // 
+            // lblInstruccion
+            // 
+            this.lblInstruccion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblInstruccion.AutoSize = true;
+            this.lblInstruccion.BackColor = System.Drawing.Color.Transparent;
+            this.lblInstruccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstruccion.ForeColor = System.Drawing.Color.White;
+            this.lblInstruccion.Location = new System.Drawing.Point(20, 271);
+            this.lblInstruccion.Name = "lblInstruccion";
+            this.lblInstruccion.Size = new System.Drawing.Size(413, 23);
+            this.lblInstruccion.TabIndex = 51;
+            this.lblInstruccion.Text = "Coloque en posición hacia arriba el CSM";
+            this.lblInstruccion.Visible = false;
+            // 
+            // txtMostrarDatos
+            // 
+            this.txtMostrarDatos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMostrarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
+            this.txtMostrarDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMostrarDatos.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.txtMostrarDatos.Location = new System.Drawing.Point(867, 280);
+            this.txtMostrarDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMostrarDatos.Multiline = true;
+            this.txtMostrarDatos.Name = "txtMostrarDatos";
+            this.txtMostrarDatos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMostrarDatos.Size = new System.Drawing.Size(342, 448);
+            this.txtMostrarDatos.TabIndex = 29;
+            this.txtMostrarDatos.Visible = false;
+            // 
+            // txtEnviarDatos
+            // 
+            this.txtEnviarDatos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEnviarDatos.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtEnviarDatos.Location = new System.Drawing.Point(867, 258);
+            this.txtEnviarDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEnviarDatos.Name = "txtEnviarDatos";
+            this.txtEnviarDatos.Size = new System.Drawing.Size(342, 22);
+            this.txtEnviarDatos.TabIndex = 28;
+            this.txtEnviarDatos.Visible = false;
+            this.txtEnviarDatos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEnviarDatos_KeyPress);
             // 
             // btnRetrabajo
             // 
@@ -269,111 +232,17 @@ namespace Electrónicos
             this.btnRetrabajo.Text = "Retrabajo";
             this.btnRetrabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnRetrabajo.Visible = false;
-            this.btnRetrabajo.Click += new System.EventHandler(this.gunaGradientButton1_Click_1);
             // 
             // gunaSeparator1
             // 
             this.gunaSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator1.Location = new System.Drawing.Point(24, 226);
+            this.gunaSeparator1.Location = new System.Drawing.Point(12, 233);
             this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaSeparator1.Name = "gunaSeparator1";
-            this.gunaSeparator1.Size = new System.Drawing.Size(1168, 17);
+            this.gunaSeparator1.Size = new System.Drawing.Size(1197, 10);
             this.gunaSeparator1.TabIndex = 57;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(33, 402);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 23);
-            this.label3.TabIndex = 60;
-            this.label3.Text = "Mostrar";
-            this.label3.Visible = false;
-            // 
-            // txtMostrar
-            // 
-            this.txtMostrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtMostrar.ForeColor = System.Drawing.Color.Black;
-            this.txtMostrar.Location = new System.Drawing.Point(120, 400);
-            this.txtMostrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMostrar.Name = "txtMostrar";
-            this.txtMostrar.Size = new System.Drawing.Size(56, 32);
-            this.txtMostrar.TabIndex = 59;
-            this.txtMostrar.Text = "30";
-            this.txtMostrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtMostrar.Visible = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 65;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.Silver;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 433);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1147, 278);
-            this.dataGridView1.TabIndex = 61;
-            this.dataGridView1.Visible = false;
-            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
-            // 
-            // lblResgistros
-            // 
-            this.lblResgistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblResgistros.AutoSize = true;
-            this.lblResgistros.BackColor = System.Drawing.Color.Transparent;
-            this.lblResgistros.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResgistros.ForeColor = System.Drawing.Color.White;
-            this.lblResgistros.Location = new System.Drawing.Point(20, 714);
-            this.lblResgistros.Name = "lblResgistros";
-            this.lblResgistros.Size = new System.Drawing.Size(225, 23);
-            this.lblResgistros.TabIndex = 49;
-            this.lblResgistros.Text = "Cantidad de registros:";
-            this.lblResgistros.Visible = false;
             // 
             // btnConsola
             // 
@@ -433,81 +302,29 @@ namespace Electrónicos
             this.cASAToolStripMenuItem.Name = "cASAToolStripMenuItem";
             this.cASAToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.cASAToolStripMenuItem.Text = "CASA";
-            this.cASAToolStripMenuItem.Click += new System.EventHandler(this.cASAToolStripMenuItem_Click);
             // 
             // hofarToolStripMenuItem
             // 
             this.hofarToolStripMenuItem.Name = "hofarToolStripMenuItem";
             this.hofarToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.hofarToolStripMenuItem.Text = "hofar";
-            this.hofarToolStripMenuItem.Click += new System.EventHandler(this.hofarToolStripMenuItem_Click);
             // 
             // timerDesconectadoCSM
             // 
             this.timerDesconectadoCSM.Interval = 1000;
             this.timerDesconectadoCSM.Tick += new System.EventHandler(this.timerDesconectadoCSM_Tick);
             // 
-            // panelConsola
+            // pic1
             // 
-            this.panelConsola.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelConsola.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelConsola.BackgroundImage")));
-            this.panelConsola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelConsola.Controls.Add(this.txtMostrarDatos);
-            this.panelConsola.Controls.Add(this.textBox1);
-            this.panelConsola.Controls.Add(this.txtEnviarDatos);
-            this.panelConsola.GradientColor1 = System.Drawing.Color.White;
-            this.panelConsola.GradientColor2 = System.Drawing.Color.White;
-            this.panelConsola.GradientColor3 = System.Drawing.Color.White;
-            this.panelConsola.GradientColor4 = System.Drawing.Color.White;
-            this.panelConsola.Location = new System.Drawing.Point(978, 271);
-            this.panelConsola.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelConsola.Name = "panelConsola";
-            this.panelConsola.Size = new System.Drawing.Size(176, 70);
-            this.panelConsola.TabIndex = 63;
-            this.panelConsola.Text = "gunaGradientPanel1";
-            this.panelConsola.Visible = false;
-            // 
-            // txtMostrarDatos
-            // 
-            this.txtMostrarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
-            this.txtMostrarDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMostrarDatos.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtMostrarDatos.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.txtMostrarDatos.Location = new System.Drawing.Point(0, 22);
-            this.txtMostrarDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMostrarDatos.Multiline = true;
-            this.txtMostrarDatos.Name = "txtMostrarDatos";
-            this.txtMostrarDatos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMostrarDatos.Size = new System.Drawing.Size(625, 48);
-            this.txtMostrarDatos.TabIndex = 29;
-            this.txtMostrarDatos.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.textBox1.Location = new System.Drawing.Point(-294, 22);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(470, 48);
-            this.textBox1.TabIndex = 36;
-            this.textBox1.Visible = false;
-            // 
-            // txtEnviarDatos
-            // 
-            this.txtEnviarDatos.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtEnviarDatos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtEnviarDatos.Location = new System.Drawing.Point(0, 0);
-            this.txtEnviarDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEnviarDatos.Name = "txtEnviarDatos";
-            this.txtEnviarDatos.Size = new System.Drawing.Size(176, 22);
-            this.txtEnviarDatos.TabIndex = 28;
-            this.txtEnviarDatos.Visible = false;
-            this.txtEnviarDatos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEnviarDatos_KeyPress);
+            this.pic1.BaseColor = System.Drawing.Color.White;
+            this.pic1.Image = global::Electrónicos.Properties.Resources.Picture2;
+            this.pic1.Location = new System.Drawing.Point(24, 309);
+            this.pic1.Name = "pic1";
+            this.pic1.Size = new System.Drawing.Size(605, 422);
+            this.pic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic1.TabIndex = 64;
+            this.pic1.TabStop = false;
+            this.pic1.Visible = false;
             // 
             // btnCargarCSM
             // 
@@ -813,15 +630,39 @@ namespace Electrónicos
             this.lblEstadoConexion.TabIndex = 10;
             this.lblEstadoConexion.Text = "Estado : Desconectado";
             // 
-            // button1
+            // btnEnPosicion
             // 
-            this.button1.Location = new System.Drawing.Point(493, 144);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 48);
-            this.button1.TabIndex = 64;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEnPosicion.Animated = true;
+            this.btnEnPosicion.AnimationHoverSpeed = 0.07F;
+            this.btnEnPosicion.AnimationSpeed = 0.03F;
+            this.btnEnPosicion.BackColor = System.Drawing.Color.Transparent;
+            this.btnEnPosicion.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnEnPosicion.BaseColor2 = System.Drawing.Color.DimGray;
+            this.btnEnPosicion.BorderColor = System.Drawing.Color.Black;
+            this.btnEnPosicion.BorderSize = 1;
+            this.btnEnPosicion.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEnPosicion.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEnPosicion.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnPosicion.ForeColor = System.Drawing.Color.White;
+            this.btnEnPosicion.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.btnEnPosicion.Image = null;
+            this.btnEnPosicion.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEnPosicion.Location = new System.Drawing.Point(652, 406);
+            this.btnEnPosicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEnPosicion.Name = "btnEnPosicion";
+            this.btnEnPosicion.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.btnEnPosicion.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnEnPosicion.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEnPosicion.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEnPosicion.OnHoverImage = null;
+            this.btnEnPosicion.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEnPosicion.Radius = 20;
+            this.btnEnPosicion.Size = new System.Drawing.Size(200, 138);
+            this.btnEnPosicion.TabIndex = 68;
+            this.btnEnPosicion.Text = "Colocado en posición";
+            this.btnEnPosicion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnEnPosicion.Visible = false;
+            this.btnEnPosicion.Click += new System.EventHandler(this.btnEnPosicion_Click);
             // 
             // Abis
             // 
@@ -829,33 +670,28 @@ namespace Electrónicos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1221, 743);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panelConsola);
-            this.Controls.Add(this.btnColocarArriba);
+            this.Controls.Add(this.btnCalibracion);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblInstruccion);
+            this.Controls.Add(this.txtEnviarDatos);
+            this.Controls.Add(this.txtMostrarDatos);
+            this.Controls.Add(this.btnEnPosicion);
+            this.Controls.Add(this.pic1);
             this.Controls.Add(this.btnConsola);
-            this.Controls.Add(this.lblResgistros);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtMostrar);
             this.Controls.Add(this.gunaSeparator1);
             this.Controls.Add(this.btnCargarCSM);
             this.Controls.Add(this.btnRetrabajo);
-            this.Controls.Add(this.btnColocarAbajo);
             this.Controls.Add(this.gunaCircleProgressBar1);
             this.Controls.Add(this.panelInformacion);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnColocarLado);
-            this.Controls.Add(this.btnCalibracion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1221, 686);
             this.Name = "Abis";
             this.Text = "Abis";
             this.Load += new System.EventHandler(this.Abis_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.derecho.ResumeLayout(false);
-            this.panelConsola.ResumeLayout(false);
-            this.panelConsola.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
             this.panelInformacion.ResumeLayout(false);
             this.panelInformacion.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -877,9 +713,6 @@ namespace Electrónicos
         private System.Windows.Forms.TextBox txtEnviarDatos;
         private System.IO.Ports.SerialPort PuertoSerie;
         private Guna.UI.WinForms.GunaGradientTileButton btnCalibracion;
-        private Guna.UI.WinForms.GunaGradientCircleButton btnColocarArriba;
-        private Guna.UI.WinForms.GunaGradientCircleButton btnColocarAbajo;
-        private Guna.UI.WinForms.GunaGradientCircleButton btnColocarLado;
         private Guna.UI.WinForms.GunaGradientPanel panel1;
         private Guna.UI.WinForms.GunaGradientButton btnConectar;
         private Guna.UI.WinForms.GunaLabel lblNumeroSerie;
@@ -895,18 +728,16 @@ namespace Electrónicos
         private Guna.UI.WinForms.GunaGradientButton btnRetrabajo;
         private Guna.UI.WinForms.GunaGradientButton btnCargarCSM;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMostrar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lblResgistros;
         private Guna.UI.WinForms.GunaGradientButton btnConsola;
         private Guna.UI.WinForms.GunaContextMenuStrip derecho;
         private System.Windows.Forms.ToolStripMenuItem cASAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hofarToolStripMenuItem;
         private Guna.UI.WinForms.GunaLabel lblEstado;
         private System.Windows.Forms.Timer timerDesconectadoCSM;
-        private Guna.UI.WinForms.GunaGradientPanel panelConsola;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
-        public System.Windows.Forms.Button button1;
+        private Guna.UI.WinForms.GunaPictureBox pic1;
+        private Guna.UI.WinForms.GunaGradientButton btnEnPosicion;
+        private System.Windows.Forms.Label lblInstruccion;
+        private System.Windows.Forms.Timer timerConsola;
     }
 }

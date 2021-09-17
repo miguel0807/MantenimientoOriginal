@@ -52,8 +52,10 @@ namespace Electrónicos
         private void button2_Click(object sender, EventArgs e)
         {
             //Abis frm = new Abis(this);
-            Presentacion.fh.Show();
-            frm.button1_Click(this, null);
+            //Presentacion.
+            //frm.button1_Click(this, null);
+
+            
         }
     }
 }

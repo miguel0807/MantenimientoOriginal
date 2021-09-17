@@ -26,6 +26,7 @@ namespace Electrónicos
         bool decoLeerCSM = true;
         bool sinConectarCSM = false;
         int contadorCSMdesconectado = 0;
+        int tipoCalibracion; // Usada para concatenar las acciones del boton en la calibración
         Conexion cn = new Conexion();
 
         internal static string variableMensaje,variableConsola;
@@ -167,11 +168,11 @@ namespace Electrónicos
 
                 BtEnter();
 
-                btnColocarArriba.Visible = true;
+                btnEnPosicion.Visible = true;
 
                 btnCalibracion.Visible = false;
 
-                btnColocarArriba.Focus();
+               
 
                 decoCalibracion = true;
 
@@ -373,15 +374,11 @@ namespace Electrónicos
         //Restablece la configuración a sus valores iniciales
         private void RegresoInicio()
         {
-            lblResgistros.Visible = false;
-            dataGridView1.Visible = false;
-            txtMostrar.Visible = false;
-            label3.Visible = false;
+            
             btnCalibracion.Visible = false;
            
-            btnColocarAbajo.Visible = false;
-            btnColocarArriba.Visible = false;
-            btnColocarLado.Visible = false;
+            btnEnPosicion.Visible = false;
+           
             btnCargarCSM.Visible = false;
 
 
@@ -415,16 +412,22 @@ namespace Electrónicos
                 //Indica la posición del CSM
                 if (linea == "Place CSM with LED side up and press Enter!")
                 {
+                    pic1.Image = Properties.Resources.Picture2;
+                    lblInstruccion.Text = "Coloque en posición hacia arriba el CSM";
                     // Mensaje = "Coloque CSM en posición hacia Arriba";
                 }
 
                 else if (linea == "Place CSM with flat side down and press Enter!")
                 {
+                    pic1.Image = Properties.Resources.Picture3;
+                    lblInstruccion.Text = "Coloque en posición hacia abajo el CSM";
                     // Mensaje = "Coloque el CSM en posición hacia abajo";
                 }
 
                 else if (linea == "Place CSM in orientation the reference bracket and press Enter!")
                 {
+                    pic1.Image = Properties.Resources.Picture1;
+                    lblInstruccion.Text = "Coloque el CSM en el bracket";
                     //Mensaje = "Coloque el CSM de lado";
                 }
 
@@ -738,9 +741,8 @@ namespace Electrónicos
         //Restablece la configuración a sus valores iniciales al finalizar la calibración
         private void RestablecerControles()
         {
-            btnColocarArriba.Visible = false;
-            btnColocarAbajo.Visible = false;
-            btnColocarLado.Visible = false;
+            btnEnPosicion.Visible = false;
+          
             btnCalibracion.Visible = true;
 
             textBox1.Text = "";
@@ -805,32 +807,7 @@ namespace Electrónicos
 
 
 
-        private void gunaGradientCircleButton1_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            BtEnter();
-            btnColocarAbajo.Visible = true;
-            btnColocarArriba.Visible = false;
-            btnColocarAbajo.Focus();
-
-            decoCalibracion = false;
-        }
-
-        private void gunaGradientCircleButton2_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            BtEnter();
-            btnColocarLado.Visible = true;
-            btnColocarAbajo.Visible = false;
-            btnColocarLado.Focus();
-        }
-
-        private void gunaGradientCircleButton3_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            BtEnter();
-            btnColocarLado.Visible = false;
-        }
+       
 
         //Evento click del boton btnConectar
         private void gunaGradientButton1_Click(object sender, EventArgs e)
@@ -875,6 +852,7 @@ namespace Electrónicos
 
         private void btnCalibracion_Click_1(object sender, EventArgs e)
         {
+            
             if (PuertoSerie.IsOpen == true)
             {
                 NumeroParte = 71212730;
@@ -890,14 +868,17 @@ namespace Electrónicos
 
                 BtEnter();
 
-                btnColocarArriba.Visible = true;
+                
 
                 btnCalibracion.Visible = false;
-              
 
-                btnColocarArriba.Focus();
 
+                btnEnPosicion.Visible = true;
+
+                pic1.Visible = true;
+                lblInstruccion.Visible = true;
                 decoCalibracion = true;
+                tipoCalibracion = 0;
 
 
             }
@@ -980,38 +961,7 @@ namespace Electrónicos
 
         }
 
-        private void gunaGradientButton1_Click_1(object sender, EventArgs e)
-        {
-            if (dataGridView1.Visible == true)
-            {
-                dataGridView1.Visible = false;
-                txtMostrar.Visible = false;
-                label3.Visible = false;                
-                lblResgistros.Visible = false;
-            }
-            else
-            {
-                cn.abrir();
-                //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM where [Error Humano] = 0 and [Hora ingreso 2] is null and [Fecha Final 2] is null", cn.conectarBD);
-                SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM ", cn.conectarBD);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                dataGridView1.DataSource = dt;
-
-                dataGridView1.Columns[0].Visible = false;
-                txtMostrar.Visible = true;
-                label3.Visible = true;
-                dataGridView1.Visible = true;
-                lblResgistros.Visible = true;
-
-                lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
-                cn.cerrar();
-            }
-            
-
-        }
+       
 
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
@@ -1047,32 +997,7 @@ namespace Electrónicos
             }
         }
 
-        private void btnRetrabajo_Click(object sender, EventArgs e)
-        {
-            cn.abrir();
-            //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM where [Error Humano] = 0 and [Hora ingreso 2] is null and [Fecha Final 2] is null", cn.conectarBD);
-            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM ", cn.conectarBD);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            dataGridView1.DataSource = dt;
-
-            dataGridView1.Columns[0].Visible = false;
-            txtMostrar.Visible = true;
-            label3.Visible = true;
-            dataGridView1.Visible = true;
-            lblResgistros.Visible = true;
-
-            lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
-            cn.cerrar();
-
-
-
-
-
-
-        }
+    
 
         private void gunaGradientButton2_Click_1(object sender, EventArgs e)
         {
@@ -1082,7 +1007,7 @@ namespace Electrónicos
                 txtMostrarDatos.Visible = false;
                 txtEnviarDatos.Visible= false;
                 textBox1.Visible = false;
-                panelConsola.Visible = false;
+                
                 //panelConsola.Size = new System.Drawing.Size(246, 56); 
             }
             else
@@ -1090,60 +1015,25 @@ namespace Electrónicos
                 txtEnviarDatos.Visible = true;
                 txtMostrarDatos.Visible = true;
                 textBox1.Visible = true;
-                panelConsola.Visible = true;
-                //panelConsola.Size = new System.Drawing.Size(953, 484);
-                panelConsola.Location = new Point(24, 237);
-
-                
-
-                Form frm = new Consola();
-
-
-                frm.Show();
-                
-
-
-            }
-        }
-
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-            if (e.Button == MouseButtons.Right)
-            {
-                
-                dataGridView1.CurrentCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
-                ContextMenuStrip menu = new ContextMenuStrip();
-                menu.Items.Add("agregar").Name = "AGREGAR";
-                menu.Items.Add("eliminar").Name = "Eliminar";
-                menu.Items.Add("detalles").Name = "DETALLES";
-
-
-                //Obtienes las coordenadas de la celda seleccionada. 
-                Rectangle coordenada = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
-
-                int anchoCelda = coordenada.Location.X; //Ancho de la localizacion de la celda
-                int altoCelda = coordenada.Location.Y;  //Alto de la localizacion de la celda
-
-                //Y para mostrar el menú lo haces de esta forma:  
-                int X = anchoCelda + dataGridView1.Location.X;
-                int Y = altoCelda + dataGridView1.Location.Y -400;
                
-                //menu.Show(dataGridView1, new Point(X, altoCelda));
-                derecho.Show(dataGridView1, new Point(X, altoCelda));
+                //panelConsola.Size = new System.Drawing.Size(953, 484);
+               
+
+                
+
+                //Form frm = new Consola();
+
+
+                //frm.Show();
+                
+
+
             }
         }
 
-        private void cASAToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("casa");
-        }
+        
 
-        private void hofarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("hoda");
-        }
+      
 
         //Actualizar los datos de la información erroresHumanos y Estado, el número de serie no se actualiza
         private void ActualizarDatos()
@@ -1230,14 +1120,45 @@ namespace Electrónicos
             frm.ShowDialog();
         }
 
-        public void button1_Click(object sender, EventArgs e)
+       
+
+        private void btnEnPosicion_Click(object sender, EventArgs e)
         {
-            btnCargarCSM.Visible = false;
+            if (tipoCalibracion == 0)
+            {
+                textBox1.Text = "";
+                BtEnter();
+             
+
+                decoCalibracion = false;
+
+            }
+
+            else if (tipoCalibracion == 1)
+            {
+                textBox1.Text = "";
+                BtEnter();
+               
+
+            }
+
+            else if (tipoCalibracion == 2)
+            {
+                textBox1.Text = "";
+                BtEnter();
+                lblInstruccion.Text = "Coloque en posición hacia arriba el CSM";
+                pic1.Image = Properties.Resources.Picture2;
+                btnEnPosicion.Visible = false;
+                pic1.Visible = false;
+                lblInstruccion.Visible = false;
+            }
+            tipoCalibracion++;
         }
 
-        public void publico()
-        {
-            btnCargarCSM.Visible = false;
-        }
+       
+
+     
+
+       
     }
 }

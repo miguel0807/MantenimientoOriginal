@@ -17,8 +17,8 @@ namespace Electrónicos
     public partial class Presentacion : Form
     {
 
-      
 
+        
        // internal static string CompartidoNombre;
         //internal static string CompartidoPosicion;
 
@@ -61,7 +61,8 @@ namespace Electrónicos
 
 
         }
-        public static Form fh;
+        
+        public Form fh;
         private void AbrirFormHijo(object formHijo)
         {
             if (this.panelContenedor.Controls.Count > 0)
@@ -183,7 +184,19 @@ namespace Electrónicos
             
             
             frm.ShowDialog();
+
+            fh.Close();
             
+        }
+
+        private void panelContenedor_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaButton4_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new Retrabajo());
         }
 
         int sw, sh;
