@@ -232,6 +232,7 @@ namespace Electrónicos
             this.btnRetrabajo.Text = "Retrabajo";
             this.btnRetrabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnRetrabajo.Visible = false;
+            this.btnRetrabajo.Click += new System.EventHandler(this.btnRetrabajo_Click);
             // 
             // gunaSeparator1
             // 
@@ -317,7 +318,6 @@ namespace Electrónicos
             // pic1
             // 
             this.pic1.BaseColor = System.Drawing.Color.White;
-            this.pic1.Image = global::Electrónicos.Properties.Resources.Picture2;
             this.pic1.Location = new System.Drawing.Point(24, 309);
             this.pic1.Name = "pic1";
             this.pic1.Size = new System.Drawing.Size(605, 422);

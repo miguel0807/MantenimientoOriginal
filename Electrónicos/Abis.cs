@@ -1133,7 +1133,11 @@ namespace Electrónicos
             frm.ShowDialog();
         }
 
-       
+        private void btnRetrabajo_Click(object sender, EventArgs e)
+        {
+            Form frm = new Retrabajo();
+            frm.ShowDialog();
+        }
 
         private void btnEnPosicion_Click(object sender, EventArgs e)
         {

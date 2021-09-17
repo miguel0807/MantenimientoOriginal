@@ -21,33 +21,23 @@ namespace Electrónicos
         Conexion cn = new Conexion();
         private void Retrabajo_Load(object sender, EventArgs e)
         {
-            if (dataGridView1.Visible == true)
-            {
-                dataGridView1.Visible = false;
-                txtMostrar.Visible = false;
-                label3.Visible = false;
-                lblResgistros.Visible = false;
-            }
-            else
-            {
-                cn.abrir();
-                //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM where [Error Humano] = 0 and [Hora ingreso 2] is null and [Fecha Final 2] is null", cn.conectarBD);
-                SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM ", cn.conectarBD);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+            cn.abrir();
+            //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM where [Error Humano] = 0 and [Hora ingreso 2] is null and [Fecha Final 2] is null", cn.conectarBD);
+            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM ", cn.conectarBD);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
-                dataGridView1.DataSource = dt;
+            dataGridView1.DataSource = dt;
 
-                dataGridView1.Columns[0].Visible = false;
-                txtMostrar.Visible = true;
-                label3.Visible = true;
-                dataGridView1.Visible = true;
-                lblResgistros.Visible = true;
+            dataGridView1.Columns[0].Visible = false;
+            txtMostrar.Visible = true;
+            label3.Visible = true;
+            dataGridView1.Visible = true;
+            lblResgistros.Visible = true;
 
-                lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
-                cn.cerrar();
-            }
+            lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
+            cn.cerrar();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -75,6 +65,37 @@ namespace Electrónicos
 
                 //menu.Show(dataGridView1, new Point(X, altoCelda));
                 derecho.Show(dataGridView1, new Point(X, altoCelda));
+            }
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Visible == true)
+            {
+                dataGridView1.Visible = false;
+                txtMostrar.Visible = false;
+                label3.Visible = false;
+                lblResgistros.Visible = false;
+            }
+            else
+            {
+                cn.abrir();
+                //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM where [Error Humano] = 0 and [Hora ingreso 2] is null and [Fecha Final 2] is null", cn.conectarBD);
+                SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " * from CSM ", cn.conectarBD);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+
+                dataGridView1.Columns[0].Visible = false;
+                txtMostrar.Visible = true;
+                label3.Visible = true;
+                dataGridView1.Visible = true;
+                lblResgistros.Visible = true;
+
+                lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
+                cn.cerrar();
             }
         }
     }
