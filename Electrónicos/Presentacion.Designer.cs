@@ -34,7 +34,11 @@ namespace Electrónicos
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.PanelLateral = new Guna.UI.WinForms.GunaPanel();
             this.panelBotones = new Guna.UI.WinForms.GunaPanel();
+            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.panelAbis = new Guna.UI.WinForms.GunaPanel();
+            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.lblCorreo = new Guna.UI.WinForms.GunaLabel();
             this.lblPuesto = new Guna.UI.WinForms.GunaLabel();
             this.lblNombre = new Guna.UI.WinForms.GunaLabel();
@@ -42,29 +46,25 @@ namespace Electrónicos
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.PanelSuperior = new Guna.UI.WinForms.GunaPanel();
-            this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
-            this.PanelTotal = new Guna.UI.WinForms.GunaPanel();
-            this.panelContenedor = new Guna.UI.WinForms.GunaPanel();
             this.btnMinimizar = new Guna.UI.WinForms.GunaPictureBox();
             this.btnRestaurar = new Guna.UI.WinForms.GunaPictureBox();
             this.btnMaximizar = new Guna.UI.WinForms.GunaPictureBox();
             this.btnCerrar = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
+            this.PanelTotal = new Guna.UI.WinForms.GunaPanel();
+            this.panelContenedor = new Guna.UI.WinForms.GunaPanel();
             this.PanelLateral.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.panelAbis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.PanelSuperior.SuspendLayout();
-            this.PanelTotal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
+            this.PanelTotal.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaElipse1
@@ -103,197 +103,6 @@ namespace Electrónicos
             this.panelBotones.TabIndex = 10;
             this.panelBotones.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBotones_Paint);
             // 
-            // panelAbis
-            // 
-            this.panelAbis.Controls.Add(this.gunaButton4);
-            this.panelAbis.Controls.Add(this.gunaButton3);
-            this.panelAbis.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAbis.Location = new System.Drawing.Point(0, 42);
-            this.panelAbis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelAbis.Name = "panelAbis";
-            this.panelAbis.Size = new System.Drawing.Size(264, 84);
-            this.panelAbis.TabIndex = 10;
-            this.panelAbis.Visible = false;
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblCorreo.ForeColor = System.Drawing.Color.White;
-            this.lblCorreo.Location = new System.Drawing.Point(89, 146);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(36, 20);
-            this.lblCorreo.TabIndex = 9;
-            this.lblCorreo.Text = "N/A";
-            // 
-            // lblPuesto
-            // 
-            this.lblPuesto.AutoSize = true;
-            this.lblPuesto.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblPuesto.ForeColor = System.Drawing.Color.White;
-            this.lblPuesto.Location = new System.Drawing.Point(89, 127);
-            this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(36, 20);
-            this.lblPuesto.TabIndex = 8;
-            this.lblPuesto.Text = "N/A";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(89, 107);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(36, 20);
-            this.lblNombre.TabIndex = 7;
-            this.lblNombre.Text = "N/A";
-            // 
-            // gunaSeparator1
-            // 
-            this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator1.Location = new System.Drawing.Point(11, 186);
-            this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gunaSeparator1.Name = "gunaSeparator1";
-            this.gunaSeparator1.Size = new System.Drawing.Size(216, 7);
-            this.gunaSeparator1.TabIndex = 4;
-            // 
-            // gunaLabel3
-            // 
-            this.gunaLabel3.AutoSize = true;
-            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel3.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel3.Location = new System.Drawing.Point(12, 146);
-            this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(61, 20);
-            this.gunaLabel3.TabIndex = 3;
-            this.gunaLabel3.Text = "Correo :";
-            // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(12, 127);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(60, 20);
-            this.gunaLabel2.TabIndex = 2;
-            this.gunaLabel2.Text = "Puesto :";
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(12, 107);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(71, 20);
-            this.gunaLabel1.TabIndex = 1;
-            this.gunaLabel1.Text = "Nombre :";
-            // 
-            // PanelSuperior
-            // 
-            this.PanelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.PanelSuperior.Controls.Add(this.btnMinimizar);
-            this.PanelSuperior.Controls.Add(this.btnRestaurar);
-            this.PanelSuperior.Controls.Add(this.btnMaximizar);
-            this.PanelSuperior.Controls.Add(this.btnCerrar);
-            this.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelSuperior.Location = new System.Drawing.Point(273, 0);
-            this.PanelSuperior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelSuperior.Name = "PanelSuperior";
-            this.PanelSuperior.Size = new System.Drawing.Size(1215, 42);
-            this.PanelSuperior.TabIndex = 3;
-            // 
-            // gunaDragControl1
-            // 
-            this.gunaDragControl1.TargetControl = this.PanelSuperior;
-            // 
-            // PanelTotal
-            // 
-            this.PanelTotal.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.PanelTotal.Controls.Add(this.panelContenedor);
-            this.PanelTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelTotal.Location = new System.Drawing.Point(0, 0);
-            this.PanelTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelTotal.Name = "PanelTotal";
-            this.PanelTotal.Size = new System.Drawing.Size(1488, 768);
-            this.PanelTotal.TabIndex = 4;
-            this.PanelTotal.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
-            // 
-            // panelContenedor
-            // 
-            this.panelContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelContenedor.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panelContenedor.Location = new System.Drawing.Point(273, 33);
-            this.panelContenedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1219, 738);
-            this.panelContenedor.TabIndex = 0;
-            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint_1);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.BaseColor = System.Drawing.Color.White;
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1059, 6);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(51, 31);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 3;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnRestaurar
-            // 
-            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurar.BaseColor = System.Drawing.Color.White;
-            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(1107, 6);
-            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(51, 31);
-            this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRestaurar.TabIndex = 2;
-            this.btnRestaurar.TabStop = false;
-            this.btnRestaurar.Visible = false;
-            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.BaseColor = System.Drawing.Color.White;
-            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1107, 6);
-            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(51, 31);
-            this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMaximizar.TabIndex = 1;
-            this.btnMaximizar.TabStop = false;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.BaseColor = System.Drawing.Color.White;
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1153, 6);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(51, 31);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.gunaPictureBox2_Click);
-            // 
             // gunaButton2
             // 
             this.gunaButton2.AnimationHoverSpeed = 0.07F;
@@ -320,6 +129,18 @@ namespace Electrónicos
             this.gunaButton2.TabIndex = 11;
             this.gunaButton2.Text = "Configuración";
             this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
+            // 
+            // panelAbis
+            // 
+            this.panelAbis.Controls.Add(this.gunaButton4);
+            this.panelAbis.Controls.Add(this.gunaButton3);
+            this.panelAbis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAbis.Location = new System.Drawing.Point(0, 42);
+            this.panelAbis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelAbis.Name = "panelAbis";
+            this.panelAbis.Size = new System.Drawing.Size(264, 84);
+            this.panelAbis.TabIndex = 10;
+            this.panelAbis.Visible = false;
             // 
             // gunaButton4
             // 
@@ -402,6 +223,81 @@ namespace Electrónicos
             this.gunaButton1.Text = "Abis";
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblCorreo.ForeColor = System.Drawing.Color.White;
+            this.lblCorreo.Location = new System.Drawing.Point(89, 146);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(36, 20);
+            this.lblCorreo.TabIndex = 9;
+            this.lblCorreo.Text = "N/A";
+            // 
+            // lblPuesto
+            // 
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblPuesto.ForeColor = System.Drawing.Color.White;
+            this.lblPuesto.Location = new System.Drawing.Point(89, 127);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(36, 20);
+            this.lblPuesto.TabIndex = 8;
+            this.lblPuesto.Text = "N/A";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
+            this.lblNombre.Location = new System.Drawing.Point(89, 107);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(36, 20);
+            this.lblNombre.TabIndex = 7;
+            this.lblNombre.Text = "N/A";
+            // 
+            // gunaSeparator1
+            // 
+            this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator1.Location = new System.Drawing.Point(11, 186);
+            this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaSeparator1.Name = "gunaSeparator1";
+            this.gunaSeparator1.Size = new System.Drawing.Size(216, 7);
+            this.gunaSeparator1.TabIndex = 4;
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel3.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel3.Location = new System.Drawing.Point(12, 146);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(61, 20);
+            this.gunaLabel3.TabIndex = 3;
+            this.gunaLabel3.Text = "Correo :";
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel2.Location = new System.Drawing.Point(12, 127);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(60, 20);
+            this.gunaLabel2.TabIndex = 2;
+            this.gunaLabel2.Text = "Puesto :";
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel1.Location = new System.Drawing.Point(12, 107);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(71, 20);
+            this.gunaLabel1.TabIndex = 1;
+            this.gunaLabel1.Text = "Nombre :";
+            // 
             // gunaPictureBox1
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
@@ -413,6 +309,110 @@ namespace Electrónicos
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox1.TabIndex = 0;
             this.gunaPictureBox1.TabStop = false;
+            // 
+            // PanelSuperior
+            // 
+            this.PanelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.PanelSuperior.Controls.Add(this.btnMinimizar);
+            this.PanelSuperior.Controls.Add(this.btnRestaurar);
+            this.PanelSuperior.Controls.Add(this.btnMaximizar);
+            this.PanelSuperior.Controls.Add(this.btnCerrar);
+            this.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelSuperior.Location = new System.Drawing.Point(273, 0);
+            this.PanelSuperior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelSuperior.Name = "PanelSuperior";
+            this.PanelSuperior.Size = new System.Drawing.Size(1215, 42);
+            this.PanelSuperior.TabIndex = 3;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BaseColor = System.Drawing.Color.White;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(1059, 6);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(51, 31);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 3;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestaurar.BaseColor = System.Drawing.Color.White;
+            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
+            this.btnRestaurar.Location = new System.Drawing.Point(1107, 6);
+            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(51, 31);
+            this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRestaurar.TabIndex = 2;
+            this.btnRestaurar.TabStop = false;
+            this.btnRestaurar.Visible = false;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizar.BaseColor = System.Drawing.Color.White;
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
+            this.btnMaximizar.Location = new System.Drawing.Point(1107, 6);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(51, 31);
+            this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMaximizar.TabIndex = 1;
+            this.btnMaximizar.TabStop = false;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BaseColor = System.Drawing.Color.White;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1153, 6);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(51, 31);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.gunaPictureBox2_Click);
+            // 
+            // gunaDragControl1
+            // 
+            this.gunaDragControl1.TargetControl = this.PanelSuperior;
+            // 
+            // PanelTotal
+            // 
+            this.PanelTotal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PanelTotal.Controls.Add(this.panelContenedor);
+            this.PanelTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelTotal.Location = new System.Drawing.Point(0, 0);
+            this.PanelTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelTotal.Name = "PanelTotal";
+            this.PanelTotal.Size = new System.Drawing.Size(1488, 768);
+            this.PanelTotal.TabIndex = 4;
+            this.PanelTotal.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelContenedor.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelContenedor.Location = new System.Drawing.Point(273, 33);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(1219, 738);
+            this.panelContenedor.TabIndex = 0;
+            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint_1);
             // 
             // Presentacion
             // 
@@ -434,13 +434,13 @@ namespace Electrónicos
             this.PanelLateral.PerformLayout();
             this.panelBotones.ResumeLayout(false);
             this.panelAbis.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.PanelSuperior.ResumeLayout(false);
-            this.PanelTotal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
+            this.PanelTotal.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
