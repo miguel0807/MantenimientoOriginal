@@ -145,12 +145,12 @@ namespace Electrónicos
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.textBox1.Location = new System.Drawing.Point(517, 196);
+            this.textBox1.Location = new System.Drawing.Point(867, 242);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(308, 25);
+            this.textBox1.Size = new System.Drawing.Size(98, 12);
             this.textBox1.TabIndex = 36;
             this.textBox1.Visible = false;
             // 

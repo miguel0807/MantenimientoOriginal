@@ -444,8 +444,6 @@ namespace Electrónicos
                 //Almacenar valores de la calibración
                 if (linea.Contains("Calibration:"))
                 {
-
-
                     int inicio = linea.IndexOf("[");
 
                     try
@@ -457,10 +455,7 @@ namespace Electrónicos
                     {
                         Console.WriteLine("{0} Exception caught.", e);
                     }
-                    
-
-                    
-
+    
                 }
 
                 //Almacenar valores de la calibración
@@ -480,11 +475,6 @@ namespace Electrónicos
                         Console.WriteLine("{0} Exception caught.", e);
                     }
                     
-
-
-
-
-
                 }
 
                 //En caso de fallo
@@ -529,9 +519,6 @@ namespace Electrónicos
                     cmd1.ExecuteNonQuery();
 
                     cn.cerrar();
-
-
-
 
                     RestablecerControles();
                     
@@ -665,6 +652,7 @@ namespace Electrónicos
             {
                 //RestablecerControles();
                 btnCalibracion.Visible = false;
+                MessageBox.Show("El estado del CSM es completado.");
                 return;
             }
 
@@ -1111,7 +1099,7 @@ namespace Electrónicos
 
                 
 
-                btnCalibracion.Visible = false;
+               
 
 
                 //Verificar si se completo y detiene el seguimiento de la macro
@@ -1127,7 +1115,7 @@ namespace Electrónicos
                 if (leer1.Read() == true)
                 {
                     TipoEstado = leer1.GetString(0);
-
+                    btnCalibracion.Visible = false;
                 }
 
 

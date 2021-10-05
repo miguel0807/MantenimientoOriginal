@@ -10,8 +10,8 @@ namespace Electrónicos
 {
     class Conexion
     {
-        string cadena = "Data Source=MAT-COS-DB-10Z2\\SQLEXPRESS;Initial Catalog=CR7; User Id=test; Password=test"; //Miguel
-        //string cadena = "Data Source=tcp:COS-F37HWK2\\SQLEXPRESS,49500;Initial Catalog=CR7; User Id=simpro; Password=Trpo25MgL452"; //Nuevo servidor
+        //string cadena = "Data Source=MAT-COS-DB-10Z2\\SQLEXPRESS;Initial Catalog=CR7; User Id=test; Password=test"; //Miguel
+        string cadena = "Data Source=tcp:COS-F37HWK2\\SQLEXPRESS,49500;Initial Catalog=CR7; User Id=simpro; Password=Trpo25MgL452"; //Nuevo servidor
         public SqlConnection conectarBD = new SqlConnection();
         
 
