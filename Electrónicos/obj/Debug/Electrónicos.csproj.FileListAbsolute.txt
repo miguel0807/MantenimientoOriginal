@@ -22,3 +22,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electróni
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Mensajes.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Consola.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Retrabajo.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\Guna.UI.dll

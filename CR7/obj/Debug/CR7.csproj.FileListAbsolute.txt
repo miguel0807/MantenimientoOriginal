@@ -15,3 +15,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.SN_Evolution.res
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.BusquedaOrden.resources
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.Abis.resources
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.csproj.CopyComplete
+C:\Users\malvarado\source\repos\Mantenimiento\CR7\bin\Debug\Guna.UI.dll
