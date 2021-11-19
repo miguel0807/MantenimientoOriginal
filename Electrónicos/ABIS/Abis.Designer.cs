@@ -139,18 +139,21 @@ namespace Electrónicos
             this.gunaCircleProgressBar1.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             this.gunaCircleProgressBar1.UseProgressPercentText = true;
             this.gunaCircleProgressBar1.Visible = false;
+            this.gunaCircleProgressBar1.Click += new System.EventHandler(this.gunaCircleProgressBar1_Click);
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.textBox1.Location = new System.Drawing.Point(867, 242);
+            this.textBox1.Location = new System.Drawing.Point(963, 465);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(98, 12);
+            this.textBox1.Size = new System.Drawing.Size(71, 10);
             this.textBox1.TabIndex = 36;
             this.textBox1.Visible = false;
             // 
@@ -670,12 +673,10 @@ namespace Electrónicos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1221, 743);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnEnPosicion);
             this.Controls.Add(this.btnCalibracion);
             this.Controls.Add(this.lblInstruccion);
             this.Controls.Add(this.txtEnviarDatos);
-            this.Controls.Add(this.txtMostrarDatos);
-            this.Controls.Add(this.btnEnPosicion);
             this.Controls.Add(this.pic1);
             this.Controls.Add(this.btnConsola);
             this.Controls.Add(this.gunaSeparator1);
@@ -684,6 +685,8 @@ namespace Electrónicos
             this.Controls.Add(this.gunaCircleProgressBar1);
             this.Controls.Add(this.panelInformacion);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtMostrarDatos);
+            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1221, 686);

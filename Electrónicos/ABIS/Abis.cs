@@ -1391,6 +1391,11 @@ namespace Electrónicos
             cn.abrir();
         }
 
+        private void gunaCircleProgressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnEnPosicion_Click(object sender, EventArgs e)
         {
             if (tipoCalibracion == 0)

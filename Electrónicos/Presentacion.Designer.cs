@@ -166,7 +166,7 @@ namespace Electrónicos
             this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
             this.gunaButton4.Size = new System.Drawing.Size(264, 42);
             this.gunaButton4.TabIndex = 12;
-            this.gunaButton4.Text = "Main Unit";
+            this.gunaButton4.Text = "Historial";
             this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
             // 
             // gunaButton3

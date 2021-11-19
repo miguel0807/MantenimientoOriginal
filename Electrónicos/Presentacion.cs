@@ -167,6 +167,12 @@ namespace Electrónicos
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
+            if (fh != null)
+            {
+                fh.Close();
+            }
+
+
             AbrirFormHijo(new Abis());
         }
 
@@ -178,14 +184,18 @@ namespace Electrónicos
         private void gunaButton2_Click(object sender, EventArgs e)
         {
 
-            Abis.variableMensaje= "Prueba de animaciónes";
+            //Abis.variableMensaje= "Prueba de animaciónes";
 
-                Form frm = new Mensajes();
+             //   Form frm = new Mensajes();
             
             
-            frm.ShowDialog();
-
-            fh.Close();
+               // frm.ShowDialog();
+            if (fh != null)
+            {
+                fh.Close();
+            }
+            
+            
             
         }
 
@@ -196,6 +206,11 @@ namespace Electrónicos
 
         private void gunaButton4_Click(object sender, EventArgs e)
         {
+            if (fh != null)
+            {
+                fh.Close();
+            }
+
             AbrirFormHijo(new HistorialABIS());
         }
 

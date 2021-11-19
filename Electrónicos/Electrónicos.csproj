@@ -51,29 +51,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abis.cs">
+    <Compile Include="ABIS\Abis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abis.Designer.cs">
+    <Compile Include="ABIS\Abis.Designer.cs">
       <DependentUpon>Abis.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
-    <Compile Include="Consola.cs">
+    <Compile Include="ABIS\Consola.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consola.Designer.cs">
+    <Compile Include="ABIS\Consola.Designer.cs">
       <DependentUpon>Consola.cs</DependentUpon>
     </Compile>
-    <Compile Include="HistorialABIS.cs">
+    <Compile Include="ABIS\HistorialABIS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HistorialABIS.Designer.cs">
+    <Compile Include="ABIS\HistorialABIS.Designer.cs">
       <DependentUpon>HistorialABIS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mensajes.cs">
+    <Compile Include="ABIS\Mensajes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mensajes.Designer.cs">
+    <Compile Include="ABIS\Mensajes.Designer.cs">
       <DependentUpon>Mensajes.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion.cs">
@@ -84,22 +84,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Retrabajo.cs">
+    <Compile Include="ABIS\Retrabajo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Retrabajo.Designer.cs">
+    <Compile Include="ABIS\Retrabajo.Designer.cs">
       <DependentUpon>Retrabajo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Abis.resx">
+    <EmbeddedResource Include="ABIS\Abis.resx">
       <DependentUpon>Abis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consola.resx">
+    <EmbeddedResource Include="ABIS\Consola.resx">
       <DependentUpon>Consola.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HistorialABIS.resx">
+    <EmbeddedResource Include="ABIS\HistorialABIS.resx">
       <DependentUpon>HistorialABIS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mensajes.resx">
+    <EmbeddedResource Include="ABIS\Mensajes.resx">
       <DependentUpon>Mensajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion.resx">
@@ -115,7 +115,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Retrabajo.resx">
+    <EmbeddedResource Include="ABIS\Retrabajo.resx">
       <DependentUpon>Retrabajo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
