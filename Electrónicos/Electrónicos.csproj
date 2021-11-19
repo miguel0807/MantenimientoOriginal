@@ -64,6 +64,12 @@
     <Compile Include="Consola.Designer.cs">
       <DependentUpon>Consola.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistorialABIS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistorialABIS.Designer.cs">
+      <DependentUpon>HistorialABIS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mensajes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consola.resx">
       <DependentUpon>Consola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistorialABIS.resx">
+      <DependentUpon>HistorialABIS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mensajes.resx">
       <DependentUpon>Mensajes.cs</DependentUpon>

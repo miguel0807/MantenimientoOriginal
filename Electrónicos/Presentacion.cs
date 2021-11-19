@@ -196,7 +196,7 @@ namespace Electrónicos
 
         private void gunaButton4_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new Retrabajo());
+            AbrirFormHijo(new HistorialABIS());
         }
 
         int sw, sh;
