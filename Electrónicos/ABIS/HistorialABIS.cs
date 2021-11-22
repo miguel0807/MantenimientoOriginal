@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace Electrónicos
 {
     public partial class HistorialABIS : Form
@@ -65,7 +66,7 @@ namespace Electrónicos
                     menu.Items.Add("Calibración #1", default(Image), (snd, evt) => { menuCalibracion1(); });
                     menu.Items[0].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
                     
-                    menu.Items.Add("Calibración #2", default(Image), (snd, evt) => { MessageBox.Show("Hice click en Nueva Venta!"); });
+                    menu.Items.Add("Calibración #2", default(Image), (snd, evt) => { menuCalibracion2(); });
                     menu.Items.Add("Presión #1", default(Image), (snd, evt) => { MessageBox.Show("Hice click en Nueva Venta!"); });
                     menu.Items.Add("Presión #2", default(Image), (snd, evt) => { MessageBox.Show("Hice click en Nueva Venta!"); });
 
@@ -85,14 +86,25 @@ namespace Electrónicos
 
             }
             catch 
-            { }
+            {
+                
+            }
 
         }
+
+        
 
         private void menuCalibracion1()
         {
            
             Form frm = new Calibracion1(serie);
+            frm.ShowDialog();
+        }
+
+        private void menuCalibracion2()
+        {
+
+            Form frm = new Calibracion2(serie);
             frm.ShowDialog();
         }
 

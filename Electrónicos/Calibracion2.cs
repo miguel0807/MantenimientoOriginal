@@ -11,28 +11,27 @@ using System.Data.SqlClient;
 
 namespace Electrónicos
 {
-    public partial class Calibracion1 : Form
+    public partial class Calibracion2 : Form
     {
         private string serie;
 
-        public Calibracion1(string serie)
+        public Calibracion2(string serie)
         {
-           
-            this.serie = serie ;
+            this.serie = serie;
             InitializeComponent();
-
         }
-      
+
         Conexion cn = new Conexion();
-        private void Calibracion1_Load(object sender, EventArgs e)
+
+        private void Calibracion2_Load(object sender, EventArgs e)
         {
             cn.abrir();
-          
-            
-            SqlCommand cmd = new SqlCommand("select [Fecha Ingreso 1],[Hora ingreso 1],[Fecha Final 1],[Hora Final 1],[Calibración 1],[Bracket 1] from CSM where convert(char,[Número de serie]) = @serie", cn.conectarBD);
-           
+
+
+            SqlCommand cmd = new SqlCommand("select [Fecha Ingreso 2],[Hora ingreso 2],[Fecha Final 2],[Hora Final 2],[Calibración 2],[Bracket 2] from CSM where convert(char,[Número de serie]) = @serie", cn.conectarBD);
+
             cmd.Parameters.AddWithValue("@serie", serie);
-              
+
             SqlDataReader reader = cmd.ExecuteReader();
 
             if (reader.Read())
@@ -46,7 +45,7 @@ namespace Electrónicos
                     txtFechaIngreso.Text = "N/A";
                 }
 
-                if (reader[1] != DBNull.Value) 
+                if (reader[1] != DBNull.Value)
                 {
                     txtHoraIngreso.Text = Convert.ToString(reader[1]);
                 }
@@ -57,7 +56,7 @@ namespace Electrónicos
 
                 if (reader[2] != DBNull.Value)
                 {
-                    
+
                     txtFechaFinal.Text = Convert.ToString(Convert.ToDateTime(reader[2]).ToString("yyyy/MM/d"));
                 }
                 else
@@ -93,13 +92,10 @@ namespace Electrónicos
                 }
                 cn.cerrar();
             }
-
-
         }
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
-           // txtFechaIngreso.Text = DateTime.Now.ToString("d/MM/yyyy");
             txtFechaIngreso.Text = DateTime.Now.ToString("yyyy/MM/d");
         }
 
@@ -120,8 +116,8 @@ namespace Electrónicos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try 
-            { 
+            try
+            {
                 if (txtFechaFinal.Text != "N/A" || txtCalibracion.Text != "N/A" || txtHoraFinal.Text != "N/A" || txtBracket.Text != "N/A")
                 {
 
@@ -129,7 +125,7 @@ namespace Electrónicos
 
                     //Actualizar los datos finales de la calibración del CSM
                     cn.abrir();
-                    SqlCommand cmd = new SqlCommand("update CSM set [Fecha Ingreso 1] = @fechaIngreso , [Hora ingreso 1] = @horaIngreso, [Fecha Final 1] = @fechaFinal, [Hora Final 1] = @horaFinal,[Calibración 1] = @Calibracion, [Bracket 1]= @Desviacion   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    SqlCommand cmd = new SqlCommand("update CSM set [Fecha Ingreso 2] = @fechaIngreso , [Hora ingreso 2] = @horaIngreso, [Fecha Final 2] = @fechaFinal, [Hora Final 2] = @horaFinal,[Calibración 2] = @Calibracion, [Bracket 2]= @Desviacion   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
                     cmd.Parameters.AddWithValue("@NumeroSerie", serie);
                     cmd.Parameters.AddWithValue("@fechaIngreso", txtFechaIngreso.Text);
                     cmd.Parameters.AddWithValue("@horaIngreso", txtHoraIngreso.Text);

@@ -25,3 +25,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electróni
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\Guna.UI.dll
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.HistorialABIS.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Calibracion1.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Calibracion2.resources

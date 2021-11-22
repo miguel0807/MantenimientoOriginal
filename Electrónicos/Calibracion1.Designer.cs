@@ -56,7 +56,7 @@ namespace Electrónicos
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(42, 26);
+            this.label3.Location = new System.Drawing.Point(18, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(180, 23);
             this.label3.TabIndex = 73;
@@ -66,7 +66,7 @@ namespace Electrónicos
             // 
             this.txtFechaIngreso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.txtFechaIngreso.ForeColor = System.Drawing.Color.Black;
-            this.txtFechaIngreso.Location = new System.Drawing.Point(46, 63);
+            this.txtFechaIngreso.Location = new System.Drawing.Point(22, 59);
             this.txtFechaIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFechaIngreso.Name = "txtFechaIngreso";
             this.txtFechaIngreso.Size = new System.Drawing.Size(175, 32);
@@ -78,7 +78,7 @@ namespace Electrónicos
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(307, 26);
+            this.label1.Location = new System.Drawing.Point(283, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 23);
             this.label1.TabIndex = 75;
@@ -88,7 +88,7 @@ namespace Electrónicos
             // 
             this.txtHoraIngreso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.txtHoraIngreso.ForeColor = System.Drawing.Color.Black;
-            this.txtHoraIngreso.Location = new System.Drawing.Point(311, 63);
+            this.txtHoraIngreso.Location = new System.Drawing.Point(287, 59);
             this.txtHoraIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHoraIngreso.Name = "txtHoraIngreso";
             this.txtHoraIngreso.Size = new System.Drawing.Size(175, 32);
@@ -100,7 +100,7 @@ namespace Electrónicos
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(336, 116);
+            this.label2.Location = new System.Drawing.Point(312, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 23);
             this.label2.TabIndex = 79;
@@ -110,7 +110,7 @@ namespace Electrónicos
             // 
             this.txtHoraFinal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.txtHoraFinal.ForeColor = System.Drawing.Color.Black;
-            this.txtHoraFinal.Location = new System.Drawing.Point(311, 153);
+            this.txtHoraFinal.Location = new System.Drawing.Point(287, 149);
             this.txtHoraFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHoraFinal.Name = "txtHoraFinal";
             this.txtHoraFinal.Size = new System.Drawing.Size(175, 32);
@@ -122,7 +122,7 @@ namespace Electrónicos
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(65, 116);
+            this.label4.Location = new System.Drawing.Point(41, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 23);
             this.label4.TabIndex = 77;
@@ -132,7 +132,7 @@ namespace Electrónicos
             // 
             this.txtFechaFinal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.txtFechaFinal.ForeColor = System.Drawing.Color.Black;
-            this.txtFechaFinal.Location = new System.Drawing.Point(46, 153);
+            this.txtFechaFinal.Location = new System.Drawing.Point(22, 149);
             this.txtFechaFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFechaFinal.Name = "txtFechaFinal";
             this.txtFechaFinal.Size = new System.Drawing.Size(175, 32);
@@ -144,7 +144,7 @@ namespace Electrónicos
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(358, 207);
+            this.label5.Location = new System.Drawing.Point(334, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 23);
             this.label5.TabIndex = 83;
@@ -154,7 +154,7 @@ namespace Electrónicos
             // 
             this.txtBracket.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.txtBracket.ForeColor = System.Drawing.Color.Black;
-            this.txtBracket.Location = new System.Drawing.Point(311, 244);
+            this.txtBracket.Location = new System.Drawing.Point(287, 240);
             this.txtBracket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBracket.Name = "txtBracket";
             this.txtBracket.Size = new System.Drawing.Size(175, 32);
@@ -166,7 +166,7 @@ namespace Electrónicos
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(65, 207);
+            this.label6.Location = new System.Drawing.Point(41, 203);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 23);
             this.label6.TabIndex = 81;
@@ -176,7 +176,7 @@ namespace Electrónicos
             // 
             this.txtCalibracion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.txtCalibracion.ForeColor = System.Drawing.Color.Black;
-            this.txtCalibracion.Location = new System.Drawing.Point(46, 244);
+            this.txtCalibracion.Location = new System.Drawing.Point(22, 240);
             this.txtCalibracion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCalibracion.Name = "txtCalibracion";
             this.txtCalibracion.Size = new System.Drawing.Size(175, 32);
@@ -188,7 +188,7 @@ namespace Electrónicos
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(42, 352);
+            this.label7.Location = new System.Drawing.Point(18, 348);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 23);
             this.label7.TabIndex = 85;
@@ -198,7 +198,7 @@ namespace Electrónicos
             // 
             this.txtDesviacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.txtDesviacion.ForeColor = System.Drawing.Color.Black;
-            this.txtDesviacion.Location = new System.Drawing.Point(172, 349);
+            this.txtDesviacion.Location = new System.Drawing.Point(148, 345);
             this.txtDesviacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDesviacion.Name = "txtDesviacion";
             this.txtDesviacion.Size = new System.Drawing.Size(126, 32);
@@ -223,7 +223,7 @@ namespace Electrónicos
             this.btnGuardar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnGuardar.Image = null;
             this.btnGuardar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnGuardar.Location = new System.Drawing.Point(388, 335);
+            this.btnGuardar.Location = new System.Drawing.Point(364, 331);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -237,13 +237,14 @@ namespace Electrónicos
             this.btnGuardar.TabIndex = 87;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // gunaSeparator1
             // 
             this.gunaSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator1.Location = new System.Drawing.Point(-164, 314);
+            this.gunaSeparator1.Location = new System.Drawing.Point(-188, 310);
             this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaSeparator1.Name = "gunaSeparator1";
             this.gunaSeparator1.Size = new System.Drawing.Size(772, 10);
@@ -268,7 +269,7 @@ namespace Electrónicos
             this.gunaGradientButton1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.gunaGradientButton1.Image = null;
             this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(227, 51);
+            this.gunaGradientButton1.Location = new System.Drawing.Point(203, 47);
             this.gunaGradientButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientButton1.Name = "gunaGradientButton1";
             this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -281,6 +282,7 @@ namespace Electrónicos
             this.gunaGradientButton1.Size = new System.Drawing.Size(55, 52);
             this.gunaGradientButton1.TabIndex = 89;
             this.gunaGradientButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
             // gunaGradientButton2
             // 
@@ -300,7 +302,7 @@ namespace Electrónicos
             this.gunaGradientButton2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.gunaGradientButton2.Image = null;
             this.gunaGradientButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton2.Location = new System.Drawing.Point(227, 142);
+            this.gunaGradientButton2.Location = new System.Drawing.Point(203, 138);
             this.gunaGradientButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientButton2.Name = "gunaGradientButton2";
             this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -313,6 +315,7 @@ namespace Electrónicos
             this.gunaGradientButton2.Size = new System.Drawing.Size(55, 52);
             this.gunaGradientButton2.TabIndex = 90;
             this.gunaGradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaGradientButton2.Click += new System.EventHandler(this.gunaGradientButton2_Click);
             // 
             // gunaGradientButton3
             // 
@@ -332,7 +335,7 @@ namespace Electrónicos
             this.gunaGradientButton3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.gunaGradientButton3.Image = null;
             this.gunaGradientButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton3.Location = new System.Drawing.Point(492, 51);
+            this.gunaGradientButton3.Location = new System.Drawing.Point(468, 47);
             this.gunaGradientButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientButton3.Name = "gunaGradientButton3";
             this.gunaGradientButton3.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -345,6 +348,7 @@ namespace Electrónicos
             this.gunaGradientButton3.Size = new System.Drawing.Size(55, 52);
             this.gunaGradientButton3.TabIndex = 91;
             this.gunaGradientButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaGradientButton3.Click += new System.EventHandler(this.gunaGradientButton3_Click);
             // 
             // gunaGradientButton4
             // 
@@ -364,7 +368,7 @@ namespace Electrónicos
             this.gunaGradientButton4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.gunaGradientButton4.Image = null;
             this.gunaGradientButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton4.Location = new System.Drawing.Point(492, 142);
+            this.gunaGradientButton4.Location = new System.Drawing.Point(468, 138);
             this.gunaGradientButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientButton4.Name = "gunaGradientButton4";
             this.gunaGradientButton4.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -377,6 +381,7 @@ namespace Electrónicos
             this.gunaGradientButton4.Size = new System.Drawing.Size(55, 52);
             this.gunaGradientButton4.TabIndex = 92;
             this.gunaGradientButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaGradientButton4.Click += new System.EventHandler(this.gunaGradientButton4_Click);
             // 
             // Calibracion1
             // 

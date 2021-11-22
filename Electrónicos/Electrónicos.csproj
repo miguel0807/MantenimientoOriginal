@@ -63,6 +63,12 @@
     <Compile Include="Calibracion1.Designer.cs">
       <DependentUpon>Calibracion1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calibracion2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calibracion2.Designer.cs">
+      <DependentUpon>Calibracion2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="ABIS\Consola.cs">
       <SubType>Form</SubType>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calibracion1.resx">
       <DependentUpon>Calibracion1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calibracion2.resx">
+      <DependentUpon>Calibracion2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion.resx">
       <DependentUpon>Presentacion.cs</DependentUpon>
