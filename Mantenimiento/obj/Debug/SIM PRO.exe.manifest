@@ -127,14 +127,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Electrónicos.exe" size="1623040">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Electrónicos.exe" size="1635328">
       <assemblyIdentity name="Electrónicos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VjLrLfPpBCecRLKyxDEp7vVs7K5wOx/jXimhtZ8j06U=</dsig:DigestValue>
+        <dsig:DigestValue>nfZFOKVXZJ16QeH51qvcO34xMYl9pRG0hpTkmvy+u20=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -199,14 +199,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIM PRO.exe" size="894392">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIM PRO.exe" size="892344">
       <assemblyIdentity name="SIM PRO" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Sdb/FA6zCwQ0fKOxMbZLoE/LrTn2OXb4u4lAsshVH2Y=</dsig:DigestValue>
+        <dsig:DigestValue>q4+zew2rfPtRee/Bu2aCMKHI6zphoFLKRvT0+zewOnQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -537,7 +537,7 @@ namespace Electrónicos
                     cmd.Parameters.AddWithValue("@horaFinal", DateTime.Now.ToString("HH:mm:ss"));
                     cmd.Parameters.AddWithValue("@Calibracion", Calibracion1);
                     cmd.Parameters.AddWithValue("@Desviacion", Desviacion);
-                    cmd.Parameters.AddWithValue("@Estado", "Completado");
+                    cmd.Parameters.AddWithValue("@Estado", "Pendiente Presión");
 
                     cmd.ExecuteNonQuery();
                     cn.cerrar();
@@ -648,11 +648,12 @@ namespace Electrónicos
 
 
 
-            if (TipoEstado == "Completado")
+            if (TipoEstado == "Pendiente Presión")
             {
                 //RestablecerControles();
                 btnCalibracion.Visible = false;
-                MessageBox.Show("El estado del CSM es completado.");
+               
+                MensajeError("La calibración ya fue realizada, no se puede volver a calibrar.");
                 return;
             }
 
@@ -711,7 +712,7 @@ namespace Electrónicos
 
 
 
-                        if (conteoErrores == 0 & TipoEstado!="Completado")
+                        if (conteoErrores == 0 & TipoEstado!= "Pendiente Presión")
                         {
                             cn.abrir();
                             cmd5.Parameters.AddWithValue("@Estado", "Retrabajo");
@@ -807,7 +808,7 @@ namespace Electrónicos
 
 
 
-            if (TipoEstado == "Completado")
+            if (TipoEstado == "Pendiente Presión")
             {
                 
                 btnCalibracion.Visible = true;
@@ -828,6 +829,22 @@ namespace Electrónicos
                     pic1.Image = Properties.Resources.Picture2;
                     lblInstruccion.Text = "Coloque en posición hacia arriba el CSM";
                     // Mensaje = "Coloque CSM en posición hacia Arriba";
+
+
+                    //Actualizar los datos iniciales de la calibración del CSM
+                    cn.abrir();
+                    SqlCommand cmd = new SqlCommand("update CSM set [Fecha Ingreso 2] = @fechaIngreso2, [Hora ingreso 2] = @horaIngreso2 where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                    
+                    cmd.Parameters.AddWithValue("@fechaIngreso2", DateTime.Now.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@horaIngreso2", DateTime.Now.ToString("HH:mm:ss"));
+
+
+                    cmd.ExecuteNonQuery();
+                    // MessageBox.Show("Se actualizo" + NumeroSerie + "desviacion =" + Desviacion + " calibracion= " + Calibracion1); 
+                    cn.cerrar();
+
+
                 }
 
                 else if (linea == "Place CSM with flat side down and press Enter!")
@@ -919,7 +936,7 @@ namespace Electrónicos
                     cmd.Parameters.AddWithValue("@horaFinal", DateTime.Now.ToString("HH:mm:ss"));
                     cmd.Parameters.AddWithValue("@Calibracion", Calibracion1);
                     cmd.Parameters.AddWithValue("@Desviacion", Desviacion);
-                    cmd.Parameters.AddWithValue("@Estado", "Completado");
+                    cmd.Parameters.AddWithValue("@Estado", "Pendiente Presión");
 
                     cmd.ExecuteNonQuery();
                    // MessageBox.Show("Se actualizo" + NumeroSerie + "desviacion =" + Desviacion + " calibracion= " + Calibracion1); 
@@ -1129,7 +1146,7 @@ namespace Electrónicos
 
 
                 //Activa botones e imagenes si el modo retrabajo se encuentra activo
-                if (ModoRetrabajo == true & TipoEstado != "Completado")
+                if (ModoRetrabajo == true & TipoEstado != "Pendiente Presión")
                 {
                     pic1.Visible = true;
                     lblInstruccion.Visible = true;

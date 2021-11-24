@@ -41,8 +41,6 @@ namespace Electrónicos
             this.txtBracket = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCalibracion = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtDesviacion = new System.Windows.Forms.TextBox();
             this.btnGuardar = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
@@ -183,28 +181,6 @@ namespace Electrónicos
             this.txtCalibracion.TabIndex = 80;
             this.txtCalibracion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(18, 348);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 23);
-            this.label7.TabIndex = 85;
-            this.label7.Text = "Desviación";
-            // 
-            // txtDesviacion
-            // 
-            this.txtDesviacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtDesviacion.ForeColor = System.Drawing.Color.Black;
-            this.txtDesviacion.Location = new System.Drawing.Point(148, 345);
-            this.txtDesviacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDesviacion.Name = "txtDesviacion";
-            this.txtDesviacion.Size = new System.Drawing.Size(126, 32);
-            this.txtDesviacion.TabIndex = 84;
-            this.txtDesviacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -223,7 +199,7 @@ namespace Electrónicos
             this.btnGuardar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnGuardar.Image = null;
             this.btnGuardar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnGuardar.Location = new System.Drawing.Point(364, 331);
+            this.btnGuardar.Location = new System.Drawing.Point(190, 345);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -395,8 +371,6 @@ namespace Electrónicos
             this.Controls.Add(this.gunaGradientButton1);
             this.Controls.Add(this.gunaSeparator1);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtDesviacion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtBracket);
             this.Controls.Add(this.label6);
@@ -433,8 +407,6 @@ namespace Electrónicos
         private System.Windows.Forms.TextBox txtBracket;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCalibracion;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtDesviacion;
         private Guna.UI.WinForms.GunaGradientButton btnGuardar;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator1;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;

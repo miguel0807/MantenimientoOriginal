@@ -64,11 +64,43 @@ namespace Electrónicos
                   
 
                     menu.Items.Add("Calibración #1", default(Image), (snd, evt) => { menuCalibracion1(); });
-                    menu.Items[0].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
+
+                    if (consultar() == 0)
+                    {
+                       
+                    }
+
+                    else if (consultar() == 1)
+                    {
+                        menu.Items[0].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
+                    }
+
+                    else if (consultar() == 2)
+                    {
+                        menu.Items[0].BackColor = Color.FromKnownColor(KnownColor.Red);
+
+                    }
+                    
                     
                     menu.Items.Add("Calibración #2", default(Image), (snd, evt) => { menuCalibracion2(); });
-                    menu.Items.Add("Presión #1", default(Image), (snd, evt) => { MessageBox.Show("Hice click en Nueva Venta!"); });
-                    menu.Items.Add("Presión #2", default(Image), (snd, evt) => { MessageBox.Show("Hice click en Nueva Venta!"); });
+
+                    if (consultar2() == 0)
+                    {
+
+                    }
+
+                    else if (consultar2() == 1)
+                    {
+                        menu.Items[1].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
+                    }
+
+                    else if (consultar2() == 2)
+                    {
+                        menu.Items[1].BackColor = Color.FromKnownColor(KnownColor.Red);
+
+                    }
+                    menu.Items.Add("Presión #1", default(Image), (snd, evt) => { menuPresion1(); });
+                    menu.Items.Add("Presión #2", default(Image), (snd, evt) => { MessageBox.Show("Presión 2"); });
 
                     //Obtienes las coordenadas de la celda seleccionada. 
                     Rectangle coordenada = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
@@ -108,6 +140,73 @@ namespace Electrónicos
             frm.ShowDialog();
         }
 
+        private void menuPresion1()
+        {
+            Form frm = new Presion_1(serie);
+            frm.ShowDialog();
+        }
 
+        private int consultar()
+        {
+            int Estado = 0;
+            cn.abrir();
+
+
+            SqlCommand cmd = new SqlCommand("select [Fecha Final 1] from CSM where convert(char,[Número de serie]) = @serie", cn.conectarBD);
+
+            cmd.Parameters.AddWithValue("@serie", serie);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                if (reader[0] != DBNull.Value)
+                {
+                    Estado = 1;
+                }
+                else
+                {
+                    Estado = 2;
+                }
+
+                cn.cerrar();
+            }
+
+            return Estado;
+        }
+
+        private int consultar2()
+        {
+            int Estado = 0;
+            cn.abrir();
+
+
+            SqlCommand cmd = new SqlCommand("select [Fecha Final 2] from CSM where convert(char,[Número de serie]) = @serie", cn.conectarBD);
+
+            cmd.Parameters.AddWithValue("@serie", serie);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                if (reader[0] == DBNull.Value)
+                {
+                    Estado = 0;
+                }
+                else if ( reader[0].ToString() == "")
+                {
+                    Estado = 2;
+                }
+
+                else
+                {
+                    Estado = 1;
+                }
+
+                cn.cerrar();
+            }
+
+            return Estado;
+        }
     }
 }

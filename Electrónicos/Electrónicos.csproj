@@ -57,16 +57,16 @@
     <Compile Include="ABIS\Abis.Designer.cs">
       <DependentUpon>Abis.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calibracion1.cs">
+    <Compile Include="ABIS\Calibracion1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calibracion1.Designer.cs">
+    <Compile Include="ABIS\Calibracion1.Designer.cs">
       <DependentUpon>Calibracion1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calibracion2.cs">
+    <Compile Include="ABIS\Calibracion2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calibracion2.Designer.cs">
+    <Compile Include="ABIS\Calibracion2.Designer.cs">
       <DependentUpon>Calibracion2.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
@@ -94,6 +94,12 @@
     <Compile Include="Presentacion.Designer.cs">
       <DependentUpon>Presentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presion 1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presion 1.Designer.cs">
+      <DependentUpon>Presion 1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ABIS\Retrabajo.cs">
@@ -114,14 +120,17 @@
     <EmbeddedResource Include="ABIS\Mensajes.resx">
       <DependentUpon>Mensajes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calibracion1.resx">
+    <EmbeddedResource Include="ABIS\Calibracion1.resx">
       <DependentUpon>Calibracion1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calibracion2.resx">
+    <EmbeddedResource Include="ABIS\Calibracion2.resx">
       <DependentUpon>Calibracion2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion.resx">
       <DependentUpon>Presentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presion 1.resx">
+      <DependentUpon>Presion 1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

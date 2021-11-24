@@ -26,3 +26,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\Guna.UI.dl
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.HistorialABIS.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Calibracion1.resources
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Calibracion2.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Presion_1.resources
