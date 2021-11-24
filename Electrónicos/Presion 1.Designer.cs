@@ -49,7 +49,7 @@ namespace Electrónicos
             this.txtFechaIngreso = new Guna.UI.WinForms.GunaDateTimePicker();
             this.gunaGradientButton3 = new Guna.UI.WinForms.GunaGradientButton();
             this.txtHoraIngreso = new System.Windows.Forms.DateTimePicker();
-            this.txtTemperaturaHora = new System.Windows.Forms.DateTimePicker();
+            this.txtHoraInicial = new System.Windows.Forms.DateTimePicker();
             this.txtPresion1 = new System.Windows.Forms.NumericUpDown();
             this.txtRango = new System.Windows.Forms.NumericUpDown();
             this.txtHoraFinal = new System.Windows.Forms.DateTimePicker();
@@ -108,6 +108,7 @@ namespace Electrónicos
             this.btnGuardar.TabIndex = 105;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label5
             // 
@@ -214,7 +215,7 @@ namespace Electrónicos
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(401, 294);
+            this.label9.Location = new System.Drawing.Point(390, 294);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(266, 23);
             this.label9.TabIndex = 117;
@@ -307,7 +308,6 @@ namespace Electrónicos
             // txtTemperaturaInicial
             // 
             this.txtTemperaturaInicial.DecimalPlaces = 1;
-            this.txtTemperaturaInicial.Enabled = false;
             this.txtTemperaturaInicial.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.txtTemperaturaInicial.Increment = new decimal(new int[] {
             1,
@@ -394,22 +394,22 @@ namespace Electrónicos
             this.txtHoraIngreso.TabIndex = 133;
             this.txtHoraIngreso.Value = new System.DateTime(2021, 11, 25, 0, 0, 0, 0);
             // 
-            // txtTemperaturaHora
+            // txtHoraInicial
             // 
-            this.txtTemperaturaHora.CustomFormat = "         HH:mm";
-            this.txtTemperaturaHora.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtTemperaturaHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtTemperaturaHora.Location = new System.Drawing.Point(729, 192);
-            this.txtTemperaturaHora.Name = "txtTemperaturaHora";
-            this.txtTemperaturaHora.ShowUpDown = true;
-            this.txtTemperaturaHora.Size = new System.Drawing.Size(174, 32);
-            this.txtTemperaturaHora.TabIndex = 136;
-            this.txtTemperaturaHora.Value = new System.DateTime(2021, 11, 25, 0, 0, 0, 0);
+            this.txtHoraInicial.CustomFormat = "         HH:mm";
+            this.txtHoraInicial.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtHoraInicial.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtHoraInicial.Location = new System.Drawing.Point(729, 192);
+            this.txtHoraInicial.Name = "txtHoraInicial";
+            this.txtHoraInicial.ShowUpDown = true;
+            this.txtHoraInicial.Size = new System.Drawing.Size(174, 32);
+            this.txtHoraInicial.TabIndex = 136;
+            this.txtHoraInicial.Value = new System.DateTime(2021, 11, 25, 0, 0, 0, 0);
             // 
             // txtPresion1
             // 
             this.txtPresion1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtPresion1.Location = new System.Drawing.Point(475, 330);
+            this.txtPresion1.Location = new System.Drawing.Point(476, 330);
             this.txtPresion1.Maximum = new decimal(new int[] {
             0,
             0,
@@ -429,7 +429,7 @@ namespace Electrónicos
             // 
             this.txtRango.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.txtRango.InterceptArrowKeys = false;
-            this.txtRango.Location = new System.Drawing.Point(808, 330);
+            this.txtRango.Location = new System.Drawing.Point(809, 330);
             this.txtRango.Maximum = new decimal(new int[] {
             500,
             0,
@@ -562,7 +562,7 @@ namespace Electrónicos
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtRango);
             this.Controls.Add(this.txtPresion1);
-            this.Controls.Add(this.txtTemperaturaHora);
+            this.Controls.Add(this.txtHoraInicial);
             this.Controls.Add(this.txtHoraIngreso);
             this.Controls.Add(this.txtFechaIngreso);
             this.Controls.Add(this.txtTemperaturaInicial);
@@ -617,7 +617,7 @@ namespace Electrónicos
         private Guna.UI.WinForms.GunaDateTimePicker txtFechaIngreso;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton3;
         private System.Windows.Forms.DateTimePicker txtHoraIngreso;
-        private System.Windows.Forms.DateTimePicker txtTemperaturaHora;
+        private System.Windows.Forms.DateTimePicker txtHoraInicial;
         private System.Windows.Forms.NumericUpDown txtPresion1;
         private System.Windows.Forms.NumericUpDown txtRango;
         private System.Windows.Forms.DateTimePicker txtHoraFinal;
