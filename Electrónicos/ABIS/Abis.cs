@@ -677,7 +677,13 @@ namespace Electrónicos
                     //Si no esta creado se procede a crear uno nuevo con un insert
                     if (conteo == 0)
                     {
+                        cn.abrir();
+                        SqlCommand cmd2 = new SqlCommand("insert into [CSM Presión] ([Número de serie]) values (@NumeroSerie)", cn.conectarBD);                        
+                        cmd2.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                       
 
+                        cmd2.ExecuteNonQuery();
+                        cn.cerrar();
 
                         cn.abrir();
                         SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Número de parte],Descripción,[Fecha Ingreso 1],[Hora ingreso 1],[Error Humano],Estado) values (@Usuario,@NumeroSerie,@NumeroParte,@Descripcion,@fechaIngreso,@horaIngreso,@ErrorHumano,@Estado)", cn.conectarBD);

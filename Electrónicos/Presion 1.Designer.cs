@@ -51,17 +51,19 @@ namespace Electrónicos
             this.txtHoraIngreso = new System.Windows.Forms.DateTimePicker();
             this.txtHoraInicial = new System.Windows.Forms.DateTimePicker();
             this.txtPresion1 = new System.Windows.Forms.NumericUpDown();
-            this.txtRango = new System.Windows.Forms.NumericUpDown();
             this.txtHoraFinal = new System.Windows.Forms.DateTimePicker();
             this.txtFechaFinal = new Guna.UI.WinForms.GunaDateTimePicker();
             this.gunaGradientButton4 = new Guna.UI.WinForms.GunaGradientButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.gunaSeparator5 = new Guna.UI.WinForms.GunaSeparator();
+            this.lblRango = new System.Windows.Forms.Label();
+            this.txtTemperaturaFinal = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtPresion25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTemperaturaInicial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPresion1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRango)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTemperaturaFinal)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaSeparator1
@@ -69,11 +71,12 @@ namespace Electrónicos
             this.gunaSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator1.Location = new System.Drawing.Point(-40, 487);
+            this.gunaSeparator1.Location = new System.Drawing.Point(-22, 550);
             this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaSeparator1.Name = "gunaSeparator1";
-            this.gunaSeparator1.Size = new System.Drawing.Size(1042, 14);
+            this.gunaSeparator1.Size = new System.Drawing.Size(1046, 14);
             this.gunaSeparator1.TabIndex = 106;
+            this.gunaSeparator1.TabStop = false;
             this.gunaSeparator1.Thickness = 4;
             // 
             // btnGuardar
@@ -94,7 +97,7 @@ namespace Electrónicos
             this.btnGuardar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnGuardar.Image = null;
             this.btnGuardar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnGuardar.Location = new System.Drawing.Point(383, 505);
+            this.btnGuardar.Location = new System.Drawing.Point(379, 591);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -105,7 +108,7 @@ namespace Electrónicos
             this.btnGuardar.OnPressedColor = System.Drawing.Color.Black;
             this.btnGuardar.Radius = 20;
             this.btnGuardar.Size = new System.Drawing.Size(256, 58);
-            this.btnGuardar.TabIndex = 105;
+            this.btnGuardar.TabIndex = 10;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -126,7 +129,7 @@ namespace Electrónicos
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(20, 199);
+            this.label6.Location = new System.Drawing.Point(12, 192);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(197, 23);
             this.label6.TabIndex = 102;
@@ -159,7 +162,7 @@ namespace Electrónicos
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(325, 23);
+            this.label7.Location = new System.Drawing.Point(297, 23);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 23);
             this.label7.TabIndex = 112;
@@ -183,7 +186,7 @@ namespace Electrónicos
             this.gunaGradientButton5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.gunaGradientButton5.Image = null;
             this.gunaGradientButton5.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton5.Location = new System.Drawing.Point(923, 181);
+            this.gunaGradientButton5.Location = new System.Drawing.Point(927, 181);
             this.gunaGradientButton5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientButton5.Name = "gunaGradientButton5";
             this.gunaGradientButton5.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -204,7 +207,7 @@ namespace Electrónicos
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(558, 201);
+            this.label8.Location = new System.Drawing.Point(562, 201);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 23);
             this.label8.TabIndex = 114;
@@ -215,7 +218,7 @@ namespace Electrónicos
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(390, 294);
+            this.label9.Location = new System.Drawing.Point(387, 294);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(266, 23);
             this.label9.TabIndex = 117;
@@ -229,8 +232,9 @@ namespace Electrónicos
             this.gunaSeparator2.Location = new System.Drawing.Point(-58, 147);
             this.gunaSeparator2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaSeparator2.Name = "gunaSeparator2";
-            this.gunaSeparator2.Size = new System.Drawing.Size(1036, 10);
+            this.gunaSeparator2.Size = new System.Drawing.Size(1040, 10);
             this.gunaSeparator2.TabIndex = 118;
+            this.gunaSeparator2.TabStop = false;
             this.gunaSeparator2.Thickness = 4;
             // 
             // gunaSeparator3
@@ -241,8 +245,9 @@ namespace Electrónicos
             this.gunaSeparator3.Location = new System.Drawing.Point(-61, 74);
             this.gunaSeparator3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaSeparator3.Name = "gunaSeparator3";
-            this.gunaSeparator3.Size = new System.Drawing.Size(1063, 10);
+            this.gunaSeparator3.Size = new System.Drawing.Size(1067, 10);
             this.gunaSeparator3.TabIndex = 119;
+            this.gunaSeparator3.TabStop = false;
             this.gunaSeparator3.Thickness = 4;
             // 
             // gunaSeparator4
@@ -253,8 +258,9 @@ namespace Electrónicos
             this.gunaSeparator4.Location = new System.Drawing.Point(-22, 255);
             this.gunaSeparator4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaSeparator4.Name = "gunaSeparator4";
-            this.gunaSeparator4.Size = new System.Drawing.Size(1024, 10);
+            this.gunaSeparator4.Size = new System.Drawing.Size(1028, 10);
             this.gunaSeparator4.TabIndex = 120;
+            this.gunaSeparator4.TabStop = false;
             this.gunaSeparator4.Thickness = 4;
             // 
             // cboUsuario
@@ -268,19 +274,19 @@ namespace Electrónicos
             this.cboUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.cboUsuario.ForeColor = System.Drawing.Color.Black;
             this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(435, 15);
+            this.cboUsuario.Location = new System.Drawing.Point(407, 15);
             this.cboUsuario.Name = "cboUsuario";
             this.cboUsuario.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cboUsuario.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cboUsuario.Size = new System.Drawing.Size(245, 33);
-            this.cboUsuario.TabIndex = 121;
+            this.cboUsuario.TabIndex = 0;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(824, 294);
+            this.label10.Location = new System.Drawing.Point(839, 294);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 23);
             this.label10.TabIndex = 124;
@@ -289,6 +295,7 @@ namespace Electrónicos
             // txtPresion25
             // 
             this.txtPresion25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtPresion25.InterceptArrowKeys = false;
             this.txtPresion25.Location = new System.Drawing.Point(97, 330);
             this.txtPresion25.Maximum = new decimal(new int[] {
             0,
@@ -302,8 +309,9 @@ namespace Electrónicos
             -2147483648});
             this.txtPresion25.Name = "txtPresion25";
             this.txtPresion25.Size = new System.Drawing.Size(120, 32);
-            this.txtPresion25.TabIndex = 127;
+            this.txtPresion25.TabIndex = 5;
             this.txtPresion25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPresion25.ValueChanged += new System.EventHandler(this.txtPresion25_ValueChanged);
             // 
             // txtTemperaturaInicial
             // 
@@ -322,7 +330,7 @@ namespace Electrónicos
             0});
             this.txtTemperaturaInicial.Name = "txtTemperaturaInicial";
             this.txtTemperaturaInicial.Size = new System.Drawing.Size(120, 32);
-            this.txtTemperaturaInicial.TabIndex = 128;
+            this.txtTemperaturaInicial.TabIndex = 3;
             this.txtTemperaturaInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtFechaIngreso
@@ -345,7 +353,7 @@ namespace Electrónicos
             this.txtFechaIngreso.OnPressedColor = System.Drawing.Color.Black;
             this.txtFechaIngreso.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtFechaIngreso.Size = new System.Drawing.Size(185, 30);
-            this.txtFechaIngreso.TabIndex = 129;
+            this.txtFechaIngreso.TabIndex = 1;
             this.txtFechaIngreso.Text = "2000/01/1";
             this.txtFechaIngreso.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
@@ -367,7 +375,7 @@ namespace Electrónicos
             this.gunaGradientButton3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.gunaGradientButton3.Image = null;
             this.gunaGradientButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton3.Location = new System.Drawing.Point(923, 88);
+            this.gunaGradientButton3.Location = new System.Drawing.Point(927, 88);
             this.gunaGradientButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientButton3.Name = "gunaGradientButton3";
             this.gunaGradientButton3.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -391,7 +399,7 @@ namespace Electrónicos
             this.txtHoraIngreso.Name = "txtHoraIngreso";
             this.txtHoraIngreso.ShowUpDown = true;
             this.txtHoraIngreso.Size = new System.Drawing.Size(174, 32);
-            this.txtHoraIngreso.TabIndex = 133;
+            this.txtHoraIngreso.TabIndex = 2;
             this.txtHoraIngreso.Value = new System.DateTime(2021, 11, 25, 0, 0, 0, 0);
             // 
             // txtHoraInicial
@@ -403,13 +411,14 @@ namespace Electrónicos
             this.txtHoraInicial.Name = "txtHoraInicial";
             this.txtHoraInicial.ShowUpDown = true;
             this.txtHoraInicial.Size = new System.Drawing.Size(174, 32);
-            this.txtHoraInicial.TabIndex = 136;
+            this.txtHoraInicial.TabIndex = 4;
             this.txtHoraInicial.Value = new System.DateTime(2021, 11, 25, 0, 0, 0, 0);
             // 
             // txtPresion1
             // 
             this.txtPresion1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtPresion1.Location = new System.Drawing.Point(476, 330);
+            this.txtPresion1.InterceptArrowKeys = false;
+            this.txtPresion1.Location = new System.Drawing.Point(473, 330);
             this.txtPresion1.Maximum = new decimal(new int[] {
             0,
             0,
@@ -422,29 +431,9 @@ namespace Electrónicos
             -2147483648});
             this.txtPresion1.Name = "txtPresion1";
             this.txtPresion1.Size = new System.Drawing.Size(120, 32);
-            this.txtPresion1.TabIndex = 137;
+            this.txtPresion1.TabIndex = 6;
             this.txtPresion1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtRango
-            // 
-            this.txtRango.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtRango.InterceptArrowKeys = false;
-            this.txtRango.Location = new System.Drawing.Point(809, 330);
-            this.txtRango.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.txtRango.Minimum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            -2147483648});
-            this.txtRango.Name = "txtRango";
-            this.txtRango.ReadOnly = true;
-            this.txtRango.Size = new System.Drawing.Size(120, 32);
-            this.txtRango.TabIndex = 138;
-            this.txtRango.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPresion1.ValueChanged += new System.EventHandler(this.txtPresion1_ValueChanged);
             // 
             // txtHoraFinal
             // 
@@ -455,7 +444,7 @@ namespace Electrónicos
             this.txtHoraFinal.Name = "txtHoraFinal";
             this.txtHoraFinal.ShowUpDown = true;
             this.txtHoraFinal.Size = new System.Drawing.Size(174, 32);
-            this.txtHoraFinal.TabIndex = 143;
+            this.txtHoraFinal.TabIndex = 8;
             this.txtHoraFinal.Value = new System.DateTime(2021, 11, 25, 0, 0, 0, 0);
             // 
             // txtFechaFinal
@@ -478,7 +467,7 @@ namespace Electrónicos
             this.txtFechaFinal.OnPressedColor = System.Drawing.Color.Black;
             this.txtFechaFinal.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtFechaFinal.Size = new System.Drawing.Size(185, 30);
-            this.txtFechaFinal.TabIndex = 142;
+            this.txtFechaFinal.TabIndex = 7;
             this.txtFechaFinal.Text = "2000/01/1";
             this.txtFechaFinal.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
@@ -500,7 +489,7 @@ namespace Electrónicos
             this.gunaGradientButton4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.gunaGradientButton4.Image = null;
             this.gunaGradientButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton4.Location = new System.Drawing.Point(922, 420);
+            this.gunaGradientButton4.Location = new System.Drawing.Point(927, 407);
             this.gunaGradientButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientButton4.Name = "gunaGradientButton4";
             this.gunaGradientButton4.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -513,6 +502,7 @@ namespace Electrónicos
             this.gunaGradientButton4.Size = new System.Drawing.Size(55, 52);
             this.gunaGradientButton4.TabIndex = 141;
             this.gunaGradientButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaGradientButton4.Click += new System.EventHandler(this.gunaGradientButton4_Click_1);
             // 
             // label2
             // 
@@ -544,23 +534,71 @@ namespace Electrónicos
             this.gunaSeparator5.Location = new System.Drawing.Point(-40, 389);
             this.gunaSeparator5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaSeparator5.Name = "gunaSeparator5";
-            this.gunaSeparator5.Size = new System.Drawing.Size(1042, 14);
+            this.gunaSeparator5.Size = new System.Drawing.Size(1046, 14);
             this.gunaSeparator5.TabIndex = 144;
+            this.gunaSeparator5.TabStop = false;
             this.gunaSeparator5.Thickness = 4;
+            // 
+            // lblRango
+            // 
+            this.lblRango.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblRango.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.lblRango.ForeColor = System.Drawing.Color.Black;
+            this.lblRango.Location = new System.Drawing.Point(839, 330);
+            this.lblRango.Name = "lblRango";
+            this.lblRango.Size = new System.Drawing.Size(73, 32);
+            this.lblRango.TabIndex = 145;
+            this.lblRango.Text = "0";
+            this.lblRango.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtTemperaturaFinal
+            // 
+            this.txtTemperaturaFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtTemperaturaFinal.DecimalPlaces = 1;
+            this.txtTemperaturaFinal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTemperaturaFinal.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.txtTemperaturaFinal.Location = new System.Drawing.Point(498, 509);
+            this.txtTemperaturaFinal.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            this.txtTemperaturaFinal.Name = "txtTemperaturaFinal";
+            this.txtTemperaturaFinal.Size = new System.Drawing.Size(120, 32);
+            this.txtTemperaturaFinal.TabIndex = 9;
+            this.txtTemperaturaFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(297, 511);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(183, 23);
+            this.label11.TabIndex = 146;
+            this.label11.Text = "Temperatura Final";
             // 
             // Presion_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(990, 574);
+            this.ClientSize = new System.Drawing.Size(994, 661);
+            this.Controls.Add(this.txtTemperaturaFinal);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lblRango);
             this.Controls.Add(this.gunaSeparator5);
             this.Controls.Add(this.txtHoraFinal);
             this.Controls.Add(this.txtFechaFinal);
             this.Controls.Add(this.gunaGradientButton4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtRango);
             this.Controls.Add(this.txtPresion1);
             this.Controls.Add(this.txtHoraInicial);
             this.Controls.Add(this.txtHoraIngreso);
@@ -590,7 +628,7 @@ namespace Electrónicos
             ((System.ComponentModel.ISupportInitialize)(this.txtPresion25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTemperaturaInicial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPresion1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRango)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTemperaturaFinal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -619,12 +657,14 @@ namespace Electrónicos
         private System.Windows.Forms.DateTimePicker txtHoraIngreso;
         private System.Windows.Forms.DateTimePicker txtHoraInicial;
         private System.Windows.Forms.NumericUpDown txtPresion1;
-        private System.Windows.Forms.NumericUpDown txtRango;
         private System.Windows.Forms.DateTimePicker txtHoraFinal;
         private Guna.UI.WinForms.GunaDateTimePicker txtFechaFinal;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator5;
+        private System.Windows.Forms.Label lblRango;
+        private System.Windows.Forms.NumericUpDown txtTemperaturaFinal;
+        private System.Windows.Forms.Label label11;
     }
 }

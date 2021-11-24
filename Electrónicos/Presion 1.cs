@@ -30,7 +30,7 @@ namespace Electrónicos
         {
             Usuarios();
             CargarInformacion();
-           
+            calcularRango();
         }
 
         private void Usuarios()
@@ -102,14 +102,20 @@ namespace Electrónicos
 
                 if (reader[7] != DBNull.Value)
                 {
-                    txtTemperaturaInicial.Value = Convert.ToInt32(reader[7]);
+                    txtTemperaturaInicial.Value = Convert.ToDecimal(reader[7]);
+                }
+
+                if (reader[8] != DBNull.Value)
+                {
+                    txtTemperaturaFinal.Value = Convert.ToDecimal(reader[8]);
                 }
 
                 if (reader[5] != DBNull.Value)
                 {
                     txtHoraInicial.Text = Convert.ToString(reader[5]);
                 }
-                
+
+              
 
                 if (reader[9] != DBNull.Value)
                 {
@@ -139,9 +145,62 @@ namespace Electrónicos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            CargarInformacion();
+           
+
+            //Actualizar los datos finales de la calibración del CSM
+            cn.abrir();
+            SqlCommand cmd = new SqlCommand("update [CSM Presión] set [Fecha Ingreso 1] = @fechaIngreso , [Hora ingreso 1] = @horaIngreso , [Temperatura Inicial 1] = @temInicial ,[Temperatura Final 1] = @temFinal,[Hora Inicial 1]= @horaInicial, [Presión 25 min #1]=@presion25 , [Presión 1 hora #1]=@presion1, [Fecha Final 1] = @fechaFinal, [Hora final 1] = @horaFinal, [Usuario Presión] = @usuario  where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+            cmd.Parameters.AddWithValue("@NumeroSerie", serie);
+            cmd.Parameters.AddWithValue("@fechaIngreso", txtFechaIngreso.Value);
+
+            
+            
+            cmd.Parameters.AddWithValue("@horaIngreso", txtHoraIngreso.Value);
+            cmd.Parameters.AddWithValue("@temInicial", txtTemperaturaInicial.Value);
+            cmd.Parameters.AddWithValue("@temFinal", txtTemperaturaFinal.Value);
+            cmd.Parameters.AddWithValue("@horaInicial", txtHoraInicial.Text);
+            cmd.Parameters.AddWithValue("@presion25", txtPresion25.Text);
+            cmd.Parameters.AddWithValue("@presion1", txtPresion1.Text);
+            cmd.Parameters.AddWithValue("@fechaFinal", txtFechaFinal.Value);
+            cmd.Parameters.AddWithValue("@horaFinal", txtHoraFinal.Text);
+            cmd.Parameters.AddWithValue("@usuario", cboUsuario.Text);
+
+
+            cmd.ExecuteNonQuery();
+            cn.cerrar();
+            
+            this.Close();
         }
 
-       
+        private void gunaGradientButton4_Click_1(object sender, EventArgs e)
+        {
+            txtHoraFinal.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void txtPresion25_ValueChanged(object sender, EventArgs e)
+        {
+            calcularRango();
+        }
+
+        private void txtPresion1_ValueChanged(object sender, EventArgs e)
+        {
+            calcularRango();
+        }
+
+        private void calcularRango()
+        {
+            int rango;
+            rango = (int)(txtPresion25.Value - txtPresion1.Value);
+
+            if (rango > 100 || rango < -100)
+            {
+                lblRango.BackColor = Color.Red;
+            }
+            else if (rango >= -100 && rango <= 100)
+            {
+                lblRango.BackColor = Color.Green;
+            }
+            lblRango.Text = rango.ToString();
+        }
     }
 }

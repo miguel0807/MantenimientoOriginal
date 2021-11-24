@@ -56,13 +56,13 @@ namespace Electrónicos
 
                 if (e.Button == MouseButtons.Right)
                 {
-                    //MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                   
                     serie = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                     dataGridView1.CurrentCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
                    
                     ContextMenuStrip menu = new ContextMenuStrip();
-                  
 
+                    
                     menu.Items.Add("Calibración #1", default(Image), (snd, evt) => { menuCalibracion1(); });
 
                     if (consultar() == 0)
@@ -99,8 +99,27 @@ namespace Electrónicos
                         menu.Items[1].BackColor = Color.FromKnownColor(KnownColor.Red);
 
                     }
-                    menu.Items.Add("Presión #1", default(Image), (snd, evt) => { menuPresion1(); });
-                    menu.Items.Add("Presión #2", default(Image), (snd, evt) => { MessageBox.Show("Presión 2"); });
+
+                    if (verificarEstado() == 1)
+                    {
+                        menu.Items.Add("Presión #1", default(Image), (snd, evt) => { menuPresion1(); });
+                        if (consultar3() == 0)
+                        {
+
+                        }
+                        else if (consultar3() == 1)
+                        {
+                            menu.Items[2].BackColor = Color.FromKnownColor(KnownColor.Red);
+                        }
+
+                        else if (consultar3() == 2)
+                        {
+                            menu.Items[2].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
+                        }
+
+                        menu.Items.Add("Presión #2", default(Image), (snd, evt) => { MessageBox.Show("Presión 2"); });
+
+                    }
 
                     //Obtienes las coordenadas de la celda seleccionada. 
                     Rectangle coordenada = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
@@ -144,6 +163,7 @@ namespace Electrónicos
         {
             Form frm = new Presion_1(serie);
             frm.ShowDialog();
+            //MessageBox.Show("Cerrado");
         }
 
         private int consultar()
@@ -172,6 +192,7 @@ namespace Electrónicos
                 cn.cerrar();
             }
 
+            cn.cerrar();
             return Estado;
         }
 
@@ -207,6 +228,77 @@ namespace Electrónicos
             }
 
             return Estado;
+        }
+
+        private int consultar3()
+        {
+            int Estado = 0;
+            cn.abrir();
+
+
+            SqlCommand cmd = new SqlCommand("select*from [CSM Presión] where convert(char,[Número de serie]) =@serie", cn.conectarBD);
+
+            cmd.Parameters.AddWithValue("@serie", serie);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                int presion1 ,presion2, rango;
+                presion1 = (int)(reader[9]);
+                presion2 = (int)(reader[10]);
+                rango = presion1 - presion2;
+
+                if (rango == 0)
+                {
+                    Estado = 0;
+                }
+                else if (rango >= -100 && rango <= 100)
+                {
+                    Estado = 2;
+                   
+                }
+                else if (rango > 100 || rango < -100)
+                {
+                    Estado = 1;
+                }                                              
+
+
+            }
+            cn.cerrar();
+            return Estado;
+        }
+
+        private int verificarEstado()
+        {
+            int Estado = 0;
+            cn.abrir();
+
+
+            SqlCommand cmd = new SqlCommand("select Estado from CSM where convert(char,[Número de serie]) =@serie", cn.conectarBD);
+
+            cmd.Parameters.AddWithValue("@serie", serie);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+              if (reader[0].ToString() == "Pendiente Presión")
+                {
+                    Estado = 1;
+                }
+
+              else
+                {
+                    Estado = 0;
+                }
+
+
+            }
+            cn.cerrar();
+            return Estado;
+            
+            
         }
     }
 }
