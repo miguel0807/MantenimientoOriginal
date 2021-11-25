@@ -69,6 +69,12 @@
     <Compile Include="ABIS\Calibracion2.Designer.cs">
       <DependentUpon>Calibracion2.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABIS\Presion 2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABIS\Presion 2.Designer.cs">
+      <DependentUpon>Presion 2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="ABIS\Consola.cs">
       <SubType>Form</SubType>
@@ -94,10 +100,10 @@
     <Compile Include="Presentacion.Designer.cs">
       <DependentUpon>Presentacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presion 1.cs">
+    <Compile Include="ABIS\Presion 1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presion 1.Designer.cs">
+    <Compile Include="ABIS\Presion 1.Designer.cs">
       <DependentUpon>Presion 1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -126,10 +132,13 @@
     <EmbeddedResource Include="ABIS\Calibracion2.resx">
       <DependentUpon>Calibracion2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABIS\Presion 2.resx">
+      <DependentUpon>Presion 2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion.resx">
       <DependentUpon>Presentacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presion 1.resx">
+    <EmbeddedResource Include="ABIS\Presion 1.resx">
       <DependentUpon>Presion 1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

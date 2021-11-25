@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using Electrónicos.ABIS;
 
 namespace Electrónicos
 {
@@ -23,8 +23,13 @@ namespace Electrónicos
         private string serie;
         private void HistorialABIS_Load(object sender, EventArgs e)
         {
+            Inicio();
+        }
+
+        private void Inicio()
+        {
             cn.abrir();
-           
+
             SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado  from CSM  ", cn.conectarBD);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -43,15 +48,41 @@ namespace Electrónicos
 
             if (dataGridView1.Rows.Count == 0)
             {
-               
+
             }
         }
 
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void busqueda()
         {
-            try
+            cn.abrir();
+
+            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado  from CSM  where convert(char,[Número de serie]) LIKE @serie + '%'", cn.conectarBD);
+            cmd.Parameters.AddWithValue("@serie", txtBuscar.Text);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dataGridView1.DataSource = dt;
+
+            //dataGridView1.Columns[0].Visible = false;
+            txtMostrar.Visible = true;
+            label3.Visible = true;
+            dataGridView1.Visible = true;
+            lblResgistros.Visible = true;
+
+            lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
+            cn.cerrar();
+
+            if (dataGridView1.Rows.Count == 0)
             {
 
+            }
+        }
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {/*
+            try
+            {
+                */
 
 
                 if (e.Button == MouseButtons.Right)
@@ -117,9 +148,23 @@ namespace Electrónicos
                             menu.Items[2].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
                         }
 
-                        menu.Items.Add("Presión #2", default(Image), (snd, evt) => { MessageBox.Show("Presión 2"); });
+                        menu.Items.Add("Presión #2", default(Image), (snd, evt) => { menuPresion2(); });
 
-                    }
+                        if (consultar4() == 0)
+                        {
+
+                        }
+                        else if (consultar4() == 1)
+                        {
+                            menu.Items[3].BackColor = Color.FromKnownColor(KnownColor.Red);
+                        }
+
+                        else if (consultar4() == 2)
+                        {
+                            menu.Items[3].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
+                        }
+
+                }
 
                     //Obtienes las coordenadas de la celda seleccionada. 
                     Rectangle coordenada = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
@@ -134,12 +179,12 @@ namespace Electrónicos
                     menu.Show(dataGridView1, new Point(X, Y));
                 }
 
-
+                /*
             }
             catch 
             {
                 
-            }
+            }*/
 
         }
 
@@ -163,6 +208,17 @@ namespace Electrónicos
         {
             Form frm = new Presion_1(serie);
             frm.ShowDialog();
+            Completado();
+            Inicio();
+            //MessageBox.Show("Cerrado");
+        }
+
+        private void menuPresion2()
+        {
+            Form frm = new Presion_2(serie);
+            frm.ShowDialog();
+            Completado();
+            Inicio();
             //MessageBox.Show("Cerrado");
         }
 
@@ -189,7 +245,7 @@ namespace Electrónicos
                     Estado = 2;
                 }
 
-                cn.cerrar();
+                
             }
 
             cn.cerrar();
@@ -224,9 +280,9 @@ namespace Electrónicos
                     Estado = 1;
                 }
 
-                cn.cerrar();
+               
             }
-
+            cn.cerrar();
             return Estado;
         }
 
@@ -245,8 +301,20 @@ namespace Electrónicos
             if (reader.Read())
             {
                 int presion1 ,presion2, rango;
-                presion1 = (int)(reader[9]);
-                presion2 = (int)(reader[10]);
+                presion1 = 0;
+                presion2 = 0;
+
+                if (reader[9] != DBNull.Value)
+                {
+                    presion1 = (int)reader[9];
+                }
+                
+                if (reader[10] != DBNull.Value)
+                {
+                    presion2 = (int)reader[10];
+                    
+                }
+
                 rango = presion1 - presion2;
 
                 if (rango == 0)
@@ -269,6 +337,102 @@ namespace Electrónicos
             return Estado;
         }
 
+        private int consultar4()
+        {
+            int Estado = 0;
+            cn.abrir();
+
+
+            SqlCommand cmd = new SqlCommand("select*from [CSM Presión] where convert(char,[Número de serie]) =@serie", cn.conectarBD);
+
+            cmd.Parameters.AddWithValue("@serie", serie);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                int presion1, presion2, rango;
+                presion1 = 0;
+                presion2 = 0;
+
+                if (reader[18] != DBNull.Value)
+                {
+                    presion1 = (int)reader[18];
+                }
+
+                if (reader[19] != DBNull.Value)
+                {
+                    presion2 = (int)reader[19];
+
+                }
+
+                rango = presion1 - presion2;
+
+                if (rango == 0)
+                {
+                    Estado = 0;
+                }
+                else if (rango >= -100 && rango <= 100)
+                {
+                    Estado = 2;
+
+                }
+                else if (rango > 100 || rango < -100)
+                {
+                    Estado = 1;
+                }
+
+
+            }
+            cn.cerrar();
+            return Estado;
+        }
+
+        private void Completado()
+        {
+
+           
+
+            if (verificarEstado() == 1)
+            {
+                if (consultar3() == 2 || consultar4() == 2)
+                {
+
+
+                    //Actualizar los datos finales de la calibración del CSM
+                    cn.abrir();
+                    SqlCommand cmd = new SqlCommand("update CSM set Estado = @Estado   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cmd.Parameters.AddWithValue("@NumeroSerie", serie);
+                    
+                   
+                    cmd.Parameters.AddWithValue("@Estado", "Completado");
+
+                    cmd.ExecuteNonQuery();
+                    
+                    cn.cerrar();
+
+
+                }
+
+                else if (consultar3() == 1 || consultar4() == 1)
+                {
+                    //Actualizar los datos finales de la calibración del CSM
+                    cn.abrir();
+                    SqlCommand cmd = new SqlCommand("update CSM set Estado = @Estado   where convert(char,[Número de serie]) = @NumeroSerie", cn.conectarBD);
+                    cmd.Parameters.AddWithValue("@NumeroSerie", serie);
+
+
+
+                    cmd.Parameters.AddWithValue("@Estado", "Pendiente Presión");
+                    cmd.ExecuteNonQuery();
+
+                    cn.cerrar();
+                }
+            }
+                
+        }
+
+        //Solo si el estado es "pendiente presion" procede a crear las opciones de presion 1 y presion 2
         private int verificarEstado()
         {
             int Estado = 0;
@@ -283,7 +447,7 @@ namespace Electrónicos
 
             if (reader.Read())
             {
-              if (reader[0].ToString() == "Pendiente Presión")
+              if (reader[0].ToString() == "Pendiente Presión" || reader[0].ToString() == "Completado")
                 {
                     Estado = 1;
                 }
@@ -299,6 +463,13 @@ namespace Electrónicos
             return Estado;
             
             
+        }
+
+      
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            busqueda();
         }
     }
 }
