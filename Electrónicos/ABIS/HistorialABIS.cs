@@ -79,21 +79,23 @@ namespace Electrónicos
             }
         }
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {/*
+        {
             try
             {
-                */
+                
 
 
                 if (e.Button == MouseButtons.Right)
                 {
-                   
+                
                     serie = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                     dataGridView1.CurrentCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
                    
                     ContextMenuStrip menu = new ContextMenuStrip();
 
-                    
+                    menu.Items.Add("Mediciones de Voltaje", default(Image), (snd, evt) => { menuVoltaje(); });
+                    menu.Items[0].BackColor = Color.FromKnownColor(KnownColor.LightBlue);
+
                     menu.Items.Add("Calibración #1", default(Image), (snd, evt) => { menuCalibracion1(); });
 
                     if (consultar() == 0)
@@ -103,12 +105,12 @@ namespace Electrónicos
 
                     else if (consultar() == 1)
                     {
-                        menu.Items[0].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
+                        menu.Items[1].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
                     }
 
                     else if (consultar() == 2)
                     {
-                        menu.Items[0].BackColor = Color.FromKnownColor(KnownColor.Red);
+                        menu.Items[1].BackColor = Color.FromKnownColor(KnownColor.Red);
 
                     }
                     
@@ -122,12 +124,12 @@ namespace Electrónicos
 
                     else if (consultar2() == 1)
                     {
-                        menu.Items[1].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
+                        menu.Items[2].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
                     }
 
                     else if (consultar2() == 2)
                     {
-                        menu.Items[1].BackColor = Color.FromKnownColor(KnownColor.Red);
+                        menu.Items[2].BackColor = Color.FromKnownColor(KnownColor.Red);
 
                     }
 
@@ -140,12 +142,12 @@ namespace Electrónicos
                         }
                         else if (consultar3() == 1)
                         {
-                            menu.Items[2].BackColor = Color.FromKnownColor(KnownColor.Red);
+                            menu.Items[3].BackColor = Color.FromKnownColor(KnownColor.Red);
                         }
 
                         else if (consultar3() == 2)
                         {
-                            menu.Items[2].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
+                            menu.Items[3].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
                         }
 
                         menu.Items.Add("Presión #2", default(Image), (snd, evt) => { menuPresion2(); });
@@ -156,15 +158,15 @@ namespace Electrónicos
                         }
                         else if (consultar4() == 1)
                         {
-                            menu.Items[3].BackColor = Color.FromKnownColor(KnownColor.Red);
+                            menu.Items[4].BackColor = Color.FromKnownColor(KnownColor.Red);
                         }
 
                         else if (consultar4() == 2)
                         {
-                            menu.Items[3].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
+                            menu.Items[4].BackColor = Color.FromKnownColor(KnownColor.LightGreen);
                         }
 
-                }
+                    }
 
                     //Obtienes las coordenadas de la celda seleccionada. 
                     Rectangle coordenada = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
@@ -179,16 +181,22 @@ namespace Electrónicos
                     menu.Show(dataGridView1, new Point(X, Y));
                 }
 
-                /*
+                
             }
             catch 
             {
                 
-            }*/
+            }
 
         }
 
-        
+
+        private void menuVoltaje()
+        {
+
+            Form frm = new Voltaje(serie);
+            frm.ShowDialog();
+        }
 
         private void menuCalibracion1()
         {

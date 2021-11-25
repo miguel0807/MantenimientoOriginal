@@ -370,6 +370,7 @@ namespace Electrónicos
 
 
         btnConectar.Enabled = true;
+            btnConectar.Focus();
         }
 
         //Restablece la configuración a sus valores iniciales
@@ -618,6 +619,7 @@ namespace Electrónicos
                     lblInstruccion.Text = "Coloque en posición hacia arriba el CSM";
                     //Mensaje = "Coloque CSM en posición hacia Arriba";
                     Mensaje = "Inicio del proceso de calibración.";
+                    btnEnPosicion.Focus();
                 }
 
 
@@ -686,6 +688,15 @@ namespace Electrónicos
                         cn.cerrar();
 
                         cn.abrir();
+                        SqlCommand cmd4 = new SqlCommand("insert into [CSM Voltaje] ([Número de serie],[Voltaje 1],[Voltaje 2],[Usuario Voltaje]) values (@NumeroSerie , 3.29,4.98, @Usuario)", cn.conectarBD);
+                        cmd4.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
+                        cmd4.Parameters.AddWithValue("@Usuario", Common.ActiveUser.firstName + " " + Common.ActiveUser.lastName);
+
+                        cmd4.ExecuteNonQuery();
+                        cn.cerrar();
+
+
+                        cn.abrir();
                         SqlCommand cmd = new SqlCommand("INSERT Into CSM ([Usuario Calibración],[Número de serie],[Número de parte],Descripción,[Fecha Ingreso 1],[Hora ingreso 1],[Error Humano],Estado) values (@Usuario,@NumeroSerie,@NumeroParte,@Descripcion,@fechaIngreso,@horaIngreso,@ErrorHumano,@Estado)", cn.conectarBD);
                         cmd.Parameters.AddWithValue("@Usuario", Common.ActiveUser.firstName + " " + Common.ActiveUser.lastName);
                         cmd.Parameters.AddWithValue("@NumeroSerie", NumeroSerie);
@@ -751,7 +762,7 @@ namespace Electrónicos
                         //Si no esta completado, se procede a completar
                         if (conteo2 == 0)
                         {
-                            MensajeError("Este CSM quedo incompleto, comenzado nuevamente la calibración.");
+                            MensajeError("Este CSM quedo incompleto, comenzando nuevamente la calibración.");
                             //MessageBox.Show("Este CSM quedo incompleto, comenzado nuevamente la calibración");
                         }
 
@@ -777,6 +788,7 @@ namespace Electrónicos
                 pic1.Visible = true;
                 lblInstruccion.Visible = true;
                 btnEnPosicion.Visible = true;
+                btnEnPosicion.Focus();
 
                 //MessageBox.Show(Mensaje);
             }
@@ -1098,6 +1110,7 @@ namespace Electrónicos
 
             ModoRetrabajo = false; //Desactiva el modo retrabajo
             EsconderPanel();
+            btnCargarCSM.Focus();
         }
 
       
@@ -1241,7 +1254,7 @@ namespace Electrónicos
                 
             }
 
-
+            btnCalibracion.Focus();
         }
 
        
@@ -1278,6 +1291,8 @@ namespace Electrónicos
                 //MessageBox.Show("El puerto se desconecto, reinicie el programa y vuelta a intentar");
                 return;
             }
+
+            btnCalibracion.Focus();
         }
 
     

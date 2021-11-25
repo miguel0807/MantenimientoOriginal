@@ -16,10 +16,10 @@ namespace Electrónicos
     
     public partial class Presentacion : Form
     {
+        internal static string variableMensaje;
 
 
-        
-       // internal static string CompartidoNombre;
+        // internal static string CompartidoNombre;
         //internal static string CompartidoPosicion;
 
         public Presentacion()
@@ -45,7 +45,8 @@ namespace Electrónicos
         {
             if (MessageBox.Show("Estas seguro de cerrar el programa?", "Alerta" , MessageBoxButtons.YesNo)== DialogResult.Yes)
             {
-                Application.Exit();
+                this.Close();
+               // Application.Exit();
             }
             
         }
@@ -215,6 +216,15 @@ namespace Electrónicos
         }
 
         int sw, sh;
+
+        private void MensajeError(string mensaje)
+        {
+            variableMensaje = mensaje;
+
+            Form frm = new Mensajes();
+
+            frm.ShowDialog();
+        }
 
     }
 

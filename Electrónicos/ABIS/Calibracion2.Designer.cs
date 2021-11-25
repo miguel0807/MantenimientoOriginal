@@ -383,7 +383,9 @@ namespace Electrónicos
             this.Controls.Add(this.txtHoraIngreso);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtFechaIngreso);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Calibracion2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calibracion2";
             this.Load += new System.EventHandler(this.Calibracion2_Load);
             this.ResumeLayout(false);

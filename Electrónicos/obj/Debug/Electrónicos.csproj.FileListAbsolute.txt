@@ -33,3 +33,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\Electróni
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.TrustInfo.xml
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.exe.manifest
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.application
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.ABIS.Voltaje.resources
