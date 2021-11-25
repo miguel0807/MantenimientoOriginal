@@ -1,74 +1,75 @@
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Resources.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.GenerateResource.cache
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.CoreCompileInputs.cache
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.MaterialNuevo.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Presentacion.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Indicadores_Proceso.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Busqueda_Material.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Modificar_Material.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Busqueda_Equipos.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.NuevoEquipo_Preventivo.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.NuevaClase_Preventivo.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.BusquedaPlanificacion_Preventivo.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.NuevoProvedor_Preventivo.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Pendiente_Preventivos.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\itextsharp.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.CopyComplete
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Startup.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Shutdown.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.HistShutdownStartup.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.ConfiguShSt.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Configuracion_Tarea.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Planificacion_Tareas.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.RegistroPreventivo.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Notas.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Exportar_Indicadores.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\ClosedXML.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DocumentFormat.OpenXml.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Registrar_Nuevo_Caso.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Reportes_área.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Resolución_Casos.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Reporte_Casos_Cerrados.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Login.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Common.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Common.pdb
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Common.xml
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess.pdb
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess.xml
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.pdb
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.xml
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.AssemblyReference.cache
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.exe
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.pdb
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.exe.config
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\S7.Net.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\S7.Net.xml
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Programas.resources
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.exe
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CircularProgressBar.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\MessagingToolkit.QRCode.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\WinFormAnimation.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.pdb
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.xml
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.exe.config
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CircularProgressBar.xml
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\SIM PRO.exe.config
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\SIM PRO.exe.manifest
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\SIM PRO.application
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\SIM PRO.exe
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\SIM PRO.pdb
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\SIM PRO.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\ClosedXML.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Common.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CR7.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Electrónicos.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\itextsharp.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\S7.Net.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.exe
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Guna.UI.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CircularProgressBar.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\MessagingToolkit.QRCode.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\WinFormAnimation.dll
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CR7.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CR7.exe.config
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Electrónicos.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Electrónicos.exe.config
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Generador QR.exe.config
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Tank Farm.exe.config
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Common.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Common.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\DataAccess.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Domain.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\S7.Net.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CircularProgressBar.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.AssemblyReference.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Programas.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Reportes_área.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Busqueda_Material.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Notas.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Exportar_indicadores.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Registrar_Nuevo_Caso.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Resolución_Casos.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Login.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.RegistroPreventivo.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Planificacion_Tareas.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.HistShutdownStartup.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.ConfiguShSt.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.NuevoEquipo_Preventivo.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Presentacion.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Indicadores_Proceso.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.MaterialNuevo.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Modificar_Material.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Resources.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.NuevaClase_Preventivo.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Busqueda_Equipos.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.BusquedaPlanificacion_Preventivo.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.NuevoProvedor_Preventivo.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Pendiente_Preventivos.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Shutdown.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Startup.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Configuracion_Tarea.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.Reporte_Casos_Cerrados.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.GenerateResource.cache
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.CoreCompileInputs.cache
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\SIM PRO.exe.manifest
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\SIM PRO.application
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\Mantenimiento.vbproj.CopyComplete
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\SIM PRO.exe
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\SIM PRO.xml
 C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\SIM PRO.pdb
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CR7.exe
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CR7.pdb
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\CR7.exe.config
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Electrónicos.exe
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Guna.UI.dll
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Electrónicos.pdb
-C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\bin\Debug\Electrónicos.exe.config
+C:\Users\malvarado\source\repos\Mantenimiento\Mantenimiento\obj\Debug\SIM PRO.TrustInfo.xml
