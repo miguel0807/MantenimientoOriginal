@@ -29,15 +29,15 @@ namespace Electrónicos
         private void Inicio()
         {
             cn.abrir();
-
-            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado  from CSM  ", cn.conectarBD);
+            //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado  from CSM  ", cn.conectarBD);
+            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado ,id  from CSM order by id desc  ", cn.conectarBD);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
             dataGridView1.DataSource = dt;
 
-            //dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
             txtMostrar.Visible = true;
             label3.Visible = true;
             dataGridView1.Visible = true;
@@ -55,8 +55,8 @@ namespace Electrónicos
         private void busqueda()
         {
             cn.abrir();
-
-            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado  from CSM  where convert(char,[Número de serie]) LIKE @serie + '%'", cn.conectarBD);
+            //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado  from CSM  where convert(char,[Número de serie]) LIKE @serie + '%'", cn.conectarBD);
+            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado,id  from CSM  where convert(char,[Número de serie]) LIKE @serie + '%' order by id desc", cn.conectarBD);
             cmd.Parameters.AddWithValue("@serie", txtBuscar.Text);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -64,7 +64,7 @@ namespace Electrónicos
 
             dataGridView1.DataSource = dt;
 
-            //dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
             txtMostrar.Visible = true;
             label3.Visible = true;
             dataGridView1.Visible = true;

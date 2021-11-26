@@ -624,7 +624,6 @@ namespace Electrónicos.ABIS
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Presion_2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Presion_2";
             this.Load += new System.EventHandler(this.Presion_2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtTemperaturaFinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPresion1)).EndInit();

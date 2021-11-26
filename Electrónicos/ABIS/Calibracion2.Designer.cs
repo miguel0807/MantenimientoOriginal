@@ -386,7 +386,6 @@ namespace Electrónicos
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Calibracion2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Calibracion2";
             this.Load += new System.EventHandler(this.Calibracion2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

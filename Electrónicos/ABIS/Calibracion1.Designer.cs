@@ -199,7 +199,7 @@ namespace Electrónicos
             this.btnGuardar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnGuardar.Image = null;
             this.btnGuardar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnGuardar.Location = new System.Drawing.Point(190, 345);
+            this.btnGuardar.Location = new System.Drawing.Point(182, 345);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -223,7 +223,7 @@ namespace Electrónicos
             this.gunaSeparator1.Location = new System.Drawing.Point(-188, 310);
             this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaSeparator1.Name = "gunaSeparator1";
-            this.gunaSeparator1.Size = new System.Drawing.Size(772, 10);
+            this.gunaSeparator1.Size = new System.Drawing.Size(743, 10);
             this.gunaSeparator1.TabIndex = 88;
             this.gunaSeparator1.Thickness = 4;
             // 
@@ -364,7 +364,7 @@ namespace Electrónicos
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(556, 414);
+            this.ClientSize = new System.Drawing.Size(527, 414);
             this.Controls.Add(this.gunaGradientButton4);
             this.Controls.Add(this.gunaGradientButton3);
             this.Controls.Add(this.gunaGradientButton2);
@@ -386,7 +386,6 @@ namespace Electrónicos
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Calibracion1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Calibración #1";
             this.Load += new System.EventHandler(this.Calibracion1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
