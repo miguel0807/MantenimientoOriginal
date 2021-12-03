@@ -68,6 +68,9 @@ namespace Electrónicos
             this.lblEstadoConexion = new System.Windows.Forms.Label();
             this.btnEnPosicion = new Guna.UI.WinForms.GunaGradientButton();
             this.timerConsola = new System.Windows.Forms.Timer(this.components);
+            this.lblSerie = new Guna.UI.WinForms.GunaLabel();
+            this.lblError = new Guna.UI.WinForms.GunaLabel();
+            this.lblEstadoF = new Guna.UI.WinForms.GunaLabel();
             this.derecho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.panelInformacion.SuspendLayout();
@@ -220,7 +223,7 @@ namespace Electrónicos
             this.btnRetrabajo.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnRetrabajo.Image = null;
             this.btnRetrabajo.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnRetrabajo.Location = new System.Drawing.Point(1048, 156);
+            this.btnRetrabajo.Location = new System.Drawing.Point(1048, 194);
             this.btnRetrabajo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRetrabajo.Name = "btnRetrabajo";
             this.btnRetrabajo.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -242,7 +245,7 @@ namespace Electrónicos
             this.gunaSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator1.Location = new System.Drawing.Point(12, 233);
+            this.gunaSeparator1.Location = new System.Drawing.Point(12, 244);
             this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaSeparator1.Name = "gunaSeparator1";
             this.gunaSeparator1.Size = new System.Drawing.Size(1197, 10);
@@ -266,7 +269,7 @@ namespace Electrónicos
             this.btnConsola.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnConsola.Image = null;
             this.btnConsola.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnConsola.Location = new System.Drawing.Point(867, 156);
+            this.btnConsola.Location = new System.Drawing.Point(733, 194);
             this.btnConsola.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsola.Name = "btnConsola";
             this.btnConsola.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -367,6 +370,9 @@ namespace Electrónicos
             this.panelInformacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelInformacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelInformacion.BackgroundImage")));
             this.panelInformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelInformacion.Controls.Add(this.lblEstadoF);
+            this.panelInformacion.Controls.Add(this.lblError);
+            this.panelInformacion.Controls.Add(this.lblSerie);
             this.panelInformacion.Controls.Add(this.lblEstado);
             this.panelInformacion.Controls.Add(this.lblErrorHumano);
             this.panelInformacion.Controls.Add(this.lblNumeroSerie);
@@ -379,10 +385,10 @@ namespace Electrónicos
             this.panelInformacion.GradientColor2 = System.Drawing.Color.DarkGray;
             this.panelInformacion.GradientColor3 = System.Drawing.Color.DarkSalmon;
             this.panelInformacion.GradientColor4 = System.Drawing.Color.RosyBrown;
-            this.panelInformacion.Location = new System.Drawing.Point(867, 15);
+            this.panelInformacion.Location = new System.Drawing.Point(704, 15);
             this.panelInformacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelInformacion.Name = "panelInformacion";
-            this.panelInformacion.Size = new System.Drawing.Size(325, 135);
+            this.panelInformacion.Size = new System.Drawing.Size(505, 175);
             this.panelInformacion.TabIndex = 49;
             this.panelInformacion.Text = "gunaGradientPanel1";
             // 
@@ -390,37 +396,38 @@ namespace Electrónicos
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.BackColor = System.Drawing.Color.Transparent;
-            this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.White;
-            this.lblEstado.Location = new System.Drawing.Point(11, 108);
+            this.lblEstado.Location = new System.Drawing.Point(11, 130);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(107, 19);
+            this.lblEstado.Size = new System.Drawing.Size(92, 27);
             this.lblEstado.TabIndex = 50;
-            this.lblEstado.Text = "Estado: N/A";
+            this.lblEstado.Text = "Estado:";
             // 
             // lblErrorHumano
             // 
+            this.lblErrorHumano.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrorHumano.AutoSize = true;
             this.lblErrorHumano.BackColor = System.Drawing.Color.Transparent;
-            this.lblErrorHumano.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorHumano.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorHumano.ForeColor = System.Drawing.Color.White;
-            this.lblErrorHumano.Location = new System.Drawing.Point(11, 75);
+            this.lblErrorHumano.Location = new System.Drawing.Point(272, 47);
             this.lblErrorHumano.Name = "lblErrorHumano";
-            this.lblErrorHumano.Size = new System.Drawing.Size(193, 19);
+            this.lblErrorHumano.Size = new System.Drawing.Size(212, 27);
             this.lblErrorHumano.TabIndex = 49;
-            this.lblErrorHumano.Text = "Intentos restantes: N/A";
+            this.lblErrorHumano.Text = "Intentos restantes:";
             // 
             // lblNumeroSerie
             // 
             this.lblNumeroSerie.AutoSize = true;
             this.lblNumeroSerie.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumeroSerie.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroSerie.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumeroSerie.ForeColor = System.Drawing.Color.White;
             this.lblNumeroSerie.Location = new System.Drawing.Point(11, 42);
             this.lblNumeroSerie.Name = "lblNumeroSerie";
-            this.lblNumeroSerie.Size = new System.Drawing.Size(190, 19);
+            this.lblNumeroSerie.Size = new System.Drawing.Size(203, 27);
             this.lblNumeroSerie.TabIndex = 48;
-            this.lblNumeroSerie.Text = "Número de serie: N/A";
+            this.lblNumeroSerie.Text = "Número de serie:";
             // 
             // panel6
             // 
@@ -429,7 +436,7 @@ namespace Electrónicos
             this.panel6.Location = new System.Drawing.Point(0, 5);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 125);
+            this.panel6.Size = new System.Drawing.Size(5, 165);
             this.panel6.TabIndex = 13;
             // 
             // panel7
@@ -439,27 +446,27 @@ namespace Electrónicos
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(320, 5);
+            this.panel7.Size = new System.Drawing.Size(500, 5);
             this.panel7.TabIndex = 15;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 130);
+            this.panel8.Location = new System.Drawing.Point(0, 170);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(320, 5);
+            this.panel8.Size = new System.Drawing.Size(500, 5);
             this.panel8.TabIndex = 14;
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(320, 0);
+            this.panel9.Location = new System.Drawing.Point(500, 0);
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(5, 135);
+            this.panel9.Size = new System.Drawing.Size(5, 175);
             this.panel9.TabIndex = 14;
             // 
             // label2
@@ -469,11 +476,11 @@ namespace Electrónicos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(11, 15);
+            this.label2.Location = new System.Drawing.Point(156, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 23);
+            this.label2.Size = new System.Drawing.Size(191, 37);
             this.label2.TabIndex = 9;
             this.label2.Text = "Información";
             // 
@@ -667,6 +674,48 @@ namespace Electrónicos
             this.btnEnPosicion.Visible = false;
             this.btnEnPosicion.Click += new System.EventHandler(this.btnEnPosicion_Click);
             // 
+            // lblSerie
+            // 
+            this.lblSerie.BackColor = System.Drawing.Color.Transparent;
+            this.lblSerie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSerie.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSerie.ForeColor = System.Drawing.Color.White;
+            this.lblSerie.Location = new System.Drawing.Point(16, 74);
+            this.lblSerie.Name = "lblSerie";
+            this.lblSerie.Size = new System.Drawing.Size(188, 39);
+            this.lblSerie.TabIndex = 51;
+            this.lblSerie.Text = "N/A";
+            this.lblSerie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblError
+            // 
+            this.lblError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblError.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.White;
+            this.lblError.Location = new System.Drawing.Point(277, 74);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(200, 39);
+            this.lblError.TabIndex = 52;
+            this.lblError.Text = "N/A";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblEstadoF
+            // 
+            this.lblEstadoF.AutoSize = true;
+            this.lblEstadoF.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstadoF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEstadoF.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoF.ForeColor = System.Drawing.Color.White;
+            this.lblEstadoF.Location = new System.Drawing.Point(101, 123);
+            this.lblEstadoF.Name = "lblEstadoF";
+            this.lblEstadoF.Size = new System.Drawing.Size(72, 36);
+            this.lblEstadoF.TabIndex = 53;
+            this.lblEstadoF.Text = "N/A";
+            // 
             // Abis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -742,5 +791,8 @@ namespace Electrónicos
         private Guna.UI.WinForms.GunaGradientButton btnEnPosicion;
         private System.Windows.Forms.Label lblInstruccion;
         private System.Windows.Forms.Timer timerConsola;
+        private Guna.UI.WinForms.GunaLabel lblSerie;
+        private Guna.UI.WinForms.GunaLabel lblEstadoF;
+        private Guna.UI.WinForms.GunaLabel lblError;
     }
 }

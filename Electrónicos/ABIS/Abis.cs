@@ -385,9 +385,12 @@ namespace Electrónicos
 
 
 
-            lblNumeroSerie.Text = "Número de serie: N/A";
-            lblErrorHumano.Text = "Intentos restantes: N/A";
-            lblEstado.Text = "Estado: N/A";
+            //lblNumeroSerie.Text = "Número de serie: N/A";
+            lblSerie.Text = "N/A";
+            lblError.Text = "N/A";
+            //lblErrorHumano.Text = "Intentos restantes: N/A";
+            //lblEstado.Text = "Estado: N/A";
+            lblEstadoF.Text = "N/A";
         }
 
         //Decodifica los mensajes generados en el textbox de ingles al español
@@ -1210,8 +1213,8 @@ namespace Electrónicos
                     NumeroParte = 71212730;
                     Descripcion = "ISU, L-SERIES, ABIS CSM";
 
-                    lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
-
+                    //lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
+                    lblSerie.Text = NumeroSerie;
                     //Verificar los errores humanos y el estado del CSM en la base de datos
                     cn.abrir();
                     SqlCommand cmd = new SqlCommand("select [Error Humano],Estado from CSM where convert(char,[Número de serie]) = @NumeroSerie ", cn.conectarBD);
@@ -1222,21 +1225,23 @@ namespace Electrónicos
 
                    
                     if (leer.Read() == true)
-                    {   
-                      
+                    {
 
-                        lblErrorHumano.Text = "Intentos restantes: " + leer.GetInt32(0);
+                        lblError.Text = "" + leer.GetInt32(0);
+                       // lblErrorHumano.Text = "Intentos restantes: " + leer.GetInt32(0);
 
-                        lblEstado.Text = "Estado: " + leer.GetString(1); 
+                        //lblEstado.Text = "Estado: " + leer.GetString(1); 
+                        lblEstadoF.Text = "" + leer.GetString(1);
 
-                       
 
                     }
 
                     else
                     {
-                        lblEstado.Text = "Estado: Equipo Nuevo";
-                        lblErrorHumano.Text = "Intentos restantes: 5";
+                        //lblEstado.Text = "Estado: Equipo Nuevo";
+                        lblEstadoF.Text = "Equipo Nuevo";
+                        //lblErrorHumano.Text = "Intentos restantes: 5";
+                        lblError.Text = "5";
                     }
 
                     btnCalibracion.Visible = true;
@@ -1347,9 +1352,9 @@ namespace Electrónicos
             }
             else
             {
-                
 
-                lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
+                lblSerie.Text = NumeroSerie;
+                //lblNumeroSerie.Text = "Número de serie: " + NumeroSerie;
 
                 //Verificar los errores humanos y el estado del CSM en la base de datos
                 cn.abrir();
@@ -1363,12 +1368,12 @@ namespace Electrónicos
                 if (leer.Read() == true)
                 {
 
+                    lblError.Text = "" + leer.GetInt32(0);
+                   // lblErrorHumano.Text = "Intentos restantes: " + leer.GetInt32(0);
 
-                    lblErrorHumano.Text = "Intentos restantes: " + leer.GetInt32(0);
+                   // lblEstado.Text = "Estado: " + leer.GetString(1);
+                    lblEstadoF.Text = "" + leer.GetString(1);
 
-                    lblEstado.Text = "Estado: " + leer.GetString(1);
-
-             
 
                 }
 

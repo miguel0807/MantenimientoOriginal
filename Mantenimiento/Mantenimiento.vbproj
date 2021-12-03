@@ -28,10 +28,10 @@
     <UpdateUrl>\\cor-sv-fs01\Costa Rica Share\Public\Production\Maintenance\Sistema integrado de manufactura%28SIM PRO%29\</UpdateUrl>
     <ProductName>SIM PRO</ProductName>
     <PublisherName>Miguel Alvarado</PublisherName>
-    <MinimumRequiredVersion>6.0.0.3</MinimumRequiredVersion>
+    <MinimumRequiredVersion>6.0.0.13</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>6.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -431,8 +431,6 @@
     <None Include="Resources\Chip1_icon-icons.com_55238.ico" />
     <None Include="Resources\Chip1_icon-icons.com_55238 %281%29.ico" />
     <None Include="Resources\Chip1_icon-icons.com_55238 %282%29.ico" />
-    <Content Include="Resources\ClosedXml\ClosedXML.dll" />
-    <Content Include="Resources\ClosedXml\DocumentFormat.OpenXml.dll" />
     <Content Include="Otros\tools_22686.ico" />
     <None Include="Resources\interfaz\etiquetas 64.png" />
     <None Include="Resources\interfaz\mantenimiento 64.png" />

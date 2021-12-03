@@ -52,31 +52,97 @@ namespace Electrónicos
             }
         }
 
-        private void busqueda()
+        private void busquedaSerie()
         {
-            cn.abrir();
-            //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado  from CSM  where convert(char,[Número de serie]) LIKE @serie + '%'", cn.conectarBD);
-            SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado,id  from CSM  where convert(char,[Número de serie]) LIKE @serie + '%' order by id desc", cn.conectarBD);
-            cmd.Parameters.AddWithValue("@serie", txtBuscar.Text);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            dataGridView1.DataSource = dt;
-
-            dataGridView1.Columns[5].Visible = false;
-            txtMostrar.Visible = true;
-            label3.Visible = true;
-            dataGridView1.Visible = true;
-            lblResgistros.Visible = true;
-
-            lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
-            cn.cerrar();
-
-            if (dataGridView1.Rows.Count == 0)
+            try
             {
+                cn.abrir();
+                //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado  from CSM  where convert(char,[Número de serie]) LIKE @serie + '%'", cn.conectarBD);
+                SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado,id  from CSM  where convert(char,[Número de serie]) LIKE @serie + '%' order by id desc", cn.conectarBD);
+                cmd.Parameters.AddWithValue("@serie", txtBuscar.Text);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
+                dataGridView1.DataSource = dt;
+
+                dataGridView1.Columns[5].Visible = false;
+                txtMostrar.Visible = true;
+                label3.Visible = true;
+                dataGridView1.Visible = true;
+                lblResgistros.Visible = true;
+
+                lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
+                cn.cerrar();
+
+                if (dataGridView1.Rows.Count == 0)
+                {
+
+                }
             }
+            catch { }
+        }
+
+        private void busquedaEstado()
+        {
+            try
+            {
+                cn.abrir();
+                //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado  from CSM  where convert(char,[Número de serie]) LIKE @serie + '%'", cn.conectarBD);
+                SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado,id  from CSM  where convert(char,[Estado]) LIKE @serie + '%' order by id desc", cn.conectarBD);
+                cmd.Parameters.AddWithValue("@serie", txtBuscar.Text);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+
+                dataGridView1.Columns[5].Visible = false;
+                txtMostrar.Visible = true;
+                label3.Visible = true;
+                dataGridView1.Visible = true;
+                lblResgistros.Visible = true;
+
+                lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
+                cn.cerrar();
+
+                if (dataGridView1.Rows.Count == 0)
+                {
+
+                }
+            }
+            catch { }
+        }
+
+        private void busquedaUsuario()
+        {
+            try
+            {
+                cn.abrir();
+                //SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado  from CSM  where convert(char,[Número de serie]) LIKE @serie + '%'", cn.conectarBD);
+                SqlCommand cmd = new SqlCommand("select top " + txtMostrar.Text + " [Número de parte],[Número de serie],Descripción,[Usuario Calibración],Estado,id  from CSM  where convert(char,[Usuario Calibración]) LIKE + '%' + @serie + '%' order by id desc", cn.conectarBD);
+                cmd.Parameters.AddWithValue("@serie", txtBuscar.Text);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+
+                dataGridView1.Columns[5].Visible = false;
+                txtMostrar.Visible = true;
+                label3.Visible = true;
+                dataGridView1.Visible = true;
+                lblResgistros.Visible = true;
+
+                lblResgistros.Text = "Cantidad de registros: " + dataGridView1.Rows.Count.ToString();
+                cn.cerrar();
+
+                if (dataGridView1.Rows.Count == 0)
+                {
+
+                }
+            }
+            catch { }
         }
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -214,19 +280,28 @@ namespace Electrónicos
 
         private void menuPresion1()
         {
+            int fila = dataGridView1.CurrentCell.RowIndex;
             Form frm = new Presion_1(serie);
             frm.ShowDialog();
             Completado();
-            Inicio();
+            MetodoBusqueda();
+
+
+            dataGridView1.Rows[fila].Selected = true;
+            dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.SelectedRows[0].Index;
             //MessageBox.Show("Cerrado");
         }
 
         private void menuPresion2()
         {
+            int fila = dataGridView1.CurrentCell.RowIndex;
             Form frm = new Presion_2(serie);
             frm.ShowDialog();
             Completado();
-            Inicio();
+            MetodoBusqueda();
+            dataGridView1.Rows[fila].Selected = true;
+            dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.SelectedRows[0].Index;
+
             //MessageBox.Show("Cerrado");
         }
 
@@ -472,12 +547,31 @@ namespace Electrónicos
             
             
         }
+         private void MetodoBusqueda()
+        {
 
+            if (cboModoBusqueda.Text == "Estado")
+            {
+                busquedaEstado();
+            }
+            else if (cboModoBusqueda.Text == "Número de serie")
+            {
+                busquedaSerie();
+            }
+
+            else if (cboModoBusqueda.Text == "Usuario")
+            {
+                busquedaUsuario();
+            }
+
+        }
       
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            busqueda();
+            MetodoBusqueda();
         }
+
+        
     }
 }
