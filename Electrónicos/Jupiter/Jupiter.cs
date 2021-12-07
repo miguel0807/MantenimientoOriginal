@@ -17,7 +17,13 @@ namespace Electrónicos.Jupiter
                
         private delegate void DelegadoAcceso(string accion);
         internal static string variableMensaje, variableConsola;
+        private int Power = 0;
+        private int Signal = 0;
 
+        private void Jupiter_Load(object sender, EventArgs e)
+        {
+
+        }
         #region Conexión, desconexión y lectura al puerto Serial
 
         //Lee la información del puerto Serial y la envia hacia el delegado   
@@ -38,8 +44,7 @@ namespace Electrónicos.Jupiter
         //Recibe la información del buffer de entrada y la muestra en textbox
         private void RecoleccionDatos(string bufferSalida)
         {
-
-            textBox1.Text = textBox1.Text + bufferSalida;
+            txtMensajeLeido.Text = txtMensajeLeido.Text + bufferSalida;
             variableConsola = variableConsola + bufferSalida;
             txtMostrarDatos.Text = txtMostrarDatos.Text + bufferSalida;
 
@@ -49,7 +54,6 @@ namespace Electrónicos.Jupiter
             txtMostrarDatos.ScrollToCaret();
 
             txtEnviarDatos.Focus();
-
         }
 
         //Configurarción y conexión al puerto serial
@@ -84,7 +88,6 @@ namespace Electrónicos.Jupiter
 
                 }
 
-
             }
             return exito;
 
@@ -94,7 +97,6 @@ namespace Electrónicos.Jupiter
         private void Desconectar()
         {
             PuertoSerie.Close();
-
         }
 
         #endregion
@@ -123,48 +125,37 @@ namespace Electrónicos.Jupiter
 
             else if (btnConectar.Text == "Desconectar")
             {
-
                 Desconectar();
                 btnConectar.Text = "Conectar";
                 lblEstadoConexion.Text = "Estado : Desconectado";               
                 btnConsola.Visible = false;
                 txtMostrarDatos.Visible = false;
                 txtEnviarDatos.Visible = false;
-                textBox1.Visible = false;
-
-
+                txtMensajeLeido.Visible = false;
             }
         }
 
         private void txtEnviarDatos_KeyPress(object sender, KeyPressEventArgs e)
         {
-            metodoClick(sender, e);
+            metodoBoton(sender, e);
         }
-        public void metodoClick(object sender, KeyPressEventArgs e)
+      
+        //Metodo que se ejecuta cuando se presiona el boton enter o el boton escape
+        public void metodoBoton(object sender, KeyPressEventArgs e)
         {
-            textBox1.Text = "";
+            txtMensajeLeido.Text = "";
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
 
                 try
-                {
-                    //PuertoSerie.DiscardOutBuffer();
-
-
-
+                {     
                     PuertoSerie.Write(txtEnviarDatos.Text);
-
                     PuertoSerie.Write(new byte[] { 13, 10 }, 0, 2);
-
                     txtEnviarDatos.Text = "";
-
-
-
                 }
                 catch (Exception exc)
                 {
-                    MensajeError(exc.Message.ToString());
-                    
+                    MensajeError(exc.Message.ToString());                    
                 }
             }
 
@@ -181,23 +172,64 @@ namespace Electrónicos.Jupiter
             {
                 txtMostrarDatos.Visible = true;
                 txtEnviarDatos.Visible = true;
-                textBox1.Visible = true;
+                txtMensajeLeido.Visible = true;
             }
 
             else {
                 txtMostrarDatos.Visible = false;
                 txtEnviarDatos.Visible = false;
-                textBox1.Visible = false;
+                txtMensajeLeido.Visible = false;
             }
             
         }
 
-        private void Jupiter_Load(object sender, EventArgs e)
+        private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
-
+            PuertoSerie.Write(txtEnviarDatos.Text);
+            PuertoSerie.Write(new byte[] { 13, 10 }, 0, 2);
+            txtEnviarDatos.Text = "";
         }
 
-       
+        private void btnSignal_Click(object sender, EventArgs e)
+        {
+            gunaCircleProgressBar1.Value = 0;
+            gunaCircleProgressBar1.Visible = true;
+            txtScaner.Focus();
+
+            
+            
+        }
+
+        private void btnPower_Click(object sender, EventArgs e)
+        {
+            Power = Convert.ToInt32(txtScaner.Text);
+           
+        }
+
+        private void CargarSignalPower()
+        {            
+            if (Power == 0 || Signal == 0)
+            {
+                btnSignal.Enabled = true;
+                btnPower.Enabled = true;
+            }
+
+            else
+            {
+                btnSignal.Enabled = false;
+                btnPower.Enabled = false;
+            }
+
+           
+           
+        }
+
+        private void txtScaner_TextChanged(object sender, EventArgs e)
+        {
+            Signal = Convert.ToInt32(txtScaner.Text);
+
+            
+        }
 
         //Permite mostrar un form donde tendra el mensaje enviado como parametro.
         private void MensajeError(string mensaje)
