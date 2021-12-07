@@ -115,6 +115,20 @@
     <Compile Include="ABIS\Mensajes.Designer.cs">
       <DependentUpon>Mensajes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Jupiter\Calibracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Jupiter\Calibracion.Designer.cs">
+      <DependentUpon>Calibracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jupiter\Funciones.cs" />
+    <Compile Include="Jupiter\Jupiter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Jupiter\Jupiter.Designer.cs">
+      <DependentUpon>Jupiter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jupiter\JupiterConexion.cs" />
     <Compile Include="Presentacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABIS\Voltaje.resx">
       <DependentUpon>Voltaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jupiter\Jupiter.resx">
+      <DependentUpon>Jupiter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion.resx">
       <DependentUpon>Presentacion.cs</DependentUpon>

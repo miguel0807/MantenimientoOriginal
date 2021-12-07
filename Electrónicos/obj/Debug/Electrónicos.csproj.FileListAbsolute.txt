@@ -34,3 +34,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electróni
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.exe.manifest
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.application
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.ABIS.Voltaje.resources
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.Jupiter.Jupiter.resources

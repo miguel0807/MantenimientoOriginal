@@ -46,9 +46,14 @@ namespace Electrónicos
             this.cASAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hofarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerDesconectadoCSM = new System.Windows.Forms.Timer(this.components);
+            this.btnEnPosicion = new Guna.UI.WinForms.GunaGradientButton();
+            this.timerConsola = new System.Windows.Forms.Timer(this.components);
             this.pic1 = new Guna.UI.WinForms.GunaPictureBox();
             this.btnCargarCSM = new Guna.UI.WinForms.GunaGradientButton();
             this.panelInformacion = new Guna.UI.WinForms.GunaGradientPanel();
+            this.lblEstadoF = new Guna.UI.WinForms.GunaLabel();
+            this.lblError = new Guna.UI.WinForms.GunaLabel();
+            this.lblSerie = new Guna.UI.WinForms.GunaLabel();
             this.lblEstado = new Guna.UI.WinForms.GunaLabel();
             this.lblErrorHumano = new Guna.UI.WinForms.GunaLabel();
             this.lblNumeroSerie = new Guna.UI.WinForms.GunaLabel();
@@ -66,11 +71,6 @@ namespace Electrónicos
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEstadoConexion = new System.Windows.Forms.Label();
-            this.btnEnPosicion = new Guna.UI.WinForms.GunaGradientButton();
-            this.timerConsola = new System.Windows.Forms.Timer(this.components);
-            this.lblSerie = new Guna.UI.WinForms.GunaLabel();
-            this.lblError = new Guna.UI.WinForms.GunaLabel();
-            this.lblEstadoF = new Guna.UI.WinForms.GunaLabel();
             this.derecho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.panelInformacion.SuspendLayout();
@@ -321,6 +321,40 @@ namespace Electrónicos
             this.timerDesconectadoCSM.Interval = 1000;
             this.timerDesconectadoCSM.Tick += new System.EventHandler(this.timerDesconectadoCSM_Tick);
             // 
+            // btnEnPosicion
+            // 
+            this.btnEnPosicion.Animated = true;
+            this.btnEnPosicion.AnimationHoverSpeed = 0.07F;
+            this.btnEnPosicion.AnimationSpeed = 0.03F;
+            this.btnEnPosicion.BackColor = System.Drawing.Color.Transparent;
+            this.btnEnPosicion.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnEnPosicion.BaseColor2 = System.Drawing.Color.DimGray;
+            this.btnEnPosicion.BorderColor = System.Drawing.Color.Black;
+            this.btnEnPosicion.BorderSize = 1;
+            this.btnEnPosicion.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEnPosicion.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEnPosicion.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnPosicion.ForeColor = System.Drawing.Color.White;
+            this.btnEnPosicion.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.btnEnPosicion.Image = null;
+            this.btnEnPosicion.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEnPosicion.Location = new System.Drawing.Point(652, 406);
+            this.btnEnPosicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEnPosicion.Name = "btnEnPosicion";
+            this.btnEnPosicion.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.btnEnPosicion.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnEnPosicion.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEnPosicion.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEnPosicion.OnHoverImage = null;
+            this.btnEnPosicion.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEnPosicion.Radius = 20;
+            this.btnEnPosicion.Size = new System.Drawing.Size(200, 138);
+            this.btnEnPosicion.TabIndex = 68;
+            this.btnEnPosicion.Text = "Colocado en posición";
+            this.btnEnPosicion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnEnPosicion.Visible = false;
+            this.btnEnPosicion.Click += new System.EventHandler(this.btnEnPosicion_Click);
+            // 
             // pic1
             // 
             this.pic1.BaseColor = System.Drawing.Color.White;
@@ -392,6 +426,48 @@ namespace Electrónicos
             this.panelInformacion.TabIndex = 49;
             this.panelInformacion.Text = "gunaGradientPanel1";
             // 
+            // lblEstadoF
+            // 
+            this.lblEstadoF.AutoSize = true;
+            this.lblEstadoF.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstadoF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEstadoF.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoF.ForeColor = System.Drawing.Color.White;
+            this.lblEstadoF.Location = new System.Drawing.Point(101, 123);
+            this.lblEstadoF.Name = "lblEstadoF";
+            this.lblEstadoF.Size = new System.Drawing.Size(72, 36);
+            this.lblEstadoF.TabIndex = 53;
+            this.lblEstadoF.Text = "N/A";
+            // 
+            // lblError
+            // 
+            this.lblError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblError.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.White;
+            this.lblError.Location = new System.Drawing.Point(277, 74);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(200, 39);
+            this.lblError.TabIndex = 52;
+            this.lblError.Text = "N/A";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSerie
+            // 
+            this.lblSerie.BackColor = System.Drawing.Color.Transparent;
+            this.lblSerie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSerie.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSerie.ForeColor = System.Drawing.Color.White;
+            this.lblSerie.Location = new System.Drawing.Point(16, 74);
+            this.lblSerie.Name = "lblSerie";
+            this.lblSerie.Size = new System.Drawing.Size(188, 39);
+            this.lblSerie.TabIndex = 51;
+            this.lblSerie.Text = "N/A";
+            this.lblSerie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
@@ -400,7 +476,7 @@ namespace Electrónicos
             this.lblEstado.ForeColor = System.Drawing.Color.White;
             this.lblEstado.Location = new System.Drawing.Point(11, 130);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(92, 27);
+            this.lblEstado.Size = new System.Drawing.Size(90, 26);
             this.lblEstado.TabIndex = 50;
             this.lblEstado.Text = "Estado:";
             // 
@@ -413,7 +489,7 @@ namespace Electrónicos
             this.lblErrorHumano.ForeColor = System.Drawing.Color.White;
             this.lblErrorHumano.Location = new System.Drawing.Point(272, 47);
             this.lblErrorHumano.Name = "lblErrorHumano";
-            this.lblErrorHumano.Size = new System.Drawing.Size(212, 27);
+            this.lblErrorHumano.Size = new System.Drawing.Size(205, 26);
             this.lblErrorHumano.TabIndex = 49;
             this.lblErrorHumano.Text = "Intentos restantes:";
             // 
@@ -425,7 +501,7 @@ namespace Electrónicos
             this.lblNumeroSerie.ForeColor = System.Drawing.Color.White;
             this.lblNumeroSerie.Location = new System.Drawing.Point(11, 42);
             this.lblNumeroSerie.Name = "lblNumeroSerie";
-            this.lblNumeroSerie.Size = new System.Drawing.Size(203, 27);
+            this.lblNumeroSerie.Size = new System.Drawing.Size(194, 26);
             this.lblNumeroSerie.TabIndex = 48;
             this.lblNumeroSerie.Text = "Número de serie:";
             // 
@@ -639,82 +715,6 @@ namespace Electrónicos
             this.lblEstadoConexion.Size = new System.Drawing.Size(237, 23);
             this.lblEstadoConexion.TabIndex = 10;
             this.lblEstadoConexion.Text = "Estado : Desconectado";
-            // 
-            // btnEnPosicion
-            // 
-            this.btnEnPosicion.Animated = true;
-            this.btnEnPosicion.AnimationHoverSpeed = 0.07F;
-            this.btnEnPosicion.AnimationSpeed = 0.03F;
-            this.btnEnPosicion.BackColor = System.Drawing.Color.Transparent;
-            this.btnEnPosicion.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.btnEnPosicion.BaseColor2 = System.Drawing.Color.DimGray;
-            this.btnEnPosicion.BorderColor = System.Drawing.Color.Black;
-            this.btnEnPosicion.BorderSize = 1;
-            this.btnEnPosicion.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnEnPosicion.FocusedColor = System.Drawing.Color.Empty;
-            this.btnEnPosicion.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnPosicion.ForeColor = System.Drawing.Color.White;
-            this.btnEnPosicion.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.btnEnPosicion.Image = null;
-            this.btnEnPosicion.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEnPosicion.Location = new System.Drawing.Point(652, 406);
-            this.btnEnPosicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEnPosicion.Name = "btnEnPosicion";
-            this.btnEnPosicion.OnHoverBaseColor1 = System.Drawing.Color.Gray;
-            this.btnEnPosicion.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEnPosicion.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnEnPosicion.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnEnPosicion.OnHoverImage = null;
-            this.btnEnPosicion.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEnPosicion.Radius = 20;
-            this.btnEnPosicion.Size = new System.Drawing.Size(200, 138);
-            this.btnEnPosicion.TabIndex = 68;
-            this.btnEnPosicion.Text = "Colocado en posición";
-            this.btnEnPosicion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnEnPosicion.Visible = false;
-            this.btnEnPosicion.Click += new System.EventHandler(this.btnEnPosicion_Click);
-            // 
-            // lblSerie
-            // 
-            this.lblSerie.BackColor = System.Drawing.Color.Transparent;
-            this.lblSerie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSerie.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerie.ForeColor = System.Drawing.Color.White;
-            this.lblSerie.Location = new System.Drawing.Point(16, 74);
-            this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(188, 39);
-            this.lblSerie.TabIndex = 51;
-            this.lblSerie.Text = "N/A";
-            this.lblSerie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblError
-            // 
-            this.lblError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblError.BackColor = System.Drawing.Color.Transparent;
-            this.lblError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblError.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.White;
-            this.lblError.Location = new System.Drawing.Point(277, 74);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(200, 39);
-            this.lblError.TabIndex = 52;
-            this.lblError.Text = "N/A";
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblEstadoF
-            // 
-            this.lblEstadoF.AutoSize = true;
-            this.lblEstadoF.BackColor = System.Drawing.Color.Transparent;
-            this.lblEstadoF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEstadoF.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoF.ForeColor = System.Drawing.Color.White;
-            this.lblEstadoF.Location = new System.Drawing.Point(101, 123);
-            this.lblEstadoF.Name = "lblEstadoF";
-            this.lblEstadoF.Size = new System.Drawing.Size(72, 36);
-            this.lblEstadoF.TabIndex = 53;
-            this.lblEstadoF.Text = "N/A";
             // 
             // Abis
             // 

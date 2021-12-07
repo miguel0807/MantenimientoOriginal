@@ -185,19 +185,20 @@ namespace Electrónicos
         private void gunaButton2_Click(object sender, EventArgs e)
         {
 
-            //Abis.variableMensaje= "Prueba de animaciónes";
-
-             //   Form frm = new Mensajes();
-            
-            
-               // frm.ShowDialog();
+          
             if (fh != null)
             {
                 fh.Close();
             }
-            
-            
-            
+
+            AbrirFormHijo(new Electrónicos.Jupiter.Jupiter());
+            //Abis.variableMensaje= "Prueba de animaciónes";
+
+            //   Form frm = new Mensajes();
+
+
+            // frm.ShowDialog();
+
         }
 
         private void panelContenedor_Paint_1(object sender, PaintEventArgs e)

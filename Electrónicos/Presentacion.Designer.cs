@@ -127,7 +127,7 @@ namespace Electrónicos
             this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
             this.gunaButton2.Size = new System.Drawing.Size(264, 42);
             this.gunaButton2.TabIndex = 11;
-            this.gunaButton2.Text = "Configuración";
+            this.gunaButton2.Text = "Jupiter";
             this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
             // 
             // panelAbis
