@@ -13,9 +13,9 @@ namespace Electrónicos.Jupiter
 
         private void MensajeError(string mensaje)
         {
-            variableMensaje = mensaje;
+         
 
-            Form frm = new Mensajes();
+            Form frm = new Mensajes(mensaje);
 
             frm.ShowDialog();
         }

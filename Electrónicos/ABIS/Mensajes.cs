@@ -12,8 +12,10 @@ namespace Electrónicos
 {
     public partial class Mensajes : Form
     {
-        public Mensajes()
+        private string mensaje;
+        public Mensajes(string mensaje)
         {
+            this.mensaje = mensaje;            
             InitializeComponent();
         }
 
@@ -26,7 +28,8 @@ namespace Electrónicos
 
         private void Mensajes_Load(object sender, EventArgs e)
         {
-            label1.Text = Abis.variableMensaje;
+            label1.Text = mensaje;
+            //label1.Text = Abis.variableMensaje;
             //gunaAnimateWindow1.AnimationType = Guna.UI.WinForms.GunaAnimateWindow.AnimateWindowType.AW_SLIDE;
             gunaAnimateWindow1.Start();
             

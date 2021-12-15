@@ -55,9 +55,10 @@ namespace Electrónicos.Jupiter
         }
 
         public int Signal1 { get => Signal; set => Signal = value; }
-        public int Power1 { get => Power; set => Power = value; }
+        public int Power1 { get => Power; set => Power = value; }        
+        public string AppVersion1 { get => AppVersion; set => AppVersion = value; }
+        public string FPGAVersion1 { get => FPGAVersion; set => FPGAVersion = value; }
         public string Estado1 { get => Estado; set => Estado = value; }
-
 
         public string P1Responsable1 { get => P1Responsable; set => P1Responsable = value; }
         public DateTime P1FechaIngreso1 { get => P1FechaIngreso; set => P1FechaIngreso = value; }
@@ -75,13 +76,15 @@ namespace Electrónicos.Jupiter
         public bool P1Voltaje24D31 { get => P1Voltaje24D3; set => P1Voltaje24D3 = value; }
         public bool P1FormaOnda1 { get => P1FormaOnda; set => P1FormaOnda = value; }
         public bool P1Comentario1 { get => P1Comentario; set => P1Comentario = value; }
-
+    
 
         public void guardadoInicial()
         {
 
-            SqlCommand cmd = new SqlCommand("insert into Jupiter ([P1 Responsable],[Estado],[App version],[FPGA version] ,[P1 Signal] , [P1 Power] , [P1 Fecha Ingreso],[P1 Hora Ingreso]) values (@P1Responsable,@Estado,@App,@FPGA, @P1Signal,@P1Power ,@P1FechaIngreso, @P1HoraIngreso)", cn.conectarBD);
+            SqlCommand cmd = new SqlCommand("insert into Jupiter ([Signal],[Power],[P1 Responsable],[Estado],[App version],[FPGA version] ,[P1 Signal] , [P1 Power] , [P1 Fecha Ingreso],[P1 Hora Ingreso]) values (@Signal,@Power,@P1Responsable,@Estado,@App,@FPGA, @P1Signal,@P1Power ,@P1FechaIngreso, @P1HoraIngreso)", cn.conectarBD);
             cn.abrir();
+            cmd.Parameters.AddWithValue("@Signal", 0);
+            cmd.Parameters.AddWithValue("@Power", 0);
             cmd.Parameters.AddWithValue("@P1responsable", Common.ActiveUser.firstName + " " + Common.ActiveUser.lastName);
             cmd.Parameters.AddWithValue("@P1Signal", P1Signal);
             cmd.Parameters.AddWithValue("@P1Power", P1Power);
@@ -228,10 +231,11 @@ namespace Electrónicos.Jupiter
         public int VerificarSignal()
         {            
             cn.abrir();
-            SqlCommand cmd = new SqlCommand("select [Signal] from Jupiter where [P1 Signal] = @P1Signal", cn.conectarBD);
-            cmd.Parameters.AddWithValue("@P1Signal", P1Signal);
-
-            int valor = Convert.ToInt32(cmd.ExecuteScalar());
+            SqlCommand cmd = new SqlCommand("select [Signal] from Jupiter where [Signal] = @P1Signal", cn.conectarBD);
+            cmd.Parameters.AddWithValue("@P1Signal", P1Signal);            
+           
+            int  valor = Convert.ToInt32(cmd.ExecuteScalar());            
+            
             cn.cerrar();
 
             return valor;
@@ -240,7 +244,7 @@ namespace Electrónicos.Jupiter
         public int VerificarPower()
         {
             cn.abrir();
-            SqlCommand cmd = new SqlCommand("select [Power] from Jupiter where [P1 Power] = @P1Power", cn.conectarBD);
+            SqlCommand cmd = new SqlCommand("select [Power] from Jupiter where [Power] = @P1Power", cn.conectarBD);
             cmd.Parameters.AddWithValue("@P1Power", P1Power);
 
             int valor = Convert.ToInt32(cmd.ExecuteScalar());

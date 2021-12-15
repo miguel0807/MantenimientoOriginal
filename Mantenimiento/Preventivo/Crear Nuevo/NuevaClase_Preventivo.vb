@@ -80,13 +80,13 @@ Public Class NuevaClase_Preventivo
 
 #Region "Cargar datos en combobox de Clasificacion"
         Try
-            Dim cmd As String = "select*from Clasificacion_Datos"
+            Dim cmd As String = "select*from Clasificación_Datos"
             Dim da As New SqlDataAdapter(cmd, cn)
             Dim ds As New DataSet
             da.Fill(ds)
             With Me.Clasificacion
                 Me.Clasificacion.DataSource = ds.Tables(0)
-                Me.Clasificacion.DisplayMember = "Clasificacion"
+                Me.Clasificacion.DisplayMember = "Clasificación"
             End With
             cn.Close()
         Catch ex As Exception

@@ -47,10 +47,12 @@ namespace Electrónicos.Jupiter
             this.txtMensajeLeido = new System.Windows.Forms.TextBox();
             this.btnSignal = new Guna.UI.WinForms.GunaGradientButton();
             this.btnPower = new Guna.UI.WinForms.GunaGradientButton();
-            this.gunaGradientButton2 = new Guna.UI.WinForms.GunaGradientButton();
-            this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtScaner = new System.Windows.Forms.TextBox();
+            this.timerPower = new System.Windows.Forms.Timer(this.components);
+            this.txtScanerPower = new System.Windows.Forms.TextBox();
+            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.txtScanerSignal = new System.Windows.Forms.TextBox();
+            this.timerSignal = new System.Windows.Forms.Timer(this.components);
+            this.txtInicio = new Guna.UI.WinForms.GunaGradientButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -311,7 +313,7 @@ namespace Electrónicos.Jupiter
             this.btnSignal.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnSignal.Image = null;
             this.btnSignal.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSignal.Location = new System.Drawing.Point(23, 195);
+            this.btnSignal.Location = new System.Drawing.Point(29, 195);
             this.btnSignal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSignal.Name = "btnSignal";
             this.btnSignal.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -324,7 +326,6 @@ namespace Electrónicos.Jupiter
             this.btnSignal.TabIndex = 65;
             this.btnSignal.Text = "Signal Board";
             this.btnSignal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSignal.Visible = false;
             this.btnSignal.Click += new System.EventHandler(this.btnSignal_Click);
             // 
             // btnPower
@@ -345,7 +346,7 @@ namespace Electrónicos.Jupiter
             this.btnPower.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnPower.Image = null;
             this.btnPower.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPower.Location = new System.Drawing.Point(140, 195);
+            this.btnPower.Location = new System.Drawing.Point(180, 195);
             this.btnPower.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPower.Name = "btnPower";
             this.btnPower.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -358,76 +359,104 @@ namespace Electrónicos.Jupiter
             this.btnPower.TabIndex = 66;
             this.btnPower.Text = "Power Board";
             this.btnPower.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnPower.Visible = false;
             this.btnPower.Click += new System.EventHandler(this.btnPower_Click);
             // 
-            // gunaGradientButton2
+            // timerPower
             // 
-            this.gunaGradientButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaGradientButton2.Animated = true;
-            this.gunaGradientButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientButton2.AnimationSpeed = 0.03F;
-            this.gunaGradientButton2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton2.BaseColor1 = System.Drawing.Color.SlateBlue;
-            this.gunaGradientButton2.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.gunaGradientButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton2.BorderSize = 1;
-            this.gunaGradientButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.gunaGradientButton2.Image = null;
-            this.gunaGradientButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton2.Location = new System.Drawing.Point(12, 512);
-            this.gunaGradientButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gunaGradientButton2.Name = "gunaGradientButton2";
-            this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.Gray;
-            this.gunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.gunaGradientButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton2.OnHoverImage = null;
-            this.gunaGradientButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton2.Size = new System.Drawing.Size(111, 77);
-            this.gunaGradientButton2.TabIndex = 67;
-            this.gunaGradientButton2.Text = "Signal Board";
-            this.gunaGradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaGradientButton2.Visible = false;
-            this.gunaGradientButton2.Click += new System.EventHandler(this.gunaGradientButton2_Click);
+            this.timerPower.Interval = 1;
+            this.timerPower.Tick += new System.EventHandler(this.timerPower_Tick);
             // 
-            // gunaCircleProgressBar1
+            // txtScanerPower
             // 
-            this.gunaCircleProgressBar1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaCircleProgressBar1.Animated = true;
-            this.gunaCircleProgressBar1.AnimationSpeed = 0.2F;
-            this.gunaCircleProgressBar1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.gunaCircleProgressBar1.ColorStyle = Guna.UI.WinForms.ColorStyle.Transition;
-            this.gunaCircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaCircleProgressBar1.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleProgressBar1.IdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.gunaCircleProgressBar1.IdleOffset = 20;
-            this.gunaCircleProgressBar1.Image = null;
-            this.gunaCircleProgressBar1.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(23, 276);
-            this.gunaCircleProgressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gunaCircleProgressBar1.Name = "gunaCircleProgressBar1";
-            this.gunaCircleProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.gunaCircleProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaCircleProgressBar1.ProgressOffset = 20;
-            this.gunaCircleProgressBar1.Size = new System.Drawing.Size(219, 190);
-            this.gunaCircleProgressBar1.TabIndex = 68;
-            this.gunaCircleProgressBar1.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
-            this.gunaCircleProgressBar1.UseProgressPercentText = true;
-            this.gunaCircleProgressBar1.Visible = false;
+            this.txtScanerPower.Location = new System.Drawing.Point(163, 277);
+            this.txtScanerPower.Multiline = true;
+            this.txtScanerPower.Name = "txtScanerPower";
+            this.txtScanerPower.Size = new System.Drawing.Size(142, 50);
+            this.txtScanerPower.TabIndex = 69;
+            this.txtScanerPower.TextChanged += new System.EventHandler(this.txtScaner_TextChanged);
+            this.txtScanerPower.Leave += new System.EventHandler(this.txtScanerPower_Leave);
             // 
-            // txtScaner
+            // circularProgressBar1
             // 
-            this.txtScaner.Location = new System.Drawing.Point(258, 207);
-            this.txtScaner.Multiline = true;
-            this.txtScaner.Name = "txtScaner";
-            this.txtScaner.Size = new System.Drawing.Size(142, 50);
-            this.txtScaner.TabIndex = 69;
-            this.txtScaner.TextChanged += new System.EventHandler(this.txtScaner_TextChanged);
+            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar1.AnimationSpeed = 200;
+            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularProgressBar1.ForeColor = System.Drawing.Color.White;
+            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.circularProgressBar1.InnerMargin = 2;
+            this.circularProgressBar1.InnerWidth = -1;
+            this.circularProgressBar1.Location = new System.Drawing.Point(39, 362);
+            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar1.Name = "circularProgressBar1";
+            this.circularProgressBar1.OuterColor = System.Drawing.Color.Plum;
+            this.circularProgressBar1.OuterMargin = -25;
+            this.circularProgressBar1.OuterWidth = 26;
+            this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.circularProgressBar1.ProgressWidth = 25;
+            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.circularProgressBar1.Size = new System.Drawing.Size(253, 214);
+            this.circularProgressBar1.StartAngle = 270;
+            this.circularProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.circularProgressBar1.SubscriptText = "";
+            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.circularProgressBar1.SuperscriptText = "";
+            this.circularProgressBar1.TabIndex = 70;
+            this.circularProgressBar1.Text = "Buscando";
+            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 4, 8, 0);
+            this.circularProgressBar1.Value = 68;
+            this.circularProgressBar1.Visible = false;
+            // 
+            // txtScanerSignal
+            // 
+            this.txtScanerSignal.Location = new System.Drawing.Point(12, 277);
+            this.txtScanerSignal.Multiline = true;
+            this.txtScanerSignal.Name = "txtScanerSignal";
+            this.txtScanerSignal.Size = new System.Drawing.Size(142, 50);
+            this.txtScanerSignal.TabIndex = 71;
+            this.txtScanerSignal.TextChanged += new System.EventHandler(this.txtScanerSignal_TextChanged);
+            this.txtScanerSignal.Leave += new System.EventHandler(this.txtScanerSignal_Leave);
+            // 
+            // timerSignal
+            // 
+            this.timerSignal.Interval = 1;
+            this.timerSignal.Tick += new System.EventHandler(this.timerSignal_Tick);
+            // 
+            // txtInicio
+            // 
+            this.txtInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtInicio.Animated = true;
+            this.txtInicio.AnimationHoverSpeed = 0.07F;
+            this.txtInicio.AnimationSpeed = 0.03F;
+            this.txtInicio.BackColor = System.Drawing.Color.Transparent;
+            this.txtInicio.BaseColor1 = System.Drawing.Color.SlateBlue;
+            this.txtInicio.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.txtInicio.BorderColor = System.Drawing.Color.Black;
+            this.txtInicio.BorderSize = 1;
+            this.txtInicio.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.txtInicio.FocusedColor = System.Drawing.Color.Empty;
+            this.txtInicio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInicio.ForeColor = System.Drawing.Color.White;
+            this.txtInicio.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.txtInicio.Image = null;
+            this.txtInicio.ImageSize = new System.Drawing.Size(20, 20);
+            this.txtInicio.Location = new System.Drawing.Point(395, 497);
+            this.txtInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtInicio.Name = "txtInicio";
+            this.txtInicio.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.txtInicio.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtInicio.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.txtInicio.OnHoverForeColor = System.Drawing.Color.White;
+            this.txtInicio.OnHoverImage = null;
+            this.txtInicio.OnPressedColor = System.Drawing.Color.Black;
+            this.txtInicio.Size = new System.Drawing.Size(230, 113);
+            this.txtInicio.TabIndex = 72;
+            this.txtInicio.Text = "Comenzar programación";
+            this.txtInicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtInicio.Click += new System.EventHandler(this.txtInicio_Click);
             // 
             // Jupiter
             // 
@@ -435,9 +464,10 @@ namespace Electrónicos.Jupiter
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1210, 756);
-            this.Controls.Add(this.txtScaner);
-            this.Controls.Add(this.gunaCircleProgressBar1);
-            this.Controls.Add(this.gunaGradientButton2);
+            this.Controls.Add(this.txtInicio);
+            this.Controls.Add(this.txtScanerSignal);
+            this.Controls.Add(this.circularProgressBar1);
+            this.Controls.Add(this.txtScanerPower);
             this.Controls.Add(this.btnPower);
             this.Controls.Add(this.btnSignal);
             this.Controls.Add(this.txtMensajeLeido);
@@ -475,9 +505,11 @@ namespace Electrónicos.Jupiter
         private System.Windows.Forms.TextBox txtMensajeLeido;
         private Guna.UI.WinForms.GunaGradientButton btnSignal;
         private Guna.UI.WinForms.GunaGradientButton btnPower;
-        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton2;
-        private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TextBox txtScaner;
+        private System.Windows.Forms.Timer timerPower;
+        private System.Windows.Forms.TextBox txtScanerPower;
+        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private System.Windows.Forms.TextBox txtScanerSignal;
+        private System.Windows.Forms.Timer timerSignal;
+        private Guna.UI.WinForms.GunaGradientButton txtInicio;
     }
 }

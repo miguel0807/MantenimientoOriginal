@@ -1097,7 +1097,7 @@ namespace Electrónicos
             {
 
                 Desconectar();
-
+                textBox1.Text = "";
                 btnConectar.Text = "Conectar";
                 lblEstadoConexion.Text = "Estado : Desconectado";
                 btnCargarCSM.Visible = false;
@@ -1418,7 +1418,7 @@ namespace Electrónicos
         {
             variableMensaje = mensaje;
 
-            Form frm = new Mensajes();
+            Form frm = new Mensajes(variableMensaje);
 
             frm.ShowDialog();
         }
@@ -1444,6 +1444,7 @@ namespace Electrónicos
             if (tipoCalibracion == 0)
             {
                 textBox1.Text = "";
+                txtMostrarDatos.Text =  "";
                 BtEnter();
              
 

@@ -164,7 +164,7 @@ namespace Electrónicos
         {
             Abis.variableMensaje = mensaje;
 
-            Form frm = new Mensajes();
+            Form frm = new Mensajes(Abis.variableMensaje);
 
             frm.ShowDialog();
         }
