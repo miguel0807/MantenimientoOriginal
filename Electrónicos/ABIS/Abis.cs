@@ -552,9 +552,14 @@ namespace Electrónicos
                     decoCalibracion = true;
                     RegresoInicio();
                     btnCargarCSM.Visible = true;
+
+                    ModoRetrabajo = false;
+                    decoCalibracion = false;
+                    decoLeerCSM = true;
+                    sinConectarCSM = false;
                 }
 
-
+             
                 numeroLinea++;
             }
 
@@ -1276,7 +1281,7 @@ namespace Electrónicos
                 BtEscape();
 
                 PuertoSerie.DiscardOutBuffer();
-
+                txtMostrarDatos.Text = "";
                 textBox1.Text = "";
 
                 PuertoSerie.Write("sensor 0");
@@ -1446,6 +1451,7 @@ namespace Electrónicos
                 textBox1.Text = "";
                 txtMostrarDatos.Text =  "";
                 BtEnter();
+
              
 
                 decoCalibracion = false;
