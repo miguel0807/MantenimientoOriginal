@@ -14,3 +14,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.appl
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.csproj.CopyComplete
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.exe
 C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\Tank Farm\obj\Debug\Tank Farm.csproj.AssemblyReference.cache

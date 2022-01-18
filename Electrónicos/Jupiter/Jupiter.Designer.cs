@@ -53,6 +53,7 @@ namespace Electrónicos.Jupiter
             this.txtScanerSignal = new System.Windows.Forms.TextBox();
             this.timerSignal = new System.Windows.Forms.Timer(this.components);
             this.txtInicio = new Guna.UI.WinForms.GunaGradientButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -213,6 +214,7 @@ namespace Electrónicos.Jupiter
             // 
             // PuertoSerie
             // 
+            this.PuertoSerie.ErrorReceived += new System.IO.Ports.SerialErrorReceivedEventHandler(this.PuertoSerie_ErrorReceived);
             this.PuertoSerie.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.PuertoSerie_DataReceived_1);
             // 
             // txtEnviarDatos
@@ -458,12 +460,26 @@ namespace Electrónicos.Jupiter
             this.txtInicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtInicio.Click += new System.EventHandler(this.txtInicio_Click);
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(55, 613);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(237, 23);
+            this.label2.TabIndex = 73;
+            this.label2.Text = "Estado : Desconectado";
+            // 
             // Jupiter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1210, 756);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtInicio);
             this.Controls.Add(this.txtScanerSignal);
             this.Controls.Add(this.circularProgressBar1);
@@ -479,6 +495,7 @@ namespace Electrónicos.Jupiter
             this.Name = "Jupiter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jupiter";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Jupiter_FormClosing);
             this.Load += new System.EventHandler(this.Jupiter_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -511,5 +528,6 @@ namespace Electrónicos.Jupiter
         private System.Windows.Forms.TextBox txtScanerSignal;
         private System.Windows.Forms.Timer timerSignal;
         private Guna.UI.WinForms.GunaGradientButton txtInicio;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -228,6 +228,7 @@ namespace Electrónicos.Jupiter
             cn.cerrar();
         }
 
+        //Verifica que el valor de P1Signal no se encuentra registado en la base de datos.
         public int VerificarSignal()
         {            
             cn.abrir();
@@ -241,6 +242,7 @@ namespace Electrónicos.Jupiter
             return valor;
         }
 
+        //Verifica que el valor de P1Power no se encuentra registado en la base de datos.
         public int VerificarPower()
         {
             cn.abrir();

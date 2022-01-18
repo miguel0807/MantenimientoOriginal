@@ -46,13 +46,13 @@ Public Class Busqueda_Equipos
 
 
                 Try
-                    Dim cmd As String = "select*from Clasificacion_Datos"
+                    Dim cmd As String = "select*from Clasificación_Datos"
                     Dim da As New SqlDataAdapter(cmd, cn)
                     Dim ds As New DataSet
                     da.Fill(ds)
                     With Me.detalle
                         Me.detalle.DataSource = ds.Tables(0)
-                        Me.detalle.DisplayMember = "Clasificacion"
+                        Me.detalle.DisplayMember = "Clasificación"
                     End With
                     cn.Close()
                 Catch ex As Exception

@@ -63,6 +63,8 @@ Public Class Login
         Me.CenterToScreen()
         txtPass.Focus()
 
+
+
         'If My.Settings.recordarusuario = 1 Then
         'CheckBox1.Checked = True
         'txtPass.Focus()
@@ -174,4 +176,7 @@ Public Class Login
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
 
     End Sub
+
+
+
 End Class

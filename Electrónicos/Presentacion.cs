@@ -16,7 +16,7 @@ namespace Electrónicos
     
     public partial class Presentacion : Form
     {
-        internal static string variableMensaje;
+      
 
 
         // internal static string CompartidoNombre;

@@ -12,12 +12,12 @@ namespace Electrónicos.Jupiter
         internal static string variableMensaje, variableConsola;
 
         private void MensajeError(string mensaje)
-        {
-         
+        {         
 
             Form frm = new Mensajes(mensaje);
 
             frm.ShowDialog();
         }
+       
     }
 }

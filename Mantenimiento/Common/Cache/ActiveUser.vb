@@ -7,6 +7,10 @@
     Public position
     Public email
     Public OrdenProduccion
+    Public isOpenForm As Boolean = False
+
+
+
 
 
 End Module

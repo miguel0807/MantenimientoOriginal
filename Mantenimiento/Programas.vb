@@ -55,6 +55,7 @@
 
     Private Sub Programas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'sympro
+        Common.isOpenForm = True
     End Sub
 
     Private Sub Panel1_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel1.MouseMove
