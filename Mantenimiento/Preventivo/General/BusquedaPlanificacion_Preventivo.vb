@@ -36,10 +36,14 @@ Public Class BusquedaPlanificacion_Preventivo
 
             Case "General"
 
+
+
+
                 detalle_equipo.Visible = False
 
                 general()
                 Button4.Visible = True
+
             Case "Especifico"
 
 
@@ -63,7 +67,12 @@ Public Class BusquedaPlanificacion_Preventivo
         Else
 
             If eliminar_dentro = True Then
+
+                Dim filaActual As Integer
+                filaActual = DataGridView1.CurrentRow.Index
                 Eliminar_Planificacion()
+                DataGridView1.Rows(filaActual).Selected = True
+                DataGridView1.CurrentCell = DataGridView1.Rows(filaActual).Cells(1)
 
             End If
         End If
@@ -371,8 +380,12 @@ Public Class BusquedaPlanificacion_Preventivo
         If columna = 1 Then
         ElseIf columna = 0 Then
         Else
-
+            Dim filaActual As Integer
+            filaActual = DataGridView1.CurrentRow.Index
             agregar_Planificacion()
+
+            DataGridView1.Rows(filaActual).Selected = True
+            DataGridView1.CurrentCell = DataGridView1.Rows(filaActual).Cells(1)
         End If
 
     End Sub
@@ -390,6 +403,8 @@ Public Class BusquedaPlanificacion_Preventivo
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
     End Sub
+
+
 
 
 
