@@ -335,14 +335,10 @@ Public Class Planificacion_Tareas
                     For i As Integer = 0 To dtDatos.Rows.Count - 1
                         SQLEtiqueta = (dtDatos.Rows(i)("Etiqueta"))
 
-                        'Busco en la base de datos la lista de todas las tareas del equipo
-                        Dim adaptador1 As New SqlDataAdapter("select*from Caracteristicas_Tareas where convert(char,Equipo)='" & CboClase.Text & "'  ", cn)
-                        Dim dtDatos1 As DataTable = New DataTable
-                        adaptador1.Fill(dtDatos1)
 
-                        'Hago bucle tarea por tarea para ver crear nuevas tarea a los equipos que no tengan nada asignado.
-                        For w As Integer = 0 To dtDatos1.Rows.Count - 1
-                            SQLCodTarea = (dtDatos1.Rows(w)("CodTarea"))
+                        'Recorro el datagridview  tarea por tarea para verificar que no esten registradas en la base de datos.
+                        For w As Integer = 0 To DataGridView2.Rows.Count - 1
+                            SQLCodTarea = DataGridView2.Rows.Item(w).Cells("CodTarea").Value
 
                             'Busco en el historial de las tareas si hay datos guardados de la misma tarea 
                             Dim adaptador5 As New SqlDataAdapter("select*from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
@@ -578,9 +574,5 @@ Public Class Planificacion_Tareas
         End If
     End Sub
 
-    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
-        MessageBox.Show(DataGridView2.CurrentRow.Cells.Item(0).Value.ToString)
 
-
-    End Sub
 End Class
