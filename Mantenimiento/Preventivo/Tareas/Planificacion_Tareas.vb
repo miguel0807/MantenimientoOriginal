@@ -580,9 +580,7 @@ Public Class Planificacion_Tareas
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
         MessageBox.Show(DataGridView2.CurrentRow.Cells.Item(0).Value.ToString)
-        MessageBox.Show(DataGridView2.CurrentRow.Cells.Item(1).Value.ToString)
-        MessageBox.Show(DataGridView2.CurrentRow.Cells.Item(2).Value.ToString)
-        MessageBox.Show(DataGridView2.CurrentRow.Cells.Item(3).Value.ToString)
+
 
     End Sub
 End Class
