@@ -57,7 +57,9 @@ Public Class BusquedaPlanificacion_Preventivo
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         If columna = 1 Then
+
         ElseIf columna = 0 Then
+
         Else
 
             If eliminar_dentro = True Then
@@ -337,11 +339,15 @@ Public Class BusquedaPlanificacion_Preventivo
                 columna = "Diciembre"
 
         End Select
-        Dim conteo1 As New SqlCommand("UPDATE ConteoPlanificacion_Equipos SET " & columna & "=9999  WHERE Codigo='" & codigo & "' and año = " & año.Text & "", cn)
-        conteo1.ExecuteNonQuery()
-        ' MsgBox("Agregado con exito")
-        desconectar()
-
+        Dim añointeger As Integer
+        añointeger = año.Text
+        For i = añointeger To 2029
+            conectar()
+            Dim conteo1 As New SqlCommand("UPDATE ConteoPlanificacion_Equipos SET " & columna & "=9999  WHERE Codigo='" & codigo & "' and año = " & i & "", cn)
+            conteo1.ExecuteNonQuery()
+            ' MsgBox("Agregado con exito")
+            desconectar()
+        Next i
 
         general()
 

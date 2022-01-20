@@ -199,14 +199,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIM PRO.exe" size="892344">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIM PRO.exe" size="893880">
       <assemblyIdentity name="SIM PRO" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1mh5p9IVUIEDBlRqstYh8avfC6S8/ThKX7eqXY5eWM4=</dsig:DigestValue>
+        <dsig:DigestValue>aMWQnXS/IW8ixVPq29uRwdFztJP9C/cl1rmBSKDVIa4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

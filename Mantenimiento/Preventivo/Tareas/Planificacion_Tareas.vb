@@ -23,8 +23,10 @@ Public Class Planificacion_Tareas
 
         TareaAño()
 
+        verificarMes(clasecodigo)
 
-        TareaMes()
+
+
 
     End Sub
 
@@ -32,6 +34,14 @@ Public Class Planificacion_Tareas
 
 
         TareaEtiqueta()
+
+
+        verificarMes(clasecodigo)
+
+
+
+
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -196,26 +206,7 @@ Public Class Planificacion_Tareas
 
 
 
-    Private Sub txtEtiqueta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtEtiqueta.SelectedIndexChanged
 
-
-
-
-
-
-    End Sub
-
-    Private Sub txtAño_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtAño.SelectedIndexChanged
-
-
-
-    End Sub
-
-    Private Sub txtMeses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtMeses.SelectedIndexChanged
-
-
-
-    End Sub
 
     Private Sub DataGridView2_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles DataGridView2.MouseDoubleClick
         If DataGridView2.Rows.Count = 0 Then
@@ -510,4 +501,77 @@ Public Class Planificacion_Tareas
     End Sub
 
 
+
+
+
+    Private Sub txtAño_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtAño.SelectedIndexChanged
+        verificarMes(clasecodigo)
+    End Sub
+
+    Private Sub txtMeses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtMeses.SelectedIndexChanged
+        If CheckBox1.Checked = True Then
+
+#Region "Cargar lista de tareas"
+            TabControl1.SelectedTab = TabPage1
+            Me.DataGridView2.Select()
+            datagr = DataGridView2
+            labe1 = Label4
+
+
+            SQLEtiqueta = txtEtiqueta.Text
+            SQLAño = txtAño.Text
+            SQLMes = txtMeses.Text
+
+            RevisarTareas()
+
+#End Region
+
+        Else
+
+            SQLEtiqueta = txtEtiqueta.Text
+            SQLAño = txtAño.Text
+            SQLMes = txtMeses.Text
+
+
+#Region "Cargar lista de tareas"
+            TabControl1.SelectedTab = TabPage1
+            Me.DataGridView2.Select()
+            datagr = DataGridView2
+            labe1 = Label4
+            RevisarTareas()
+
+#End Region
+
+#Region "Cargar tareas activas"
+            TabControl1.SelectedTab = TabPage2
+            Me.DataGridView1.Select()
+            datagr = DataGridView1
+            labe1 = Label5
+            CargarPendientesTareasPlanificacion()
+#End Region
+
+#Region "Cargar tareas realizadas"
+            TabControl1.SelectedTab = TabPage3
+            Me.DataGridView3.Select()
+            datagr = DataGridView3
+            labe1 = Label7
+
+            CargarPendientesTareasPlanificacionRealizadas()
+            EquipoActivo.Text = "Etiqueta: " & txtEtiqueta.Text
+            ClaseActivo.Text = "Clase: " & txtClase.Text
+            AñoActivo.Text = "Año: " & txtAño.Text
+            MesActivo.Text = "Mes: " & txtMeses.Text
+
+#End Region
+
+
+        End If
+
+        If CheckBox1.Checked = True Then
+
+            TabControl1.SelectedTab = TabPage1
+        Else
+            TabControl1.SelectedTab = TabPage2
+        End If
+    End Sub
 End Class

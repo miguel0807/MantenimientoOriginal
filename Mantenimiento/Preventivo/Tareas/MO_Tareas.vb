@@ -572,15 +572,25 @@ Module MO_Tareas
 
     Sub TareaMes()
 
+
+
 #Region "Cargar MES"
         Try
-            Dim cmd As String = "select*from Meses_Datos"
+            Dim cmd As String = "select*from Meses_Datos where convert(char,Meses) = (?) "
+
             Dim da As New SqlDataAdapter(cmd, cn)
             Dim ds As New DataSet
             da.Fill(ds)
             With CboMes
-                CboMes.DataSource = ds.Tables(0)
-                CboMes.DisplayMember = "Meses"
+
+
+                If ds.Tables(0).Rows.Count > 0 Then
+                    .DataSource = ds.Tables(0)
+                    .DisplayMember = "Meses"
+
+                Else
+                    MessageBox.Show("No hay datos")
+                End If
             End With
 
             cn.Close()
@@ -588,6 +598,80 @@ Module MO_Tareas
             MessageBox.Show(ex.Message)
         End Try
 #End Region
+    End Sub
+
+    Sub verificarMes(ByVal Equipo As Integer)
+
+        Dim mes As String
+        Dim año As Integer
+
+        Dim verificadorAño As Boolean = Int32.TryParse(CboAño.Text, año)
+
+        If año = 0 Then
+
+            Exit Sub
+
+        End If
+
+
+        CboMes.Items.Clear()
+
+
+        For mesInt As Integer = 1 To 12
+
+            If mesInt = 1 Then
+                mes = "Enero"
+            ElseIf mesInt = 2 Then
+                mes = "Febrero"
+            ElseIf mesInt = 3 Then
+                mes = "Marzo"
+            ElseIf mesInt = 4 Then
+                mes = "Abril"
+            ElseIf mesInt = 5 Then
+                mes = "Mayo"
+            ElseIf mesInt = 6 Then
+                mes = "Junio"
+            ElseIf mesInt = 7 Then
+                mes = "Julio"
+            ElseIf mesInt = 8 Then
+                mes = "Agosto"
+            ElseIf mesInt = 9 Then
+                mes = "Septiembre"
+            ElseIf mesInt = 10 Then
+                mes = "Octubre"
+            ElseIf mesInt = 11 Then
+                mes = "Noviembre"
+            ElseIf mesInt = 12 Then
+                mes = "Diciembre"
+            Else
+                mes = "N/A"
+            End If
+
+
+            Try
+                Dim cmd As String = "select*from ConteoPlanificacion_Equipos where Codigo = " & Equipo & " and " & mes & " != 9999 and Año = " & año & ""
+
+                Dim da As New SqlDataAdapter(cmd, cn)
+                Dim ds As New DataSet
+                da.Fill(ds)
+                With CboMes
+
+                    If ds.Tables(0).Rows.Count > 0 Then
+
+                        .Items.Add(mes)
+                        .SelectedIndex = 0
+
+                    End If
+                End With
+
+                cn.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+        Next
+
+
     End Sub
 
     Sub TareaEtiqueta()
