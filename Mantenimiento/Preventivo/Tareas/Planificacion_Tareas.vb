@@ -24,7 +24,7 @@ Public Class Planificacion_Tareas
         TareaAño()
 
         verificarMes(clasecodigo)
-
+        txtAño.Text = Date.Now.Year
 
 
 
@@ -215,6 +215,8 @@ Public Class Planificacion_Tareas
         Else
 
             If CheckBox1.Checked = True Then
+
+                DataGridView2.Rows.Remove(DataGridView2.CurrentRow)
             Else
 
                 Me.DataGridView2.Select()
@@ -525,6 +527,8 @@ Public Class Planificacion_Tareas
             RevisarTareas()
 
 #End Region
+
+
 
         Else
 
