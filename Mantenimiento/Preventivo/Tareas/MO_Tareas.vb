@@ -800,4 +800,42 @@ Module MO_Tareas
 
         End If
     End Sub
+    'Función para obtener el codigo del equipo en formato integer
+    Function obtenerCodigoEquipo(ByVal EquipoString As String) As Integer
+        Dim codigoEquipo As Integer
+
+        Dim adaptador As New SqlDataAdapter("select*from Caracteristicas_Equipo where CONVERT(char,Clase)='" & EquipoString & "'", cn)
+        Dim ds As New DataSet
+        adaptador.Fill(ds, "Codigo")
+
+        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
+        If ds.Tables("Codigo").Rows.Count > 0 Then
+
+            codigoEquipo = ds.Tables("Codigo").Rows(0).Item(0).ToString
+
+        End If
+
+
+        Return codigoEquipo
+
+    End Function
+
+    'Función para obtener el nombre del equipo en formato String
+    Function obtenerNombreEquipo(ByVal EquipoCodigo As Integer) As String
+        Dim nombreEquipo As String = ""
+
+        Dim adaptador As New SqlDataAdapter("select*from Caracteristicas_Equipo where Codigo = " & EquipoCodigo & " ", cn)
+        Dim ds As New DataSet
+        adaptador.Fill(ds, "Clase")
+
+        'El item selecciona de cual columna de la base de datos se conectara y row es la fila
+        If ds.Tables("Clase").Rows.Count > 0 Then
+
+            nombreEquipo = ds.Tables("Clase").Rows(0).Item(1).ToString
+
+        End If
+
+
+        Return nombreEquipo
+    End Function
 End Module
