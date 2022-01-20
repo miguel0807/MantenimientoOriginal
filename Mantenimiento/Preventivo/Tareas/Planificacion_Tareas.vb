@@ -326,42 +326,43 @@ Public Class Planificacion_Tareas
                     Me.DataGridView2.Select()
                     SQLCodTarea = DataGridView2.CurrentRow.Cells.Item(0).Value.ToString
 
-
+                    'Busco todos los equipos de una misma clase
                     Dim adaptador As New SqlDataAdapter("select*from Lista_Equipos where Codigo=" & clasecodigo & " ", cn)
                     Dim dtDatos As DataTable = New DataTable
                     adaptador.Fill(dtDatos)
+
+                    'Hago un bucle para asignarles las tareas a equipo por equipo
                     For i As Integer = 0 To dtDatos.Rows.Count - 1
                         SQLEtiqueta = (dtDatos.Rows(i)("Etiqueta"))
-                        ' MsgBox(dtDatos.Rows(i)("Etiqueta"))
 
-
+                        'Busco en la base de datos la lista de todas las tareas del equipo
                         Dim adaptador1 As New SqlDataAdapter("select*from Caracteristicas_Tareas where convert(char,Equipo)='" & CboClase.Text & "'  ", cn)
                         Dim dtDatos1 As DataTable = New DataTable
                         adaptador1.Fill(dtDatos1)
+
+                        'Hago bucle tarea por tarea para ver crear nuevas tarea a los equipos que no tengan nada asignado.
                         For w As Integer = 0 To dtDatos1.Rows.Count - 1
                             SQLCodTarea = (dtDatos1.Rows(w)("CodTarea"))
-                            'MsgBox(dtDatos1.Rows(w)("CodTarea"))
 
-
-
-
-
+                            'Busco en el historial de las tareas si hay datos guardados de la misma tarea 
                             Dim adaptador5 As New SqlDataAdapter("select*from Historial_Tareas where codTarea=" & SQLCodTarea & " and Codigo=" & SQLCodigo & " and convert(char,Etiqueta)='" & SQLEtiqueta & "' and Año=" & SQLAño & " and convert(char,Mes)='" & SQLMes & "'", cn)
                             Dim dataS5 As New DataSet
-                            'MsgBox(adaptador.SelectCommand.CommandText)
+
                             adaptador5.Fill(dataS5, "Shutdowns")
 
-                            ' datagr.DataSource = dataS.Tables("Shutdowns")
+
+
+                            'Si habian datos guardados lo indico y termino el proceso
                             If dataS5.Tables("Shutdowns").Rows.Count > 0 Then
 
 
                                 MsgBox("Habian datos cargados en el equipo " & SQLEtiqueta & "")
 
 
-                            Else
+                            Else 'Si no hay datos guardados proceso a crear las tareas nuevas
 
 
-#Region "Insertar en la lista de equipos la informacion del nuevo equipo"
+                                'Insertar en la lista de equipos la informacion del nuevo equipo"
                                 Dim adaptador3 As New SqlCommand("insert into Historial_Tareas values(" & SQLCodTarea & "," & SQLCodigo & ",'" & SQLEtiqueta & "','N/A','Sin asignar'," & SQLAño & ",'" & SQLMes & "','1/1/1900','N/A',0)", cn)
                                 conectar()
                                 'MsgBox(adaptador1.CommandText)
@@ -371,7 +372,7 @@ Public Class Planificacion_Tareas
 
 
 
-#End Region
+
                             End If
 
 
@@ -379,9 +380,7 @@ Public Class Planificacion_Tareas
 
                     Next
                     MsgBox("Tareas cargadas con exito")
-                    ' SQLCodTarea
 
-                    '  SQLCodigo
                     desconectar()
 
 
@@ -579,5 +578,11 @@ Public Class Planificacion_Tareas
         End If
     End Sub
 
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        MessageBox.Show(DataGridView2.CurrentRow.Cells.Item(0).Value.ToString)
+        MessageBox.Show(DataGridView2.CurrentRow.Cells.Item(1).Value.ToString)
+        MessageBox.Show(DataGridView2.CurrentRow.Cells.Item(2).Value.ToString)
+        MessageBox.Show(DataGridView2.CurrentRow.Cells.Item(3).Value.ToString)
 
+    End Sub
 End Class
