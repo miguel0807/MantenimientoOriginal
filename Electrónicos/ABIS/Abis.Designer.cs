@@ -269,7 +269,7 @@ namespace Electrónicos
             this.btnConsola.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnConsola.Image = null;
             this.btnConsola.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnConsola.Location = new System.Drawing.Point(733, 194);
+            this.btnConsola.Location = new System.Drawing.Point(708, 194);
             this.btnConsola.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsola.Name = "btnConsola";
             this.btnConsola.OnHoverBaseColor1 = System.Drawing.Color.Gray;

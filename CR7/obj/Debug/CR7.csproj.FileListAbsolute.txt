@@ -16,3 +16,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.application
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.csproj.CopyComplete
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.exe
 C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.pdb
+C:\Users\malvarado\source\repos\Mantenimiento\CR7\obj\Debug\CR7.csproj.SuggestedBindingRedirects.cache

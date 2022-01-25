@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f0f8d35d-1b96-41c1-8a43-98769c1eecb2": {
+      "ProjectGuid": "f0f8d35d-1b96-41c1-8a43-98769c1eecb2",
+      "DisplayName": "Electrónicos",
+      "ColorIndex": 0
+    },
+    "dc5b6d2d-eb2c-425d-9db6-55c0f028a2d5": {
+      "ProjectGuid": "dc5b6d2d-eb2c-425d-9db6-55c0f028a2d5",
+      "DisplayName": "CR7",
+      "ColorIndex": 1
+    },
+    "8535cdbb-6b3f-4ef4-a459-f4899b6d9857": {
+      "ProjectGuid": "8535cdbb-6b3f-4ef4-a459-f4899b6d9857",
+      "DisplayName": "Tank Farm",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

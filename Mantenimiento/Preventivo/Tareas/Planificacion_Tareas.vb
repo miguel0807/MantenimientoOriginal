@@ -27,7 +27,6 @@ Public Class Planificacion_Tareas
         txtAño.Text = Date.Now.Year
 
 
-
     End Sub
 
     Private Sub Clase_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtClase.SelectedIndexChanged
