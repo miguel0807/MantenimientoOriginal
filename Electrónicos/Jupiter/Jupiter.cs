@@ -17,11 +17,12 @@ namespace Electrónicos.Jupiter
     {
                
         private delegate void DelegadoAcceso(string accion);
-        internal static string variableMensaje, variableConsola;
+        internal static string  variableConsola;
         private int Power = 0;
         private int Signal = 0;
         private int segundos = 0;
         JupiterConexion impresora = new JupiterConexion();
+        JupiterCalculos cal = new JupiterCalculos();
 
         private void Jupiter_Load(object sender, EventArgs e)
         {
@@ -416,6 +417,8 @@ namespace Electrónicos.Jupiter
 
         }
 
+      
+
 
         //Permite mostrar un form donde tendra el mensaje enviado como parametro.
         private void MensajeError(string mensaje)
@@ -426,8 +429,22 @@ namespace Electrónicos.Jupiter
             frm.ShowDialog();
         }
 
+        private void cmd(string comando)
+        {
+            PuertoSerie.Write(comando);
+            PuertoSerie.Write(new byte[] { 13, 10 }, 0, 2);
+        }
 
-       
+        private void gunaGradientButton2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnActivar_Click(object sender, EventArgs e)
+        {
+            cal.CambiarVsI();
+
+        }
     }
 
 }

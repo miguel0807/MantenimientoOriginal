@@ -54,11 +54,20 @@ namespace Electrónicos.Jupiter
             this.timerSignal = new System.Windows.Forms.Timer(this.components);
             this.txtInicio = new Guna.UI.WinForms.GunaGradientButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaGradientButton2 = new Guna.UI.WinForms.GunaGradientButton();
+            this.gunaGradientButton3 = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnActivar = new Guna.UI.WinForms.GunaGradientButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.gunaGradientButton1);
@@ -75,6 +84,8 @@ namespace Electrónicos.Jupiter
             this.panel1.GradientColor4 = System.Drawing.Color.RosyBrown;
             this.panel1.Location = new System.Drawing.Point(12, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.MaximumSize = new System.Drawing.Size(350, 209);
+            this.panel1.MinimumSize = new System.Drawing.Size(325, 135);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(325, 135);
             this.panel1.TabIndex = 47;
@@ -98,6 +109,7 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaGradientButton1.Location = new System.Drawing.Point(27, 43);
             this.gunaGradientButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaGradientButton1.MinimumSize = new System.Drawing.Size(23, 18);
             this.gunaGradientButton1.Name = "gunaGradientButton1";
             this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.SlateBlue;
             this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
@@ -111,6 +123,9 @@ namespace Electrónicos.Jupiter
             // 
             // btnConectar
             // 
+            this.btnConectar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConectar.Animated = true;
             this.btnConectar.AnimationHoverSpeed = 0.07F;
             this.btnConectar.AnimationSpeed = 0.03F;
@@ -128,6 +143,8 @@ namespace Electrónicos.Jupiter
             this.btnConectar.ImageSize = new System.Drawing.Size(20, 20);
             this.btnConectar.Location = new System.Drawing.Point(73, 74);
             this.btnConectar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConectar.MaximumSize = new System.Drawing.Size(306, 110);
+            this.btnConectar.MinimumSize = new System.Drawing.Size(184, 50);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
             this.btnConectar.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -189,11 +206,13 @@ namespace Electrónicos.Jupiter
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(141, 15);
+            this.label1.MinimumSize = new System.Drawing.Size(49, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 23);
+            this.label1.Size = new System.Drawing.Size(51, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "PCB";
             // 
@@ -204,13 +223,16 @@ namespace Electrónicos.Jupiter
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEstadoConexion.AutoSize = true;
             this.lblEstadoConexion.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstadoConexion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEstadoConexion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoConexion.ForeColor = System.Drawing.Color.White;
             this.lblEstadoConexion.Location = new System.Drawing.Point(56, 38);
+            this.lblEstadoConexion.MinimumSize = new System.Drawing.Size(237, 23);
             this.lblEstadoConexion.Name = "lblEstadoConexion";
-            this.lblEstadoConexion.Size = new System.Drawing.Size(237, 23);
+            this.lblEstadoConexion.Size = new System.Drawing.Size(239, 25);
             this.lblEstadoConexion.TabIndex = 10;
             this.lblEstadoConexion.Text = "Estado : Desconectado";
+            this.lblEstadoConexion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PuertoSerie
             // 
@@ -219,36 +241,39 @@ namespace Electrónicos.Jupiter
             // 
             // txtEnviarDatos
             // 
-            this.txtEnviarDatos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtEnviarDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEnviarDatos.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtEnviarDatos.Location = new System.Drawing.Point(698, 73);
+            this.txtEnviarDatos.Location = new System.Drawing.Point(884, 73);
             this.txtEnviarDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEnviarDatos.Name = "txtEnviarDatos";
-            this.txtEnviarDatos.Size = new System.Drawing.Size(500, 22);
+            this.txtEnviarDatos.Size = new System.Drawing.Size(343, 22);
             this.txtEnviarDatos.TabIndex = 48;
             this.txtEnviarDatos.Visible = false;
             this.txtEnviarDatos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEnviarDatos_KeyPress);
             // 
             // txtMostrarDatos
             // 
-            this.txtMostrarDatos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtMostrarDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMostrarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.txtMostrarDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMostrarDatos.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.txtMostrarDatos.Location = new System.Drawing.Point(698, 95);
+            this.txtMostrarDatos.Location = new System.Drawing.Point(884, 95);
             this.txtMostrarDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMostrarDatos.Multiline = true;
             this.txtMostrarDatos.Name = "txtMostrarDatos";
             this.txtMostrarDatos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMostrarDatos.Size = new System.Drawing.Size(500, 632);
+            this.txtMostrarDatos.Size = new System.Drawing.Size(343, 673);
             this.txtMostrarDatos.TabIndex = 49;
             this.txtMostrarDatos.Visible = false;
             // 
             // btnConsola
             // 
-            this.btnConsola.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConsola.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsola.Animated = true;
             this.btnConsola.AnimationHoverSpeed = 0.07F;
             this.btnConsola.AnimationSpeed = 0.03F;
@@ -264,8 +289,9 @@ namespace Electrónicos.Jupiter
             this.btnConsola.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnConsola.Image = null;
             this.btnConsola.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnConsola.Location = new System.Drawing.Point(698, 26);
+            this.btnConsola.Location = new System.Drawing.Point(872, 16);
             this.btnConsola.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConsola.MaximumSize = new System.Drawing.Size(144, 46);
             this.btnConsola.Name = "btnConsola";
             this.btnConsola.OnHoverBaseColor1 = System.Drawing.Color.Gray;
             this.btnConsola.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -278,28 +304,27 @@ namespace Electrónicos.Jupiter
             this.btnConsola.TabIndex = 63;
             this.btnConsola.Text = "Consola";
             this.btnConsola.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnConsola.Visible = false;
             this.btnConsola.Click += new System.EventHandler(this.btnConsola_Click);
             // 
             // txtMensajeLeido
             // 
-            this.txtMensajeLeido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtMensajeLeido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMensajeLeido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.txtMensajeLeido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMensajeLeido.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.txtMensajeLeido.Location = new System.Drawing.Point(406, 73);
+            this.txtMensajeLeido.Location = new System.Drawing.Point(1022, 11);
             this.txtMensajeLeido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMensajeLeido.Multiline = true;
             this.txtMensajeLeido.Name = "txtMensajeLeido";
             this.txtMensajeLeido.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMensajeLeido.Size = new System.Drawing.Size(286, 388);
+            this.txtMensajeLeido.Size = new System.Drawing.Size(205, 56);
             this.txtMensajeLeido.TabIndex = 64;
             this.txtMensajeLeido.Visible = false;
             // 
             // btnSignal
             // 
-            this.btnSignal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSignal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSignal.Animated = true;
             this.btnSignal.AnimationHoverSpeed = 0.07F;
             this.btnSignal.AnimationSpeed = 0.03F;
@@ -315,8 +340,10 @@ namespace Electrónicos.Jupiter
             this.btnSignal.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnSignal.Image = null;
             this.btnSignal.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSignal.Location = new System.Drawing.Point(29, 195);
+            this.btnSignal.Location = new System.Drawing.Point(22, 176);
             this.btnSignal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSignal.MaximumSize = new System.Drawing.Size(152, 77);
+            this.btnSignal.MinimumSize = new System.Drawing.Size(120, 77);
             this.btnSignal.Name = "btnSignal";
             this.btnSignal.OnHoverBaseColor1 = System.Drawing.Color.Gray;
             this.btnSignal.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -324,7 +351,7 @@ namespace Electrónicos.Jupiter
             this.btnSignal.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSignal.OnHoverImage = null;
             this.btnSignal.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSignal.Size = new System.Drawing.Size(111, 77);
+            this.btnSignal.Size = new System.Drawing.Size(120, 77);
             this.btnSignal.TabIndex = 65;
             this.btnSignal.Text = "Signal Board";
             this.btnSignal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -332,7 +359,7 @@ namespace Electrónicos.Jupiter
             // 
             // btnPower
             // 
-            this.btnPower.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPower.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPower.Animated = true;
             this.btnPower.AnimationHoverSpeed = 0.07F;
             this.btnPower.AnimationSpeed = 0.03F;
@@ -348,8 +375,10 @@ namespace Electrónicos.Jupiter
             this.btnPower.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnPower.Image = null;
             this.btnPower.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPower.Location = new System.Drawing.Point(180, 195);
+            this.btnPower.Location = new System.Drawing.Point(180, 176);
             this.btnPower.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPower.MaximumSize = new System.Drawing.Size(152, 77);
+            this.btnPower.MinimumSize = new System.Drawing.Size(112, 77);
             this.btnPower.Name = "btnPower";
             this.btnPower.OnHoverBaseColor1 = System.Drawing.Color.Gray;
             this.btnPower.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -370,7 +399,10 @@ namespace Electrónicos.Jupiter
             // 
             // txtScanerPower
             // 
+            this.txtScanerPower.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtScanerPower.Location = new System.Drawing.Point(163, 277);
+            this.txtScanerPower.MaximumSize = new System.Drawing.Size(142, 50);
             this.txtScanerPower.Multiline = true;
             this.txtScanerPower.Name = "txtScanerPower";
             this.txtScanerPower.Size = new System.Drawing.Size(142, 50);
@@ -388,7 +420,7 @@ namespace Electrónicos.Jupiter
             this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.circularProgressBar1.InnerMargin = 2;
             this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(39, 362);
+            this.circularProgressBar1.Location = new System.Drawing.Point(369, 141);
             this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
             this.circularProgressBar1.Name = "circularProgressBar1";
             this.circularProgressBar1.OuterColor = System.Drawing.Color.Plum;
@@ -414,7 +446,10 @@ namespace Electrónicos.Jupiter
             // 
             // txtScanerSignal
             // 
+            this.txtScanerSignal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtScanerSignal.Location = new System.Drawing.Point(12, 277);
+            this.txtScanerSignal.MaximumSize = new System.Drawing.Size(142, 50);
             this.txtScanerSignal.Multiline = true;
             this.txtScanerSignal.Name = "txtScanerSignal";
             this.txtScanerSignal.Size = new System.Drawing.Size(142, 50);
@@ -429,7 +464,6 @@ namespace Electrónicos.Jupiter
             // 
             // txtInicio
             // 
-            this.txtInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtInicio.Animated = true;
             this.txtInicio.AnimationHoverSpeed = 0.07F;
             this.txtInicio.AnimationSpeed = 0.03F;
@@ -445,7 +479,7 @@ namespace Electrónicos.Jupiter
             this.txtInicio.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.txtInicio.Image = null;
             this.txtInicio.ImageSize = new System.Drawing.Size(20, 20);
-            this.txtInicio.Location = new System.Drawing.Point(395, 497);
+            this.txtInicio.Location = new System.Drawing.Point(57, 342);
             this.txtInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtInicio.Name = "txtInicio";
             this.txtInicio.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -454,7 +488,7 @@ namespace Electrónicos.Jupiter
             this.txtInicio.OnHoverForeColor = System.Drawing.Color.White;
             this.txtInicio.OnHoverImage = null;
             this.txtInicio.OnPressedColor = System.Drawing.Color.Black;
-            this.txtInicio.Size = new System.Drawing.Size(230, 113);
+            this.txtInicio.Size = new System.Drawing.Size(212, 73);
             this.txtInicio.TabIndex = 72;
             this.txtInicio.Text = "Comenzar programación";
             this.txtInicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -462,23 +496,154 @@ namespace Electrónicos.Jupiter
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(55, 613);
+            this.label2.Location = new System.Drawing.Point(365, 39);
+            this.label2.MinimumSize = new System.Drawing.Size(237, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(237, 23);
             this.label2.TabIndex = 73;
-            this.label2.Text = "Estado : Desconectado";
+            this.label2.Text = "Signal : N/A";
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gunaPictureBox1.BackColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.BurlyWood;
+            this.gunaPictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(12, 587);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(298, 123);
+            this.gunaPictureBox1.TabIndex = 74;
+            this.gunaPictureBox1.TabStop = false;
+            // 
+            // gunaGradientButton2
+            // 
+            this.gunaGradientButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gunaGradientButton2.Animated = true;
+            this.gunaGradientButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaGradientButton2.AnimationSpeed = 0.03F;
+            this.gunaGradientButton2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradientButton2.BaseColor1 = System.Drawing.Color.ForestGreen;
+            this.gunaGradientButton2.BaseColor2 = System.Drawing.Color.Khaki;
+            this.gunaGradientButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.BorderSize = 1;
+            this.gunaGradientButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaGradientButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaGradientButton2.ForeColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.gunaGradientButton2.Image = null;
+            this.gunaGradientButton2.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaGradientButton2.Location = new System.Drawing.Point(12, 715);
+            this.gunaGradientButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaGradientButton2.Name = "gunaGradientButton2";
+            this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.gunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.gunaGradientButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton2.OnHoverImage = null;
+            this.gunaGradientButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.Size = new System.Drawing.Size(137, 77);
+            this.gunaGradientButton2.TabIndex = 77;
+            this.gunaGradientButton2.Text = "Aceptar";
+            this.gunaGradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaGradientButton2.Click += new System.EventHandler(this.gunaGradientButton2_Click);
+            // 
+            // gunaGradientButton3
+            // 
+            this.gunaGradientButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gunaGradientButton3.Animated = true;
+            this.gunaGradientButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaGradientButton3.AnimationSpeed = 0.03F;
+            this.gunaGradientButton3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradientButton3.BaseColor1 = System.Drawing.Color.Red;
+            this.gunaGradientButton3.BaseColor2 = System.Drawing.SystemColors.MenuBar;
+            this.gunaGradientButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton3.BorderSize = 1;
+            this.gunaGradientButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaGradientButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaGradientButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaGradientButton3.ForeColor = System.Drawing.Color.Black;
+            this.gunaGradientButton3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.gunaGradientButton3.Image = null;
+            this.gunaGradientButton3.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaGradientButton3.Location = new System.Drawing.Point(164, 715);
+            this.gunaGradientButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaGradientButton3.Name = "gunaGradientButton3";
+            this.gunaGradientButton3.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.gunaGradientButton3.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.gunaGradientButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton3.OnHoverImage = null;
+            this.gunaGradientButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradientButton3.Size = new System.Drawing.Size(146, 77);
+            this.gunaGradientButton3.TabIndex = 78;
+            this.gunaGradientButton3.Text = "Rechazar";
+            this.gunaGradientButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnActivar
+            // 
+            this.btnActivar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnActivar.Animated = true;
+            this.btnActivar.AnimationHoverSpeed = 0.07F;
+            this.btnActivar.AnimationSpeed = 0.03F;
+            this.btnActivar.BackColor = System.Drawing.Color.Transparent;
+            this.btnActivar.BaseColor1 = System.Drawing.SystemColors.InactiveCaptionText;
+            this.btnActivar.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnActivar.BorderColor = System.Drawing.Color.Black;
+            this.btnActivar.BorderSize = 1;
+            this.btnActivar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnActivar.FocusedColor = System.Drawing.Color.Empty;
+            this.btnActivar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivar.ForeColor = System.Drawing.Color.White;
+            this.btnActivar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.btnActivar.Image = null;
+            this.btnActivar.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnActivar.Location = new System.Drawing.Point(98, 499);
+            this.btnActivar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnActivar.Name = "btnActivar";
+            this.btnActivar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.btnActivar.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnActivar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnActivar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnActivar.OnHoverImage = null;
+            this.btnActivar.OnPressedColor = System.Drawing.Color.Black;
+            this.btnActivar.Radius = 20;
+            this.btnActivar.Size = new System.Drawing.Size(119, 83);
+            this.btnActivar.TabIndex = 79;
+            this.btnActivar.Text = "Activar";
+            this.btnActivar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(365, 85);
+            this.label3.MinimumSize = new System.Drawing.Size(237, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(237, 23);
+            this.label3.TabIndex = 80;
+            this.label3.Text = "Power : N/A";
             // 
             // Jupiter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.ClientSize = new System.Drawing.Size(1210, 756);
+            this.ClientSize = new System.Drawing.Size(1239, 797);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnActivar);
+            this.Controls.Add(this.gunaGradientButton3);
+            this.Controls.Add(this.gunaGradientButton2);
+            this.Controls.Add(this.gunaPictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtInicio);
             this.Controls.Add(this.txtScanerSignal);
@@ -499,6 +664,7 @@ namespace Electrónicos.Jupiter
             this.Load += new System.EventHandler(this.Jupiter_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,5 +695,10 @@ namespace Electrónicos.Jupiter
         private System.Windows.Forms.Timer timerSignal;
         private Guna.UI.WinForms.GunaGradientButton txtInicio;
         private System.Windows.Forms.Label label2;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
+        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton2;
+        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton3;
+        private Guna.UI.WinForms.GunaGradientButton btnActivar;
+        private System.Windows.Forms.Label label3;
     }
 }

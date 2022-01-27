@@ -9,7 +9,7 @@ namespace Electrónicos.Jupiter
 {
     class Funciones
     {
-        internal static string variableMensaje, variableConsola;
+        
 
         private void MensajeError(string mensaje)
         {         
@@ -18,6 +18,8 @@ namespace Electrónicos.Jupiter
 
             frm.ShowDialog();
         }
+
+
        
     }
 }

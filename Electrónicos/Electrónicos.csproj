@@ -134,6 +134,7 @@
     <Compile Include="Jupiter\Jupiter.Designer.cs">
       <DependentUpon>Jupiter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Jupiter\JupiterCalculos.cs" />
     <Compile Include="Jupiter\JupiterConexion.cs" />
     <Compile Include="Presentacion.cs">
       <SubType>Form</SubType>
