@@ -53,13 +53,20 @@ namespace Electrónicos.Jupiter
             this.txtScanerSignal = new System.Windows.Forms.TextBox();
             this.timerSignal = new System.Windows.Forms.Timer(this.components);
             this.txtInicio = new Guna.UI.WinForms.GunaGradientButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaGradientButton2 = new Guna.UI.WinForms.GunaGradientButton();
-            this.gunaGradientButton3 = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnAceptar = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnRechazar = new Guna.UI.WinForms.GunaGradientButton();
             this.btnActivar = new Guna.UI.WinForms.GunaGradientButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.gunaGradientButton4 = new Guna.UI.WinForms.GunaGradientButton();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.lblSignal = new Guna.UI.WinForms.GunaLabel();
+            this.lblPower = new Guna.UI.WinForms.GunaLabel();
+            this.btnSignalPrueba = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnPowerPrueba = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.txtSignalPrueba = new Guna.UI.WinForms.GunaTextBox();
+            this.txtPowerPrueba = new Guna.UI.WinForms.GunaTextBox();
+            this.lblComando = new Guna.UI.WinForms.GunaLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -341,7 +348,7 @@ namespace Electrónicos.Jupiter
             this.btnSignal.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnSignal.Image = null;
             this.btnSignal.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSignal.Location = new System.Drawing.Point(22, 176);
+            this.btnSignal.Location = new System.Drawing.Point(29, 160);
             this.btnSignal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSignal.MaximumSize = new System.Drawing.Size(152, 77);
             this.btnSignal.MinimumSize = new System.Drawing.Size(120, 77);
@@ -376,7 +383,7 @@ namespace Electrónicos.Jupiter
             this.btnPower.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnPower.Image = null;
             this.btnPower.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPower.Location = new System.Drawing.Point(180, 176);
+            this.btnPower.Location = new System.Drawing.Point(180, 160);
             this.btnPower.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPower.MaximumSize = new System.Drawing.Size(152, 77);
             this.btnPower.MinimumSize = new System.Drawing.Size(112, 77);
@@ -402,7 +409,7 @@ namespace Electrónicos.Jupiter
             // 
             this.txtScanerPower.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtScanerPower.Location = new System.Drawing.Point(163, 277);
+            this.txtScanerPower.Location = new System.Drawing.Point(180, 242);
             this.txtScanerPower.MaximumSize = new System.Drawing.Size(142, 50);
             this.txtScanerPower.Multiline = true;
             this.txtScanerPower.Name = "txtScanerPower";
@@ -421,7 +428,7 @@ namespace Electrónicos.Jupiter
             this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.circularProgressBar1.InnerMargin = 2;
             this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(369, 141);
+            this.circularProgressBar1.Location = new System.Drawing.Point(596, 122);
             this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
             this.circularProgressBar1.Name = "circularProgressBar1";
             this.circularProgressBar1.OuterColor = System.Drawing.Color.Plum;
@@ -449,7 +456,7 @@ namespace Electrónicos.Jupiter
             // 
             this.txtScanerSignal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtScanerSignal.Location = new System.Drawing.Point(12, 277);
+            this.txtScanerSignal.Location = new System.Drawing.Point(12, 242);
             this.txtScanerSignal.MaximumSize = new System.Drawing.Size(142, 50);
             this.txtScanerSignal.Multiline = true;
             this.txtScanerSignal.Name = "txtScanerSignal";
@@ -495,96 +502,86 @@ namespace Electrónicos.Jupiter
             this.txtInicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtInicio.Click += new System.EventHandler(this.txtInicio_Click);
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(365, 39);
-            this.label2.MinimumSize = new System.Drawing.Size(237, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 23);
-            this.label2.TabIndex = 73;
-            this.label2.Text = "Signal : N/A";
-            // 
             // gunaPictureBox1
             // 
             this.gunaPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.gunaPictureBox1.BackColor = System.Drawing.Color.White;
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.BurlyWood;
             this.gunaPictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(12, 587);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(580, 485);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.Size = new System.Drawing.Size(298, 123);
             this.gunaPictureBox1.TabIndex = 74;
             this.gunaPictureBox1.TabStop = false;
+            this.gunaPictureBox1.Visible = false;
             // 
-            // gunaGradientButton2
+            // btnAceptar
             // 
-            this.gunaGradientButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.gunaGradientButton2.Animated = true;
-            this.gunaGradientButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientButton2.AnimationSpeed = 0.03F;
-            this.gunaGradientButton2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton2.BaseColor1 = System.Drawing.Color.ForestGreen;
-            this.gunaGradientButton2.BaseColor2 = System.Drawing.Color.Khaki;
-            this.gunaGradientButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton2.BorderSize = 1;
-            this.gunaGradientButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGradientButton2.ForeColor = System.Drawing.Color.Black;
-            this.gunaGradientButton2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.gunaGradientButton2.Image = null;
-            this.gunaGradientButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton2.Location = new System.Drawing.Point(12, 715);
-            this.gunaGradientButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gunaGradientButton2.Name = "gunaGradientButton2";
-            this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.Gray;
-            this.gunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.gunaGradientButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton2.OnHoverImage = null;
-            this.gunaGradientButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton2.Size = new System.Drawing.Size(137, 77);
-            this.gunaGradientButton2.TabIndex = 77;
-            this.gunaGradientButton2.Text = "Aceptar";
-            this.gunaGradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaGradientButton2.Click += new System.EventHandler(this.gunaGradientButton2_Click);
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAceptar.Animated = true;
+            this.btnAceptar.AnimationHoverSpeed = 0.07F;
+            this.btnAceptar.AnimationSpeed = 0.03F;
+            this.btnAceptar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.BaseColor1 = System.Drawing.Color.ForestGreen;
+            this.btnAceptar.BaseColor2 = System.Drawing.Color.Khaki;
+            this.btnAceptar.BorderColor = System.Drawing.Color.Black;
+            this.btnAceptar.BorderSize = 1;
+            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAceptar.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAceptar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.Black;
+            this.btnAceptar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.btnAceptar.Image = null;
+            this.btnAceptar.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAceptar.Location = new System.Drawing.Point(12, 715);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.btnAceptar.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAceptar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAceptar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAceptar.OnHoverImage = null;
+            this.btnAceptar.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAceptar.Size = new System.Drawing.Size(137, 77);
+            this.btnAceptar.TabIndex = 77;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAceptar.Visible = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // gunaGradientButton3
+            // btnRechazar
             // 
-            this.gunaGradientButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.gunaGradientButton3.Animated = true;
-            this.gunaGradientButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientButton3.AnimationSpeed = 0.03F;
-            this.gunaGradientButton3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton3.BaseColor1 = System.Drawing.Color.Red;
-            this.gunaGradientButton3.BaseColor2 = System.Drawing.SystemColors.MenuBar;
-            this.gunaGradientButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton3.BorderSize = 1;
-            this.gunaGradientButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGradientButton3.ForeColor = System.Drawing.Color.Black;
-            this.gunaGradientButton3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.gunaGradientButton3.Image = null;
-            this.gunaGradientButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton3.Location = new System.Drawing.Point(164, 715);
-            this.gunaGradientButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gunaGradientButton3.Name = "gunaGradientButton3";
-            this.gunaGradientButton3.OnHoverBaseColor1 = System.Drawing.Color.Gray;
-            this.gunaGradientButton3.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.gunaGradientButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton3.OnHoverImage = null;
-            this.gunaGradientButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton3.Size = new System.Drawing.Size(146, 77);
-            this.gunaGradientButton3.TabIndex = 78;
-            this.gunaGradientButton3.Text = "Rechazar";
-            this.gunaGradientButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRechazar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRechazar.Animated = true;
+            this.btnRechazar.AnimationHoverSpeed = 0.07F;
+            this.btnRechazar.AnimationSpeed = 0.03F;
+            this.btnRechazar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRechazar.BaseColor1 = System.Drawing.Color.Red;
+            this.btnRechazar.BaseColor2 = System.Drawing.SystemColors.MenuBar;
+            this.btnRechazar.BorderColor = System.Drawing.Color.Black;
+            this.btnRechazar.BorderSize = 1;
+            this.btnRechazar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRechazar.FocusedColor = System.Drawing.Color.Empty;
+            this.btnRechazar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRechazar.ForeColor = System.Drawing.Color.Black;
+            this.btnRechazar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.btnRechazar.Image = null;
+            this.btnRechazar.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnRechazar.Location = new System.Drawing.Point(164, 715);
+            this.btnRechazar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRechazar.Name = "btnRechazar";
+            this.btnRechazar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.btnRechazar.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRechazar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnRechazar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnRechazar.OnHoverImage = null;
+            this.btnRechazar.OnPressedColor = System.Drawing.Color.Black;
+            this.btnRechazar.Size = new System.Drawing.Size(146, 77);
+            this.btnRechazar.TabIndex = 78;
+            this.btnRechazar.Text = "Rechazar";
+            this.btnRechazar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRechazar.Visible = false;
+            this.btnRechazar.Click += new System.EventHandler(this.btnRechazar_Click);
             // 
             // btnActivar
             // 
@@ -604,7 +601,7 @@ namespace Electrónicos.Jupiter
             this.btnActivar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnActivar.Image = null;
             this.btnActivar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnActivar.Location = new System.Drawing.Point(98, 499);
+            this.btnActivar.Location = new System.Drawing.Point(85, 536);
             this.btnActivar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActivar.Name = "btnActivar";
             this.btnActivar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -618,21 +615,8 @@ namespace Electrónicos.Jupiter
             this.btnActivar.TabIndex = 79;
             this.btnActivar.Text = "Activar";
             this.btnActivar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnActivar.Visible = false;
             this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(365, 85);
-            this.label3.MinimumSize = new System.Drawing.Size(237, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(237, 23);
-            this.label3.TabIndex = 80;
-            this.label3.Text = "Power : N/A";
             // 
             // gunaGradientButton4
             // 
@@ -651,7 +635,7 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.gunaGradientButton4.Image = null;
             this.gunaGradientButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton4.Location = new System.Drawing.Point(318, 384);
+            this.gunaGradientButton4.Location = new System.Drawing.Point(547, 381);
             this.gunaGradientButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientButton4.Name = "gunaGradientButton4";
             this.gunaGradientButton4.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -664,7 +648,154 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton4.TabIndex = 81;
             this.gunaGradientButton4.Text = "Leer";
             this.gunaGradientButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel1.Location = new System.Drawing.Point(359, 113);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(81, 28);
+            this.gunaLabel1.TabIndex = 82;
+            this.gunaLabel1.Text = "Signal :";
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel2.Location = new System.Drawing.Point(359, 164);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(81, 28);
+            this.gunaLabel2.TabIndex = 83;
+            this.gunaLabel2.Text = "Power :";
+            // 
+            // lblSignal
+            // 
+            this.lblSignal.AutoSize = true;
+            this.lblSignal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignal.ForeColor = System.Drawing.Color.White;
+            this.lblSignal.Location = new System.Drawing.Point(465, 113);
+            this.lblSignal.Name = "lblSignal";
+            this.lblSignal.Size = new System.Drawing.Size(51, 28);
+            this.lblSignal.TabIndex = 84;
+            this.lblSignal.Text = "N/A";
+            // 
+            // lblPower
+            // 
+            this.lblPower.AutoSize = true;
+            this.lblPower.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPower.ForeColor = System.Drawing.Color.White;
+            this.lblPower.Location = new System.Drawing.Point(465, 164);
+            this.lblPower.Name = "lblPower";
+            this.lblPower.Size = new System.Drawing.Size(51, 28);
+            this.lblPower.TabIndex = 85;
+            this.lblPower.Text = "N/A";
+            // 
+            // btnSignalPrueba
+            // 
+            this.btnSignalPrueba.AnimationHoverSpeed = 0.07F;
+            this.btnSignalPrueba.AnimationSpeed = 0.03F;
+            this.btnSignalPrueba.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnSignalPrueba.BorderColor = System.Drawing.Color.Black;
+            this.btnSignalPrueba.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnSignalPrueba.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnSignalPrueba.CheckedForeColor = System.Drawing.Color.White;
+            this.btnSignalPrueba.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSignalPrueba.CheckedImage")));
+            this.btnSignalPrueba.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnSignalPrueba.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSignalPrueba.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSignalPrueba.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSignalPrueba.ForeColor = System.Drawing.Color.White;
+            this.btnSignalPrueba.Image = ((System.Drawing.Image)(resources.GetObject("btnSignalPrueba.Image")));
+            this.btnSignalPrueba.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSignalPrueba.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnSignalPrueba.Location = new System.Drawing.Point(523, 26);
+            this.btnSignalPrueba.Name = "btnSignalPrueba";
+            this.btnSignalPrueba.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSignalPrueba.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSignalPrueba.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSignalPrueba.OnHoverImage = null;
+            this.btnSignalPrueba.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnSignalPrueba.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSignalPrueba.Size = new System.Drawing.Size(180, 42);
+            this.btnSignalPrueba.TabIndex = 86;
+            this.btnSignalPrueba.Text = "Signal";
+            this.btnSignalPrueba.Click += new System.EventHandler(this.btnSignalPrueba_Click);
+            // 
+            // btnPowerPrueba
+            // 
+            this.btnPowerPrueba.AnimationHoverSpeed = 0.07F;
+            this.btnPowerPrueba.AnimationSpeed = 0.03F;
+            this.btnPowerPrueba.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnPowerPrueba.BorderColor = System.Drawing.Color.Black;
+            this.btnPowerPrueba.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnPowerPrueba.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnPowerPrueba.CheckedForeColor = System.Drawing.Color.White;
+            this.btnPowerPrueba.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPowerPrueba.CheckedImage")));
+            this.btnPowerPrueba.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnPowerPrueba.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPowerPrueba.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPowerPrueba.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPowerPrueba.ForeColor = System.Drawing.Color.White;
+            this.btnPowerPrueba.Image = ((System.Drawing.Image)(resources.GetObject("btnPowerPrueba.Image")));
+            this.btnPowerPrueba.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPowerPrueba.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnPowerPrueba.Location = new System.Drawing.Point(523, 74);
+            this.btnPowerPrueba.Name = "btnPowerPrueba";
+            this.btnPowerPrueba.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnPowerPrueba.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPowerPrueba.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPowerPrueba.OnHoverImage = null;
+            this.btnPowerPrueba.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnPowerPrueba.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPowerPrueba.Size = new System.Drawing.Size(180, 42);
+            this.btnPowerPrueba.TabIndex = 87;
+            this.btnPowerPrueba.Text = "Power";
+            this.btnPowerPrueba.Click += new System.EventHandler(this.btnPowerPrueba_Click);
+            // 
+            // txtSignalPrueba
+            // 
+            this.txtSignalPrueba.BaseColor = System.Drawing.Color.White;
+            this.txtSignalPrueba.BorderColor = System.Drawing.Color.Silver;
+            this.txtSignalPrueba.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSignalPrueba.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtSignalPrueba.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtSignalPrueba.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtSignalPrueba.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSignalPrueba.Location = new System.Drawing.Point(343, 26);
+            this.txtSignalPrueba.Name = "txtSignalPrueba";
+            this.txtSignalPrueba.PasswordChar = '\0';
+            this.txtSignalPrueba.Size = new System.Drawing.Size(160, 32);
+            this.txtSignalPrueba.TabIndex = 88;
+            // 
+            // txtPowerPrueba
+            // 
+            this.txtPowerPrueba.BaseColor = System.Drawing.Color.White;
+            this.txtPowerPrueba.BorderColor = System.Drawing.Color.Silver;
+            this.txtPowerPrueba.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPowerPrueba.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtPowerPrueba.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtPowerPrueba.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtPowerPrueba.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPowerPrueba.Location = new System.Drawing.Point(343, 73);
+            this.txtPowerPrueba.Name = "txtPowerPrueba";
+            this.txtPowerPrueba.PasswordChar = '\0';
+            this.txtPowerPrueba.Size = new System.Drawing.Size(160, 32);
+            this.txtPowerPrueba.TabIndex = 89;
+            // 
+            // lblComando
+            // 
+            this.lblComando.AutoSize = true;
+            this.lblComando.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComando.ForeColor = System.Drawing.Color.White;
+            this.lblComando.Location = new System.Drawing.Point(123, 652);
+            this.lblComando.Name = "lblComando";
+            this.lblComando.Size = new System.Drawing.Size(51, 28);
+            this.lblComando.TabIndex = 90;
+            this.lblComando.Text = "N/A";
+            this.lblComando.Visible = false;
             // 
             // Jupiter
             // 
@@ -672,13 +803,20 @@ namespace Electrónicos.Jupiter
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1239, 797);
+            this.Controls.Add(this.lblComando);
+            this.Controls.Add(this.txtPowerPrueba);
+            this.Controls.Add(this.txtSignalPrueba);
+            this.Controls.Add(this.btnPowerPrueba);
+            this.Controls.Add(this.btnSignalPrueba);
+            this.Controls.Add(this.lblPower);
+            this.Controls.Add(this.lblSignal);
+            this.Controls.Add(this.gunaLabel2);
+            this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.gunaGradientButton4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnActivar);
-            this.Controls.Add(this.gunaGradientButton3);
-            this.Controls.Add(this.gunaGradientButton2);
+            this.Controls.Add(this.btnRechazar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.gunaPictureBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtInicio);
             this.Controls.Add(this.txtScanerSignal);
             this.Controls.Add(this.circularProgressBar1);
@@ -728,12 +866,19 @@ namespace Electrónicos.Jupiter
         private System.Windows.Forms.TextBox txtScanerSignal;
         private System.Windows.Forms.Timer timerSignal;
         private Guna.UI.WinForms.GunaGradientButton txtInicio;
-        private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
-        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton2;
-        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton3;
+        private Guna.UI.WinForms.GunaGradientButton btnAceptar;
+        private Guna.UI.WinForms.GunaGradientButton btnRechazar;
         private Guna.UI.WinForms.GunaGradientButton btnActivar;
-        private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaLabel lblSignal;
+        private Guna.UI.WinForms.GunaLabel lblPower;
+        private Guna.UI.WinForms.GunaAdvenceButton btnSignalPrueba;
+        private Guna.UI.WinForms.GunaAdvenceButton btnPowerPrueba;
+        private Guna.UI.WinForms.GunaTextBox txtSignalPrueba;
+        private Guna.UI.WinForms.GunaTextBox txtPowerPrueba;
+        private Guna.UI.WinForms.GunaLabel lblComando;
     }
 }

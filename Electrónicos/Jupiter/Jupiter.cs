@@ -262,11 +262,24 @@ namespace Electrónicos.Jupiter
             impresora.FPGAVersion1 = "20210614-11B";
             impresora.Estado1 = "Inicio";
             impresora.guardadoInicial();*/
+            PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
+            cmd("run");
+            PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
+            cal.Corto = false;
+            cal.VsI = false;
+            cal.VsO = false;
 
-           
- 
-           
+            //Hago visible los controles
+            btnActivar.Visible = true;            
+            lblComando.Visible = true;
             
+            lblComando.Text = "vs i 0";
+
+
+
+
+
+
 
         }
 
@@ -446,18 +459,43 @@ namespace Electrónicos.Jupiter
             PuertoSerie.Write(new byte[] { 13, 10 }, 0, 2);
         }
 
-        private void gunaGradientButton2_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void btnActivar_Click(object sender, EventArgs e)
         {
-            cal.CambiarVsI();
+            string comando;
+            comando = cal.SecuenciaComandos();                       
+                       
+            cmd(comando);
+            lblComando.Text = comando;
+
+            btnAceptar.Visible = true;
+            btnRechazar.Visible = true;
+
 
         }
 
-      
+        private void btnSignalPrueba_Click(object sender, EventArgs e)
+        {
+            lblSignal.Text = txtSignalPrueba.Text;
+        }
+
+        private void btnPowerPrueba_Click(object sender, EventArgs e)
+        {
+            lblPower.Text = txtPowerPrueba.Text;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+           
+            lblComando.Text = cal.SecuenciaPruebas();
+
+        }
+
+        private void btnRechazar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

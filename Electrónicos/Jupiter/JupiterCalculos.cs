@@ -11,60 +11,102 @@ namespace Electrónicos.Jupiter
 
     class JupiterCalculos
     {
-        private bool vsI, vsO,corto;
+     
 
-        public bool _vsI { get => vsI; set => vsI = value; }
-        public bool _vsO { get => vsO; set => vsO = value; }
-        public bool _corto { get => corto; set => corto = value; }
-
+        public bool VsI { get ; set ; }
+        public bool VsO { get; set; }
+        public bool Corto { get; set; }
+        public string StringVsI { get; set ;}
+        public string StringVsO { get; set; }
+        
 
         public JupiterCalculos()
         {
-            vsI = false;
-            vsO = false;
-            corto = false;
+            VsI = false;
+            VsO = false;
+            Corto = false;
+            StringVsI = "vs i 0";
+            StringVsO = "vs o 0";
+            
             
 
         }
-
-        public bool CambiarVsI()
+        public string SecuenciaComandos()
         {
-            if (vsI == false)
+            string comando = "";
+            if (VsI == false)
             {
-                vsI = true;
+                comando = CambiarVsI();
             }
             else
             {
-                vsI = false;
+                if (VsO == false)
+                {
+                    comando = CambiarVsO();
+                }
+               
             }
-            return vsI;
+
+            return comando;
         }
 
-        public bool CambiarVsO()
+        public string SecuenciaPruebas()
         {
-            if (vsO == false)
+            string comando = "";
+            if (VsI == false && VsO == false)
             {
-                vsO = true;
+                VsI = true;
+                comando = StringVsO;
+            }
+            else if (VsI == true && VsO == false)
+            {
+                VsO = true;
+                
+            }
+            return comando;
+
+        }
+
+        public string CambiarVsI()
+        {
+            if (StringVsI == "vs i 1")
+            {
+                
+                StringVsI = "vs i 0";
             }
             else
             {
-                vsO = false;
+              
+                StringVsI = "vs i 1";
             }
-            return vsO;
+            return StringVsI;
+        }
+
+        public string CambiarVsO()
+        {
+            if (StringVsO == "vs o 1")
+            {
+                StringVsO = "vs o 0";
+            }
+            else
+            {
+                StringVsO = "vs o 1";
+            }
+            return StringVsO;
         }
 
 
         public bool CambiarCorto()
         {
-            if (corto == false)
+            if (Corto == false)
             {
-                corto = true;
+                Corto = true;
             }
             else
             {
-                corto = false;
+                Corto = false;
             }
-            return corto;
+            return Corto;
         }
 
         
