@@ -290,7 +290,7 @@ namespace Electrónicos
             PuertoSerie.Parity = Parity.None;
             PuertoSerie.StopBits = StopBits.One;
             PuertoSerie.Handshake = Handshake.None;
-            PuertoSerie.PortName = "COM30";
+            PuertoSerie.PortName = "COM3";
 
             try
             {

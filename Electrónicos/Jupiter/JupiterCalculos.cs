@@ -23,6 +23,7 @@ namespace Electrónicos.Jupiter
             vsI = false;
             vsO = false;
             corto = false;
+            
 
         }
 

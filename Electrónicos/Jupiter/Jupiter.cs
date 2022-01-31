@@ -24,6 +24,7 @@ namespace Electrónicos.Jupiter
         JupiterConexion impresora = new JupiterConexion();
         JupiterCalculos cal = new JupiterCalculos();
 
+
         private void Jupiter_Load(object sender, EventArgs e)
         {
 
@@ -34,6 +35,7 @@ namespace Electrónicos.Jupiter
         private void PuertoSerie_DataReceived_1(object sender, SerialDataReceivedEventArgs e)
         {
             AccesoInterrupcion(PuertoSerie.ReadExisting());
+            
         }
 
         //Del delegado lo envia hacia el buffer de entrada
@@ -41,8 +43,10 @@ namespace Electrónicos.Jupiter
         {
             DelegadoAcceso Var_DelegadoAcceso;
             Var_DelegadoAcceso = new DelegadoAcceso(RecoleccionDatos);
-            object[] arg = { accion };
+            object[] arg = { accion };            
             base.Invoke(Var_DelegadoAcceso, arg);
+      
+
         }
 
         //Recibe la información del buffer de entrada y la muestra en textbox
@@ -69,7 +73,7 @@ namespace Electrónicos.Jupiter
             PuertoSerie.Parity = Parity.None;
             PuertoSerie.StopBits = StopBits.One;
             PuertoSerie.Handshake = Handshake.None;
-            PuertoSerie.PortName = "COM31";
+            PuertoSerie.PortName = "COM2";
 
             try
             {
@@ -251,12 +255,19 @@ namespace Electrónicos.Jupiter
 
         private void txtInicio_Click(object sender, EventArgs e)
         {
+            /*
             impresora.P1Signal1 = 26;
             impresora.P1Power1 = 54;
             impresora.AppVersion1 = "210913A";
             impresora.FPGAVersion1 = "20210614-11B";
             impresora.Estado1 = "Inicio";
-            impresora.guardadoInicial();
+            impresora.guardadoInicial();*/
+
+           
+ 
+           
+            
+
         }
 
 
@@ -445,6 +456,8 @@ namespace Electrónicos.Jupiter
             cal.CambiarVsI();
 
         }
+
+      
     }
 
 }

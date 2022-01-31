@@ -15,6 +15,7 @@ namespace Electrónicos.Jupiter
         public Calibracion()
         {
             InitializeComponent();
+            
         }
     }
 }
