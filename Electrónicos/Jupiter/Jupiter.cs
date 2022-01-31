@@ -55,6 +55,10 @@ namespace Electrónicos.Jupiter
             txtMensajeLeido.Text = txtMensajeLeido.Text + bufferSalida;
             variableConsola = variableConsola + bufferSalida;
             txtMostrarDatos.Text = txtMostrarDatos.Text + bufferSalida;
+            if( cal.VsI == true && cal.VsO == true && cal.Corto == false)//Condicional para mostrar mensaje cuando sea el procedimiento de corto.
+            {
+                lblComando.Text = lblComando.Text + bufferSalida;
+            }
 
             //Mueve el scroll hasta el final de la linea
             txtMostrarDatos.Focus();
@@ -495,6 +499,11 @@ namespace Electrónicos.Jupiter
         private void btnRechazar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gunaGradientButton4_Click(object sender, EventArgs e)
+        {
+            btnActivar.BaseColor1 = Color.Yellow;
         }
     }
 

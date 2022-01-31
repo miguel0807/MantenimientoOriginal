@@ -648,6 +648,7 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton4.TabIndex = 81;
             this.gunaGradientButton4.Text = "Leer";
             this.gunaGradientButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaGradientButton4.Click += new System.EventHandler(this.gunaGradientButton4_Click);
             // 
             // gunaLabel1
             // 
