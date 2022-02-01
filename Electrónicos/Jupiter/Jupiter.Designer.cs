@@ -590,14 +590,14 @@ namespace Electrónicos.Jupiter
             this.btnActivar.AnimationHoverSpeed = 0.07F;
             this.btnActivar.AnimationSpeed = 0.03F;
             this.btnActivar.BackColor = System.Drawing.Color.Transparent;
-            this.btnActivar.BaseColor1 = System.Drawing.SystemColors.InactiveCaptionText;
-            this.btnActivar.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnActivar.BaseColor1 = System.Drawing.Color.Gray;
+            this.btnActivar.BaseColor2 = System.Drawing.Color.Gray;
             this.btnActivar.BorderColor = System.Drawing.Color.Black;
             this.btnActivar.BorderSize = 1;
             this.btnActivar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnActivar.FocusedColor = System.Drawing.Color.Empty;
-            this.btnActivar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActivar.ForeColor = System.Drawing.Color.White;
+            this.btnActivar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivar.ForeColor = System.Drawing.Color.Black;
             this.btnActivar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnActivar.Image = null;
             this.btnActivar.ImageSize = new System.Drawing.Size(20, 20);
@@ -605,15 +605,15 @@ namespace Electrónicos.Jupiter
             this.btnActivar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActivar.Name = "btnActivar";
             this.btnActivar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
-            this.btnActivar.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnActivar.OnHoverBaseColor2 = System.Drawing.Color.Gray;
             this.btnActivar.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnActivar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnActivar.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnActivar.OnHoverImage = null;
             this.btnActivar.OnPressedColor = System.Drawing.Color.Black;
             this.btnActivar.Radius = 20;
             this.btnActivar.Size = new System.Drawing.Size(119, 83);
             this.btnActivar.TabIndex = 79;
-            this.btnActivar.Text = "Activar";
+            this.btnActivar.Text = "Desactivar";
             this.btnActivar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnActivar.Visible = false;
             this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
@@ -648,7 +648,7 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton4.TabIndex = 81;
             this.gunaGradientButton4.Text = "Leer";
             this.gunaGradientButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaGradientButton4.Click += new System.EventHandler(this.gunaGradientButton4_Click);
+
             // 
             // gunaLabel1
             // 

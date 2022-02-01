@@ -57,6 +57,7 @@ namespace Electrónicos.Jupiter
             txtMostrarDatos.Text = txtMostrarDatos.Text + bufferSalida;
             if( cal.VsI == true && cal.VsO == true && cal.Corto == false)//Condicional para mostrar mensaje cuando sea el procedimiento de corto.
             {
+                lblComando.Text = "";
                 lblComando.Text = lblComando.Text + bufferSalida;
             }
 
@@ -459,6 +460,7 @@ namespace Electrónicos.Jupiter
 
         private void cmd(string comando)
         {
+            
             PuertoSerie.Write(comando);
             PuertoSerie.Write(new byte[] { 13, 10 }, 0, 2);
         }
@@ -472,6 +474,16 @@ namespace Electrónicos.Jupiter
                        
             cmd(comando);
             lblComando.Text = comando;
+
+            if (cal.btnEstado == true)
+            {
+                colorBoton(true);
+
+            }
+            else
+            {
+                colorBoton(false);
+            }
 
             btnAceptar.Visible = true;
             btnRechazar.Visible = true;
@@ -493,6 +505,7 @@ namespace Electrónicos.Jupiter
         {
            
             lblComando.Text = cal.SecuenciaPruebas();
+            colorBoton(false);
 
         }
 
@@ -501,9 +514,25 @@ namespace Electrónicos.Jupiter
 
         }
 
-        private void gunaGradientButton4_Click(object sender, EventArgs e)
+       
+        private void colorBoton(bool estado)
         {
-            btnActivar.BaseColor1 = Color.Yellow;
+            if (estado == false)
+            {
+                btnActivar.BaseColor1 = Color.Gray;
+                btnActivar.BaseColor2 = Color.Gray;
+                btnActivar.OnHoverBaseColor1 = Color.DarkGray;
+                btnActivar.OnHoverBaseColor2 = Color.DarkGray;
+                btnActivar.Text = "Activar";
+            }
+            else
+            {
+                btnActivar.BaseColor1 = Color.Gold;
+                btnActivar.BaseColor2 = Color.Yellow;
+                btnActivar.OnHoverBaseColor1 = Color.Gold;
+                btnActivar.OnHoverBaseColor2 = Color.LightGoldenrodYellow;
+                btnActivar.Text = "Desactivar";
+            }
         }
     }
 

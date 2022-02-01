@@ -16,7 +16,8 @@ namespace Electrónicos.Jupiter
         public bool VsI { get ; set ; }
         public bool VsO { get; set; }
         public bool Corto { get; set; }
-        
+        public bool btnEstado { get; set; }
+
         public string StringVsI { get; set ;}
         public string StringVsO { get; set; }
         
@@ -40,6 +41,7 @@ namespace Electrónicos.Jupiter
                 comando = CambiarVsI();
             }
             else
+
             {
                 if (VsO == false)
                 {
@@ -83,11 +85,13 @@ namespace Electrónicos.Jupiter
             {
                 
                 StringVsI = "vs i 0";
+                btnEstado = false;
             }
             else
             {
               
                 StringVsI = "vs i 1";
+                btnEstado = true;
             }
             return StringVsI;
         }
@@ -98,10 +102,12 @@ namespace Electrónicos.Jupiter
             if (StringVsO == "vs o 1")
             {
                 StringVsO = "vs o 0";
+                btnEstado = false;
             }
             else
             {
                 StringVsO = "vs o 1";
+                btnEstado = true;
             }
             return StringVsO;
         }
