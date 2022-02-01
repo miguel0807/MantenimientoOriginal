@@ -31,6 +31,7 @@ namespace Electrónicos.Jupiter
         private bool P1FormaOnda;
         private bool P1Comentario;
 
+        /*
         private string R2Responsable;
         private DateTime R2FechaIngreso;
         private DateTime R2HoraIngreso;
@@ -47,7 +48,7 @@ namespace Electrónicos.Jupiter
         private bool R2Voltaje24D1;
         private bool R2FormaOnda;
         private bool R2Comentario;
-        
+        */
 
         public JupiterConexion()
         {

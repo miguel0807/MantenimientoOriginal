@@ -252,5 +252,9 @@
   <ItemGroup>
     <Folder Include="Compartido\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Aceptar.png" />
+    <Content Include="Resources\Denegar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

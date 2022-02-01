@@ -17,6 +17,8 @@ namespace Electrónicos.Jupiter
         public bool VsO { get; set; }
         public bool Corto { get; set; }
         public bool btnEstado { get; set; }
+        public bool Direcciones { get; set; }
+
 
         public string StringVsI { get; set ;}
         public string StringVsO { get; set; }
@@ -58,21 +60,27 @@ namespace Electrónicos.Jupiter
         {        
             string comando = "";
 
-            if (VsI == false && VsO == false && Corto == false)
+            if (VsI == false && VsO == false && Corto == false && Direcciones == false)
             {
                 VsI = true;
                 comando = StringVsO;
             }
-            else if (VsI == true && VsO == false && Corto == false)
+            else if (VsI == true && VsO == false && Corto == false && Direcciones == false)
             {
                 VsO = true;
                 comando = "Favor realice el corto.";
             }
 
-            else if (VsI == true && VsO == true && Corto == false)
+            else if (VsI == true && VsO == true && Corto == false && Direcciones == false)
             {
                 Corto = true;
                 
+            }
+
+            if (VsI == true && VsO == true && Corto == true && Direcciones == false)
+            {
+                Direcciones = true;
+
             }
             return comando;
 

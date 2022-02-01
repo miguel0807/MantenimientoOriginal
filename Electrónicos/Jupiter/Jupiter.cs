@@ -18,6 +18,8 @@ namespace Electrónicos.Jupiter
                
         private delegate void DelegadoAcceso(string accion);
         internal static string  variableConsola;
+        private bool DecodificadorActivado;
+        
         private int Power = 0;
         private int Signal = 0;
         private int segundos = 0;
@@ -61,6 +63,11 @@ namespace Electrónicos.Jupiter
                 lblComando.Text = lblComando.Text + bufferSalida;
             }
 
+            if (DecodificadorActivado == true)
+            {
+                txtDecodificador.Text = txtDecodificador.Text + bufferSalida;
+            }
+
             //Mueve el scroll hasta el final de la linea
             txtMostrarDatos.Focus();
             txtMostrarDatos.SelectionStart = txtMostrarDatos.TextLength;
@@ -79,7 +86,7 @@ namespace Electrónicos.Jupiter
             PuertoSerie.StopBits = StopBits.One;
             PuertoSerie.Handshake = Handshake.None;
             //PuertoSerie.PortName = "COM2"; // Puerto virtual.
-            PuertoSerie.PortName = "COM5"; // Puerto normal.
+            PuertoSerie.PortName = "COM6"; // Puerto normal.
 
             try
             {
@@ -143,6 +150,27 @@ namespace Electrónicos.Jupiter
                 desconectarGeneral();
             }
         }
+        private void conectar()
+        {
+            int exito = 0;
+            if (btnConectar.Text == "Conectar")
+            {
+                exito = Conectar();
+                if (exito == 1)
+                {
+                    btnConectar.Text = "Desconectar";
+                    lblEstadoConexion.Text = "Estado : Conectado";
+                    btnConsola.Visible = true;
+
+                }
+
+            }
+
+            else if (btnConectar.Text == "Desconectar")
+            {
+                desconectarGeneral();
+            }
+        }
 
         private void desconectarGeneral()
         {
@@ -169,7 +197,7 @@ namespace Electrónicos.Jupiter
                 try
                 {     
                     PuertoSerie.Write(txtEnviarDatos.Text);
-                    PuertoSerie.Write(new byte[] { 13, 10 }, 0, 2);
+                    enter();
                     txtEnviarDatos.Text = "";
                 }
                 catch (Exception exc)
@@ -180,7 +208,7 @@ namespace Electrónicos.Jupiter
 
             else if ((int)e.KeyChar == (int)Keys.Escape)
             {
-                PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
+                escape();
                 txtEnviarDatos.Text = "";
             }
         }
@@ -268,9 +296,12 @@ namespace Electrónicos.Jupiter
             impresora.FPGAVersion1 = "20210614-11B";
             impresora.Estado1 = "Inicio";
             impresora.guardadoInicial();*/
-            PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
+
+            conectar();
+
+            escape();
             cmd("run");
-            PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
+            escape();
             cal.Corto = false;
             cal.VsI = false;
             cal.VsO = false;
@@ -472,7 +503,8 @@ namespace Electrónicos.Jupiter
         {
             
             PuertoSerie.Write(comando);
-            PuertoSerie.Write(new byte[] { 13, 10 }, 0, 2);
+            enter();
+            
         }
 
       
@@ -516,6 +548,14 @@ namespace Electrónicos.Jupiter
            
             lblComando.Text = cal.SecuenciaPruebas();
             colorBoton(false);
+            if (cal.Direcciones == true)
+            {
+                btnAceptar.Visible = false;
+                btnRechazar.Visible = false;
+                btnActivar.Visible = false;
+                lblComando.Visible = false;                
+                btnCargarPruebas.Visible = true;
+            }
 
         }
 
@@ -550,12 +590,167 @@ namespace Electrónicos.Jupiter
             segundos = segundos + 1;
             if (segundos == 2)
             {
-                PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
+                escape();
                 InicioProgramación.Stop();
-                MessageBox.Show("final" + segundos.ToString());
+                
                 segundos = 0;
               
             }
+        }
+
+        private void escape()
+        {
+            PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
+        }
+
+        private void enter()
+        {
+            PuertoSerie.Write(new byte[] { 13, 10 }, 0, 2);
+        }
+
+        private void timerPruebas_Tick(object sender, EventArgs e)
+        {
+           
+            segundos = segundos - 1;
+            circularProgressBar2.Text = segundos.ToString();
+                        
+            if (segundos == 19)
+            {
+                escape();
+                DecodificadorActivado = true;                
+            }
+           
+            else if (segundos == 18)
+            {
+                cmd("i2c c");
+            }
+            else if (segundos == 17)
+            {
+               
+                DecodificadorJellingDisck("i2c status: 0", "i2c status: 1", ref pic1, ref txtRespuesta1);
+                cmd("i2c w 1024 1 2 3");
+                
+            }
+
+            else if (segundos == 16)
+            {
+                DecodificadorDirecciones("400: 01 02 03",ref pic2, ref txtRespuesta2);
+                cmd("i2c w 1025 1 2 3");
+            }
+
+            else if (segundos == 15)
+            {
+                DecodificadorDirecciones("401: 01 02 03", ref pic3, ref txtRespuesta3);
+                cmd("i2c w 1026 1 2 3");
+            }
+
+
+            else if (segundos == 14)
+            {
+                DecodificadorDirecciones("402: 01 02 03", ref pic4, ref txtRespuesta4);
+                cmd("i2c w 1024 255 255 255");
+            }
+
+            else if (segundos == 13)
+            {
+                DecodificadorDirecciones("400: FF FF FF ", ref pic6, ref txtRespuesta6);
+                cmd("i2c w 1025 255 255 255");
+            }
+            else if (segundos == 12)
+            {
+                DecodificadorDirecciones("401: FF FF FF ", ref pic7, ref txtRespuesta7);
+                cmd("i2c w 1026 255 255 255");
+            }
+
+            else if (segundos == 11)
+            {
+                DecodificadorDirecciones("402: FF FF FF ", ref pic8, ref txtRespuesta8);
+                
+            }
+            else if (segundos == -5)
+            {
+                
+                
+                
+                
+                cmd("i2c r 1024");
+               
+                cmd("i2c w 1026 255 255 255");
+
+
+            }
+            else if (segundos == 0)
+            {
+                timerPruebas.Stop();
+                
+                circularProgressBar2.Visible = false;
+                // DecodificadorActivado = false;
+            }
+        }
+
+        private void btnCargarPruebas_Click(object sender, EventArgs e)
+        {
+            escape();
+            cmd("run");
+            escape();
+
+            circularProgressBar2.Visible = true;
+            timerPruebas.Start();
+            segundos = 20;
+        }
+
+        private void gunaGradientButton4_Click(object sender, EventArgs e)
+        {
+            pic1.Image =  Properties.Resources.Aceptar;
+        }
+        private void DecodificadorJellingDisck(string cmdAprobado, string cmdDenegar, ref PictureBox imagen, ref Guna.UI.WinForms.GunaTextBox txtRespuesta)
+        {
+
+            int numeroLinea = 1;
+
+            foreach (string linea in txtDecodificador.Lines)
+            {
+                if (linea.Contains(cmdAprobado))
+                {
+                   imagen.Image = Properties.Resources.Aceptar;
+                    txtRespuesta.Text = linea;
+                    break;
+                }
+                else if (linea.Contains(cmdDenegar))
+                {
+                    imagen.Image = Properties.Resources.Denegar;
+                    txtRespuesta.Text = linea;
+                    break;
+
+                }
+                numeroLinea++;
+            }
+
+            txtDecodificador.Text = "";
+        }
+
+        private void DecodificadorDirecciones(string cmdAprobado, ref PictureBox imagen, ref Guna.UI.WinForms.GunaTextBox txtRespuesta)
+        {
+
+            int numeroLinea = 1;
+
+            foreach (string linea in txtDecodificador.Lines)
+            {
+                if (linea.Contains(cmdAprobado))
+                {
+                    imagen.Image = Properties.Resources.Aceptar;
+                    txtRespuesta.Text = linea;
+                    break;
+                }
+                else 
+                {
+                    imagen.Image = Properties.Resources.Denegar;
+
+                }
+                numeroLinea++;
+            }
+
+            txtDecodificador.Text = "";
         }
     }
 
