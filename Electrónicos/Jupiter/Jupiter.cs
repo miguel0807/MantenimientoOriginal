@@ -78,7 +78,8 @@ namespace Electrónicos.Jupiter
             PuertoSerie.Parity = Parity.None;
             PuertoSerie.StopBits = StopBits.One;
             PuertoSerie.Handshake = Handshake.None;
-            PuertoSerie.PortName = "COM2";
+            //PuertoSerie.PortName = "COM2"; // Puerto virtual.
+            PuertoSerie.PortName = "COM5"; // Puerto normal.
 
             try
             {
@@ -280,6 +281,9 @@ namespace Electrónicos.Jupiter
             
             lblComando.Text = "vs i 0";
 
+            InicioProgramación.Start();
+            
+
 
 
 
@@ -401,7 +405,10 @@ namespace Electrónicos.Jupiter
                 txtScanerPower.Text = "";                
                 segundos = 0;
                 btnPower.Focus();
-                MensajeError("Codigo aceptado, el número de serie es " + serie + ".");                
+                Power = Int32.Parse(serie);
+                lblPower.Text = serie;                             
+                btnPower.Enabled = false;
+                MensajeError("Codigo aceptado, el número de serie es " + serie + ".");
             }
             else
             {
@@ -409,6 +416,9 @@ namespace Electrónicos.Jupiter
                 txtScanerSignal.Text = "";
                 segundos = 0;
                 btnSignal.Focus();
+                Signal = Int32.Parse(serie);
+                lblSignal.Text = serie;                
+                btnSignal.Enabled = false;
                 MensajeError("Codigo aceptado, el número de serie es " + serie + ".");
             }
             
@@ -532,6 +542,19 @@ namespace Electrónicos.Jupiter
                 btnActivar.OnHoverBaseColor1 = Color.Gold;
                 btnActivar.OnHoverBaseColor2 = Color.LightGoldenrodYellow;
                 btnActivar.Text = "Desactivar";
+            }
+        }
+
+        private void InicioProgramación_Tick(object sender, EventArgs e)
+        {
+            segundos = segundos + 1;
+            if (segundos == 2)
+            {
+                PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
+                InicioProgramación.Stop();
+                MessageBox.Show("final" + segundos.ToString());
+                segundos = 0;
+              
             }
         }
     }

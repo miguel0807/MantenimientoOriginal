@@ -67,6 +67,7 @@ namespace Electrónicos.Jupiter
             this.txtSignalPrueba = new Guna.UI.WinForms.GunaTextBox();
             this.txtPowerPrueba = new Guna.UI.WinForms.GunaTextBox();
             this.lblComando = new Guna.UI.WinForms.GunaLabel();
+            this.InicioProgramación = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +91,7 @@ namespace Electrónicos.Jupiter
             this.panel1.GradientColor2 = System.Drawing.Color.DarkGray;
             this.panel1.GradientColor3 = System.Drawing.Color.DarkSalmon;
             this.panel1.GradientColor4 = System.Drawing.Color.RosyBrown;
-            this.panel1.Location = new System.Drawing.Point(12, 11);
+            this.panel1.Location = new System.Drawing.Point(276, 220);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.MaximumSize = new System.Drawing.Size(350, 209);
             this.panel1.MinimumSize = new System.Drawing.Size(325, 135);
@@ -348,7 +349,7 @@ namespace Electrónicos.Jupiter
             this.btnSignal.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnSignal.Image = null;
             this.btnSignal.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSignal.Location = new System.Drawing.Point(29, 160);
+            this.btnSignal.Location = new System.Drawing.Point(29, 28);
             this.btnSignal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSignal.MaximumSize = new System.Drawing.Size(152, 77);
             this.btnSignal.MinimumSize = new System.Drawing.Size(120, 77);
@@ -383,7 +384,7 @@ namespace Electrónicos.Jupiter
             this.btnPower.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnPower.Image = null;
             this.btnPower.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPower.Location = new System.Drawing.Point(180, 160);
+            this.btnPower.Location = new System.Drawing.Point(180, 28);
             this.btnPower.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPower.MaximumSize = new System.Drawing.Size(152, 77);
             this.btnPower.MinimumSize = new System.Drawing.Size(112, 77);
@@ -409,12 +410,13 @@ namespace Electrónicos.Jupiter
             // 
             this.txtScanerPower.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtScanerPower.Location = new System.Drawing.Point(180, 242);
+            this.txtScanerPower.Location = new System.Drawing.Point(180, 110);
             this.txtScanerPower.MaximumSize = new System.Drawing.Size(142, 50);
             this.txtScanerPower.Multiline = true;
             this.txtScanerPower.Name = "txtScanerPower";
             this.txtScanerPower.Size = new System.Drawing.Size(142, 50);
             this.txtScanerPower.TabIndex = 69;
+            this.txtScanerPower.TabStop = false;
             this.txtScanerPower.TextChanged += new System.EventHandler(this.txtScaner_TextChanged);
             this.txtScanerPower.Leave += new System.EventHandler(this.txtScanerPower_Leave);
             // 
@@ -456,12 +458,13 @@ namespace Electrónicos.Jupiter
             // 
             this.txtScanerSignal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtScanerSignal.Location = new System.Drawing.Point(12, 242);
+            this.txtScanerSignal.Location = new System.Drawing.Point(12, 110);
             this.txtScanerSignal.MaximumSize = new System.Drawing.Size(142, 50);
             this.txtScanerSignal.Multiline = true;
             this.txtScanerSignal.Name = "txtScanerSignal";
             this.txtScanerSignal.Size = new System.Drawing.Size(142, 50);
             this.txtScanerSignal.TabIndex = 71;
+            this.txtScanerSignal.TabStop = false;
             this.txtScanerSignal.TextChanged += new System.EventHandler(this.txtScanerSignal_TextChanged);
             this.txtScanerSignal.Leave += new System.EventHandler(this.txtScanerSignal_Leave);
             // 
@@ -487,7 +490,7 @@ namespace Electrónicos.Jupiter
             this.txtInicio.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.txtInicio.Image = null;
             this.txtInicio.ImageSize = new System.Drawing.Size(20, 20);
-            this.txtInicio.Location = new System.Drawing.Point(57, 342);
+            this.txtInicio.Location = new System.Drawing.Point(12, 258);
             this.txtInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtInicio.Name = "txtInicio";
             this.txtInicio.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -635,7 +638,7 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.gunaGradientButton4.Image = null;
             this.gunaGradientButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton4.Location = new System.Drawing.Point(547, 381);
+            this.gunaGradientButton4.Location = new System.Drawing.Point(666, 384);
             this.gunaGradientButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGradientButton4.Name = "gunaGradientButton4";
             this.gunaGradientButton4.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -648,7 +651,6 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton4.TabIndex = 81;
             this.gunaGradientButton4.Text = "Leer";
             this.gunaGradientButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-
             // 
             // gunaLabel1
             // 
@@ -723,6 +725,7 @@ namespace Electrónicos.Jupiter
             this.btnSignalPrueba.Size = new System.Drawing.Size(180, 42);
             this.btnSignalPrueba.TabIndex = 86;
             this.btnSignalPrueba.Text = "Signal";
+            this.btnSignalPrueba.Visible = false;
             this.btnSignalPrueba.Click += new System.EventHandler(this.btnSignalPrueba_Click);
             // 
             // btnPowerPrueba
@@ -754,6 +757,7 @@ namespace Electrónicos.Jupiter
             this.btnPowerPrueba.Size = new System.Drawing.Size(180, 42);
             this.btnPowerPrueba.TabIndex = 87;
             this.btnPowerPrueba.Text = "Power";
+            this.btnPowerPrueba.Visible = false;
             this.btnPowerPrueba.Click += new System.EventHandler(this.btnPowerPrueba_Click);
             // 
             // txtSignalPrueba
@@ -770,6 +774,7 @@ namespace Electrónicos.Jupiter
             this.txtSignalPrueba.PasswordChar = '\0';
             this.txtSignalPrueba.Size = new System.Drawing.Size(160, 32);
             this.txtSignalPrueba.TabIndex = 88;
+            this.txtSignalPrueba.Visible = false;
             // 
             // txtPowerPrueba
             // 
@@ -785,6 +790,7 @@ namespace Electrónicos.Jupiter
             this.txtPowerPrueba.PasswordChar = '\0';
             this.txtPowerPrueba.Size = new System.Drawing.Size(160, 32);
             this.txtPowerPrueba.TabIndex = 89;
+            this.txtPowerPrueba.Visible = false;
             // 
             // lblComando
             // 
@@ -797,6 +803,11 @@ namespace Electrónicos.Jupiter
             this.lblComando.TabIndex = 90;
             this.lblComando.Text = "N/A";
             this.lblComando.Visible = false;
+            // 
+            // InicioProgramación
+            // 
+            this.InicioProgramación.Interval = 1000;
+            this.InicioProgramación.Tick += new System.EventHandler(this.InicioProgramación_Tick);
             // 
             // Jupiter
             // 
@@ -881,5 +892,6 @@ namespace Electrónicos.Jupiter
         private Guna.UI.WinForms.GunaTextBox txtSignalPrueba;
         private Guna.UI.WinForms.GunaTextBox txtPowerPrueba;
         private Guna.UI.WinForms.GunaLabel lblComando;
+        private System.Windows.Forms.Timer InicioProgramación;
     }
 }
