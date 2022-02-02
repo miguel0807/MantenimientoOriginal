@@ -52,13 +52,9 @@ namespace Electrónicos.Jupiter
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.lblSignal = new Guna.UI.WinForms.GunaLabel();
             this.lblPower = new Guna.UI.WinForms.GunaLabel();
-            this.txtSignalPrueba = new Guna.UI.WinForms.GunaTextBox();
-            this.txtPowerPrueba = new Guna.UI.WinForms.GunaTextBox();
-            this.lblComando = new Guna.UI.WinForms.GunaLabel();
             this.InicioProgramación = new System.Windows.Forms.Timer(this.components);
             this.btnCargarPruebas = new Guna.UI.WinForms.GunaGradientButton();
             this.timerPruebas = new System.Windows.Forms.Timer(this.components);
-            this.circularProgressBar2 = new CircularProgressBar.CircularProgressBar();
             this.txtRespuesta1 = new Guna.UI.WinForms.GunaTextBox();
             this.txtRespuesta2 = new Guna.UI.WinForms.GunaTextBox();
             this.txtRespuesta4 = new Guna.UI.WinForms.GunaTextBox();
@@ -66,7 +62,6 @@ namespace Electrónicos.Jupiter
             this.txtRespuesta7 = new Guna.UI.WinForms.GunaTextBox();
             this.txtRespuesta6 = new Guna.UI.WinForms.GunaTextBox();
             this.txtRespuesta5 = new Guna.UI.WinForms.GunaTextBox();
-            this.txtDecodificador = new System.Windows.Forms.TextBox();
             this.lblPrueba1 = new Guna.UI.WinForms.GunaLabel();
             this.lblPrueba2 = new Guna.UI.WinForms.GunaLabel();
             this.lblPrueba3 = new Guna.UI.WinForms.GunaLabel();
@@ -85,8 +80,6 @@ namespace Electrónicos.Jupiter
             this.pic3 = new System.Windows.Forms.PictureBox();
             this.pic2 = new System.Windows.Forms.PictureBox();
             this.pic1 = new System.Windows.Forms.PictureBox();
-            this.btnPowerPrueba = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnSignalPrueba = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel1 = new Guna.UI.WinForms.GunaGradientPanel();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
             this.btnConectar = new Guna.UI.WinForms.GunaGradientButton();
@@ -96,6 +89,10 @@ namespace Electrónicos.Jupiter
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEstadoConexion = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
+            this.lblComando = new Guna.UI.WinForms.GunaLabel();
+            this.txtDecodificador = new System.Windows.Forms.TextBox();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic7)).BeginInit();
@@ -163,7 +160,7 @@ namespace Electrónicos.Jupiter
             this.btnConsola.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnConsola.Image = null;
             this.btnConsola.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnConsola.Location = new System.Drawing.Point(872, 16);
+            this.btnConsola.Location = new System.Drawing.Point(1083, 23);
             this.btnConsola.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsola.MaximumSize = new System.Drawing.Size(144, 46);
             this.btnConsola.Name = "btnConsola";
@@ -187,7 +184,7 @@ namespace Electrónicos.Jupiter
             this.txtMensajeLeido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.txtMensajeLeido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMensajeLeido.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.txtMensajeLeido.Location = new System.Drawing.Point(1022, 11);
+            this.txtMensajeLeido.Location = new System.Drawing.Point(980, 130);
             this.txtMensajeLeido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMensajeLeido.Multiline = true;
             this.txtMensajeLeido.Name = "txtMensajeLeido";
@@ -198,7 +195,6 @@ namespace Electrónicos.Jupiter
             // 
             // btnSignal
             // 
-            this.btnSignal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSignal.Animated = true;
             this.btnSignal.AnimationHoverSpeed = 0.07F;
             this.btnSignal.AnimationSpeed = 0.03F;
@@ -214,7 +210,7 @@ namespace Electrónicos.Jupiter
             this.btnSignal.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnSignal.Image = null;
             this.btnSignal.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSignal.Location = new System.Drawing.Point(29, 71);
+            this.btnSignal.Location = new System.Drawing.Point(12, 16);
             this.btnSignal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSignal.MaximumSize = new System.Drawing.Size(152, 77);
             this.btnSignal.MinimumSize = new System.Drawing.Size(120, 77);
@@ -233,7 +229,6 @@ namespace Electrónicos.Jupiter
             // 
             // btnPower
             // 
-            this.btnPower.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPower.Animated = true;
             this.btnPower.AnimationHoverSpeed = 0.07F;
             this.btnPower.AnimationSpeed = 0.03F;
@@ -249,7 +244,7 @@ namespace Electrónicos.Jupiter
             this.btnPower.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnPower.Image = null;
             this.btnPower.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPower.Location = new System.Drawing.Point(198, 71);
+            this.btnPower.Location = new System.Drawing.Point(138, 16);
             this.btnPower.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPower.MaximumSize = new System.Drawing.Size(152, 77);
             this.btnPower.MinimumSize = new System.Drawing.Size(112, 77);
@@ -275,11 +270,11 @@ namespace Electrónicos.Jupiter
             // 
             this.txtScanerPower.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtScanerPower.Location = new System.Drawing.Point(180, 195);
+            this.txtScanerPower.Location = new System.Drawing.Point(161, 41);
             this.txtScanerPower.MaximumSize = new System.Drawing.Size(142, 50);
             this.txtScanerPower.Multiline = true;
             this.txtScanerPower.Name = "txtScanerPower";
-            this.txtScanerPower.Size = new System.Drawing.Size(142, 50);
+            this.txtScanerPower.Size = new System.Drawing.Size(68, 26);
             this.txtScanerPower.TabIndex = 69;
             this.txtScanerPower.TabStop = false;
             this.txtScanerPower.TextChanged += new System.EventHandler(this.txtScaner_TextChanged);
@@ -295,7 +290,7 @@ namespace Electrónicos.Jupiter
             this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.circularProgressBar1.InnerMargin = 2;
             this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(733, 110);
+            this.circularProgressBar1.Location = new System.Drawing.Point(254, 16);
             this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
             this.circularProgressBar1.Name = "circularProgressBar1";
             this.circularProgressBar1.OuterColor = System.Drawing.Color.Plum;
@@ -304,7 +299,7 @@ namespace Electrónicos.Jupiter
             this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.circularProgressBar1.ProgressWidth = 25;
             this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar1.Size = new System.Drawing.Size(137, 120);
+            this.circularProgressBar1.Size = new System.Drawing.Size(168, 127);
             this.circularProgressBar1.StartAngle = 270;
             this.circularProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
@@ -323,11 +318,11 @@ namespace Electrónicos.Jupiter
             // 
             this.txtScanerSignal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtScanerSignal.Location = new System.Drawing.Point(12, 195);
+            this.txtScanerSignal.Location = new System.Drawing.Point(50, 42);
             this.txtScanerSignal.MaximumSize = new System.Drawing.Size(142, 50);
             this.txtScanerSignal.Multiline = true;
             this.txtScanerSignal.Name = "txtScanerSignal";
-            this.txtScanerSignal.Size = new System.Drawing.Size(142, 50);
+            this.txtScanerSignal.Size = new System.Drawing.Size(60, 25);
             this.txtScanerSignal.TabIndex = 71;
             this.txtScanerSignal.TabStop = false;
             this.txtScanerSignal.TextChanged += new System.EventHandler(this.txtScanerSignal_TextChanged);
@@ -355,7 +350,7 @@ namespace Electrónicos.Jupiter
             this.txtInicio.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.txtInicio.Image = null;
             this.txtInicio.ImageSize = new System.Drawing.Size(20, 20);
-            this.txtInicio.Location = new System.Drawing.Point(0, 325);
+            this.txtInicio.Location = new System.Drawing.Point(17, 140);
             this.txtInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtInicio.Name = "txtInicio";
             this.txtInicio.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -372,7 +367,6 @@ namespace Electrónicos.Jupiter
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAceptar.Animated = true;
             this.btnAceptar.AnimationHoverSpeed = 0.07F;
             this.btnAceptar.AnimationSpeed = 0.03F;
@@ -388,7 +382,7 @@ namespace Electrónicos.Jupiter
             this.btnAceptar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnAceptar.Image = null;
             this.btnAceptar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAceptar.Location = new System.Drawing.Point(-24, 517);
+            this.btnAceptar.Location = new System.Drawing.Point(12, 346);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -406,7 +400,6 @@ namespace Electrónicos.Jupiter
             // 
             // btnRechazar
             // 
-            this.btnRechazar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRechazar.Animated = true;
             this.btnRechazar.AnimationHoverSpeed = 0.07F;
             this.btnRechazar.AnimationSpeed = 0.03F;
@@ -422,7 +415,7 @@ namespace Electrónicos.Jupiter
             this.btnRechazar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnRechazar.Image = null;
             this.btnRechazar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnRechazar.Location = new System.Drawing.Point(128, 517);
+            this.btnRechazar.Location = new System.Drawing.Point(177, 346);
             this.btnRechazar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRechazar.Name = "btnRechazar";
             this.btnRechazar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -440,7 +433,6 @@ namespace Electrónicos.Jupiter
             // 
             // btnActivar
             // 
-            this.btnActivar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActivar.Animated = true;
             this.btnActivar.AnimationHoverSpeed = 0.07F;
             this.btnActivar.AnimationSpeed = 0.03F;
@@ -456,7 +448,7 @@ namespace Electrónicos.Jupiter
             this.btnActivar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnActivar.Image = null;
             this.btnActivar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnActivar.Location = new System.Drawing.Point(50, 410);
+            this.btnActivar.Location = new System.Drawing.Point(110, 259);
             this.btnActivar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActivar.Name = "btnActivar";
             this.btnActivar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -468,7 +460,7 @@ namespace Electrónicos.Jupiter
             this.btnActivar.Radius = 20;
             this.btnActivar.Size = new System.Drawing.Size(119, 83);
             this.btnActivar.TabIndex = 79;
-            this.btnActivar.Text = "Desactivar";
+            this.btnActivar.Text = "Activar";
             this.btnActivar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnActivar.Visible = false;
             this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
@@ -503,6 +495,7 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton4.TabIndex = 81;
             this.gunaGradientButton4.Text = "Leer";
             this.gunaGradientButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaGradientButton4.Visible = false;
             this.gunaGradientButton4.Click += new System.EventHandler(this.gunaGradientButton4_Click);
             // 
             // gunaLabel1
@@ -510,7 +503,7 @@ namespace Electrónicos.Jupiter
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(728, 16);
+            this.gunaLabel1.Location = new System.Drawing.Point(446, 16);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(81, 28);
             this.gunaLabel1.TabIndex = 82;
@@ -521,7 +514,7 @@ namespace Electrónicos.Jupiter
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(728, 67);
+            this.gunaLabel2.Location = new System.Drawing.Point(446, 67);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(81, 28);
             this.gunaLabel2.TabIndex = 83;
@@ -532,7 +525,7 @@ namespace Electrónicos.Jupiter
             this.lblSignal.AutoSize = true;
             this.lblSignal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignal.ForeColor = System.Drawing.Color.White;
-            this.lblSignal.Location = new System.Drawing.Point(834, 16);
+            this.lblSignal.Location = new System.Drawing.Point(552, 16);
             this.lblSignal.Name = "lblSignal";
             this.lblSignal.Size = new System.Drawing.Size(51, 28);
             this.lblSignal.TabIndex = 84;
@@ -543,55 +536,11 @@ namespace Electrónicos.Jupiter
             this.lblPower.AutoSize = true;
             this.lblPower.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPower.ForeColor = System.Drawing.Color.White;
-            this.lblPower.Location = new System.Drawing.Point(834, 67);
+            this.lblPower.Location = new System.Drawing.Point(552, 67);
             this.lblPower.Name = "lblPower";
             this.lblPower.Size = new System.Drawing.Size(51, 28);
             this.lblPower.TabIndex = 85;
             this.lblPower.Text = "N/A";
-            // 
-            // txtSignalPrueba
-            // 
-            this.txtSignalPrueba.BaseColor = System.Drawing.Color.White;
-            this.txtSignalPrueba.BorderColor = System.Drawing.Color.Silver;
-            this.txtSignalPrueba.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSignalPrueba.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtSignalPrueba.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtSignalPrueba.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtSignalPrueba.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSignalPrueba.Location = new System.Drawing.Point(343, 26);
-            this.txtSignalPrueba.Name = "txtSignalPrueba";
-            this.txtSignalPrueba.PasswordChar = '\0';
-            this.txtSignalPrueba.Size = new System.Drawing.Size(160, 32);
-            this.txtSignalPrueba.TabIndex = 88;
-            this.txtSignalPrueba.Visible = false;
-            // 
-            // txtPowerPrueba
-            // 
-            this.txtPowerPrueba.BaseColor = System.Drawing.Color.White;
-            this.txtPowerPrueba.BorderColor = System.Drawing.Color.Silver;
-            this.txtPowerPrueba.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPowerPrueba.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtPowerPrueba.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtPowerPrueba.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtPowerPrueba.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPowerPrueba.Location = new System.Drawing.Point(343, 73);
-            this.txtPowerPrueba.Name = "txtPowerPrueba";
-            this.txtPowerPrueba.PasswordChar = '\0';
-            this.txtPowerPrueba.Size = new System.Drawing.Size(160, 32);
-            this.txtPowerPrueba.TabIndex = 89;
-            this.txtPowerPrueba.Visible = false;
-            // 
-            // lblComando
-            // 
-            this.lblComando.AutoSize = true;
-            this.lblComando.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComando.ForeColor = System.Drawing.Color.White;
-            this.lblComando.Location = new System.Drawing.Point(62, 258);
-            this.lblComando.Name = "lblComando";
-            this.lblComando.Size = new System.Drawing.Size(51, 28);
-            this.lblComando.TabIndex = 90;
-            this.lblComando.Text = "N/A";
-            this.lblComando.Visible = false;
             // 
             // InicioProgramación
             // 
@@ -600,6 +549,7 @@ namespace Electrónicos.Jupiter
             // 
             // btnCargarPruebas
             // 
+            this.btnCargarPruebas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCargarPruebas.Animated = true;
             this.btnCargarPruebas.AnimationHoverSpeed = 0.07F;
             this.btnCargarPruebas.AnimationSpeed = 0.03F;
@@ -615,7 +565,7 @@ namespace Electrónicos.Jupiter
             this.btnCargarPruebas.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnCargarPruebas.Image = null;
             this.btnCargarPruebas.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCargarPruebas.Location = new System.Drawing.Point(349, 396);
+            this.btnCargarPruebas.Location = new System.Drawing.Point(12, 439);
             this.btnCargarPruebas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCargarPruebas.Name = "btnCargarPruebas";
             this.btnCargarPruebas.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -635,39 +585,6 @@ namespace Electrónicos.Jupiter
             // 
             this.timerPruebas.Interval = 800;
             this.timerPruebas.Tick += new System.EventHandler(this.timerPruebas_Tick);
-            // 
-            // circularProgressBar2
-            // 
-            this.circularProgressBar2.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar2.AnimationSpeed = 200;
-            this.circularProgressBar2.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularProgressBar2.ForeColor = System.Drawing.Color.White;
-            this.circularProgressBar2.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.circularProgressBar2.InnerMargin = 2;
-            this.circularProgressBar2.InnerWidth = -1;
-            this.circularProgressBar2.Location = new System.Drawing.Point(200, 243);
-            this.circularProgressBar2.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar2.Name = "circularProgressBar2";
-            this.circularProgressBar2.OuterColor = System.Drawing.Color.Plum;
-            this.circularProgressBar2.OuterMargin = -25;
-            this.circularProgressBar2.OuterWidth = 26;
-            this.circularProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar2.ProgressWidth = 25;
-            this.circularProgressBar2.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar2.Size = new System.Drawing.Size(183, 137);
-            this.circularProgressBar2.StartAngle = 270;
-            this.circularProgressBar2.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar2.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBar2.SubscriptText = "";
-            this.circularProgressBar2.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar2.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.circularProgressBar2.SuperscriptText = "";
-            this.circularProgressBar2.TabIndex = 92;
-            this.circularProgressBar2.Text = "20";
-            this.circularProgressBar2.TextMargin = new System.Windows.Forms.Padding(8, 4, 8, 0);
-            this.circularProgressBar2.Value = 68;
-            this.circularProgressBar2.Visible = false;
             // 
             // txtRespuesta1
             // 
@@ -774,14 +691,6 @@ namespace Electrónicos.Jupiter
             this.txtRespuesta5.PasswordChar = '\0';
             this.txtRespuesta5.Size = new System.Drawing.Size(161, 36);
             this.txtRespuesta5.TabIndex = 102;
-            // 
-            // txtDecodificador
-            // 
-            this.txtDecodificador.Location = new System.Drawing.Point(12, 607);
-            this.txtDecodificador.Multiline = true;
-            this.txtDecodificador.Name = "txtDecodificador";
-            this.txtDecodificador.Size = new System.Drawing.Size(260, 137);
-            this.txtDecodificador.TabIndex = 108;
             // 
             // lblPrueba1
             // 
@@ -914,10 +823,11 @@ namespace Electrónicos.Jupiter
             this.gunaPanel1.Controls.Add(this.txtRespuesta3);
             this.gunaPanel1.Controls.Add(this.txtRespuesta2);
             this.gunaPanel1.Controls.Add(this.txtRespuesta1);
-            this.gunaPanel1.Location = new System.Drawing.Point(343, 517);
+            this.gunaPanel1.Location = new System.Drawing.Point(12, 517);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(480, 353);
             this.gunaPanel1.TabIndex = 126;
+            this.gunaPanel1.Visible = false;
             // 
             // pic8
             // 
@@ -991,70 +901,6 @@ namespace Electrónicos.Jupiter
             this.pic1.TabIndex = 127;
             this.pic1.TabStop = false;
             // 
-            // btnPowerPrueba
-            // 
-            this.btnPowerPrueba.AnimationHoverSpeed = 0.07F;
-            this.btnPowerPrueba.AnimationSpeed = 0.03F;
-            this.btnPowerPrueba.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnPowerPrueba.BorderColor = System.Drawing.Color.Black;
-            this.btnPowerPrueba.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnPowerPrueba.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnPowerPrueba.CheckedForeColor = System.Drawing.Color.White;
-            this.btnPowerPrueba.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPowerPrueba.CheckedImage")));
-            this.btnPowerPrueba.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnPowerPrueba.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPowerPrueba.FocusedColor = System.Drawing.Color.Empty;
-            this.btnPowerPrueba.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnPowerPrueba.ForeColor = System.Drawing.Color.White;
-            this.btnPowerPrueba.Image = ((System.Drawing.Image)(resources.GetObject("btnPowerPrueba.Image")));
-            this.btnPowerPrueba.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPowerPrueba.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnPowerPrueba.Location = new System.Drawing.Point(523, 74);
-            this.btnPowerPrueba.Name = "btnPowerPrueba";
-            this.btnPowerPrueba.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnPowerPrueba.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnPowerPrueba.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnPowerPrueba.OnHoverImage = null;
-            this.btnPowerPrueba.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnPowerPrueba.OnPressedColor = System.Drawing.Color.Black;
-            this.btnPowerPrueba.Size = new System.Drawing.Size(180, 42);
-            this.btnPowerPrueba.TabIndex = 87;
-            this.btnPowerPrueba.Text = "Power";
-            this.btnPowerPrueba.Visible = false;
-            this.btnPowerPrueba.Click += new System.EventHandler(this.btnPowerPrueba_Click);
-            // 
-            // btnSignalPrueba
-            // 
-            this.btnSignalPrueba.AnimationHoverSpeed = 0.07F;
-            this.btnSignalPrueba.AnimationSpeed = 0.03F;
-            this.btnSignalPrueba.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnSignalPrueba.BorderColor = System.Drawing.Color.Black;
-            this.btnSignalPrueba.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnSignalPrueba.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnSignalPrueba.CheckedForeColor = System.Drawing.Color.White;
-            this.btnSignalPrueba.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSignalPrueba.CheckedImage")));
-            this.btnSignalPrueba.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnSignalPrueba.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSignalPrueba.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSignalPrueba.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSignalPrueba.ForeColor = System.Drawing.Color.White;
-            this.btnSignalPrueba.Image = ((System.Drawing.Image)(resources.GetObject("btnSignalPrueba.Image")));
-            this.btnSignalPrueba.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSignalPrueba.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSignalPrueba.Location = new System.Drawing.Point(523, 26);
-            this.btnSignalPrueba.Name = "btnSignalPrueba";
-            this.btnSignalPrueba.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnSignalPrueba.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSignalPrueba.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSignalPrueba.OnHoverImage = null;
-            this.btnSignalPrueba.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSignalPrueba.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSignalPrueba.Size = new System.Drawing.Size(180, 42);
-            this.btnSignalPrueba.TabIndex = 86;
-            this.btnSignalPrueba.Text = "Signal";
-            this.btnSignalPrueba.Visible = false;
-            this.btnSignalPrueba.Click += new System.EventHandler(this.btnSignalPrueba_Click);
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1074,14 +920,15 @@ namespace Electrónicos.Jupiter
             this.panel1.GradientColor2 = System.Drawing.Color.DarkGray;
             this.panel1.GradientColor3 = System.Drawing.Color.DarkSalmon;
             this.panel1.GradientColor4 = System.Drawing.Color.RosyBrown;
-            this.panel1.Location = new System.Drawing.Point(378, 121);
+            this.panel1.Location = new System.Drawing.Point(520, 103);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.MaximumSize = new System.Drawing.Size(350, 209);
             this.panel1.MinimumSize = new System.Drawing.Size(325, 135);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(325, 148);
+            this.panel1.Size = new System.Drawing.Size(325, 135);
             this.panel1.TabIndex = 47;
             this.panel1.Text = "gunaGradientPanel1";
+            this.panel1.Visible = false;
             // 
             // gunaGradientButton1
             // 
@@ -1158,7 +1005,7 @@ namespace Electrónicos.Jupiter
             this.panel2.Location = new System.Drawing.Point(0, 5);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 138);
+            this.panel2.Size = new System.Drawing.Size(5, 125);
             this.panel2.TabIndex = 13;
             // 
             // panel5
@@ -1175,7 +1022,7 @@ namespace Electrónicos.Jupiter
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 143);
+            this.panel4.Location = new System.Drawing.Point(0, 130);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(320, 5);
@@ -1188,7 +1035,7 @@ namespace Electrónicos.Jupiter
             this.panel3.Location = new System.Drawing.Point(320, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 148);
+            this.panel3.Size = new System.Drawing.Size(5, 135);
             this.panel3.TabIndex = 14;
             // 
             // label1
@@ -1226,6 +1073,57 @@ namespace Electrónicos.Jupiter
             this.lblEstadoConexion.Text = "Estado : Desconectado";
             this.lblEstadoConexion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // gunaCircleProgressBar1
+            // 
+            this.gunaCircleProgressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gunaCircleProgressBar1.Animated = true;
+            this.gunaCircleProgressBar1.AnimationSpeed = 0.2F;
+            this.gunaCircleProgressBar1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.gunaCircleProgressBar1.ColorStyle = Guna.UI.WinForms.ColorStyle.Transition;
+            this.gunaCircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaCircleProgressBar1.ForeColor = System.Drawing.Color.White;
+            this.gunaCircleProgressBar1.IdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.gunaCircleProgressBar1.IdleOffset = 20;
+            this.gunaCircleProgressBar1.Image = null;
+            this.gunaCircleProgressBar1.ImageSize = new System.Drawing.Size(52, 52);
+            this.gunaCircleProgressBar1.Location = new System.Drawing.Point(538, 584);
+            this.gunaCircleProgressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaCircleProgressBar1.Name = "gunaCircleProgressBar1";
+            this.gunaCircleProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.gunaCircleProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaCircleProgressBar1.ProgressOffset = 20;
+            this.gunaCircleProgressBar1.Size = new System.Drawing.Size(188, 167);
+            this.gunaCircleProgressBar1.TabIndex = 127;
+            this.gunaCircleProgressBar1.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.gunaCircleProgressBar1.UseProgressPercentText = true;
+            this.gunaCircleProgressBar1.Visible = false;
+            // 
+            // lblComando
+            // 
+            this.lblComando.AutoSize = true;
+            this.lblComando.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComando.ForeColor = System.Drawing.Color.White;
+            this.lblComando.Location = new System.Drawing.Point(260, 283);
+            this.lblComando.Name = "lblComando";
+            this.lblComando.Size = new System.Drawing.Size(51, 28);
+            this.lblComando.TabIndex = 90;
+            this.lblComando.Text = "N/A";
+            this.lblComando.Visible = false;
+            // 
+            // txtDecodificador
+            // 
+            this.txtDecodificador.Location = new System.Drawing.Point(329, 455);
+            this.txtDecodificador.Multiline = true;
+            this.txtDecodificador.Name = "txtDecodificador";
+            this.txtDecodificador.Size = new System.Drawing.Size(107, 39);
+            this.txtDecodificador.TabIndex = 108;
+            this.txtDecodificador.Visible = false;
+            // 
             // Jupiter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1233,14 +1131,11 @@ namespace Electrónicos.Jupiter
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1239, 882);
             this.Controls.Add(this.gunaPanel1);
-            this.Controls.Add(this.txtDecodificador);
-            this.Controls.Add(this.circularProgressBar2);
+            this.Controls.Add(this.btnPower);
+            this.Controls.Add(this.btnSignal);
+            this.Controls.Add(this.gunaCircleProgressBar1);
             this.Controls.Add(this.btnCargarPruebas);
             this.Controls.Add(this.lblComando);
-            this.Controls.Add(this.txtPowerPrueba);
-            this.Controls.Add(this.txtSignalPrueba);
-            this.Controls.Add(this.btnPowerPrueba);
-            this.Controls.Add(this.btnSignalPrueba);
             this.Controls.Add(this.lblPower);
             this.Controls.Add(this.lblSignal);
             this.Controls.Add(this.gunaLabel2);
@@ -1253,13 +1148,12 @@ namespace Electrónicos.Jupiter
             this.Controls.Add(this.txtScanerSignal);
             this.Controls.Add(this.circularProgressBar1);
             this.Controls.Add(this.txtScanerPower);
-            this.Controls.Add(this.btnPower);
-            this.Controls.Add(this.btnSignal);
-            this.Controls.Add(this.txtMensajeLeido);
             this.Controls.Add(this.btnConsola);
             this.Controls.Add(this.txtEnviarDatos);
             this.Controls.Add(this.txtMostrarDatos);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtDecodificador);
+            this.Controls.Add(this.txtMensajeLeido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Jupiter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1315,15 +1209,9 @@ namespace Electrónicos.Jupiter
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel lblSignal;
         private Guna.UI.WinForms.GunaLabel lblPower;
-        private Guna.UI.WinForms.GunaAdvenceButton btnSignalPrueba;
-        private Guna.UI.WinForms.GunaAdvenceButton btnPowerPrueba;
-        private Guna.UI.WinForms.GunaTextBox txtSignalPrueba;
-        private Guna.UI.WinForms.GunaTextBox txtPowerPrueba;
-        private Guna.UI.WinForms.GunaLabel lblComando;
         private System.Windows.Forms.Timer InicioProgramación;
         private Guna.UI.WinForms.GunaGradientButton btnCargarPruebas;
         private System.Windows.Forms.Timer timerPruebas;
-        private CircularProgressBar.CircularProgressBar circularProgressBar2;
         private Guna.UI.WinForms.GunaTextBox txtRespuesta1;
         private Guna.UI.WinForms.GunaTextBox txtRespuesta2;
         private Guna.UI.WinForms.GunaTextBox txtRespuesta4;
@@ -1331,7 +1219,6 @@ namespace Electrónicos.Jupiter
         private Guna.UI.WinForms.GunaTextBox txtRespuesta7;
         private Guna.UI.WinForms.GunaTextBox txtRespuesta6;
         private Guna.UI.WinForms.GunaTextBox txtRespuesta5;
-        private System.Windows.Forms.TextBox txtDecodificador;
         private Guna.UI.WinForms.GunaLabel lblPrueba1;
         private Guna.UI.WinForms.GunaLabel lblPrueba2;
         private Guna.UI.WinForms.GunaLabel lblPrueba3;
@@ -1350,5 +1237,9 @@ namespace Electrónicos.Jupiter
         private System.Windows.Forms.PictureBox pic4;
         private System.Windows.Forms.PictureBox pic3;
         private System.Windows.Forms.PictureBox pic2;
+        private System.Windows.Forms.Timer timer1;
+        private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
+        private Guna.UI.WinForms.GunaLabel lblComando;
+        private System.Windows.Forms.TextBox txtDecodificador;
     }
 }

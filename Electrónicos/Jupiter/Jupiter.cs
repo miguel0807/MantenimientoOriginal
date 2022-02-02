@@ -533,15 +533,7 @@ namespace Electrónicos.Jupiter
 
         }
 
-        private void btnSignalPrueba_Click(object sender, EventArgs e)
-        {
-            lblSignal.Text = txtSignalPrueba.Text;
-        }
-
-        private void btnPowerPrueba_Click(object sender, EventArgs e)
-        {
-            lblPower.Text = txtPowerPrueba.Text;
-        }
+     
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -612,20 +604,20 @@ namespace Electrónicos.Jupiter
         {
            
             segundos = segundos - 1;
-            circularProgressBar2.Value = circularProgressBar2.Value + 5;
-            circularProgressBar2.Text = segundos.ToString();
+            gunaCircleProgressBar1.Value = gunaCircleProgressBar1.Value + 10;
+            gunaCircleProgressBar1.Text = segundos.ToString();
                         
-            if (segundos == 19)
+            if (segundos == 10)
             {
                 escape();
                 DecodificadorActivado = true;                
             }
            
-            else if (segundos == 18)
+            else if (segundos == 9)
             {
                 cmd("i2c c");
             }
-            else if (segundos == 17)
+            else if (segundos == 8)
             {
                
                 DecodificadorJellingDisck("i2c status: 0", "i2c status: 1", ref pic1, ref txtRespuesta1);
@@ -633,37 +625,37 @@ namespace Electrónicos.Jupiter
                 
             }
 
-            else if (segundos == 16)
+            else if (segundos == 7)
             {
                 DecodificadorDirecciones("400: 01 02 03",ref pic2, ref txtRespuesta2);
                 cmd("i2c w 1025 1 2 3");
             }
 
-            else if (segundos == 15)
+            else if (segundos == 6)
             {
                 DecodificadorDirecciones("401: 01 02 03", ref pic3, ref txtRespuesta3);
                 cmd("i2c w 1026 1 2 3");
             }
 
 
-            else if (segundos == 14)
+            else if (segundos == 5)
             {
                 DecodificadorDirecciones("402: 01 02 03", ref pic4, ref txtRespuesta4);
                 cmd("i2c w 1024 255 255 255");
             }
 
-            else if (segundos == 13)
+            else if (segundos == 4)
             {
                 DecodificadorDirecciones("400: FF FF FF ", ref pic6, ref txtRespuesta6);
                 cmd("i2c w 1025 255 255 255");
             }
-            else if (segundos == 12)
+            else if (segundos == 3)
             {
                 DecodificadorDirecciones("401: FF FF FF ", ref pic7, ref txtRespuesta7);
                 cmd("i2c w 1026 255 255 255");
             }
 
-            else if (segundos == 11)
+            else if (segundos == 2)
             {
                 DecodificadorDirecciones("402: FF FF FF ", ref pic8, ref txtRespuesta8);
                 
@@ -683,8 +675,8 @@ namespace Electrónicos.Jupiter
             else if (segundos == 0)
             {
                 timerPruebas.Stop();
-                
-                circularProgressBar2.Visible = false;
+
+                gunaCircleProgressBar1.Visible = false;
                 // DecodificadorActivado = false;
             }
         }
@@ -695,15 +687,18 @@ namespace Electrónicos.Jupiter
             cmd("run");
             escape();
 
-            circularProgressBar2.Visible = true;
+            gunaCircleProgressBar1.Visible = true;
+            gunaPanel1.Visible = true;
             timerPruebas.Start();
-            segundos = 20;
-            circularProgressBar2.Value = 0;
+            segundos = 11;
+            gunaCircleProgressBar1.Value = 0;
         }
 
         private void gunaGradientButton4_Click(object sender, EventArgs e)
         {
-            pic1.Image =  Properties.Resources.Aceptar;
+            gunaCircleProgressBar1.Visible = true;
+            gunaCircleProgressBar1.Value = 0;
+            timer1.Start();
         }
         private void DecodificadorJellingDisck(string cmdAprobado, string cmdDenegar, ref PictureBox imagen, ref Guna.UI.WinForms.GunaTextBox txtRespuesta)
         {
@@ -753,6 +748,22 @@ namespace Electrónicos.Jupiter
             }
 
             txtDecodificador.Text = "";
+        }
+
+        private void circularProgressBar2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            gunaCircleProgressBar1.Value = gunaCircleProgressBar1.Value + 10;
+
+            if (gunaCircleProgressBar1.Value == 100)
+            {
+                timer1.Stop();
+                gunaCircleProgressBar1.Value = 0;
+            }
         }
     }
 
