@@ -183,6 +183,9 @@
     <EmbeddedResource Include="ABIS\Voltaje.resx">
       <DependentUpon>Voltaje.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JupiterSerialPort.resx">
+      <DependentUpon>JupiterSerialPort.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Jupiter\Jupiter.resx">
       <DependentUpon>Jupiter.cs</DependentUpon>
     </EmbeddedResource>

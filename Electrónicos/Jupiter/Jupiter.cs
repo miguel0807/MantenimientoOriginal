@@ -86,7 +86,7 @@ namespace Electrónicos.Jupiter
             PuertoSerie.StopBits = StopBits.One;
             PuertoSerie.Handshake = Handshake.None;
             //PuertoSerie.PortName = "COM2"; // Puerto virtual.
-            PuertoSerie.PortName = "COM6"; // Puerto normal.
+            PuertoSerie.PortName = "COM7"; // Puerto normal.
 
             try
             {
@@ -612,6 +612,7 @@ namespace Electrónicos.Jupiter
         {
            
             segundos = segundos - 1;
+            circularProgressBar2.Value = circularProgressBar2.Value + 5;
             circularProgressBar2.Text = segundos.ToString();
                         
             if (segundos == 19)
@@ -697,6 +698,7 @@ namespace Electrónicos.Jupiter
             circularProgressBar2.Visible = true;
             timerPruebas.Start();
             segundos = 20;
+            circularProgressBar2.Value = 0;
         }
 
         private void gunaGradientButton4_Click(object sender, EventArgs e)

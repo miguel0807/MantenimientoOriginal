@@ -38,3 +38,4 @@ C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electróni
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\CircularProgressBar.dll
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\WinFormAnimation.dll
 C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\bin\Debug\CircularProgressBar.xml
+C:\Users\malvarado\source\repos\Mantenimiento\Electrónicos\obj\Debug\Electrónicos.JupiterSerialPort.resources
