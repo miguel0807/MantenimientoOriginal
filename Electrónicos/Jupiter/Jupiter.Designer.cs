@@ -43,7 +43,7 @@ namespace Electrónicos.Jupiter
             this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
             this.txtScanerSignal = new System.Windows.Forms.TextBox();
             this.timerSignal = new System.Windows.Forms.Timer(this.components);
-            this.txtInicio = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnComenzarProgramacion = new Guna.UI.WinForms.GunaGradientButton();
             this.btnAceptar = new Guna.UI.WinForms.GunaGradientButton();
             this.btnRechazar = new Guna.UI.WinForms.GunaGradientButton();
             this.btnActivar = new Guna.UI.WinForms.GunaGradientButton();
@@ -80,19 +80,19 @@ namespace Electrónicos.Jupiter
             this.pic3 = new System.Windows.Forms.PictureBox();
             this.pic2 = new System.Windows.Forms.PictureBox();
             this.pic1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new Guna.UI.WinForms.GunaGradientPanel();
-            this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
-            this.btnConectar = new Guna.UI.WinForms.GunaGradientButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblEstadoConexion = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.lblComando = new Guna.UI.WinForms.GunaLabel();
             this.txtDecodificador = new System.Windows.Forms.TextBox();
+            this.lblEstadoConexion = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnConectar = new Guna.UI.WinForms.GunaGradientButton();
+            this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
+            this.panel1 = new Guna.UI.WinForms.GunaGradientPanel();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic7)).BeginInit();
@@ -333,37 +333,37 @@ namespace Electrónicos.Jupiter
             this.timerSignal.Interval = 1;
             this.timerSignal.Tick += new System.EventHandler(this.timerSignal_Tick);
             // 
-            // txtInicio
+            // btnComenzarProgramacion
             // 
-            this.txtInicio.Animated = true;
-            this.txtInicio.AnimationHoverSpeed = 0.07F;
-            this.txtInicio.AnimationSpeed = 0.03F;
-            this.txtInicio.BackColor = System.Drawing.Color.Transparent;
-            this.txtInicio.BaseColor1 = System.Drawing.Color.SlateBlue;
-            this.txtInicio.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.txtInicio.BorderColor = System.Drawing.Color.Black;
-            this.txtInicio.BorderSize = 1;
-            this.txtInicio.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.txtInicio.FocusedColor = System.Drawing.Color.Empty;
-            this.txtInicio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInicio.ForeColor = System.Drawing.Color.White;
-            this.txtInicio.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.txtInicio.Image = null;
-            this.txtInicio.ImageSize = new System.Drawing.Size(20, 20);
-            this.txtInicio.Location = new System.Drawing.Point(17, 140);
-            this.txtInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtInicio.Name = "txtInicio";
-            this.txtInicio.OnHoverBaseColor1 = System.Drawing.Color.Gray;
-            this.txtInicio.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtInicio.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.txtInicio.OnHoverForeColor = System.Drawing.Color.White;
-            this.txtInicio.OnHoverImage = null;
-            this.txtInicio.OnPressedColor = System.Drawing.Color.Black;
-            this.txtInicio.Size = new System.Drawing.Size(212, 73);
-            this.txtInicio.TabIndex = 72;
-            this.txtInicio.Text = "Comenzar programación";
-            this.txtInicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtInicio.Click += new System.EventHandler(this.txtInicio_Click);
+            this.btnComenzarProgramacion.Animated = true;
+            this.btnComenzarProgramacion.AnimationHoverSpeed = 0.07F;
+            this.btnComenzarProgramacion.AnimationSpeed = 0.03F;
+            this.btnComenzarProgramacion.BackColor = System.Drawing.Color.Transparent;
+            this.btnComenzarProgramacion.BaseColor1 = System.Drawing.Color.SlateBlue;
+            this.btnComenzarProgramacion.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnComenzarProgramacion.BorderColor = System.Drawing.Color.Black;
+            this.btnComenzarProgramacion.BorderSize = 1;
+            this.btnComenzarProgramacion.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnComenzarProgramacion.FocusedColor = System.Drawing.Color.Empty;
+            this.btnComenzarProgramacion.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComenzarProgramacion.ForeColor = System.Drawing.Color.White;
+            this.btnComenzarProgramacion.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.btnComenzarProgramacion.Image = null;
+            this.btnComenzarProgramacion.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnComenzarProgramacion.Location = new System.Drawing.Point(17, 140);
+            this.btnComenzarProgramacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnComenzarProgramacion.Name = "btnComenzarProgramacion";
+            this.btnComenzarProgramacion.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.btnComenzarProgramacion.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnComenzarProgramacion.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnComenzarProgramacion.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnComenzarProgramacion.OnHoverImage = null;
+            this.btnComenzarProgramacion.OnPressedColor = System.Drawing.Color.Black;
+            this.btnComenzarProgramacion.Size = new System.Drawing.Size(212, 73);
+            this.btnComenzarProgramacion.TabIndex = 72;
+            this.btnComenzarProgramacion.Text = "Comenzar programación";
+            this.btnComenzarProgramacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnComenzarProgramacion.Click += new System.EventHandler(this.txtInicio_Click);
             // 
             // btnAceptar
             // 
@@ -382,7 +382,7 @@ namespace Electrónicos.Jupiter
             this.btnAceptar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnAceptar.Image = null;
             this.btnAceptar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAceptar.Location = new System.Drawing.Point(12, 346);
+            this.btnAceptar.Location = new System.Drawing.Point(18, 325);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -415,7 +415,7 @@ namespace Electrónicos.Jupiter
             this.btnRechazar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnRechazar.Image = null;
             this.btnRechazar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnRechazar.Location = new System.Drawing.Point(177, 346);
+            this.btnRechazar.Location = new System.Drawing.Point(183, 325);
             this.btnRechazar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRechazar.Name = "btnRechazar";
             this.btnRechazar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -448,7 +448,7 @@ namespace Electrónicos.Jupiter
             this.btnActivar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnActivar.Image = null;
             this.btnActivar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnActivar.Location = new System.Drawing.Point(110, 259);
+            this.btnActivar.Location = new System.Drawing.Point(116, 238);
             this.btnActivar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActivar.Name = "btnActivar";
             this.btnActivar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -901,178 +901,6 @@ namespace Electrónicos.Jupiter
             this.pic1.TabIndex = 127;
             this.pic1.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.gunaGradientButton1);
-            this.panel1.Controls.Add(this.btnConectar);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lblEstadoConexion);
-            this.panel1.GradientColor1 = System.Drawing.SystemColors.Highlight;
-            this.panel1.GradientColor2 = System.Drawing.Color.DarkGray;
-            this.panel1.GradientColor3 = System.Drawing.Color.DarkSalmon;
-            this.panel1.GradientColor4 = System.Drawing.Color.RosyBrown;
-            this.panel1.Location = new System.Drawing.Point(520, 103);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.MaximumSize = new System.Drawing.Size(350, 209);
-            this.panel1.MinimumSize = new System.Drawing.Size(325, 135);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(325, 135);
-            this.panel1.TabIndex = 47;
-            this.panel1.Text = "gunaGradientPanel1";
-            this.panel1.Visible = false;
-            // 
-            // gunaGradientButton1
-            // 
-            this.gunaGradientButton1.Animated = true;
-            this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientButton1.AnimationSpeed = 0.03F;
-            this.gunaGradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton1.BaseColor1 = System.Drawing.Color.Gray;
-            this.gunaGradientButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.gunaGradientButton1.BorderColor = System.Drawing.Color.Snow;
-            this.gunaGradientButton1.BorderSize = 1;
-            this.gunaGradientButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.Image = null;
-            this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(27, 43);
-            this.gunaGradientButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gunaGradientButton1.MinimumSize = new System.Drawing.Size(23, 18);
-            this.gunaGradientButton1.Name = "gunaGradientButton1";
-            this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.SlateBlue;
-            this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.gunaGradientButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.OnHoverImage = null;
-            this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.Radius = 5;
-            this.gunaGradientButton1.Size = new System.Drawing.Size(23, 18);
-            this.gunaGradientButton1.TabIndex = 64;
-            // 
-            // btnConectar
-            // 
-            this.btnConectar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConectar.Animated = true;
-            this.btnConectar.AnimationHoverSpeed = 0.07F;
-            this.btnConectar.AnimationSpeed = 0.03F;
-            this.btnConectar.BackColor = System.Drawing.Color.Transparent;
-            this.btnConectar.BaseColor1 = System.Drawing.Color.SlateBlue;
-            this.btnConectar.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
-            this.btnConectar.BorderColor = System.Drawing.Color.Black;
-            this.btnConectar.BorderSize = 1;
-            this.btnConectar.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnConectar.FocusedColor = System.Drawing.Color.Empty;
-            this.btnConectar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConectar.ForeColor = System.Drawing.Color.White;
-            this.btnConectar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.btnConectar.Image = null;
-            this.btnConectar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnConectar.Location = new System.Drawing.Point(73, 74);
-            this.btnConectar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnConectar.MaximumSize = new System.Drawing.Size(306, 110);
-            this.btnConectar.MinimumSize = new System.Drawing.Size(184, 50);
-            this.btnConectar.Name = "btnConectar";
-            this.btnConectar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
-            this.btnConectar.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnConectar.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnConectar.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnConectar.OnHoverImage = null;
-            this.btnConectar.OnPressedColor = System.Drawing.Color.Black;
-            this.btnConectar.Radius = 20;
-            this.btnConectar.Size = new System.Drawing.Size(184, 50);
-            this.btnConectar.TabIndex = 48;
-            this.btnConectar.Text = "Conectar";
-            this.btnConectar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 5);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 125);
-            this.panel2.TabIndex = 13;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(320, 5);
-            this.panel5.TabIndex = 15;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 130);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(320, 5);
-            this.panel4.TabIndex = 14;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(320, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 135);
-            this.panel3.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(141, 15);
-            this.label1.MinimumSize = new System.Drawing.Size(49, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 25);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "PCB";
-            // 
-            // lblEstadoConexion
-            // 
-            this.lblEstadoConexion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEstadoConexion.AutoSize = true;
-            this.lblEstadoConexion.BackColor = System.Drawing.Color.Transparent;
-            this.lblEstadoConexion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEstadoConexion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoConexion.ForeColor = System.Drawing.Color.White;
-            this.lblEstadoConexion.Location = new System.Drawing.Point(56, 38);
-            this.lblEstadoConexion.MinimumSize = new System.Drawing.Size(237, 23);
-            this.lblEstadoConexion.Name = "lblEstadoConexion";
-            this.lblEstadoConexion.Size = new System.Drawing.Size(239, 25);
-            this.lblEstadoConexion.TabIndex = 10;
-            this.lblEstadoConexion.Text = "Estado : Desconectado";
-            this.lblEstadoConexion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -1108,7 +936,7 @@ namespace Electrónicos.Jupiter
             this.lblComando.AutoSize = true;
             this.lblComando.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComando.ForeColor = System.Drawing.Color.White;
-            this.lblComando.Location = new System.Drawing.Point(260, 283);
+            this.lblComando.Location = new System.Drawing.Point(266, 262);
             this.lblComando.Name = "lblComando";
             this.lblComando.Size = new System.Drawing.Size(51, 28);
             this.lblComando.TabIndex = 90;
@@ -1124,6 +952,176 @@ namespace Electrónicos.Jupiter
             this.txtDecodificador.TabIndex = 108;
             this.txtDecodificador.Visible = false;
             // 
+            // lblEstadoConexion
+            // 
+            this.lblEstadoConexion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEstadoConexion.AutoSize = true;
+            this.lblEstadoConexion.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstadoConexion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEstadoConexion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoConexion.ForeColor = System.Drawing.Color.White;
+            this.lblEstadoConexion.Location = new System.Drawing.Point(658, 16);
+            this.lblEstadoConexion.MinimumSize = new System.Drawing.Size(237, 23);
+            this.lblEstadoConexion.Name = "lblEstadoConexion";
+            this.lblEstadoConexion.Size = new System.Drawing.Size(239, 25);
+            this.lblEstadoConexion.TabIndex = 10;
+            this.lblEstadoConexion.Text = "Estado : Desconectado";
+            this.lblEstadoConexion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(141, 15);
+            this.label1.MinimumSize = new System.Drawing.Size(49, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 25);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "PCB";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(320, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 135);
+            this.panel3.TabIndex = 14;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 130);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(320, 5);
+            this.panel4.TabIndex = 14;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(320, 5);
+            this.panel5.TabIndex = 15;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 125);
+            this.panel2.TabIndex = 13;
+            // 
+            // btnConectar
+            // 
+            this.btnConectar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConectar.Animated = true;
+            this.btnConectar.AnimationHoverSpeed = 0.07F;
+            this.btnConectar.AnimationSpeed = 0.03F;
+            this.btnConectar.BackColor = System.Drawing.Color.Transparent;
+            this.btnConectar.BaseColor1 = System.Drawing.Color.SlateBlue;
+            this.btnConectar.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnConectar.BorderColor = System.Drawing.Color.Black;
+            this.btnConectar.BorderSize = 1;
+            this.btnConectar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnConectar.FocusedColor = System.Drawing.Color.Empty;
+            this.btnConectar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConectar.ForeColor = System.Drawing.Color.White;
+            this.btnConectar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.btnConectar.Image = null;
+            this.btnConectar.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnConectar.Location = new System.Drawing.Point(671, 49);
+            this.btnConectar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConectar.MaximumSize = new System.Drawing.Size(306, 110);
+            this.btnConectar.MinimumSize = new System.Drawing.Size(184, 50);
+            this.btnConectar.Name = "btnConectar";
+            this.btnConectar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.btnConectar.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnConectar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnConectar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnConectar.OnHoverImage = null;
+            this.btnConectar.OnPressedColor = System.Drawing.Color.Black;
+            this.btnConectar.Radius = 20;
+            this.btnConectar.Size = new System.Drawing.Size(184, 50);
+            this.btnConectar.TabIndex = 48;
+            this.btnConectar.Text = "Conectar";
+            this.btnConectar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
+            // 
+            // gunaGradientButton1
+            // 
+            this.gunaGradientButton1.Animated = true;
+            this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaGradientButton1.AnimationSpeed = 0.03F;
+            this.gunaGradientButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradientButton1.BaseColor1 = System.Drawing.Color.Gray;
+            this.gunaGradientButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.gunaGradientButton1.BorderColor = System.Drawing.Color.Snow;
+            this.gunaGradientButton1.BorderSize = 1;
+            this.gunaGradientButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaGradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton1.Image = null;
+            this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaGradientButton1.Location = new System.Drawing.Point(27, 43);
+            this.gunaGradientButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaGradientButton1.MinimumSize = new System.Drawing.Size(23, 18);
+            this.gunaGradientButton1.Name = "gunaGradientButton1";
+            this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.SlateBlue;
+            this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.gunaGradientButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton1.OnHoverImage = null;
+            this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradientButton1.Radius = 5;
+            this.gunaGradientButton1.Size = new System.Drawing.Size(23, 18);
+            this.gunaGradientButton1.TabIndex = 64;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.gunaGradientButton1);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.GradientColor1 = System.Drawing.SystemColors.Highlight;
+            this.panel1.GradientColor2 = System.Drawing.Color.DarkGray;
+            this.panel1.GradientColor3 = System.Drawing.Color.DarkSalmon;
+            this.panel1.GradientColor4 = System.Drawing.Color.RosyBrown;
+            this.panel1.Location = new System.Drawing.Point(520, 103);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.MaximumSize = new System.Drawing.Size(350, 209);
+            this.panel1.MinimumSize = new System.Drawing.Size(325, 135);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(325, 135);
+            this.panel1.TabIndex = 47;
+            this.panel1.Text = "gunaGradientPanel1";
+            this.panel1.Visible = false;
+            // 
             // Jupiter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1131,12 +1129,14 @@ namespace Electrónicos.Jupiter
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1239, 882);
             this.Controls.Add(this.gunaPanel1);
+            this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.btnPower);
             this.Controls.Add(this.btnSignal);
             this.Controls.Add(this.gunaCircleProgressBar1);
             this.Controls.Add(this.btnCargarPruebas);
             this.Controls.Add(this.lblComando);
             this.Controls.Add(this.lblPower);
+            this.Controls.Add(this.lblEstadoConexion);
             this.Controls.Add(this.lblSignal);
             this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaLabel1);
@@ -1144,7 +1144,7 @@ namespace Electrónicos.Jupiter
             this.Controls.Add(this.btnActivar);
             this.Controls.Add(this.btnRechazar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.txtInicio);
+            this.Controls.Add(this.btnComenzarProgramacion);
             this.Controls.Add(this.txtScanerSignal);
             this.Controls.Add(this.circularProgressBar1);
             this.Controls.Add(this.txtScanerPower);
@@ -1178,16 +1178,6 @@ namespace Electrónicos.Jupiter
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaGradientPanel panel1;
-        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
-        private Guna.UI.WinForms.GunaGradientButton btnConectar;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblEstadoConexion;
         private System.IO.Ports.SerialPort PuertoSerie;
         private System.Windows.Forms.TextBox txtEnviarDatos;
         private System.Windows.Forms.TextBox txtMostrarDatos;
@@ -1200,7 +1190,7 @@ namespace Electrónicos.Jupiter
         private CircularProgressBar.CircularProgressBar circularProgressBar1;
         private System.Windows.Forms.TextBox txtScanerSignal;
         private System.Windows.Forms.Timer timerSignal;
-        private Guna.UI.WinForms.GunaGradientButton txtInicio;
+        private Guna.UI.WinForms.GunaGradientButton btnComenzarProgramacion;
         private Guna.UI.WinForms.GunaGradientButton btnAceptar;
         private Guna.UI.WinForms.GunaGradientButton btnRechazar;
         private Guna.UI.WinForms.GunaGradientButton btnActivar;
@@ -1241,5 +1231,14 @@ namespace Electrónicos.Jupiter
         private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
         private Guna.UI.WinForms.GunaLabel lblComando;
         private System.Windows.Forms.TextBox txtDecodificador;
+        private System.Windows.Forms.Label lblEstadoConexion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI.WinForms.GunaGradientButton btnConectar;
+        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
+        private Guna.UI.WinForms.GunaGradientPanel panel1;
     }
 }

@@ -86,7 +86,7 @@ namespace Electrónicos.Jupiter
             PuertoSerie.StopBits = StopBits.One;
             PuertoSerie.Handshake = Handshake.None;
             //PuertoSerie.PortName = "COM2"; // Puerto virtual.
-            PuertoSerie.PortName = "COM7"; // Puerto normal.
+            PuertoSerie.PortName = "COM31"; // Puerto normal.
 
             try
             {
@@ -128,28 +128,7 @@ namespace Electrónicos.Jupiter
         }
         
 
-        private void btnConectar_Click(object sender, EventArgs e)
-        {
-
-            int exito = 0;
-            if (btnConectar.Text == "Conectar")
-            {
-                exito = Conectar();
-                if (exito == 1)
-                {
-                    btnConectar.Text = "Desconectar";                   
-                    lblEstadoConexion.Text = "Estado : Conectado";                   
-                    btnConsola.Visible = true;
-
-                }
-
-            }
-
-            else if (btnConectar.Text == "Desconectar")
-            {
-                desconectarGeneral();
-            }
-        }
+       
         private void conectar()
         {
             int exito = 0;
@@ -307,12 +286,15 @@ namespace Electrónicos.Jupiter
             cal.VsO = false;
 
             //Hago visible los controles
-            btnActivar.Visible = true;            
+            //btnActivar.Visible = true;
+            btnAceptar.Visible = true;
+            btnRechazar.Visible = true;
             lblComando.Visible = true;
             
-            lblComando.Text = "vs i 0";
+            lblComando.Text = "Resistencia 3.8";
 
             InicioProgramación.Start();
+            btnComenzarProgramacion.Visible = false;
             
 
 
@@ -501,9 +483,17 @@ namespace Electrónicos.Jupiter
 
         private void cmd(string comando)
         {
+            if (lblEstadoConexion.Text != "Estado : Desconectado")
+            {
+                PuertoSerie.Write(comando);
+                enter();
+            }
+            else
+            {
+                MessageBox.Show("El puerto de comunicación se encuentra cerrado.");
+            }
             
-            PuertoSerie.Write(comando);
-            enter();
+            
             
         }
 
@@ -540,6 +530,16 @@ namespace Electrónicos.Jupiter
            
             lblComando.Text = cal.SecuenciaPruebas();
             colorBoton(false);
+            if (cal.Voltaje60 == true) //Cuando la medición de voltaje es 60 se procede a conectar el boton.
+            {
+                btnActivar.Visible = true;
+            }
+
+            if (cal.VsO == true)
+            {
+                btnActivar.Visible = false;
+            }
+
             if (cal.Direcciones == true)
             {
                 btnAceptar.Visible = false;
@@ -548,6 +548,8 @@ namespace Electrónicos.Jupiter
                 lblComando.Visible = false;                
                 btnCargarPruebas.Visible = true;
             }
+
+           // if (impresora.p1)
 
         }
 
@@ -592,7 +594,14 @@ namespace Electrónicos.Jupiter
 
         private void escape()
         {
-            PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
+            if (lblEstadoConexion.Text != "Estado : Desconectado")
+            {
+                PuertoSerie.Write(new byte[] { 27, 10 }, 0, 2);
+            }
+            else
+            {
+                MessageBox.Show("El puerto de comunicación se encuentra cerrado.");
+            }
         }
 
         private void enter()
@@ -764,6 +773,11 @@ namespace Electrónicos.Jupiter
                 timer1.Stop();
                 gunaCircleProgressBar1.Value = 0;
             }
+        }
+
+        private void btnConectar_Click(object sender, EventArgs e)
+        {
+            conectar();
         }
     }
 

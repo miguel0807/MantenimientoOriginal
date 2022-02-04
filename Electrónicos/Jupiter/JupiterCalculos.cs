@@ -11,8 +11,12 @@ namespace Electrónicos.Jupiter
 
     class JupiterCalculos
     {
-     
 
+        public bool Resistencia38 { get; set; }
+        public bool Voltaje33{ get; set; }
+        public bool Voltaje66 { get; set; }
+        public bool Voltaje10 { get; set; }
+        public bool Voltaje60 { get; set; }
         public bool VsI { get ; set ; }
         public bool VsO { get; set; }
         public bool Corto { get; set; }
@@ -60,24 +64,57 @@ namespace Electrónicos.Jupiter
         {        
             string comando = "";
 
-            if (VsI == false && VsO == false && Corto == false && Direcciones == false)
+            if (Resistencia38 == false && Voltaje33 == false && Voltaje66== false && Voltaje10== false && Voltaje60 == false && VsI == false && VsO == false && Corto == false && Direcciones == false) 
+            {
+                Resistencia38 = true;
+                comando = "Voltaje 3.3";
+
+            }
+
+            else if (Resistencia38 == true && Voltaje33 == false && Voltaje66 == false && Voltaje10 == false && Voltaje60 == false && VsI == false && VsO == false && Corto == false && Direcciones == false)
+            {
+                Voltaje33 = true;
+                comando = "Voltaje 66";
+
+            }
+
+            else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == false && Voltaje10 == false && Voltaje60 == false && VsI == false && VsO == false && Corto == false && Direcciones == false)
+            {
+                Voltaje66 = true;
+                comando = "Voltaje -10";
+            }
+
+            else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == false && Voltaje60 == false && VsI == false && VsO == false && Corto == false && Direcciones == false)
+            {
+                Voltaje10 = true;
+                comando = "Voltaje 60";
+            }
+
+            else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == false && VsI == false && VsO == false && Corto == false && Direcciones == false)
+            {
+                Voltaje60 = true;
+                comando = "Vs i 0";
+            }
+
+            else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == true && VsI == false && VsO == false && Corto == false && Direcciones == false)
             {
                 VsI = true;
                 comando = StringVsO;
             }
-            else if (VsI == true && VsO == false && Corto == false && Direcciones == false)
+           
+            else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == true && VsI == true && VsO == false && Corto == false && Direcciones == false)
             {
                 VsO = true;
                 comando = "Favor realice el corto.";
             }
 
-            else if (VsI == true && VsO == true && Corto == false && Direcciones == false)
+            else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == true && VsI == true && VsO == true && Corto == false && Direcciones == false)
             {
                 Corto = true;
                 
             }
 
-            if (VsI == true && VsO == true && Corto == true && Direcciones == false)
+            if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == true && VsI == true && VsO == true && Corto == true && Direcciones == false)
             {
                 Direcciones = true;
 
