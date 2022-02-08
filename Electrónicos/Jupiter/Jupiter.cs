@@ -17,7 +17,7 @@ namespace Electrónicos.Jupiter
     {
                
         private delegate void DelegadoAcceso(string accion);
-        internal static string  variableConsola;
+        
         private bool DecodificadorActivado;
         
         private int Power = 0;
@@ -54,9 +54,9 @@ namespace Electrónicos.Jupiter
         //Recibe la información del buffer de entrada y la muestra en textbox
         private void RecoleccionDatos(string bufferSalida)
         {
-            txtMensajeLeido.Text = txtMensajeLeido.Text + bufferSalida;
-            variableConsola = variableConsola + bufferSalida;
+            txtMensajeLeido.Text = txtMensajeLeido.Text + bufferSalida;           
             txtMostrarDatos.Text = txtMostrarDatos.Text + bufferSalida;
+
             if( cal.VsI == true && cal.VsO == true && cal.Corto == false)//Condicional para mostrar mensaje cuando sea el procedimiento de corto.
             {
                 lblComando.Text = "";
@@ -722,11 +722,46 @@ namespace Electrónicos.Jupiter
 
         private void gunaGradientButton4_Click(object sender, EventArgs e)
         {
-            gunaCircleProgressBar1.Visible = true;
-            gunaCircleProgressBar1.Value = 0;
-            timer1.Start();
+            cmd("info");
+            DecodificadorEtiquetas("Application", txtMensajeLeido, ref lblAppVersion);
         }
-        private void DecodificadorJellingDisck(string cmdAprobado, string cmdDenegar, ref PictureBox imagen, ref Guna.UI.WinForms.GunaTextBox txtRespuesta)
+
+        private void DecodificadorEtiquetas(string cmdAprobado, TextBox txtDecodificador ,ref Guna.UI.WinForms.GunaLabel lblRespuesta)
+        {
+            int numeroLinea = 1;
+
+            foreach (string linea in txtDecodificador.Lines)
+            {
+                if (linea.Contains(cmdAprobado))
+                {
+                    string nuevo;
+                    nuevo = linea + "Final";
+                    lblRespuesta.Text = StringEntre(nuevo, "\"", "\"Final") ;
+                    break;
+                }
+                
+                numeroLinea++;
+            }
+
+            
+        }
+
+        public static string StringEntre(string texto, string inicio, string final)
+        {
+            string resultado = "";
+            if (texto.Contains(inicio) && texto.Contains(final))
+            {
+                int StartIndex = texto.IndexOf(inicio, 0) + inicio.Length;
+                int EndIndex = texto.IndexOf(final, StartIndex);
+                resultado = texto.Substring(StartIndex, EndIndex - StartIndex);
+                return resultado;
+            }
+
+            return resultado;
+        }
+
+            //Decodificador para las pruebas de verificación del i2 c.
+            private void DecodificadorJellingDisck(string cmdAprobado, string cmdDenegar, ref PictureBox imagen, ref Guna.UI.WinForms.GunaTextBox txtRespuesta)
         {
 
             int numeroLinea = 1;
@@ -795,6 +830,11 @@ namespace Electrónicos.Jupiter
         private void btnConectar_Click(object sender, EventArgs e)
         {
             conectar();
+        }
+
+        private void gunaGradientButton2_Click(object sender, EventArgs e)
+        {
+            DecodificadorEtiquetas("Application", txtMensajeLeido, ref lblAppVersion);
         }
     }
 

@@ -94,6 +94,10 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
             this.panel1 = new Guna.UI.WinForms.GunaGradientPanel();
             this.gunaGradientButton2 = new Guna.UI.WinForms.GunaGradientButton();
+            this.lblFPGAVersion = new Guna.UI.WinForms.GunaLabel();
+            this.lblAppVersion = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic7)).BeginInit();
@@ -185,14 +189,13 @@ namespace Electrónicos.Jupiter
             this.txtMensajeLeido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
             this.txtMensajeLeido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMensajeLeido.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.txtMensajeLeido.Location = new System.Drawing.Point(980, 130);
+            this.txtMensajeLeido.Location = new System.Drawing.Point(538, 340);
             this.txtMensajeLeido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMensajeLeido.Multiline = true;
             this.txtMensajeLeido.Name = "txtMensajeLeido";
             this.txtMensajeLeido.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMensajeLeido.Size = new System.Drawing.Size(205, 56);
+            this.txtMensajeLeido.Size = new System.Drawing.Size(314, 143);
             this.txtMensajeLeido.TabIndex = 64;
-            this.txtMensajeLeido.Visible = false;
             // 
             // btnSignal
             // 
@@ -300,7 +303,7 @@ namespace Electrónicos.Jupiter
             this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.circularProgressBar1.ProgressWidth = 25;
             this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar1.Size = new System.Drawing.Size(168, 127);
+            this.circularProgressBar1.Size = new System.Drawing.Size(153, 128);
             this.circularProgressBar1.StartAngle = 270;
             this.circularProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
@@ -374,7 +377,7 @@ namespace Electrónicos.Jupiter
             this.btnAceptar.AnimationSpeed = 0.03F;
             this.btnAceptar.BackColor = System.Drawing.Color.Transparent;
             this.btnAceptar.BaseColor1 = System.Drawing.Color.ForestGreen;
-            this.btnAceptar.BaseColor2 = System.Drawing.Color.Khaki;
+            this.btnAceptar.BaseColor2 = System.Drawing.Color.FloralWhite;
             this.btnAceptar.BorderColor = System.Drawing.Color.Black;
             this.btnAceptar.BorderSize = 1;
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -387,10 +390,10 @@ namespace Electrónicos.Jupiter
             this.btnAceptar.Location = new System.Drawing.Point(18, 325);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
-            this.btnAceptar.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAceptar.OnHoverBaseColor1 = System.Drawing.Color.ForestGreen;
+            this.btnAceptar.OnHoverBaseColor2 = System.Drawing.Color.YellowGreen;
             this.btnAceptar.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAceptar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAceptar.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnAceptar.OnHoverImage = null;
             this.btnAceptar.OnPressedColor = System.Drawing.Color.Black;
             this.btnAceptar.Size = new System.Drawing.Size(137, 77);
@@ -420,10 +423,10 @@ namespace Electrónicos.Jupiter
             this.btnRechazar.Location = new System.Drawing.Point(183, 325);
             this.btnRechazar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRechazar.Name = "btnRechazar";
-            this.btnRechazar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
-            this.btnRechazar.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRechazar.OnHoverBaseColor1 = System.Drawing.Color.Red;
+            this.btnRechazar.OnHoverBaseColor2 = System.Drawing.Color.Firebrick;
             this.btnRechazar.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnRechazar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnRechazar.OnHoverForeColor = System.Drawing.Color.Black;
             this.btnRechazar.OnHoverImage = null;
             this.btnRechazar.OnPressedColor = System.Drawing.Color.Black;
             this.btnRechazar.Size = new System.Drawing.Size(146, 77);
@@ -497,7 +500,6 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton4.TabIndex = 81;
             this.gunaGradientButton4.Text = "Leer";
             this.gunaGradientButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaGradientButton4.Visible = false;
             this.gunaGradientButton4.Click += new System.EventHandler(this.gunaGradientButton4_Click);
             // 
             // gunaLabel1
@@ -527,7 +529,7 @@ namespace Electrónicos.Jupiter
             this.lblSignal.AutoSize = true;
             this.lblSignal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignal.ForeColor = System.Drawing.Color.White;
-            this.lblSignal.Location = new System.Drawing.Point(552, 16);
+            this.lblSignal.Location = new System.Drawing.Point(583, 17);
             this.lblSignal.Name = "lblSignal";
             this.lblSignal.Size = new System.Drawing.Size(51, 28);
             this.lblSignal.TabIndex = 84;
@@ -538,7 +540,7 @@ namespace Electrónicos.Jupiter
             this.lblPower.AutoSize = true;
             this.lblPower.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPower.ForeColor = System.Drawing.Color.White;
-            this.lblPower.Location = new System.Drawing.Point(552, 67);
+            this.lblPower.Location = new System.Drawing.Point(583, 68);
             this.lblPower.Name = "lblPower";
             this.lblPower.Size = new System.Drawing.Size(51, 28);
             this.lblPower.TabIndex = 85;
@@ -947,7 +949,7 @@ namespace Electrónicos.Jupiter
             // 
             // txtDecodificador
             // 
-            this.txtDecodificador.Location = new System.Drawing.Point(329, 455);
+            this.txtDecodificador.Location = new System.Drawing.Point(385, 473);
             this.txtDecodificador.Multiline = true;
             this.txtDecodificador.Name = "txtDecodificador";
             this.txtDecodificador.Size = new System.Drawing.Size(107, 39);
@@ -1115,7 +1117,7 @@ namespace Electrónicos.Jupiter
             this.panel1.GradientColor2 = System.Drawing.Color.DarkGray;
             this.panel1.GradientColor3 = System.Drawing.Color.DarkSalmon;
             this.panel1.GradientColor4 = System.Drawing.Color.RosyBrown;
-            this.panel1.Location = new System.Drawing.Point(520, 103);
+            this.panel1.Location = new System.Drawing.Point(704, 124);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.MaximumSize = new System.Drawing.Size(350, 209);
             this.panel1.MinimumSize = new System.Drawing.Size(325, 135);
@@ -1155,6 +1157,52 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton2.TabIndex = 128;
             this.gunaGradientButton2.Text = "Enviar información";
             this.gunaGradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaGradientButton2.Click += new System.EventHandler(this.gunaGradientButton2_Click);
+            // 
+            // lblFPGAVersion
+            // 
+            this.lblFPGAVersion.AutoSize = true;
+            this.lblFPGAVersion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFPGAVersion.ForeColor = System.Drawing.Color.White;
+            this.lblFPGAVersion.Location = new System.Drawing.Point(583, 167);
+            this.lblFPGAVersion.Name = "lblFPGAVersion";
+            this.lblFPGAVersion.Size = new System.Drawing.Size(51, 28);
+            this.lblFPGAVersion.TabIndex = 132;
+            this.lblFPGAVersion.Text = "N/A";
+            // 
+            // lblAppVersion
+            // 
+            this.lblAppVersion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAppVersion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppVersion.ForeColor = System.Drawing.Color.White;
+            this.lblAppVersion.Location = new System.Drawing.Point(437, 227);
+            this.lblAppVersion.Name = "lblAppVersion";
+            this.lblAppVersion.Size = new System.Drawing.Size(197, 98);
+            this.lblAppVersion.TabIndex = 131;
+            this.lblAppVersion.Text = "N/A";
+            this.lblAppVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gunaLabel6
+            // 
+            this.gunaLabel6.AutoSize = true;
+            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel6.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel6.Location = new System.Drawing.Point(446, 166);
+            this.gunaLabel6.Name = "gunaLabel6";
+            this.gunaLabel6.Size = new System.Drawing.Size(138, 28);
+            this.gunaLabel6.TabIndex = 130;
+            this.gunaLabel6.Text = "FPGA Version";
+            // 
+            // gunaLabel7
+            // 
+            this.gunaLabel7.AutoSize = true;
+            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel7.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel7.Location = new System.Drawing.Point(446, 115);
+            this.gunaLabel7.Name = "gunaLabel7";
+            this.gunaLabel7.Size = new System.Drawing.Size(126, 28);
+            this.gunaLabel7.TabIndex = 129;
+            this.gunaLabel7.Text = "App Version";
             // 
             // Jupiter
             // 
@@ -1162,6 +1210,11 @@ namespace Electrónicos.Jupiter
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1239, 882);
+            this.Controls.Add(this.txtMensajeLeido);
+            this.Controls.Add(this.lblFPGAVersion);
+            this.Controls.Add(this.lblAppVersion);
+            this.Controls.Add(this.gunaLabel6);
+            this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.gunaGradientButton2);
             this.Controls.Add(this.gunaPanel1);
             this.Controls.Add(this.btnConectar);
@@ -1188,7 +1241,6 @@ namespace Electrónicos.Jupiter
             this.Controls.Add(this.txtMostrarDatos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtDecodificador);
-            this.Controls.Add(this.txtMensajeLeido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Jupiter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1276,5 +1328,9 @@ namespace Electrónicos.Jupiter
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
         private Guna.UI.WinForms.GunaGradientPanel panel1;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton2;
+        private Guna.UI.WinForms.GunaLabel lblFPGAVersion;
+        private Guna.UI.WinForms.GunaLabel lblAppVersion;
+        private Guna.UI.WinForms.GunaLabel gunaLabel6;
+        private Guna.UI.WinForms.GunaLabel gunaLabel7;
     }
 }
