@@ -723,10 +723,11 @@ namespace Electrónicos.Jupiter
         private void gunaGradientButton4_Click(object sender, EventArgs e)
         {
             cmd("info");
-            DecodificadorEtiquetas("Application", txtMensajeLeido, ref lblAppVersion);
+            cargarEtiquetas.Start();
+            
         }
 
-        private void DecodificadorEtiquetas(string cmdAprobado, TextBox txtDecodificador ,ref Guna.UI.WinForms.GunaLabel lblRespuesta)
+        private void DecodificadorEtiquetas(string cmdAprobado, TextBox txtDecodificador ,ref Guna.UI.WinForms.GunaLabel lblRespuesta, string inicio, string final,string PalabraExtra)
         {
             int numeroLinea = 1;
 
@@ -735,8 +736,8 @@ namespace Electrónicos.Jupiter
                 if (linea.Contains(cmdAprobado))
                 {
                     string nuevo;
-                    nuevo = linea + "Final";
-                    lblRespuesta.Text = StringEntre(nuevo, "\"", "\"Final") ;
+                    nuevo = linea + PalabraExtra;
+                    lblRespuesta.Text = StringEntre(nuevo, inicio,final) ;
                     break;
                 }
                 
@@ -816,16 +817,7 @@ namespace Electrónicos.Jupiter
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            gunaCircleProgressBar1.Value = gunaCircleProgressBar1.Value + 10;
-
-            if (gunaCircleProgressBar1.Value == 100)
-            {
-                timer1.Stop();
-                gunaCircleProgressBar1.Value = 0;
-            }
-        }
+        
 
         private void btnConectar_Click(object sender, EventArgs e)
         {
@@ -834,7 +826,14 @@ namespace Electrónicos.Jupiter
 
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
-            DecodificadorEtiquetas("Application", txtMensajeLeido, ref lblAppVersion);
+            DecodificadorEtiquetas("Application", txtMensajeLeido, ref lblAppVersion, "\"", "\"Extra", "Extra");
+        }
+
+        private void cargarEtiquetas_Tick(object sender, EventArgs e)
+        {
+            DecodificadorEtiquetas("Application", txtMensajeLeido, ref lblAppVersion, "\"", "\"Extra", "Extra");
+            DecodificadorEtiquetas("ver[", txtMensajeLeido, ref lblFPGAVersion, "ver[", "]Extra", "Extra");
+            cargarEtiquetas.Stop();
         }
     }
 

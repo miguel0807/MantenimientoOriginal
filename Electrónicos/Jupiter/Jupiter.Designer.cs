@@ -80,7 +80,6 @@ namespace Electrónicos.Jupiter
             this.pic3 = new System.Windows.Forms.PictureBox();
             this.pic2 = new System.Windows.Forms.PictureBox();
             this.pic1 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.lblComando = new Guna.UI.WinForms.GunaLabel();
             this.txtDecodificador = new System.Windows.Forms.TextBox();
@@ -95,9 +94,10 @@ namespace Electrónicos.Jupiter
             this.panel1 = new Guna.UI.WinForms.GunaGradientPanel();
             this.gunaGradientButton2 = new Guna.UI.WinForms.GunaGradientButton();
             this.lblFPGAVersion = new Guna.UI.WinForms.GunaLabel();
-            this.lblAppVersion = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
+            this.cargarEtiquetas = new System.Windows.Forms.Timer(this.components);
+            this.lblAppVersion = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic7)).BeginInit();
@@ -507,7 +507,7 @@ namespace Electrónicos.Jupiter
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(446, 16);
+            this.gunaLabel1.Location = new System.Drawing.Point(420, 12);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(81, 28);
             this.gunaLabel1.TabIndex = 82;
@@ -518,7 +518,7 @@ namespace Electrónicos.Jupiter
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(446, 67);
+            this.gunaLabel2.Location = new System.Drawing.Point(420, 63);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(81, 28);
             this.gunaLabel2.TabIndex = 83;
@@ -529,7 +529,7 @@ namespace Electrónicos.Jupiter
             this.lblSignal.AutoSize = true;
             this.lblSignal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignal.ForeColor = System.Drawing.Color.White;
-            this.lblSignal.Location = new System.Drawing.Point(583, 17);
+            this.lblSignal.Location = new System.Drawing.Point(569, 12);
             this.lblSignal.Name = "lblSignal";
             this.lblSignal.Size = new System.Drawing.Size(51, 28);
             this.lblSignal.TabIndex = 84;
@@ -540,7 +540,7 @@ namespace Electrónicos.Jupiter
             this.lblPower.AutoSize = true;
             this.lblPower.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPower.ForeColor = System.Drawing.Color.White;
-            this.lblPower.Location = new System.Drawing.Point(583, 68);
+            this.lblPower.Location = new System.Drawing.Point(569, 61);
             this.lblPower.Name = "lblPower";
             this.lblPower.Size = new System.Drawing.Size(51, 28);
             this.lblPower.TabIndex = 85;
@@ -905,11 +905,6 @@ namespace Electrónicos.Jupiter
             this.pic1.TabIndex = 127;
             this.pic1.TabStop = false;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // gunaCircleProgressBar1
             // 
             this.gunaCircleProgressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -1157,6 +1152,7 @@ namespace Electrónicos.Jupiter
             this.gunaGradientButton2.TabIndex = 128;
             this.gunaGradientButton2.Text = "Enviar información";
             this.gunaGradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaGradientButton2.Visible = false;
             this.gunaGradientButton2.Click += new System.EventHandler(this.gunaGradientButton2_Click);
             // 
             // lblFPGAVersion
@@ -1164,45 +1160,48 @@ namespace Electrónicos.Jupiter
             this.lblFPGAVersion.AutoSize = true;
             this.lblFPGAVersion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFPGAVersion.ForeColor = System.Drawing.Color.White;
-            this.lblFPGAVersion.Location = new System.Drawing.Point(583, 167);
+            this.lblFPGAVersion.Location = new System.Drawing.Point(569, 163);
             this.lblFPGAVersion.Name = "lblFPGAVersion";
             this.lblFPGAVersion.Size = new System.Drawing.Size(51, 28);
             this.lblFPGAVersion.TabIndex = 132;
             this.lblFPGAVersion.Text = "N/A";
-            // 
-            // lblAppVersion
-            // 
-            this.lblAppVersion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAppVersion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppVersion.ForeColor = System.Drawing.Color.White;
-            this.lblAppVersion.Location = new System.Drawing.Point(437, 227);
-            this.lblAppVersion.Name = "lblAppVersion";
-            this.lblAppVersion.Size = new System.Drawing.Size(197, 98);
-            this.lblAppVersion.TabIndex = 131;
-            this.lblAppVersion.Text = "N/A";
-            this.lblAppVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gunaLabel6
             // 
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel6.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel6.Location = new System.Drawing.Point(446, 166);
+            this.gunaLabel6.Location = new System.Drawing.Point(420, 162);
             this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(138, 28);
+            this.gunaLabel6.Size = new System.Drawing.Size(143, 28);
             this.gunaLabel6.TabIndex = 130;
-            this.gunaLabel6.Text = "FPGA Version";
+            this.gunaLabel6.Text = "FPGA Version:";
             // 
             // gunaLabel7
             // 
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel7.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel7.Location = new System.Drawing.Point(446, 115);
+            this.gunaLabel7.Location = new System.Drawing.Point(420, 111);
             this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(126, 28);
+            this.gunaLabel7.Size = new System.Drawing.Size(131, 28);
             this.gunaLabel7.TabIndex = 129;
-            this.gunaLabel7.Text = "App Version";
+            this.gunaLabel7.Text = "App Version:";
+            // 
+            // cargarEtiquetas
+            // 
+            this.cargarEtiquetas.Tick += new System.EventHandler(this.cargarEtiquetas_Tick);
+            // 
+            // lblAppVersion
+            // 
+            this.lblAppVersion.AutoSize = true;
+            this.lblAppVersion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppVersion.ForeColor = System.Drawing.Color.White;
+            this.lblAppVersion.Location = new System.Drawing.Point(569, 112);
+            this.lblAppVersion.Name = "lblAppVersion";
+            this.lblAppVersion.Size = new System.Drawing.Size(51, 28);
+            this.lblAppVersion.TabIndex = 133;
+            this.lblAppVersion.Text = "N/A";
             // 
             // Jupiter
             // 
@@ -1210,9 +1209,9 @@ namespace Electrónicos.Jupiter
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1239, 882);
+            this.Controls.Add(this.lblAppVersion);
             this.Controls.Add(this.txtMensajeLeido);
             this.Controls.Add(this.lblFPGAVersion);
-            this.Controls.Add(this.lblAppVersion);
             this.Controls.Add(this.gunaLabel6);
             this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.gunaGradientButton2);
@@ -1314,7 +1313,6 @@ namespace Electrónicos.Jupiter
         private System.Windows.Forms.PictureBox pic4;
         private System.Windows.Forms.PictureBox pic3;
         private System.Windows.Forms.PictureBox pic2;
-        private System.Windows.Forms.Timer timer1;
         private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
         private Guna.UI.WinForms.GunaLabel lblComando;
         private System.Windows.Forms.TextBox txtDecodificador;
@@ -1329,8 +1327,9 @@ namespace Electrónicos.Jupiter
         private Guna.UI.WinForms.GunaGradientPanel panel1;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton2;
         private Guna.UI.WinForms.GunaLabel lblFPGAVersion;
-        private Guna.UI.WinForms.GunaLabel lblAppVersion;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
+        private System.Windows.Forms.Timer cargarEtiquetas;
+        private Guna.UI.WinForms.GunaLabel lblAppVersion;
     }
 }
