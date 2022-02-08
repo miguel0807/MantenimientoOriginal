@@ -29,7 +29,7 @@ namespace Electrónicos.Jupiter
 
         private void Jupiter_Load(object sender, EventArgs e)
         {
-
+            btnSignal.Focus();
         }
         #region Conexión, desconexión y lectura al puerto Serial
 
@@ -276,24 +276,19 @@ namespace Electrónicos.Jupiter
             impresora.Estado1 = "Inicio";
             impresora.guardadoInicial();*/
 
-            conectar();
 
-            escape();
-            cmd("run");
-            escape();
+            //Hago visible los controles
             cal.Corto = false;
             cal.VsI = false;
             cal.VsO = false;
 
-            //Hago visible los controles
-            //btnActivar.Visible = true;
             btnAceptar.Visible = true;
             btnRechazar.Visible = true;
             lblComando.Visible = true;
             
             lblComando.Text = "Resistencia 3.8";
 
-            InicioProgramación.Start();
+        
             btnComenzarProgramacion.Visible = false;
             
 
@@ -421,6 +416,7 @@ namespace Electrónicos.Jupiter
                 Power = Int32.Parse(serie);
                 lblPower.Text = serie;                             
                 btnPower.Enabled = false;
+                
                 MensajeError("Codigo aceptado, el número de serie es " + serie + ".");
             }
             else
@@ -432,11 +428,22 @@ namespace Electrónicos.Jupiter
                 Signal = Int32.Parse(serie);
                 lblSignal.Text = serie;                
                 btnSignal.Enabled = false;
+                
                 MensajeError("Codigo aceptado, el número de serie es " + serie + ".");
             }
-            
+
+            ActivarProgramación();
+
         }
-        
+        //Habilita el boton de comenzar programación cuando signal y power esten cargados correntamente.
+        private void ActivarProgramación()
+        {
+            if (btnPower.Enabled == false && btnSignal.Enabled == false)
+            {
+                btnComenzarProgramacion.Visible = true;
+                btnComenzarProgramacion.Focus();
+            }
+        }
         //Acción que se realiza cuando el QR se encuentra registrado en la base de datos.
         private void serieInvalida(string serie,int tipo)//Tipo 1 para Power, 2 para Signal
         {
@@ -530,6 +537,16 @@ namespace Electrónicos.Jupiter
            
             lblComando.Text = cal.SecuenciaPruebas();
             colorBoton(false);
+
+            if (lblComando.Text == "Vs i 0")
+            {
+                conectar();
+                escape();
+                cmd("run");
+                escape();
+             
+                InicioProgramación.Start();
+            }
             if (cal.Voltaje60 == true) //Cuando la medición de voltaje es 60 se procede a conectar el boton.
             {
                 btnActivar.Visible = true;
@@ -549,7 +566,7 @@ namespace Electrónicos.Jupiter
                 btnCargarPruebas.Visible = true;
             }
 
-           // if (impresora.p1)
+         
 
         }
 

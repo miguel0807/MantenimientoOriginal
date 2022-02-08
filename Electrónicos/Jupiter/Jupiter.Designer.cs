@@ -93,6 +93,7 @@ namespace Electrónicos.Jupiter
             this.btnConectar = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
             this.panel1 = new Guna.UI.WinForms.GunaGradientPanel();
+            this.gunaGradientButton2 = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic7)).BeginInit();
@@ -222,7 +223,7 @@ namespace Electrónicos.Jupiter
             this.btnSignal.OnHoverImage = null;
             this.btnSignal.OnPressedColor = System.Drawing.Color.Black;
             this.btnSignal.Size = new System.Drawing.Size(120, 77);
-            this.btnSignal.TabIndex = 65;
+            this.btnSignal.TabIndex = 0;
             this.btnSignal.Text = "Signal Board";
             this.btnSignal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSignal.Click += new System.EventHandler(this.btnSignal_Click);
@@ -256,7 +257,7 @@ namespace Electrónicos.Jupiter
             this.btnPower.OnHoverImage = null;
             this.btnPower.OnPressedColor = System.Drawing.Color.Black;
             this.btnPower.Size = new System.Drawing.Size(112, 77);
-            this.btnPower.TabIndex = 66;
+            this.btnPower.TabIndex = 1;
             this.btnPower.Text = "Power Board";
             this.btnPower.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnPower.Click += new System.EventHandler(this.btnPower_Click);
@@ -363,6 +364,7 @@ namespace Electrónicos.Jupiter
             this.btnComenzarProgramacion.TabIndex = 72;
             this.btnComenzarProgramacion.Text = "Comenzar programación";
             this.btnComenzarProgramacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnComenzarProgramacion.Visible = false;
             this.btnComenzarProgramacion.Click += new System.EventHandler(this.txtInicio_Click);
             // 
             // btnAceptar
@@ -1061,6 +1063,7 @@ namespace Electrónicos.Jupiter
             this.btnConectar.Radius = 20;
             this.btnConectar.Size = new System.Drawing.Size(184, 50);
             this.btnConectar.TabIndex = 48;
+            this.btnConectar.TabStop = false;
             this.btnConectar.Text = "Conectar";
             this.btnConectar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
@@ -1122,12 +1125,44 @@ namespace Electrónicos.Jupiter
             this.panel1.Text = "gunaGradientPanel1";
             this.panel1.Visible = false;
             // 
+            // gunaGradientButton2
+            // 
+            this.gunaGradientButton2.Animated = true;
+            this.gunaGradientButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaGradientButton2.AnimationSpeed = 0.03F;
+            this.gunaGradientButton2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradientButton2.BaseColor1 = System.Drawing.Color.SlateBlue;
+            this.gunaGradientButton2.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.gunaGradientButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.BorderSize = 1;
+            this.gunaGradientButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaGradientButton2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.gunaGradientButton2.Image = null;
+            this.gunaGradientButton2.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaGradientButton2.Location = new System.Drawing.Point(615, 481);
+            this.gunaGradientButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaGradientButton2.Name = "gunaGradientButton2";
+            this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.gunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.gunaGradientButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton2.OnHoverImage = null;
+            this.gunaGradientButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.Size = new System.Drawing.Size(212, 73);
+            this.gunaGradientButton2.TabIndex = 128;
+            this.gunaGradientButton2.Text = "Enviar información";
+            this.gunaGradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Jupiter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1239, 882);
+            this.Controls.Add(this.gunaGradientButton2);
             this.Controls.Add(this.gunaPanel1);
             this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.btnPower);
@@ -1240,5 +1275,6 @@ namespace Electrónicos.Jupiter
         private Guna.UI.WinForms.GunaGradientButton btnConectar;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
         private Guna.UI.WinForms.GunaGradientPanel panel1;
+        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton2;
     }
 }

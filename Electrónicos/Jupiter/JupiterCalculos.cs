@@ -59,53 +59,53 @@ namespace Electrónicos.Jupiter
             return comando;
         }
 
-        //Secuencia de activación para el boton Aceptar.
+        //Secuencia de activación para el boton Aceptar, donde valida la informacion y devuelve un mensaje de estado de la secuencia..
         public string SecuenciaPruebas()        
         {        
-            string comando = "";
+            string mensaje = "";
 
             if (Resistencia38 == false && Voltaje33 == false && Voltaje66== false && Voltaje10== false && Voltaje60 == false && VsI == false && VsO == false && Corto == false && Direcciones == false) 
             {
                 Resistencia38 = true;
-                comando = "Voltaje 3.3";
+                mensaje = "Voltaje 3.3";
 
             }
 
             else if (Resistencia38 == true && Voltaje33 == false && Voltaje66 == false && Voltaje10 == false && Voltaje60 == false && VsI == false && VsO == false && Corto == false && Direcciones == false)
             {
                 Voltaje33 = true;
-                comando = "Voltaje 66";
+                mensaje = "Voltaje 66";
 
             }
 
             else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == false && Voltaje10 == false && Voltaje60 == false && VsI == false && VsO == false && Corto == false && Direcciones == false)
             {
                 Voltaje66 = true;
-                comando = "Voltaje -10";
+                mensaje = "Voltaje -10";
             }
 
             else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == false && Voltaje60 == false && VsI == false && VsO == false && Corto == false && Direcciones == false)
             {
                 Voltaje10 = true;
-                comando = "Voltaje 60";
+                mensaje = "Voltaje 60";
             }
 
             else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == false && VsI == false && VsO == false && Corto == false && Direcciones == false)
             {
                 Voltaje60 = true;
-                comando = "Vs i 0";
+                mensaje = "Vs i 0";
             }
 
             else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == true && VsI == false && VsO == false && Corto == false && Direcciones == false)
             {
                 VsI = true;
-                comando = StringVsO;
+                mensaje = StringVsO;
             }
            
             else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == true && VsI == true && VsO == false && Corto == false && Direcciones == false)
             {
                 VsO = true;
-                comando = "Favor realice el corto.";
+                mensaje = "Favor realice el corto.";
             }
 
             else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == true && VsI == true && VsO == true && Corto == false && Direcciones == false)
@@ -119,7 +119,7 @@ namespace Electrónicos.Jupiter
                 Direcciones = true;
 
             }
-            return comando;
+            return mensaje;
 
         }
 
