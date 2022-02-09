@@ -26,6 +26,8 @@ namespace Electrónicos.Jupiter
         JupiterConexion impresora = new JupiterConexion();
         JupiterCalculos cal = new JupiterCalculos();
 
+        
+
 
         private void Jupiter_Load(object sender, EventArgs e)
         {
@@ -509,8 +511,9 @@ namespace Electrónicos.Jupiter
         private void btnActivar_Click(object sender, EventArgs e)
         {
             string comando;
-            comando = cal.SecuenciaComandos();                       
-                       
+            comando = cal.SecuenciaComandos();
+
+            txtMensajeLeido.Text = "";
             cmd(comando);
             lblComando.Text = comando;
 
@@ -605,7 +608,11 @@ namespace Electrónicos.Jupiter
                 InicioProgramación.Stop();
                 
                 segundos = 0;
-              
+
+                //Carga los datos de las etiquetas APP Version y FPGA
+                cmd("info");
+                cargarEtiquetas.Start();
+
             }
         }
 
@@ -703,6 +710,7 @@ namespace Electrónicos.Jupiter
                 timerPruebas.Stop();
 
                 gunaCircleProgressBar1.Visible = false;
+                btnFinalizar.Visible = true;
                 // DecodificadorActivado = false;
             }
         }
@@ -713,6 +721,8 @@ namespace Electrónicos.Jupiter
             cmd("run");
             escape();
 
+            txtMensajeLeido.Text = "";
+
             gunaCircleProgressBar1.Visible = true;
             gunaPanel1.Visible = true;
             timerPruebas.Start();
@@ -720,12 +730,7 @@ namespace Electrónicos.Jupiter
             gunaCircleProgressBar1.Value = 0;
         }
 
-        private void gunaGradientButton4_Click(object sender, EventArgs e)
-        {
-            cmd("info");
-            cargarEtiquetas.Start();
-            
-        }
+        
 
         private void DecodificadorEtiquetas(string cmdAprobado, TextBox txtDecodificador ,ref Guna.UI.WinForms.GunaLabel lblRespuesta, string inicio, string final,string PalabraExtra)
         {
@@ -835,6 +840,8 @@ namespace Electrónicos.Jupiter
             DecodificadorEtiquetas("ver[", txtMensajeLeido, ref lblFPGAVersion, "ver[", "]Extra", "Extra");
             cargarEtiquetas.Stop();
         }
+
+       
     }
 
 }
