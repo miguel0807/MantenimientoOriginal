@@ -674,21 +674,28 @@ namespace Electrónicos.Jupiter
             else if (segundos == 5)
             {
                 DecodificadorDirecciones("402: 01 02 03", ref pic4, ref txtRespuesta4);
-                cmd("i2c w 1024 255 255 255");
+                cmd("i2c r 1024");
             }
 
             else if (segundos == 4)
             {
+                DecodificadorDirecciones("400: 01 01 01 02 03 FF FF FF FF FF FF FF FF FF FF FF ", ref pic5, ref txtRespuesta5);
+                cmd("i2c w 1024 255 255 255");
+            }
+
+
+            else if (segundos == 3)
+            {
                 DecodificadorDirecciones("400: FF FF FF ", ref pic6, ref txtRespuesta6);
                 cmd("i2c w 1025 255 255 255");
             }
-            else if (segundos == 3)
+            else if (segundos == 2)
             {
                 DecodificadorDirecciones("401: FF FF FF ", ref pic7, ref txtRespuesta7);
                 cmd("i2c w 1026 255 255 255");
             }
 
-            else if (segundos == 2)
+            else if (segundos == 1)
             {
                 DecodificadorDirecciones("402: FF FF FF ", ref pic8, ref txtRespuesta8);
                 
@@ -699,7 +706,7 @@ namespace Electrónicos.Jupiter
                 
                 
                 
-                cmd("i2c r 1024");
+               
                
                 cmd("i2c w 1026 255 255 255");
 
@@ -793,6 +800,7 @@ namespace Electrónicos.Jupiter
             txtDecodificador.Text = "";
         }
 
+        //Verifica si la información recibida es correcta y envia una imagen de aprobado o rechazado.
         private void DecodificadorDirecciones(string cmdAprobado, ref PictureBox imagen, ref Guna.UI.WinForms.GunaTextBox txtRespuesta)
         {
 
