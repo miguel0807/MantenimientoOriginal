@@ -86,7 +86,7 @@ namespace Electrónicos.Jupiter
             PuertoSerie.StopBits = StopBits.One;
             PuertoSerie.Handshake = Handshake.None;
             //PuertoSerie.PortName = "COM2"; // Puerto virtual.
-            PuertoSerie.PortName = "COM31"; // Puerto normal.
+            PuertoSerie.PortName = "COM7"; // Puerto normal.
 
             try
             {
