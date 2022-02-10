@@ -69,7 +69,7 @@ namespace Electrónicos.Jupiter
             this.lblPrueba7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.txtRespuesta8 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.panelPruebas = new Guna.UI.WinForms.GunaPanel();
             this.pic8 = new System.Windows.Forms.PictureBox();
             this.pic7 = new System.Windows.Forms.PictureBox();
             this.pic6 = new System.Windows.Forms.PictureBox();
@@ -79,7 +79,6 @@ namespace Electrónicos.Jupiter
             this.pic2 = new System.Windows.Forms.PictureBox();
             this.pic1 = new System.Windows.Forms.PictureBox();
             this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
-            this.lblComando = new Guna.UI.WinForms.GunaLabel();
             this.txtDecodificador = new System.Windows.Forms.TextBox();
             this.lblEstadoConexion = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -95,7 +94,10 @@ namespace Electrónicos.Jupiter
             this.btnFinalizar = new Guna.UI.WinForms.GunaGradientButton();
             this.cargarEtiquetas = new System.Windows.Forms.Timer(this.components);
             this.txtMensajeLeido = new System.Windows.Forms.TextBox();
-            this.gunaPanel1.SuspendLayout();
+            this.lblComando = new System.Windows.Forms.TextBox();
+            this.btnGrafico = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnRechazarPruebas = new Guna.UI.WinForms.GunaGradientButton();
+            this.panelPruebas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic6)).BeginInit();
@@ -764,40 +766,40 @@ namespace Electrónicos.Jupiter
             this.txtRespuesta8.Size = new System.Drawing.Size(161, 37);
             this.txtRespuesta8.TabIndex = 116;
             // 
-            // gunaPanel1
+            // panelPruebas
             // 
-            this.gunaPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.gunaPanel1.BackColor = System.Drawing.Color.DimGray;
-            this.gunaPanel1.Controls.Add(this.pic8);
-            this.gunaPanel1.Controls.Add(this.pic7);
-            this.gunaPanel1.Controls.Add(this.pic6);
-            this.gunaPanel1.Controls.Add(this.pic5);
-            this.gunaPanel1.Controls.Add(this.pic4);
-            this.gunaPanel1.Controls.Add(this.pic3);
-            this.gunaPanel1.Controls.Add(this.pic2);
-            this.gunaPanel1.Controls.Add(this.pic1);
-            this.gunaPanel1.Controls.Add(this.gunaLabel3);
-            this.gunaPanel1.Controls.Add(this.txtRespuesta8);
-            this.gunaPanel1.Controls.Add(this.lblPrueba7);
-            this.gunaPanel1.Controls.Add(this.lblPrueba6);
-            this.gunaPanel1.Controls.Add(this.lblPrueba5);
-            this.gunaPanel1.Controls.Add(this.lblPrueba4);
-            this.gunaPanel1.Controls.Add(this.lblPrueba3);
-            this.gunaPanel1.Controls.Add(this.lblPrueba2);
-            this.gunaPanel1.Controls.Add(this.lblPrueba1);
-            this.gunaPanel1.Controls.Add(this.txtRespuesta7);
-            this.gunaPanel1.Controls.Add(this.txtRespuesta6);
-            this.gunaPanel1.Controls.Add(this.txtRespuesta5);
-            this.gunaPanel1.Controls.Add(this.txtRespuesta4);
-            this.gunaPanel1.Controls.Add(this.txtRespuesta3);
-            this.gunaPanel1.Controls.Add(this.txtRespuesta2);
-            this.gunaPanel1.Controls.Add(this.txtRespuesta1);
-            this.gunaPanel1.Location = new System.Drawing.Point(12, 517);
-            this.gunaPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(480, 353);
-            this.gunaPanel1.TabIndex = 126;
-            this.gunaPanel1.Visible = false;
+            this.panelPruebas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelPruebas.BackColor = System.Drawing.Color.DimGray;
+            this.panelPruebas.Controls.Add(this.pic8);
+            this.panelPruebas.Controls.Add(this.pic7);
+            this.panelPruebas.Controls.Add(this.pic6);
+            this.panelPruebas.Controls.Add(this.pic5);
+            this.panelPruebas.Controls.Add(this.pic4);
+            this.panelPruebas.Controls.Add(this.pic3);
+            this.panelPruebas.Controls.Add(this.pic2);
+            this.panelPruebas.Controls.Add(this.pic1);
+            this.panelPruebas.Controls.Add(this.gunaLabel3);
+            this.panelPruebas.Controls.Add(this.txtRespuesta8);
+            this.panelPruebas.Controls.Add(this.lblPrueba7);
+            this.panelPruebas.Controls.Add(this.lblPrueba6);
+            this.panelPruebas.Controls.Add(this.lblPrueba5);
+            this.panelPruebas.Controls.Add(this.lblPrueba4);
+            this.panelPruebas.Controls.Add(this.lblPrueba3);
+            this.panelPruebas.Controls.Add(this.lblPrueba2);
+            this.panelPruebas.Controls.Add(this.lblPrueba1);
+            this.panelPruebas.Controls.Add(this.txtRespuesta7);
+            this.panelPruebas.Controls.Add(this.txtRespuesta6);
+            this.panelPruebas.Controls.Add(this.txtRespuesta5);
+            this.panelPruebas.Controls.Add(this.txtRespuesta4);
+            this.panelPruebas.Controls.Add(this.txtRespuesta3);
+            this.panelPruebas.Controls.Add(this.txtRespuesta2);
+            this.panelPruebas.Controls.Add(this.txtRespuesta1);
+            this.panelPruebas.Location = new System.Drawing.Point(12, 517);
+            this.panelPruebas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelPruebas.Name = "panelPruebas";
+            this.panelPruebas.Size = new System.Drawing.Size(480, 353);
+            this.panelPruebas.TabIndex = 126;
+            this.panelPruebas.Visible = false;
             // 
             // pic8
             // 
@@ -903,18 +905,6 @@ namespace Electrónicos.Jupiter
             this.gunaCircleProgressBar1.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             this.gunaCircleProgressBar1.UseProgressPercentText = true;
             this.gunaCircleProgressBar1.Visible = false;
-            // 
-            // lblComando
-            // 
-            this.lblComando.AutoSize = true;
-            this.lblComando.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComando.ForeColor = System.Drawing.Color.White;
-            this.lblComando.Location = new System.Drawing.Point(267, 262);
-            this.lblComando.Name = "lblComando";
-            this.lblComando.Size = new System.Drawing.Size(51, 28);
-            this.lblComando.TabIndex = 90;
-            this.lblComando.Text = "N/A";
-            this.lblComando.Visible = false;
             // 
             // txtDecodificador
             // 
@@ -1118,7 +1108,7 @@ namespace Electrónicos.Jupiter
             this.btnFinalizar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.btnFinalizar.Image = null;
             this.btnFinalizar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnFinalizar.Location = new System.Drawing.Point(643, 519);
+            this.btnFinalizar.Location = new System.Drawing.Point(637, 517);
             this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.OnHoverBaseColor1 = System.Drawing.Color.Gray;
@@ -1132,7 +1122,7 @@ namespace Electrónicos.Jupiter
             this.btnFinalizar.Text = "Enviar información";
             this.btnFinalizar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnFinalizar.Visible = false;
-            this.btnFinalizar.Click += new System.EventHandler(this.gunaGradientButton2_Click);
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // cargarEtiquetas
             // 
@@ -1153,20 +1143,102 @@ namespace Electrónicos.Jupiter
             this.txtMensajeLeido.TabIndex = 135;
             this.txtMensajeLeido.Visible = false;
             // 
+            // lblComando
+            // 
+            this.lblComando.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
+            this.lblComando.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblComando.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.lblComando.Location = new System.Drawing.Point(261, 226);
+            this.lblComando.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblComando.Multiline = true;
+            this.lblComando.Name = "lblComando";
+            this.lblComando.ReadOnly = true;
+            this.lblComando.Size = new System.Drawing.Size(207, 82);
+            this.lblComando.TabIndex = 136;
+            this.lblComando.Visible = false;
+            // 
+            // btnGrafico
+            // 
+            this.btnGrafico.Animated = true;
+            this.btnGrafico.AnimationHoverSpeed = 0.07F;
+            this.btnGrafico.AnimationSpeed = 0.03F;
+            this.btnGrafico.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrafico.BaseColor1 = System.Drawing.Color.SlateBlue;
+            this.btnGrafico.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
+            this.btnGrafico.BorderColor = System.Drawing.Color.Black;
+            this.btnGrafico.BorderSize = 1;
+            this.btnGrafico.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnGrafico.FocusedColor = System.Drawing.Color.Empty;
+            this.btnGrafico.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrafico.ForeColor = System.Drawing.Color.White;
+            this.btnGrafico.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.btnGrafico.Image = null;
+            this.btnGrafico.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnGrafico.Location = new System.Drawing.Point(637, 425);
+            this.btnGrafico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGrafico.Name = "btnGrafico";
+            this.btnGrafico.OnHoverBaseColor1 = System.Drawing.Color.Gray;
+            this.btnGrafico.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGrafico.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnGrafico.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnGrafico.OnHoverImage = null;
+            this.btnGrafico.OnPressedColor = System.Drawing.Color.Black;
+            this.btnGrafico.Size = new System.Drawing.Size(212, 73);
+            this.btnGrafico.TabIndex = 137;
+            this.btnGrafico.Text = "Cargar Grafico";
+            this.btnGrafico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnGrafico.Visible = false;
+            this.btnGrafico.Click += new System.EventHandler(this.btnGrafico_Click);
+            // 
+            // btnRechazarPruebas
+            // 
+            this.btnRechazarPruebas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRechazarPruebas.Animated = true;
+            this.btnRechazarPruebas.AnimationHoverSpeed = 0.07F;
+            this.btnRechazarPruebas.AnimationSpeed = 0.03F;
+            this.btnRechazarPruebas.BackColor = System.Drawing.Color.Transparent;
+            this.btnRechazarPruebas.BaseColor1 = System.Drawing.Color.Red;
+            this.btnRechazarPruebas.BaseColor2 = System.Drawing.SystemColors.MenuBar;
+            this.btnRechazarPruebas.BorderColor = System.Drawing.Color.Black;
+            this.btnRechazarPruebas.BorderSize = 1;
+            this.btnRechazarPruebas.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRechazarPruebas.FocusedColor = System.Drawing.Color.Empty;
+            this.btnRechazarPruebas.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRechazarPruebas.ForeColor = System.Drawing.Color.Black;
+            this.btnRechazarPruebas.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.btnRechazarPruebas.Image = null;
+            this.btnRechazarPruebas.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnRechazarPruebas.Location = new System.Drawing.Point(232, 439);
+            this.btnRechazarPruebas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRechazarPruebas.Name = "btnRechazarPruebas";
+            this.btnRechazarPruebas.OnHoverBaseColor1 = System.Drawing.Color.Red;
+            this.btnRechazarPruebas.OnHoverBaseColor2 = System.Drawing.Color.Firebrick;
+            this.btnRechazarPruebas.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnRechazarPruebas.OnHoverForeColor = System.Drawing.Color.Black;
+            this.btnRechazarPruebas.OnHoverImage = null;
+            this.btnRechazarPruebas.OnPressedColor = System.Drawing.Color.Black;
+            this.btnRechazarPruebas.Size = new System.Drawing.Size(147, 74);
+            this.btnRechazarPruebas.TabIndex = 138;
+            this.btnRechazarPruebas.Text = "Rechazar";
+            this.btnRechazarPruebas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRechazarPruebas.Visible = false;
+            // 
             // Jupiter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(1239, 882);
+            this.Controls.Add(this.btnRechazarPruebas);
+            this.Controls.Add(this.btnGrafico);
+            this.Controls.Add(this.lblComando);
             this.Controls.Add(this.btnFinalizar);
-            this.Controls.Add(this.gunaPanel1);
+            this.Controls.Add(this.panelPruebas);
             this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.btnPower);
             this.Controls.Add(this.btnSignal);
             this.Controls.Add(this.gunaCircleProgressBar1);
             this.Controls.Add(this.btnCargarPruebas);
-            this.Controls.Add(this.lblComando);
             this.Controls.Add(this.lblEstadoConexion);
             this.Controls.Add(this.btnActivar);
             this.Controls.Add(this.btnRechazar);
@@ -1188,8 +1260,8 @@ namespace Electrónicos.Jupiter
             this.Text = "Jupiter";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Jupiter_FormClosing);
             this.Load += new System.EventHandler(this.Jupiter_Load);
-            this.gunaPanel1.ResumeLayout(false);
-            this.gunaPanel1.PerformLayout();
+            this.panelPruebas.ResumeLayout(false);
+            this.panelPruebas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic6)).EndInit();
@@ -1244,7 +1316,7 @@ namespace Electrónicos.Jupiter
         private Guna.UI.WinForms.GunaLabel lblPrueba7;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaTextBox txtRespuesta8;
-        private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private Guna.UI.WinForms.GunaPanel panelPruebas;
         private System.Windows.Forms.PictureBox pic1;
         private System.Windows.Forms.PictureBox pic8;
         private System.Windows.Forms.PictureBox pic7;
@@ -1254,7 +1326,6 @@ namespace Electrónicos.Jupiter
         private System.Windows.Forms.PictureBox pic3;
         private System.Windows.Forms.PictureBox pic2;
         private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
-        private Guna.UI.WinForms.GunaLabel lblComando;
         private System.Windows.Forms.TextBox txtDecodificador;
         private System.Windows.Forms.Label lblEstadoConexion;
         private System.Windows.Forms.Panel panel3;
@@ -1270,5 +1341,8 @@ namespace Electrónicos.Jupiter
         private System.Windows.Forms.Timer cargarEtiquetas;
         private Guna.UI.WinForms.GunaLabel lblAppVersion;
         private System.Windows.Forms.TextBox txtMensajeLeido;
+        private System.Windows.Forms.TextBox lblComando;
+        private Guna.UI.WinForms.GunaGradientButton btnGrafico;
+        private Guna.UI.WinForms.GunaGradientButton btnRechazarPruebas;
     }
 }

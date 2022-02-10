@@ -20,9 +20,17 @@ namespace Electrónicos.Jupiter
         public bool VsI { get ; set ; }
         public bool VsO { get; set; }
         public bool Corto { get; set; }
+        public bool CortoPresionado { get; set; }
         public bool btnEstado { get; set; }
         public bool Direcciones { get; set; }
-
+        public bool pic1 { get; set; }
+        public bool pic2 { get; set; }
+        public bool pic3 { get; set; }
+        public bool pic4 { get; set; }
+        public bool pic5 { get; set; }
+        public bool pic6 { get; set; }
+        public bool pic7 { get; set; }
+        public bool pic8 { get; set; }
 
         public string StringVsI { get; set ;}
         public string StringVsO { get; set; }
@@ -30,12 +38,33 @@ namespace Electrónicos.Jupiter
 
         public JupiterCalculos()
         {
+            reinicioTotal();
+
+        }
+        public void reinicioTotal()
+        {
             VsI = false;
             VsO = false;
             Corto = false;
             StringVsI = "vs i 0";
             StringVsO = "vs o 0";
-                        
+            pic1 = false;
+            pic2 = false;
+            pic3 = false;
+            pic4 = false;
+            pic5 = false;
+            pic6 = false;
+            pic7 = false;
+            pic8 = false;
+            Direcciones = false;
+            btnEstado = false;
+            CortoPresionado = false;
+            Corto = false;
+            Voltaje10 = false;
+            Voltaje33 = false;
+            Voltaje60 = false;
+            Voltaje66 = false;
+            Resistencia38 = false;
         }
 
         //Secuencia de activación para alternar las mediciones de voltaje.
@@ -99,7 +128,7 @@ namespace Electrónicos.Jupiter
             else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == true && VsI == false && VsO == false && Corto == false && Direcciones == false)
             {
                 VsI = true;
-                mensaje = StringVsO;
+                mensaje = "Vs o 0";
             }
            
             else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == true && VsI == true && VsO == false && Corto == false && Direcciones == false)
@@ -110,7 +139,11 @@ namespace Electrónicos.Jupiter
 
             else if (Resistencia38 == true && Voltaje33 == true && Voltaje66 == true && Voltaje10 == true && Voltaje60 == true && VsI == true && VsO == true && Corto == false && Direcciones == false)
             {
-                Corto = true;
+                if (CortoPresionado == true)
+                {
+                    Corto = true;
+                }
+                
                 
             }
 
@@ -157,8 +190,22 @@ namespace Electrónicos.Jupiter
             return StringVsO;
         }
 
+        //Verifica el estado de las pruebas y devuelve un true o false.
+       public bool VerificarPruebas()
+        {
+            bool resultado;
 
-       
+            if (pic1==true && pic2 ==true && pic3 == true && pic4 == true && pic5 == true && pic6 == true && pic7 == true && pic8 == true)
+            {
+                resultado = true;
+            }
+            else
+            {
+                resultado = false;
+            }
+
+            return resultado;
+        }
 
         
     }

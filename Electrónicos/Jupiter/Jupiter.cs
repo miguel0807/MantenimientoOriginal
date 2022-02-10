@@ -19,7 +19,7 @@ namespace Electrónicos.Jupiter
         private delegate void DelegadoAcceso(string accion);
         
         private bool DecodificadorActivado;
-        
+        private bool VerificadorBool;
         private int Power = 0;
         private int Signal = 0;
         private int segundos = 0;
@@ -88,7 +88,7 @@ namespace Electrónicos.Jupiter
             PuertoSerie.StopBits = StopBits.One;
             PuertoSerie.Handshake = Handshake.None;
             //PuertoSerie.PortName = "COM2"; // Puerto virtual.
-            PuertoSerie.PortName = "COM7"; // Puerto normal.
+            PuertoSerie.PortName = "COM9"; // Puerto normal.
 
             try
             {
@@ -537,7 +537,8 @@ namespace Electrónicos.Jupiter
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-           
+            DecodificadorCorto();
+
             lblComando.Text = cal.SecuenciaPruebas();
             colorBoton(false);
 
@@ -550,6 +551,9 @@ namespace Electrónicos.Jupiter
              
                 InicioProgramación.Start();
             }
+
+           
+          
             if (cal.Voltaje60 == true) //Cuando la medición de voltaje es 60 se procede a conectar el boton.
             {
                 btnActivar.Visible = true;
@@ -651,77 +655,91 @@ namespace Electrónicos.Jupiter
                 cmd("i2c c");
             }
             else if (segundos == 8)
-            {
+            { 
                
-                DecodificadorJellingDisck("i2c status: 0", "i2c status: 1", ref pic1, ref txtRespuesta1);
+                DecodificadorJellingDisck("i2c status: 0","i2c status: 1", ref pic1, ref txtRespuesta1 ,ref VerificadorBool);
+                cal.pic1 = VerificadorBool;               
                 cmd("i2c w 1024 1 2 3");
                 
             }
 
             else if (segundos == 7)
             {
-                DecodificadorDirecciones("400: 01 02 03",ref pic2, ref txtRespuesta2);
+                DecodificadorDirecciones("400: 01 02 03",ref pic2, ref txtRespuesta2, ref VerificadorBool);
+                cal.pic2 = VerificadorBool;               
                 cmd("i2c w 1025 1 2 3");
             }
 
             else if (segundos == 6)
             {
-                DecodificadorDirecciones("401: 01 02 03", ref pic3, ref txtRespuesta3);
+                DecodificadorDirecciones("401: 01 02 03", ref pic3, ref txtRespuesta3, ref VerificadorBool);
+                cal.pic3 = VerificadorBool;
                 cmd("i2c w 1026 1 2 3");
             }
 
 
             else if (segundos == 5)
             {
-                DecodificadorDirecciones("402: 01 02 03", ref pic4, ref txtRespuesta4);
+                DecodificadorDirecciones("402: 01 02 03", ref pic4, ref txtRespuesta4, ref VerificadorBool);
+                cal.pic4 = VerificadorBool;
                 cmd("i2c r 1024");
             }
 
             else if (segundos == 4)
             {
-                DecodificadorDirecciones("400: 01 01 01 02 03 FF FF FF FF FF FF FF FF FF FF FF ", ref pic5, ref txtRespuesta5);
+                DecodificadorDirecciones("400: 01 01 01 02 03 FF FF FF FF FF FF FF FF FF FF FF ", ref pic5, ref txtRespuesta5, ref VerificadorBool);
+                cal.pic5 = VerificadorBool;
                 cmd("i2c w 1024 255 255 255");
             }
 
 
             else if (segundos == 3)
             {
-                DecodificadorDirecciones("400: FF FF FF ", ref pic6, ref txtRespuesta6);
+                DecodificadorDirecciones("400: FF FF FF ", ref pic6, ref txtRespuesta6, ref VerificadorBool);
+                cal.pic6 = VerificadorBool;
                 cmd("i2c w 1025 255 255 255");
             }
             else if (segundos == 2)
             {
-                DecodificadorDirecciones("401: FF FF FF ", ref pic7, ref txtRespuesta7);
+                DecodificadorDirecciones("401: FF FF FF ", ref pic7, ref txtRespuesta7, ref VerificadorBool);
+                cal.pic7 = VerificadorBool;
                 cmd("i2c w 1026 255 255 255");
             }
 
             else if (segundos == 1)
             {
-                DecodificadorDirecciones("402: FF FF FF ", ref pic8, ref txtRespuesta8);
-                
+                DecodificadorDirecciones("402: FF FF FF ", ref pic8, ref txtRespuesta8, ref VerificadorBool);
+                cal.pic8 = VerificadorBool;
             }
-            else if (segundos == -5)
-            {
-                
-                
-                
-                
-               
-               
-                cmd("i2c w 1026 255 255 255");
-
-
-            }
+            
             else if (segundos == 0)
             {
                 timerPruebas.Stop();
 
                 gunaCircleProgressBar1.Visible = false;
-                btnFinalizar.Visible = true;
-                // DecodificadorActivado = false;
-            }
-        }
+               
 
+                if (cal.VerificarPruebas() == true) //Si se completo las pruebas correctamente, habilita el boton de grafico.
+                {
+                    panelPruebas.Visible = false;
+                    btnGrafico.Visible = true;
+                    btnCargarPruebas.Visible = false;
+                    btnRechazarPruebas.Visible = false;
+                    btnGrafico.Focus();
+                }
+                else
+                {
+                    btnGrafico.Visible = false;
+                    btnCargarPruebas.Visible = true;
+                    btnRechazarPruebas.Visible = true;
+                }
+
+               
+            }
+            VerificadorBool = false;
+        }
+    
+       
         private void btnCargarPruebas_Click(object sender, EventArgs e)
         {
             escape();
@@ -731,14 +749,35 @@ namespace Electrónicos.Jupiter
             txtMensajeLeido.Text = "";
 
             gunaCircleProgressBar1.Visible = true;
-            gunaPanel1.Visible = true;
+            panelPruebas.Visible = true;
             timerPruebas.Start();
             segundos = 11;
             gunaCircleProgressBar1.Value = 0;
         }
 
-        
+    
 
+        private void DecodificadorCorto()
+        {
+            int numeroLinea = 1;
+
+            foreach (string linea in lblComando.Lines)
+            {
+                if (linea.Contains("0x02 0x01"))
+                {
+                    cal.CortoPresionado = true;
+                    
+                    
+                    break;
+                }
+
+                numeroLinea++;
+            }
+
+
+        }
+
+      
         private void DecodificadorEtiquetas(string cmdAprobado, TextBox txtDecodificador ,ref Guna.UI.WinForms.GunaLabel lblRespuesta, string inicio, string final,string PalabraExtra)
         {
             int numeroLinea = 1;
@@ -774,7 +813,7 @@ namespace Electrónicos.Jupiter
         }
 
             //Decodificador para las pruebas de verificación del i2 c.
-            private void DecodificadorJellingDisck(string cmdAprobado, string cmdDenegar, ref PictureBox imagen, ref Guna.UI.WinForms.GunaTextBox txtRespuesta)
+            private void DecodificadorJellingDisck(string cmdAprobado, string cmdDenegar, ref PictureBox imagen, ref Guna.UI.WinForms.GunaTextBox txtRespuesta,ref bool verificador)
         {
 
             int numeroLinea = 1;
@@ -785,12 +824,15 @@ namespace Electrónicos.Jupiter
                 {
                    imagen.Image = Properties.Resources.Aceptar;
                     txtRespuesta.Text = linea;
+                    verificador = true;
+               
                     break;
                 }
                 else if (linea.Contains(cmdDenegar))
                 {
                     imagen.Image = Properties.Resources.Denegar;
                     txtRespuesta.Text = linea;
+                    verificador = false;
                     break;
 
                 }
@@ -801,7 +843,7 @@ namespace Electrónicos.Jupiter
         }
 
         //Verifica si la información recibida es correcta y envia una imagen de aprobado o rechazado.
-        private void DecodificadorDirecciones(string cmdAprobado, ref PictureBox imagen, ref Guna.UI.WinForms.GunaTextBox txtRespuesta)
+        private void DecodificadorDirecciones(string cmdAprobado, ref PictureBox imagen, ref Guna.UI.WinForms.GunaTextBox txtRespuesta, ref bool verificador)
         {
 
             int numeroLinea = 1;
@@ -812,11 +854,13 @@ namespace Electrónicos.Jupiter
                 {
                     imagen.Image = Properties.Resources.Aceptar;
                     txtRespuesta.Text = linea;
+                    verificador = true;
                     break;
                 }
                 else 
                 {
                     imagen.Image = Properties.Resources.Denegar;
+                    verificador = false;
 
                 }
                 numeroLinea++;
@@ -837,10 +881,7 @@ namespace Electrónicos.Jupiter
             conectar();
         }
 
-        private void gunaGradientButton2_Click(object sender, EventArgs e)
-        {
-            DecodificadorEtiquetas("Application", txtMensajeLeido, ref lblAppVersion, "\"", "\"Extra", "Extra");
-        }
+     
 
         private void cargarEtiquetas_Tick(object sender, EventArgs e)
         {
@@ -849,7 +890,57 @@ namespace Electrónicos.Jupiter
             cargarEtiquetas.Stop();
         }
 
-       
+        private void btnGrafico_Click(object sender, EventArgs e)
+        {
+            cmd("test_print 25");
+            btnFinalizar.Visible = true;
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            cal.reinicioTotal();
+            cmd("reset");
+            
+            desconectarGeneral();
+            reinicioGeneral();
+        }
+
+        private void reinicioGeneral()
+        {
+            btnSignal.Enabled = true;
+            btnPower.Enabled = true;
+            btnGrafico.Visible = false;
+            btnFinalizar.Visible = false;
+            DecodificadorActivado = false;
+            VerificadorBool = false;
+            Power = 0;
+            Signal = 0;
+            segundos = 0;
+            lblAppVersion.Text = "N/A";
+            lblFPGAVersion.Text = "N/A";
+            lblPower.Text = "N/A";
+            lblSignal.Text = "N/A";
+
+            txtRespuesta1.Text = "";
+            txtRespuesta2.Text = "";
+            txtRespuesta3.Text = "";
+            txtRespuesta4.Text = "";
+            txtRespuesta5.Text = "";
+            txtRespuesta6.Text = "";
+            txtRespuesta7.Text = "";
+            txtRespuesta8.Text = "";
+            pic1.Image = null;
+            pic2.Image = null;
+            pic3.Image = null;
+            pic4.Image = null;
+            pic5.Image = null;
+            pic6.Image = null;
+            pic7.Image = null;
+            pic8.Image = null;
+
+
+
+        }
     }
 
 }
