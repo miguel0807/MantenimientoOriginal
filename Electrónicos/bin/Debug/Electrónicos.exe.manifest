@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Electrónicos.exe" size="1352632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Electrónicos.exe" size="19534776">
       <assemblyIdentity name="Electrónicos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Az3pObCXyUqj0GkYFtnAQcTcqhImsy/OJbZdlvdMzDQ=</dsig:DigestValue>
+        <dsig:DigestValue>v7+nh8pl07Oht3vXBAB/NWxhUAJOzCpjpI+devxGt68=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -132,6 +132,96 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\-1 3.5k ohms.jpg" size="908190">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Rn8AQSV8FA8SAhMFzDTER1mhXSAjLXWM+o55ck5Y47s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\-10 test.jpg" size="1947725">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>e70lGzsiSqKfDQVz0dnN32ZkvjTOE1kWSV9zXteob7Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\-2 3.3v.jpg" size="2145074">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>deZmn9YJIYLiHa7eOimEd7IwPiWX76beao9tjkrKw5g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\-3 66v.jpg" size="2038948">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>c4mKPiI/CbaQ4F91OOvP1gsIhCaM8Pmt1uuOg9MhFlw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\-4 -10v.jpg" size="1659461">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7dEOXijD8MdjJQN2dh5lszBMxxyLeFLHkstePiPA0OQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\-5 60v.jpg" size="2012815">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>L5mRXMQZuWKuhYO0l5IZkKBX09oarHembfelyr7t/bk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\-6 vs i .jpg" size="2317034">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>KLgkUV0UyKksHECFbPMdWSRGhKRaKCUimW4HDP6yMoE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\-7 vs o.jpg" size="2501905">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>w8AWXImX4Dkqm0imgsrNvuCn3w+xcnRGtH3X8bq84iI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\-8 corto.jpg" size="2317006">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lGvgO6mleDSdsoe2JTOo0HxYuNZU1b4qk/1jAmYMPiI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\-9 jetting .jpg" size="1249594">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>EimKhnnE7hWDJFg5BALd2/wClDL5sS8hBT5G4hkVBvs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\Aceptar.png" size="2139">

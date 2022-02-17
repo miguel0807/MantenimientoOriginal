@@ -256,6 +256,16 @@
     <Folder Include="Compartido\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\-1 3.5k ohms.jpg" />
+    <Content Include="Resources\-10 test.jpg" />
+    <Content Include="Resources\-2 3.3v.jpg" />
+    <Content Include="Resources\-3 66v.jpg" />
+    <Content Include="Resources\-4 -10v.jpg" />
+    <Content Include="Resources\-5 60v.jpg" />
+    <Content Include="Resources\-6 vs i .jpg" />
+    <Content Include="Resources\-7 vs o.jpg" />
+    <Content Include="Resources\-8 corto.jpg" />
+    <Content Include="Resources\-9 jetting .jpg" />
     <Content Include="Resources\Aceptar.png" />
     <Content Include="Resources\Denegar.png" />
   </ItemGroup>
